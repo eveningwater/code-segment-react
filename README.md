@@ -1,4 +1,4 @@
-# code-segment
+# code-segment-react
 
 ## Getting Started
 
@@ -19,3 +19,5 @@ Build site app,
 ```bash
 $ npm run build
 ```
+
+[code-segment](https://github.com/eveningwater/code-segment.git)
