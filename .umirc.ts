@@ -5,12 +5,12 @@ import menus from './config/menu';
 export default defineConfig({
   title: 'react-code-segment',
   mode: 'site',
-  base: '/code-segment-react/',
-  publicPath: '/code-segment-react/',
+  base: process.env.NODE_ENV === 'production' ? '/code-segment-react/' : '/',
+  publicPath:
+    process.env.NODE_ENV === 'production' ? '/code-segment-react/' : '/',
   logo: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K',
-  styles: [
-    `img {margin: auto; display:block;} img[alt="logo"] {max-height:45px;}`,
-  ],
+  styles: [`img {margin: auto; display:block;}`],
+  links: [{ rel: 'stylesheet', type: 'text/css', href: './public/common.css' }],
   menus: menus,
   navs: {
     'en-US': [
@@ -21,6 +21,10 @@ export default defineConfig({
       {
         title: 'guide',
         path: '/guide',
+      },
+      {
+        title: 'github',
+        path: 'https://github.com/eveningwater/code-segment-react.git',
       },
       {
         title: 'about me',
@@ -36,6 +40,10 @@ export default defineConfig({
       {
         title: '指南',
         path: '/zh-CN/guide',
+      },
+      {
+        title: '源码地址',
+        path: 'https://github.com/eveningwater/code-segment-react.git',
       },
       {
         title: '关于我',
