@@ -12,6 +12,10 @@ export default {
       title: 'AutoLink',
       path: '/guide/AutoLink/AutoLink',
     },
+    {
+      title: 'Callto',
+      path: '/guide/Callto/Callto',
+    },
   ],
   '/zh-CN/guide': [
     {
@@ -25,6 +29,10 @@ export default {
     {
       title: '自动文本链接',
       path: '/zh-CN/guide/AutoLink/AutoLink',
+    },
+    {
+      title: '拨电至',
+      path: '/guide/Callto/Callto',
     },
   ],
 };
