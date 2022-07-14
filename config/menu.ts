@@ -16,6 +16,14 @@ export default {
       title: 'Callto',
       path: '/guide/Callto/Callto',
     },
+    {
+      title: 'Carousel',
+      path: '/guide/Carousel/Carousel',
+    },
+    {
+      title: 'Collapse',
+      path: '/guide/Collapse/Collapse',
+    },
   ],
   '/zh-CN/guide': [
     {
@@ -32,7 +40,15 @@ export default {
     },
     {
       title: '拨电至',
-      path: '/guide/Callto/Callto',
+      path: '/zh-CN/guide/Callto/Callto',
+    },
+    {
+      title: '轮播图',
+      path: '/zh-CN/guide/Carousel/Carousel',
+    },
+    {
+      title: '可折叠的内容',
+      path: '/zh-CN/guide/Collapse/Collapse',
     },
   ],
 };

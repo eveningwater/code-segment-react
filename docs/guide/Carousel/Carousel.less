@@ -1,0 +1,29 @@
+.carousel {
+  position: relative;
+  height: 100px;
+  width: 200px;
+  overflow: hidden;
+  border: 1px solid #dedede;
+  background-color: fadeout(#880cee, 25%);
+  border-radius: 8px;
+  .carousel-slide {
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 0.75);
+    height: 100%;
+    &::after {
+      clear: both;
+      content: '';
+      display: table;
+    }
+    .carousel-item {
+      width: 200px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      color: fade(rgba(255, 255, 255, 1), 85%);
+      float: left;
+      letter-spacing: 2px;
+    }
+  }
+}
