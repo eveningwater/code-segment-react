@@ -32,6 +32,10 @@ export default defineConfig({
         path: '/guide',
       },
       {
+        title: 'antd',
+        path: '/antd',
+      },
+      {
         title: 'github',
         path: 'https://github.com/eveningwater/code-segment-react.git',
       },
@@ -49,6 +53,10 @@ export default defineConfig({
       {
         title: '指南',
         path: '/zh-CN/guide',
+      },
+      {
+        title: '蚂蚁设计',
+        path: '/antd',
       },
       {
         title: '源码地址',
