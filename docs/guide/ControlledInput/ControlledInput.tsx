@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import React, { useState } from 'react';
+import React from 'react';
 import type { SyntheticEvent } from 'react';
 
 const StyleInput = styled.input`
@@ -73,17 +73,4 @@ const ControlledInput = (props: Partial<ControlledInputProps>) => {
   );
 };
 
-const Demo = () => {
-  const [value, setValue] = useState('');
-
-  return (
-    <ControlledInput
-      type="text"
-      value={value}
-      onChange={setValue}
-      placeholder="Insert some text here..."
-    ></ControlledInput>
-  );
-};
-
-export default Demo;
+export default ControlledInput;

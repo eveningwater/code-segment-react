@@ -9,14 +9,14 @@ const OmitStyleText = styled.div`
   white-space: nowrap;
 `;
 interface OmitTextProps {
-  width: number | string;
+  width?: number | string;
   children?: ReactNode;
   className?: string;
   showTooltip?: boolean;
-  TooltipProps?: Omit<TooltipProps, 'title'>;
+  tooltipProps?: Omit<TooltipProps, 'title'>;
 }
 const OmitTextChildren = (
-  props: Omit<OmitTextProps, 'showTooltip' & 'TooltipProps'>,
+  props: Omit<OmitTextProps, 'showTooltip' | 'TooltipProps'>,
 ) => {
   const { width, className, children, ...rest } = props;
   return (
@@ -30,11 +30,11 @@ const OmitTextChildren = (
   );
 };
 const OmitText = (props: OmitTextProps) => {
-  const { showTooltip, TooltipProps, ...rest } = props;
+  const { showTooltip, tooltipProps, ...rest } = props;
   return (
     <>
       {showTooltip ? (
-        <Tooltip title={rest.children}>
+        <Tooltip title={rest.children} {...tooltipProps}>
           <OmitTextChildren {...rest} />
         </Tooltip>
       ) : (

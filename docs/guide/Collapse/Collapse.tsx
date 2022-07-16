@@ -80,13 +80,4 @@ const Collapse = (props: Partial<CollapseProps>) => {
   );
 };
 
-const Demo = () => {
-  return (
-    <Collapse>
-      <h1>This is a collapse</h1>
-      <p>Hello world!</p>
-    </Collapse>
-  );
-};
-
-export default Demo;
+export default Collapse;

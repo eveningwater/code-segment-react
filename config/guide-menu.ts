@@ -27,4 +27,8 @@ export default [
     title: 'ControlledInput',
     path: '/guide/controlled-input/controlled-input',
   },
+  {
+    title: 'CountDown',
+    path: '/guide/count-down/count-down',
+  },
 ];

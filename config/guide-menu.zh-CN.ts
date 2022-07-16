@@ -27,4 +27,8 @@ export default [
     title: '受控的输入框',
     path: '/zh-CN/guide/controlled-input/controlled-input',
   },
+  {
+    title: '倒计时组件',
+    path: '/zh-CN/guide/count-down/count-down',
+  },
 ];

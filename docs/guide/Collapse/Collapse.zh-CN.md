@@ -91,19 +91,8 @@ const Collapse = (props: Partial<CollapseProps>) => {
     </CollapseStyle>
   );
 };
-
-const Demo = () => {
-  return (
-    <Collapse header="这是标题">
-      <h1>这是一个折叠组件</h1>
-      <p>你好，世界!</p>
-    </Collapse>
-  );
-};
-
-export default Demo;
 ```
 
 demo:
 
-<code src="./Collapse.zh-CN.tsx"></code>
+<code src="./Demo.zh-CN.tsx"></code>

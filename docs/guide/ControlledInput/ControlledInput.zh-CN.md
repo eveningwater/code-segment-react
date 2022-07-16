@@ -5,12 +5,12 @@
 呈现一个受控的 `<input>` 元素，该元素使用回调函数通知其父级有关值的更新。
 
 - 使用从父级传下来的值作为受控输入字段的值。
-- 使用 onChange 事件触发 onValueChange 回调并将新值发送给父级。
+- 使用 onChange 事件触发 onChange 回调并将新值发送给父级。
 - 父级必须更新输入字段的 value 属性，以便其值在用户输入时更改。
 
 ```tsx | pure
 import styled from '@emotion/styled';
-import React, { useState } from 'react';
+import React from 'react';
 import type { SyntheticEvent } from 'react';
 
 const StyleInput = styled.input`
@@ -39,8 +39,6 @@ const StyleInput = styled.input`
     outline: 0;
   }
 `;
-/** https://github.com/Microsoft/TypeScript/issues/29729 */
-// eslint-disable-next-line @typescript-eslint/ban-types
 type LiteralUnion<T extends U, U> = T & (U & {});
 interface ControlledInputProps {
   type: LiteralUnion<
@@ -83,23 +81,8 @@ const ControlledInput = (props: Partial<ControlledInputProps>) => {
     <StyleInput value={value} onChange={onChangeHandler} {...rest}></StyleInput>
   );
 };
-
-const Demo = () => {
-  const [value, setValue] = useState('');
-
-  return (
-    <ControlledInput
-      type="text"
-      value={value}
-      onChange={setValue}
-      placeholder="请输入一些提示信息..."
-    ></ControlledInput>
-  );
-};
-
-export default Demo;
 ```
 
 demo:
 
-<code src="./ControlledInput.zh-CN.tsx"></code>
+<code src="./Demo.zh-CN.tsx"></code>

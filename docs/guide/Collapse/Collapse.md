@@ -106,4 +106,4 @@ export default Demo;
 
 demo:
 
-<code src="./Collapse.tsx"></code>
+<code src="./Demo.tsx"></code>

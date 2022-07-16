@@ -10,7 +10,7 @@ Renders a controlled `<input>` element that uses a callback function to inform i
 
 ```tsx | pure
 import styled from '@emotion/styled';
-import React, { useState } from 'react';
+import React from 'react';
 import type { SyntheticEvent } from 'react';
 
 const StyleInput = styled.input`
@@ -39,8 +39,6 @@ const StyleInput = styled.input`
     outline: 0;
   }
 `;
-/** https://github.com/Microsoft/TypeScript/issues/29729 */
-// eslint-disable-next-line @typescript-eslint/ban-types
 type LiteralUnion<T extends U, U> = T & (U & {});
 interface ControlledInputProps {
   type: LiteralUnion<
@@ -83,23 +81,8 @@ const ControlledInput = (props: Partial<ControlledInputProps>) => {
     <StyleInput value={value} onChange={onChangeHandler} {...rest}></StyleInput>
   );
 };
-
-const Demo = () => {
-  const [value, setValue] = useState('');
-
-  return (
-    <ControlledInput
-      type="text"
-      value={value}
-      onChange={setValue}
-      placeholder="Insert some text here..."
-    ></ControlledInput>
-  );
-};
-
-export default Demo;
 ```
 
 demo:
 
-<code src="./ControlledInput.tsx"></code>
+<code src="./Demo.tsx"></code>
