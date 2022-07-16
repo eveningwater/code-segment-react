@@ -56,7 +56,7 @@ export default defineConfig({
       },
       {
         title: '蚂蚁设计',
-        path: '/antd',
+        path: '/zh-CN/antd',
       },
       {
         title: '源码地址',
