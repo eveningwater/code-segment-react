@@ -4,7 +4,7 @@ import OmitText from './OmitText';
 
 const Index = () => {
   const text =
-    'This is a long long long long long long long long long long long long long long long long long long long long long long long long long long long test text';
+    '这是一段很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的测试文本';
   //tooltipProps配置属性同antd的tooltip
   return (
     <Space>

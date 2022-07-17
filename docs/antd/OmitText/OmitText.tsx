@@ -7,6 +7,7 @@ const OmitStyleText = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  cursor: pointer;
 `;
 interface OmitTextProps {
   width?: number | string;
@@ -18,7 +19,7 @@ interface OmitTextProps {
 const OmitTextChildren = (
   props: Omit<OmitTextProps, 'showTooltip' | 'TooltipProps'>,
 ) => {
-  const { width, className, children, ...rest } = props;
+  const { width = 120, className, children, ...rest } = props;
   return (
     <OmitStyleText
       className={`omitText${className ? ' ' + className : ''}`}
@@ -30,7 +31,7 @@ const OmitTextChildren = (
   );
 };
 const OmitText = (props: OmitTextProps) => {
-  const { showTooltip, tooltipProps, ...rest } = props;
+  const { showTooltip = true, tooltipProps, ...rest } = props;
   return (
     <>
       {showTooltip ? (

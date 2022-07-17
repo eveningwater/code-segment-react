@@ -9,7 +9,7 @@ const Index = () => {
   };
   const onOpenModalHandler = () => {
     onLoadingModal({
-      content: 'Open the modal of test',
+      content: '测试打开的弹框',
       duration: 2000,
       isUseDuration: true,
       onOk: (close) => close(),
@@ -24,7 +24,7 @@ const Index = () => {
     });
   const onOpenModalHandler2 = () => {
     onLoadingModal({
-      content: 'Open the modal of test',
+      content: '测试打开的弹框',
       onOk: async (close) => {
         await handler();
         close();
@@ -33,7 +33,7 @@ const Index = () => {
   };
   return (
     <Space>
-      <Button onClick={onClickHandler}>clicked me</Button>
+      <Button onClick={onClickHandler}>点击我</Button>
       <LoadingModal
         onOk={() => setVisible(false)}
         duration={1000}
@@ -41,10 +41,10 @@ const Index = () => {
         visible={visible}
         onCancel={() => setVisible(false)}
       >
-        the modal of test
+        测试打开的弹框
       </LoadingModal>
-      <Button onClick={() => onOpenModalHandler()}>clicked me</Button>
-      <Button onClick={() => onOpenModalHandler2()}>apply interface</Button>
+      <Button onClick={() => onOpenModalHandler()}>点击我</Button>
+      <Button onClick={() => onOpenModalHandler2()}>调用接口</Button>
     </Space>
   );
 };

@@ -31,4 +31,8 @@ export default [
     title: '倒计时组件',
     path: '/zh-CN/guide/count-down/count-down',
   },
+  {
+    title: '简易数据列表组件',
+    path: '/zh-CN/guide/simple-data-list/simple-data-list',
+  },
 ];

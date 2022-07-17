@@ -16,13 +16,13 @@ const Index = () => {
     await handler();
   };
   const onClickHandler2 = () => {
-    console.log('Set the duration');
+    console.log('设置时间');
   };
   const onClickHandler3 = () => {
-    console.log('The max value is 10000');
+    console.log('加载中时间的最大值为:10000');
   };
   const onClickHandler4 = () => {
-    console.log('The default value is 1000');
+    console.log('默认值是1000');
   };
   const onClickHandler5 = async () => {
     await handler();
@@ -30,18 +30,18 @@ const Index = () => {
   return (
     <Space>
       <LoadingButton onClick={onClickHandler} duration={1000} isUseDuration>
-        clicked me
+        点击我
       </LoadingButton>
       <LoadingButton onClick={onClickHandler2} duration={500} isUseDuration>
-        clicked me
+        点击我
       </LoadingButton>
       <LoadingButton onClick={onClickHandler3} duration={100000} isUseDuration>
-        clicked me
+        点击我
       </LoadingButton>
       <LoadingButton onClick={onClickHandler4} isUseDuration>
-        clicked me
+        点击我
       </LoadingButton>
-      <LoadingButton onClick={onClickHandler5}>apply interface</LoadingButton>
+      <LoadingButton onClick={onClickHandler5}>调用接口</LoadingButton>
     </Space>
   );
 };

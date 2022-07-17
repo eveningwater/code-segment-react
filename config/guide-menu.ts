@@ -31,4 +31,8 @@ export default [
     title: 'CountDown',
     path: '/guide/count-down/count-down',
   },
+  {
+    title: 'SimpleDataList',
+    path: '/guide/simple-data-list/simple-data-list',
+  },
 ];

@@ -6,5 +6,5 @@ export default {
   '/guide': guideMenu,
   '/zh-CN/guide': guideMenuZhCN,
   '/antd': antdMenu,
-  '/zh-CN/antd/': antdMenuZhCN,
+  '/zh-CN/antd': antdMenuZhCN,
 };

@@ -1,14 +1,14 @@
 export default [
   {
     title: '加载中效果的按钮',
-    path: '/zh-CN/antd/loading-button/loading-button',
+    path: '/zh-CN/antd/loading-button',
   },
   {
     title: '省略文本组件',
-    path: '/zh-CN/antd/omit-text/omit-text',
+    path: '/zh-CN/antd/omit-text',
   },
   {
     title: '加载中效果的弹框',
-    path: '/zh-CN/antd/loading-modal/loading-modal',
+    path: '/zh-CN/antd/loading-modal',
   },
 ];
