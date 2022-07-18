@@ -35,4 +35,8 @@ export default [
     title: '简易数据列表组件',
     path: '/zh-CN/guide/simple-data-list/simple-data-list',
   },
+  {
+    title: '简易数据表格组件',
+    path: '/zh-CN/guide/simple-data-table/simple-data-table',
+  },
 ];

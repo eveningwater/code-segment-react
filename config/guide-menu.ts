@@ -35,4 +35,8 @@ export default [
     title: 'SimpleDataList',
     path: '/guide/simple-data-list/simple-data-list',
   },
+  {
+    title: 'SimpleDataTable',
+    path: '/guide/simple-data-table/simple-data-table',
+  },
 ];
