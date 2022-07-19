@@ -39,4 +39,8 @@ export default [
     title: '简易数据表格组件',
     path: '/zh-CN/guide/simple-data-table/simple-data-table',
   },
+  {
+    title: '拖拽文件组件',
+    path: '/zh-CN/guide/file-drop/file-drop',
+  },
 ];

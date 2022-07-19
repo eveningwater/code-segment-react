@@ -39,4 +39,8 @@ export default [
     title: 'SimpleDataTable',
     path: '/guide/simple-data-table/simple-data-table',
   },
+  {
+    title: 'FileDrop',
+    path: '/guide/file-drop/file-drop',
+  },
 ];
