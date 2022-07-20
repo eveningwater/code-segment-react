@@ -43,4 +43,8 @@ export default [
     title: 'FileDrop',
     path: '/guide/file-drop/file-drop',
   },
+  {
+    title: 'LazyLoadingImage',
+    path: '/guide/lazy-loading-image/lazy-loading-image',
+  },
 ];

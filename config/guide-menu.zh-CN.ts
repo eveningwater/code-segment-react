@@ -43,4 +43,8 @@ export default [
     title: '拖拽文件组件',
     path: '/zh-CN/guide/file-drop/file-drop',
   },
+  {
+    title: '懒加载图片',
+    path: '/zh-CN/guide/lazy-loading-image/lazy-loading-image',
+  },
 ];
