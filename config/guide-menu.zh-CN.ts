@@ -47,4 +47,8 @@ export default [
     title: '懒加载图片',
     path: '/zh-CN/guide/lazy-loading-image/lazy-loading-image',
   },
+  {
+    title: '限制字符的文本框组件',
+    path: '/guide/limited-textarea/limited-textarea',
+  },
 ];

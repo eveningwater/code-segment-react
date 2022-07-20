@@ -47,4 +47,8 @@ export default [
     title: 'LazyLoadingImage',
     path: '/guide/lazy-loading-image/lazy-loading-image',
   },
+  {
+    title: 'LimitedTextarea',
+    path: '/guide/limited-textarea/limited-textarea',
+  },
 ];
