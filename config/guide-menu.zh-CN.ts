@@ -51,4 +51,8 @@ export default [
     title: '限制字符的文本框组件',
     path: '/guide/limited-textarea/limited-textarea',
   },
+  {
+    title: '限制字数的文本框组件',
+    path: '/guide/limited-word-textarea/limited-word-textarea',
+  },
 ];
