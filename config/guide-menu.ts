@@ -55,4 +55,8 @@ export default [
     title: 'LimitedWordTextarea',
     path: '/guide/limited-word-textarea/limited-word-textarea',
   },
+  {
+    title: 'Loader',
+    path: '/guide/Loader/Loader',
+  },
 ];
