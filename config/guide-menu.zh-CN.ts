@@ -59,4 +59,8 @@ export default [
     title: '加载组件',
     path: '/zh-CN/guide/Loader/Loader',
   },
+  {
+    title: '邮件链接组件',
+    path: '/zh-CN/guide/Mailto/Mailto',
+  },
 ];

@@ -59,4 +59,8 @@ export default [
     title: 'Loader',
     path: '/guide/Loader/Loader',
   },
+  {
+    title: 'Mailto',
+    path: '/guide/Mailto/Mailto',
+  },
 ];
