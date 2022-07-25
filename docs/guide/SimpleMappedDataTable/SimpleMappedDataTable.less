@@ -1,0 +1,28 @@
+@prefix: sim-;
+
+.@{prefix}table {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 5px;
+  &.is-bordered {
+    border: 1px solid #dedede;
+  }
+
+  &-cell {
+    font-size: 16px;
+    padding: 6px 12px;
+    position: relative;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.85);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  &-header > tr > th {
+    background-color: #fafafa;
+  }
+  &-row {
+    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    &:hover {
+      background-color: #f2f3f4;
+    }
+  }
+}

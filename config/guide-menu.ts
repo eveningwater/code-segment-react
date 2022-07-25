@@ -63,4 +63,8 @@ export default [
     title: 'Mailto',
     path: '/guide/Mailto/Mailto',
   },
+  {
+    title: 'SimpleMappedDataTable',
+    path: '/guide/simple-mapped-data-table/simple-mapped-data-table',
+  },
 ];
