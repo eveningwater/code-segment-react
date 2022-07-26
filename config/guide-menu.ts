@@ -67,4 +67,8 @@ export default [
     title: 'SimpleMappedDataTable',
     path: '/guide/simple-mapped-data-table/simple-mapped-data-table',
   },
+  {
+    title: 'Modal',
+    path: '/guide/Modal/Modal',
+  },
 ];

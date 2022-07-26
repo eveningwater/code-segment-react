@@ -67,4 +67,8 @@ export default [
     title: '简易对象数组表格组件',
     path: '/zh-CN/guide/simple-mapped-data-table/simple-mapped-data-table',
   },
+  {
+    title: '弹框组件',
+    path: '/zh-CN/guide/Modal/Modal',
+  },
 ];
