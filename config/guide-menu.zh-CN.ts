@@ -71,4 +71,8 @@ export default [
     title: '弹框组件',
     path: '/zh-CN/guide/Modal/Modal',
   },
+  {
+    title: '复选框组件',
+    path: '/zh-CN/guide/Checkbox/Checkbox',
+  },
 ];

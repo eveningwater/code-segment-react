@@ -71,4 +71,8 @@ export default [
     title: 'Modal',
     path: '/guide/Modal/Modal',
   },
+  {
+    title: 'Checkbox',
+    path: '/guide/Checkbox/Checkbox',
+  },
 ];
