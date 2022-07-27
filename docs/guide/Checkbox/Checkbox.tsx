@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createRef } from 'react';
 import type { ReactNode, SyntheticEvent } from 'react';
 import './Checkbox.less';
 
@@ -12,36 +12,31 @@ export interface CheckboxProps extends Record<string, any> {
 
 const Checkbox = (props: Partial<CheckboxProps>) => {
   const { disabled, checked, defaultChecked, children, onChange } = props;
-  const [value, setValue] = useState(defaultChecked);
-
+  const [value, setValue] = useState(!!defaultChecked);
   useEffect(() => {
     if (typeof checked === 'boolean') {
+      if (disabled) {
+        return;
+      }
       setValue(checked);
     }
   }, [checked]);
-
-  const onClickHandler = (e: SyntheticEvent) => {
+  const onChangeHandler = () => {
     if (disabled) {
       return;
     }
-    const {
-      nativeEvent: { target },
-    } = e;
-    const currentChecked = (target as HTMLInputElement).checked;
-    if (typeof checked !== 'boolean') {
-      setValue(currentChecked);
-      if (onChange) {
-        onChange(currentChecked);
-      }
+    setValue(!value);
+    if (onChange) {
+      onChange(!value);
     }
   };
+
   return (
     <label
       className={`ant-checkbox-wrapper${disabled ? ' is-disabled' : ''}`}
-      onClick={onClickHandler}
+      onClick={onChangeHandler}
     >
       <span className={`ant-checkbox${value ? ' checked' : ''}`}>
-        <input type="checkbox" className="ant-checkbox-input" />
         <span className="ant-checkbox-inner"></span>
       </span>
       {children}
