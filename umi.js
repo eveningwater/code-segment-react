@@ -3777,7 +3777,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/Checkbox/Checkbox.md',
-                updatedTime: 1658882671073,
+                updatedTime: 1658900464229,
                 slugs: [],
                 hasPreviewer: !0,
                 nav: { path: '/guide', title: 'Guide' },
@@ -3792,7 +3792,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/Checkbox/Checkbox.zh-CN.md',
-                updatedTime: 1658882680842,
+                updatedTime: 1658900472755,
                 slugs: [],
                 hasPreviewer: !0,
                 locale: 'zh-CN',
@@ -16166,19 +16166,18 @@
             i = e.defaultChecked,
             l = e.children,
             c = e.onChange,
-            s = Object(a['useState'])(i),
+            s = Object(a['useState'])(!!i),
             u = Object(r['a'])(s, 2),
             d = u[0],
             f = u[1];
           Object(a['useEffect'])(() => {
-            'boolean' === typeof n && f(n);
-          }, [n]);
-          var p = (e) => {
-            if (!t) {
-              var r = e.nativeEvent.target,
-                a = r.checked;
-              'boolean' !== typeof n && (f(a), c && c(a));
+            if ('boolean' === typeof n) {
+              if (t) return;
+              f(n);
             }
+          }, [n]);
+          var p = () => {
+            t || (f(!d), c && c(!d));
           };
           return o.a.createElement(
             'label',
@@ -16189,10 +16188,6 @@
             o.a.createElement(
               'span',
               { className: 'ant-checkbox'.concat(d ? ' checked' : '') },
-              o.a.createElement('input', {
-                type: 'checkbox',
-                className: 'ant-checkbox-input',
-              }),
               o.a.createElement('span', { className: 'ant-checkbox-inner' }),
             ),
             l,
@@ -20961,11 +20956,15 @@
                   a.a.createElement('code', null, '<input type="checkbox">'),
                   ' \u5143\u7d20\u3002 \u5c06\u6bcf\u4e00\u4e2a\u5305\u88c5\u5728\u4e00\u4e2a',
                   a.a.createElement('code', null, '<label>'),
-                  '\u4e2d\uff0c\u5c06onClick\u5904\u7406\u7a0b\u5e8f\u7ed1\u5b9a\u5230\u5207\u6362\u51fd\u6570\u3002',
+                  '\u4e2d\uff0c\u5c06 onClick \u5904\u7406\u7a0b\u5e8f\u7ed1\u5b9a\u5230\u5207\u6362\u51fd\u6570\u3002',
                 ),
               ),
               a.a.createElement(l['a'], {
-                code: "import React, { useState,useEffect } from 'react'\nimport type { ReactNode,SyntheticEvent } from 'react'\nimport './Checkbox.less'\n\nexport interface CheckboxProps extends Record<string,any> {\n    disabled: boolean\n    checked: boolean\n    defaultChecked: boolean\n    children: ReactNode\n    onChange(v: boolean):void\n}\n\nconst Checkbox = (props: Partial<CheckboxProps>) => {\n    const { disabled,checked,defaultChecked,children,onChange  } = props;\n    const [value,setValue] = useState(defaultChecked);\n\n    useEffect(() => {\n        if(typeof checked === 'boolean'){\n            setValue(checked)\n        }\n    },[checked])\n\n    const onClickHandler = (e: SyntheticEvent) => {\n        if(disabled){\n            return\n        }\n        const { nativeEvent:{ target } } = e;\n        const currentChecked = (target as HTMLInputElement).checked;\n        if(typeof checked !== 'boolean'){\n            setValue(currentChecked);\n            if(onChange){\n                onChange(currentChecked);\n            }\n        }\n    }\n    return (\n        <label className={`ant-checkbox-wrapper${disabled ? ' is-disabled' : ''}`} onClick={onClickHandler}>\n            <span className={`ant-checkbox${ value ? ' checked' : ''}`}>\n                <input type=\"checkbox\" className='ant-checkbox-input' />\n                <span className='ant-checkbox-inner'></span>\n            </span>\n            { children }\n        </label>\n    )\n}\n\nexport default Checkbox",
+                code: "@baseSelector: ant-;\n.@{baseSelector}checkbox-wrapper {\n  font-size: 14px;\n  line-height: 1.57;\n  display: inline-flex;\n  align-items: baseline;\n  cursor: pointer;\n  &.is-disabled {\n    color: #9f9f9f;\n    cursor: not-allowed;\n    .@{baseSelector}checkbox.checked,\n    .@{baseSelector}checkbox {\n      cursor: not-allowed;\n      .@{baseSelector}checkbox-inner {\n        border-color: #d9d9d9;\n        background-color: #f5f5f5;\n        &::after {\n          border-color: rgba(0, 0, 0, 0.4);\n        }\n      }\n    }\n  }\n  .@{baseSelector}checkbox {\n    position: relative;\n    top: 0.2em;\n    line-height: 1;\n    cursor: pointer;\n    white-space: nowrap;\n    margin-right: 8px;\n    &.checked {\n      .@{baseSelector}checkbox-inner {\n        border-color: #1890ff;\n        background-color: #1890ff;\n        &::after {\n          opacity: 1;\n          transform: translate(-50%, -50%) scale(1) rotate(45deg);\n        }\n      }\n    }\n    .@{baseSelector}checkbox-inner {\n      width: 16px;\n      height: 16px;\n      position: relative;\n      left: 0;\n      top: 0;\n      display: block;\n      background-color: #fff;\n      border: 1px solid #d9d9d9;\n      border-radius: 2px;\n      transition: all 0.3s;\n      &::after {\n        position: absolute;\n        top: 35%;\n        left: 50%;\n        display: table;\n        width: 5.714px;\n        height: 9.14px;\n        border: 2px solid #fff;\n        border-top: 0;\n        border-left: 0;\n        transform: rotate(45deg) scale(0) translate(-50%, -50%);\n        opacity: 0;\n        content: ' ';\n        transition: all 0.3s;\n      }\n    }\n  }\n}",
+                lang: 'less',
+              }),
+              a.a.createElement(l['a'], {
+                code: "import React, { useState, useEffect,createRef } from 'react';\nimport type { ReactNode, SyntheticEvent } from 'react';\nimport './Checkbox.less';\n\nexport interface CheckboxProps extends Record<string, any> {\n  disabled: boolean;\n  checked: boolean;\n  defaultChecked: boolean;\n  children: ReactNode;\n  onChange(v: boolean): void;\n}\n\nconst Checkbox = (props: Partial<CheckboxProps>) => {\n  const { disabled, checked, defaultChecked, children, onChange } = props;\n  const [value, setValue] = useState(!!defaultChecked);\n  useEffect(() => {\n      if(typeof checked === 'boolean'){\n        if(disabled){\n          return;\n        }\n        setValue(checked)\n      }\n  },[checked])\n  const onChangeHandler = () => {\n    if(disabled){\n      return;\n    }\n    setValue(!value);\n    if (onChange) {\n      onChange(!value);\n    }\n  }\n\n  return (\n    <label\n      className={`ant-checkbox-wrapper${disabled ? ' is-disabled' : ''}`}\n      onClick={onChangeHandler}\n    >\n      <span className={`ant-checkbox${value ? ' checked' : ''}`}>\n        <span className=\"ant-checkbox-inner\"></span>\n      </span>\n      {children}\n    </label>\n  );\n};\n\nexport default Checkbox;",
                 lang: 'tsx',
               }),
               a.a.createElement('p', null, '\u793a\u4f8b:'),
@@ -21627,7 +21626,11 @@
                 ),
               ),
               a.a.createElement(l['a'], {
-                code: "import React, { useState,useEffect } from 'react'\nimport type { ReactNode,SyntheticEvent } from 'react'\nimport './Checkbox.less'\n\nexport interface CheckboxProps extends Record<string,any> {\n    disabled: boolean\n    checked: boolean\n    defaultChecked: boolean\n    children: ReactNode\n    onChange(v: boolean):void\n}\n\nconst Checkbox = (props: Partial<CheckboxProps>) => {\n    const { disabled,checked,defaultChecked,children,onChange  } = props;\n    const [value,setValue] = useState(defaultChecked);\n\n    useEffect(() => {\n        if(typeof checked === 'boolean'){\n            setValue(checked)\n        }\n    },[checked])\n\n    const onClickHandler = (e: SyntheticEvent) => {\n        if(disabled){\n            return\n        }\n        const { nativeEvent:{ target } } = e;\n        const currentChecked = (target as HTMLInputElement).checked;\n        if(typeof checked !== 'boolean'){\n            setValue(currentChecked);\n            if(onChange){\n                onChange(currentChecked);\n            }\n        }\n    }\n    return (\n        <label className={`ant-checkbox-wrapper${disabled ? ' is-disabled' : ''}`} onClick={onClickHandler}>\n            <span className={`ant-checkbox${ value ? ' checked' : ''}`}>\n                <input type=\"checkbox\" className='ant-checkbox-input' />\n                <span className='ant-checkbox-inner'></span>\n            </span>\n            { children }\n        </label>\n    )\n}\n\nexport default Checkbox",
+                code: "@baseSelector: ant-;\n.@{baseSelector}checkbox-wrapper {\n  font-size: 14px;\n  line-height: 1.57;\n  display: inline-flex;\n  align-items: baseline;\n  cursor: pointer;\n  &.is-disabled {\n    color: #9f9f9f;\n    cursor: not-allowed;\n    .@{baseSelector}checkbox.checked,\n    .@{baseSelector}checkbox {\n      cursor: not-allowed;\n      .@{baseSelector}checkbox-inner {\n        border-color: #d9d9d9;\n        background-color: #f5f5f5;\n        &::after {\n          border-color: rgba(0, 0, 0, 0.4);\n        }\n      }\n    }\n  }\n  .@{baseSelector}checkbox {\n    position: relative;\n    top: 0.2em;\n    line-height: 1;\n    cursor: pointer;\n    white-space: nowrap;\n    margin-right: 8px;\n    &.checked {\n      .@{baseSelector}checkbox-inner {\n        border-color: #1890ff;\n        background-color: #1890ff;\n        &::after {\n          opacity: 1;\n          transform: translate(-50%, -50%) scale(1) rotate(45deg);\n        }\n      }\n    }\n    .@{baseSelector}checkbox-inner {\n      width: 16px;\n      height: 16px;\n      position: relative;\n      left: 0;\n      top: 0;\n      display: block;\n      background-color: #fff;\n      border: 1px solid #d9d9d9;\n      border-radius: 2px;\n      transition: all 0.3s;\n      &::after {\n        position: absolute;\n        top: 35%;\n        left: 50%;\n        display: table;\n        width: 5.714px;\n        height: 9.14px;\n        border: 2px solid #fff;\n        border-top: 0;\n        border-left: 0;\n        transform: rotate(45deg) scale(0) translate(-50%, -50%);\n        opacity: 0;\n        content: ' ';\n        transition: all 0.3s;\n      }\n    }\n  }\n}",
+                lang: 'less',
+              }),
+              a.a.createElement(l['a'], {
+                code: "import React, { useState, useEffect,createRef } from 'react';\nimport type { ReactNode, SyntheticEvent } from 'react';\nimport './Checkbox.less';\n\nexport interface CheckboxProps extends Record<string, any> {\n  disabled: boolean;\n  checked: boolean;\n  defaultChecked: boolean;\n  children: ReactNode;\n  onChange(v: boolean): void;\n}\n\nconst Checkbox = (props: Partial<CheckboxProps>) => {\n  const { disabled, checked, defaultChecked, children, onChange } = props;\n  const [value, setValue] = useState(!!defaultChecked);\n  useEffect(() => {\n      if(typeof checked === 'boolean'){\n        if(disabled){\n          return;\n        }\n        setValue(checked)\n      }\n  },[checked])\n  const onChangeHandler = () => {\n    if(disabled){\n      return;\n    }\n    setValue(!value);\n    if (onChange) {\n      onChange(!value);\n    }\n  }\n\n  return (\n    <label\n      className={`ant-checkbox-wrapper${disabled ? ' is-disabled' : ''}`}\n      onClick={onChangeHandler}\n    >\n      <span className={`ant-checkbox${value ? ' checked' : ''}`}>\n        <span className=\"ant-checkbox-inner\"></span>\n      </span>\n      {children}\n    </label>\n  );\n};\n\nexport default Checkbox;",
                 lang: 'tsx',
               }),
               a.a.createElement('p', null, 'Demo:'),
@@ -26591,13 +26594,13 @@
       j =
         'import React, { useState, useEffect, cloneElement } from \'react\';\nimport type { ReactNode } from \'react\';\nimport \'./Carousel.less\';\n\ninterface CarouselItemProps {\n  children: ReactNode;\n  className: string | Record<string, string | number>;\n}\n\ninterface CarouselProps {\n  options: ReactNode[];\n  duration: number;\n  children: JSX.Element[];\n  defaultKey: string;\n}\n\nconst CarouselItem = (props: Partial<CarouselItemProps>) => {\n  const { children } = props;\n  return <div className="carousel-item">{children}</div>;\n};\n\nconst Carousel = (props: Partial<CarouselProps>) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer: number | undefined;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter((item) => item?.type?.name === \'CarouselItem\') || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className="carousel">\n      <div\n        className="carousel-slide"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(item, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nconst Demo = () => {\n  return (\n    <Carousel defaultKey="2">\n      <CarouselItem key="1">\u8f6e\u64ad\u56fe1</CarouselItem>\n      <CarouselItem key="2">\u8f6e\u64ad\u56fe 2</CarouselItem>\n      <CarouselItem key="3">\u8f6e\u64ad\u56fe 3</CarouselItem>\n    </Carousel>\n  );\n};\n\nexport default Demo;',
       T =
-        'import React from "react";\r\nimport Checkbox from "./Checkbox"\r\n\r\nconst Demo = () => {\r\n    const onChange = (v: boolean) => {\r\n        console.log(v);\r\n    }\r\n    return (\r\n        <Checkbox onChange={onChange}>checkbox</Checkbox>\r\n    )\r\n}\r\n\r\nexport default Demo',
+        "import React,{ useState } from 'react';\nimport Checkbox from './Checkbox';\nimport { Space } from 'antd'\n\nconst Demo = () => {\n  const [checked,setChecked] = useState(false);\n  const onChange = (v: boolean) => {\n    console.log(v);\n  };\n  const onControlledChange = () => {\n    setChecked(!checked);\n  }\n  return (\n    <Space>\n      <Checkbox onChange={onChange}>checkbox</Checkbox>\n      <Checkbox disabled>disabled checkbox</Checkbox>\n      <Checkbox checked={checked} onChange={onControlledChange}>controlled checkbox</Checkbox>\n    </Space>\n  );\n};\n\nexport default Demo;",
       P =
-        "import React, { useState,useEffect } from 'react'\r\nimport type { ReactNode,SyntheticEvent } from 'react'\r\nimport './Checkbox.less'\r\n\r\nexport interface CheckboxProps extends Record<string,any> {\r\n    disabled: boolean\r\n    checked: boolean\r\n    defaultChecked: boolean\r\n    children: ReactNode\r\n    onChange(v: boolean):void\r\n}\r\n\r\nconst Checkbox = (props: Partial<CheckboxProps>) => {\r\n    const { disabled,checked,defaultChecked,children,onChange  } = props;\r\n    const [value,setValue] = useState(defaultChecked);\r\n\r\n    useEffect(() => {\r\n        if(typeof checked === 'boolean'){\r\n            setValue(checked)\r\n        }\r\n    },[checked])\r\n\r\n    const onClickHandler = (e: SyntheticEvent) => {\r\n        if(disabled){\r\n            return\r\n        }\r\n        const { nativeEvent:{ target } } = e;\r\n        const currentChecked = (target as HTMLInputElement).checked;\r\n        if(typeof checked !== 'boolean'){\r\n            setValue(currentChecked);\r\n            if(onChange){\r\n                onChange(currentChecked);\r\n            }\r\n        }\r\n    }\r\n    return (\r\n        <label className={`ant-checkbox-wrapper${disabled ? ' is-disabled' : ''}`} onClick={onClickHandler}>\r\n            <span className={`ant-checkbox${ value ? ' checked' : ''}`}>\r\n                <input type=\"checkbox\" className='ant-checkbox-input' />\r\n                <span className='ant-checkbox-inner'></span>\r\n            </span>\r\n            { children }\r\n        </label>\r\n    )\r\n}\r\n\r\nexport default Checkbox",
+        "import React, { useState, useEffect,createRef } from 'react';\nimport type { ReactNode, SyntheticEvent } from 'react';\nimport './Checkbox.less';\n\nexport interface CheckboxProps extends Record<string, any> {\n  disabled: boolean;\n  checked: boolean;\n  defaultChecked: boolean;\n  children: ReactNode;\n  onChange(v: boolean): void;\n}\n\nconst Checkbox = (props: Partial<CheckboxProps>) => {\n  const { disabled, checked, defaultChecked, children, onChange } = props;\n  const [value, setValue] = useState(!!defaultChecked);\n  useEffect(() => {\n      if(typeof checked === 'boolean'){\n        if(disabled){\n          return;\n        }\n        setValue(checked)\n      }\n  },[checked])\n  const onChangeHandler = () => {\n    if(disabled){\n      return;\n    }\n    setValue(!value);\n    if (onChange) {\n      onChange(!value);\n    }\n  }\n\n  return (\n    <label\n      className={`ant-checkbox-wrapper${disabled ? ' is-disabled' : ''}`}\n      onClick={onChangeHandler}\n    >\n      <span className={`ant-checkbox${value ? ' checked' : ''}`}>\n        <span className=\"ant-checkbox-inner\"></span>\n      </span>\n      {children}\n    </label>\n  );\n};\n\nexport default Checkbox;",
       I =
-        '@baseSelector: ant-;\r\n.@{baseSelector}checkbox-wrapper {\r\n    font-size: 14px;\r\n    line-height: 1.57;\r\n    display: inline-flex;\r\n    align-items: baseline;\r\n    cursor: pointer;\r\n    &.is-disabled {\r\n        color:#9f9f9f;\r\n        cursor: not-allowed;\r\n        .@{baseSelector}checkbox.checked,.@{baseSelector}checkbox {\r\n            cursor: not-allowed;\r\n            .@{baseSelector}checkbox-inner {\r\n                border-color: #d9d9d9;\r\n                background-color: #f5f5f5;\r\n                &::after {\r\n                    border-color: rgba(0,0,0,.4);\r\n                }\r\n            }\r\n            .@{baseSelector}checkbox-input {\r\n                cursor: not-allowed;\r\n            }\r\n        }\r\n    }\r\n    .@{baseSelector}checkbox {\r\n        position: relative;\r\n        top: 0.2em;\r\n        line-height: 1;\r\n        cursor: pointer;\r\n        white-space: nowrap;\r\n        margin-right: 8px;\r\n        .@{baseSelector}checkbox-input {\r\n            position: absolute;\r\n            left: 0;\r\n            top: 0;\r\n            right: 0;\r\n            bottom: 0;\r\n            z-index: 1;\r\n            width: 100%;\r\n            height: 100%;\r\n            cursor: pointer;\r\n            opacity: 0;\r\n        }\r\n        &.checked {\r\n            .@{baseSelector}checkbox-inner {\r\n                border-color: #1890ff;\r\n                background-color: #1890ff;\r\n                &::after {\r\n                    opacity: 1;\r\n                    transform: translate(-50%,-50%) scale(1) rotate(45deg);\r\n                }\r\n            }\r\n        }\r\n        .@{baseSelector}checkbox-inner {\r\n            width: 16px;\r\n            height: 16px;\r\n            position: relative;\r\n            left: 0;\r\n            top: 0;\r\n            display: block;\r\n            background-color: #fff;\r\n            border:1px solid #d9d9d9;\r\n            border-radius: 2px;\r\n            transition: all .3s;\r\n            &::after {\r\n                position: absolute;\r\n                top: 35%;\r\n                left: 50%;\r\n                display: table;\r\n                width: 5.714px;\r\n                height: 9.14px;\r\n                border:2px solid #fff;\r\n                border-top: 0;\r\n                border-left: 0;\r\n                transform: rotate(45deg) scale(0) translate(-50%,-50%);\r\n                opacity: 0;\r\n                content:" ";\r\n                transition: all .3s;\r\n            }\r\n        }\r\n    }\r\n}',
+        "@baseSelector: ant-;\n.@{baseSelector}checkbox-wrapper {\n  font-size: 14px;\n  line-height: 1.57;\n  display: inline-flex;\n  align-items: baseline;\n  cursor: pointer;\n  &.is-disabled {\n    color: #9f9f9f;\n    cursor: not-allowed;\n    .@{baseSelector}checkbox.checked,\n    .@{baseSelector}checkbox {\n      cursor: not-allowed;\n      .@{baseSelector}checkbox-inner {\n        border-color: #d9d9d9;\n        background-color: #f5f5f5;\n        &::after {\n          border-color: rgba(0, 0, 0, 0.4);\n        }\n      }\n    }\n  }\n  .@{baseSelector}checkbox {\n    position: relative;\n    top: 0.2em;\n    line-height: 1;\n    cursor: pointer;\n    white-space: nowrap;\n    margin-right: 8px;\n    &.checked {\n      .@{baseSelector}checkbox-inner {\n        border-color: #1890ff;\n        background-color: #1890ff;\n        &::after {\n          opacity: 1;\n          transform: translate(-50%, -50%) scale(1) rotate(45deg);\n        }\n      }\n    }\n    .@{baseSelector}checkbox-inner {\n      width: 16px;\n      height: 16px;\n      position: relative;\n      left: 0;\n      top: 0;\n      display: block;\n      background-color: #fff;\n      border: 1px solid #d9d9d9;\n      border-radius: 2px;\n      transition: all 0.3s;\n      &::after {\n        position: absolute;\n        top: 35%;\n        left: 50%;\n        display: table;\n        width: 5.714px;\n        height: 9.14px;\n        border: 2px solid #fff;\n        border-top: 0;\n        border-left: 0;\n        transform: rotate(45deg) scale(0) translate(-50%, -50%);\n        opacity: 0;\n        content: ' ';\n        transition: all 0.3s;\n      }\n    }\n  }\n}",
       N =
-        'import React from "react";\r\nimport Checkbox from "./Checkbox"\r\n\r\nconst Demo = () => {\r\n    const onChange = (v: boolean) => {\r\n        console.log(v);\r\n    }\r\n    return (\r\n        <Checkbox onChange={onChange}>\u590d\u9009\u6846</Checkbox>\r\n    )\r\n}\r\n\r\nexport default Demo',
+        "import React,{ useState } from 'react';\nimport Checkbox from './Checkbox';\nimport { Space } from 'antd'\n\nconst Demo = () => {\n  const [checked,setChecked] = useState(false);\n  const onChange = (v: boolean) => {\n    console.log(v);\n  };\n  const onControlledChange = () => {\n    setChecked(!checked);\n  }\n  return (\n    <Space>\n      <Checkbox onChange={onChange}>\u590d\u9009\u6846</Checkbox>\n      <Checkbox disabled>\u7981\u7528\u7684\u590d\u9009\u6846</Checkbox>\n      <Checkbox checked={checked} onChange={onControlledChange}>\u53d7\u63a7\u7684\u590d\u9009\u6846</Checkbox>\n    </Space>\n  );\n};\n\nexport default Demo;",
       A =
         "import React from 'react';\nimport Collapse from './Collapse';\nconst Demo = () => {\n  return (\n    <Collapse>\n      <h1>This is a collapse</h1>\n      <p>Hello world!</p>\n    </Collapse>\n  );\n};\n\nexport default Demo;",
       R =
@@ -26923,7 +26926,11 @@
               'Checkbox.tsx': { import: './Checkbox', content: P },
               'Checkbox.less': { import: './Checkbox.less', content: I },
             },
-            dependencies: { react: { version: '16.14.0' } },
+            dependencies: {
+              react: { version: '16.14.0' },
+              antd: { version: '4.21.5', css: 'antd/dist/antd.css' },
+              'react-dom': { version: '>=16.9.0' },
+            },
             identifier: 'checkbox-demo',
           },
         },
@@ -26935,7 +26942,11 @@
               'Checkbox.tsx': { import: './Checkbox', content: P },
               'Checkbox.less': { import: './Checkbox.less', content: I },
             },
-            dependencies: { react: { version: '16.14.0' } },
+            dependencies: {
+              react: { version: '16.14.0' },
+              antd: { version: '4.21.5', css: 'antd/dist/antd.css' },
+              'react-dom': { version: '>=16.9.0' },
+            },
             identifier: 'checkbox-demo.zh-cn',
           },
         },
@@ -44136,16 +44147,35 @@
   oUx9: function (e, t, n) {
     'use strict';
     n.r(t);
-    var r = n('q1tI'),
-      a = n.n(r),
-      o = n('DvLG'),
-      i = () => {
-        var e = (e) => {
-          console.log(e);
-        };
-        return a.a.createElement(o['a'], { onChange: e }, 'checkbox');
+    var r = n('tJVT'),
+      a = n('q1tI'),
+      o = n.n(a),
+      i = n('DvLG'),
+      l = n('zeV3'),
+      c = () => {
+        var e = Object(a['useState'])(!1),
+          t = Object(r['a'])(e, 2),
+          n = t[0],
+          c = t[1],
+          s = (e) => {
+            console.log(e);
+          },
+          u = () => {
+            c(!n);
+          };
+        return o.a.createElement(
+          l['b'],
+          null,
+          o.a.createElement(i['a'], { onChange: s }, 'checkbox'),
+          o.a.createElement(i['a'], { disabled: !0 }, 'disabled checkbox'),
+          o.a.createElement(
+            i['a'],
+            { checked: n, onChange: u },
+            'controlled checkbox',
+          ),
+        );
       };
-    t['default'] = i;
+    t['default'] = c;
   },
   ofBz: function (e, t, n) {
     'use strict';
@@ -45909,16 +45939,39 @@
   rSXV: function (e, t, n) {
     'use strict';
     n.r(t);
-    var r = n('q1tI'),
-      a = n.n(r),
-      o = n('DvLG'),
-      i = () => {
-        var e = (e) => {
-          console.log(e);
-        };
-        return a.a.createElement(o['a'], { onChange: e }, '\u590d\u9009\u6846');
+    var r = n('tJVT'),
+      a = n('q1tI'),
+      o = n.n(a),
+      i = n('DvLG'),
+      l = n('zeV3'),
+      c = () => {
+        var e = Object(a['useState'])(!1),
+          t = Object(r['a'])(e, 2),
+          n = t[0],
+          c = t[1],
+          s = (e) => {
+            console.log(e);
+          },
+          u = () => {
+            c(!n);
+          };
+        return o.a.createElement(
+          l['b'],
+          null,
+          o.a.createElement(i['a'], { onChange: s }, '\u590d\u9009\u6846'),
+          o.a.createElement(
+            i['a'],
+            { disabled: !0 },
+            '\u7981\u7528\u7684\u590d\u9009\u6846',
+          ),
+          o.a.createElement(
+            i['a'],
+            { checked: n, onChange: u },
+            '\u53d7\u63a7\u7684\u590d\u9009\u6846',
+          ),
+        );
       };
-    t['default'] = i;
+    t['default'] = c;
   },
   rW0t: function (e, t, n) {
     'use strict';
