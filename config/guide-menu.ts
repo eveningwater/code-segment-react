@@ -75,4 +75,8 @@ export default [
     title: 'Checkbox',
     path: '/guide/Checkbox/Checkbox',
   },
+  {
+    title: 'PasswordRevealer',
+    path: '/guide/password-revealer/password-revealer',
+  },
 ];

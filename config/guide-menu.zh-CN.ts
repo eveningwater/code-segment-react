@@ -75,4 +75,8 @@ export default [
     title: '复选框组件',
     path: '/zh-CN/guide/Checkbox/Checkbox',
   },
+  {
+    title: '密码显示器',
+    path: '/zh-CN/guide/password-revealer/password-revealer',
+  },
 ];
