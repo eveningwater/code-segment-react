@@ -3777,7 +3777,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/Checkbox/Checkbox.md',
-                updatedTime: 1658900464229,
+                updatedTime: 1658900678528,
                 slugs: [],
                 hasPreviewer: !0,
                 nav: { path: '/guide', title: 'Guide' },
@@ -3792,7 +3792,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/Checkbox/Checkbox.zh-CN.md',
-                updatedTime: 1658900472755,
+                updatedTime: 1658900678581,
                 slugs: [],
                 hasPreviewer: !0,
                 locale: 'zh-CN',
@@ -4140,6 +4140,44 @@
               title: 'Modal - react-code-segment',
             },
             {
+              path: '/guide/password-revealer/password-revealer',
+              component: n('dSgD').default,
+              exact: !0,
+              meta: {
+                filePath: 'docs/guide/PasswordRevealer/PasswordRevealer.md',
+                updatedTime: 1658967459843,
+                slugs: [],
+                hasPreviewer: !0,
+                nav: { path: '/guide', title: 'Guide' },
+                group: {
+                  path: '/guide/password-revealer',
+                  title: 'PasswordRevealer',
+                },
+                title: 'PasswordRevealer',
+              },
+              title: 'PasswordRevealer - react-code-segment',
+            },
+            {
+              path: '/zh-CN/guide/password-revealer/password-revealer',
+              component: n('ABbl').default,
+              exact: !0,
+              meta: {
+                filePath:
+                  'docs/guide/PasswordRevealer/PasswordRevealer.zh-CN.md',
+                updatedTime: 1658967467971,
+                slugs: [],
+                hasPreviewer: !0,
+                locale: 'zh-CN',
+                nav: { path: '/zh-CN/guide', title: 'Guide' },
+                group: {
+                  path: '/zh-CN/guide/password-revealer',
+                  title: 'PasswordRevealer',
+                },
+                title: 'PasswordRevealer',
+              },
+              title: 'PasswordRevealer - react-code-segment',
+            },
+            {
               path: '/guide/simple-data-list/simple-data-list',
               component: n('YsBS').default,
               exact: !0,
@@ -4468,6 +4506,18 @@
               meta: {},
               exact: !0,
               redirect: '/zh-CN/guide/modal/modal',
+            },
+            {
+              path: '/guide/password-revealer',
+              meta: {},
+              exact: !0,
+              redirect: '/guide/password-revealer/password-revealer',
+            },
+            {
+              path: '/zh-CN/guide/password-revealer',
+              meta: {},
+              exact: !0,
+              redirect: '/zh-CN/guide/password-revealer/password-revealer',
             },
             {
               path: '/guide/simple-data-list',
@@ -4985,6 +5035,29 @@
         !a((e = n ? e : e.prototype), i) &&
         r(e, i, { configurable: !0, value: t });
     };
+  },
+  '1Hsh': function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n('tJVT'),
+      a = n('q1tI'),
+      o = n.n(a),
+      i = n('DDiY'),
+      l = () => {
+        var e = Object(a['useState'])(''),
+          t = Object(r['a'])(e, 2),
+          n = t[0],
+          l = t[1],
+          c = (e) => {
+            console.log(e), l(e);
+          };
+        return o.a.createElement(i['a'], {
+          placeholder: 'Please Input the password',
+          value: n,
+          onChange: c,
+        });
+      };
+    t['default'] = l;
   },
   '1OyB': function (e, t, n) {
     'use strict';
@@ -15298,6 +15371,127 @@
     }
     e.exports = l;
   },
+  ABbl: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n('q1tI'),
+      a = n.n(r),
+      o = n('dEAq'),
+      i = n('Zxc8'),
+      l = n('H1Ra'),
+      c = n('dMo/'),
+      s = a.a.memo((e) => {
+        var t = e.demos,
+          n = t['passwordrevealer-demo.zh-cn'].component;
+        return a.a.createElement(
+          a.a.Fragment,
+          null,
+          a.a.createElement(
+            a.a.Fragment,
+            null,
+            a.a.createElement(
+              'div',
+              { className: 'markdown' },
+              a.a.createElement(
+                c['a'],
+                null,
+                a.a.createElement(
+                  'thead',
+                  null,
+                  a.a.createElement(
+                    'tr',
+                    null,
+                    a.a.createElement('th', null, '\u6807\u9898'),
+                    a.a.createElement('th', null, '\u6807\u7b7e'),
+                    a.a.createElement(
+                      'th',
+                      null,
+                      '\u9996\u6b21\u6dfb\u52a0\u65f6\u95f4',
+                    ),
+                    a.a.createElement('th', null, '\u66f4\u65b0\u65f6\u95f4'),
+                  ),
+                ),
+                a.a.createElement(
+                  'tbody',
+                  null,
+                  a.a.createElement(
+                    'tr',
+                    null,
+                    a.a.createElement(
+                      'td',
+                      null,
+                      '\u5bc6\u7801\u663e\u793a\u5668\u7ec4\u4ef6',
+                    ),
+                    a.a.createElement(
+                      'td',
+                      null,
+                      '\u7ec4\u4ef6,\u72b6\u6001\uff0c\u8f93\u5165\u6846',
+                    ),
+                    a.a.createElement('td', null, '2022/7/28'),
+                    a.a.createElement('td', null, '2022/7/28'),
+                  ),
+                ),
+              ),
+              a.a.createElement(
+                'p',
+                null,
+                '\u4f7f\u7528\u663e\u793a\u6309\u94ae\u5448\u73b0\u5bc6\u7801\u8f93\u5165\u5b57\u6bb5\u3002',
+              ),
+              a.a.createElement(
+                'ul',
+                null,
+                a.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 useState() \u94a9\u5b50\u521b\u5efa\u663e\u793a\u7684\u72b6\u6001\u53d8\u91cf\u5e76\u5c06\u5176\u503c\u8bbe\u7f6e\u4e3a false\u3002',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  '\u5f53\u70b9\u51fb ',
+                  a.a.createElement('code', null, 'span'),
+                  " \u65f6\uff0c\u6267\u884c setShown\uff0c\u5728 'text' \u548c 'password' \u4e4b\u95f4\u5207\u6362 ",
+                  a.a.createElement('code', null, '<input>'),
+                  ' \u7684\u7c7b\u578b\u3002',
+                ),
+              ),
+              a.a.createElement(l['a'], {
+                code: "@baseSelector: ant-;\n\n.@{baseSelector}password {\n  position: relative;\n    display: inline-block;\n    width: 100%;\n    min-width: 0;\n    color: rgba(0,0,0,.85);\n    font-size: 14px;\n    line-height: 1.5715;\n    background-color: #fff;\n    background-image: none;\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n    transition: all .3s;\n    display: inline-flex;\n    padding: 4px 11px;\n    &-suffix {\n        margin-left: 4px;\n        display: flex;\n        flex: none;\n        align-items: center;\n        cursor: pointer;\n        &-icon {\n           &:hover {\n             color:rgba(0,0,0,.6);\n           }\n        }\n    }\n    &-input {\n        box-sizing: border-box;\n        margin: 0;\n        font-variant: tabular-nums;\n        list-style: none;\n        font-feature-settings: 'tnum';\n        position: relative;\n        display: inline-block;\n        width: 100%;\n        min-width: 0;\n        color: rgba(0,0,0,.85);\n        font-size: 14px;\n        outline: none;\n        line-height: 1.5715;\n        background-color: #fff;\n        background-image: none;\n        border: none;\n        border-radius: 2px;\n        transition: all 0.3s;\n    }\n    &.is-focused {\n      border-color: #40a9ff;\n    }\n}",
+                lang: 'less',
+              }),
+              a.a.createElement(l['a'], {
+                code: 'import React, { useState } from \'react\';\nimport type { SyntheticEvent } from \'react\';\nimport \'./passwordRevealer.less\';\n\nexport interface PasswordRevealerProps extends Record<string, any> {\n  value: string;\n  onChange(v: string): void;\n  placeholder: string;\n}\n\nconst Eye = () => (\n  <svg\n    viewBox="64 64 896 896"\n    className=\'ant-password-suffix-icon\'\n    data-icon="eye"\n    width="1em"\n    height="1em"\n    fill="currentColor"\n  >\n    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>\n  </svg>\n);\nconst EyeClose = () => (\n  <svg\n    viewBox="64 64 896 896"\n    data-icon="eye-invisible"\n    className=\'ant-password-suffix-icon\'\n    width="1em"\n    height="1em"\n    fill="currentColor"\n  >\n    <path d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"></path>\n    <path d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"></path>\n  </svg>\n);\n\nconst PasswordRevealer = (props: Partial<PasswordRevealerProps>) => {\n  const {\n    value,\n    onChange,\n    placeholder = \'Please Input the password\',\n    ...rest\n  } = props;\n  const [isShown, setIsShown] = useState(false);\n  const [isFocus, setIsFocus] = useState(false);\n\n  const onChangeHandler = (e: SyntheticEvent) => {\n    const v = (e.target as HTMLInputElement).value;\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  return (\n    <span className={`ant-password${isFocus ? \' is-focused\' : \'\'}`} {...rest}>\n      <input\n        type={isShown ? \'text\' : \'password\'}\n        className="ant-password-input"\n        value={value}\n        onChange={onChangeHandler}\n        placeholder={placeholder}\n        onFocus={() => setIsFocus(true)}\n        onBlur={() => setIsFocus(false)}\n      />\n      <span\n        className="ant-password-suffix"\n        onClick={() => setIsShown(!isShown)}\n      >\n        {isShown ? <Eye /> : <EyeClose />}\n      </span>\n    </span>\n  );\n};\n\nexport default PasswordRevealer;',
+                lang: 'tsx',
+              }),
+              a.a.createElement('p', null, '\u793a\u4f8b:'),
+            ),
+            a.a.createElement(
+              i['default'],
+              t['passwordrevealer-demo.zh-cn'].previewerProps,
+              a.a.createElement(n, null),
+            ),
+          ),
+        );
+      });
+    t['default'] = (e) => {
+      var t = a.a.useContext(o['context']),
+        n = t.demos;
+      return (
+        a.a.useEffect(() => {
+          var t;
+          null !== e &&
+            void 0 !== e &&
+            null !== (t = e.location) &&
+            void 0 !== t &&
+            t.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        a.a.createElement(s, { demos: n })
+      );
+    };
+  },
   AJpP: function (e, t, n) {
     'use strict';
     n.d(t, 'a', function () {
@@ -16005,6 +16199,90 @@
       o = n('3/bz'),
       i = () => a.a.createElement(o['a'], { limit: 100 });
     t['default'] = i;
+  },
+  DDiY: function (e, t, n) {
+    'use strict';
+    var r = n('0Owb'),
+      a = n('tJVT'),
+      o = n('PpiC'),
+      i = n('q1tI'),
+      l = n.n(i),
+      c =
+        (n('n5+A'),
+        () =>
+          l.a.createElement(
+            'svg',
+            {
+              viewBox: '64 64 896 896',
+              className: 'ant-password-suffix-icon',
+              'data-icon': 'eye',
+              width: '1em',
+              height: '1em',
+              fill: 'currentColor',
+            },
+            l.a.createElement('path', {
+              d: 'M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z',
+            }),
+          )),
+      s = () =>
+        l.a.createElement(
+          'svg',
+          {
+            viewBox: '64 64 896 896',
+            'data-icon': 'eye-invisible',
+            className: 'ant-password-suffix-icon',
+            width: '1em',
+            height: '1em',
+            fill: 'currentColor',
+          },
+          l.a.createElement('path', {
+            d: 'M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z',
+          }),
+          l.a.createElement('path', {
+            d: 'M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z',
+          }),
+        ),
+      u = (e) => {
+        var t = e.value,
+          n = e.onChange,
+          u = e.placeholder,
+          d = void 0 === u ? 'Please Input the password' : u,
+          f = Object(o['a'])(e, ['value', 'onChange', 'placeholder']),
+          p = Object(i['useState'])(!1),
+          m = Object(a['a'])(p, 2),
+          h = m[0],
+          v = m[1],
+          g = Object(i['useState'])(!1),
+          b = Object(a['a'])(g, 2),
+          y = b[0],
+          x = b[1],
+          w = (e) => {
+            var t = e.target.value;
+            n && n(t);
+          };
+        return l.a.createElement(
+          'span',
+          Object(r['a'])(
+            { className: 'ant-password'.concat(y ? ' is-focused' : '') },
+            f,
+          ),
+          l.a.createElement('input', {
+            type: h ? 'text' : 'password',
+            className: 'ant-password-input',
+            value: t,
+            onChange: w,
+            placeholder: d,
+            onFocus: () => x(!0),
+            onBlur: () => x(!1),
+          }),
+          l.a.createElement(
+            'span',
+            { className: 'ant-password-suffix', onClick: () => v(!h) },
+            h ? l.a.createElement(c, null) : l.a.createElement(s, null),
+          ),
+        );
+      };
+    t['a'] = u;
   },
   DEfu: function (e, t, n) {
     var r = n('2oRo'),
@@ -20964,7 +21242,7 @@
                 lang: 'less',
               }),
               a.a.createElement(l['a'], {
-                code: "import React, { useState, useEffect,createRef } from 'react';\nimport type { ReactNode, SyntheticEvent } from 'react';\nimport './Checkbox.less';\n\nexport interface CheckboxProps extends Record<string, any> {\n  disabled: boolean;\n  checked: boolean;\n  defaultChecked: boolean;\n  children: ReactNode;\n  onChange(v: boolean): void;\n}\n\nconst Checkbox = (props: Partial<CheckboxProps>) => {\n  const { disabled, checked, defaultChecked, children, onChange } = props;\n  const [value, setValue] = useState(!!defaultChecked);\n  useEffect(() => {\n      if(typeof checked === 'boolean'){\n        if(disabled){\n          return;\n        }\n        setValue(checked)\n      }\n  },[checked])\n  const onChangeHandler = () => {\n    if(disabled){\n      return;\n    }\n    setValue(!value);\n    if (onChange) {\n      onChange(!value);\n    }\n  }\n\n  return (\n    <label\n      className={`ant-checkbox-wrapper${disabled ? ' is-disabled' : ''}`}\n      onClick={onChangeHandler}\n    >\n      <span className={`ant-checkbox${value ? ' checked' : ''}`}>\n        <span className=\"ant-checkbox-inner\"></span>\n      </span>\n      {children}\n    </label>\n  );\n};\n\nexport default Checkbox;",
+                code: "import React, { useState, useEffect, createRef } from 'react';\nimport type { ReactNode, SyntheticEvent } from 'react';\nimport './Checkbox.less';\n\nexport interface CheckboxProps extends Record<string, any> {\n  disabled: boolean;\n  checked: boolean;\n  defaultChecked: boolean;\n  children: ReactNode;\n  onChange(v: boolean): void;\n}\n\nconst Checkbox = (props: Partial<CheckboxProps>) => {\n  const { disabled, checked, defaultChecked, children, onChange } = props;\n  const [value, setValue] = useState(!!defaultChecked);\n  useEffect(() => {\n    if (typeof checked === 'boolean') {\n      if (disabled) {\n        return;\n      }\n      setValue(checked);\n    }\n  }, [checked]);\n  const onChangeHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setValue(!value);\n    if (onChange) {\n      onChange(!value);\n    }\n  };\n\n  return (\n    <label\n      className={`ant-checkbox-wrapper${disabled ? ' is-disabled' : ''}`}\n      onClick={onChangeHandler}\n    >\n      <span className={`ant-checkbox${value ? ' checked' : ''}`}>\n        <span className=\"ant-checkbox-inner\"></span>\n      </span>\n      {children}\n    </label>\n  );\n};\n\nexport default Checkbox;",
                 lang: 'tsx',
               }),
               a.a.createElement('p', null, '\u793a\u4f8b:'),
@@ -21630,7 +21908,7 @@
                 lang: 'less',
               }),
               a.a.createElement(l['a'], {
-                code: "import React, { useState, useEffect,createRef } from 'react';\nimport type { ReactNode, SyntheticEvent } from 'react';\nimport './Checkbox.less';\n\nexport interface CheckboxProps extends Record<string, any> {\n  disabled: boolean;\n  checked: boolean;\n  defaultChecked: boolean;\n  children: ReactNode;\n  onChange(v: boolean): void;\n}\n\nconst Checkbox = (props: Partial<CheckboxProps>) => {\n  const { disabled, checked, defaultChecked, children, onChange } = props;\n  const [value, setValue] = useState(!!defaultChecked);\n  useEffect(() => {\n      if(typeof checked === 'boolean'){\n        if(disabled){\n          return;\n        }\n        setValue(checked)\n      }\n  },[checked])\n  const onChangeHandler = () => {\n    if(disabled){\n      return;\n    }\n    setValue(!value);\n    if (onChange) {\n      onChange(!value);\n    }\n  }\n\n  return (\n    <label\n      className={`ant-checkbox-wrapper${disabled ? ' is-disabled' : ''}`}\n      onClick={onChangeHandler}\n    >\n      <span className={`ant-checkbox${value ? ' checked' : ''}`}>\n        <span className=\"ant-checkbox-inner\"></span>\n      </span>\n      {children}\n    </label>\n  );\n};\n\nexport default Checkbox;",
+                code: "import React, { useState, useEffect, createRef } from 'react';\nimport type { ReactNode, SyntheticEvent } from 'react';\nimport './Checkbox.less';\n\nexport interface CheckboxProps extends Record<string, any> {\n  disabled: boolean;\n  checked: boolean;\n  defaultChecked: boolean;\n  children: ReactNode;\n  onChange(v: boolean): void;\n}\n\nconst Checkbox = (props: Partial<CheckboxProps>) => {\n  const { disabled, checked, defaultChecked, children, onChange } = props;\n  const [value, setValue] = useState(!!defaultChecked);\n  useEffect(() => {\n    if (typeof checked === 'boolean') {\n      if (disabled) {\n        return;\n      }\n      setValue(checked);\n    }\n  }, [checked]);\n  const onChangeHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setValue(!value);\n    if (onChange) {\n      onChange(!value);\n    }\n  };\n\n  return (\n    <label\n      className={`ant-checkbox-wrapper${disabled ? ' is-disabled' : ''}`}\n      onClick={onChangeHandler}\n    >\n      <span className={`ant-checkbox${value ? ' checked' : ''}`}>\n        <span className=\"ant-checkbox-inner\"></span>\n      </span>\n      {children}\n    </label>\n  );\n};\n\nexport default Checkbox;",
                 lang: 'tsx',
               }),
               a.a.createElement('p', null, 'Demo:'),
@@ -26594,13 +26872,13 @@
       j =
         'import React, { useState, useEffect, cloneElement } from \'react\';\nimport type { ReactNode } from \'react\';\nimport \'./Carousel.less\';\n\ninterface CarouselItemProps {\n  children: ReactNode;\n  className: string | Record<string, string | number>;\n}\n\ninterface CarouselProps {\n  options: ReactNode[];\n  duration: number;\n  children: JSX.Element[];\n  defaultKey: string;\n}\n\nconst CarouselItem = (props: Partial<CarouselItemProps>) => {\n  const { children } = props;\n  return <div className="carousel-item">{children}</div>;\n};\n\nconst Carousel = (props: Partial<CarouselProps>) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer: number | undefined;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter((item) => item?.type?.name === \'CarouselItem\') || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className="carousel">\n      <div\n        className="carousel-slide"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(item, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nconst Demo = () => {\n  return (\n    <Carousel defaultKey="2">\n      <CarouselItem key="1">\u8f6e\u64ad\u56fe1</CarouselItem>\n      <CarouselItem key="2">\u8f6e\u64ad\u56fe 2</CarouselItem>\n      <CarouselItem key="3">\u8f6e\u64ad\u56fe 3</CarouselItem>\n    </Carousel>\n  );\n};\n\nexport default Demo;',
       T =
-        "import React,{ useState } from 'react';\nimport Checkbox from './Checkbox';\nimport { Space } from 'antd'\n\nconst Demo = () => {\n  const [checked,setChecked] = useState(false);\n  const onChange = (v: boolean) => {\n    console.log(v);\n  };\n  const onControlledChange = () => {\n    setChecked(!checked);\n  }\n  return (\n    <Space>\n      <Checkbox onChange={onChange}>checkbox</Checkbox>\n      <Checkbox disabled>disabled checkbox</Checkbox>\n      <Checkbox checked={checked} onChange={onControlledChange}>controlled checkbox</Checkbox>\n    </Space>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Checkbox from './Checkbox';\nimport { Space } from 'antd';\n\nconst Demo = () => {\n  const [checked, setChecked] = useState(false);\n  const onChange = (v: boolean) => {\n    console.log(v);\n  };\n  const onControlledChange = () => {\n    setChecked(!checked);\n  };\n  return (\n    <Space>\n      <Checkbox onChange={onChange}>checkbox</Checkbox>\n      <Checkbox disabled>disabled checkbox</Checkbox>\n      <Checkbox checked={checked} onChange={onControlledChange}>\n        controlled checkbox\n      </Checkbox>\n    </Space>\n  );\n};\n\nexport default Demo;",
       P =
-        "import React, { useState, useEffect,createRef } from 'react';\nimport type { ReactNode, SyntheticEvent } from 'react';\nimport './Checkbox.less';\n\nexport interface CheckboxProps extends Record<string, any> {\n  disabled: boolean;\n  checked: boolean;\n  defaultChecked: boolean;\n  children: ReactNode;\n  onChange(v: boolean): void;\n}\n\nconst Checkbox = (props: Partial<CheckboxProps>) => {\n  const { disabled, checked, defaultChecked, children, onChange } = props;\n  const [value, setValue] = useState(!!defaultChecked);\n  useEffect(() => {\n      if(typeof checked === 'boolean'){\n        if(disabled){\n          return;\n        }\n        setValue(checked)\n      }\n  },[checked])\n  const onChangeHandler = () => {\n    if(disabled){\n      return;\n    }\n    setValue(!value);\n    if (onChange) {\n      onChange(!value);\n    }\n  }\n\n  return (\n    <label\n      className={`ant-checkbox-wrapper${disabled ? ' is-disabled' : ''}`}\n      onClick={onChangeHandler}\n    >\n      <span className={`ant-checkbox${value ? ' checked' : ''}`}>\n        <span className=\"ant-checkbox-inner\"></span>\n      </span>\n      {children}\n    </label>\n  );\n};\n\nexport default Checkbox;",
+        "import React, { useState, useEffect, createRef } from 'react';\nimport type { ReactNode, SyntheticEvent } from 'react';\nimport './Checkbox.less';\n\nexport interface CheckboxProps extends Record<string, any> {\n  disabled: boolean;\n  checked: boolean;\n  defaultChecked: boolean;\n  children: ReactNode;\n  onChange(v: boolean): void;\n}\n\nconst Checkbox = (props: Partial<CheckboxProps>) => {\n  const { disabled, checked, defaultChecked, children, onChange } = props;\n  const [value, setValue] = useState(!!defaultChecked);\n  useEffect(() => {\n    if (typeof checked === 'boolean') {\n      if (disabled) {\n        return;\n      }\n      setValue(checked);\n    }\n  }, [checked]);\n  const onChangeHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setValue(!value);\n    if (onChange) {\n      onChange(!value);\n    }\n  };\n\n  return (\n    <label\n      className={`ant-checkbox-wrapper${disabled ? ' is-disabled' : ''}`}\n      onClick={onChangeHandler}\n    >\n      <span className={`ant-checkbox${value ? ' checked' : ''}`}>\n        <span className=\"ant-checkbox-inner\"></span>\n      </span>\n      {children}\n    </label>\n  );\n};\n\nexport default Checkbox;",
       I =
         "@baseSelector: ant-;\n.@{baseSelector}checkbox-wrapper {\n  font-size: 14px;\n  line-height: 1.57;\n  display: inline-flex;\n  align-items: baseline;\n  cursor: pointer;\n  &.is-disabled {\n    color: #9f9f9f;\n    cursor: not-allowed;\n    .@{baseSelector}checkbox.checked,\n    .@{baseSelector}checkbox {\n      cursor: not-allowed;\n      .@{baseSelector}checkbox-inner {\n        border-color: #d9d9d9;\n        background-color: #f5f5f5;\n        &::after {\n          border-color: rgba(0, 0, 0, 0.4);\n        }\n      }\n    }\n  }\n  .@{baseSelector}checkbox {\n    position: relative;\n    top: 0.2em;\n    line-height: 1;\n    cursor: pointer;\n    white-space: nowrap;\n    margin-right: 8px;\n    &.checked {\n      .@{baseSelector}checkbox-inner {\n        border-color: #1890ff;\n        background-color: #1890ff;\n        &::after {\n          opacity: 1;\n          transform: translate(-50%, -50%) scale(1) rotate(45deg);\n        }\n      }\n    }\n    .@{baseSelector}checkbox-inner {\n      width: 16px;\n      height: 16px;\n      position: relative;\n      left: 0;\n      top: 0;\n      display: block;\n      background-color: #fff;\n      border: 1px solid #d9d9d9;\n      border-radius: 2px;\n      transition: all 0.3s;\n      &::after {\n        position: absolute;\n        top: 35%;\n        left: 50%;\n        display: table;\n        width: 5.714px;\n        height: 9.14px;\n        border: 2px solid #fff;\n        border-top: 0;\n        border-left: 0;\n        transform: rotate(45deg) scale(0) translate(-50%, -50%);\n        opacity: 0;\n        content: ' ';\n        transition: all 0.3s;\n      }\n    }\n  }\n}",
       N =
-        "import React,{ useState } from 'react';\nimport Checkbox from './Checkbox';\nimport { Space } from 'antd'\n\nconst Demo = () => {\n  const [checked,setChecked] = useState(false);\n  const onChange = (v: boolean) => {\n    console.log(v);\n  };\n  const onControlledChange = () => {\n    setChecked(!checked);\n  }\n  return (\n    <Space>\n      <Checkbox onChange={onChange}>\u590d\u9009\u6846</Checkbox>\n      <Checkbox disabled>\u7981\u7528\u7684\u590d\u9009\u6846</Checkbox>\n      <Checkbox checked={checked} onChange={onControlledChange}>\u53d7\u63a7\u7684\u590d\u9009\u6846</Checkbox>\n    </Space>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Checkbox from './Checkbox';\nimport { Space } from 'antd';\n\nconst Demo = () => {\n  const [checked, setChecked] = useState(false);\n  const onChange = (v: boolean) => {\n    console.log(v);\n  };\n  const onControlledChange = () => {\n    setChecked(!checked);\n  };\n  return (\n    <Space>\n      <Checkbox onChange={onChange}>\u590d\u9009\u6846</Checkbox>\n      <Checkbox disabled>\u7981\u7528\u7684\u590d\u9009\u6846</Checkbox>\n      <Checkbox checked={checked} onChange={onControlledChange}>\n        \u53d7\u63a7\u7684\u590d\u9009\u6846\n      </Checkbox>\n    </Space>\n  );\n};\n\nexport default Demo;",
       A =
         "import React from 'react';\nimport Collapse from './Collapse';\nconst Demo = () => {\n  return (\n    <Collapse>\n      <h1>This is a collapse</h1>\n      <p>Hello world!</p>\n    </Collapse>\n  );\n};\n\nexport default Demo;",
       R =
@@ -26666,28 +26944,36 @@
       se =
         "import React, { useState } from 'react';\nimport Modal from './Modal';\nimport { Button, Space } from 'antd';\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const onCreate = () => {\n    Modal.confirm({\n      title: '\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898',\n      content: (\n        <>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        </>\n      ),\n    });\n  };\n  return (\n    <Space>\n      <Button onClick={() => setVisible(true)}>clicked me</Button>\n      <Button onClick={onCreate}>clicked me</Button>\n      <Modal\n        visible={visible}\n        onCancel={() => setVisible(false)}\n        title=\"\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898\"\n        showCancel\n        onOk={() => setVisible(false)}\n      >\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n      </Modal>\n    </Space>\n  );\n};\n\nexport default Demo;",
       ue =
-        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['name1', 'name2', 'name3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
+        "import React,{ useState } from 'react'\r\nimport PasswordRevealer from './PasswordRevealer'\r\nconst Demo = () => {\r\n    const [value,setValue] = useState('')\r\n    const onChange = (v: string) => {\r\n         console.log(v);\r\n         setValue(v);\r\n    }\r\n    return (\r\n        <PasswordRevealer placeholder='Please Input the password' value={value} onChange={onChange}></PasswordRevealer>\r\n    )\r\n}\r\n\r\nexport default Demo;",
       de =
-        "import { css } from '@emotion/css';\nimport React from 'react';\n\ninterface DataListProps {\n  data: string[];\n  isOrdered: boolean;\n  isBordered: boolean;\n}\nconst SimpleStyleDataList = css`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-size: 14px;\n  line-height: 1.5715;\n  list-style: none;\n  position: relative;\n  &.bordered {\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n  }\n`;\nconst SimpleDataListItem = css`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 24px;\n  color: rgba(0, 0, 0, 0.85);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  &:last-of-type {\n    border-bottom: 0;\n  }\n`;\nconst SimpleDataList = (props: Partial<DataListProps>) => {\n  const { data, isOrdered = false, isBordered = true } = props;\n  const List = data?.map((val, index) => (\n    <li className={SimpleDataListItem} key={`${val}-${index}`}>\n      {val}\n    </li>\n  ));\n  const containerClassName = `${SimpleStyleDataList}${\n    isBordered ? ' bordered' : ''\n  }`;\n  return isOrdered ? (\n    <ol className={containerClassName}>{List}</ol>\n  ) : (\n    <ul className={containerClassName}>{List}</ul>\n  );\n};\n\nexport default SimpleDataList;",
+        'import React, { useState } from \'react\';\r\nimport type { SyntheticEvent } from \'react\';\r\nimport \'./passwordRevealer.less\';\r\n\r\nexport interface PasswordRevealerProps extends Record<string, any> {\r\n  value: string;\r\n  onChange(v: string): void;\r\n  placeholder: string;\r\n}\r\n\r\nconst Eye = () => (\r\n  <svg\r\n    viewBox="64 64 896 896"\r\n    className=\'ant-password-suffix-icon\'\r\n    data-icon="eye"\r\n    width="1em"\r\n    height="1em"\r\n    fill="currentColor"\r\n  >\r\n    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>\r\n  </svg>\r\n);\r\nconst EyeClose = () => (\r\n  <svg\r\n    viewBox="64 64 896 896"\r\n    data-icon="eye-invisible"\r\n    className=\'ant-password-suffix-icon\'\r\n    width="1em"\r\n    height="1em"\r\n    fill="currentColor"\r\n  >\r\n    <path d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"></path>\r\n    <path d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"></path>\r\n  </svg>\r\n);\r\n\r\nconst PasswordRevealer = (props: Partial<PasswordRevealerProps>) => {\r\n  const {\r\n    value,\r\n    onChange,\r\n    placeholder = \'Please Input the password\',\r\n    ...rest\r\n  } = props;\r\n  const [isShown, setIsShown] = useState(false);\r\n  const [isFocus, setIsFocus] = useState(false);\r\n\r\n  const onChangeHandler = (e: SyntheticEvent) => {\r\n    const v = (e.target as HTMLInputElement).value;\r\n    if (onChange) {\r\n      onChange(v);\r\n    }\r\n  };\r\n  return (\r\n    <span className={`ant-password${isFocus ? \' is-focused\' : \'\'}`} {...rest}>\r\n      <input\r\n        type={isShown ? \'text\' : \'password\'}\r\n        className="ant-password-input"\r\n        value={value}\r\n        onChange={onChangeHandler}\r\n        placeholder={placeholder}\r\n        onFocus={() => setIsFocus(true)}\r\n        onBlur={() => setIsFocus(false)}\r\n      />\r\n      <span\r\n        className="ant-password-suffix"\r\n        onClick={() => setIsShown(!isShown)}\r\n      >\r\n        {isShown ? <Eye /> : <EyeClose />}\r\n      </span>\r\n    </span>\r\n  );\r\n};\r\n\r\nexport default PasswordRevealer;',
       fe =
-        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['\u59d3\u540d1', '\u59d3\u540d2', '\u59d3\u540d3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
+        "@baseSelector: ant-;\r\n\r\n.@{baseSelector}password {\r\n  position: relative;\r\n    display: inline-block;\r\n    width: 100%;\r\n    min-width: 0;\r\n    color: rgba(0,0,0,.85);\r\n    font-size: 14px;\r\n    line-height: 1.5715;\r\n    background-color: #fff;\r\n    background-image: none;\r\n    border: 1px solid #d9d9d9;\r\n    border-radius: 2px;\r\n    transition: all .3s;\r\n    display: inline-flex;\r\n    padding: 4px 11px;\r\n    &-suffix {\r\n        margin-left: 4px;\r\n        display: flex;\r\n        flex: none;\r\n        align-items: center;\r\n        cursor: pointer;\r\n        &-icon {\r\n           &:hover {\r\n             color:rgba(0,0,0,.6);\r\n           }\r\n        }\r\n    }\r\n    &-input {\r\n        box-sizing: border-box;\r\n        margin: 0;\r\n        font-variant: tabular-nums;\r\n        list-style: none;\r\n        font-feature-settings: 'tnum';\r\n        position: relative;\r\n        display: inline-block;\r\n        width: 100%;\r\n        min-width: 0;\r\n        color: rgba(0,0,0,.85);\r\n        font-size: 14px;\r\n        outline: none;\r\n        line-height: 1.5715;\r\n        background-color: #fff;\r\n        background-image: none;\r\n        border: none;\r\n        border-radius: 2px;\r\n        transition: all 0.3s;\r\n    }\r\n    &.is-focused {\r\n      border-color: #40a9ff;\r\n    }\r\n}",
       pe =
-        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
+        "import React,{ useState } from 'react'\r\nimport PasswordRevealer from './PasswordRevealer'\r\nconst Demo = () => {\r\n    const [value,setValue] = useState('')\r\n    const onChange = (v: string) => {\r\n         console.log(v);\r\n         setValue(v);\r\n    }\r\n    return (\r\n        <PasswordRevealer placeholder='\u8bf7\u8f93\u5165\u5bc6\u7801' value={value} onChange={onChange}></PasswordRevealer>\r\n    )\r\n}\r\n\r\nexport default Demo;",
       me =
-        'import React from \'react\';\nimport \'./simpleDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleDataTable = (props: Partial<SimpleDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {data?.map((item) => (\n          <tr key={item.key} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleDataTable;',
+        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['name1', 'name2', 'name3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
       he =
-        '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
+        "import { css } from '@emotion/css';\nimport React from 'react';\n\ninterface DataListProps {\n  data: string[];\n  isOrdered: boolean;\n  isBordered: boolean;\n}\nconst SimpleStyleDataList = css`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-size: 14px;\n  line-height: 1.5715;\n  list-style: none;\n  position: relative;\n  &.bordered {\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n  }\n`;\nconst SimpleDataListItem = css`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 24px;\n  color: rgba(0, 0, 0, 0.85);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  &:last-of-type {\n    border-bottom: 0;\n  }\n`;\nconst SimpleDataList = (props: Partial<DataListProps>) => {\n  const { data, isOrdered = false, isBordered = true } = props;\n  const List = data?.map((val, index) => (\n    <li className={SimpleDataListItem} key={`${val}-${index}`}>\n      {val}\n    </li>\n  ));\n  const containerClassName = `${SimpleStyleDataList}${\n    isBordered ? ' bordered' : ''\n  }`;\n  return isOrdered ? (\n    <ol className={containerClassName}>{List}</ol>\n  ) : (\n    <ul className={containerClassName}>{List}</ul>\n  );\n};\n\nexport default SimpleDataList;",
       ve =
-        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
+        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['\u59d3\u540d1', '\u59d3\u540d2', '\u59d3\u540d3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
       ge =
-        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
+        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
       be =
-        'import React from \'react\';\nimport \'./SimpleMappedDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleMappedDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleMappedDataTable = (props: Partial<SimpleMappedDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n\n  let filteredData = data?.map((v) =>\n    Object.keys(v)\n      .filter((k) => columns?.some((col) => col.dataIndex === k))\n      .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n  ) as DataProps[];\n\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {filteredData?.map((item, index) => (\n          <tr key={`${index}_${index}`} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleMappedDataTable;',
+        'import React from \'react\';\nimport \'./simpleDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleDataTable = (props: Partial<SimpleDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {data?.map((item) => (\n          <tr key={item.key} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleDataTable;',
       ye =
         '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
       xe =
+        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
+      we =
+        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
+      Ee =
+        'import React from \'react\';\nimport \'./SimpleMappedDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleMappedDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleMappedDataTable = (props: Partial<SimpleMappedDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n\n  let filteredData = data?.map((v) =>\n    Object.keys(v)\n      .filter((k) => columns?.some((col) => col.dataIndex === k))\n      .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n  ) as DataProps[];\n\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {filteredData?.map((item, index) => (\n          <tr key={`${index}_${index}`} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleMappedDataTable;',
+      ke =
+        '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
+      Ce =
         "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
-      we = {
+      Oe = {
         'loadingbutton-demo': {
           component: n('4ZnB').default,
           previewerProps: {
@@ -27298,12 +27584,48 @@
             identifier: 'modal-demo.zh-cn',
           },
         },
+        'passwordrevealer-demo': {
+          component: n('1Hsh').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: ue },
+              'PasswordRevealer.tsx': {
+                import: './PasswordRevealer',
+                content: de,
+              },
+              'passwordRevealer.less': {
+                import: './passwordRevealer.less',
+                content: fe,
+              },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'passwordrevealer-demo',
+          },
+        },
+        'passwordrevealer-demo.zh-cn': {
+          component: n('pE9f').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: pe },
+              'PasswordRevealer.tsx': {
+                import: './PasswordRevealer',
+                content: de,
+              },
+              'passwordRevealer.less': {
+                import: './passwordRevealer.less',
+                content: fe,
+              },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'passwordrevealer-demo.zh-cn',
+          },
+        },
         'simpledatalist-demo': {
           component: n('kFD3').default,
           previewerProps: {
             sources: {
-              _: { tsx: ue },
-              'SimpleDataList.tsx': { import: './SimpleDataList', content: de },
+              _: { tsx: me },
+              'SimpleDataList.tsx': { import: './SimpleDataList', content: he },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -27317,8 +27639,8 @@
           component: n('9yqU').default,
           previewerProps: {
             sources: {
-              _: { tsx: fe },
-              'SimpleDataList.tsx': { import: './SimpleDataList', content: de },
+              _: { tsx: ve },
+              'SimpleDataList.tsx': { import: './SimpleDataList', content: he },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -27332,14 +27654,14 @@
           component: n('iBx2').default,
           previewerProps: {
             sources: {
-              _: { tsx: pe },
+              _: { tsx: ge },
               'SimpleDataTable.tsx': {
                 import: './SimpleDataTable',
-                content: me,
+                content: be,
               },
               'simpleDataTable.less': {
                 import: './simpleDataTable.less',
-                content: he,
+                content: ye,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -27350,14 +27672,14 @@
           component: n('LCi9').default,
           previewerProps: {
             sources: {
-              _: { tsx: ve },
+              _: { tsx: xe },
               'SimpleDataTable.tsx': {
                 import: './SimpleDataTable',
-                content: me,
+                content: be,
               },
               'simpleDataTable.less': {
                 import: './simpleDataTable.less',
-                content: he,
+                content: ye,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -27368,14 +27690,14 @@
           component: n('X23V').default,
           previewerProps: {
             sources: {
-              _: { tsx: ge },
+              _: { tsx: we },
               'SimpleMappedDataTable.tsx': {
                 import: './SimpleMappedDataTable',
-                content: be,
+                content: Ee,
               },
               'SimpleMappedDataTable.less': {
                 import: './SimpleMappedDataTable.less',
-                content: ye,
+                content: ke,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -27386,14 +27708,14 @@
           component: n('/ncw').default,
           previewerProps: {
             sources: {
-              _: { tsx: xe },
+              _: { tsx: Ce },
               'SimpleMappedDataTable.tsx': {
                 import: './SimpleMappedDataTable',
-                content: be,
+                content: Ee,
               },
               'SimpleMappedDataTable.less': {
                 import: './SimpleMappedDataTable.less',
-                content: ye,
+                content: ke,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -27401,13 +27723,13 @@
           },
         },
       },
-      Ee = n('Zs1V'),
-      ke = n('KcUY'),
-      Ce = n.n(ke);
+      Se = n('Zs1V'),
+      je = n('KcUY'),
+      Te = n.n(je);
     t['default'] = (e) =>
       o.a.createElement(
-        Ce.a,
-        Object(r['a'])({}, e, { config: i, demos: we, apis: Ee }),
+        Te.a,
+        Object(r['a'])({}, e, { config: i, demos: Oe, apis: Se }),
       );
   },
   'Of+w': function (e, t, n) {
@@ -28408,7 +28730,7 @@
   },
   RGYn: function (e) {
     e.exports = JSON.parse(
-      '{"menus":{"en-US":{"/getting-started":[{"path":"/getting-started","title":"react code-segment","meta":{}}],"*":[{"path":"/","title":"Welcome to the website","meta":{}}],"/antd":[{"title":"LoadingButton","path":"/antd/loading-button"},{"title":"OmitText","path":"/antd/omit-text"},{"title":"LoadingModal","path":"/antd/loading-modal"}],"/guide":[{"title":"Accordion","path":"/guide/Accordion/Accordion"},{"title":"Alert","path":"/guide/Alert/Alert"},{"title":"AutoLink","path":"/guide/auto-link/auto-link"},{"title":"Callto","path":"/guide/Callto/Callto"},{"title":"Carousel","path":"/guide/Carousel/Carousel"},{"title":"Collapse","path":"/guide/Collapse/Collapse"},{"title":"ControlledInput","path":"/guide/controlled-input/controlled-input"},{"title":"CountDown","path":"/guide/count-down/count-down"},{"title":"SimpleDataList","path":"/guide/simple-data-list/simple-data-list"},{"title":"SimpleDataTable","path":"/guide/simple-data-table/simple-data-table"},{"title":"FileDrop","path":"/guide/file-drop/file-drop"},{"title":"LazyLoadingImage","path":"/guide/lazy-loading-image/lazy-loading-image"},{"title":"LimitedTextarea","path":"/guide/limited-textarea/limited-textarea"},{"title":"LimitedWordTextarea","path":"/guide/limited-word-textarea/limited-word-textarea"},{"title":"Loader","path":"/guide/Loader/Loader"},{"title":"Mailto","path":"/guide/Mailto/Mailto"},{"title":"SimpleMappedDataTable","path":"/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"Modal","path":"/guide/Modal/Modal"},{"title":"Checkbox","path":"/guide/Checkbox/Checkbox"}]},"zh-CN":{"/zh-CN/getting-started":[{"path":"/zh-CN/getting-started","title":"react \u4ee3\u7801\u6bb5","meta":{}}],"*":[{"path":"/zh-CN","title":"\u6b22\u8fce\u6765\u5230\u672c\u7f51\u7ad9","meta":{}}],"/zh-CN/antd":[{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u6309\u94ae","path":"/zh-CN/antd/loading-button"},{"title":"\u7701\u7565\u6587\u672c\u7ec4\u4ef6","path":"/zh-CN/antd/omit-text"},{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u5f39\u6846","path":"/zh-CN/antd/loading-modal"}],"/zh-CN/guide":[{"title":"\u624b\u98ce\u7434","path":"/zh-CN/guide/Accordion/Accordion"},{"title":"\u63d0\u793a","path":"/zh-CN/guide/Alert/Alert"},{"title":"\u81ea\u52a8\u6587\u672c\u94fe\u63a5","path":"/zh-CN/guide/auto-link/auto-link"},{"title":"\u62e8\u7535\u81f3","path":"/zh-CN/guide/Callto/Callto"},{"title":"\u8f6e\u64ad\u56fe","path":"/zh-CN/guide/Carousel/Carousel"},{"title":"\u53ef\u6298\u53e0\u7684\u5185\u5bb9","path":"/zh-CN/guide/Collapse/Collapse"},{"title":"\u53d7\u63a7\u7684\u8f93\u5165\u6846","path":"/zh-CN/guide/controlled-input/controlled-input"},{"title":"\u5012\u8ba1\u65f6\u7ec4\u4ef6","path":"/zh-CN/guide/count-down/count-down"},{"title":"\u7b80\u6613\u6570\u636e\u5217\u8868\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-list/simple-data-list"},{"title":"\u7b80\u6613\u6570\u636e\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-table/simple-data-table"},{"title":"\u62d6\u62fd\u6587\u4ef6\u7ec4\u4ef6","path":"/zh-CN/guide/file-drop/file-drop"},{"title":"\u61d2\u52a0\u8f7d\u56fe\u7247","path":"/zh-CN/guide/lazy-loading-image/lazy-loading-image"},{"title":"\u9650\u5236\u5b57\u7b26\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-textarea/limited-textarea"},{"title":"\u9650\u5236\u5b57\u6570\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-word-textarea/limited-word-textarea"},{"title":"\u52a0\u8f7d\u7ec4\u4ef6","path":"/zh-CN/guide/Loader/Loader"},{"title":"\u90ae\u4ef6\u94fe\u63a5\u7ec4\u4ef6","path":"/zh-CN/guide/Mailto/Mailto"},{"title":"\u7b80\u6613\u5bf9\u8c61\u6570\u7ec4\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"\u5f39\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Modal/Modal"},{"title":"\u590d\u9009\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Checkbox/Checkbox"}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"\u4e2d\u6587"}],"navs":{"en-US":[{"title":"getting-started","path":"/getting-started"},{"title":"guide","path":"/guide"},{"title":"antd","path":"/antd"},{"title":"github","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"about me","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"jue jin","path":"https://juejin.im/user/4054654613988718"},{"title":"segmentfault","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"gitee","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"blog","path":"https://www.cnblogs.com/eveningwater/"},{"title":"website","path":"https://www.eveningwater.com/"},{"title":"My project","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"17sucai","path":"https://www.17sucai.com/user/800544"},{"title":"ewColorPicker","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}],"zh-CN":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/zh-CN/getting-started"},{"title":"\u6307\u5357","path":"/zh-CN/guide"},{"title":"\u8682\u8681\u8bbe\u8ba1","path":"/zh-CN/antd"},{"title":"\u6e90\u7801\u5730\u5740","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"\u5173\u4e8e\u6211","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"\u6398\u91d1","path":"https://juejin.im/user/4054654613988718"},{"title":"\u601d\u5426","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"\u7801\u4e91","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"\u535a\u5ba2","path":"https://www.cnblogs.com/eveningwater/"},{"title":"\u4e2a\u4eba\u7f51\u7ad9","path":"https://www.eveningwater.com/"},{"title":"\u4e2a\u4eba\u9879\u76ee","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"\u95e8\u7d20\u6750","path":"https://www.17sucai.com/user/800544"},{"title":"\u989c\u8272\u9009\u62e9\u5668","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}]},"title":"react-code-segment","logo":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K","mode":"site","repository":{"url":"","branch":"master"},"theme":{}}',
+      '{"menus":{"en-US":{"/getting-started":[{"path":"/getting-started","title":"react code-segment","meta":{}}],"*":[{"path":"/","title":"Welcome to the website","meta":{}}],"/antd":[{"title":"LoadingButton","path":"/antd/loading-button"},{"title":"OmitText","path":"/antd/omit-text"},{"title":"LoadingModal","path":"/antd/loading-modal"}],"/guide":[{"title":"Accordion","path":"/guide/Accordion/Accordion"},{"title":"Alert","path":"/guide/Alert/Alert"},{"title":"AutoLink","path":"/guide/auto-link/auto-link"},{"title":"Callto","path":"/guide/Callto/Callto"},{"title":"Carousel","path":"/guide/Carousel/Carousel"},{"title":"Collapse","path":"/guide/Collapse/Collapse"},{"title":"ControlledInput","path":"/guide/controlled-input/controlled-input"},{"title":"CountDown","path":"/guide/count-down/count-down"},{"title":"SimpleDataList","path":"/guide/simple-data-list/simple-data-list"},{"title":"SimpleDataTable","path":"/guide/simple-data-table/simple-data-table"},{"title":"FileDrop","path":"/guide/file-drop/file-drop"},{"title":"LazyLoadingImage","path":"/guide/lazy-loading-image/lazy-loading-image"},{"title":"LimitedTextarea","path":"/guide/limited-textarea/limited-textarea"},{"title":"LimitedWordTextarea","path":"/guide/limited-word-textarea/limited-word-textarea"},{"title":"Loader","path":"/guide/Loader/Loader"},{"title":"Mailto","path":"/guide/Mailto/Mailto"},{"title":"SimpleMappedDataTable","path":"/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"Modal","path":"/guide/Modal/Modal"},{"title":"Checkbox","path":"/guide/Checkbox/Checkbox"},{"title":"PasswordRevealer","path":"/guide/password-revealer/password-revealer"}]},"zh-CN":{"/zh-CN/getting-started":[{"path":"/zh-CN/getting-started","title":"react \u4ee3\u7801\u6bb5","meta":{}}],"*":[{"path":"/zh-CN","title":"\u6b22\u8fce\u6765\u5230\u672c\u7f51\u7ad9","meta":{}}],"/zh-CN/antd":[{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u6309\u94ae","path":"/zh-CN/antd/loading-button"},{"title":"\u7701\u7565\u6587\u672c\u7ec4\u4ef6","path":"/zh-CN/antd/omit-text"},{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u5f39\u6846","path":"/zh-CN/antd/loading-modal"}],"/zh-CN/guide":[{"title":"\u624b\u98ce\u7434","path":"/zh-CN/guide/Accordion/Accordion"},{"title":"\u63d0\u793a","path":"/zh-CN/guide/Alert/Alert"},{"title":"\u81ea\u52a8\u6587\u672c\u94fe\u63a5","path":"/zh-CN/guide/auto-link/auto-link"},{"title":"\u62e8\u7535\u81f3","path":"/zh-CN/guide/Callto/Callto"},{"title":"\u8f6e\u64ad\u56fe","path":"/zh-CN/guide/Carousel/Carousel"},{"title":"\u53ef\u6298\u53e0\u7684\u5185\u5bb9","path":"/zh-CN/guide/Collapse/Collapse"},{"title":"\u53d7\u63a7\u7684\u8f93\u5165\u6846","path":"/zh-CN/guide/controlled-input/controlled-input"},{"title":"\u5012\u8ba1\u65f6\u7ec4\u4ef6","path":"/zh-CN/guide/count-down/count-down"},{"title":"\u7b80\u6613\u6570\u636e\u5217\u8868\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-list/simple-data-list"},{"title":"\u7b80\u6613\u6570\u636e\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-table/simple-data-table"},{"title":"\u62d6\u62fd\u6587\u4ef6\u7ec4\u4ef6","path":"/zh-CN/guide/file-drop/file-drop"},{"title":"\u61d2\u52a0\u8f7d\u56fe\u7247","path":"/zh-CN/guide/lazy-loading-image/lazy-loading-image"},{"title":"\u9650\u5236\u5b57\u7b26\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-textarea/limited-textarea"},{"title":"\u9650\u5236\u5b57\u6570\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-word-textarea/limited-word-textarea"},{"title":"\u52a0\u8f7d\u7ec4\u4ef6","path":"/zh-CN/guide/Loader/Loader"},{"title":"\u90ae\u4ef6\u94fe\u63a5\u7ec4\u4ef6","path":"/zh-CN/guide/Mailto/Mailto"},{"title":"\u7b80\u6613\u5bf9\u8c61\u6570\u7ec4\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"\u5f39\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Modal/Modal"},{"title":"\u590d\u9009\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Checkbox/Checkbox"},{"title":"\u5bc6\u7801\u663e\u793a\u5668","path":"/zh-CN/guide/password-revealer/password-revealer"}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"\u4e2d\u6587"}],"navs":{"en-US":[{"title":"getting-started","path":"/getting-started"},{"title":"guide","path":"/guide"},{"title":"antd","path":"/antd"},{"title":"github","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"about me","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"jue jin","path":"https://juejin.im/user/4054654613988718"},{"title":"segmentfault","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"gitee","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"blog","path":"https://www.cnblogs.com/eveningwater/"},{"title":"website","path":"https://www.eveningwater.com/"},{"title":"My project","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"17sucai","path":"https://www.17sucai.com/user/800544"},{"title":"ewColorPicker","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}],"zh-CN":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/zh-CN/getting-started"},{"title":"\u6307\u5357","path":"/zh-CN/guide"},{"title":"\u8682\u8681\u8bbe\u8ba1","path":"/zh-CN/antd"},{"title":"\u6e90\u7801\u5730\u5740","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"\u5173\u4e8e\u6211","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"\u6398\u91d1","path":"https://juejin.im/user/4054654613988718"},{"title":"\u601d\u5426","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"\u7801\u4e91","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"\u535a\u5ba2","path":"https://www.cnblogs.com/eveningwater/"},{"title":"\u4e2a\u4eba\u7f51\u7ad9","path":"https://www.eveningwater.com/"},{"title":"\u4e2a\u4eba\u9879\u76ee","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"\u95e8\u7d20\u6750","path":"https://www.17sucai.com/user/800544"},{"title":"\u989c\u8272\u9009\u62e9\u5668","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}]},"title":"react-code-segment","logo":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K","mode":"site","repository":{"url":"","branch":"master"},"theme":{}}',
     );
   },
   RK3t: function (e, t, n) {
@@ -39587,6 +39909,115 @@
         }))
       : (e.exports = function () {});
   },
+  dSgD: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n('q1tI'),
+      a = n.n(r),
+      o = n('dEAq'),
+      i = n('Zxc8'),
+      l = n('H1Ra'),
+      c = n('dMo/'),
+      s = a.a.memo((e) => {
+        var t = e.demos,
+          n = t['passwordrevealer-demo'].component;
+        return a.a.createElement(
+          a.a.Fragment,
+          null,
+          a.a.createElement(
+            a.a.Fragment,
+            null,
+            a.a.createElement(
+              'div',
+              { className: 'markdown' },
+              a.a.createElement(
+                c['a'],
+                null,
+                a.a.createElement(
+                  'thead',
+                  null,
+                  a.a.createElement(
+                    'tr',
+                    null,
+                    a.a.createElement('th', null, 'title'),
+                    a.a.createElement('th', null, 'tags'),
+                    a.a.createElement('th', null, 'firstSeen'),
+                    a.a.createElement('th', null, 'lastUpdated'),
+                  ),
+                ),
+                a.a.createElement(
+                  'tbody',
+                  null,
+                  a.a.createElement(
+                    'tr',
+                    null,
+                    a.a.createElement('td', null, 'Show/hide password toggle'),
+                    a.a.createElement('td', null, 'components,input,state'),
+                    a.a.createElement('td', null, '2022/7/28'),
+                    a.a.createElement('td', null, '2022/7/28'),
+                  ),
+                ),
+              ),
+              a.a.createElement(
+                'p',
+                null,
+                'Renders a password input field with a reveal button.',
+              ),
+              a.a.createElement(
+                'ul',
+                null,
+                a.a.createElement(
+                  'li',
+                  null,
+                  'Use the useState() hook to create the shown state variable and set its value to false.',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  'When the ',
+                  a.a.createElement('code', null, 'span'),
+                  ' is clicked, execute setShown, toggling the type of the ',
+                  a.a.createElement('code', null, '<input>'),
+                  " between 'text' and 'password'.",
+                ),
+              ),
+              a.a.createElement(l['a'], {
+                code: "@baseSelector: ant-;\n\n.@{baseSelector}password {\n  position: relative;\n    display: inline-block;\n    width: 100%;\n    min-width: 0;\n    color: rgba(0,0,0,.85);\n    font-size: 14px;\n    line-height: 1.5715;\n    background-color: #fff;\n    background-image: none;\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n    transition: all .3s;\n    display: inline-flex;\n    padding: 4px 11px;\n    &-suffix {\n        margin-left: 4px;\n        display: flex;\n        flex: none;\n        align-items: center;\n        cursor: pointer;\n        &-icon {\n           &:hover {\n             color:rgba(0,0,0,.6);\n           }\n        }\n    }\n    &-input {\n        box-sizing: border-box;\n        margin: 0;\n        font-variant: tabular-nums;\n        list-style: none;\n        font-feature-settings: 'tnum';\n        position: relative;\n        display: inline-block;\n        width: 100%;\n        min-width: 0;\n        color: rgba(0,0,0,.85);\n        font-size: 14px;\n        outline: none;\n        line-height: 1.5715;\n        background-color: #fff;\n        background-image: none;\n        border: none;\n        border-radius: 2px;\n        transition: all 0.3s;\n    }\n    &.is-focused {\n      border-color: #40a9ff;\n    }\n}",
+                lang: 'less',
+              }),
+              a.a.createElement(l['a'], {
+                code: 'import React, { useState } from \'react\';\nimport type { SyntheticEvent } from \'react\';\nimport \'./passwordRevealer.less\';\n\nexport interface PasswordRevealerProps extends Record<string, any> {\n  value: string;\n  onChange(v: string): void;\n  placeholder: string;\n}\n\nconst Eye = () => (\n  <svg\n    viewBox="64 64 896 896"\n    className=\'ant-password-suffix-icon\'\n    data-icon="eye"\n    width="1em"\n    height="1em"\n    fill="currentColor"\n  >\n    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>\n  </svg>\n);\nconst EyeClose = () => (\n  <svg\n    viewBox="64 64 896 896"\n    data-icon="eye-invisible"\n    className=\'ant-password-suffix-icon\'\n    width="1em"\n    height="1em"\n    fill="currentColor"\n  >\n    <path d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"></path>\n    <path d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"></path>\n  </svg>\n);\n\nconst PasswordRevealer = (props: Partial<PasswordRevealerProps>) => {\n  const {\n    value,\n    onChange,\n    placeholder = \'Please Input the password\',\n    ...rest\n  } = props;\n  const [isShown, setIsShown] = useState(false);\n  const [isFocus, setIsFocus] = useState(false);\n\n  const onChangeHandler = (e: SyntheticEvent) => {\n    const v = (e.target as HTMLInputElement).value;\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  return (\n    <span className={`ant-password${isFocus ? \' is-focused\' : \'\'}`} {...rest}>\n      <input\n        type={isShown ? \'text\' : \'password\'}\n        className="ant-password-input"\n        value={value}\n        onChange={onChangeHandler}\n        placeholder={placeholder}\n        onFocus={() => setIsFocus(true)}\n        onBlur={() => setIsFocus(false)}\n      />\n      <span\n        className="ant-password-suffix"\n        onClick={() => setIsShown(!isShown)}\n      >\n        {isShown ? <Eye /> : <EyeClose />}\n      </span>\n    </span>\n  );\n};\n\nexport default PasswordRevealer;',
+                lang: 'tsx',
+              }),
+              a.a.createElement('p', null, 'Demo:'),
+            ),
+            a.a.createElement(
+              i['default'],
+              t['passwordrevealer-demo'].previewerProps,
+              a.a.createElement(n, null),
+            ),
+          ),
+        );
+      });
+    t['default'] = (e) => {
+      var t = a.a.useContext(o['context']),
+        n = t.demos;
+      return (
+        a.a.useEffect(() => {
+          var t;
+          null !== e &&
+            void 0 !== e &&
+            null !== (t = e.location) &&
+            void 0 !== t &&
+            t.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        a.a.createElement(s, { demos: n })
+      );
+    };
+  },
   dfPH: function (e, t, n) {
     'use strict';
     function r() {
@@ -43716,6 +44147,7 @@
         return (e.lastIndex = 2), null != e.exec('str');
       }));
   },
+  'n5+A': function (e, t, n) {},
   n5b4: function (e, t, n) {
     var r = n('I+eb'),
       a = n('2oRo'),
@@ -44531,6 +44963,29 @@
         },
       },
     );
+  },
+  pE9f: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n('tJVT'),
+      a = n('q1tI'),
+      o = n.n(a),
+      i = n('DDiY'),
+      l = () => {
+        var e = Object(a['useState'])(''),
+          t = Object(r['a'])(e, 2),
+          n = t[0],
+          l = t[1],
+          c = (e) => {
+            console.log(e), l(e);
+          };
+        return o.a.createElement(i['a'], {
+          placeholder: '\u8bf7\u8f93\u5165\u5bc6\u7801',
+          value: n,
+          onChange: c,
+        });
+      };
+    t['default'] = l;
   },
   pNMO: function (e, t, n) {
     'use strict';
