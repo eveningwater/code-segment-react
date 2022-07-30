@@ -79,4 +79,8 @@ export default [
     title: '密码显示器',
     path: '/zh-CN/guide/password-revealer/password-revealer',
   },
+  {
+    title: '按钮',
+    path: '/zh-CN/guide/button/button',
+  },
 ];

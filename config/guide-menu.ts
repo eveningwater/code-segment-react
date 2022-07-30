@@ -79,4 +79,8 @@ export default [
     title: 'PasswordRevealer',
     path: '/guide/password-revealer/password-revealer',
   },
+  {
+    title: 'Button',
+    path: '/guide/button/button',
+  },
 ];
