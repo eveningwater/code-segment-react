@@ -83,4 +83,8 @@ export default [
     title: 'Button',
     path: '/guide/button/button',
   },
+  {
+    title: 'Select',
+    path: '/guide/select/select',
+  },
 ];

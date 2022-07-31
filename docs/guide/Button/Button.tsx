@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import type { SyntheticEvent, ReactNode } from 'react';
 import './button.less';
-import classnames from './classnames';
+import classnames from '../../utils/classnames';
 import Loader from '../Loader/Loader';
 export interface ButtonProps extends Record<string, any> {
   ripple: boolean;

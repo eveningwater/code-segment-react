@@ -83,4 +83,8 @@ export default [
     title: '按钮',
     path: '/zh-CN/guide/button/button',
   },
+  {
+    title: '选择器',
+    path: '/zh-CN/guide/select/select',
+  },
 ];
