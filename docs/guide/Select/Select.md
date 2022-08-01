@@ -365,6 +365,7 @@ const Select = (
     if (disabled) {
       return;
     }
+    setOption({ label: '', value: '' });
     setSelectValue('');
   };
   const selectClassNames = {
