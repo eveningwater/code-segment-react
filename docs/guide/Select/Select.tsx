@@ -124,7 +124,7 @@ const Select = (
   };
   const valueClassNames = {
     'ew-select-selector': true,
-    'ew-select-value-placeholder': !selectValue,
+    'ew-select-selector-placeholder': !selectValue,
   };
   useClickOutside(dropdownRef, () => {
     if (!disabled) {
