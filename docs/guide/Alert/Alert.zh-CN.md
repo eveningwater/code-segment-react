@@ -178,4 +178,4 @@ export default Demo;
 
 demo:
 
-<code src="./Alert.zh-CN.tsx"></code>
+<code src="./Demo.zh-CN.tsx"></code>

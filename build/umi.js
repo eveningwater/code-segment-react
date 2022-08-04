@@ -191,8 +191,8 @@
     var T = 1,
       P = 1,
       N = 0,
-      I = 0,
       R = 0,
+      I = 0,
       A = '';
     function M(e, t, n, r, a, o, i) {
       return {
@@ -216,20 +216,20 @@
         t,
       );
     }
-    function _() {
-      return R;
-    }
     function D() {
-      return (R = I > 0 ? E(A, --I) : 0), P--, 10 === R && ((P = 1), T--), R;
+      return I;
+    }
+    function _() {
+      return (I = R > 0 ? E(A, --R) : 0), P--, 10 === I && ((P = 1), T--), I;
     }
     function z() {
-      return (R = I < N ? E(A, I++) : 0), P++, 10 === R && ((P = 1), T++), R;
+      return (I = R < N ? E(A, R++) : 0), P++, 10 === I && ((P = 1), T++), I;
     }
     function F() {
-      return E(A, I);
+      return E(A, R);
     }
     function B() {
-      return I;
+      return R;
     }
     function U(e, t) {
       return k(A, e, t);
@@ -267,35 +267,35 @@
       return 0;
     }
     function H(e) {
-      return (T = P = 1), (N = C((A = e))), (I = 0), [];
+      return (T = P = 1), (N = C((A = e))), (R = 0), [];
     }
     function q(e) {
       return (A = ''), e;
     }
     function W(e) {
-      return b(U(I - 1, K(91 === e ? e + 2 : 40 === e ? e + 1 : e)));
+      return b(U(R - 1, K(91 === e ? e + 2 : 40 === e ? e + 1 : e)));
     }
     function $(e) {
-      while ((R = F())) {
-        if (!(R < 33)) break;
+      while ((I = F())) {
+        if (!(I < 33)) break;
         z();
       }
-      return V(e) > 2 || V(R) > 3 ? '' : ' ';
+      return V(e) > 2 || V(I) > 3 ? '' : ' ';
     }
     function G(e, t) {
       while (--t && z())
-        if (R < 48 || R > 102 || (R > 57 && R < 65) || (R > 70 && R < 97))
+        if (I < 48 || I > 102 || (I > 57 && I < 65) || (I > 70 && I < 97))
           break;
       return U(e, B() + (t < 6 && 32 == F() && 32 == z()));
     }
     function K(e) {
       while (z())
-        switch (R) {
+        switch (I) {
           case e:
-            return I;
+            return R;
           case 34:
           case 39:
-            34 !== e && 39 !== e && K(R);
+            34 !== e && 39 !== e && K(I);
             break;
           case 40:
             41 === e && K(e);
@@ -304,23 +304,23 @@
             z();
             break;
         }
-      return I;
+      return R;
     }
     function Y(e, t) {
       while (z()) {
-        if (e + R === 57) break;
-        if (e + R === 84 && 47 === F()) break;
+        if (e + I === 57) break;
+        if (e + I === 84 && 47 === F()) break;
       }
-      return '/*' + U(t, I - 1) + '*' + h(47 === e ? e : z());
+      return '/*' + U(t, R - 1) + '*' + h(47 === e ? e : z());
     }
     function Z(e) {
       while (!V(F())) z();
-      return U(e, I);
+      return U(e, R);
     }
     function X(e) {
-      return q(Q('', null, null, null, [''], (e = H(e)), 0, [0], e));
+      return q(J('', null, null, null, [''], (e = H(e)), 0, [0], e));
     }
-    function Q(e, t, n, r, a, o, i, l, c) {
+    function J(e, t, n, r, a, o, i, l, c) {
       var s = 0,
         u = 0,
         d = i,
@@ -390,20 +390,20 @@
                 T += ';';
               default:
                 if (
-                  (S((j = J(T, t, n, s, u, a, l, E, (k = []), (O = []), d)), o),
+                  (S((j = Q(T, t, n, s, u, a, l, E, (k = []), (O = []), d)), o),
                   123 === y)
                 )
-                  if (0 === u) Q(T, t, j, j, k, o, d, l, O);
+                  if (0 === u) J(T, t, j, j, k, o, d, l, O);
                   else
                     switch (f) {
                       case 100:
                       case 109:
                       case 115:
-                        Q(
+                        J(
                           e,
                           j,
                           j,
-                          r && S(J(e, j, j, 0, 0, a, l, E, a, (k = []), d), O),
+                          r && S(Q(e, j, j, 0, 0, a, l, E, a, (k = []), d), O),
                           a,
                           O,
                           d,
@@ -412,7 +412,7 @@
                         );
                         break;
                       default:
-                        Q(T, j, j, j, [''], O, 0, l, O);
+                        J(T, j, j, j, [''], O, 0, l, O);
                     }
             }
             (s = u = p = 0), (v = b = 1), (E = T = ''), (d = i);
@@ -422,7 +422,7 @@
           default:
             if (v < 1)
               if (123 == y) --v;
-              else if (125 == y && 0 == v++ && 125 == D()) continue;
+              else if (125 == y && 0 == v++ && 125 == _()) continue;
             switch (((T += h(y)), y * v)) {
               case 38:
                 b = u > 0 ? 1 : ((T += '\f'), -1);
@@ -442,7 +442,7 @@
         }
       return o;
     }
-    function J(e, t, n, r, a, o, i, l, c, s, d) {
+    function Q(e, t, n, r, a, o, i, l, c, s, d) {
       for (
         var f = a - 1, p = 0 === a ? o : [''], h = O(p), v = 0, g = 0, y = 0;
         v < r;
@@ -453,7 +453,7 @@
       return M(e, t, n, 0 === a ? u : l, c, s, d);
     }
     function ee(e, t, n) {
-      return M(e, t, n, s, h(_()), k(e, 2, -2), 0);
+      return M(e, t, n, s, h(D()), k(e, 2, -2), 0);
     }
     function te(e, t, n, r) {
       return M(e, t, n, d, k(e, 0, r), k(e, r + 1, -1), r);
@@ -703,7 +703,7 @@
             break;
           z();
         }
-        return U(e, I);
+        return U(e, R);
       },
       se = function (e, t) {
         var n = -1,
@@ -711,7 +711,7 @@
         do {
           switch (V(r)) {
             case 0:
-              38 === r && 12 === F() && (t[n] = 1), (e[n] += ce(I - 1, t, n));
+              38 === r && 12 === F() && (t[n] = 1), (e[n] += ce(R - 1, t, n));
               break;
             case 2:
               e[n] += W(r);
@@ -1006,7 +1006,7 @@
             )
           : b['createElement'](i, { className: ''.concat(r, '-icon') });
       },
-      I = function (e) {
+      R = function (e) {
         var t = e.isClosable,
           n = e.closeText,
           r = e.prefixCls,
@@ -1031,7 +1031,7 @@
             )
           : null;
       },
-      R = function (e) {
+      I = function (e) {
         var t,
           n = e.description,
           i = e.prefixCls,
@@ -1067,14 +1067,14 @@
             'closeIcon',
             'action',
           ]),
-          R = b['useState'](!1),
-          A = Object(a['a'])(R, 2),
+          I = b['useState'](!1),
+          A = Object(a['a'])(I, 2),
           M = A[0],
           L = A[1],
-          _ = b['useRef'](),
-          D = b['useContext'](y['b']),
-          z = D.getPrefixCls,
-          F = D.direction,
+          D = b['useRef'](),
+          _ = b['useContext'](y['b']),
+          z = _.getPrefixCls,
+          F = _.direction,
           B = z('alert', i),
           U = function (e) {
             var t;
@@ -1118,7 +1118,7 @@
               'div',
               Object(r['a'])(
                 {
-                  ref: _,
+                  ref: D,
                   'data-show': !M,
                   className: v()($, t),
                   style: Object(r['a'])(Object(r['a'])({}, f), a),
@@ -1162,7 +1162,7 @@
                     T,
                   )
                 : null,
-              b['createElement'](I, {
+              b['createElement'](R, {
                 isClosable: !!H,
                 closeText: C,
                 prefixCls: B,
@@ -1173,8 +1173,8 @@
           },
         );
       };
-    R.ErrorBoundary = S;
-    var A = (t['a'] = R);
+    I.ErrorBoundary = S;
+    var A = (t['a'] = I);
   },
   '+M1K': function (e, t, n) {
     var r = n('ppGB');
@@ -1433,13 +1433,13 @@
     }
     var P = [],
       N = [],
-      I = 1,
-      R = null,
+      R = 1,
+      I = null,
       A = 3,
       M = !1,
       L = !1,
-      _ = !1;
-    function D(e) {
+      D = !1;
+    function _(e) {
       for (var t = S(N); null !== t; ) {
         if (null === t.callback) j(N);
         else {
@@ -1450,7 +1450,7 @@
       }
     }
     function z(e) {
-      if (((_ = !1), D(e), !L))
+      if (((D = !1), _(e), !L))
         if (null !== S(P)) (L = !0), r(F);
         else {
           var t = S(N);
@@ -1458,32 +1458,32 @@
         }
     }
     function F(e, n) {
-      (L = !1), _ && ((_ = !1), o()), (M = !0);
+      (L = !1), D && ((D = !1), o()), (M = !0);
       var r = A;
       try {
         for (
-          D(n), R = S(P);
-          null !== R && (!(R.expirationTime > n) || (e && !i()));
+          _(n), I = S(P);
+          null !== I && (!(I.expirationTime > n) || (e && !i()));
 
         ) {
-          var l = R.callback;
+          var l = I.callback;
           if (null !== l) {
-            (R.callback = null), (A = R.priorityLevel);
-            var c = l(R.expirationTime <= n);
+            (I.callback = null), (A = I.priorityLevel);
+            var c = l(I.expirationTime <= n);
             (n = t.unstable_now()),
-              'function' === typeof c ? (R.callback = c) : R === S(P) && j(P),
-              D(n);
+              'function' === typeof c ? (I.callback = c) : I === S(P) && j(P),
+              _(n);
           } else j(P);
-          R = S(P);
+          I = S(P);
         }
-        if (null !== R) var s = !0;
+        if (null !== I) var s = !0;
         else {
           var u = S(N);
           null !== u && a(z, u.startTime - n), (s = !1);
         }
         return s;
       } finally {
-        (R = null), (A = r), (M = !1);
+        (I = null), (A = r), (M = !1);
       }
     }
     function B(e) {
@@ -1568,7 +1568,7 @@
         return (
           (i = c + i),
           (e = {
-            id: I++,
+            id: R++,
             callback: n,
             priorityLevel: e,
             startTime: c,
@@ -1578,22 +1578,22 @@
           c > l
             ? ((e.sortIndex = c),
               O(N, e),
-              null === S(P) && e === S(N) && (_ ? o() : (_ = !0), a(z, c - l)))
+              null === S(P) && e === S(N) && (D ? o() : (D = !0), a(z, c - l)))
             : ((e.sortIndex = i), O(P, e), L || M || ((L = !0), r(F))),
           e
         );
       }),
       (t.unstable_shouldYield = function () {
         var e = t.unstable_now();
-        D(e);
+        _(e);
         var n = S(P);
         return (
-          (n !== R &&
-            null !== R &&
+          (n !== I &&
+            null !== I &&
             null !== n &&
             null !== n.callback &&
             n.startTime <= e &&
-            n.expirationTime < R.expirationTime) ||
+            n.expirationTime < I.expirationTime) ||
           i()
         );
       }),
@@ -1662,90 +1662,67 @@
   },
   '/VS0': function (e, t, n) {
     'use strict';
-    n.r(t);
-    var r,
-      a = n('tJVT'),
-      o = n('qqnG'),
-      i = n('q1tI'),
-      l = n.n(i),
-      c = (n('o4Vn'), n('zeV3')),
-      s = (n('k/c8'), n('5SEd')),
-      u = Object(s['a'])(c['b'])(
-        r || (r = Object(o['a'])(['\n  width: 100%;\n'])),
-      ),
-      d = (e) => {
-        var t = e.isDefaultShown,
-          n = e.timeout,
-          r = void 0 === n ? 250 : n,
-          o = e.type,
-          c = e.message,
-          s = e.showClose,
-          u = e.block,
-          d = Object(i['useState'])(t),
-          f = Object(a['a'])(d, 2),
-          p = f[0],
-          m = f[1],
-          h = Object(i['useState'])(!1),
-          v = Object(a['a'])(h, 2),
-          g = v[0],
-          b = v[1],
-          y = null;
-        Object(i['useEffect'])(
-          () => (
-            m(!0),
-            () => {
-              y && clearTimeout(y);
-            }
-          ),
-          [r, y, t],
-        );
-        var x = () => {
-          b(!0),
-            (y = setTimeout(() => {
-              b(!1), m(!1);
-            }, r));
-        };
-        return p
-          ? l.a.createElement(
-              'div',
-              {
-                className: 'alert '
-                  .concat('alert-' + o)
-                  .concat(g ? ' leaving' : '')
-                  .concat(u ? ' alert-block' : ''),
-                role: 'alert',
-              },
-              l.a.createElement(
-                'button',
+    var r = n('tJVT'),
+      a = n('q1tI'),
+      o = n.n(a),
+      i =
+        (n('o4Vn'),
+        (e) => {
+          var t = e.isDefaultShown,
+            n = e.timeout,
+            i = void 0 === n ? 250 : n,
+            l = e.type,
+            c = e.message,
+            s = e.showClose,
+            u = e.block,
+            d = Object(a['useState'])(t),
+            f = Object(r['a'])(d, 2),
+            p = f[0],
+            m = f[1],
+            h = Object(a['useState'])(!1),
+            v = Object(r['a'])(h, 2),
+            g = v[0],
+            b = v[1],
+            y = null;
+          Object(a['useEffect'])(
+            () => (
+              m(!0),
+              () => {
+                y && clearTimeout(y);
+              }
+            ),
+            [i, y, t],
+          );
+          var x = () => {
+            b(!0),
+              (y = setTimeout(() => {
+                b(!1), m(!1);
+              }, i));
+          };
+          return p
+            ? o.a.createElement(
+                'div',
                 {
-                  className: 'alert-close',
-                  onClick: x,
-                  style: { display: s ? 'block' : 'none' },
+                  className: 'alert '
+                    .concat('alert-' + l)
+                    .concat(g ? ' leaving' : '')
+                    .concat(u ? ' alert-block' : ''),
+                  role: 'alert',
                 },
-                '\xd7',
-              ),
-              c,
-            )
-          : null;
-      },
-      f = () =>
-        l.a.createElement(
-          u,
-          { direction: 'vertical' },
-          l.a.createElement(d, {
-            type: 'info',
-            message: 'This is info',
-            block: !0,
-          }),
-          l.a.createElement(d, {
-            type: 'success',
-            message: 'This is success',
-            showClose: !0,
-          }),
-          l.a.createElement(d, { type: 'warning', message: 'This is warning' }),
-          l.a.createElement(d, { type: 'error', message: 'This is error' }),
-        );
-    t['default'] = f;
+                o.a.createElement(
+                  'button',
+                  {
+                    className: 'alert-close',
+                    onClick: x,
+                    style: { display: s ? 'block' : 'none' },
+                  },
+                  '\xd7',
+                ),
+                c,
+              )
+            : null;
+        });
+    t['a'] = i;
   },
   '/Yfv': function (e, t, n) {
     var r = n('dOgj');
@@ -2608,7 +2585,7 @@
       };
     n('Zkgb');
     function T(e, t) {
-      return A(e) || R(e, t) || N(e, t) || P();
+      return A(e) || I(e, t) || N(e, t) || P();
     }
     function P() {
       throw new TypeError(
@@ -2617,7 +2594,7 @@
     }
     function N(e, t) {
       if (e) {
-        if ('string' === typeof e) return I(e, t);
+        if ('string' === typeof e) return R(e, t);
         var n = Object.prototype.toString.call(e).slice(8, -1);
         return (
           'Object' === n && e.constructor && (n = e.constructor.name),
@@ -2625,17 +2602,17 @@
             ? Array.from(e)
             : 'Arguments' === n ||
               /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-            ? I(e, t)
+            ? R(e, t)
             : void 0
         );
       }
     }
-    function I(e, t) {
+    function R(e, t) {
       (null == t || t > e.length) && (t = e.length);
       for (var n = 0, r = new Array(t); n < t; n++) r[n] = e[n];
       return r;
     }
-    function R(e, t) {
+    function I(e, t) {
       var n =
         null == e
           ? null
@@ -2805,10 +2782,10 @@
       },
       L = M;
     n('AQPS');
-    function _(e, t) {
-      return U(e) || B(e, t) || z(e, t) || D();
+    function D(e, t) {
+      return U(e) || B(e, t) || z(e, t) || _();
     }
-    function D() {
+    function _() {
       throw new TypeError(
         'Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
       );
@@ -2928,30 +2905,30 @@
           g = f.branch,
           y = f.platform,
           x = Object(r['useState'])(!0),
-          w = _(x, 2),
+          w = D(x, 2),
           E = w[0],
           k = w[1],
           C = Object(r['useState'])(!1),
-          O = _(C, 2),
+          O = D(C, 2),
           S = O[0],
           T = O[1],
           P = 'site' === d,
           N = P && p.hero,
-          I = P && p.features,
-          R = !1 !== p.sidemenu && !N && !I && !p.gapless,
+          R = P && p.features,
+          I = !1 !== p.sidemenu && !N && !R && !p.gapless,
           A =
             !N &&
-            !I &&
+            !R &&
             Boolean(
               null === (t = p.slugs) || void 0 === t ? void 0 : t.length,
             ) &&
             ('content' === p.toc || void 0 === p.toc) &&
             !p.gapless,
           M = /^zh|cn$/i.test(m),
-          D = new Date(p.updatedTime),
+          _ = new Date(p.updatedTime),
           z = ''
-            .concat(D.toLocaleDateString([], { hour12: !1 }), ' ')
-            .concat(D.toLocaleTimeString([], { hour12: !1 })),
+            .concat(_.toLocaleDateString([], { hour12: !1 }), ' ')
+            .concat(_.toLocaleTimeString([], { hour12: !1 })),
           F =
             { github: 'GitHub', gitlab: 'GitLab' }[
               (null === (n = (h || '').match(/(github|gitlab)/)) || void 0 === n
@@ -2963,7 +2940,7 @@
           {
             className: '__dumi-default-layout',
             'data-route': l.pathname,
-            'data-show-sidemenu': String(R),
+            'data-show-sidemenu': String(I),
             'data-show-slugs': String(A),
             'data-site-mode': P,
             'data-gapless': String(!!p.gapless),
@@ -3002,13 +2979,13 @@
               className: '__dumi-default-layout-toc',
             }),
           N && V(p.hero),
-          I && H(p.features),
+          R && H(p.features),
           a.a.createElement(
             'div',
             { className: '__dumi-default-layout-content' },
             i,
             !N &&
-              !I &&
+              !R &&
               p.filePath &&
               !p.gapless &&
               a.a.createElement(
@@ -3037,7 +3014,7 @@
                   z,
                 ),
               ),
-            (N || I) &&
+            (N || R) &&
               p.footer &&
               a.a.createElement('div', {
                 className: '__dumi-default-layout-footer',
@@ -3705,7 +3682,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/Alert/Alert.md',
-                updatedTime: 1657427189058,
+                updatedTime: 1659628313598,
                 slugs: [],
                 hasPreviewer: !0,
                 nav: { path: '/guide', title: 'Guide' },
@@ -3720,7 +3697,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/Alert/Alert.zh-CN.md',
-                updatedTime: 1657427189058,
+                updatedTime: 1659628386915,
                 slugs: [],
                 hasPreviewer: !0,
                 locale: 'zh-CN',
@@ -4405,6 +4382,112 @@
               title: 'SimpleMappedDataTable - react-code-segment',
             },
             {
+              path: '/hooks/use-async/use-async',
+              component: n('tleZ').default,
+              exact: !0,
+              meta: {
+                filePath: 'docs/hooks/useAsync/useAsync.md',
+                updatedTime: 1659628924559,
+                slugs: [],
+                hasPreviewer: !0,
+                nav: { path: '/hooks', title: 'Hooks' },
+                group: { path: '/hooks/use-async', title: 'UseAsync' },
+                title: 'UseAsync',
+              },
+              title: 'UseAsync - react-code-segment',
+            },
+            {
+              path: '/zh-CN/hooks/use-async/use-async',
+              component: n('akM7').default,
+              exact: !0,
+              meta: {
+                filePath: 'docs/hooks/useAsync/useAsync.zh-CN.md',
+                updatedTime: 1659629167451,
+                slugs: [],
+                hasPreviewer: !0,
+                locale: 'zh-CN',
+                nav: { path: '/zh-CN/hooks', title: 'Hooks' },
+                group: { path: '/zh-CN/hooks/use-async', title: 'UseAsync' },
+                title: 'UseAsync',
+              },
+              title: 'UseAsync - react-code-segment',
+            },
+            {
+              path: '/hooks/use-body-scroll-lock/use-body-scroll-lock',
+              component: n('lfnK').default,
+              exact: !0,
+              meta: {
+                filePath: 'docs/hooks/useBodyScrollLock/useBodyScrollLock.md',
+                updatedTime: 1659627094522,
+                slugs: [],
+                hasPreviewer: !0,
+                nav: { path: '/hooks', title: 'Hooks' },
+                group: {
+                  path: '/hooks/use-body-scroll-lock',
+                  title: 'UseBodyScrollLock',
+                },
+                title: 'UseBodyScrollLock',
+              },
+              title: 'UseBodyScrollLock - react-code-segment',
+            },
+            {
+              path: '/zh-CN/hooks/use-body-scroll-lock/use-body-scroll-lock',
+              component: n('MYGh').default,
+              exact: !0,
+              meta: {
+                filePath:
+                  'docs/hooks/useBodyScrollLock/useBodyScrollLock.zh-CN.md',
+                updatedTime: 1659627248140,
+                slugs: [],
+                hasPreviewer: !0,
+                locale: 'zh-CN',
+                nav: { path: '/zh-CN/hooks', title: 'Hooks' },
+                group: {
+                  path: '/zh-CN/hooks/use-body-scroll-lock',
+                  title: 'UseBodyScrollLock',
+                },
+                title: 'UseBodyScrollLock',
+              },
+              title: 'UseBodyScrollLock - react-code-segment',
+            },
+            {
+              path: '/hooks/use-click-outside/use-click-outside',
+              component: n('tNrF').default,
+              exact: !0,
+              meta: {
+                filePath: 'docs/hooks/useClickOutside/useClickOutside.md',
+                updatedTime: 1659630456730,
+                slugs: [],
+                hasPreviewer: !0,
+                nav: { path: '/hooks', title: 'Hooks' },
+                group: {
+                  path: '/hooks/use-click-outside',
+                  title: 'UseClickOutside',
+                },
+                title: 'UseClickOutside',
+              },
+              title: 'UseClickOutside - react-code-segment',
+            },
+            {
+              path: '/zh-CN/hooks/use-click-outside/use-click-outside',
+              component: n('5SZx').default,
+              exact: !0,
+              meta: {
+                filePath: 'docs/hooks/useClickOutside/useClickOutside.zh-CN.md',
+                updatedTime: 1659630464152,
+                slugs: [],
+                hasPreviewer: !0,
+                locale: 'zh-CN',
+                nav: { path: '/zh-CN/hooks', title: 'Hooks' },
+                group: {
+                  path: '/zh-CN/hooks/use-click-outside',
+                  title: 'UseClickOutside',
+                },
+                title: 'UseClickOutside',
+              },
+              title: 'UseClickOutside - react-code-segment',
+            },
+            {
               path: '/antd',
               meta: {},
               exact: !0,
@@ -4694,6 +4777,55 @@
               exact: !0,
               redirect:
                 '/zh-CN/guide/simple-mapped-data-table/simple-mapped-data-table',
+            },
+            {
+              path: '/hooks/use-async',
+              meta: {},
+              exact: !0,
+              redirect: '/hooks/use-async/use-async',
+            },
+            {
+              path: '/hooks',
+              meta: {},
+              exact: !0,
+              redirect: '/hooks/use-click-outside/use-click-outside',
+            },
+            {
+              path: '/zh-CN/hooks/use-async',
+              meta: {},
+              exact: !0,
+              redirect: '/zh-CN/hooks/use-async/use-async',
+            },
+            {
+              path: '/zh-CN/hooks',
+              meta: {},
+              exact: !0,
+              redirect: '/zh-CN/hooks/use-click-outside/use-click-outside',
+            },
+            {
+              path: '/hooks/use-body-scroll-lock',
+              meta: {},
+              exact: !0,
+              redirect: '/hooks/use-body-scroll-lock/use-body-scroll-lock',
+            },
+            {
+              path: '/zh-CN/hooks/use-body-scroll-lock',
+              meta: {},
+              exact: !0,
+              redirect:
+                '/zh-CN/hooks/use-body-scroll-lock/use-body-scroll-lock',
+            },
+            {
+              path: '/hooks/use-click-outside',
+              meta: {},
+              exact: !0,
+              redirect: '/hooks/use-click-outside/use-click-outside',
+            },
+            {
+              path: '/zh-CN/hooks/use-click-outside',
+              meta: {},
+              exact: !0,
+              redirect: '/zh-CN/hooks/use-click-outside/use-click-outside',
             },
           ],
           title: 'react-code-segment',
@@ -5649,16 +5781,16 @@
           T = Object(i['useState'])(!1),
           P = Object(a['a'])(T, 2),
           N = P[0],
-          I = P[1];
+          R = P[1];
         Object(i['useEffect'])(() => {
           -1 !== S.x && -1 !== S.y
-            ? (I(!0), setTimeout(() => I(!1), 300))
-            : I(!1);
+            ? (R(!0), setTimeout(() => R(!1), 300))
+            : R(!1);
         }, [S]),
           Object(i['useEffect'])(() => {
             N || j({ x: -1, y: -1 });
           }, [N]);
-        var R = {
+        var I = {
             'ew-btn': !0,
             ['ew-btn-'.concat(t)]: !h,
             'ew-btn-ripple': u,
@@ -5687,7 +5819,7 @@
                 Object(r['a'])(
                   {
                     href: h,
-                    className: Object(c['a'])(R),
+                    className: Object(c['a'])(I),
                     target: g,
                     onClick: M,
                   },
@@ -5706,7 +5838,7 @@
                   {
                     type: f,
                     disabled: p,
-                    className: Object(c['a'])(R),
+                    className: Object(c['a'])(I),
                     onClick: M,
                   },
                   k,
@@ -5841,7 +5973,7 @@
         n
       );
     }
-    function I(e) {
+    function R(e) {
       var t,
         n = e.icon,
         r = e.props,
@@ -5854,7 +5986,7 @@
         t || a || null
       );
     }
-    function R(e) {
+    function I(e) {
       var t = s['useContext'](O),
         n = t.mode,
         r = t.rtl,
@@ -5868,9 +6000,9 @@
     function L() {
       return s['useContext'](M);
     }
-    var _ = s['createContext'](A);
-    function D(e) {
-      var t = s['useContext'](_);
+    var D = s['createContext'](A);
+    function _(e) {
+      var t = s['useContext'](D);
       return s['useMemo'](
         function () {
           return void 0 !== e ? [].concat(Object(i['a'])(t), [e]) : t;
@@ -5968,14 +6100,14 @@
           A = C.overflowDisabled,
           M = C.itemIcon,
           L = C.selectedKeys,
-          _ = C.onActive,
+          D = C.onActive,
           z = s['useContext'](H),
           F = z._internalRenderMenuItem,
           B = ''.concat(S, '-item'),
           V = s['useRef'](),
           q = s['useRef'](),
           K = P || f,
-          Y = D(u);
+          Y = _(u);
         var Z = function (e) {
             return {
               key: u,
@@ -5985,11 +6117,11 @@
             };
           },
           X = p || M,
-          Q = T(u, K, v, g),
-          J = Q.active,
-          ee = Object(c['a'])(Q, $),
+          J = T(u, K, v, g),
+          Q = J.active,
+          ee = Object(c['a'])(J, $),
           te = L.includes(u),
-          ne = R(Y.length),
+          ne = I(Y.length),
           re = function (e) {
             if (!K) {
               var t = Z(e);
@@ -6005,7 +6137,7 @@
             }
           },
           oe = function (e) {
-            _(u), null === x || void 0 === x || x(e);
+            D(u), null === x || void 0 === x || x(e);
           },
           ie = {};
         'option' === e.role && (ie['aria-selected'] = te);
@@ -6029,7 +6161,7 @@
               className: d()(
                 B,
                 ((t = {}),
-                Object(a['a'])(t, ''.concat(B, '-active'), J),
+                Object(a['a'])(t, ''.concat(B, '-active'), Q),
                 Object(a['a'])(t, ''.concat(B, '-selected'), te),
                 Object(a['a'])(t, ''.concat(B, '-disabled'), K),
                 t),
@@ -6041,7 +6173,7 @@
             },
           ),
           m,
-          s['createElement'](I, {
+          s['createElement'](R, {
             props: Object(o['a'])(
               Object(o['a'])({}, e),
               {},
@@ -6055,7 +6187,7 @@
     function Y(e) {
       var t = e.eventKey,
         n = L(),
-        r = D(t);
+        r = _(t);
       return (
         s['useEffect'](
           function () {
@@ -6074,10 +6206,10 @@
     }
     var Z = Y,
       X = n('U8pU'),
-      Q = n('Zm9Q'),
-      J = ['label', 'children', 'key', 'type'];
+      J = n('Zm9Q'),
+      Q = ['label', 'children', 'key', 'type'];
     function ee(e, t) {
-      return Object(Q['a'])(e).map(function (e, n) {
+      return Object(J['a'])(e).map(function (e, n) {
         if (s['isValidElement'](e)) {
           var r,
             a,
@@ -6109,7 +6241,7 @@
               a = e.children,
               o = e.key,
               i = e.type,
-              l = Object(c['a'])(e, J),
+              l = Object(c['a'])(e, Q),
               u = null !== o && void 0 !== o ? o : 'tmp-'.concat(t);
             return a || 'group' === i
               ? 'group' === i
@@ -6230,10 +6362,10 @@
         T = Object(l['a'])(j, 2),
         P = T[0],
         N = T[1],
-        I = g
+        R = g
           ? Object(o['a'])(Object(o['a'])({}, fe), x)
           : Object(o['a'])(Object(o['a'])({}, de), x),
-        R = me[p],
+        I = me[p],
         A = pe(p, C, S),
         M = Object(o['a'])(
           Object(o['a'])({}, A),
@@ -6271,8 +6403,8 @@
             ),
             stretch: 'horizontal' === p ? 'minWidth' : null,
             getPopupContainer: v,
-            builtinPlacements: I,
-            popupPlacement: R,
+            builtinPlacements: R,
+            popupPlacement: I,
             popupVisible: P,
             popup: i,
             popupAlign: u && { offset: u },
@@ -6390,7 +6522,7 @@
           A = Object(c['a'])(e, be),
           M = U(f),
           L = s['useContext'](O),
-          _ = L.prefixCls,
+          D = L.prefixCls,
           F = L.mode,
           B = L.openKeys,
           V = L.disabled,
@@ -6402,12 +6534,12 @@
           Y = L.onItemClick,
           Z = L.onOpenChange,
           X = L.onActive,
-          Q = s['useContext'](H),
-          J = Q._internalRenderSubMenuItem,
+          J = s['useContext'](H),
+          Q = J._internalRenderSubMenuItem,
           ee = s['useContext'](z),
           te = ee.isSubPathKey,
-          ne = D(),
-          ae = ''.concat(_, '-submenu'),
+          ne = _(),
+          ae = ''.concat(D, '-submenu'),
           oe = V || p,
           ie = s['useRef'](),
           ce = s['useRef']();
@@ -6438,16 +6570,16 @@
             },
             [F, ve, W, ke, f, te],
           ),
-          Pe = R(ne.length),
+          Pe = I(ne.length),
           Ne = function (e) {
             oe ||
               (null === C || void 0 === C || C({ key: f, domEvent: e }),
               'inline' === F && Z(f, !de));
           },
-          Ie = re(function (e) {
+          Re = re(function (e) {
             null === w || void 0 === w || w(N(e)), Y(e);
           }),
-          Re = function (e) {
+          Ie = function (e) {
             'inline' !== F && Z(f, e);
           },
           Ae = function () {
@@ -6476,7 +6608,7 @@
             ),
             u,
             s['createElement'](
-              I,
+              R,
               {
                 icon: 'horizontal' !== F ? ue : null,
                 props: Object(o['a'])(
@@ -6488,26 +6620,26 @@
               s['createElement']('i', { className: ''.concat(ae, '-arrow') }),
             ),
           ),
-          _e = s['useRef'](F);
+          De = s['useRef'](F);
         if (
-          ('inline' !== F && (_e.current = ne.length > 1 ? 'vertical' : F), !q)
+          ('inline' !== F && (De.current = ne.length > 1 ? 'vertical' : F), !q)
         ) {
-          var De = _e.current;
+          var _e = De.current;
           Le = s['createElement'](
             he,
             {
-              mode: De,
+              mode: _e,
               prefixCls: ae,
               visible: !m && fe && 'inline' !== F,
               popupClassName: y,
               popupOffset: x,
               popup: s['createElement'](
                 j,
-                { mode: 'horizontal' === De ? 'vertical' : De },
+                { mode: 'horizontal' === _e ? 'vertical' : _e },
                 s['createElement'](le, { id: Me, ref: ce }, h),
               ),
               disabled: oe,
-              onVisibleChange: Re,
+              onVisibleChange: Ie,
             },
             Le,
           );
@@ -6535,8 +6667,8 @@
           !q && s['createElement'](ge, { id: Me, open: fe, keyPath: ne }, h),
         );
         return (
-          J &&
-            (ze = J(ze, e, {
+          Q &&
+            (ze = Q(ze, e, {
               selected: pe,
               active: Te,
               open: fe,
@@ -6545,7 +6677,7 @@
           s['createElement'](
             j,
             {
-              onItemClick: Ie,
+              onItemClick: Re,
               mode: 'horizontal' === F ? 'vertical' : F,
               itemIcon: se,
               expandIcon: ue,
@@ -6558,7 +6690,7 @@
       var t,
         n = e.eventKey,
         r = e.children,
-        a = D(n),
+        a = _(n),
         o = ee(r, a),
         i = L();
       return (
@@ -6575,7 +6707,7 @@
           [a],
         ),
         (t = i ? o : s['createElement'](xe, e, o)),
-        s['createElement'](_.Provider, { value: a }, t)
+        s['createElement'](D.Provider, { value: a }, t)
       );
     }
     var Ee = n('qE6j'),
@@ -6587,8 +6719,8 @@
       Te = w['a'].ESC,
       Pe = w['a'].HOME,
       Ne = w['a'].END,
-      Ie = [Oe, Se, ke, Ce];
-    function Re(e, t, n, r) {
+      Re = [Oe, Se, ke, Ce];
+    function Ie(e, t, n, r) {
       var o,
         i,
         l,
@@ -6662,7 +6794,7 @@
         return t.has(e);
       });
     }
-    function _e(e, t, n) {
+    function De(e, t, n) {
       var r =
         arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : 1;
       if (!e) return null;
@@ -6677,7 +6809,7 @@
         a[i]
       );
     }
-    function De(e, t, n, r, a, o, i, l, c, u) {
+    function _e(e, t, n, r, a, o, i, l, c, u) {
       var d = s['useRef'](),
         f = s['useRef']();
       f.current = t;
@@ -6692,7 +6824,7 @@
         }, []),
         function (s) {
           var m = s.which;
-          if ([].concat(Ie, [je, Te, Pe, Ne]).includes(m)) {
+          if ([].concat(Re, [je, Te, Pe, Ne]).includes(m)) {
             var h,
               v,
               g,
@@ -6713,9 +6845,9 @@
             var y = v.get(t),
               x = Me(y, h),
               w = g.get(x),
-              E = Re(e, 1 === i(w, !0).length, n, m);
+              E = Ie(e, 1 === i(w, !0).length, n, m);
             if (!E && m !== Pe && m !== Ne) return;
-            (Ie.includes(m) || [Pe, Ne].includes(m)) && s.preventDefault();
+            (Re.includes(m) || [Pe, Ne].includes(m)) && s.preventDefault();
             var k = function (e) {
               if (e) {
                 var t = e,
@@ -6740,7 +6872,7 @@
                   ? S[0]
                   : m === Ne
                   ? S[S.length - 1]
-                  : _e(C, h, x, E.offset)),
+                  : De(C, h, x, E.offset)),
                 k(O);
             } else if (E.inlineTrigger) c(w);
             else if (E.offset > 0)
@@ -6750,7 +6882,7 @@
                   b();
                   var e = x.getAttribute('aria-controls'),
                     t = document.getElementById(e),
-                    n = _e(t, h);
+                    n = De(t, h);
                   k(n);
                 }, 5));
             else if (E.offset < 0) {
@@ -6932,12 +7064,12 @@
           S = e.mode,
           T = void 0 === S ? 'vertical' : S,
           P = e.inlineCollapsed,
-          I = e.disabled,
-          R = e.disabledOverflow,
+          R = e.disabled,
+          I = e.disabledOverflow,
           A = e.subMenuOpenDelay,
           L = void 0 === A ? 0.1 : A,
-          _ = e.subMenuCloseDelay,
-          D = void 0 === _ ? 0.1 : _,
+          D = e.subMenuCloseDelay,
+          _ = void 0 === D ? 0.1 : D,
           U = e.forceSubMenuRender,
           V = e.defaultOpenKeys,
           q = e.openKeys,
@@ -6947,8 +7079,8 @@
           K = void 0 === G || G,
           Y = e.multiple,
           X = void 0 !== Y && Y,
-          Q = e.defaultSelectedKeys,
-          J = e.selectedKeys,
+          J = e.defaultSelectedKeys,
+          Q = e.selectedKeys,
           ee = e.onSelect,
           te = e.onDeselect,
           ae = e.inlineIndent,
@@ -6983,8 +7115,8 @@
           Te = Se[1],
           Pe = s['useRef'](),
           Ne = Be(O),
-          Ie = 'rtl' === C;
-        var Re = s['useMemo'](
+          Re = 'rtl' === C;
+        var Ie = s['useMemo'](
             function () {
               return ('inline' !== T && 'vertical' !== T) || !P
                 ? [T, !1]
@@ -6992,14 +7124,14 @@
             },
             [T, P],
           ),
-          Ae = Object(l['a'])(Re, 2),
+          Ae = Object(l['a'])(Ie, 2),
           Me = Ae[0],
           Le = Ae[1],
-          _e = s['useState'](0),
-          ze = Object(l['a'])(_e, 2),
+          De = s['useState'](0),
+          ze = Object(l['a'])(De, 2),
           Fe = ze[0],
           Ue = ze[1],
-          Ve = Fe >= Ce.length - 1 || 'horizontal' !== Me || R,
+          Ve = Fe >= Ce.length - 1 || 'horizontal' !== Me || I,
           He = Object(m['a'])(V, {
             value: q,
             postState: function (e) {
@@ -7012,10 +7144,10 @@
           Xe = function (e) {
             Ze(e), null === be || void 0 === be || be(e);
           },
-          Qe = s['useState'](Ye),
-          Je = Object(l['a'])(Qe, 2),
-          et = Je[0],
-          tt = Je[1],
+          Je = s['useState'](Ye),
+          Qe = Object(l['a'])(Je, 2),
+          et = Qe[0],
+          tt = Qe[1],
           nt = 'inline' === Me,
           rt = s['useRef'](!1);
         s['useEffect'](
@@ -7106,8 +7238,8 @@
             },
           };
         });
-        var xt = Object(m['a'])(Q || [], {
-            value: J,
+        var xt = Object(m['a'])(J || [], {
+            value: Q,
             postState: function (e) {
               return Array.isArray(e)
                 ? e
@@ -7164,7 +7296,7 @@
             var n = null !== t && void 0 !== t ? t : !Ye.includes(e);
             St(e, n);
           },
-          Pt = De(Me, vt, Ie, Ne, Pe, ut, st, gt, Tt, ye);
+          Pt = _e(Me, vt, Re, Ne, Pe, ut, st, gt, Tt, ye);
         s['useEffect'](function () {
           Te(!0);
         }, []);
@@ -7177,8 +7309,8 @@
             },
             [xe, Ee],
           ),
-          It =
-            'horizontal' !== Me || R
+          Rt =
+            'horizontal' !== Me || I
               ? Ce
               : Ce.map(function (e, t) {
                   return s['createElement'](
@@ -7187,7 +7319,7 @@
                     e,
                   );
                 }),
-          Rt = s['createElement'](
+          It = s['createElement'](
             v['a'],
             Object(r['a'])(
               {
@@ -7203,7 +7335,7 @@
                   y,
                   ((u = {}),
                   Object(a['a'])(u, ''.concat(h, '-inline-collapsed'), Le),
-                  Object(a['a'])(u, ''.concat(h, '-rtl'), Ie),
+                  Object(a['a'])(u, ''.concat(h, '-rtl'), Re),
                   u),
                   g,
                 ),
@@ -7211,7 +7343,7 @@
                 style: b,
                 role: 'menu',
                 tabIndex: w,
-                data: It,
+                data: Rt,
                 renderRawItem: function (e) {
                   return e;
                 },
@@ -7231,7 +7363,7 @@
                   );
                 },
                 maxCount:
-                  'horizontal' !== Me || R
+                  'horizontal' !== Me || I
                     ? v['a'].INVALIDATE
                     : v['a'].RESPONSIVE,
                 ssr: 'full',
@@ -7257,8 +7389,8 @@
                 rootClassName: g,
                 mode: Me,
                 openKeys: Ye,
-                rtl: Ie,
-                disabled: I,
+                rtl: Re,
+                disabled: R,
                 motion: je ? ie : null,
                 defaultMotions: je ? le : null,
                 activeKey: vt,
@@ -7267,7 +7399,7 @@
                 selectedKeys: Et,
                 inlineIndent: oe,
                 subMenuOpenDelay: L,
-                subMenuCloseDelay: D,
+                subMenuCloseDelay: _,
                 forceSubMenuRender: U,
                 builtinPlacements: ue,
                 triggerSubMenuAction: se,
@@ -7277,7 +7409,7 @@
                 onItemClick: Ot,
                 onOpenChange: St,
               },
-              s['createElement'](z.Provider, { value: pt }, Rt),
+              s['createElement'](z.Provider, { value: pt }, It),
               s['createElement'](
                 'div',
                 { style: { display: 'none' }, 'aria-hidden': !0 },
@@ -7289,8 +7421,8 @@
       }),
       Ze = Ye,
       Xe = ['className', 'title', 'eventKey', 'children'],
-      Qe = ['children'],
-      Je = function (e) {
+      Je = ['children'],
+      Qe = function (e) {
         var t = e.className,
           n = e.title,
           a = (e.eventKey, e.children),
@@ -7319,11 +7451,11 @@
       };
     function et(e) {
       var t = e.children,
-        n = Object(c['a'])(e, Qe),
-        r = D(n.eventKey),
+        n = Object(c['a'])(e, Je),
+        r = _(n.eventKey),
         a = ee(t, r),
         o = L();
-      return o ? a : s['createElement'](Je, Object(E['a'])(n, ['warnKey']), a);
+      return o ? a : s['createElement'](Qe, Object(E['a'])(n, ['warnKey']), a);
     }
     function tt(e) {
       var t = e.className,
@@ -9414,6 +9546,140 @@
     });
     t['a'] = O;
   },
+  '5SZx': function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n('q1tI'),
+      a = n.n(r),
+      o = n('dEAq'),
+      i = n('Zxc8'),
+      l = n('H1Ra'),
+      c = n('dMo/'),
+      s = a.a.memo((e) => {
+        var t = e.demos,
+          n = t['useclickoutside-demo.zh-cn'].component;
+        return a.a.createElement(
+          a.a.Fragment,
+          null,
+          a.a.createElement(
+            a.a.Fragment,
+            null,
+            a.a.createElement(
+              'div',
+              { className: 'markdown' },
+              a.a.createElement(
+                c['a'],
+                null,
+                a.a.createElement(
+                  'thead',
+                  null,
+                  a.a.createElement(
+                    'tr',
+                    null,
+                    a.a.createElement('th', null, 'title'),
+                    a.a.createElement('th', null, 'tags'),
+                    a.a.createElement('th', null, 'firstSeen'),
+                    a.a.createElement('th', null, 'lastUpdated'),
+                  ),
+                ),
+                a.a.createElement(
+                  'tbody',
+                  null,
+                  a.a.createElement(
+                    'tr',
+                    null,
+                    a.a.createElement(
+                      'td',
+                      null,
+                      '\u70b9\u51fb\u533a\u57df\u4e4b\u5916\u7684\u94a9\u5b50\u51fd\u6570',
+                    ),
+                    a.a.createElement(
+                      'td',
+                      null,
+                      '\u94a9\u5b50\u51fd\u6570,\u526f\u4f5c\u7528,\u4e8b\u4ef6',
+                    ),
+                    a.a.createElement('td', null, '2022/8/5'),
+                    a.a.createElement('td', null, '2022/8/5'),
+                  ),
+                ),
+              ),
+              a.a.createElement(
+                'p',
+                null,
+                '\u5904\u7406\u5728\u5305\u88c5\u7ec4\u4ef6\u5916\u90e8\u5355\u51fb\u7684\u4e8b\u4ef6\u3002',
+              ),
+              a.a.createElement(
+                'ul',
+                null,
+                a.a.createElement(
+                  'li',
+                  null,
+                  '\u521b\u5efa\u4e00\u4e2a\u81ea\u5b9a\u4e49\u94a9\u5b50\uff0c\u5b83\u63a5\u53d7\u4e00\u4e2a ref \u548c\u4e00\u4e2a\u56de\u8c03\u6765\u5904\u7406\u70b9\u51fb\u4e8b\u4ef6\u3002',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 useEffect() \u94a9\u5b50\u9644\u52a0\u548c\u6e05\u7406\u70b9\u51fb\u4e8b\u4ef6\u3002',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 useRef() \u94a9\u5b50\u4e3a\u4f60\u7684\u70b9\u51fb\u7ec4\u4ef6\u521b\u5efa\u4e00\u4e2a ref \u5e76\u5c06\u5b83\u4f20\u9012\u7ed9 useClickOutside \u94a9\u5b50\u3002',
+                ),
+              ),
+              a.a.createElement(l['a'], {
+                code: "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
+                lang: 'ts',
+              }),
+              a.a.createElement('p', null, '\u793a\u4f8b\u4ee3\u7801:'),
+              a.a.createElement(l['a'], {
+                code: "import React,{ useRef } from 'react'\nimport styled from '@emotion/styled'\nimport useClickOutside from './useClickOutside'\n\nconst ClickStyleBox = styled.div`\n    border:2px dashed #2396ef;\n    height:200px;\n    width:400px;\n    display:flex;\n    align-items:center;\n    justify-content:center;\n`;\n\nexport interface ClickBoxProps {\n    onClickOutside():void\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n    const { onClickOutside } = props;\n    const clickRef = useRef<HTMLDivElement | null>(null)\n    useClickOutside(clickRef,() => {\n        if(onClickOutside){\n            onClickOutside()\n        }\n    })\n    return (<ClickStyleBox ref={clickRef}><p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5916\u7684\u533a\u57df</p></ClickStyleBox>)\n}\nconst Demo = () => {\n    return (<ClickBox onClickOutside={() => alert(\"\u70b9\u51fb\u4e86\u533a\u57df\u4e4b\u5916\")}></ClickBox>)\n}\n\nexport default Demo;",
+                lang: 'tsx',
+              }),
+              a.a.createElement('p', null, '\u793a\u4f8b:'),
+            ),
+            a.a.createElement(
+              i['default'],
+              t['useclickoutside-demo.zh-cn'].previewerProps,
+              a.a.createElement(n, null),
+            ),
+            a.a.createElement(
+              'div',
+              { className: 'markdown' },
+              a.a.createElement(
+                'p',
+                null,
+                '\u66f4\u591a\u793a\u4f8b\u89c1 ',
+                a.a.createElement(
+                  o['Link'],
+                  { to: '../../guide/Select/Select' },
+                  '\u9009\u62e9\u5668\u7ec4\u4ef6',
+                ),
+                '\u3002',
+              ),
+            ),
+          ),
+        );
+      });
+    t['default'] = (e) => {
+      var t = a.a.useContext(o['context']),
+        n = t.demos;
+      return (
+        a.a.useEffect(() => {
+          var t;
+          null !== e &&
+            void 0 !== e &&
+            null !== (t = e.location) &&
+            void 0 !== t &&
+            t.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        a.a.createElement(s, { demos: n })
+      );
+    };
+  },
   '5Tg+': function (e, t, n) {
     var r = n('tiKp');
     t.f = r;
@@ -9519,13 +9785,13 @@
       T = n('8GlL'),
       P = n('5mdu'),
       N = n('afO8'),
-      I = n('lMq5'),
-      R = n('tiKp'),
+      R = n('lMq5'),
+      I = n('tiKp'),
       A = n('LQDL'),
-      M = R('species'),
+      M = I('species'),
       L = 'Promise',
-      _ = N.get,
-      D = N.set,
+      D = N.get,
+      _ = N.set,
       z = N.getterFor(L),
       F = d,
       B = s.TypeError,
@@ -9540,10 +9806,10 @@
       Y = 'rejectionhandled',
       Z = 0,
       X = 1,
-      Q = 2,
-      J = 1,
+      J = 2,
+      Q = 1,
       ee = 2,
-      te = I(L, function () {
+      te = R(L, function () {
         var e = x(F) !== String(F);
         if (!e) {
           if (66 === A) return !0;
@@ -9589,7 +9855,7 @@
                 m = u.domain;
               try {
                 d
-                  ? (o || (t.rejection === ee && ce(e, t), (t.rejection = J)),
+                  ? (o || (t.rejection === ee && ce(e, t), (t.rejection = Q)),
                     !0 === d
                       ? (l = a)
                       : (m && m.enter(), (l = d(a)), m && (m.exit(), (s = !0))),
@@ -9632,14 +9898,14 @@
             ((n = P(function () {
               $ ? V.emit('unhandledRejection', r, e) : oe(K, e, r);
             })),
-            (t.rejection = $ || le(t) ? ee : J),
+            (t.rejection = $ || le(t) ? ee : Q),
             n.error)
           )
             throw n.value;
         });
       },
       le = function (e) {
-        return e.rejection !== J && !e.parent;
+        return e.rejection !== Q && !e.parent;
       },
       ce = function (e, t) {
         C.call(s, function () {
@@ -9656,7 +9922,7 @@
           ((t.done = !0),
           r && (t = r),
           (t.value = n),
-          (t.state = Q),
+          (t.state = J),
           ae(e, t, !0));
       },
       de = function (e, t, n, r) {
@@ -9683,7 +9949,7 @@
     te &&
       ((F = function (e) {
         b(this, F, L), g(e), r.call(this);
-        var t = _(this);
+        var t = D(this);
         try {
           e(se(de, this, t), se(ue, this, t));
         } catch (n) {
@@ -9691,7 +9957,7 @@
         }
       }),
       (r = function (e) {
-        D(this, {
+        _(this, {
           type: L,
           done: !1,
           notified: !1,
@@ -9722,7 +9988,7 @@
       })),
       (a = function () {
         var e = new r(),
-          t = _(e);
+          t = D(e);
         (this.promise = e),
           (this.resolve = se(de, e, t)),
           (this.reject = se(ue, e, t));
@@ -9912,8 +10178,8 @@
       },
       P = T,
       N = n('EXcs'),
-      I = n('4i/N'),
-      R = n('hzQT'),
+      R = n('4i/N'),
+      I = n('hzQT'),
       A = n('H84U'),
       M = (n('85Yc'), n('bT9E'), u['createContext']({})),
       L = function (e) {
@@ -9937,8 +10203,8 @@
           );
         return u['createElement'](M.Provider, { value: o }, t);
       },
-      _ = n('YMnH'),
-      D = n('R3zJ'),
+      D = n('YMnH'),
+      _ = n('R3zJ'),
       z = n('ul5b'),
       F = function (e, t) {
         var n = {};
@@ -9961,7 +10227,7 @@
             j = null;
           }, 100);
       };
-    Object(D['a'])() &&
+    Object(_['a'])() &&
       document.documentElement.addEventListener('click', B, !0);
     var U = function (e) {
       var t,
@@ -10024,7 +10290,7 @@
         k = a('modal', s),
         S = a(),
         T = u['createElement'](
-          _['a'],
+          D['a'],
           { componentName: 'Modal', defaultLocale: Object(z['b'])() },
           c,
         ),
@@ -10032,7 +10298,7 @@
           'span',
           { className: ''.concat(k, '-close-x') },
           g ||
-            u['createElement'](I['a'], {
+            u['createElement'](R['a'], {
               className: ''.concat(k, '-close-icon'),
             }),
         ),
@@ -10047,7 +10313,7 @@
         L,
         { status: !0, override: !0 },
         u['createElement'](
-          R['a'],
+          I['a'],
           Object(f['a'])({}, E, {
             getContainer: void 0 === v ? r : v,
             prefixCls: k,
@@ -10096,13 +10362,13 @@
           S = e.closable,
           j = void 0 !== S && S,
           T = e.closeIcon,
-          I = e.modalRender,
-          R = e.focusTriggerAfterClose,
+          R = e.modalRender,
+          I = e.focusTriggerAfterClose,
           A = e.okType || 'primary',
           M = ''.concat(x, '-confirm'),
           L = !('okCancel' in e) || e.okCancel,
-          _ = e.width || 416,
-          D = e.style || {},
+          D = e.width || 416,
+          _ = e.style || {},
           z = void 0 === e.mask || e.mask,
           F = void 0 !== e.maskClosable && e.maskClosable,
           B = null !== e.autoFocusButton && (e.autoFocusButton || 'ok'),
@@ -10152,9 +10418,9 @@
               mask: z,
               maskClosable: F,
               maskStyle: f,
-              style: D,
+              style: _,
               bodyStyle: O,
-              width: _,
+              width: D,
               zIndex: o,
               afterClose: i,
               keyboard: c,
@@ -10162,8 +10428,8 @@
               getContainer: d,
               closable: j,
               closeIcon: T,
-              modalRender: I,
-              focusTriggerAfterClose: R,
+              modalRender: R,
+              focusTriggerAfterClose: I,
             },
             u['createElement'](
               'div',
@@ -10308,7 +10574,7 @@
         { type: 'warning' },
       );
     }
-    function Q(e) {
+    function J(e) {
       return Object(f['a'])(
         Object(f['a'])(
           { icon: u['createElement'](v['a'], null), okCancel: !1 },
@@ -10317,7 +10583,7 @@
         { type: 'info' },
       );
     }
-    function J(e) {
+    function Q(e) {
       return Object(f['a'])(
         Object(f['a'])(
           { icon: u['createElement'](p['a'], null), okCancel: !1 },
@@ -10408,7 +10674,7 @@
             };
           }),
           u['createElement'](
-            _['a'],
+            D['a'],
             { componentName: 'Modal', defaultLocale: oe['a'].Modal },
             function (e) {
               return u['createElement'](
@@ -10512,8 +10778,8 @@
         }, []),
         i = u['useMemo'](function () {
           return {
-            info: o(Q),
-            success: o(J),
+            info: o(J),
+            success: o(Q),
             error: o(ee),
             warning: o(X),
             confirm: o(te),
@@ -10527,10 +10793,10 @@
     var fe = V;
     (fe.useModal = ue),
       (fe.info = function (e) {
-        return Z(Q(e));
+        return Z(J(e));
       }),
       (fe.success = function (e) {
-        return Z(J(e));
+        return Z(Q(e));
       }),
       (fe.error = function (e) {
         return Z(ee(e));
@@ -10792,11 +11058,11 @@
         var t = s(e);
         return 'DataView' === t || c(P, t);
       },
-      I = function (e) {
+      R = function (e) {
         return l(e) && c(P, s(e));
       },
-      R = function (e) {
-        if (I(e)) return e;
+      I = function (e) {
+        if (R(e)) return e;
         throw TypeError('Target is not a typed array');
       },
       A = function (e) {
@@ -10856,12 +11122,12 @@
     e.exports = {
       NATIVE_ARRAY_BUFFER_VIEWS: j,
       TYPED_ARRAY_TAG: T && S,
-      aTypedArray: R,
+      aTypedArray: I,
       aTypedArrayConstructor: A,
       exportTypedArrayMethod: M,
       exportTypedArrayStaticMethod: L,
       isView: N,
-      isTypedArray: I,
+      isTypedArray: R,
       TypedArray: w,
       TypedArrayPrototype: E,
     };
@@ -11190,11 +11456,11 @@
         o = n[1];
       return P.setTwoToneColors({ primaryColor: r, secondaryColor: o });
     }
-    function I() {
+    function R() {
       var e = P.getTwoToneColors();
       return e.calculated ? [e.primaryColor, e.secondaryColor] : e.primaryColor;
     }
-    var R = [
+    var I = [
       'className',
       'icon',
       'spin',
@@ -11213,7 +11479,7 @@
         m = e.tabIndex,
         h = e.onClick,
         v = e.twoToneColor,
-        g = Object(i['a'])(e, R),
+        g = Object(i['a'])(e, I),
         b = l['useContext'](d['a']),
         y = b.prefixCls,
         x = void 0 === y ? 'anticon' : y,
@@ -11253,7 +11519,7 @@
       );
     });
     (A.displayName = 'AntdIcon'),
-      (A.getTwoToneColor = I),
+      (A.getTwoToneColor = R),
       (A.setTwoToneColor = N);
     t['a'] = A;
   },
@@ -11265,6 +11531,46 @@
     e.exports = function (e) {
       return void 0 !== e && (a.Array === e || i[o] === e);
     };
+  },
+  '6aGR': function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r,
+      a = n('qqnG'),
+      o = n('q1tI'),
+      i = n.n(o),
+      l = n('5SEd'),
+      c = n('Uyr4'),
+      s = l['a'].div(
+        r ||
+          (r = Object(a['a'])([
+            '\n    border:2px dashed #2396ef;\n    height:200px;\n    width:400px;\n    display:flex;\n    align-items:center;\n    justify-content:center;\n',
+          ])),
+      ),
+      u = (e) => {
+        var t = e.onClickOutside,
+          n = Object(o['useRef'])(null);
+        return (
+          Object(c['a'])(n, () => {
+            t && t();
+          }),
+          i.a.createElement(
+            s,
+            { ref: n },
+            i.a.createElement(
+              'p',
+              null,
+              '\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5916\u7684\u533a\u57df',
+            ),
+          )
+        );
+      },
+      d = () =>
+        i.a.createElement(u, {
+          onClickOutside: () =>
+            alert('\u70b9\u51fb\u4e86\u533a\u57df\u4e4b\u5916'),
+        });
+    t['default'] = d;
   },
   '6asN': function (e, t, n) {
     'use strict';
@@ -11387,6 +11693,39 @@
       return e === r;
     }
     e.exports = r;
+  },
+  '6srN': function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r,
+      a = n('qqnG'),
+      o = n('q1tI'),
+      i = n.n(o),
+      l = n('5SEd'),
+      c = n('Uyr4'),
+      s = l['a'].div(
+        r ||
+          (r = Object(a['a'])([
+            '\n    border:2px dashed #2396ef;\n    height:200px;\n    width:400px;\n    display:flex;\n    align-items:center;\n    justify-content:center;\n',
+          ])),
+      ),
+      u = (e) => {
+        var t = e.onClickOutside,
+          n = Object(o['useRef'])(null);
+        return (
+          Object(c['a'])(n, () => {
+            t && t();
+          }),
+          i.a.createElement(
+            s,
+            { ref: n },
+            i.a.createElement('p', null, 'Click out of this element'),
+          )
+        );
+      },
+      d = () =>
+        i.a.createElement(u, { onClickOutside: () => alert('click outside') });
+    t['default'] = d;
   },
   '6x0u': function (e, t, n) {
     'use strict';
@@ -12265,35 +12604,35 @@
         ? e
         : P(e, t, n, r);
     }
-    function I(e) {
+    function R(e) {
       return Array.isArray(e)
         ? A(e)
         : 'object' === Object(S['a'])(e) && null !== e
-        ? R(e)
+        ? I(e)
         : e;
     }
-    function R(e) {
+    function I(e) {
       if (Object.getPrototypeOf(e) === Object.prototype) {
         var t = {};
-        for (var n in e) t[n] = I(e[n]);
+        for (var n in e) t[n] = R(e[n]);
         return t;
       }
       return e;
     }
     function A(e) {
       return e.map(function (e) {
-        return I(e);
+        return R(e);
       });
     }
-    var M = I;
+    var M = R;
     function L(e) {
       return x(e);
     }
-    function _(e, t) {
+    function D(e, t) {
       var n = j(e, t);
       return n;
     }
-    function D(e, t, n) {
+    function _(e, t, n) {
       var r = arguments.length > 3 && void 0 !== arguments[3] && arguments[3],
         a = N(e, t, n, r);
       return a;
@@ -12302,8 +12641,8 @@
       var n = {};
       return (
         t.forEach(function (t) {
-          var r = _(e, t);
-          n = D(n, t, r);
+          var r = D(e, t);
+          n = _(n, t, r);
         }),
         n
       );
@@ -12523,7 +12862,7 @@
         X.apply(this, arguments)
       );
     }
-    function Q(e, t, n, r, a, o) {
+    function J(e, t, n, r, a, o) {
       var i,
         c = e.join('.'),
         s = n
@@ -12623,7 +12962,7 @@
             return { errors: t, rule: e };
           });
         });
-        i = (a ? te(u) : J(u)).then(function (e) {
+        i = (a ? te(u) : Q(u)).then(function (e) {
           return Promise.reject(e);
         });
       }
@@ -12634,7 +12973,7 @@
         i
       );
     }
-    function J(e) {
+    function Q(e) {
       return ee.apply(this, arguments);
     }
     function ee() {
@@ -12864,7 +13203,7 @@
                     var n = x(t);
                     return n.includes(d);
                   }));
-                var p = Q(t, n, f, e, l, s);
+                var p = J(t, n, f, e, l, s);
                 return (
                   p['catch'](function (e) {
                     return e;
@@ -12963,7 +13302,7 @@
           (a.getValue = function (e) {
             var t = a.props.fieldContext.getFieldsValue,
               n = a.getNamePath();
-            return _(e || t(!0), n);
+            return D(e || t(!0), n);
           }),
           (a.getControlled = function () {
             var e =
@@ -13411,7 +13750,7 @@
                 void 0 === r ||
                 r.map(function (t) {
                   var n = t.key;
-                  a = D(a, n, _(e, n));
+                  a = _(a, n, D(e, n));
                 }),
                 (n.prevWithoutPreserves = null),
                 n.updateStore(a);
@@ -13425,7 +13764,7 @@
               (n.prevWithoutPreserves = e);
           }),
           (this.getInitialValue = function (e) {
-            var t = _(n.initialValues, e);
+            var t = D(n.initialValues, e);
             return e.length ? M(t) : t;
           }),
           (this.setCallbacks = function (e) {
@@ -13526,7 +13865,7 @@
           (this.getFieldValue = function (e) {
             n.warningUnhooked();
             var t = L(e);
-            return _(n.store, t);
+            return D(n.store, t);
           }),
           (this.getFieldsError = function (e) {
             n.warningUnhooked();
@@ -13660,7 +13999,7 @@
                         var s = n.getFieldValue(o);
                         (e.skipExist && void 0 !== s) ||
                           n.updateStore(
-                            D(n.store, o, Object(c['a'])(l)[0].value),
+                            _(n.store, o, Object(c['a'])(l)[0].value),
                           );
                       }
                     }
@@ -13700,7 +14039,7 @@
             var r = e.map(L);
             r.forEach(function (e) {
               var t = n.getInitialValue(e);
-              n.updateStore(D(n.store, e, t));
+              n.updateStore(_(n.store, e, t));
             }),
               n.resetWithFieldInitialValue({ namePathList: r }),
               n.notifyObservers(t, r, { type: 'reset' }),
@@ -13715,7 +14054,7 @@
                 i = (e.errors, Object(o['a'])(e, ye)),
                 l = L(a);
               r.push(l),
-                'value' in i && n.updateStore(D(n.store, l, i.value)),
+                'value' in i && n.updateStore(_(n.store, l, i.value)),
                 n.notifyObservers(t, [l], { type: 'setField', data: e });
             }),
               n.notifyWatch(r);
@@ -13740,8 +14079,8 @@
             var t = e.props.initialValue;
             if (void 0 !== t) {
               var r = e.getNamePath(),
-                a = _(n.store, r);
-              void 0 === a && n.updateStore(D(n.store, r, t));
+                a = D(n.store, r);
+              void 0 === a && n.updateStore(_(n.store, r, t));
             }
           }),
           (this.isMergedPreserve = function (e) {
@@ -13779,7 +14118,7 @@
                   })
                 ) {
                   var l = n.store;
-                  n.updateStore(D(l, t, i, !0)),
+                  n.updateStore(_(l, t, i, !0)),
                     n.notifyObservers(l, [t], { type: 'remove' }),
                     n.triggerDependenciesUpdate(l, t);
                 }
@@ -13829,7 +14168,7 @@
           (this.updateValue = function (e, t) {
             var r = L(e),
               a = n.store;
-            n.updateStore(D(n.store, r, t)),
+            n.updateStore(_(n.store, r, t)),
               n.notifyObservers(a, [r], {
                 type: 'valueUpdate',
                 source: 'internal',
@@ -14128,8 +14467,8 @@
           T = j.getInternalHooks(v),
           P = T.useSubscribe,
           N = T.setInitialValues,
-          I = T.setCallbacks,
-          R = T.setValidateMessages,
+          R = T.setCallbacks,
+          I = T.setValidateMessages,
           A = T.setPreserve,
           M = T.destroyForm;
         r['useImperativeHandle'](t, function () {
@@ -14146,8 +14485,8 @@
             },
             [C, j, n],
           ),
-          R(Object(l['a'])(Object(l['a'])({}, C.validateMessages), m)),
-          I({
+          I(Object(l['a'])(Object(l['a'])({}, C.validateMessages), m)),
+          R({
             onValuesChange: b,
             onFieldsChange: function (e) {
               if ((C.triggerFormChange(n, e), x)) {
@@ -14169,18 +14508,18 @@
           }),
           A(u);
         var L,
-          _ = r['useRef'](null);
-        N(i, !_.current),
-          _.current || (_.current = !0),
+          D = r['useRef'](null);
+        N(i, !D.current),
+          D.current || (D.current = !0),
           r['useEffect'](function () {
             return M;
           }, []);
-        var D = 'function' === typeof d;
-        if (D) {
+        var _ = 'function' === typeof d;
+        if (_) {
           var z = j.getFieldsValue(!0);
           L = d(z, j);
         } else L = d;
-        P(!D);
+        P(!_);
         var F = r['useRef']();
         r['useEffect'](
           function () {
@@ -14256,25 +14595,25 @@
               n = t(v),
               r = n.registerWatch,
               a = r(function (e) {
-                var t = _(e, p.current),
+                var t = D(e, p.current),
                   n = Pe(t);
                 c.current !== n && ((c.current = n), i(t));
               }),
-              o = _(e(), p.current);
+              o = D(e(), p.current);
             return i(o), a;
           }
         }, []),
         o
       );
     }
-    var Ie = Ne,
-      Re = r['forwardRef'](Te),
-      Ae = Re;
+    var Re = Ne,
+      Ie = r['forwardRef'](Te),
+      Ae = Ie;
     (Ae.FormProvider = Ce),
       (Ae.Field = ce),
       (Ae.List = fe),
       (Ae.useForm = Ee),
-      (Ae.useWatch = Ie);
+      (Ae.useWatch = Re);
   },
   '8GlL': function (e, t, n) {
     'use strict';
@@ -14387,22 +14726,22 @@
       T = 'enter',
       P = 'leave',
       N = 'none',
-      I = 'prepare',
-      R = 'start',
+      R = 'prepare',
+      I = 'start',
       A = 'active',
       M = 'end',
       L = n('dm2S'),
-      _ = n('wgJM'),
-      D = function () {
+      D = n('wgJM'),
+      _ = function () {
         var e = l['useRef'](null);
         function t() {
-          _['a'].cancel(e.current);
+          D['a'].cancel(e.current);
         }
         function n(r) {
           var a =
             arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 2;
           t();
-          var o = Object(_['a'])(function () {
+          var o = Object(D['a'])(function () {
             a <= 1
               ? r({
                   isCanceled: function () {
@@ -14424,7 +14763,7 @@
       },
       z = Object(f['a'])() ? l['useLayoutEffect'] : l['useEffect'],
       F = z,
-      B = [I, R, A, M],
+      B = [R, I, A, M],
       U = !1,
       V = !0;
     function H(e) {
@@ -14435,12 +14774,12 @@
           r = Object(o['a'])(n, 2),
           a = r[0],
           i = r[1],
-          c = D(),
+          c = _(),
           s = Object(o['a'])(c, 2),
           u = s[0],
           d = s[1];
         function f() {
-          i(I, !0);
+          i(R, !0);
         }
         return (
           F(
@@ -14517,9 +14856,9 @@
         O = i.onAppearEnd,
         N = i.onEnterEnd,
         M = i.onLeaveEnd,
-        _ = i.onVisibleChanged,
-        D = Object(L['a'])(),
-        z = Object(o['a'])(D, 2),
+        D = i.onVisibleChanged,
+        _ = Object(L['a'])(),
+        z = Object(o['a'])(_, 2),
         B = z[0],
         $ = z[1],
         G = Object(L['a'])(S),
@@ -14527,9 +14866,9 @@
         Y = K[0],
         Z = K[1],
         X = Object(L['a'])(null),
-        Q = Object(o['a'])(X, 2),
-        J = Q[0],
-        ee = Q[1],
+        J = Object(o['a'])(X, 2),
+        Q = J[0],
+        ee = J[1],
         te = Object(l['useRef'])(!1),
         ne = Object(l['useRef'])(null);
       function re() {
@@ -14561,24 +14900,24 @@
               case j:
                 return (
                   (e = {}),
-                  Object(r['a'])(e, I, v),
-                  Object(r['a'])(e, R, y),
+                  Object(r['a'])(e, R, v),
+                  Object(r['a'])(e, I, y),
                   Object(r['a'])(e, A, E),
                   e
                 );
               case T:
                 return (
                   (t = {}),
-                  Object(r['a'])(t, I, g),
-                  Object(r['a'])(t, R, x),
+                  Object(r['a'])(t, R, g),
+                  Object(r['a'])(t, I, x),
                   Object(r['a'])(t, A, k),
                   t
                 );
               case P:
                 return (
                   (n = {}),
-                  Object(r['a'])(n, I, b),
-                  Object(r['a'])(n, R, w),
+                  Object(r['a'])(n, R, b),
+                  Object(r['a'])(n, I, w),
                   Object(r['a'])(n, A, C),
                   n
                 );
@@ -14589,8 +14928,8 @@
           [Y],
         ),
         ue = q(Y, function (e) {
-          if (e === I) {
-            var t = se[I];
+          if (e === R) {
+            var t = se[R];
             return t ? t(re()) : U;
           }
           var n;
@@ -14642,13 +14981,13 @@
         }, []),
         Object(l['useEffect'])(
           function () {
-            void 0 !== B && Y === S && (null === _ || void 0 === _ || _(B));
+            void 0 !== B && Y === S && (null === D || void 0 === D || D(B));
           },
           [B, Y],
         );
-      var he = J;
+      var he = Q;
       return (
-        se[I] && pe === R && (he = Object(a['a'])({ transition: 'none' }, he)),
+        se[R] && pe === I && (he = Object(a['a'])({ transition: 'none' }, he)),
         [Y, pe, he, null !== B && void 0 !== B ? B : t]
       );
     }
@@ -14674,8 +15013,8 @@
           n
         );
       })(l['Component']),
-      Q = X;
-    function J(e) {
+      J = X;
+    function Q(e) {
       var t = e;
       function n(e) {
         return !(!e.motionName || !t);
@@ -14718,26 +15057,26 @@
             },
             [t],
           ),
-          _ = Object(a['a'])(Object(a['a'])({}, b), {}, { visible: u });
+          D = Object(a['a'])(Object(a['a'])({}, b), {}, { visible: u });
         if (h)
           if (j !== S && n(e)) {
-            var D, z;
-            T === I
+            var _, z;
+            T === R
               ? (z = 'prepare')
               : H(T)
               ? (z = 'active')
-              : T === R && (z = 'start'),
+              : T === I && (z = 'start'),
               (M = h(
                 Object(a['a'])(
-                  Object(a['a'])({}, _),
+                  Object(a['a'])({}, D),
                   {},
                   {
                     className: d()(
                       O(v, j),
-                      ((D = {}),
-                      Object(r['a'])(D, O(v, ''.concat(j, '-').concat(z)), z),
-                      Object(r['a'])(D, v, 'string' === typeof v),
-                      D),
+                      ((_ = {}),
+                      Object(r['a'])(_, O(v, ''.concat(j, '-').concat(z)), z),
+                      Object(r['a'])(_, v, 'string' === typeof v),
+                      _),
                     ),
                     style: P,
                   },
@@ -14746,16 +15085,16 @@
               ));
           } else
             M = N
-              ? h(Object(a['a'])({}, _), L)
+              ? h(Object(a['a'])({}, D), L)
               : !p && A.current
               ? h(
-                  Object(a['a'])(Object(a['a'])({}, _), {}, { className: g }),
+                  Object(a['a'])(Object(a['a'])({}, D), {}, { className: g }),
                   L,
                 )
               : m
               ? h(
                   Object(a['a'])(
-                    Object(a['a'])({}, _),
+                    Object(a['a'])({}, D),
                     {},
                     { style: { display: 'none' } },
                   ),
@@ -14768,11 +15107,11 @@
             B = F.ref;
           B || (M = l['cloneElement'](M, { ref: L }));
         }
-        return l['createElement'](Q, { ref: w }, M);
+        return l['createElement'](J, { ref: w }, M);
       });
       return (u.displayName = 'CSSMotion'), u;
     }
-    var ee = J(E),
+    var ee = Q(E),
       te = n('wx14'),
       ne = n('Ff2n'),
       re = 'add',
@@ -15195,7 +15534,7 @@
         });
       var N = {};
       S && (N['aria-hidden'] = !0);
-      var I = l['createElement'](
+      var R = l['createElement'](
         C,
         Object(r['a'])(
           {
@@ -15210,7 +15549,7 @@
       );
       return (
         m &&
-          (I = l['createElement'](
+          (R = l['createElement'](
             u['a'],
             {
               onResize: function (e) {
@@ -15219,9 +15558,9 @@
               },
               disabled: h,
             },
-            I,
+            R,
           )),
-        I
+        R
       );
     }
     var h = l['forwardRef'](m);
@@ -15302,7 +15641,7 @@
     function N(e) {
       return '+ '.concat(e.length, ' ...');
     }
-    function I(e, t) {
+    function R(e, t) {
       var n = e.prefixCls,
         c = void 0 === n ? 'rc-overflow' : n,
         f = e.data,
@@ -15317,13 +15656,13 @@
         k = e.className,
         C = e.maxCount,
         O = e.renderRest,
-        I = e.renderRawRest,
-        R = e.suffix,
+        R = e.renderRawRest,
+        I = e.suffix,
         A = e.component,
         M = void 0 === A ? 'div' : A,
         L = e.itemComponent,
-        _ = e.onVisibleChange,
-        D = Object(i['a'])(e, S),
+        D = e.onVisibleChange,
+        _ = Object(i['a'])(e, S),
         z = y(),
         F = 'full' === w,
         B = z(null),
@@ -15338,9 +15677,9 @@
         Y = z(0),
         Z = Object(o['a'])(Y, 2),
         X = Z[0],
-        Q = Z[1],
-        J = z(0),
-        ee = Object(o['a'])(J, 2),
+        J = Z[1],
+        Q = z(0),
+        ee = Object(o['a'])(Q, 2),
         te = ee[0],
         ne = ee[1],
         re = z(0),
@@ -15411,19 +15750,19 @@
           [m],
         );
       function Ne(e, t) {
-        me(e), t || (ye(e < p.length - 1), null === _ || void 0 === _ || _(e));
-      }
-      function Ie(e, t) {
-        H(t.clientWidth);
+        me(e), t || (ye(e < p.length - 1), null === D || void 0 === D || D(e));
       }
       function Re(e, t) {
+        H(t.clientWidth);
+      }
+      function Ie(e, t) {
         K(function (n) {
           var r = new Map(n);
           return null === t ? r['delete'](e) : r.set(e, t), r;
         });
       }
       function Ae(e, t) {
-        ne(t), Q(te);
+        ne(t), J(te);
       }
       function Me(e, t) {
         ie(t);
@@ -15456,14 +15795,14 @@
                 break;
               }
             }
-            R && Le(0) + oe > q && ue(null);
+            I && Le(0) + oe > q && ue(null);
           }
         },
         [q, G, te, oe, Te, Se],
       );
-      var _e = be && !!je.length,
-        De = {};
-      null !== se && ke && (De = { position: 'absolute', left: se, top: 0 });
+      var De = be && !!je.length,
+        _e = {};
+      null !== se && ke && (_e = { position: 'absolute', left: se, top: 0 });
       var ze,
         Fe = { prefixCls: xe, responsive: ke, component: L, invalidate: Ce },
         Be = h
@@ -15480,7 +15819,7 @@
                       order: t,
                       item: e,
                       itemKey: n,
-                      registerSize: Re,
+                      registerSize: Ie,
                       display: t <= he,
                     },
                   ),
@@ -15498,23 +15837,23 @@
                   item: e,
                   renderItem: Pe,
                   itemKey: n,
-                  registerSize: Re,
+                  registerSize: Ie,
                   display: t <= he,
                 }),
               );
             },
         Ue = {
-          order: _e ? he : Number.MAX_SAFE_INTEGER,
+          order: De ? he : Number.MAX_SAFE_INTEGER,
           className: ''.concat(xe, '-rest'),
           registerSize: Ae,
-          display: _e,
+          display: De,
         };
-      if (I)
-        I &&
+      if (R)
+        R &&
           (ze = l['createElement'](
             j.Provider,
             { value: Object(a['a'])(Object(a['a'])({}, Fe), Ue) },
-            I(je),
+            R(je),
           ));
       else {
         var Ve = O || N;
@@ -15526,10 +15865,10 @@
       }
       var He = l['createElement'](
         M,
-        Object(r['a'])({ className: s()(!Ce && c, k), style: E, ref: t }, D),
+        Object(r['a'])({ className: s()(!Ce && c, k), style: E, ref: t }, _),
         Se.map(Be),
         Oe ? ze : null,
-        R &&
+        I &&
           l['createElement'](
             v,
             Object(r['a'])({}, Fe, {
@@ -15539,27 +15878,27 @@
               className: ''.concat(xe, '-suffix'),
               registerSize: Me,
               display: !0,
-              style: De,
+              style: _e,
             }),
-            R,
+            I,
           ),
       );
       return (
         Ee &&
           (He = l['createElement'](
             u['a'],
-            { onResize: Ie, disabled: !ke },
+            { onResize: Re, disabled: !ke },
             He,
           )),
         He
       );
     }
-    var R = l['forwardRef'](I);
-    (R.displayName = 'Overflow'),
-      (R.Item = O),
-      (R.RESPONSIVE = T),
-      (R.INVALIDATE = P);
-    var A = R;
+    var I = l['forwardRef'](R);
+    (I.displayName = 'Overflow'),
+      (I.Item = O),
+      (I.RESPONSIVE = T),
+      (I.INVALIDATE = P);
+    var A = I;
     t['a'] = A;
   },
   '90hW': function (e, t) {
@@ -16079,6 +16418,62 @@
         },
       },
     );
+  },
+  AgAx: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r,
+      a = n('tJVT'),
+      o = n('qqnG'),
+      i = n('q1tI'),
+      l = n.n(i),
+      c = n('m8iu'),
+      s = n('1Y2s'),
+      u = n('uZkO'),
+      d = n('5SEd'),
+      f = (e) => {
+        var t = e.visible,
+          n = e.onCancel,
+          r = e.onOk;
+        return (
+          Object(u['a'])(),
+          l.a.createElement(
+            c['a'],
+            {
+              title: 'scrollModal',
+              visible: t,
+              showCancel: !0,
+              cancelText: 'Cancel',
+              okText: 'Ok',
+              onCancel: n,
+              onOk: r,
+            },
+            'Scroll locked! ',
+            l.a.createElement('br', null),
+            l.a.createElement(s['a'], { onClick: n }, 'Click me to unlock'),
+          )
+        );
+      },
+      p = d['a'].div(
+        r ||
+          (r = Object(o['a'])([
+            '\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n',
+          ])),
+      ),
+      m = () => {
+        var e = Object(i['useState'])(!1),
+          t = Object(a['a'])(e, 2),
+          n = t[0],
+          r = t[1],
+          o = () => r(!1);
+        return l.a.createElement(
+          p,
+          null,
+          l.a.createElement(s['a'], { onClick: () => r(!0) }, 'open the modal'),
+          n && l.a.createElement(f, { visible: n, onCancel: o, onOk: o }),
+        );
+      };
+    t['default'] = m;
   },
   AqCL: function (e, t) {
     e.exports =
@@ -18368,18 +18763,18 @@
                       S--, (C = e.slice(k, P)), (O.index -= k);
                     } else if (((O = o(w, 0, C, g)), !O)) continue;
                     j = O.index;
-                    var I = O[0],
-                      R = C.slice(0, j),
-                      A = C.slice(j + I.length),
+                    var R = O[0],
+                      I = C.slice(0, j),
+                      A = C.slice(j + R.length),
                       M = k + C.length;
                     d && M > d.reach && (d.reach = M);
                     var L = E.prev;
-                    R && ((L = c(t, L, R)), (k += R.length)), s(t, L, S);
-                    var _ = new a(f, v ? r.tokenize(I, v) : I, y, I);
-                    if (((E = c(t, L, _)), A && c(t, E, A), S > 1)) {
-                      var D = { cause: f + ',' + m, reach: M };
-                      i(e, t, n, E.prev, k, D),
-                        d && D.reach > d.reach && (d.reach = D.reach);
+                    I && ((L = c(t, L, I)), (k += I.length)), s(t, L, S);
+                    var D = new a(f, v ? r.tokenize(R, v) : R, y, R);
+                    if (((E = c(t, L, D)), A && c(t, E, A), S > 1)) {
+                      var _ = { cause: f + ',' + m, reach: M };
+                      i(e, t, n, E.prev, k, _),
+                        d && _.reach > d.reach && (d.reach = _.reach);
                     }
                   }
                 }
@@ -23617,12 +24012,12 @@
             /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+\.)+[a-zA-Z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]{2,}))$/,
           hex: /^#?([a-f0-9]{6}|[a-f0-9]{3})$/i,
         },
-        I = {
+        R = {
           integer: function (e) {
-            return I.number(e) && parseInt(e, 10) === e;
+            return R.number(e) && parseInt(e, 10) === e;
           },
           float: function (e) {
-            return I.number(e) && !I.integer(e);
+            return R.number(e) && !R.integer(e);
           },
           array: function (e) {
             return Array.isArray(e);
@@ -23647,7 +24042,7 @@
             return !isNaN(e) && 'number' === typeof e;
           },
           object: function (e) {
-            return 'object' === typeof e && !I.array(e);
+            return 'object' === typeof e && !R.array(e);
           },
           method: function (e) {
             return 'function' === typeof e;
@@ -23664,7 +24059,7 @@
             return 'string' === typeof e && !!e.match(N.hex);
           },
         },
-        R = function (e, t, n, r, a) {
+        I = function (e, t, n, r, a) {
           if (e.required && void 0 === t) j(e, t, n, r, a);
           else {
             var o = [
@@ -23682,7 +24077,7 @@
               ],
               i = e.type;
             o.indexOf(i) > -1
-              ? I[i](t) || r.push(m(a.messages.types[i], e.fullField, e.type))
+              ? R[i](t) || r.push(m(a.messages.types[i], e.fullField, e.type))
               : i &&
                 typeof t !== e.type &&
                 r.push(m(a.messages.types[i], e.fullField, e.type));
@@ -23721,7 +24116,7 @@
             -1 === e[M].indexOf(t) &&
               r.push(m(a.messages[M], e.fullField, e[M].join(', ')));
         },
-        _ = function (e, t, n, r, a) {
+        D = function (e, t, n, r, a) {
           if (e.pattern)
             if (e.pattern instanceof RegExp)
               (e.pattern.lastIndex = 0),
@@ -23737,25 +24132,25 @@
                 );
             }
         },
-        D = {
+        _ = {
           required: j,
           whitespace: T,
-          type: R,
+          type: I,
           range: A,
           enum: L,
-          pattern: _,
+          pattern: D,
         },
         z = function (e, t, n, r, a) {
           var o = [],
             i = e.required || (!e.required && r.hasOwnProperty(e.field));
           if (i) {
             if (v(t, 'string') && !e.required) return n();
-            D.required(e, t, r, o, a, 'string'),
+            _.required(e, t, r, o, a, 'string'),
               v(t, 'string') ||
-                (D.type(e, t, r, o, a),
-                D.range(e, t, r, o, a),
-                D.pattern(e, t, r, o, a),
-                !0 === e.whitespace && D.whitespace(e, t, r, o, a));
+                (_.type(e, t, r, o, a),
+                _.range(e, t, r, o, a),
+                _.pattern(e, t, r, o, a),
+                !0 === e.whitespace && _.whitespace(e, t, r, o, a));
           }
           n(o);
         },
@@ -23764,7 +24159,7 @@
             i = e.required || (!e.required && r.hasOwnProperty(e.field));
           if (i) {
             if (v(t) && !e.required) return n();
-            D.required(e, t, r, o, a), void 0 !== t && D.type(e, t, r, o, a);
+            _.required(e, t, r, o, a), void 0 !== t && _.type(e, t, r, o, a);
           }
           n(o);
         },
@@ -23773,8 +24168,8 @@
             i = e.required || (!e.required && r.hasOwnProperty(e.field));
           if (i) {
             if (('' === t && (t = void 0), v(t) && !e.required)) return n();
-            D.required(e, t, r, o, a),
-              void 0 !== t && (D.type(e, t, r, o, a), D.range(e, t, r, o, a));
+            _.required(e, t, r, o, a),
+              void 0 !== t && (_.type(e, t, r, o, a), _.range(e, t, r, o, a));
           }
           n(o);
         },
@@ -23783,7 +24178,7 @@
             i = e.required || (!e.required && r.hasOwnProperty(e.field));
           if (i) {
             if (v(t) && !e.required) return n();
-            D.required(e, t, r, o, a), void 0 !== t && D.type(e, t, r, o, a);
+            _.required(e, t, r, o, a), void 0 !== t && _.type(e, t, r, o, a);
           }
           n(o);
         },
@@ -23792,7 +24187,7 @@
             i = e.required || (!e.required && r.hasOwnProperty(e.field));
           if (i) {
             if (v(t) && !e.required) return n();
-            D.required(e, t, r, o, a), v(t) || D.type(e, t, r, o, a);
+            _.required(e, t, r, o, a), v(t) || _.type(e, t, r, o, a);
           }
           n(o);
         },
@@ -23801,8 +24196,8 @@
             i = e.required || (!e.required && r.hasOwnProperty(e.field));
           if (i) {
             if (v(t) && !e.required) return n();
-            D.required(e, t, r, o, a),
-              void 0 !== t && (D.type(e, t, r, o, a), D.range(e, t, r, o, a));
+            _.required(e, t, r, o, a),
+              void 0 !== t && (_.type(e, t, r, o, a), _.range(e, t, r, o, a));
           }
           n(o);
         },
@@ -23811,8 +24206,8 @@
             i = e.required || (!e.required && r.hasOwnProperty(e.field));
           if (i) {
             if (v(t) && !e.required) return n();
-            D.required(e, t, r, o, a),
-              void 0 !== t && (D.type(e, t, r, o, a), D.range(e, t, r, o, a));
+            _.required(e, t, r, o, a),
+              void 0 !== t && (_.type(e, t, r, o, a), _.range(e, t, r, o, a));
           }
           n(o);
         },
@@ -23821,10 +24216,10 @@
             i = e.required || (!e.required && r.hasOwnProperty(e.field));
           if (i) {
             if ((void 0 === t || null === t) && !e.required) return n();
-            D.required(e, t, r, o, a, 'array'),
+            _.required(e, t, r, o, a, 'array'),
               void 0 !== t &&
                 null !== t &&
-                (D.type(e, t, r, o, a), D.range(e, t, r, o, a));
+                (_.type(e, t, r, o, a), _.range(e, t, r, o, a));
           }
           n(o);
         },
@@ -23833,7 +24228,7 @@
             i = e.required || (!e.required && r.hasOwnProperty(e.field));
           if (i) {
             if (v(t) && !e.required) return n();
-            D.required(e, t, r, o, a), void 0 !== t && D.type(e, t, r, o, a);
+            _.required(e, t, r, o, a), void 0 !== t && _.type(e, t, r, o, a);
           }
           n(o);
         },
@@ -23843,7 +24238,7 @@
             i = e.required || (!e.required && r.hasOwnProperty(e.field));
           if (i) {
             if (v(t) && !e.required) return n();
-            D.required(e, t, r, o, a), void 0 !== t && D[G](e, t, r, o, a);
+            _.required(e, t, r, o, a), void 0 !== t && _[G](e, t, r, o, a);
           }
           n(o);
         },
@@ -23852,8 +24247,8 @@
             i = e.required || (!e.required && r.hasOwnProperty(e.field));
           if (i) {
             if (v(t, 'string') && !e.required) return n();
-            D.required(e, t, r, o, a),
-              v(t, 'string') || D.pattern(e, t, r, o, a);
+            _.required(e, t, r, o, a),
+              v(t, 'string') || _.pattern(e, t, r, o, a);
           }
           n(o);
         },
@@ -23863,34 +24258,34 @@
           if (i) {
             if (v(t, 'date') && !e.required) return n();
             var l;
-            if ((D.required(e, t, r, o, a), !v(t, 'date')))
+            if ((_.required(e, t, r, o, a), !v(t, 'date')))
               (l = t instanceof Date ? t : new Date(t)),
-                D.type(e, l, r, o, a),
-                l && D.range(e, l.getTime(), r, o, a);
+                _.type(e, l, r, o, a),
+                l && _.range(e, l.getTime(), r, o, a);
           }
           n(o);
         },
         X = function (e, t, n, r, a) {
           var o = [],
             i = Array.isArray(t) ? 'array' : typeof t;
-          D.required(e, t, r, o, a, i), n(o);
+          _.required(e, t, r, o, a, i), n(o);
         },
-        Q = function (e, t, n, r, a) {
+        J = function (e, t, n, r, a) {
           var o = e.type,
             i = [],
             l = e.required || (!e.required && r.hasOwnProperty(e.field));
           if (l) {
             if (v(t, o) && !e.required) return n();
-            D.required(e, t, r, i, a, o), v(t, o) || D.type(e, t, r, i, a);
+            _.required(e, t, r, i, a, o), v(t, o) || _.type(e, t, r, i, a);
           }
           n(i);
         },
-        J = function (e, t, n, r, a) {
+        Q = function (e, t, n, r, a) {
           var o = [],
             i = e.required || (!e.required && r.hasOwnProperty(e.field));
           if (i) {
             if (v(t) && !e.required) return n();
-            D.required(e, t, r, o, a);
+            _.required(e, t, r, o, a);
           }
           n(o);
         },
@@ -23907,11 +24302,11 @@
           enum: K,
           pattern: Y,
           date: Z,
-          url: Q,
-          hex: Q,
-          email: Q,
+          url: J,
+          hex: J,
+          email: J,
           required: X,
-          any: J,
+          any: Q,
         };
       function te() {
         return {
@@ -24239,13 +24634,13 @@
       T = 'Invalid host',
       P = 'Invalid port',
       N = /[A-Za-z]/,
-      I = /[\d+-.A-Za-z]/,
-      R = /\d/,
+      R = /[\d+-.A-Za-z]/,
+      I = /\d/,
       A = /^(0x|0X)/,
       M = /^[0-7]+$/,
       L = /^\d+$/,
-      _ = /^[\dA-Fa-f]+$/,
-      D = /[\u0000\u0009\u000A\u000D #%/:?@[\\]]/,
+      D = /^[\dA-Fa-f]+$/,
+      _ = /[\u0000\u0009\u000A\u000D #%/:?@[\\]]/,
       z = /[\u0000\u0009\u000A\u000D #/:?@[\\]]/,
       F = /^[\u0000-\u001F ]+|[\u0000-\u001F ]+$/g,
       B = /[\u0009\u000A\u000D]/g,
@@ -24255,8 +24650,8 @@
           if (']' != t.charAt(t.length - 1)) return T;
           if (((n = H(t.slice(1, -1))), !n)) return T;
           e.host = n;
-        } else if (Q(e)) {
-          if (((t = h(t)), D.test(t))) return T;
+        } else if (J(e)) {
+          if (((t = h(t)), _.test(t))) return T;
           if (((n = V(t)), null === n)) return T;
           e.host = n;
         } else {
@@ -24289,7 +24684,7 @@
           )
             i = 0;
           else {
-            if (!(10 == o ? L : 8 == o ? M : _).test(a)) return e;
+            if (!(10 == o ? L : 8 == o ? M : D).test(a)) return e;
             i = parseInt(a, o);
           }
           n.push(i);
@@ -24324,7 +24719,7 @@
           if (8 == s) return;
           if (':' != f()) {
             t = n = 0;
-            while (n < 4 && _.test(f()))
+            while (n < 4 && D.test(f()))
               (t = 16 * t + parseInt(f(), 16)), d++, n++;
             if ('.' == f()) {
               if (0 == n) return;
@@ -24335,8 +24730,8 @@
                   if (!('.' == f() && r < 4)) return;
                   d++;
                 }
-                if (!R.test(f())) return;
-                while (R.test(f())) {
+                if (!I.test(f())) return;
+                while (I.test(f())) {
                   if (((o = parseInt(f(), 10)), null === a)) a = o;
                   else {
                     if (0 == a) return;
@@ -24410,10 +24805,10 @@
         return n > 32 && n < 127 && !d(t, e) ? e : encodeURIComponent(e);
       },
       X = { ftp: 21, file: null, http: 80, https: 443, ws: 80, wss: 443 },
-      Q = function (e) {
+      J = function (e) {
         return d(X, e.scheme);
       },
-      J = function (e) {
+      Q = function (e) {
         return '' != e.username || '' != e.password;
       },
       ee = function (e) {
@@ -24509,7 +24904,7 @@
               (f += i.toLowerCase()), (s = le);
               break;
             case le:
-              if (i && (I.test(i) || '+' == i || '-' == i || '.' == i))
+              if (i && (R.test(i) || '+' == i || '-' == i || '.' == i))
                 f += i.toLowerCase();
               else {
                 if (':' != i) {
@@ -24519,23 +24914,23 @@
                 }
                 if (
                   n &&
-                  (Q(e) != d(X, f) ||
-                    ('file' == f && (J(e) || null !== e.port)) ||
+                  (J(e) != d(X, f) ||
+                    ('file' == f && (Q(e) || null !== e.port)) ||
                     ('file' == e.scheme && !e.host))
                 )
                   return;
                 if (((e.scheme = f), n))
                   return void (
-                    Q(e) &&
+                    J(e) &&
                     X[e.scheme] == e.port &&
                     (e.port = null)
                   );
                 (f = ''),
                   'file' == e.scheme
                     ? (s = ye)
-                    : Q(e) && a && a.scheme == e.scheme
+                    : J(e) && a && a.scheme == e.scheme
                     ? (s = se)
-                    : Q(e)
+                    : J(e)
                     ? (s = pe)
                     : '/' == o[u + 1]
                     ? ((s = ue), u++)
@@ -24577,7 +24972,7 @@
                   (e.port = a.port),
                   (e.path = a.path.slice()),
                   (e.query = a.query);
-              else if ('/' == i || ('\\' == i && Q(e))) s = fe;
+              else if ('/' == i || ('\\' == i && J(e))) s = fe;
               else if ('?' == i)
                 (e.username = a.username),
                   (e.password = a.password),
@@ -24608,7 +25003,7 @@
               }
               break;
             case fe:
-              if (!Q(e) || ('/' != i && '\\' != i)) {
+              if (!J(e) || ('/' != i && '\\' != i)) {
                 if ('/' != i) {
                   (e.username = a.username),
                     (e.password = a.password),
@@ -24646,7 +25041,7 @@
                 '/' == i ||
                 '?' == i ||
                 '#' == i ||
-                ('\\' == i && Q(e))
+                ('\\' == i && J(e))
               ) {
                 if (m && '' == f) return S;
                 (u -= p(f).length + 1), (f = ''), (s = ve);
@@ -24664,10 +25059,10 @@
                   '/' == i ||
                   '?' == i ||
                   '#' == i ||
-                  ('\\' == i && Q(e))
+                  ('\\' == i && J(e))
                 ) {
-                  if (Q(e) && '' == f) return T;
-                  if (n && '' == f && (J(e) || null !== e.port)) return;
+                  if (J(e) && '' == f) return T;
+                  if (n && '' == f && (Q(e) || null !== e.port)) return;
                   if (((c = U(e, f)), c)) return c;
                   if (((f = ''), (s = Ee), n)) return;
                   continue;
@@ -24680,19 +25075,19 @@
               }
               break;
             case be:
-              if (!R.test(i)) {
+              if (!I.test(i)) {
                 if (
                   i == r ||
                   '/' == i ||
                   '?' == i ||
                   '#' == i ||
-                  ('\\' == i && Q(e)) ||
+                  ('\\' == i && J(e)) ||
                   n
                 ) {
                   if ('' != f) {
                     var x = parseInt(f, 10);
                     if (x > 65535) return P;
-                    (e.port = Q(e) && x === X[e.scheme] ? null : x), (f = '');
+                    (e.port = J(e) && x === X[e.scheme] ? null : x), (f = '');
                   }
                   if (n) return;
                   s = Ee;
@@ -24762,7 +25157,7 @@
               f += i;
               break;
             case Ee:
-              if (Q(e)) {
+              if (J(e)) {
                 if (((s = ke), '/' != i && '\\' != i)) continue;
               } else if (n || '?' != i)
                 if (n || '#' != i) {
@@ -24774,15 +25169,15 @@
               if (
                 i == r ||
                 '/' == i ||
-                ('\\' == i && Q(e)) ||
+                ('\\' == i && J(e)) ||
                 (!n && ('?' == i || '#' == i))
               ) {
                 if (
                   (oe(f)
                     ? (re(e),
-                      '/' == i || ('\\' == i && Q(e)) || e.path.push(''))
+                      '/' == i || ('\\' == i && J(e)) || e.path.push(''))
                     : ae(f)
-                    ? '/' == i || ('\\' == i && Q(e)) || e.path.push('')
+                    ? '/' == i || ('\\' == i && J(e)) || e.path.push('')
                     : ('file' == e.scheme &&
                         !e.path.length &&
                         te(f) &&
@@ -24807,7 +25202,7 @@
             case Oe:
               n || '#' != i
                 ? i != r &&
-                  ("'" == i && Q(e)
+                  ("'" == i && J(e)
                     ? (e.query += '%27')
                     : (e.query += '#' == i ? '%23' : Z(i, $)))
                 : ((e.fragment = ''), (s = Se));
@@ -24838,13 +25233,13 @@
           }),
           o ||
             ((r.href = Ne.call(r)),
-            (r.origin = Ie.call(r)),
-            (r.protocol = Re.call(r)),
+            (r.origin = Re.call(r)),
+            (r.protocol = Ie.call(r)),
             (r.username = Ae.call(r)),
             (r.password = Me.call(r)),
             (r.host = Le.call(r)),
-            (r.hostname = _e.call(r)),
-            (r.port = De.call(r)),
+            (r.hostname = De.call(r)),
+            (r.port = _e.call(r)),
             (r.pathname = ze.call(r)),
             (r.search = Fe.call(r)),
             (r.searchParams = Be.call(r)),
@@ -24865,7 +25260,7 @@
         return (
           null !== a
             ? ((s += '//'),
-              J(e) && (s += n + (r ? ':' + r : '') + '@'),
+              Q(e) && (s += n + (r ? ':' + r : '') + '@'),
               (s += W(a)),
               null !== o && (s += ':' + o))
             : 'file' == t && (s += '//'),
@@ -24875,7 +25270,7 @@
           s
         );
       },
-      Ie = function () {
+      Re = function () {
         var e = k(this),
           t = e.scheme,
           n = e.port;
@@ -24885,11 +25280,11 @@
           } catch (r) {
             return 'null';
           }
-        return 'file' != t && Q(e)
+        return 'file' != t && J(e)
           ? t + '://' + W(e.host) + (null !== n ? ':' + n : '')
           : 'null';
       },
-      Re = function () {
+      Ie = function () {
         return k(this).scheme + ':';
       },
       Ae = function () {
@@ -24904,11 +25299,11 @@
           n = e.port;
         return null === t ? '' : null === n ? W(t) : W(t) + ':' + n;
       },
-      _e = function () {
+      De = function () {
         var e = k(this).host;
         return null === e ? '' : W(e);
       },
-      De = function () {
+      _e = function () {
         var e = k(this).port;
         return null === e ? '' : String(e);
       },
@@ -24941,8 +25336,8 @@
             if (r) throw TypeError(r);
             w(t.searchParams).updateSearchParams(t.query);
           }),
-          origin: Ve(Ie),
-          protocol: Ve(Re, function (e) {
+          origin: Ve(Re),
+          protocol: Ve(Ie, function (e) {
             var t = k(this);
             je(t, String(e) + ':', ie);
           }),
@@ -24966,11 +25361,11 @@
             var t = k(this);
             t.cannotBeABaseURL || je(t, String(e), ve);
           }),
-          hostname: Ve(_e, function (e) {
+          hostname: Ve(De, function (e) {
             var t = k(this);
             t.cannotBeABaseURL || je(t, String(e), ge);
           }),
-          port: Ve(De, function (e) {
+          port: Ve(_e, function (e) {
             var t = k(this);
             ee(t) ||
               ((e = String(e)), '' == e ? (t.port = null) : je(t, e, be));
@@ -25631,13 +26026,13 @@
                 })
               : null,
             N = !!(v ? v(P, n) : P),
-            I = N ? E(c, o) : c,
-            R = N ? Object(u['a'])({}, C, {}, l) : C,
+            R = N ? E(c, o) : c,
+            I = N ? Object(u['a'])({}, C, {}, l) : C,
             A = Object(u['a'])(
               {
                 'aria-current': (N && r) || null,
-                className: I,
-                style: R,
+                className: R,
+                style: I,
                 to: a,
               },
               j,
@@ -25727,7 +26122,7 @@
       if (!(e instanceof t))
         throw new TypeError('Cannot call a class as a function');
     }
-    function I(e, t) {
+    function R(e, t) {
       for (var n = 0; n < t.length; n++) {
         var r = t[n];
         (r.enumerable = r.enumerable || !1),
@@ -25736,8 +26131,8 @@
           Object.defineProperty(e, r.key, r);
       }
     }
-    function R(e, t, n) {
-      return t && I(e.prototype, t), n && I(e, n), e;
+    function I(e, t, n) {
+      return t && R(e.prototype, t), n && R(e, n), e;
     }
     function A(e, t, n) {
       return (
@@ -25753,19 +26148,19 @@
       );
     }
     function M(e) {
-      return L(e) || _(e) || D(e) || F();
+      return L(e) || D(e) || _(e) || F();
     }
     function L(e) {
       if (Array.isArray(e)) return e;
     }
-    function _(e) {
+    function D(e) {
       if (
         ('undefined' !== typeof Symbol && null != e[Symbol.iterator]) ||
         null != e['@@iterator']
       )
         return Array.from(e);
     }
-    function D(e, t) {
+    function _(e, t) {
       if (e) {
         if ('string' === typeof e) return z(e, t);
         var n = Object.prototype.toString.call(e).slice(8, -1);
@@ -25797,7 +26192,7 @@
       if (!n) {
         if (
           Array.isArray(e) ||
-          (n = D(e)) ||
+          (n = _(e)) ||
           (t && e && 'number' === typeof e.length)
         ) {
           n && (e = n);
@@ -25989,7 +26384,7 @@
           this.retry();
       }
       return (
-        R(e, [
+        I(e, [
           {
             key: 'promise',
             value: function () {
@@ -26074,21 +26469,21 @@
     function X(e) {
       return Y(W, e);
     }
-    function Q(e) {
+    function J(e) {
       if ('function' !== typeof e.render)
         throw new Error(
           'LoadableMap requires a `render(loaded, props)` function',
         );
       return Y($, e);
     }
-    function J(e, t) {
+    function Q(e, t) {
       var n = [];
       while (e.length) {
         var r = e.pop();
         n.push(r(t));
       }
       return Promise.all(n).then(function () {
-        if (e.length) return J(e, t);
+        if (e.length) return Q(e, t);
       });
     }
     function ee(e) {
@@ -26109,10 +26504,10 @@
     function te(e, t) {
       if (!e) throw new Error(t);
     }
-    (X.Map = Q),
+    (X.Map = J),
       (X.preloadAll = function () {
         return new Promise(function (e, t) {
-          J(V).then(e, t);
+          Q(V).then(e, t);
         });
       }),
       (X.preloadReady = function () {
@@ -26122,7 +26517,7 @@
           var n = function () {
             return (q = !0), t();
           };
-          J(H, e).then(n, n);
+          Q(H, e).then(n, n);
         });
       }),
       'undefined' !== typeof window &&
@@ -26163,7 +26558,7 @@
             (null === t || void 0 === t ? void 0 : t.validKeys) || []);
       }
       return (
-        R(e, [
+        I(e, [
           {
             key: 'register',
             value: function (e) {
@@ -26703,6 +27098,138 @@
     n.d(t, 'a', function () {
       return r;
     });
+  },
+  MYGh: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n('q1tI'),
+      a = n.n(r),
+      o = n('dEAq'),
+      i = n('Zxc8'),
+      l = n('H1Ra'),
+      c = n('dMo/'),
+      s = a.a.memo((e) => {
+        var t = e.demos,
+          n = t['usebodyscrolllock-demo.zh-cn'].component;
+        return a.a.createElement(
+          a.a.Fragment,
+          null,
+          a.a.createElement(
+            a.a.Fragment,
+            null,
+            a.a.createElement(
+              'div',
+              { className: 'markdown' },
+              a.a.createElement(
+                c['a'],
+                null,
+                a.a.createElement(
+                  'thead',
+                  null,
+                  a.a.createElement(
+                    'tr',
+                    null,
+                    a.a.createElement('th', null, '\u6807\u9898'),
+                    a.a.createElement('th', null, '\u6807\u7b7e'),
+                    a.a.createElement(
+                      'th',
+                      null,
+                      '\u9996\u6b21\u6dfb\u52a0\u65f6\u95f4',
+                    ),
+                    a.a.createElement('th', null, '\u66f4\u65b0\u65f6\u95f4'),
+                  ),
+                ),
+                a.a.createElement(
+                  'tbody',
+                  null,
+                  a.a.createElement(
+                    'tr',
+                    null,
+                    a.a.createElement(
+                      'td',
+                      null,
+                      '\u9501\u5b9abody\u6eda\u52a8\u7684\u94a9\u5b50\u51fd\u6570',
+                    ),
+                    a.a.createElement(
+                      'td',
+                      null,
+                      '\u94a9\u5b50\u51fd\u6570\uff0c\u526f\u4f5c\u7528',
+                    ),
+                    a.a.createElement('td', null, '2022/8/04'),
+                    a.a.createElement('td', null, '2022/8/04'),
+                  ),
+                ),
+              ),
+              a.a.createElement(
+                'p',
+                null,
+                '\u542f\u7528\u6b63\u6587\u6eda\u52a8\u9501\u5b9a\u3002',
+              ),
+              a.a.createElement(
+                'ul',
+                null,
+                a.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528\u5e26\u6709\u7a7a\u6570\u7ec4\u7684 useLayoutEffect() \u4f5c\u4e3a\u7b2c\u4e8c\u4e2a\u53c2\u6570\uff0c\u4ec5\u5728\u5b89\u88c5\u7ec4\u4ef6\u65f6\u6267\u884c\u4e00\u6b21\u63d0\u4f9b\u7684\u56de\u8c03\u3002',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 Window.getComputedStyle() \u83b7\u53d6 body \u5143\u7d20\u7684\u6ea2\u51fa\u503c\u5e76\u5c06\u5176\u5b58\u50a8\u5728\u53d8\u91cf\u4e2d\u3002',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  "\u5c06body\u5143\u7d20\u7684\u6ea2\u51fa\u503c\u66ff\u6362\u4e3a'hidden'\uff0c\u5378\u8f7d\u65f6\u6062\u590d\u4e3a\u539f\u59cb\u503c\u3002",
+                ),
+              ),
+              a.a.createElement(
+                'p',
+                null,
+                '\u94a9\u5b50\u51fd\u6570\u4ee3\u7801:',
+              ),
+              a.a.createElement(l['a'], {
+                code: "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container!).overflow;\n    container!.style.overflow = 'hidden';\n    return () => {\n      container!.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
+                lang: 'ts',
+              }),
+              a.a.createElement(
+                'p',
+                null,
+                '\u4f7f\u7528\u793a\u4f8b\u4ee3\u7801:',
+              ),
+              a.a.createElement(l['a'], {
+                code: "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+                lang: 'tsx',
+              }),
+              a.a.createElement('p', null, '\u793a\u4f8b:'),
+            ),
+            a.a.createElement(
+              i['default'],
+              t['usebodyscrolllock-demo.zh-cn'].previewerProps,
+              a.a.createElement(n, null),
+            ),
+          ),
+        );
+      });
+    t['default'] = (e) => {
+      var t = a.a.useContext(o['context']),
+        n = t.demos;
+      return (
+        a.a.useEffect(() => {
+          var t;
+          null !== e &&
+            void 0 !== e &&
+            null !== (t = e.location) &&
+            void 0 !== t &&
+            t.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        a.a.createElement(s, { demos: n })
+      );
+    };
   },
   MZF8: function (e, t, n) {
     'use strict';
@@ -27378,150 +27905,170 @@
       g =
         "import { cx, css } from '@emotion/css';\r\nimport React, { useState } from 'react';\r\nimport type { ReactNode, SyntheticEvent } from 'react';\r\n\r\nconst baseStyle = css`\r\n  line-height: 1.5715;\r\n`;\r\nconst AccordionContainer = cx(\r\n  baseStyle,\r\n  css`\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0;\r\n    color: #000000d9;\r\n    font-size: 14px;\r\n    background-color: #fafafa;\r\n    border: 1px solid #d9d9d9;\r\n    border-bottom: 0;\r\n    border-radius: 2px;\r\n  `,\r\n);\r\nconst AccordionItemContainer = css`\r\n  border-bottom: 1px solid #d9d9d9;\r\n`;\r\nconst AccordionItemHeader = cx(\r\n  baseStyle,\r\n  css`\r\n    position: relative;\r\n    display: flex;\r\n    flex-wrap: nowrap;\r\n    align-items: flex-start;\r\n    padding: 12px 16px;\r\n    color: rgba(0, 0, 0, 0.85);\r\n    cursor: pointer;\r\n    transition: all 0.3s, visibility 0s;\r\n    box-sizing: border-box;\r\n  `,\r\n);\r\n\r\nconst AccordionItemContent = css`\r\n  color: #000000d9;\r\n  background-color: #fff;\r\n  border-top: 1px solid #d9d9d9;\r\n  transition: all 0.3s ease-in-out;\r\n  padding: 16px;\r\n  &.collapsed {\r\n    display: none;\r\n  }\r\n  &.expanded {\r\n    display: block;\r\n  }\r\n`;\r\n\r\ninterface AccordionItemType {\r\n  index: string | number;\r\n  label: string;\r\n  isCollapsed: boolean;\r\n  handleClick(e: SyntheticEvent): void;\r\n  children: ReactNode;\r\n}\r\ninterface AccordionType {\r\n  defaultIndex: number | string;\r\n  onItemClick(key: number | string): void;\r\n  children: JSX.Element[];\r\n}\r\n\r\nconst AccordionItem = (props: Partial<AccordionItemType>) => {\r\n  const { label, isCollapsed, handleClick, children } = props;\r\n  return (\r\n    <div className={AccordionItemContainer} onClick={handleClick}>\r\n      <div className={AccordionItemHeader}>{label}</div>\r\n      <div\r\n        aria-expanded={isCollapsed}\r\n        className={`${AccordionItemContent}${\r\n          isCollapsed ? ' collapsed' : ' expanded'\r\n        }`}\r\n      >\r\n        {children}\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nconst Accordion = (props: Partial<AccordionType>) => {\r\n  const { defaultIndex, onItemClick, children } = props;\r\n  const [bindIndex, setBindIndex] = useState(defaultIndex);\r\n  const changeItem = (index: number | string) => {\r\n    if (typeof onItemClick === 'function') {\r\n      onItemClick(index);\r\n    }\r\n    if (index !== bindIndex) {\r\n      setBindIndex(index);\r\n    }\r\n  };\r\n  const items = children?.filter(\r\n    (item) => item?.type?.name === 'AccordionItem',\r\n  );\r\n  return (\r\n    <div className={AccordionContainer}>\r\n      {items?.map(({ props: { index, label, children } }) => (\r\n        <AccordionItem\r\n          key={index}\r\n          label={label}\r\n          children={children}\r\n          isCollapsed={bindIndex !== index}\r\n          handleClick={() => changeItem(index)}\r\n        />\r\n      ))}\r\n    </div>\r\n  );\r\n};\r\n\r\nconst Demo = () => {\r\n  return (\r\n    <Accordion defaultIndex=\"1\" onItemClick={console.log}>\r\n      <AccordionItem label=\"\u6807\u98981\" index=\"1\">\r\n        \u9879\u76ee1\r\n      </AccordionItem>\r\n      <AccordionItem label=\"\u6807\u98982\" index=\"2\">\r\n        \u9879\u76ee2\r\n      </AccordionItem>\r\n    </Accordion>\r\n  );\r\n};\r\n\r\nexport default Demo;",
       b =
-        "import React, { useState, useEffect } from 'react';\r\nimport './alert.less';\r\nimport { Space } from 'antd';\r\nimport 'antd/dist/antd.less';\r\nimport styled from '@emotion/styled';\r\n\r\ninterface AlertPropType {\r\n  isDefaultShown: boolean;\r\n  timeout: number;\r\n  type: string;\r\n  message: string;\r\n  showClose: boolean;\r\n  block: boolean;\r\n}\r\n\r\nconst SpaceBlock = styled(Space)`\r\n  width: 100%;\r\n`;\r\n\r\nconst Alert = (props: Partial<AlertPropType>) => {\r\n  const {\r\n    isDefaultShown,\r\n    timeout = 250,\r\n    type,\r\n    message,\r\n    showClose,\r\n    block,\r\n  } = props;\r\n  const [isShown, setIsShown] = useState(isDefaultShown);\r\n  const [isLeaving, setIsLeaving] = useState(false);\r\n\r\n  let timer: number | null = null;\r\n  useEffect(() => {\r\n    setIsShown(true);\r\n    return () => {\r\n      if (timer) {\r\n        clearTimeout(timer);\r\n      }\r\n    };\r\n  }, [timeout, timer, isDefaultShown]);\r\n\r\n  const closeAlert = () => {\r\n    setIsLeaving(true);\r\n    timer = setTimeout(() => {\r\n      setIsLeaving(false);\r\n      setIsShown(false);\r\n    }, timeout);\r\n  };\r\n\r\n  return isShown ? (\r\n    <div\r\n      className={`alert ${'alert-' + type}${isLeaving ? ' leaving' : ''}${\r\n        block ? ' alert-block' : ''\r\n      }`}\r\n      role=\"alert\"\r\n    >\r\n      <button\r\n        className=\"alert-close\"\r\n        onClick={closeAlert}\r\n        style={{ display: showClose ? 'block' : 'none' }}\r\n      >\r\n        &times;\r\n      </button>\r\n      {message}\r\n    </div>\r\n  ) : null;\r\n};\r\n\r\nconst Demo = () => {\r\n  return (\r\n    <SpaceBlock direction=\"vertical\">\r\n      <Alert type=\"info\" message=\"This is info\" block />\r\n      <Alert type=\"success\" message=\"This is success\" showClose />\r\n      <Alert type=\"warning\" message=\"This is warning\" />\r\n      <Alert type=\"error\" message=\"This is error\" />\r\n    </SpaceBlock>\r\n  );\r\n};\r\n\r\nexport default Demo;",
+        'import React from \'react\';\r\nimport { Space } from \'antd\';\r\nimport \'antd/dist/antd.less\';\r\nimport styled from \'@emotion/styled\';\r\nimport Alert from \'./Alert\';\r\nconst SpaceBlock = styled(Space)`\r\n  width: 100%;\r\n`;\r\nconst Demo = () => {\r\n    return (\r\n      <SpaceBlock direction="vertical">\r\n        <Alert type="info" message="This is info" block />\r\n        <Alert type="success" message="This is success" showClose />\r\n        <Alert type="warning" message="This is warning" />\r\n        <Alert type="error" message="This is error" />\r\n      </SpaceBlock>\r\n    );\r\n  };\r\n  \r\n  export default Demo;',
       y =
-        '@keyframes leave {\r\n  0% {\r\n    opacity: 1;\r\n  }\r\n\r\n  100% {\r\n    opacity: 0;\r\n  }\r\n}\r\n\r\n@baseSelector: alert;\r\n@infoBgColor: #e6f7ff;\r\n@infoBorderColor: #91d5ff;\r\n@warningBgColor: #fffbe6;\r\n@warningBorderColor: #ffe58f;\r\n@errorBgColor: #fff2f0;\r\n@errorBorderColor: #ffccc7;\r\n@successBgColor: #f6ffed;\r\n@successBorderColor: #b7eb8f;\r\n@color: rgba(0, 0, 0, 0.85);\r\n@closeActiveColor: fadeout(@color, 25%);\r\n.@{baseSelector} {\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  color: @color;\r\n  font-size: 14px;\r\n  line-height: 1.5715;\r\n  list-style: none;\r\n  position: relative;\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 8px 15px;\r\n  word-wrap: break-word;\r\n  border-radius: 2px;\r\n  border: 1px solid transparent;\r\n  &.@{baseSelector}-block {\r\n    width: percentage(1);\r\n  }\r\n  &.@{baseSelector}-info {\r\n    background-color: @infoBgColor;\r\n    border-color: @infoBorderColor;\r\n  }\r\n\r\n  &.@{baseSelector}-warning {\r\n    background-color: @warningBgColor;\r\n    border-color: @warningBorderColor;\r\n  }\r\n\r\n  &.@{baseSelector}-error {\r\n    background-color: @errorBgColor;\r\n    border-color: @errorBorderColor;\r\n  }\r\n\r\n  &.@{baseSelector}-success {\r\n    background-color: @successBgColor;\r\n    border-color: @successBorderColor;\r\n  }\r\n\r\n  .@{baseSelector}-close {\r\n    margin-left: 8px;\r\n    padding: 0;\r\n    overflow: hidden;\r\n    font-size: 16px;\r\n    line-height: 12px;\r\n    background-color: transparent;\r\n    border: none;\r\n    outline: none;\r\n    cursor: pointer;\r\n    margin: 0;\r\n    color: @color;\r\n    position: absolute;\r\n    right: 10px;\r\n    top: 10px;\r\n    &:hover {\r\n      color: @closeActiveColor;\r\n    }\r\n  }\r\n}',
+        "import React, { useState, useEffect } from 'react';\r\nimport './alert.less';\r\n\r\ninterface AlertPropType {\r\n  isDefaultShown: boolean;\r\n  timeout: number;\r\n  type: string;\r\n  message: string;\r\n  showClose: boolean;\r\n  block: boolean;\r\n}\r\n\r\nconst Alert = (props: Partial<AlertPropType>) => {\r\n  const {\r\n    isDefaultShown,\r\n    timeout = 250,\r\n    type,\r\n    message,\r\n    showClose,\r\n    block,\r\n  } = props;\r\n  const [isShown, setIsShown] = useState(isDefaultShown);\r\n  const [isLeaving, setIsLeaving] = useState(false);\r\n\r\n  let timer: number | null = null;\r\n  useEffect(() => {\r\n    setIsShown(true);\r\n    return () => {\r\n      if (timer) {\r\n        clearTimeout(timer);\r\n      }\r\n    };\r\n  }, [timeout, timer, isDefaultShown]);\r\n\r\n  const closeAlert = () => {\r\n    setIsLeaving(true);\r\n    timer = setTimeout(() => {\r\n      setIsLeaving(false);\r\n      setIsShown(false);\r\n    }, timeout);\r\n  };\r\n\r\n  return isShown ? (\r\n    <div\r\n      className={`alert ${'alert-' + type}${isLeaving ? ' leaving' : ''}${\r\n        block ? ' alert-block' : ''\r\n      }`}\r\n      role=\"alert\"\r\n    >\r\n      <button\r\n        className=\"alert-close\"\r\n        onClick={closeAlert}\r\n        style={{ display: showClose ? 'block' : 'none' }}\r\n      >\r\n        &times;\r\n      </button>\r\n      {message}\r\n    </div>\r\n  ) : null;\r\n};\r\n\r\nexport default Alert;",
       x =
-        "import React, { useState, useEffect } from 'react';\r\nimport './alert.less';\r\nimport { Space } from 'antd';\r\nimport 'antd/dist/antd.less';\r\nimport styled from '@emotion/styled';\r\n\r\ninterface AlertPropType {\r\n  isDefaultShown: boolean;\r\n  timeout: number;\r\n  type: string;\r\n  message: string;\r\n  showClose: boolean;\r\n  block: boolean;\r\n}\r\n\r\nconst SpaceBlock = styled(Space)`\r\n  width: 100%;\r\n`;\r\n\r\nconst Alert = (props: Partial<AlertPropType>) => {\r\n  const {\r\n    isDefaultShown,\r\n    timeout = 250,\r\n    type,\r\n    message,\r\n    showClose,\r\n    block,\r\n  } = props;\r\n  const [isShown, setIsShown] = useState(isDefaultShown);\r\n  const [isLeaving, setIsLeaving] = useState(false);\r\n\r\n  let timer: number | null = null;\r\n  useEffect(() => {\r\n    setIsShown(true);\r\n    return () => {\r\n      if (timer) {\r\n        clearTimeout(timer);\r\n      }\r\n    };\r\n  }, [timeout, timer, isDefaultShown]);\r\n\r\n  const closeAlert = () => {\r\n    setIsLeaving(true);\r\n    timer = setTimeout(() => {\r\n      setIsLeaving(false);\r\n      setIsShown(false);\r\n    }, timeout);\r\n  };\r\n\r\n  return isShown ? (\r\n    <div\r\n      className={`alert ${'alert-' + type}${isLeaving ? ' leaving' : ''}${\r\n        block ? ' alert-block' : ''\r\n      }`}\r\n      role=\"alert\"\r\n    >\r\n      <button\r\n        className=\"alert-close\"\r\n        onClick={closeAlert}\r\n        style={{ display: showClose ? 'block' : 'none' }}\r\n      >\r\n        &times;\r\n      </button>\r\n      {message}\r\n    </div>\r\n  ) : null;\r\n};\r\n\r\nconst Demo = () => {\r\n  return (\r\n    <SpaceBlock direction=\"vertical\">\r\n      <Alert type=\"info\" message=\"\u8fd9\u662f\u4fe1\u606f\u63d0\u793a\uff0c\u5e76\u5360\u6ee1\u7a7a\u95f4\" block />\r\n      <Alert type=\"success\" message=\"\u8fd9\u662f\u6210\u529f\u63d0\u793a\uff0c\u5e76\u663e\u793a\u5173\u95ed\u6309\u94ae\" showClose />\r\n      <Alert\r\n        type=\"warning\"\r\n        message=\"\u8fd9\u662f\u8b66\u544a\u63d0\u793a\uff0c\u4e0d\u5360\u6ee1\u7a7a\u95f4\uff0c\u4e0d\u663e\u793a\u5173\u95ed\u6309\u94ae\"\r\n      />\r\n      <Alert type=\"error\" message=\"\u8fd9\u662f\u9519\u8bef\u63d0\u793a\uff0c\u4e0d\u5360\u6ee1\u7a7a\u95f4\uff0c\u4e0d\u663e\u793a\u5173\u95ed\u6309\u94ae\" />\r\n    </SpaceBlock>\r\n  );\r\n};\r\n\r\nexport default Demo;",
+        '@keyframes leave {\r\n  0% {\r\n    opacity: 1;\r\n  }\r\n\r\n  100% {\r\n    opacity: 0;\r\n  }\r\n}\r\n\r\n@baseSelector: alert;\r\n@infoBgColor: #e6f7ff;\r\n@infoBorderColor: #91d5ff;\r\n@warningBgColor: #fffbe6;\r\n@warningBorderColor: #ffe58f;\r\n@errorBgColor: #fff2f0;\r\n@errorBorderColor: #ffccc7;\r\n@successBgColor: #f6ffed;\r\n@successBorderColor: #b7eb8f;\r\n@color: rgba(0, 0, 0, 0.85);\r\n@closeActiveColor: fadeout(@color, 25%);\r\n.@{baseSelector} {\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  color: @color;\r\n  font-size: 14px;\r\n  line-height: 1.5715;\r\n  list-style: none;\r\n  position: relative;\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 8px 15px;\r\n  word-wrap: break-word;\r\n  border-radius: 2px;\r\n  border: 1px solid transparent;\r\n  &.@{baseSelector}-block {\r\n    width: percentage(1);\r\n  }\r\n  &.@{baseSelector}-info {\r\n    background-color: @infoBgColor;\r\n    border-color: @infoBorderColor;\r\n  }\r\n\r\n  &.@{baseSelector}-warning {\r\n    background-color: @warningBgColor;\r\n    border-color: @warningBorderColor;\r\n  }\r\n\r\n  &.@{baseSelector}-error {\r\n    background-color: @errorBgColor;\r\n    border-color: @errorBorderColor;\r\n  }\r\n\r\n  &.@{baseSelector}-success {\r\n    background-color: @successBgColor;\r\n    border-color: @successBorderColor;\r\n  }\r\n\r\n  .@{baseSelector}-close {\r\n    margin-left: 8px;\r\n    padding: 0;\r\n    overflow: hidden;\r\n    font-size: 16px;\r\n    line-height: 12px;\r\n    background-color: transparent;\r\n    border: none;\r\n    outline: none;\r\n    cursor: pointer;\r\n    margin: 0;\r\n    color: @color;\r\n    position: absolute;\r\n    right: 10px;\r\n    top: 10px;\r\n    &:hover {\r\n      color: @closeActiveColor;\r\n    }\r\n  }\r\n}',
       w =
-        'import React from \'react\';\nimport styled from \'@emotion/styled\';\n\nconst LinkContainer = styled.span`\n  display: inline-block;\n  a {\n    line-height: 1.5715;\n    position: relative;\n    display: inline-block;\n    font-weight: 400;\n    white-space: nowrap;\n    text-align: center;\n    cursor: pointer;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    user-select: none;\n    touch-action: manipulation;\n    height: 32px;\n    padding: 4px 15px;\n    font-size: 14px;\n    border-radius: 2px;\n    color: #1890ff;\n    background: transparent;\n    text-decoration: none;\n    &:hover {\n      color: #40a9ff;\n    }\n  }\n`;\n\ninterface AutoLinkPropType {\n  text: string;\n}\nconst AutoLink = (props: Partial<AutoLinkPropType>) => {\n  const { text } = props;\n  const delimiter =\n    /((?:https?:\\/\\/)?(?:(?:[a-z0-9]?(?:[a-z0-9\\-]{1,61}[a-z0-9])?\\.[^\\.|\\s])+[a-z\\.]*[a-z]+|(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3})(?::\\d{1,5})*[a-z0-9.,_\\/~#&=;%+?\\-\\\\(\\\\)]*)/gi;\n  return (\n    <LinkContainer>\n      {text?.split(delimiter).map((word) => {\n        const match = word.match(delimiter);\n        if (match) {\n          const url = match[0];\n          return (\n            <a\n              href={url.startsWith(\'http\') ? url : `http://${url}`}\n              target="_blank"\n              rel="noopener noreferrer"\n            >\n              {url}\n            </a>\n          );\n        }\n        return word;\n      })}\n    </LinkContainer>\n  );\n};\n\nconst Demo = () => {\n  return <AutoLink text="foo bar baz https://www.eveningwater.com bar" />;\n};\n\nexport default Demo;',
+        'import React from \'react\';\r\nimport { Space } from \'antd\';\r\nimport \'antd/dist/antd.less\';\r\nimport styled from \'@emotion/styled\';\r\nimport Alert from \'./Alert\';\r\nconst SpaceBlock = styled(Space)`\r\n  width: 100%;\r\n`;\r\nconst Demo = () => {\r\n    return (\r\n      <SpaceBlock direction="vertical">\r\n        <Alert type="info" message="\u8fd9\u662f\u4fe1\u606f\u63d0\u793a\uff0c\u5e76\u5360\u6ee1\u7a7a\u95f4" block />\r\n        <Alert type="success" message="\u8fd9\u662f\u6210\u529f\u63d0\u793a\uff0c\u5e76\u663e\u793a\u5173\u95ed\u6309\u94ae" showClose />\r\n        <Alert\r\n          type="warning"\r\n          message="\u8fd9\u662f\u8b66\u544a\u63d0\u793a\uff0c\u4e0d\u5360\u6ee1\u7a7a\u95f4\uff0c\u4e0d\u663e\u793a\u5173\u95ed\u6309\u94ae"\r\n        />\r\n        <Alert type="error" message="\u8fd9\u662f\u9519\u8bef\u63d0\u793a\uff0c\u4e0d\u5360\u6ee1\u7a7a\u95f4\uff0c\u4e0d\u663e\u793a\u5173\u95ed\u6309\u94ae" />\r\n      </SpaceBlock>\r\n    );\r\n  };\r\n  \r\n  export default Demo;',
       E =
-        'import React from \'react\';\nimport styled from \'@emotion/styled\';\n\nconst LinkContainer = styled.span`\n  display: inline-block;\n  a {\n    line-height: 1.5715;\n    position: relative;\n    display: inline-block;\n    font-weight: 400;\n    white-space: nowrap;\n    text-align: center;\n    cursor: pointer;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    user-select: none;\n    touch-action: manipulation;\n    height: 32px;\n    padding: 4px 15px;\n    font-size: 14px;\n    border-radius: 2px;\n    color: #1890ff;\n    background: transparent;\n    text-decoration: none;\n    &:hover {\n      color: #40a9ff;\n    }\n  }\n`;\n\ninterface AutoLinkPropType {\n  text: string;\n}\nconst AutoLink = (props: Partial<AutoLinkPropType>) => {\n  const { text } = props;\n  const delimiter =\n    /((?:https?:\\/\\/)?(?:(?:[a-z0-9]?(?:[a-z0-9\\-]{1,61}[a-z0-9])?\\.[^\\.|\\s])+[a-z\\.]*[a-z]+|(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3})(?::\\d{1,5})*[a-z0-9.,_\\/~#&=;%+?\\-\\\\(\\\\)]*)/gi;\n  return (\n    <LinkContainer>\n      {text?.split(delimiter).map((word) => {\n        const match = word.match(delimiter);\n        if (match) {\n          const url = match[0];\n          return (\n            <a\n              href={url.startsWith(\'http\') ? url : `http://${url}`}\n              target="_blank"\n              rel="noopener noreferrer"\n            >\n              {url}\n            </a>\n          );\n        }\n        return word;\n      })}\n    </LinkContainer>\n  );\n};\n\nconst Demo = () => {\n  return <AutoLink text="\u70b9\u51fbhttps://www.eveningwater.com\u6211\u554a" />;\n};\n\nexport default Demo;',
+        'import React from \'react\';\nimport styled from \'@emotion/styled\';\n\nconst LinkContainer = styled.span`\n  display: inline-block;\n  a {\n    line-height: 1.5715;\n    position: relative;\n    display: inline-block;\n    font-weight: 400;\n    white-space: nowrap;\n    text-align: center;\n    cursor: pointer;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    user-select: none;\n    touch-action: manipulation;\n    height: 32px;\n    padding: 4px 15px;\n    font-size: 14px;\n    border-radius: 2px;\n    color: #1890ff;\n    background: transparent;\n    text-decoration: none;\n    &:hover {\n      color: #40a9ff;\n    }\n  }\n`;\n\ninterface AutoLinkPropType {\n  text: string;\n}\nconst AutoLink = (props: Partial<AutoLinkPropType>) => {\n  const { text } = props;\n  const delimiter =\n    /((?:https?:\\/\\/)?(?:(?:[a-z0-9]?(?:[a-z0-9\\-]{1,61}[a-z0-9])?\\.[^\\.|\\s])+[a-z\\.]*[a-z]+|(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3})(?::\\d{1,5})*[a-z0-9.,_\\/~#&=;%+?\\-\\\\(\\\\)]*)/gi;\n  return (\n    <LinkContainer>\n      {text?.split(delimiter).map((word) => {\n        const match = word.match(delimiter);\n        if (match) {\n          const url = match[0];\n          return (\n            <a\n              href={url.startsWith(\'http\') ? url : `http://${url}`}\n              target="_blank"\n              rel="noopener noreferrer"\n            >\n              {url}\n            </a>\n          );\n        }\n        return word;\n      })}\n    </LinkContainer>\n  );\n};\n\nconst Demo = () => {\n  return <AutoLink text="foo bar baz https://www.eveningwater.com bar" />;\n};\n\nexport default Demo;',
       k =
-        'import React from \'react\';\nimport Button from \'./Button\';\nimport { Space } from \'antd\';\nimport styled from \'@emotion/styled\';\n\nconst MarginTop = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  return (\n    <>\n      <Space wrap>\n        <Button>default button</Button>\n        <Button type="link">link button</Button>\n        <Button type="link" href="https://www.eveningwater.com" target="_blank">\n          Hyperlink\n        </Button>\n        <Button ripple>ripple button</Button>\n        <Button type="primary">primary button</Button>\n        <Button type="dashed">dashed button</Button>\n        <Button type="text">text button</Button>\n        <Button danger>danger button</Button>\n        <Button danger disabled>\n          disabled button\n        </Button>\n      </Space>\n      <MarginTop>\n        <Button block>block button</Button>\n      </MarginTop>\n    </>\n  );\n};\n\nexport default Demo;',
+        'import React from \'react\';\nimport styled from \'@emotion/styled\';\n\nconst LinkContainer = styled.span`\n  display: inline-block;\n  a {\n    line-height: 1.5715;\n    position: relative;\n    display: inline-block;\n    font-weight: 400;\n    white-space: nowrap;\n    text-align: center;\n    cursor: pointer;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    user-select: none;\n    touch-action: manipulation;\n    height: 32px;\n    padding: 4px 15px;\n    font-size: 14px;\n    border-radius: 2px;\n    color: #1890ff;\n    background: transparent;\n    text-decoration: none;\n    &:hover {\n      color: #40a9ff;\n    }\n  }\n`;\n\ninterface AutoLinkPropType {\n  text: string;\n}\nconst AutoLink = (props: Partial<AutoLinkPropType>) => {\n  const { text } = props;\n  const delimiter =\n    /((?:https?:\\/\\/)?(?:(?:[a-z0-9]?(?:[a-z0-9\\-]{1,61}[a-z0-9])?\\.[^\\.|\\s])+[a-z\\.]*[a-z]+|(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3})(?::\\d{1,5})*[a-z0-9.,_\\/~#&=;%+?\\-\\\\(\\\\)]*)/gi;\n  return (\n    <LinkContainer>\n      {text?.split(delimiter).map((word) => {\n        const match = word.match(delimiter);\n        if (match) {\n          const url = match[0];\n          return (\n            <a\n              href={url.startsWith(\'http\') ? url : `http://${url}`}\n              target="_blank"\n              rel="noopener noreferrer"\n            >\n              {url}\n            </a>\n          );\n        }\n        return word;\n      })}\n    </LinkContainer>\n  );\n};\n\nconst Demo = () => {\n  return <AutoLink text="\u70b9\u51fbhttps://www.eveningwater.com\u6211\u554a" />;\n};\n\nexport default Demo;',
       C =
-        "import React, { useState, useEffect } from 'react';\nimport type { SyntheticEvent, ReactNode } from 'react';\nimport './button.less';\nimport classnames from '../../utils/classnames';\nimport Loader from '../Loader/Loader';\nexport interface ButtonProps extends Record<string, any> {\n  ripple: boolean;\n  block: boolean;\n  danger: boolean;\n  disabled: boolean;\n  type: 'primary' | 'dashed' | 'link' | 'text' | 'default';\n  size: 'large' | 'default' | 'small';\n  loading: boolean;\n  target: string;\n  href: string;\n  shape: 'default' | 'circle' | 'round';\n  nativeType: 'submit' | 'reset' | 'button';\n  children: ReactNode;\n  icon: ReactNode;\n  onClick(e: SyntheticEvent): void;\n}\n\nconst Button = (props: Partial<ButtonProps>) => {\n  const {\n    type,\n    block,\n    ripple,\n    nativeType = 'button',\n    disabled,\n    children,\n    href,\n    shape,\n    target,\n    danger,\n    loading,\n    icon,\n    size,\n    onClick,\n    ...rest\n  } = props;\n\n  const [coords, setCoords] = useState({ x: -1, y: -1 });\n  const [isRippling, setIsRippling] = useState(false);\n\n  useEffect(() => {\n    if (coords.x !== -1 && coords.y !== -1) {\n      setIsRippling(true);\n      setTimeout(() => setIsRippling(false), 300);\n    } else {\n      setIsRippling(false);\n    }\n  }, [coords]);\n\n  useEffect(() => {\n    if (!isRippling) {\n      setCoords({ x: -1, y: -1 });\n    }\n  }, [isRippling]);\n\n  const classNames = {\n    'ew-btn': true,\n    [`ew-btn-${type}`]: !href,\n    'ew-btn-ripple': ripple,\n    'ew-btn-link': type === 'link',\n    'ew-btn-block': block,\n    'ew-btn-disabled': disabled,\n    [`ew-btn-${shape}`]: !href,\n    'ew-btn-danger': danger,\n    [`ew-btn-${size}`]: size,\n  };\n  const classContentNames = {\n    'ew-btn-content': true,\n    'ew-btn-ripple-content': ripple,\n  };\n\n  const onClickHandler = (e: SyntheticEvent) => {\n    if (ripple) {\n      const event = e.nativeEvent as MouseEvent;\n      const rect = (e.target as HTMLButtonElement).getBoundingClientRect();\n      setCoords({ x: event.clientX - rect.left, y: event.clientY - rect.top });\n    }\n    if (onClick) {\n      onClick(e);\n    }\n  };\n\n  return (\n    <>\n      {href ? (\n        <a\n          href={href}\n          className={classnames(classNames)}\n          target={target}\n          onClick={onClickHandler}\n          {...rest}\n        >\n          <span className={classnames(classContentNames)}>\n            {icon}\n            {loading ? <Loader size={24} /> : children}\n          </span>\n        </a>\n      ) : (\n        <button\n          type={nativeType}\n          disabled={disabled}\n          className={classnames(classNames)}\n          onClick={onClickHandler}\n          {...rest}\n        >\n          {isRippling && ripple ? (\n            <span\n              className=\"ripple\"\n              style={{ left: coords.x, top: coords.y }}\n            ></span>\n          ) : null}\n          <span className={classnames(classContentNames)}>\n            {icon}\n            {loading ? <Loader size={24} /> : children}\n          </span>\n        </button>\n      )}\n    </>\n  );\n};\n\nexport default Button;",
+        'import React from \'react\';\nimport Button from \'./Button\';\nimport { Space } from \'antd\';\nimport styled from \'@emotion/styled\';\n\nconst MarginTop = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  return (\n    <>\n      <Space wrap>\n        <Button>default button</Button>\n        <Button type="link">link button</Button>\n        <Button type="link" href="https://www.eveningwater.com" target="_blank">\n          Hyperlink\n        </Button>\n        <Button ripple>ripple button</Button>\n        <Button type="primary">primary button</Button>\n        <Button type="dashed">dashed button</Button>\n        <Button type="text">text button</Button>\n        <Button danger>danger button</Button>\n        <Button danger disabled>\n          disabled button\n        </Button>\n      </Space>\n      <MarginTop>\n        <Button block>block button</Button>\n      </MarginTop>\n    </>\n  );\n};\n\nexport default Demo;',
       O =
-        "@prefix: ew-;\n\n.@{prefix}btn {\n  line-height: 1.5715;\n  position: relative;\n  display: inline-block;\n  font-weight: 400;\n  white-space: nowrap;\n  text-align: center;\n  background-image: none;\n  border: 1px solid transparent;\n  cursor: pointer;\n  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n  user-select: none;\n  height: 32px;\n  padding: 4px 15px;\n  font-size: 14px;\n  border-radius: 2px;\n  color: rgba(0, 0, 0, 0.85);\n  border-color: #d9d9d9;\n  background: #fff;\n  outline: none;\n  &.@{prefix}btn-large {\n    height: 40px;\n    padding: 6.4px 15px;\n    font-size: 16px;\n    border-radius: 2px;\n  }\n  &.@{prefix}btn-small {\n    height: 24px;\n    padding: 0 7px;\n    font-size: 14px;\n    border-radius: 2px;\n  }\n  &.@{prefix}btn-danger {\n    color: #ff4d4f;\n    border-color: #ff4d4f;\n    background: #fff;\n\n    &:hover,\n    &:active {\n      color: #ff7875;\n      border-color: #ff7875;\n    }\n  }\n\n  &[disabled],\n  &[disabled]:hover,\n  &[disabled]:active {\n    color: rgba(0, 0, 0, 0.25);\n    border-color: #d9d9d9;\n    background: #f5f5f5;\n    text-shadow: none;\n    box-shadow: none;\n    cursor: not-allowed;\n  }\n\n  &.@{prefix}btn-block {\n    width: percentage(1);\n  }\n\n  &:hover,\n  &:active {\n    color: #40a9ff;\n    border-color: #40a9ff;\n  }\n\n  &-link {\n    text-decoration: none;\n    border-color: transparent;\n    background: 0 0;\n    box-shadow: none;\n    color: #1890ff;\n\n    &:hover,\n    &:active {\n      border-color: transparent;\n      background: 0 0;\n      color: #40a9ff;\n    }\n\n    &.@{prefix}btn-danger {\n      color: #ff4d4f;\n      border-color: transparent;\n      background: transparent;\n\n      &:hover {\n        color: #ff7875;\n        border-color: transparent;\n        background: transparent;\n      }\n    }\n  }\n\n  &-primary {\n    color: #fff;\n    border-color: #1890ff;\n    background: #1890ff;\n    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);\n    box-shadow: 0 2px rgba(0, 0, 0, 0.05);\n\n    &.@{prefix}btn-danger {\n      color: #fff;\n      border-color: #ff4d4f;\n      background: #ff4d4f;\n      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);\n      box-shadow: 0 2px rgba(0, 0, 0, 0.04);\n\n      &:hover {\n        color: #fff;\n        border-color: #ff7875;\n        background: #ff7875;\n      }\n    }\n\n    &[disabled],\n    &[disabled]:hover,\n    &[disabled]:active {\n      color: rgba(0, 0, 0, 0.25);\n      border-color: #d9d9d9;\n      background: #f5f5f5;\n      text-shadow: none;\n      box-shadow: none;\n    }\n\n    &:hover {\n      border-color: #40a9ff;\n      background: #40a9ff;\n      color: #fff;\n    }\n\n    &:active {\n      border-color: #096dd9;\n      background: #096dd9;\n      color: #fff;\n    }\n  }\n\n  &-dashed {\n    color: rgba(0, 0, 0, 0.85);\n    border-color: #d9d9d9;\n    background: #fff;\n    border-style: dashed;\n\n    &:hover {\n      border-color: #40a9ff;\n      color: #40a9ff;\n      background: #fff;\n    }\n\n    &:active {\n      border-color: #096dd9;\n      color: #096dd9;\n      background: #fff;\n    }\n  }\n\n  &-text {\n    color: rgba(0, 0, 0, 0.85);\n    border-color: transparent;\n    background: 0 0;\n    box-shadow: none;\n\n    &.@{prefix}btn-danger {\n      color: #ff4d4f;\n      border-color: transparent;\n      background: transparent;\n\n      &:hover {\n        color: #ff7875;\n        border-color: transparent;\n        background: rgba(0, 0, 0, 0.018);\n      }\n    }\n\n    &:hover {\n      border-color: transparent;\n      color: rgba(0, 0, 0, 0.85);\n      background: rgba(0, 0, 0, 0.018);\n    }\n\n    &:active {\n      border-color: transparent;\n      color: rgba(0, 0, 0, 0.85);\n      background: rgba(0, 0, 0, 0.028);\n    }\n\n    &[disabled],\n    &[disabled]:hover,\n    &[disabled]:active {\n      color: rgba(0, 0, 0, 0.25);\n      border-color: transparent;\n      background: 0 0;\n      text-shadow: none;\n      box-shadow: none;\n    }\n  }\n\n  &-ripple {\n    overflow: hidden;\n\n    .ripple {\n      width: 10px;\n      height: 10px;\n      position: absolute;\n      background: #dfdfdf;\n      display: block;\n      content: '';\n      border-radius: 50%;\n      opacity: 1;\n      animation: 0.8s ease 1 forwards ripple-effect;\n    }\n\n    &-content {\n      position: relative;\n      z-index: 2;\n    }\n  }\n\n  @keyframes ripple-effect {\n    0% {\n      transform: scale(1);\n      opacity: 1;\n    }\n\n    50% {\n      transform: scale(6);\n      opacity: 0.375;\n    }\n\n    100% {\n      transform: scale(12);\n      opacity: 0;\n    }\n  }\n}",
+        "import React, { useState, useEffect } from 'react';\nimport type { SyntheticEvent, ReactNode } from 'react';\nimport './button.less';\nimport classnames from '../../utils/classnames';\nimport Loader from '../Loader/Loader';\nexport interface ButtonProps extends Record<string, any> {\n  ripple: boolean;\n  block: boolean;\n  danger: boolean;\n  disabled: boolean;\n  type: 'primary' | 'dashed' | 'link' | 'text' | 'default';\n  size: 'large' | 'default' | 'small';\n  loading: boolean;\n  target: string;\n  href: string;\n  shape: 'default' | 'circle' | 'round';\n  nativeType: 'submit' | 'reset' | 'button';\n  children: ReactNode;\n  icon: ReactNode;\n  onClick(e: SyntheticEvent): void;\n}\n\nconst Button = (props: Partial<ButtonProps>) => {\n  const {\n    type,\n    block,\n    ripple,\n    nativeType = 'button',\n    disabled,\n    children,\n    href,\n    shape,\n    target,\n    danger,\n    loading,\n    icon,\n    size,\n    onClick,\n    ...rest\n  } = props;\n\n  const [coords, setCoords] = useState({ x: -1, y: -1 });\n  const [isRippling, setIsRippling] = useState(false);\n\n  useEffect(() => {\n    if (coords.x !== -1 && coords.y !== -1) {\n      setIsRippling(true);\n      setTimeout(() => setIsRippling(false), 300);\n    } else {\n      setIsRippling(false);\n    }\n  }, [coords]);\n\n  useEffect(() => {\n    if (!isRippling) {\n      setCoords({ x: -1, y: -1 });\n    }\n  }, [isRippling]);\n\n  const classNames = {\n    'ew-btn': true,\n    [`ew-btn-${type}`]: !href,\n    'ew-btn-ripple': ripple,\n    'ew-btn-link': type === 'link',\n    'ew-btn-block': block,\n    'ew-btn-disabled': disabled,\n    [`ew-btn-${shape}`]: !href,\n    'ew-btn-danger': danger,\n    [`ew-btn-${size}`]: size,\n  };\n  const classContentNames = {\n    'ew-btn-content': true,\n    'ew-btn-ripple-content': ripple,\n  };\n\n  const onClickHandler = (e: SyntheticEvent) => {\n    if (ripple) {\n      const event = e.nativeEvent as MouseEvent;\n      const rect = (e.target as HTMLButtonElement).getBoundingClientRect();\n      setCoords({ x: event.clientX - rect.left, y: event.clientY - rect.top });\n    }\n    if (onClick) {\n      onClick(e);\n    }\n  };\n\n  return (\n    <>\n      {href ? (\n        <a\n          href={href}\n          className={classnames(classNames)}\n          target={target}\n          onClick={onClickHandler}\n          {...rest}\n        >\n          <span className={classnames(classContentNames)}>\n            {icon}\n            {loading ? <Loader size={24} /> : children}\n          </span>\n        </a>\n      ) : (\n        <button\n          type={nativeType}\n          disabled={disabled}\n          className={classnames(classNames)}\n          onClick={onClickHandler}\n          {...rest}\n        >\n          {isRippling && ripple ? (\n            <span\n              className=\"ripple\"\n              style={{ left: coords.x, top: coords.y }}\n            ></span>\n          ) : null}\n          <span className={classnames(classContentNames)}>\n            {icon}\n            {loading ? <Loader size={24} /> : children}\n          </span>\n        </button>\n      )}\n    </>\n  );\n};\n\nexport default Button;",
       S =
-        "export type Value = boolean | string | number | undefined | null | Symbol;\nexport type Mapping = Record<string, unknown>;\nexport interface ArgumentArray extends Array<Argument> {}\nexport type Argument = Mapping | Mapping | ArgumentArray;\nconst hasOwn = Object.prototype.hasOwnProperty;\nexport default function classnames(...args: ArgumentArray): string {\n  const classes: any[] = [];\n  for (let i = 0, len = args.length; i < len; i++) {\n    const arg = args[i];\n    if (!arg) {\n      continue;\n    }\n    if (typeof arg === 'string' || typeof arg === 'number') {\n      classes.push(arg);\n    } else if (Array.isArray(arg)) {\n      if (arg.length) {\n        const __class = classnames.apply(null, arg) as string;\n        if (__class) {\n          classes.push(__class);\n        }\n      }\n    } else if (typeof arg === 'object') {\n      if (arg.toString === Object.prototype.toString) {\n        for (let key in arg) {\n          if (hasOwn.call(arg, key) && arg[key]) {\n            classes.push(key);\n          }\n        }\n      } else {\n        classes.push(String(arg));\n      }\n    }\n  }\n  return classes.join(' ');\n}",
+        "@prefix: ew-;\n\n.@{prefix}btn {\n  line-height: 1.5715;\n  position: relative;\n  display: inline-block;\n  font-weight: 400;\n  white-space: nowrap;\n  text-align: center;\n  background-image: none;\n  border: 1px solid transparent;\n  cursor: pointer;\n  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n  user-select: none;\n  height: 32px;\n  padding: 4px 15px;\n  font-size: 14px;\n  border-radius: 2px;\n  color: rgba(0, 0, 0, 0.85);\n  border-color: #d9d9d9;\n  background: #fff;\n  outline: none;\n  &.@{prefix}btn-large {\n    height: 40px;\n    padding: 6.4px 15px;\n    font-size: 16px;\n    border-radius: 2px;\n  }\n  &.@{prefix}btn-small {\n    height: 24px;\n    padding: 0 7px;\n    font-size: 14px;\n    border-radius: 2px;\n  }\n  &.@{prefix}btn-danger {\n    color: #ff4d4f;\n    border-color: #ff4d4f;\n    background: #fff;\n\n    &:hover,\n    &:active {\n      color: #ff7875;\n      border-color: #ff7875;\n    }\n  }\n\n  &[disabled],\n  &[disabled]:hover,\n  &[disabled]:active {\n    color: rgba(0, 0, 0, 0.25);\n    border-color: #d9d9d9;\n    background: #f5f5f5;\n    text-shadow: none;\n    box-shadow: none;\n    cursor: not-allowed;\n  }\n\n  &.@{prefix}btn-block {\n    width: percentage(1);\n  }\n\n  &:hover,\n  &:active {\n    color: #40a9ff;\n    border-color: #40a9ff;\n  }\n\n  &-link {\n    text-decoration: none;\n    border-color: transparent;\n    background: 0 0;\n    box-shadow: none;\n    color: #1890ff;\n\n    &:hover,\n    &:active {\n      border-color: transparent;\n      background: 0 0;\n      color: #40a9ff;\n    }\n\n    &.@{prefix}btn-danger {\n      color: #ff4d4f;\n      border-color: transparent;\n      background: transparent;\n\n      &:hover {\n        color: #ff7875;\n        border-color: transparent;\n        background: transparent;\n      }\n    }\n  }\n\n  &-primary {\n    color: #fff;\n    border-color: #1890ff;\n    background: #1890ff;\n    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);\n    box-shadow: 0 2px rgba(0, 0, 0, 0.05);\n\n    &.@{prefix}btn-danger {\n      color: #fff;\n      border-color: #ff4d4f;\n      background: #ff4d4f;\n      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);\n      box-shadow: 0 2px rgba(0, 0, 0, 0.04);\n\n      &:hover {\n        color: #fff;\n        border-color: #ff7875;\n        background: #ff7875;\n      }\n    }\n\n    &[disabled],\n    &[disabled]:hover,\n    &[disabled]:active {\n      color: rgba(0, 0, 0, 0.25);\n      border-color: #d9d9d9;\n      background: #f5f5f5;\n      text-shadow: none;\n      box-shadow: none;\n    }\n\n    &:hover {\n      border-color: #40a9ff;\n      background: #40a9ff;\n      color: #fff;\n    }\n\n    &:active {\n      border-color: #096dd9;\n      background: #096dd9;\n      color: #fff;\n    }\n  }\n\n  &-dashed {\n    color: rgba(0, 0, 0, 0.85);\n    border-color: #d9d9d9;\n    background: #fff;\n    border-style: dashed;\n\n    &:hover {\n      border-color: #40a9ff;\n      color: #40a9ff;\n      background: #fff;\n    }\n\n    &:active {\n      border-color: #096dd9;\n      color: #096dd9;\n      background: #fff;\n    }\n  }\n\n  &-text {\n    color: rgba(0, 0, 0, 0.85);\n    border-color: transparent;\n    background: 0 0;\n    box-shadow: none;\n\n    &.@{prefix}btn-danger {\n      color: #ff4d4f;\n      border-color: transparent;\n      background: transparent;\n\n      &:hover {\n        color: #ff7875;\n        border-color: transparent;\n        background: rgba(0, 0, 0, 0.018);\n      }\n    }\n\n    &:hover {\n      border-color: transparent;\n      color: rgba(0, 0, 0, 0.85);\n      background: rgba(0, 0, 0, 0.018);\n    }\n\n    &:active {\n      border-color: transparent;\n      color: rgba(0, 0, 0, 0.85);\n      background: rgba(0, 0, 0, 0.028);\n    }\n\n    &[disabled],\n    &[disabled]:hover,\n    &[disabled]:active {\n      color: rgba(0, 0, 0, 0.25);\n      border-color: transparent;\n      background: 0 0;\n      text-shadow: none;\n      box-shadow: none;\n    }\n  }\n\n  &-ripple {\n    overflow: hidden;\n\n    .ripple {\n      width: 10px;\n      height: 10px;\n      position: absolute;\n      background: #dfdfdf;\n      display: block;\n      content: '';\n      border-radius: 50%;\n      opacity: 1;\n      animation: 0.8s ease 1 forwards ripple-effect;\n    }\n\n    &-content {\n      position: relative;\n      z-index: 2;\n    }\n  }\n\n  @keyframes ripple-effect {\n    0% {\n      transform: scale(1);\n      opacity: 1;\n    }\n\n    50% {\n      transform: scale(6);\n      opacity: 0.375;\n    }\n\n    100% {\n      transform: scale(12);\n      opacity: 0;\n    }\n  }\n}",
       j =
-        'import React from \'react\';\nimport styled from \'@emotion/styled\';\nconst StyleLoader = styled.svg`\n  animation: rotate 2s linear infinite;\n  & circle {\n    animation: dash 1.5s ease-in-out infinite;\n  }\n  @keyframes rotate {\n    100% {\n      transform: rotate(360deg);\n    }\n  }\n  @keyframes dash {\n    0% {\n      stroke-dasharray: 1, 150;\n      stroke-dashoffset: 0;\n    }\n    50% {\n      stroke-dasharray: 90, 150;\n      stroke-dashoffset: -35;\n    }\n    100% {\n      stroke-dasharray: 90, 150;\n      stroke-dashoffset: -124;\n    }\n  }\n`;\nexport interface LoaderProps extends Record<string, unknown> {\n  size: number | string;\n}\nconst Loader = (props: Partial<LoaderProps>) => {\n  const { size, ...rest } = props;\n\n  return (\n    <StyleLoader\n      width={size}\n      height={size}\n      xmlns="http://www.w3.org/2000/svg"\n      {...rest}\n      viewBox="0 0 24 24"\n      fill="none"\n      stroke="currentColor"\n      strokeWidth="2"\n      strokeLinecap="round"\n      strokeLinejoin="round"\n    >\n      <circle cx="12" cy="12" r="10" />\n    </StyleLoader>\n  );\n};\n\nexport default Loader;',
+        "export type Value = boolean | string | number | undefined | null | Symbol;\nexport type Mapping = Record<string, unknown>;\nexport interface ArgumentArray extends Array<Argument> {}\nexport type Argument = Mapping | Mapping | ArgumentArray;\nconst hasOwn = Object.prototype.hasOwnProperty;\nexport default function classnames(...args: ArgumentArray): string {\n  const classes: any[] = [];\n  for (let i = 0, len = args.length; i < len; i++) {\n    const arg = args[i];\n    if (!arg) {\n      continue;\n    }\n    if (typeof arg === 'string' || typeof arg === 'number') {\n      classes.push(arg);\n    } else if (Array.isArray(arg)) {\n      if (arg.length) {\n        const __class = classnames.apply(null, arg) as string;\n        if (__class) {\n          classes.push(__class);\n        }\n      }\n    } else if (typeof arg === 'object') {\n      if (arg.toString === Object.prototype.toString) {\n        for (let key in arg) {\n          if (hasOwn.call(arg, key) && arg[key]) {\n            classes.push(key);\n          }\n        }\n      } else {\n        classes.push(String(arg));\n      }\n    }\n  }\n  return classes.join(' ');\n}",
       T =
-        'import React from \'react\';\nimport Button from \'./Button\';\nimport { Space } from \'antd\';\nimport styled from \'@emotion/styled\';\n\nconst MarginTop = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  return (\n    <>\n      <Space wrap>\n        <Button>\u9ed8\u8ba4\u6309\u94ae</Button>\n        <Button type="link">\u94fe\u63a5\u6309\u94ae</Button>\n        <Button type="link" href="https://www.eveningwater.com" target="_blank">\n          \u8d85\u94fe\u63a5\n        </Button>\n        <Button ripple>\u6ce2\u6d6a\u6309\u94ae</Button>\n        <Button type="primary">\u57fa\u672c\u6309\u94ae</Button>\n        <Button type="dashed">\u865a\u7ebf\u6309\u94ae</Button>\n        <Button type="text">\u6587\u672c\u6309\u94ae</Button>\n        <Button danger>\u5371\u9669\u6309\u94ae</Button>\n        <Button danger disabled>\n          \u7981\u7528\u6309\u94ae\n        </Button>\n        <Button size="small">\u5c0f\u6309\u94ae</Button>\n        <Button size="large">\u5927\u6309\u94ae</Button>\n      </Space>\n      <MarginTop>\n        <Button block>\u5757\u6309\u94ae</Button>\n      </MarginTop>\n    </>\n  );\n};\n\nexport default Demo;',
+        'import React from \'react\';\nimport styled from \'@emotion/styled\';\nconst StyleLoader = styled.svg`\n  animation: rotate 2s linear infinite;\n  & circle {\n    animation: dash 1.5s ease-in-out infinite;\n  }\n  @keyframes rotate {\n    100% {\n      transform: rotate(360deg);\n    }\n  }\n  @keyframes dash {\n    0% {\n      stroke-dasharray: 1, 150;\n      stroke-dashoffset: 0;\n    }\n    50% {\n      stroke-dasharray: 90, 150;\n      stroke-dashoffset: -35;\n    }\n    100% {\n      stroke-dasharray: 90, 150;\n      stroke-dashoffset: -124;\n    }\n  }\n`;\nexport interface LoaderProps extends Record<string, unknown> {\n  size: number | string;\n}\nconst Loader = (props: Partial<LoaderProps>) => {\n  const { size, ...rest } = props;\n\n  return (\n    <StyleLoader\n      width={size}\n      height={size}\n      xmlns="http://www.w3.org/2000/svg"\n      {...rest}\n      viewBox="0 0 24 24"\n      fill="none"\n      stroke="currentColor"\n      strokeWidth="2"\n      strokeLinecap="round"\n      strokeLinejoin="round"\n    >\n      <circle cx="12" cy="12" r="10" />\n    </StyleLoader>\n  );\n};\n\nexport default Loader;',
       P =
-        "import styled from '@emotion/styled';\nimport React from 'react';\nimport type { ReactNode } from 'react';\n\nconst Link = styled.a`\n  text-decoration: none;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 18px;\n  transition: color 0.3s ease-in-out;\n  &:hover {\n    color: #2396ef;\n  }\n`;\ninterface CallToType {\n  phone: string;\n  children: ReactNode;\n}\nconst CallTo = (props: Partial<CallToType>) => {\n  const { phone, children } = props;\n  return (\n    <Link href={`tel:${phone}`} className=\"tel-link\">\n      {children}\n    </Link>\n  );\n};\n\nconst Demo = () => {\n  return <CallTo phone=\"18283984473\">eveningwater</CallTo>;\n};\n\nexport default Demo;",
+        'import React from \'react\';\nimport Button from \'./Button\';\nimport { Space } from \'antd\';\nimport styled from \'@emotion/styled\';\n\nconst MarginTop = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  return (\n    <>\n      <Space wrap>\n        <Button>\u9ed8\u8ba4\u6309\u94ae</Button>\n        <Button type="link">\u94fe\u63a5\u6309\u94ae</Button>\n        <Button type="link" href="https://www.eveningwater.com" target="_blank">\n          \u8d85\u94fe\u63a5\n        </Button>\n        <Button ripple>\u6ce2\u6d6a\u6309\u94ae</Button>\n        <Button type="primary">\u57fa\u672c\u6309\u94ae</Button>\n        <Button type="dashed">\u865a\u7ebf\u6309\u94ae</Button>\n        <Button type="text">\u6587\u672c\u6309\u94ae</Button>\n        <Button danger>\u5371\u9669\u6309\u94ae</Button>\n        <Button danger disabled>\n          \u7981\u7528\u6309\u94ae\n        </Button>\n        <Button size="small">\u5c0f\u6309\u94ae</Button>\n        <Button size="large">\u5927\u6309\u94ae</Button>\n      </Space>\n      <MarginTop>\n        <Button block>\u5757\u6309\u94ae</Button>\n      </MarginTop>\n    </>\n  );\n};\n\nexport default Demo;',
       N =
+        "import styled from '@emotion/styled';\nimport React from 'react';\nimport type { ReactNode } from 'react';\n\nconst Link = styled.a`\n  text-decoration: none;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 18px;\n  transition: color 0.3s ease-in-out;\n  &:hover {\n    color: #2396ef;\n  }\n`;\ninterface CallToType {\n  phone: string;\n  children: ReactNode;\n}\nconst CallTo = (props: Partial<CallToType>) => {\n  const { phone, children } = props;\n  return (\n    <Link href={`tel:${phone}`} className=\"tel-link\">\n      {children}\n    </Link>\n  );\n};\n\nconst Demo = () => {\n  return <CallTo phone=\"18283984473\">eveningwater</CallTo>;\n};\n\nexport default Demo;",
+      R =
         "import styled from '@emotion/styled';\nimport React from 'react';\nimport type { ReactNode } from 'react';\n\nconst Link = styled.a`\n  text-decoration: none;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 18px;\n  transition: color 0.3s ease-in-out;\n  &:hover {\n    color: #2396ef;\n  }\n`;\ninterface CallToType {\n  phone: string;\n  children: ReactNode;\n}\nconst CallTo = (props: Partial<CallToType>) => {\n  const { phone, children } = props;\n  return (\n    <Link href={`tel:${phone}`} className=\"tel-link\">\n      {children}\n    </Link>\n  );\n};\n\nconst Demo = () => {\n  return <CallTo phone=\"18283984473\">\u5915\u6c34</CallTo>;\n};\n\nexport default Demo;",
       I =
         "import React, { useState, useEffect, cloneElement } from 'react';\nimport type { ReactNode } from 'react';\nimport './Carousel.less';\n\ninterface CarouselItemProps {\n  children: ReactNode;\n  className: string | Record<string, string | number>;\n}\n\ninterface CarouselProps {\n  options: ReactNode[];\n  duration: number;\n  children: JSX.Element[];\n  defaultKey: string;\n}\n\nconst CarouselItem = (props: Partial<CarouselItemProps>) => {\n  const { children } = props;\n  return <div className=\"carousel-item\">{children}</div>;\n};\n\nconst Carousel = (props: Partial<CarouselProps>) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer: number | undefined;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter((item) => item?.type?.name === 'CarouselItem') || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className=\"carousel\">\n      <div\n        className=\"carousel-slide\"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(<CarouselItem key={item}>{item}</CarouselItem>, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nconst Demo = () => {\n  return (\n    <Carousel\n      options={['carousel item 1', 'carousel item 2', 'carousel item 3']}\n    />\n  );\n};\n\nexport default Demo;",
-      R =
-        ".carousel {\n  position: relative;\n  height: 100px;\n  width: 200px;\n  overflow: hidden;\n  border: 1px solid #dedede;\n  background-color: fadeout(#880cee, 25%);\n  border-radius: 8px;\n  .carousel-slide {\n    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 0.75);\n    height: 100%;\n    &::after {\n      clear: both;\n      content: '';\n      display: table;\n    }\n    .carousel-item {\n      width: 200px;\n      height: 100%;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      font-size: 18px;\n      color: fade(rgba(255, 255, 255, 1), 85%);\n      float: left;\n      letter-spacing: 2px;\n    }\n  }\n}",
       A =
-        'import React, { useState, useEffect, cloneElement } from \'react\';\nimport type { ReactNode } from \'react\';\nimport \'./Carousel.less\';\n\ninterface CarouselItemProps {\n  children: ReactNode;\n  className: string | Record<string, string | number>;\n}\n\ninterface CarouselProps {\n  options: ReactNode[];\n  duration: number;\n  children: JSX.Element[];\n  defaultKey: string;\n}\n\nconst CarouselItem = (props: Partial<CarouselItemProps>) => {\n  const { children } = props;\n  return <div className="carousel-item">{children}</div>;\n};\n\nconst Carousel = (props: Partial<CarouselProps>) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer: number | undefined;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter((item) => item?.type?.name === \'CarouselItem\') || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className="carousel">\n      <div\n        className="carousel-slide"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(item, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nconst Demo = () => {\n  return (\n    <Carousel defaultKey="2">\n      <CarouselItem key="1">\u8f6e\u64ad\u56fe1</CarouselItem>\n      <CarouselItem key="2">\u8f6e\u64ad\u56fe 2</CarouselItem>\n      <CarouselItem key="3">\u8f6e\u64ad\u56fe 3</CarouselItem>\n    </Carousel>\n  );\n};\n\nexport default Demo;',
+        ".carousel {\n  position: relative;\n  height: 100px;\n  width: 200px;\n  overflow: hidden;\n  border: 1px solid #dedede;\n  background-color: fadeout(#880cee, 25%);\n  border-radius: 8px;\n  .carousel-slide {\n    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 0.75);\n    height: 100%;\n    &::after {\n      clear: both;\n      content: '';\n      display: table;\n    }\n    .carousel-item {\n      width: 200px;\n      height: 100%;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      font-size: 18px;\n      color: fade(rgba(255, 255, 255, 1), 85%);\n      float: left;\n      letter-spacing: 2px;\n    }\n  }\n}",
       M =
-        "import React, { useState } from 'react';\nimport Checkbox from './Checkbox';\nimport { Space } from 'antd';\n\nconst Demo = () => {\n  const [checked, setChecked] = useState(false);\n  const onChange = (v: boolean) => {\n    console.log(v);\n  };\n  const onControlledChange = () => {\n    setChecked(!checked);\n  };\n  return (\n    <Space>\n      <Checkbox onChange={onChange}>checkbox</Checkbox>\n      <Checkbox disabled>disabled checkbox</Checkbox>\n      <Checkbox checked={checked} onChange={onControlledChange}>\n        controlled checkbox\n      </Checkbox>\n    </Space>\n  );\n};\n\nexport default Demo;",
+        'import React, { useState, useEffect, cloneElement } from \'react\';\nimport type { ReactNode } from \'react\';\nimport \'./Carousel.less\';\n\ninterface CarouselItemProps {\n  children: ReactNode;\n  className: string | Record<string, string | number>;\n}\n\ninterface CarouselProps {\n  options: ReactNode[];\n  duration: number;\n  children: JSX.Element[];\n  defaultKey: string;\n}\n\nconst CarouselItem = (props: Partial<CarouselItemProps>) => {\n  const { children } = props;\n  return <div className="carousel-item">{children}</div>;\n};\n\nconst Carousel = (props: Partial<CarouselProps>) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer: number | undefined;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter((item) => item?.type?.name === \'CarouselItem\') || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className="carousel">\n      <div\n        className="carousel-slide"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(item, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nconst Demo = () => {\n  return (\n    <Carousel defaultKey="2">\n      <CarouselItem key="1">\u8f6e\u64ad\u56fe1</CarouselItem>\n      <CarouselItem key="2">\u8f6e\u64ad\u56fe 2</CarouselItem>\n      <CarouselItem key="3">\u8f6e\u64ad\u56fe 3</CarouselItem>\n    </Carousel>\n  );\n};\n\nexport default Demo;',
       L =
+        "import React, { useState } from 'react';\nimport Checkbox from './Checkbox';\nimport { Space } from 'antd';\n\nconst Demo = () => {\n  const [checked, setChecked] = useState(false);\n  const onChange = (v: boolean) => {\n    console.log(v);\n  };\n  const onControlledChange = () => {\n    setChecked(!checked);\n  };\n  return (\n    <Space>\n      <Checkbox onChange={onChange}>checkbox</Checkbox>\n      <Checkbox disabled>disabled checkbox</Checkbox>\n      <Checkbox checked={checked} onChange={onControlledChange}>\n        controlled checkbox\n      </Checkbox>\n    </Space>\n  );\n};\n\nexport default Demo;",
+      D =
         "import React, { useState, useEffect, createRef } from 'react';\nimport type { ReactNode, SyntheticEvent } from 'react';\nimport './Checkbox.less';\n\nexport interface CheckboxProps extends Record<string, any> {\n  disabled: boolean;\n  checked: boolean;\n  defaultChecked: boolean;\n  children: ReactNode;\n  onChange(v: boolean): void;\n}\n\nconst Checkbox = (props: Partial<CheckboxProps>) => {\n  const { disabled, checked, defaultChecked, children, onChange } = props;\n  const [value, setValue] = useState(!!defaultChecked);\n  useEffect(() => {\n    if (typeof checked === 'boolean') {\n      if (disabled) {\n        return;\n      }\n      setValue(checked);\n    }\n  }, [checked]);\n  const onChangeHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setValue(!value);\n    if (onChange) {\n      onChange(!value);\n    }\n  };\n\n  return (\n    <label\n      className={`ant-checkbox-wrapper${disabled ? ' is-disabled' : ''}`}\n      onClick={onChangeHandler}\n    >\n      <span className={`ant-checkbox${value ? ' checked' : ''}`}>\n        <span className=\"ant-checkbox-inner\"></span>\n      </span>\n      {children}\n    </label>\n  );\n};\n\nexport default Checkbox;",
       _ =
         "@baseSelector: ant-;\n.@{baseSelector}checkbox-wrapper {\n  font-size: 14px;\n  line-height: 1.57;\n  display: inline-flex;\n  align-items: baseline;\n  cursor: pointer;\n  &.is-disabled {\n    color: #9f9f9f;\n    cursor: not-allowed;\n    .@{baseSelector}checkbox.checked,\n    .@{baseSelector}checkbox {\n      cursor: not-allowed;\n      .@{baseSelector}checkbox-inner {\n        border-color: #d9d9d9;\n        background-color: #f5f5f5;\n        &::after {\n          border-color: rgba(0, 0, 0, 0.4);\n        }\n      }\n    }\n  }\n  .@{baseSelector}checkbox {\n    position: relative;\n    top: 0.2em;\n    line-height: 1;\n    cursor: pointer;\n    white-space: nowrap;\n    margin-right: 8px;\n    &.checked {\n      .@{baseSelector}checkbox-inner {\n        border-color: #1890ff;\n        background-color: #1890ff;\n        &::after {\n          opacity: 1;\n          transform: translate(-50%, -50%) scale(1) rotate(45deg);\n        }\n      }\n    }\n    .@{baseSelector}checkbox-inner {\n      width: 16px;\n      height: 16px;\n      position: relative;\n      left: 0;\n      top: 0;\n      display: block;\n      background-color: #fff;\n      border: 1px solid #d9d9d9;\n      border-radius: 2px;\n      transition: all 0.3s;\n      &::after {\n        position: absolute;\n        top: 35%;\n        left: 50%;\n        display: table;\n        width: 5.714px;\n        height: 9.14px;\n        border: 2px solid #fff;\n        border-top: 0;\n        border-left: 0;\n        transform: rotate(45deg) scale(0) translate(-50%, -50%);\n        opacity: 0;\n        content: ' ';\n        transition: all 0.3s;\n      }\n    }\n  }\n}",
-      D =
-        "import React, { useState } from 'react';\nimport Checkbox from './Checkbox';\nimport { Space } from 'antd';\n\nconst Demo = () => {\n  const [checked, setChecked] = useState(false);\n  const onChange = (v: boolean) => {\n    console.log(v);\n  };\n  const onControlledChange = () => {\n    setChecked(!checked);\n  };\n  return (\n    <Space>\n      <Checkbox onChange={onChange}>\u590d\u9009\u6846</Checkbox>\n      <Checkbox disabled>\u7981\u7528\u7684\u590d\u9009\u6846</Checkbox>\n      <Checkbox checked={checked} onChange={onControlledChange}>\n        \u53d7\u63a7\u7684\u590d\u9009\u6846\n      </Checkbox>\n    </Space>\n  );\n};\n\nexport default Demo;",
       z =
-        "import React from 'react';\nimport Collapse from './Collapse';\nconst Demo = () => {\n  return (\n    <Collapse>\n      <h1>This is a collapse</h1>\n      <p>Hello world!</p>\n    </Collapse>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Checkbox from './Checkbox';\nimport { Space } from 'antd';\n\nconst Demo = () => {\n  const [checked, setChecked] = useState(false);\n  const onChange = (v: boolean) => {\n    console.log(v);\n  };\n  const onControlledChange = () => {\n    setChecked(!checked);\n  };\n  return (\n    <Space>\n      <Checkbox onChange={onChange}>\u590d\u9009\u6846</Checkbox>\n      <Checkbox disabled>\u7981\u7528\u7684\u590d\u9009\u6846</Checkbox>\n      <Checkbox checked={checked} onChange={onControlledChange}>\n        \u53d7\u63a7\u7684\u590d\u9009\u6846\n      </Checkbox>\n    </Space>\n  );\n};\n\nexport default Demo;",
       F =
-        "import styled from '@emotion/styled';\nimport type { ReactNode } from 'react';\nimport React, { useState } from 'react';\n\nconst CollapseStyle = styled.div`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: #000000d9;\n  font-size: 14px;\n  background-color: #fafafa;\n  border: 1px solid #d9d9d9;\n  border-bottom: 0;\n  border-radius: 2px;\n  & .collapse-header {\n    line-height: 1.5715;\n    position: relative;\n    display: flex;\n    flex-wrap: nowrap;\n    align-items: flex-start;\n    padding: 12px 16px;\n    color: rgba(0, 0, 0, 0.85);\n    cursor: pointer;\n    transition: all 0.3s, visibility 0s;\n    box-sizing: border-box;\n  }\n`;\nconst CollapseStyleItem = styled.div`\n  border-bottom: 1px solid #d9d9d9;\n  & .collapse-content {\n    color: #000000d9;\n    background-color: #fff;\n    border-top: 1px solid #d9d9d9;\n    transition: all 0.3s ease-in-out;\n    padding: 16px;\n    &.collapsed {\n      display: none;\n    }\n    &.expanded {\n      display: block;\n    }\n  }\n`;\n\ninterface CollapseProps {\n  collapsed: boolean;\n  children: ReactNode;\n  header: ReactNode;\n}\n\ntype CollapseItemProps = Omit<Omit<CollapseProps, 'collapsed'>, 'header'> & {\n  className: string;\n};\n\nconst CollapseItem = (props: Partial<CollapseItemProps>) => {\n  const { children, className } = props;\n  return (\n    <CollapseStyleItem>\n      <div className={`${'collapse-content'}${className}`}>{children}</div>\n    </CollapseStyleItem>\n  );\n};\n\nconst Collapse = (props: Partial<CollapseProps>) => {\n  const { collapsed, children, header } = props;\n  const [isCollapsed, setIsCollapsed] = useState(collapsed);\n\n  return (\n    <CollapseStyle>\n      <div\n        className=\"collapse-header\"\n        onClick={() => setIsCollapsed(!isCollapsed)}\n      >\n        {header || (isCollapsed ? 'show' : 'hide') + ' content'}\n      </div>\n      <CollapseItem className={`${isCollapsed ? ' collapsed' : ' expanded'}`}>\n        {children}\n      </CollapseItem>\n    </CollapseStyle>\n  );\n};\n\nexport default Collapse;",
+        "import React from 'react';\nimport Collapse from './Collapse';\nconst Demo = () => {\n  return (\n    <Collapse>\n      <h1>This is a collapse</h1>\n      <p>Hello world!</p>\n    </Collapse>\n  );\n};\n\nexport default Demo;",
       B =
-        "import React from 'react';\nimport Collapse from './Collapse';\nconst Demo = () => {\n  return (\n    <Collapse header=\"\u8fd9\u662f\u6807\u9898\">\n      <h1>\u8fd9\u662f\u4e00\u4e2a\u6298\u53e0\u7ec4\u4ef6</h1>\n      <p>\u4f60\u597d\uff0c\u4e16\u754c!</p>\n    </Collapse>\n  );\n};\n\nexport default Demo;",
+        "import styled from '@emotion/styled';\nimport type { ReactNode } from 'react';\nimport React, { useState } from 'react';\n\nconst CollapseStyle = styled.div`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: #000000d9;\n  font-size: 14px;\n  background-color: #fafafa;\n  border: 1px solid #d9d9d9;\n  border-bottom: 0;\n  border-radius: 2px;\n  & .collapse-header {\n    line-height: 1.5715;\n    position: relative;\n    display: flex;\n    flex-wrap: nowrap;\n    align-items: flex-start;\n    padding: 12px 16px;\n    color: rgba(0, 0, 0, 0.85);\n    cursor: pointer;\n    transition: all 0.3s, visibility 0s;\n    box-sizing: border-box;\n  }\n`;\nconst CollapseStyleItem = styled.div`\n  border-bottom: 1px solid #d9d9d9;\n  & .collapse-content {\n    color: #000000d9;\n    background-color: #fff;\n    border-top: 1px solid #d9d9d9;\n    transition: all 0.3s ease-in-out;\n    padding: 16px;\n    &.collapsed {\n      display: none;\n    }\n    &.expanded {\n      display: block;\n    }\n  }\n`;\n\ninterface CollapseProps {\n  collapsed: boolean;\n  children: ReactNode;\n  header: ReactNode;\n}\n\ntype CollapseItemProps = Omit<Omit<CollapseProps, 'collapsed'>, 'header'> & {\n  className: string;\n};\n\nconst CollapseItem = (props: Partial<CollapseItemProps>) => {\n  const { children, className } = props;\n  return (\n    <CollapseStyleItem>\n      <div className={`${'collapse-content'}${className}`}>{children}</div>\n    </CollapseStyleItem>\n  );\n};\n\nconst Collapse = (props: Partial<CollapseProps>) => {\n  const { collapsed, children, header } = props;\n  const [isCollapsed, setIsCollapsed] = useState(collapsed);\n\n  return (\n    <CollapseStyle>\n      <div\n        className=\"collapse-header\"\n        onClick={() => setIsCollapsed(!isCollapsed)}\n      >\n        {header || (isCollapsed ? 'show' : 'hide') + ' content'}\n      </div>\n      <CollapseItem className={`${isCollapsed ? ' collapsed' : ' expanded'}`}>\n        {children}\n      </CollapseItem>\n    </CollapseStyle>\n  );\n};\n\nexport default Collapse;",
       U =
-        "import React, { useState } from 'react';\nimport ControlledInput from './ControlledInput';\n\nconst Demo = () => {\n  const [value, setValue] = useState('');\n\n  return (\n    <ControlledInput\n      type=\"text\"\n      value={value}\n      onChange={setValue}\n      placeholder=\"Insert some text here...\"\n    ></ControlledInput>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport Collapse from './Collapse';\nconst Demo = () => {\n  return (\n    <Collapse header=\"\u8fd9\u662f\u6807\u9898\">\n      <h1>\u8fd9\u662f\u4e00\u4e2a\u6298\u53e0\u7ec4\u4ef6</h1>\n      <p>\u4f60\u597d\uff0c\u4e16\u754c!</p>\n    </Collapse>\n  );\n};\n\nexport default Demo;",
       V =
-        "import styled from '@emotion/styled';\nimport React from 'react';\nimport type { SyntheticEvent } from 'react';\n\nconst StyleInput = styled.input`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: #000000d9;\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  transition: all 0.3s;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n`;\n/** https://github.com/Microsoft/TypeScript/issues/29729 */\n// eslint-disable-next-line @typescript-eslint/ban-types\ntype LiteralUnion<T extends U, U> = T & (U & {});\ninterface ControlledInputProps {\n  type: LiteralUnion<\n    | 'button'\n    | 'checkbox'\n    | 'color'\n    | 'date'\n    | 'datetime-local'\n    | 'email'\n    | 'file'\n    | 'hidden'\n    | 'image'\n    | 'month'\n    | 'number'\n    | 'password'\n    | 'radio'\n    | 'range'\n    | 'reset'\n    | 'search'\n    | 'submit'\n    | 'tel'\n    | 'text'\n    | 'time'\n    | 'url'\n    | 'week',\n    string\n  >;\n  value: string;\n  onChange(v: string): void;\n  placeholder: string;\n}\nconst ControlledInput = (props: Partial<ControlledInputProps>) => {\n  const { value, onChange, ...rest } = props;\n  const onChangeHandler = (e: SyntheticEvent) => {\n    if (onChange) {\n      onChange((e.target as HTMLInputElement).value);\n    }\n  };\n  return (\n    <StyleInput value={value} onChange={onChangeHandler} {...rest}></StyleInput>\n  );\n};\n\nexport default ControlledInput;",
+        "import React, { useState } from 'react';\nimport ControlledInput from './ControlledInput';\n\nconst Demo = () => {\n  const [value, setValue] = useState('');\n\n  return (\n    <ControlledInput\n      type=\"text\"\n      value={value}\n      onChange={setValue}\n      placeholder=\"Insert some text here...\"\n    ></ControlledInput>\n  );\n};\n\nexport default Demo;",
       H =
-        "import React, { useState } from 'react';\nimport ControlledInput from './ControlledInput';\n\nconst Demo = () => {\n  const [value, setValue] = useState('');\n\n  return (\n    <ControlledInput\n      type=\"text\"\n      value={value}\n      onChange={setValue}\n      placeholder=\"\u8bf7\u8f93\u5165\u4e00\u4e9b\u63d0\u793a\u4fe1\u606f...\"\n    ></ControlledInput>\n  );\n};\n\nexport default Demo;",
+        "import styled from '@emotion/styled';\nimport React from 'react';\nimport type { SyntheticEvent } from 'react';\n\nconst StyleInput = styled.input`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: #000000d9;\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  transition: all 0.3s;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n`;\n/** https://github.com/Microsoft/TypeScript/issues/29729 */\n// eslint-disable-next-line @typescript-eslint/ban-types\ntype LiteralUnion<T extends U, U> = T & (U & {});\ninterface ControlledInputProps {\n  type: LiteralUnion<\n    | 'button'\n    | 'checkbox'\n    | 'color'\n    | 'date'\n    | 'datetime-local'\n    | 'email'\n    | 'file'\n    | 'hidden'\n    | 'image'\n    | 'month'\n    | 'number'\n    | 'password'\n    | 'radio'\n    | 'range'\n    | 'reset'\n    | 'search'\n    | 'submit'\n    | 'tel'\n    | 'text'\n    | 'time'\n    | 'url'\n    | 'week',\n    string\n  >;\n  value: string;\n  onChange(v: string): void;\n  placeholder: string;\n}\nconst ControlledInput = (props: Partial<ControlledInputProps>) => {\n  const { value, onChange, ...rest } = props;\n  const onChangeHandler = (e: SyntheticEvent) => {\n    if (onChange) {\n      onChange((e.target as HTMLInputElement).value);\n    }\n  };\n  return (\n    <StyleInput value={value} onChange={onChangeHandler} {...rest}></StyleInput>\n  );\n};\n\nexport default ControlledInput;",
       q =
-        "import { Space, Button } from 'antd';\nimport React, { useRef, useState } from 'react';\nimport type { MutableRefObject } from 'react';\nimport CountDown from './CountDown';\nimport type { ImperRef } from './helper';\n\nconst Demo = () => {\n  const countdownRef = useRef() as MutableRefObject<ImperRef>;\n  const [paused, setPaused] = useState(false);\n  const onPaused = () => {\n    setPaused(!paused);\n    countdownRef.current.onPaused(paused);\n  };\n  const onRestart = () => {\n    countdownRef.current.onRestart();\n  };\n  return (\n    <>\n      <CountDown ref={countdownRef} hours={1} minutes={45} />\n      <Space>\n        <Button onClick={onPaused}>{paused ? 'resume' : 'Pause'}</Button>\n        <Button onClick={onRestart}>Restart</Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport ControlledInput from './ControlledInput';\n\nconst Demo = () => {\n  const [value, setValue] = useState('');\n\n  return (\n    <ControlledInput\n      type=\"text\"\n      value={value}\n      onChange={setValue}\n      placeholder=\"\u8bf7\u8f93\u5165\u4e00\u4e9b\u63d0\u793a\u4fe1\u606f...\"\n    ></ControlledInput>\n  );\n};\n\nexport default Demo;",
       W =
-        "import React, { forwardRef, useState, useCallback } from 'react';\nimport type { MutableRefObject } from 'react';\nimport styled from '@emotion/styled';\nimport type { ImperItem, ImperRef } from './helper';\nimport { useChildrenHandler, useTimeout } from './helper';\n\ninterface CountDownProps {\n  hours: number;\n  minutes: number;\n  seconds: number;\n  overText?: string;\n  pausedText?: string;\n  delimiter?: string;\n}\n\nconst StyleCountdown = styled.div`\n  color: rgba(0, 0, 0.85);\n  margin-bottom: 10px;\n  font-size: 16px;\n`;\n\nconst CountDown = forwardRef(\n  (props: Partial<CountDownProps>, ref: ImperItem['ref']) => {\n    const {\n      hours,\n      minutes,\n      seconds,\n      overText = 'Time is up!',\n      pausedText = 'paused!',\n      delimiter = ':',\n    } = props;\n    const [paused, setPaused] = useState(false);\n    const [over, setOver] = useState(false);\n    const [[h = 0, m = 0, s = 0], setTime] = useState([\n      hours,\n      minutes,\n      seconds,\n    ]);\n\n    const tick = () => {\n      if (paused || over) {\n        return;\n      }\n      let newH = h,\n        newM = m,\n        newS = s;\n      if (h === 0 && m === 0 && s === 0) {\n        setOver(true);\n      }\n\n      if (m === 0 && s === 0) {\n        newH--;\n        newM = 59;\n        newS = 59;\n      }\n\n      if (s === 0) {\n        newM--;\n        newS = 60;\n      }\n      newS--;\n      setTime([newH, newM, newS]);\n    };\n    useTimeout(tick, 1000);\n    useChildrenHandler(ref as MutableRefObject<ImperRef>, {\n      onPaused: useCallback((status: boolean) => {\n        setPaused(!status);\n      }, []),\n      onOver: useCallback(() => {\n        setPaused(false);\n        setOver(true);\n      }, []),\n      onRestart: useCallback(() => {\n        setTime([h, m, s]);\n        setPaused(false);\n        setOver(false);\n      }, []),\n    });\n    const fillZero = (n: number) => n.toString().padStart(2, '0');\n    return (\n      <StyleCountdown>\n        {over\n          ? overText\n          : paused\n          ? pausedText\n          : `${fillZero(h)}${delimiter}${fillZero(m)}${delimiter}${fillZero(\n              s,\n            )}`}\n      </StyleCountdown>\n    );\n  },\n);\n\nexport default CountDown;",
+        "import { Space, Button } from 'antd';\nimport React, { useRef, useState } from 'react';\nimport type { MutableRefObject } from 'react';\nimport CountDown from './CountDown';\nimport type { ImperRef } from './helper';\n\nconst Demo = () => {\n  const countdownRef = useRef() as MutableRefObject<ImperRef>;\n  const [paused, setPaused] = useState(false);\n  const onPaused = () => {\n    setPaused(!paused);\n    countdownRef.current.onPaused(paused);\n  };\n  const onRestart = () => {\n    countdownRef.current.onRestart();\n  };\n  return (\n    <>\n      <CountDown ref={countdownRef} hours={1} minutes={45} />\n      <Space>\n        <Button onClick={onPaused}>{paused ? 'resume' : 'Pause'}</Button>\n        <Button onClick={onRestart}>Restart</Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
       $ =
-        "import type { MutableRefObject, DependencyList, Ref } from 'react';\nimport { useImperativeHandle, useEffect, useRef } from 'react';\n\nexport const useChildrenHandler = <T, K extends object>(\n  originRef: MutableRefObject<T>,\n  handler: K,\n  deps?: DependencyList,\n): void =>\n  useImperativeHandle(\n    originRef,\n    () => {\n      return {\n        ...originRef.current,\n        ...handler,\n      };\n    },\n    deps,\n  );\n\nexport type ImperFunc = (...args: any[]) => any;\nexport type ImperRef = Record<string, ImperFunc>;\nexport type ImperItem = {\n  ref: Ref<ImperRef>;\n};\nlet timer: number;\n// see this:https://www.aaron-powell.com/posts/2019-09-23-recursive-settimeout-with-react-hooks/\nexport const useTimeout = (callback, delay = 1000) => {\n  const ref = useRef() as MutableRefObject<() => void>;\n  useEffect(() => {\n    ref.current = callback;\n  });\n  useEffect(() => {\n    const handler = () => {\n      ref.current();\n      timer = setTimeout(handler, delay);\n    };\n    handler();\n    return () => clearTimeout(timer);\n  }, [delay]);\n};",
+        "import React, { forwardRef, useState, useCallback } from 'react';\nimport type { MutableRefObject } from 'react';\nimport styled from '@emotion/styled';\nimport type { ImperItem, ImperRef } from './helper';\nimport { useChildrenHandler, useTimeout } from './helper';\n\ninterface CountDownProps {\n  hours: number;\n  minutes: number;\n  seconds: number;\n  overText?: string;\n  pausedText?: string;\n  delimiter?: string;\n}\n\nconst StyleCountdown = styled.div`\n  color: rgba(0, 0, 0.85);\n  margin-bottom: 10px;\n  font-size: 16px;\n`;\n\nconst CountDown = forwardRef(\n  (props: Partial<CountDownProps>, ref: ImperItem['ref']) => {\n    const {\n      hours,\n      minutes,\n      seconds,\n      overText = 'Time is up!',\n      pausedText = 'paused!',\n      delimiter = ':',\n    } = props;\n    const [paused, setPaused] = useState(false);\n    const [over, setOver] = useState(false);\n    const [[h = 0, m = 0, s = 0], setTime] = useState([\n      hours,\n      minutes,\n      seconds,\n    ]);\n\n    const tick = () => {\n      if (paused || over) {\n        return;\n      }\n      let newH = h,\n        newM = m,\n        newS = s;\n      if (h === 0 && m === 0 && s === 0) {\n        setOver(true);\n      }\n\n      if (m === 0 && s === 0) {\n        newH--;\n        newM = 59;\n        newS = 59;\n      }\n\n      if (s === 0) {\n        newM--;\n        newS = 60;\n      }\n      newS--;\n      setTime([newH, newM, newS]);\n    };\n    useTimeout(tick, 1000);\n    useChildrenHandler(ref as MutableRefObject<ImperRef>, {\n      onPaused: useCallback((status: boolean) => {\n        setPaused(!status);\n      }, []),\n      onOver: useCallback(() => {\n        setPaused(false);\n        setOver(true);\n      }, []),\n      onRestart: useCallback(() => {\n        setTime([h, m, s]);\n        setPaused(false);\n        setOver(false);\n      }, []),\n    });\n    const fillZero = (n: number) => n.toString().padStart(2, '0');\n    return (\n      <StyleCountdown>\n        {over\n          ? overText\n          : paused\n          ? pausedText\n          : `${fillZero(h)}${delimiter}${fillZero(m)}${delimiter}${fillZero(\n              s,\n            )}`}\n      </StyleCountdown>\n    );\n  },\n);\n\nexport default CountDown;",
       G =
-        "import { Space, Button } from 'antd';\nimport React, { useRef, useState } from 'react';\nimport type { MutableRefObject } from 'react';\nimport CountDown from './CountDown';\nimport type { ImperRef } from './helper';\n\nconst Demo = () => {\n  const countdownRef = useRef() as MutableRefObject<ImperRef>;\n  const [paused, setPaused] = useState(false);\n  const onPaused = () => {\n    setPaused(!paused);\n    countdownRef.current.onPaused(paused);\n  };\n  const onRestart = () => {\n    countdownRef.current.onRestart();\n  };\n  return (\n    <>\n      <CountDown\n        ref={countdownRef}\n        hours={1}\n        minutes={45}\n        overText=\"\u5012\u8ba1\u65f6\u7ed3\u675f\"\n        pausedText=\"\u6682\u505c\u4e2d\"\n      />\n      <Space>\n        <Button onClick={onPaused}>{paused ? '\u7ee7\u7eed' : '\u6682\u505c'}</Button>\n        <Button onClick={onRestart}>\u91cd\u65b0\u5f00\u59cb</Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
+        "import type { MutableRefObject, DependencyList, Ref } from 'react';\nimport { useImperativeHandle, useEffect, useRef } from 'react';\n\nexport const useChildrenHandler = <T, K extends object>(\n  originRef: MutableRefObject<T>,\n  handler: K,\n  deps?: DependencyList,\n): void =>\n  useImperativeHandle(\n    originRef,\n    () => {\n      return {\n        ...originRef.current,\n        ...handler,\n      };\n    },\n    deps,\n  );\n\nexport type ImperFunc = (...args: any[]) => any;\nexport type ImperRef = Record<string, ImperFunc>;\nexport type ImperItem = {\n  ref: Ref<ImperRef>;\n};\nlet timer: number;\n// see this:https://www.aaron-powell.com/posts/2019-09-23-recursive-settimeout-with-react-hooks/\nexport const useTimeout = (callback, delay = 1000) => {\n  const ref = useRef() as MutableRefObject<() => void>;\n  useEffect(() => {\n    ref.current = callback;\n  });\n  useEffect(() => {\n    const handler = () => {\n      ref.current();\n      timer = setTimeout(handler, delay);\n    };\n    handler();\n    return () => clearTimeout(timer);\n  }, [delay]);\n};",
       K =
-        "import React from 'react';\nimport FileDrop from './FileDrop';\n\nconst Demo = () => {\n  return <FileDrop onDrop={console.log} />;\n};\nexport default Demo;",
+        "import { Space, Button } from 'antd';\nimport React, { useRef, useState } from 'react';\nimport type { MutableRefObject } from 'react';\nimport CountDown from './CountDown';\nimport type { ImperRef } from './helper';\n\nconst Demo = () => {\n  const countdownRef = useRef() as MutableRefObject<ImperRef>;\n  const [paused, setPaused] = useState(false);\n  const onPaused = () => {\n    setPaused(!paused);\n    countdownRef.current.onPaused(paused);\n  };\n  const onRestart = () => {\n    countdownRef.current.onRestart();\n  };\n  return (\n    <>\n      <CountDown\n        ref={countdownRef}\n        hours={1}\n        minutes={45}\n        overText=\"\u5012\u8ba1\u65f6\u7ed3\u675f\"\n        pausedText=\"\u6682\u505c\u4e2d\"\n      />\n      <Space>\n        <Button onClick={onPaused}>{paused ? '\u7ee7\u7eed' : '\u6682\u505c'}</Button>\n        <Button onClick={onRestart}>\u91cd\u65b0\u5f00\u59cb</Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
       Y =
-        "import React, { createRef, useEffect, useState } from 'react';\nimport styled from '@emotion/styled';\nconst DropContainer = styled.div`\n  min-height: 120px;\n  border: 3px solid #d3d3d3;\n  text-align: center;\n  font-size: 24px;\n  padding: 32px;\n  border-radius: 4px;\n  &.drag {\n    border: 3px dashed #1e90ff;\n  }\n  &.ready {\n    border: 3px solid #32cd32;\n  }\n`;\ninterface FileDropProps {\n  onDrop(file?: File): void;\n  emptyText: string;\n}\nconst FileDrop = (props: Partial<FileDropProps>) => {\n  const { onDrop, emptyText } = props;\n  const [drag, setDrag] = useState(false);\n  const [filename, setFilename] = useState('');\n  const dropRef = createRef<HTMLDivElement>();\n  let dragCount = 0;\n  const commonHandler = (e: Event) => {\n    e.preventDefault();\n    e.stopPropagation();\n  };\n  const onDragEnterHandler = (e: Event) => {\n    commonHandler(e);\n    dragCount++;\n    const event = e as DragEvent;\n    if (event.dataTransfer?.items && event.dataTransfer.items.length) {\n      setDrag(true);\n    }\n  };\n  const onDragLeaveHandler = (e: Event) => {\n    commonHandler(e);\n    dragCount--;\n    if (dragCount === 0) {\n      setDrag(false);\n    }\n  };\n  const onDragOverHandler = (e: Event) => {\n    commonHandler(e);\n  };\n  const onDropHandler = (e: Event) => {\n    commonHandler(e);\n    setDrag(false);\n    const event = e as DragEvent;\n    if (event.dataTransfer?.files && event.dataTransfer.files.length) {\n      if (onDrop) {\n        onDrop(event.dataTransfer?.files[0]);\n        setFilename(event.dataTransfer?.files[0].name);\n        event.dataTransfer.clearData();\n        dragCount = 0;\n      }\n    }\n  };\n  const events = [\n    { type: 'dragenter', handlerName: onDragEnterHandler },\n    { type: 'dragleave', handlerName: onDragLeaveHandler },\n    { type: 'dragover', handlerName: onDragOverHandler },\n    { type: 'drop', handlerName: onDropHandler },\n  ];\n  useEffect(() => {\n    const container = dropRef.current;\n    events.forEach((item) =>\n      container?.addEventListener(item.type, item.handlerName),\n    );\n    return () => {\n      events.forEach((item) =>\n        container?.removeEventListener(item.type, item.handlerName),\n      );\n    };\n  }, []);\n\n  return (\n    <DropContainer\n      ref={dropRef}\n      className={drag ? ' drag' : filename ? ' ready' : ''}\n    >\n      {filename && !drag ? filename : emptyText || 'Drop a file here!'}\n    </DropContainer>\n  );\n};\nexport default FileDrop;",
+        "import React from 'react';\nimport FileDrop from './FileDrop';\n\nconst Demo = () => {\n  return <FileDrop onDrop={console.log} />;\n};\nexport default Demo;",
       Z =
-        "import React from 'react';\nimport FileDrop from './FileDrop';\n\nconst Demo = () => {\n  return <FileDrop onDrop={console.log} emptyText=\"\u62d6\u62fd\u6587\u4ef6\u5230\u8fd9\u91cc!\" />;\n};\nexport default Demo;",
+        "import React, { createRef, useEffect, useState } from 'react';\nimport styled from '@emotion/styled';\nconst DropContainer = styled.div`\n  min-height: 120px;\n  border: 3px solid #d3d3d3;\n  text-align: center;\n  font-size: 24px;\n  padding: 32px;\n  border-radius: 4px;\n  &.drag {\n    border: 3px dashed #1e90ff;\n  }\n  &.ready {\n    border: 3px solid #32cd32;\n  }\n`;\ninterface FileDropProps {\n  onDrop(file?: File): void;\n  emptyText: string;\n}\nconst FileDrop = (props: Partial<FileDropProps>) => {\n  const { onDrop, emptyText } = props;\n  const [drag, setDrag] = useState(false);\n  const [filename, setFilename] = useState('');\n  const dropRef = createRef<HTMLDivElement>();\n  let dragCount = 0;\n  const commonHandler = (e: Event) => {\n    e.preventDefault();\n    e.stopPropagation();\n  };\n  const onDragEnterHandler = (e: Event) => {\n    commonHandler(e);\n    dragCount++;\n    const event = e as DragEvent;\n    if (event.dataTransfer?.items && event.dataTransfer.items.length) {\n      setDrag(true);\n    }\n  };\n  const onDragLeaveHandler = (e: Event) => {\n    commonHandler(e);\n    dragCount--;\n    if (dragCount === 0) {\n      setDrag(false);\n    }\n  };\n  const onDragOverHandler = (e: Event) => {\n    commonHandler(e);\n  };\n  const onDropHandler = (e: Event) => {\n    commonHandler(e);\n    setDrag(false);\n    const event = e as DragEvent;\n    if (event.dataTransfer?.files && event.dataTransfer.files.length) {\n      if (onDrop) {\n        onDrop(event.dataTransfer?.files[0]);\n        setFilename(event.dataTransfer?.files[0].name);\n        event.dataTransfer.clearData();\n        dragCount = 0;\n      }\n    }\n  };\n  const events = [\n    { type: 'dragenter', handlerName: onDragEnterHandler },\n    { type: 'dragleave', handlerName: onDragLeaveHandler },\n    { type: 'dragover', handlerName: onDragOverHandler },\n    { type: 'drop', handlerName: onDropHandler },\n  ];\n  useEffect(() => {\n    const container = dropRef.current;\n    events.forEach((item) =>\n      container?.addEventListener(item.type, item.handlerName),\n    );\n    return () => {\n      events.forEach((item) =>\n        container?.removeEventListener(item.type, item.handlerName),\n      );\n    };\n  }, []);\n\n  return (\n    <DropContainer\n      ref={dropRef}\n      className={drag ? ' drag' : filename ? ' ready' : ''}\n    >\n      {filename && !drag ? filename : emptyText || 'Drop a file here!'}\n    </DropContainer>\n  );\n};\nexport default FileDrop;",
       X =
+        "import React from 'react';\nimport FileDrop from './FileDrop';\n\nconst Demo = () => {\n  return <FileDrop onDrop={console.log} emptyText=\"\u62d6\u62fd\u6587\u4ef6\u5230\u8fd9\u91cc!\" />;\n};\nexport default Demo;",
+      J =
         "import React from 'react';\nimport LazyLoadingImage from './LazyLoadImage';\nimport styled from '@emotion/styled';\n\nconst LazyStyleLoadingImage = styled(LazyLoadingImage)`\n  max-width: 100%;\n  min-width: 200px;\n`;\nconst Demo = () => {\n  return (\n    <LazyStyleLoadingImage src=\"https://www.eveningwater.com/static/page/CSS/css-code-50-image/comic-girl-02.jpg\" />\n  );\n};\nexport default Demo;",
       Q =
         "import React, { useRef, useState, useCallback, useEffect } from 'react';\nexport interface LazyLoadingImageProps {\n  className: string;\n  alt: string;\n  src: string;\n  loadInitially: boolean;\n  observerOptions: Record<string, null | string | unknown>;\n}\nconst LazyLoadingImage = (props: Partial<LazyLoadingImageProps>) => {\n  const {\n    alt,\n    src,\n    className,\n    loadInitially = false,\n    observerOptions = { root: null, rootMargin: '200px 0px' },\n    ...rest\n  } = props;\n  const observerRef = useRef<IntersectionObserver | null>(null);\n  const imgRef = useRef<HTMLImageElement | null>(null);\n  const [isLoaded, setIsLoaded] = useState(false);\n  const observerCallback = useCallback(\n    (entries) => {\n      if (entries[0].isIntersecting) {\n        observerRef.current?.disconnect();\n        setIsLoaded(true);\n      }\n    },\n    [observerRef],\n  );\n  useEffect(() => {\n    if (loadInitially) {\n      return;\n    }\n    if ('loading' in HTMLImageElement.prototype) {\n      setIsLoaded(true);\n      return;\n    }\n    observerRef.current = new IntersectionObserver(\n      observerCallback,\n      observerOptions,\n    );\n    observerRef.current.observe(imgRef.current as HTMLImageElement);\n    return () => {\n      observerRef.current?.disconnect();\n    };\n  }, []);\n\n  return (\n    <img\n      src={isLoaded ? src : ''}\n      alt={alt}\n      ref={imgRef}\n      className={className}\n      loading={loadInitially ? undefined : 'lazy'}\n      {...rest}\n    />\n  );\n};\nexport default LazyLoadingImage;",
-      J =
-        "import React from 'react';\nimport LazyLoadingImage from './LazyLoadImage';\nimport styled from '@emotion/styled';\n\nconst LazyStyleLoadingImage = styled(LazyLoadingImage)`\n  max-width: 100%;\n  min-width: 200px;\n`;\nconst Demo = () => {\n  return (\n    <LazyStyleLoadingImage src=\"https://www.eveningwater.com/static/page/CSS/css-code-50-image/comic-girl-02.jpg\" />\n  );\n};\nexport default Demo;",
       ee =
-        "import React from 'react';\nimport LimitedTextarea from './LimitedTextarea';\n\nconst Demo = () => {\n  return <LimitedTextarea limit={100}></LimitedTextarea>;\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport LazyLoadingImage from './LazyLoadImage';\nimport styled from '@emotion/styled';\n\nconst LazyStyleLoadingImage = styled(LazyLoadingImage)`\n  max-width: 100%;\n  min-width: 200px;\n`;\nconst Demo = () => {\n  return (\n    <LazyStyleLoadingImage src=\"https://www.eveningwater.com/static/page/CSS/css-code-50-image/comic-girl-02.jpg\" />\n  );\n};\nexport default Demo;",
       te =
-        "import React, { useState, useCallback } from 'react';\nimport type { ChangeEvent } from 'react';\nimport styled from '@emotion/styled';\ninterface LimitedTextareaProps extends Record<string, unknown> {\n  limit: number;\n  rows: number;\n  cols: number;\n  value: string;\n}\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedTextarea = (props: Partial<LimitedTextareaProps>) => {\n  const { limit, rows, cols, value, ...rest } = props;\n\n  const [content, setContent] = useState(value?.slice(0, limit));\n\n  const setFormattedContent = useCallback(\n    (text: string) => {\n      setContent(text.slice(0, limit));\n    },\n    [limit, setContent],\n  );\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e: ChangeEvent) =>\n          setFormattedContent((e.target as HTMLTextAreaElement).value)\n        }\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedTextarea;",
+        "import React from 'react';\nimport LimitedTextarea from './LimitedTextarea';\n\nconst Demo = () => {\n  return <LimitedTextarea limit={100}></LimitedTextarea>;\n};\n\nexport default Demo;",
       ne =
-        "import React from 'react';\nimport LimitedTextarea from './LimitedTextarea';\n\nconst Demo = () => {\n  return <LimitedTextarea limit={120}></LimitedTextarea>;\n};\n\nexport default Demo;",
+        "import React, { useState, useCallback } from 'react';\nimport type { ChangeEvent } from 'react';\nimport styled from '@emotion/styled';\ninterface LimitedTextareaProps extends Record<string, unknown> {\n  limit: number;\n  rows: number;\n  cols: number;\n  value: string;\n}\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedTextarea = (props: Partial<LimitedTextareaProps>) => {\n  const { limit, rows, cols, value, ...rest } = props;\n\n  const [content, setContent] = useState(value?.slice(0, limit));\n\n  const setFormattedContent = useCallback(\n    (text: string) => {\n      setContent(text.slice(0, limit));\n    },\n    [limit, setContent],\n  );\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e: ChangeEvent) =>\n          setFormattedContent((e.target as HTMLTextAreaElement).value)\n        }\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedTextarea;",
       re =
-        "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea limit={5} value=\"hello,there!\"></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport LimitedTextarea from './LimitedTextarea';\n\nconst Demo = () => {\n  return <LimitedTextarea limit={120}></LimitedTextarea>;\n};\n\nexport default Demo;",
       ae =
-        "import React, { useState, useCallback, useEffect } from 'react';\nimport type { ChangeEvent } from 'react';\nimport styled from '@emotion/styled';\ninterface LimitedWordTextareaProps extends Record<string, unknown> {\n  limit: number;\n  rows: number;\n  cols: number;\n  value: string;\n}\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedWordTextarea = (props: Partial<LimitedWordTextareaProps>) => {\n  const { limit = 0, rows, cols, value, ...rest } = props;\n\n  const [{ content, wordCount }, setContent] = useState({\n    content: value,\n    wordCount: 0,\n  });\n\n  const setFormattedContent = useCallback(\n    (text: string) => {\n      let words = text.split(' ').filter(Boolean);\n      setContent(() => {\n        if (words.length > limit) {\n          return {\n            wordCount: limit,\n            content: words.slice(0, limit).join(' '),\n          };\n        }\n        return {\n          wordCount: words.length,\n          content: text,\n        };\n      });\n    },\n    [limit, setContent],\n  );\n  useEffect(() => {\n    setFormattedContent(content || '');\n  }, []);\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e: ChangeEvent) =>\n          setFormattedContent((e.target as HTMLTextAreaElement).value)\n        }\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedWordTextarea;",
+        "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea limit={5} value=\"hello,there!\"></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
       oe =
-        "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea\n      limit={6}\n      value=\"\u4f60\u597d\u554a,\u8fd9\u91cc\u7684\u4e16\u754c!\"\n    ></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState, useCallback, useEffect } from 'react';\nimport type { ChangeEvent } from 'react';\nimport styled from '@emotion/styled';\ninterface LimitedWordTextareaProps extends Record<string, unknown> {\n  limit: number;\n  rows: number;\n  cols: number;\n  value: string;\n}\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedWordTextarea = (props: Partial<LimitedWordTextareaProps>) => {\n  const { limit = 0, rows, cols, value, ...rest } = props;\n\n  const [{ content, wordCount }, setContent] = useState({\n    content: value,\n    wordCount: 0,\n  });\n\n  const setFormattedContent = useCallback(\n    (text: string) => {\n      let words = text.split(' ').filter(Boolean);\n      setContent(() => {\n        if (words.length > limit) {\n          return {\n            wordCount: limit,\n            content: words.slice(0, limit).join(' '),\n          };\n        }\n        return {\n          wordCount: words.length,\n          content: text,\n        };\n      });\n    },\n    [limit, setContent],\n  );\n  useEffect(() => {\n    setFormattedContent(content || '');\n  }, []);\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e: ChangeEvent) =>\n          setFormattedContent((e.target as HTMLTextAreaElement).value)\n        }\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedWordTextarea;",
       ie =
-        'import React, { useState } from \'react\';\nimport { Alert, Space, Spin, Switch } from \'antd\';\nimport Loader from \'./Loader\';\nimport styled from \'@emotion/styled\';\n\nconst Row = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  const [loading, setLoading] = useState(true);\n  const antIcon = <Loader size={24} spin />;\n  return (\n    <Space direction="vertical" style={{ width: \'100%\' }}>\n      <Spin tip="Loading..." indicator={antIcon} spinning={loading}>\n        <Alert\n          message="Alert message title"\n          description="Further details about the context of this alert."\n          type="info"\n        />\n      </Spin>\n      <Row>\n        Loading state\uff1a\n        <Switch checked={loading} onChange={() => setLoading(!loading)} />\n      </Row>\n    </Space>\n  );\n};\nexport default Demo;',
+        "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea\n      limit={6}\n      value=\"\u4f60\u597d\u554a,\u8fd9\u91cc\u7684\u4e16\u754c!\"\n    ></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
       le =
-        'import React, { useState } from \'react\';\nimport { Alert, Space, Spin, Switch } from \'antd\';\nimport Loader from \'./Loader\';\nimport styled from \'@emotion/styled\';\n\nconst Row = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  const [loading, setLoading] = useState(true);\n  const antIcon = <Loader size={24} spin />;\n  return (\n    <Space direction="vertical" style={{ width: \'100%\' }}>\n      <Spin tip="\u52a0\u8f7d\u4e2d..." indicator={antIcon} spinning={loading}>\n        <Alert\n          message="\u63d0\u793a\u6846\u6d88\u606f\u6807\u9898"\n          description="\u6709\u5173\u6b64\u63d0\u793a\u6846\u4e0a\u4e0b\u6587\u7684\u66f4\u591a\u8be6\u7ec6\u4fe1\u606f\u3002"\n          type="info"\n        />\n      </Spin>\n      <Row>\n        \u52a0\u8f7d\u72b6\u6001\uff1a\n        <Switch checked={loading} onChange={() => setLoading(!loading)} />\n      </Row>\n    </Space>\n  );\n};\nexport default Demo;',
+        'import React, { useState } from \'react\';\nimport { Alert, Space, Spin, Switch } from \'antd\';\nimport Loader from \'./Loader\';\nimport styled from \'@emotion/styled\';\n\nconst Row = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  const [loading, setLoading] = useState(true);\n  const antIcon = <Loader size={24} spin />;\n  return (\n    <Space direction="vertical" style={{ width: \'100%\' }}>\n      <Spin tip="Loading..." indicator={antIcon} spinning={loading}>\n        <Alert\n          message="Alert message title"\n          description="Further details about the context of this alert."\n          type="info"\n        />\n      </Spin>\n      <Row>\n        Loading state\uff1a\n        <Switch checked={loading} onChange={() => setLoading(!loading)} />\n      </Row>\n    </Space>\n  );\n};\nexport default Demo;',
       ce =
-        'import React from \'react\';\nimport Mailto from \'./Mailto\';\n\nconst Demo = () => {\n  return (\n    <Mailto\n      email="854806732@qq.com"\n      subject="hello & welcome"\n      body="hello,world"\n    >\n      Mail me!\n    </Mailto>\n  );\n};\n\nexport default Demo;',
+        'import React, { useState } from \'react\';\nimport { Alert, Space, Spin, Switch } from \'antd\';\nimport Loader from \'./Loader\';\nimport styled from \'@emotion/styled\';\n\nconst Row = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  const [loading, setLoading] = useState(true);\n  const antIcon = <Loader size={24} spin />;\n  return (\n    <Space direction="vertical" style={{ width: \'100%\' }}>\n      <Spin tip="\u52a0\u8f7d\u4e2d..." indicator={antIcon} spinning={loading}>\n        <Alert\n          message="\u63d0\u793a\u6846\u6d88\u606f\u6807\u9898"\n          description="\u6709\u5173\u6b64\u63d0\u793a\u6846\u4e0a\u4e0b\u6587\u7684\u66f4\u591a\u8be6\u7ec6\u4fe1\u606f\u3002"\n          type="info"\n        />\n      </Spin>\n      <Row>\n        \u52a0\u8f7d\u72b6\u6001\uff1a\n        <Switch checked={loading} onChange={() => setLoading(!loading)} />\n      </Row>\n    </Space>\n  );\n};\nexport default Demo;',
       se =
-        "import styled from '@emotion/styled';\nimport React from 'react';\nimport type { ReactNode } from 'react';\n\nconst Link = styled.a`\n  text-decoration: none;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 18px;\n  transition: color 0.3s ease-in-out;\n  &:hover {\n    color: #2396ef;\n  }\n`;\n\ninterface MailtoProps extends Record<string, unknown> {\n  email: string;\n  subject: string;\n  body: string;\n  children: ReactNode;\n}\n\nconst Mailto = (props: Partial<MailtoProps>) => {\n  const { email, subject = '', body = '', children, ...rest } = props;\n  let params = subject || body ? '?' : '';\n  if (subject) {\n    params += `subject=${encodeURIComponent(subject)}`;\n  }\n  if (body) {\n    params += `body=${encodeURIComponent(body)}`;\n  }\n  return (\n    <Link href={`mailto:${email}${params}`} className=\"mail-link\" {...rest}>\n      {children}\n    </Link>\n  );\n};\n\nexport default Mailto;",
+        'import React from \'react\';\nimport Mailto from \'./Mailto\';\n\nconst Demo = () => {\n  return (\n    <Mailto\n      email="854806732@qq.com"\n      subject="hello & welcome"\n      body="hello,world"\n    >\n      Mail me!\n    </Mailto>\n  );\n};\n\nexport default Demo;',
       ue =
-        'import React from \'react\';\nimport Mailto from \'./Mailto\';\n\nconst Demo = () => {\n  return (\n    <Mailto email="854806732@qq.com" subject="\u4f60\u597d&\u6b22\u8fce" body="\u4f60\u597d\uff0c\u4e16\u754c">\n      \u7ed9\u6211\u53d1\u90ae\u4ef6\n    </Mailto>\n  );\n};\n\nexport default Demo;',
+        "import styled from '@emotion/styled';\nimport React from 'react';\nimport type { ReactNode } from 'react';\n\nconst Link = styled.a`\n  text-decoration: none;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 18px;\n  transition: color 0.3s ease-in-out;\n  &:hover {\n    color: #2396ef;\n  }\n`;\n\ninterface MailtoProps extends Record<string, unknown> {\n  email: string;\n  subject: string;\n  body: string;\n  children: ReactNode;\n}\n\nconst Mailto = (props: Partial<MailtoProps>) => {\n  const { email, subject = '', body = '', children, ...rest } = props;\n  let params = subject || body ? '?' : '';\n  if (subject) {\n    params += `subject=${encodeURIComponent(subject)}`;\n  }\n  if (body) {\n    params += `body=${encodeURIComponent(body)}`;\n  }\n  return (\n    <Link href={`mailto:${email}${params}`} className=\"mail-link\" {...rest}>\n      {children}\n    </Link>\n  );\n};\n\nexport default Mailto;",
       de =
-        "import React, { useState } from 'react';\nimport Modal from './Modal';\nimport { Button, Space } from 'antd';\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const onCreate = () => {\n    Modal.confirm({\n      title: 'The modal title',\n      content: (\n        <>\n          <p>The modal content</p>\n          <p>The modal content</p>\n          <p>The modal content</p>\n        </>\n      ),\n      cancelText: 'Cancel',\n      okText: 'Sure',\n    });\n  };\n  return (\n    <Space>\n      <Button onClick={() => setVisible(true)}>clicked me</Button>\n      <Button onClick={onCreate}>clicked me</Button>\n      <Modal\n        visible={visible}\n        onCancel={() => setVisible(false)}\n        title=\"The modal title\"\n        showCancel\n        onOk={() => setVisible(false)}\n        cancelText=\"Cancel\"\n        okText=\"Sure\"\n      >\n        <p>The modal content</p>\n        <p>The modal content</p>\n        <p>The modal content</p>\n      </Modal>\n    </Space>\n  );\n};\n\nexport default Demo;",
+        'import React from \'react\';\nimport Mailto from \'./Mailto\';\n\nconst Demo = () => {\n  return (\n    <Mailto email="854806732@qq.com" subject="\u4f60\u597d&\u6b22\u8fce" body="\u4f60\u597d\uff0c\u4e16\u754c">\n      \u7ed9\u6211\u53d1\u90ae\u4ef6\n    </Mailto>\n  );\n};\n\nexport default Demo;',
       fe =
-        "import React, { useState, useEffect } from 'react';\nimport type { ReactNode, SyntheticEvent } from 'react';\nimport ReactDOM from 'react-dom';\nimport './Modal.less';\n\nexport interface ModalProps extends Record<string, any> {\n  mask: boolean;\n  footer: ReactNode;\n  title: ReactNode;\n  visible: boolean;\n  showCancel: boolean;\n  maskClosable: boolean;\n  onMask: Function;\n  onCancel: Function;\n  onOk: Function;\n  onClose: Function;\n  content: ReactNode;\n  showClose: boolean;\n  closeMask: boolean;\n  autoClose: boolean;\n  autoCloseTime: number;\n  isRenderHTML: boolean;\n  okText: string;\n  cancelText: string;\n  width: string | number;\n  children: ReactNode;\n  isDestroy: boolean;\n  keyboard: boolean;\n}\n\nconst Modal = (props: Partial<ModalProps>) => {\n  const {\n    mask = true,\n    footer,\n    children,\n    isRenderHTML,\n    title,\n    visible,\n    onCancel,\n    maskClosable = true,\n    onOk,\n    showCancel,\n    showClose = true,\n    onClose,\n    okText,\n    cancelText,\n    width = 520,\n    isDestroy = true,\n    keyboard = true,\n    onMask,\n    ...rest\n  } = props;\n\n  const [modalVisible, setModalVisible] = useState(false);\n\n  const keydownHandler = ({ key }) => {\n    switch (key) {\n      case 'Escape':\n        if (typeof onCancel === 'function' && keyboard) {\n          onCancel();\n        }\n        break;\n      default:\n    }\n  };\n\n  useEffect(() => {\n    if (typeof visible === 'boolean') {\n      setModalVisible(visible);\n    }\n  }, [visible]);\n\n  useEffect(() => {\n    document.addEventListener('keydown', keydownHandler);\n    return () => document.removeEventListener('keydown', keydownHandler);\n  });\n\n  // Set the width\n  const contentStyle: Partial<Record<'width', ModalProps['width']>> = {};\n  if (typeof width === 'number') {\n    contentStyle['width'] = width + 'px';\n  } else if (typeof width === 'string') {\n    contentStyle['width'] = width;\n  }\n\n  return isDestroy && !modalVisible ? null : (\n    <div\n      className=\"modal-container\"\n      {...rest}\n      style={{ display: modalVisible ? 'block' : 'none' }}\n    >\n      <div className=\"modal-wrapper\">\n        {mask ? (\n          <div\n            className=\"modal-mask\"\n            onClick={(e: SyntheticEvent) => {\n              if (maskClosable) {\n                if (typeof onMask === 'function') {\n                  return onMask(e);\n                }\n                if (typeof onCancel === 'function') {\n                  onCancel(e);\n                }\n              }\n            }}\n          />\n        ) : null}\n        <div className=\"modal-box\" style={contentStyle}>\n          <div className=\"modal-content\">\n            {showClose ? (\n              <div\n                className=\"modal-content-close\"\n                onClick={(e: SyntheticEvent) => {\n                  if (typeof onCancel === 'function') {\n                    onCancel(e);\n                  }\n                }}\n              >\n                <svg\n                  className=\"close-icon\"\n                  viewBox=\"0 0 1024 1024\"\n                  version=\"1.1\"\n                  xmlns=\"http://www.w3.org/2000/svg\"\n                  p-id=\"2217\"\n                >\n                  <path\n                    d=\"M546.942134 511.818772l327.456957-326.128977c9.617355-9.577423 9.648071-25.135361 0.070648-34.751692-9.577423-9.617355-25.137409-9.647048-34.750668-0.070648L512.119795 477.137729 184.520518 150.868479c-9.616331-9.577423-25.176316-9.545683-34.751692 0.070648-9.577423 9.616331-9.545683 25.174268 0.070648 34.751692l327.457981 326.127953-327.457981 326.128978c-9.616331 9.577423-9.647048 25.135361-0.070648 34.751692a24.496456 24.496456 0 0 0 17.41117 7.231702 24.500552 24.500552 0 0 0 17.340522-7.162078L512.119795 546.499816l327.599276 326.26925a24.492361 24.492361 0 0 0 17.340522 7.162078 24.5026 24.5026 0 0 0 17.41117-7.231702c9.577423-9.617355 9.545683-25.175292-0.070648-34.751692L546.942134 511.818772z\"\n                    fill=\"#bfbfbf\"\n                    p-id=\"2218\"\n                  ></path>\n                </svg>\n              </div>\n            ) : null}\n            {title ? <div className=\"modal-content-header\">{title}</div> : null}\n            <div className=\"modal-content-body\">\n              {isRenderHTML ? (\n                <div dangerouslySetInnerHTML={{ __html: String(children) }} />\n              ) : (\n                children\n              )}\n            </div>\n            {footer === null ? null : footer ? (\n              footer\n            ) : (\n              <div className=\"modal-content-footer\">\n                {showCancel ? (\n                  <button\n                    type=\"button\"\n                    className=\"modal-content-footer-button modal-content-footer-button-cancel\"\n                    onClick={(e: SyntheticEvent) => {\n                      if (typeof onCancel === 'function') {\n                        onCancel(e);\n                      }\n                    }}\n                  >\n                    {cancelText ? cancelText : '\u53d6\u6d88'}\n                  </button>\n                ) : null}\n                <button\n                  type=\"button\"\n                  className=\"modal-content-footer-button modal-content-footer-button-sure\"\n                  onClick={(e: SyntheticEvent) => {\n                    if (typeof onOk === 'function') {\n                      onOk(e);\n                    } else {\n                      if (typeof onCancel === 'function') {\n                        onCancel(e);\n                      }\n                    }\n                  }}\n                >\n                  {okText ? okText : '\u786e\u5b9a'}\n                </button>\n              </div>\n            )}\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nconst destroyFns: Array<() => void> = [];\nconst closeFns: Array<() => void> = [];\n\ninterface MethodModalProps extends ModalProps {}\nexport type ConfirmConfig = ModalProps | ((config: ModalProps) => ModalProps);\nexport type ReturnType = {\n  destroy: () => void;\n  close: () => void;\n  update: (updateConfig: ModalProps) => void;\n};\nexport type ModalType = (config: ModalProps) => ReturnType;\n\nModal.confirm = (config: Partial<MethodModalProps> | string) => {\n  const div = document.createElement('div');\n  document.body.appendChild(div);\n  const defaultConfig = {\n    visible: true,\n    showCancel: true,\n    onOk: () => destroy(),\n    onCancel: () => destroy(),\n    onMask: () => destroy(),\n  };\n  let currentConfig =\n    typeof config === 'object' && config\n      ? {\n          ...config,\n          ...defaultConfig,\n        }\n      : ({\n          content: config,\n          ...defaultConfig,\n        } as any);\n  function destroy() {\n    const unMountResult = ReactDOM.unmountComponentAtNode(div);\n    if (unMountResult && div.parentElement) {\n      div.parentElement.removeChild(div);\n    }\n    for (let i = 0, l = destroyFns.length; i < l; i++) {\n      const fn = destroyFns[i];\n      if (fn === close) {\n        destroyFns.splice(i, 1);\n        break;\n      }\n    }\n  }\n  function close() {\n    currentConfig = {\n      ...currentConfig,\n      visible: false,\n    };\n    render(currentConfig);\n  }\n  function render(props: MethodModalProps) {\n    setTimeout(() => {\n      ReactDOM.render(<Modal {...props}>{props.content}</Modal>, div);\n    });\n  }\n  function update(updateConfig: ConfirmConfig) {\n    if (typeof updateConfig === 'function') {\n      currentConfig = updateConfig(currentConfig);\n    } else {\n      currentConfig = {\n        ...currentConfig,\n        ...updateConfig,\n      };\n    }\n    render(currentConfig);\n  }\n  render(currentConfig);\n  closeFns.push(close);\n  destroyFns.push(destroy);\n  if (currentConfig.autoClose) {\n    let autoCloseTime = Number(currentConfig.autoCloseTime);\n    autoCloseTime = Number.isNaN(autoCloseTime)\n      ? 1000\n      : Math.min(10000, autoCloseTime);\n    setTimeout(() => {\n      destroy();\n    }, autoCloseTime);\n  }\n  return {\n    destroy,\n    close,\n    update,\n  };\n};\n\nModal.closeAll = () => {\n  closeFns.forEach((close: Function) => {\n    close && close();\n  });\n};\n\nModal.destroyAll = () => {\n  destroyFns.forEach((destroy: Function) => {\n    destroy && destroy();\n  });\n};\n\ntype GlobalModal = typeof Modal;\nexport { GlobalModal };\nexport default Modal;",
+        "import React, { useState } from 'react';\nimport Modal from './Modal';\nimport { Button, Space } from 'antd';\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const onCreate = () => {\n    Modal.confirm({\n      title: 'The modal title',\n      content: (\n        <>\n          <p>The modal content</p>\n          <p>The modal content</p>\n          <p>The modal content</p>\n        </>\n      ),\n      cancelText: 'Cancel',\n      okText: 'Sure',\n    });\n  };\n  return (\n    <Space>\n      <Button onClick={() => setVisible(true)}>clicked me</Button>\n      <Button onClick={onCreate}>clicked me</Button>\n      <Modal\n        visible={visible}\n        onCancel={() => setVisible(false)}\n        title=\"The modal title\"\n        showCancel\n        onOk={() => setVisible(false)}\n        cancelText=\"Cancel\"\n        okText=\"Sure\"\n      >\n        <p>The modal content</p>\n        <p>The modal content</p>\n        <p>The modal content</p>\n      </Modal>\n    </Space>\n  );\n};\n\nexport default Demo;",
       pe =
-        "@black: rgba(0, 0, 0, 1);\n@baseSelector: modal;\n\n.@{baseSelector}-container {\n  .base-fixed {\n    inset: 0;\n    position: fixed;\n  }\n\n  .@{baseSelector}-mask {\n    height: 100%;\n    background-color: fade(@black, 65%);\n    .base-fixed();\n  }\n\n  .@{baseSelector}-wrapper {\n    .base-fixed();\n    overflow: auto;\n    outline: 0;\n    z-index: 1000;\n\n    .@{baseSelector}-box {\n      box-sizing: border-box;\n      padding: 0 0 24px;\n      color: fadeout(@black, 15%);\n      font-size: 14px;\n      font-variant: tabular-nums;\n      line-height: 1.5715;\n      list-style: none;\n      font-feature-settings: 'tnum';\n      pointer-events: none;\n      position: relative;\n      top: 100px;\n      width: auto;\n      max-width: calc(100vw - 32px);\n      margin: 0 auto;\n\n      .@{baseSelector}-content {\n        position: relative;\n        background-color: #fff;\n        background-clip: padding-box;\n        border: 0;\n        border-radius: 2px;\n        box-shadow: 0 3px 6px -4px fade(@black, 5%), 0 6px 16px fade(@black, 7%),\n          0 9px 28px 8px fade(@black, 9%);\n        pointer-events: auto;\n\n        &-header {\n          padding: 16px 24px;\n          color: fade(@black, 90%);\n          background: #fff;\n          border-bottom: 1px solid fade(@black, 6%);\n          border-radius: 2px 2px 0 0;\n          margin: 0;\n          font-weight: 500;\n          font-size: 16px;\n          line-height: 22px;\n          word-wrap: break-word;\n        }\n\n        &-body {\n          padding: 24px;\n          font-size: 14px;\n          line-height: 1.5715;\n          word-wrap: break-word;\n        }\n\n        &-footer {\n          padding: 10px 16px;\n          text-align: right;\n          background: 0 0;\n          border-top: 1px solid fadeout(@black, 94%);\n          border-radius: 0 0 2px 2px;\n\n          &-button {\n            line-height: 1.5715;\n            position: relative;\n            display: inline-block;\n            font-weight: 400;\n            white-space: nowrap;\n            text-align: center;\n            background-image: none;\n            border: 1px solid transparent;\n            box-shadow: 0 2px fadeout(@black, 95%);\n            cursor: pointer;\n            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n            -webkit-user-select: none;\n            -moz-user-select: none;\n            -ms-user-select: none;\n            user-select: none;\n            touch-action: manipulation;\n            height: 32px;\n            padding: 4px 15px;\n            font-size: 14px;\n            letter-spacing: 2px;\n            border-radius: 2px;\n            color: fade(@black, 97%);\n            border-color: #d9d9d9;\n            background: #fff;\n            border-radius: 4px;\n\n            &-cancel {\n              margin-right: 15px;\n\n              &:hover,\n              &:active {\n                border-color: #2499f1;\n                color: #2396ef;\n              }\n            }\n\n            &-sure {\n              background-color: #34a1f5;\n              border-color: #1e9af8;\n              color: #fff;\n\n              &:hover,\n              &:active {\n                background-color: #0f8ff1;\n                border-color: #1794f5;\n              }\n            }\n          }\n        }\n\n        &-close {\n          position: absolute;\n          top: 0;\n          right: 0;\n          z-index: 10;\n          padding: 0;\n          color: fadeout(@black, 75%);\n          font-weight: 700;\n          text-decoration: none;\n          background: 0 0;\n          border: 0;\n          outline: 0;\n          cursor: pointer;\n          width: 54px;\n          height: 54px;\n          font-size: 16px;\n          font-style: normal;\n          line-height: 54px;\n          text-align: center;\n          text-transform: none;\n          text-rendering: auto;\n          transition: color 0.3s;\n\n          & .close-icon {\n            width: 16px;\n            height: 16px;\n          }\n        }\n      }\n    }\n  }\n}",
+        "import React, { useState, useEffect } from 'react';\nimport type { ReactNode, SyntheticEvent } from 'react';\nimport ReactDOM from 'react-dom';\nimport './Modal.less';\n\nexport interface ModalProps extends Record<string, any> {\n  mask: boolean;\n  footer: ReactNode;\n  title: ReactNode;\n  visible: boolean;\n  showCancel: boolean;\n  maskClosable: boolean;\n  onMask: Function;\n  onCancel: Function;\n  onOk: Function;\n  onClose: Function;\n  content: ReactNode;\n  showClose: boolean;\n  closeMask: boolean;\n  autoClose: boolean;\n  autoCloseTime: number;\n  isRenderHTML: boolean;\n  okText: string;\n  cancelText: string;\n  width: string | number;\n  children: ReactNode;\n  isDestroy: boolean;\n  keyboard: boolean;\n}\n\nconst Modal = (props: Partial<ModalProps>) => {\n  const {\n    mask = true,\n    footer,\n    children,\n    isRenderHTML,\n    title,\n    visible,\n    onCancel,\n    maskClosable = true,\n    onOk,\n    showCancel,\n    showClose = true,\n    onClose,\n    okText,\n    cancelText,\n    width = 520,\n    isDestroy = true,\n    keyboard = true,\n    onMask,\n    ...rest\n  } = props;\n\n  const [modalVisible, setModalVisible] = useState(false);\n\n  const keydownHandler = ({ key }) => {\n    switch (key) {\n      case 'Escape':\n        if (typeof onCancel === 'function' && keyboard) {\n          onCancel();\n        }\n        break;\n      default:\n    }\n  };\n\n  useEffect(() => {\n    if (typeof visible === 'boolean') {\n      setModalVisible(visible);\n    }\n  }, [visible]);\n\n  useEffect(() => {\n    document.addEventListener('keydown', keydownHandler);\n    return () => document.removeEventListener('keydown', keydownHandler);\n  });\n\n  // Set the width\n  const contentStyle: Partial<Record<'width', ModalProps['width']>> = {};\n  if (typeof width === 'number') {\n    contentStyle['width'] = width + 'px';\n  } else if (typeof width === 'string') {\n    contentStyle['width'] = width;\n  }\n\n  return isDestroy && !modalVisible ? null : (\n    <div\n      className=\"modal-container\"\n      {...rest}\n      style={{ display: modalVisible ? 'block' : 'none' }}\n    >\n      <div className=\"modal-wrapper\">\n        {mask ? (\n          <div\n            className=\"modal-mask\"\n            onClick={(e: SyntheticEvent) => {\n              if (maskClosable) {\n                if (typeof onMask === 'function') {\n                  return onMask(e);\n                }\n                if (typeof onCancel === 'function') {\n                  onCancel(e);\n                }\n              }\n            }}\n          />\n        ) : null}\n        <div className=\"modal-box\" style={contentStyle}>\n          <div className=\"modal-content\">\n            {showClose ? (\n              <div\n                className=\"modal-content-close\"\n                onClick={(e: SyntheticEvent) => {\n                  if (typeof onCancel === 'function') {\n                    onCancel(e);\n                  }\n                }}\n              >\n                <svg\n                  className=\"close-icon\"\n                  viewBox=\"0 0 1024 1024\"\n                  version=\"1.1\"\n                  xmlns=\"http://www.w3.org/2000/svg\"\n                  p-id=\"2217\"\n                >\n                  <path\n                    d=\"M546.942134 511.818772l327.456957-326.128977c9.617355-9.577423 9.648071-25.135361 0.070648-34.751692-9.577423-9.617355-25.137409-9.647048-34.750668-0.070648L512.119795 477.137729 184.520518 150.868479c-9.616331-9.577423-25.176316-9.545683-34.751692 0.070648-9.577423 9.616331-9.545683 25.174268 0.070648 34.751692l327.457981 326.127953-327.457981 326.128978c-9.616331 9.577423-9.647048 25.135361-0.070648 34.751692a24.496456 24.496456 0 0 0 17.41117 7.231702 24.500552 24.500552 0 0 0 17.340522-7.162078L512.119795 546.499816l327.599276 326.26925a24.492361 24.492361 0 0 0 17.340522 7.162078 24.5026 24.5026 0 0 0 17.41117-7.231702c9.577423-9.617355 9.545683-25.175292-0.070648-34.751692L546.942134 511.818772z\"\n                    fill=\"#bfbfbf\"\n                    p-id=\"2218\"\n                  ></path>\n                </svg>\n              </div>\n            ) : null}\n            {title ? <div className=\"modal-content-header\">{title}</div> : null}\n            <div className=\"modal-content-body\">\n              {isRenderHTML ? (\n                <div dangerouslySetInnerHTML={{ __html: String(children) }} />\n              ) : (\n                children\n              )}\n            </div>\n            {footer === null ? null : footer ? (\n              footer\n            ) : (\n              <div className=\"modal-content-footer\">\n                {showCancel ? (\n                  <button\n                    type=\"button\"\n                    className=\"modal-content-footer-button modal-content-footer-button-cancel\"\n                    onClick={(e: SyntheticEvent) => {\n                      if (typeof onCancel === 'function') {\n                        onCancel(e);\n                      }\n                    }}\n                  >\n                    {cancelText ? cancelText : '\u53d6\u6d88'}\n                  </button>\n                ) : null}\n                <button\n                  type=\"button\"\n                  className=\"modal-content-footer-button modal-content-footer-button-sure\"\n                  onClick={(e: SyntheticEvent) => {\n                    if (typeof onOk === 'function') {\n                      onOk(e);\n                    } else {\n                      if (typeof onCancel === 'function') {\n                        onCancel(e);\n                      }\n                    }\n                  }}\n                >\n                  {okText ? okText : '\u786e\u5b9a'}\n                </button>\n              </div>\n            )}\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nconst destroyFns: Array<() => void> = [];\nconst closeFns: Array<() => void> = [];\n\ninterface MethodModalProps extends ModalProps {}\nexport type ConfirmConfig = ModalProps | ((config: ModalProps) => ModalProps);\nexport type ReturnType = {\n  destroy: () => void;\n  close: () => void;\n  update: (updateConfig: ModalProps) => void;\n};\nexport type ModalType = (config: ModalProps) => ReturnType;\n\nModal.confirm = (config: Partial<MethodModalProps> | string) => {\n  const div = document.createElement('div');\n  document.body.appendChild(div);\n  const defaultConfig = {\n    visible: true,\n    showCancel: true,\n    onOk: () => destroy(),\n    onCancel: () => destroy(),\n    onMask: () => destroy(),\n  };\n  let currentConfig =\n    typeof config === 'object' && config\n      ? {\n          ...config,\n          ...defaultConfig,\n        }\n      : ({\n          content: config,\n          ...defaultConfig,\n        } as any);\n  function destroy() {\n    const unMountResult = ReactDOM.unmountComponentAtNode(div);\n    if (unMountResult && div.parentElement) {\n      div.parentElement.removeChild(div);\n    }\n    for (let i = 0, l = destroyFns.length; i < l; i++) {\n      const fn = destroyFns[i];\n      if (fn === close) {\n        destroyFns.splice(i, 1);\n        break;\n      }\n    }\n  }\n  function close() {\n    currentConfig = {\n      ...currentConfig,\n      visible: false,\n    };\n    render(currentConfig);\n  }\n  function render(props: MethodModalProps) {\n    setTimeout(() => {\n      ReactDOM.render(<Modal {...props}>{props.content}</Modal>, div);\n    });\n  }\n  function update(updateConfig: ConfirmConfig) {\n    if (typeof updateConfig === 'function') {\n      currentConfig = updateConfig(currentConfig);\n    } else {\n      currentConfig = {\n        ...currentConfig,\n        ...updateConfig,\n      };\n    }\n    render(currentConfig);\n  }\n  render(currentConfig);\n  closeFns.push(close);\n  destroyFns.push(destroy);\n  if (currentConfig.autoClose) {\n    let autoCloseTime = Number(currentConfig.autoCloseTime);\n    autoCloseTime = Number.isNaN(autoCloseTime)\n      ? 1000\n      : Math.min(10000, autoCloseTime);\n    setTimeout(() => {\n      destroy();\n    }, autoCloseTime);\n  }\n  return {\n    destroy,\n    close,\n    update,\n  };\n};\n\nModal.closeAll = () => {\n  closeFns.forEach((close: Function) => {\n    close && close();\n  });\n};\n\nModal.destroyAll = () => {\n  destroyFns.forEach((destroy: Function) => {\n    destroy && destroy();\n  });\n};\n\ntype GlobalModal = typeof Modal;\nexport { GlobalModal };\nexport default Modal;",
       me =
-        "import React, { useState } from 'react';\nimport Modal from './Modal';\nimport { Button, Space } from 'antd';\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const onCreate = () => {\n    Modal.confirm({\n      title: '\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898',\n      content: (\n        <>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        </>\n      ),\n    });\n  };\n  return (\n    <Space>\n      <Button onClick={() => setVisible(true)}>clicked me</Button>\n      <Button onClick={onCreate}>clicked me</Button>\n      <Modal\n        visible={visible}\n        onCancel={() => setVisible(false)}\n        title=\"\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898\"\n        showCancel\n        onOk={() => setVisible(false)}\n      >\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n      </Modal>\n    </Space>\n  );\n};\n\nexport default Demo;",
+        "@black: rgba(0, 0, 0, 1);\n@baseSelector: modal;\n\n.@{baseSelector}-container {\n  .base-fixed {\n    inset: 0;\n    position: fixed;\n  }\n\n  .@{baseSelector}-mask {\n    height: 100%;\n    background-color: fade(@black, 65%);\n    .base-fixed();\n  }\n\n  .@{baseSelector}-wrapper {\n    .base-fixed();\n    overflow: auto;\n    outline: 0;\n    z-index: 1000;\n\n    .@{baseSelector}-box {\n      box-sizing: border-box;\n      padding: 0 0 24px;\n      color: fadeout(@black, 15%);\n      font-size: 14px;\n      font-variant: tabular-nums;\n      line-height: 1.5715;\n      list-style: none;\n      font-feature-settings: 'tnum';\n      pointer-events: none;\n      position: relative;\n      top: 100px;\n      width: auto;\n      max-width: calc(100vw - 32px);\n      margin: 0 auto;\n\n      .@{baseSelector}-content {\n        position: relative;\n        background-color: #fff;\n        background-clip: padding-box;\n        border: 0;\n        border-radius: 2px;\n        box-shadow: 0 3px 6px -4px fade(@black, 5%), 0 6px 16px fade(@black, 7%),\n          0 9px 28px 8px fade(@black, 9%);\n        pointer-events: auto;\n\n        &-header {\n          padding: 16px 24px;\n          color: fade(@black, 90%);\n          background: #fff;\n          border-bottom: 1px solid fade(@black, 6%);\n          border-radius: 2px 2px 0 0;\n          margin: 0;\n          font-weight: 500;\n          font-size: 16px;\n          line-height: 22px;\n          word-wrap: break-word;\n        }\n\n        &-body {\n          padding: 24px;\n          font-size: 14px;\n          line-height: 1.5715;\n          word-wrap: break-word;\n        }\n\n        &-footer {\n          padding: 10px 16px;\n          text-align: right;\n          background: 0 0;\n          border-top: 1px solid fadeout(@black, 94%);\n          border-radius: 0 0 2px 2px;\n\n          &-button {\n            line-height: 1.5715;\n            position: relative;\n            display: inline-block;\n            font-weight: 400;\n            white-space: nowrap;\n            text-align: center;\n            background-image: none;\n            border: 1px solid transparent;\n            box-shadow: 0 2px fadeout(@black, 95%);\n            cursor: pointer;\n            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n            -webkit-user-select: none;\n            -moz-user-select: none;\n            -ms-user-select: none;\n            user-select: none;\n            touch-action: manipulation;\n            height: 32px;\n            padding: 4px 15px;\n            font-size: 14px;\n            letter-spacing: 2px;\n            border-radius: 2px;\n            color: fade(@black, 97%);\n            border-color: #d9d9d9;\n            background: #fff;\n            border-radius: 4px;\n\n            &-cancel {\n              margin-right: 15px;\n\n              &:hover,\n              &:active {\n                border-color: #2499f1;\n                color: #2396ef;\n              }\n            }\n\n            &-sure {\n              background-color: #34a1f5;\n              border-color: #1e9af8;\n              color: #fff;\n\n              &:hover,\n              &:active {\n                background-color: #0f8ff1;\n                border-color: #1794f5;\n              }\n            }\n          }\n        }\n\n        &-close {\n          position: absolute;\n          top: 0;\n          right: 0;\n          z-index: 10;\n          padding: 0;\n          color: fadeout(@black, 75%);\n          font-weight: 700;\n          text-decoration: none;\n          background: 0 0;\n          border: 0;\n          outline: 0;\n          cursor: pointer;\n          width: 54px;\n          height: 54px;\n          font-size: 16px;\n          font-style: normal;\n          line-height: 54px;\n          text-align: center;\n          text-transform: none;\n          text-rendering: auto;\n          transition: color 0.3s;\n\n          & .close-icon {\n            width: 16px;\n            height: 16px;\n          }\n        }\n      }\n    }\n  }\n}",
       he =
-        "import React, { useState } from 'react';\nimport PasswordRevealer from './PasswordRevealer';\nconst Demo = () => {\n  const [value, setValue] = useState('');\n  const onChange = (v: string) => {\n    console.log(v);\n    setValue(v);\n  };\n  return (\n    <PasswordRevealer\n      placeholder=\"Please Input the password\"\n      value={value}\n      onChange={onChange}\n    ></PasswordRevealer>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Modal from './Modal';\nimport { Button, Space } from 'antd';\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const onCreate = () => {\n    Modal.confirm({\n      title: '\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898',\n      content: (\n        <>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        </>\n      ),\n    });\n  };\n  return (\n    <Space>\n      <Button onClick={() => setVisible(true)}>clicked me</Button>\n      <Button onClick={onCreate}>clicked me</Button>\n      <Modal\n        visible={visible}\n        onCancel={() => setVisible(false)}\n        title=\"\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898\"\n        showCancel\n        onOk={() => setVisible(false)}\n      >\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n      </Modal>\n    </Space>\n  );\n};\n\nexport default Demo;",
       ve =
-        'import React, { useState } from \'react\';\nimport type { SyntheticEvent } from \'react\';\nimport \'./passwordRevealer.less\';\n\nexport interface PasswordRevealerProps extends Record<string, any> {\n  value: string;\n  onChange(v: string): void;\n  placeholder: string;\n}\n\nconst Eye = () => (\n  <svg\n    viewBox="64 64 896 896"\n    className="ant-password-suffix-icon"\n    data-icon="eye"\n    width="1em"\n    height="1em"\n    fill="currentColor"\n  >\n    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>\n  </svg>\n);\nconst EyeClose = () => (\n  <svg\n    viewBox="64 64 896 896"\n    data-icon="eye-invisible"\n    className="ant-password-suffix-icon"\n    width="1em"\n    height="1em"\n    fill="currentColor"\n  >\n    <path d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"></path>\n    <path d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"></path>\n  </svg>\n);\n\nconst PasswordRevealer = (props: Partial<PasswordRevealerProps>) => {\n  const {\n    value,\n    onChange,\n    placeholder = \'Please Input the password\',\n    ...rest\n  } = props;\n  const [isShown, setIsShown] = useState(false);\n  const [isFocus, setIsFocus] = useState(false);\n\n  const onChangeHandler = (e: SyntheticEvent) => {\n    const v = (e.target as HTMLInputElement).value;\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  return (\n    <span className={`ant-password${isFocus ? \' is-focused\' : \'\'}`} {...rest}>\n      <input\n        type={isShown ? \'text\' : \'password\'}\n        className="ant-password-input"\n        value={value}\n        onChange={onChangeHandler}\n        placeholder={placeholder}\n        onFocus={() => setIsFocus(true)}\n        onBlur={() => setIsFocus(false)}\n      />\n      <span\n        className="ant-password-suffix"\n        onClick={() => setIsShown(!isShown)}\n      >\n        {isShown ? <Eye /> : <EyeClose />}\n      </span>\n    </span>\n  );\n};\n\nexport default PasswordRevealer;',
+        "import React, { useState } from 'react';\nimport PasswordRevealer from './PasswordRevealer';\nconst Demo = () => {\n  const [value, setValue] = useState('');\n  const onChange = (v: string) => {\n    console.log(v);\n    setValue(v);\n  };\n  return (\n    <PasswordRevealer\n      placeholder=\"Please Input the password\"\n      value={value}\n      onChange={onChange}\n    ></PasswordRevealer>\n  );\n};\n\nexport default Demo;",
       ge =
-        "@baseSelector: ant-;\n\n.@{baseSelector}password {\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  transition: all 0.3s;\n  display: inline-flex;\n  padding: 4px 11px;\n  &-suffix {\n    margin-left: 4px;\n    display: flex;\n    flex: none;\n    align-items: center;\n    cursor: pointer;\n    &-icon {\n      &:hover {\n        color: rgba(0, 0, 0, 0.6);\n      }\n    }\n  }\n  &-input {\n    box-sizing: border-box;\n    margin: 0;\n    font-variant: tabular-nums;\n    list-style: none;\n    font-feature-settings: 'tnum';\n    position: relative;\n    display: inline-block;\n    width: 100%;\n    min-width: 0;\n    color: rgba(0, 0, 0, 0.85);\n    font-size: 14px;\n    outline: none;\n    line-height: 1.5715;\n    background-color: #fff;\n    background-image: none;\n    border: none;\n    border-radius: 2px;\n    transition: all 0.3s;\n  }\n  &.is-focused {\n    border-color: #40a9ff;\n  }\n}",
+        'import React, { useState } from \'react\';\nimport type { SyntheticEvent } from \'react\';\nimport \'./passwordRevealer.less\';\n\nexport interface PasswordRevealerProps extends Record<string, any> {\n  value: string;\n  onChange(v: string): void;\n  placeholder: string;\n}\n\nconst Eye = () => (\n  <svg\n    viewBox="64 64 896 896"\n    className="ant-password-suffix-icon"\n    data-icon="eye"\n    width="1em"\n    height="1em"\n    fill="currentColor"\n  >\n    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>\n  </svg>\n);\nconst EyeClose = () => (\n  <svg\n    viewBox="64 64 896 896"\n    data-icon="eye-invisible"\n    className="ant-password-suffix-icon"\n    width="1em"\n    height="1em"\n    fill="currentColor"\n  >\n    <path d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"></path>\n    <path d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"></path>\n  </svg>\n);\n\nconst PasswordRevealer = (props: Partial<PasswordRevealerProps>) => {\n  const {\n    value,\n    onChange,\n    placeholder = \'Please Input the password\',\n    ...rest\n  } = props;\n  const [isShown, setIsShown] = useState(false);\n  const [isFocus, setIsFocus] = useState(false);\n\n  const onChangeHandler = (e: SyntheticEvent) => {\n    const v = (e.target as HTMLInputElement).value;\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  return (\n    <span className={`ant-password${isFocus ? \' is-focused\' : \'\'}`} {...rest}>\n      <input\n        type={isShown ? \'text\' : \'password\'}\n        className="ant-password-input"\n        value={value}\n        onChange={onChangeHandler}\n        placeholder={placeholder}\n        onFocus={() => setIsFocus(true)}\n        onBlur={() => setIsFocus(false)}\n      />\n      <span\n        className="ant-password-suffix"\n        onClick={() => setIsShown(!isShown)}\n      >\n        {isShown ? <Eye /> : <EyeClose />}\n      </span>\n    </span>\n  );\n};\n\nexport default PasswordRevealer;',
       be =
-        "import React, { useState } from 'react';\nimport PasswordRevealer from './PasswordRevealer';\nconst Demo = () => {\n  const [value, setValue] = useState('');\n  const onChange = (v: string) => {\n    console.log(v);\n    setValue(v);\n  };\n  return (\n    <PasswordRevealer\n      placeholder=\"\u8bf7\u8f93\u5165\u5bc6\u7801\"\n      value={value}\n      onChange={onChange}\n    ></PasswordRevealer>\n  );\n};\n\nexport default Demo;",
+        "@baseSelector: ant-;\n\n.@{baseSelector}password {\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  transition: all 0.3s;\n  display: inline-flex;\n  padding: 4px 11px;\n  &-suffix {\n    margin-left: 4px;\n    display: flex;\n    flex: none;\n    align-items: center;\n    cursor: pointer;\n    &-icon {\n      &:hover {\n        color: rgba(0, 0, 0, 0.6);\n      }\n    }\n  }\n  &-input {\n    box-sizing: border-box;\n    margin: 0;\n    font-variant: tabular-nums;\n    list-style: none;\n    font-feature-settings: 'tnum';\n    position: relative;\n    display: inline-block;\n    width: 100%;\n    min-width: 0;\n    color: rgba(0, 0, 0, 0.85);\n    font-size: 14px;\n    outline: none;\n    line-height: 1.5715;\n    background-color: #fff;\n    background-image: none;\n    border: none;\n    border-radius: 2px;\n    transition: all 0.3s;\n  }\n  &.is-focused {\n    border-color: #40a9ff;\n  }\n}",
       ye =
-        'import React from \'react\';\nimport Select from \'./Select\';\nimport type { SelectProps } from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler: SelectProps[\'onChange\'] = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="please select"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="grapefruit" value="Grapefruit"></Option>\n        <Option label="lime" value="lime"></Option>\n        <Option label="coconut" value="coconut" disabled></Option>\n        <Option label="mango" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="please select"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="grapefruit" value="Grapefruit"></Option>\n        <Option label="lime" value="lime"></Option>\n        <Option label="coconut" value="coconut" disabled></Option>\n        <Option label="mango" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
+        "import React, { useState } from 'react';\nimport PasswordRevealer from './PasswordRevealer';\nconst Demo = () => {\n  const [value, setValue] = useState('');\n  const onChange = (v: string) => {\n    console.log(v);\n    setValue(v);\n  };\n  return (\n    <PasswordRevealer\n      placeholder=\"\u8bf7\u8f93\u5165\u5bc6\u7801\"\n      value={value}\n      onChange={onChange}\n    ></PasswordRevealer>\n  );\n};\n\nexport default Demo;",
       xe =
-        "import React, {\n  useState,\n  useEffect,\n  cloneElement,\n  createRef,\n  forwardRef,\n} from 'react';\nimport type { OptionValueProps } from './Option';\nimport classnames from '../../utils/classnames';\nimport useClickOutside from '../../utils/useClickOutside';\nimport Option from './Option';\nimport './select.less';\n\nexport interface SelectProps extends Record<string, any> {\n  disabled: boolean;\n  defaultValue: string;\n  value: string;\n  onChange(v: Partial<OptionValueProps>): void;\n  placeholder: string;\n  children: JSX.Element[] | JSX.Element;\n  allowClear: boolean;\n  labelProps: string;\n}\nconst ClearIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => {\n    const { onClick, ...rest } = props;\n    return (\n      <svg\n        className=\"ew-select-clear-icon\"\n        viewBox=\"0 0 1024 1024\"\n        version=\"1.1\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n        p-id=\"2381\"\n        ref={ref}\n        onClick={(e) => {\n          if (onClick) {\n            onClick(e);\n          }\n        }}\n        {...rest}\n      >\n        <path\n          d=\"M512 39.384615C250.092308 39.384615 39.384615 250.092308 39.384615 512s210.707692 472.615385 472.615385 472.615385 472.615385-210.707692 472.615385-472.615385S773.907692 39.384615 512 39.384615z m96.492308 488.369231l153.6 153.6c7.876923 7.876923 7.876923 19.692308 0 27.569231l-55.138462 55.138461c-7.876923 7.876923-19.692308 7.876923-27.569231 0L525.784615 610.461538c-7.876923-7.876923-19.692308-7.876923-27.56923 0l-153.6 153.6c-7.876923 7.876923-19.692308 7.876923-27.569231 0L261.907692 708.923077c-7.876923-7.876923-7.876923-19.692308 0-27.569231l153.6-153.6c7.876923-7.876923 7.876923-19.692308 0-27.569231l-155.56923-155.56923c-7.876923-7.876923-7.876923-19.692308 0-27.569231l55.138461-55.138462c7.876923-7.876923 19.692308-7.876923 27.569231 0l155.569231 155.569231c7.876923 7.876923 19.692308 7.876923 27.56923 0l153.6-153.6c7.876923-7.876923 19.692308-7.876923 27.569231 0l55.138462 55.138462c7.876923 7.876923 7.876923 19.692308 0 27.56923l-153.6 153.6c-5.907692 7.876923-5.907692 19.692308 0 27.569231z\"\n          p-id=\"2382\"\n          fill=\"#dbdbdb\"\n          className=\"ew-select-clear-icon-path\"\n        ></path>\n      </svg>\n    );\n  },\n);\nconst ArrowIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => (\n    <svg\n      className=\"ew-select-arrow-icon\"\n      viewBox=\"0 0 1024 1024\"\n      version=\"1.1\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      p-id=\"2216\"\n      ref={ref}\n      {...props}\n    >\n      <path\n        d=\"M512 714.666667c-8.533333 0-17.066667-2.133333-23.466667-8.533334l-341.333333-341.333333c-12.8-12.8-12.8-32 0-44.8 12.8-12.8 32-12.8 44.8 0l320 317.866667 317.866667-320c12.8-12.8 32-12.8 44.8 0 12.8 12.8 12.8 32 0 44.8L533.333333 704c-4.266667 8.533333-12.8 10.666667-21.333333 10.666667z\"\n        p-id=\"2217\"\n      ></path>\n    </svg>\n  ),\n);\nconst Select = (\n  props: Partial<Omit<SelectProps, 'children'>> & Pick<SelectProps, 'children'>,\n) => {\n  const {\n    disabled,\n    defaultValue,\n    value,\n    onChange,\n    placeholder = '\u8bf7\u8f93\u5165',\n    allowClear = true,\n    children,\n    labelProps = 'label',\n    ...rest\n  } = props;\n  const dropdownRef = createRef<HTMLDivElement>();\n  const clearIconRef = createRef<HTMLOrSVGElement>();\n  const [selectValue, setSelectValue] = useState<string | undefined>(\n    defaultValue,\n  );\n  const [option, setOption] = useState<Partial<OptionValueProps>>({});\n  const [visible, setVisible] = useState(false);\n  const [showClear, setShowClear] = useState(false);\n\n  const optionChildren = Array.isArray(children)\n    ? children\n    : [children]?.filter((item) => item?.type?.name === 'Option') || [];\n\n  useEffect(() => {\n    if (typeof value === 'string') {\n      setSelectValue(value);\n    }\n  }, [value]);\n\n  const onChangeHandler = (v: Partial<OptionValueProps>) => {\n    setOption(v);\n    setSelectValue(v.value);\n    if (!disabled) {\n      setVisible(false);\n      setShowClear(false);\n    }\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  const onClearHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setOption({ label: '', value: '' });\n    setSelectValue('');\n  };\n  const selectClassNames = {\n    'ew-select': true,\n    'ew-select-disabled': disabled,\n  };\n  const valueClassNames = {\n    'ew-select-selector': true,\n    'ew-select-selector-placeholder': !selectValue,\n  };\n  useClickOutside(dropdownRef, () => {\n    if (!disabled) {\n      setVisible(false);\n    }\n  });\n  return (\n    <div\n      className={classnames(selectClassNames)}\n      {...rest}\n      ref={dropdownRef}\n      onMouseEnter={() => {\n        if (!disabled) {\n          setShowClear(true);\n        }\n      }}\n      onMouseLeave={() => {\n        if (!disabled) {\n          setShowClear(false);\n        }\n      }}\n    >\n      <div\n        className={classnames(valueClassNames)}\n        placeholder={placeholder}\n        onClick={() => {\n          if (!disabled) {\n            setVisible(!visible);\n          }\n        }}\n      >\n        <span className=\"ew-select-selector-value\">{option[labelProps]}</span>\n      </div>\n      <div className=\"ew-select-arrow\">\n        {allowClear && selectValue && showClear ? (\n          <ClearIcon onClick={onClearHandler} ref={clearIconRef} />\n        ) : (\n          <ArrowIcon\n            onClick={() => {\n              if (!disabled) {\n                setVisible(!visible);\n              }\n            }}\n          />\n        )}\n      </div>\n      <div\n        className=\"ew-select-dropdown\"\n        style={{ display: visible ? 'block' : 'none' }}\n      >\n        {optionChildren.map((item, index) =>\n          cloneElement(item, {\n            onOptionChange: onChangeHandler,\n            defaultValue: selectValue,\n            key: item.key || String(index + 1),\n            active: item.props.value === selectValue,\n          }),\n        )}\n      </div>\n    </div>\n  );\n};\nSelect.Option = Option;\nexport default Select;",
+        'import React from \'react\';\nimport Select from \'./Select\';\nimport type { SelectProps } from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler: SelectProps[\'onChange\'] = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="please select"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="grapefruit" value="Grapefruit"></Option>\n        <Option label="lime" value="lime"></Option>\n        <Option label="coconut" value="coconut" disabled></Option>\n        <Option label="mango" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="please select"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="grapefruit" value="Grapefruit"></Option>\n        <Option label="lime" value="lime"></Option>\n        <Option label="coconut" value="coconut" disabled></Option>\n        <Option label="mango" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
       we =
-        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
+        "import React, {\n  useState,\n  useEffect,\n  cloneElement,\n  createRef,\n  forwardRef,\n} from 'react';\nimport type { OptionValueProps } from './Option';\nimport classnames from '../../utils/classnames';\nimport useClickOutside from '../../utils/useClickOutside';\nimport Option from './Option';\nimport './select.less';\n\nexport interface SelectProps extends Record<string, any> {\n  disabled: boolean;\n  defaultValue: string;\n  value: string;\n  onChange(v: Partial<OptionValueProps>): void;\n  placeholder: string;\n  children: JSX.Element[] | JSX.Element;\n  allowClear: boolean;\n  labelProps: string;\n}\nconst ClearIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => {\n    const { onClick, ...rest } = props;\n    return (\n      <svg\n        className=\"ew-select-clear-icon\"\n        viewBox=\"0 0 1024 1024\"\n        version=\"1.1\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n        p-id=\"2381\"\n        ref={ref}\n        onClick={(e) => {\n          if (onClick) {\n            onClick(e);\n          }\n        }}\n        {...rest}\n      >\n        <path\n          d=\"M512 39.384615C250.092308 39.384615 39.384615 250.092308 39.384615 512s210.707692 472.615385 472.615385 472.615385 472.615385-210.707692 472.615385-472.615385S773.907692 39.384615 512 39.384615z m96.492308 488.369231l153.6 153.6c7.876923 7.876923 7.876923 19.692308 0 27.569231l-55.138462 55.138461c-7.876923 7.876923-19.692308 7.876923-27.569231 0L525.784615 610.461538c-7.876923-7.876923-19.692308-7.876923-27.56923 0l-153.6 153.6c-7.876923 7.876923-19.692308 7.876923-27.569231 0L261.907692 708.923077c-7.876923-7.876923-7.876923-19.692308 0-27.569231l153.6-153.6c7.876923-7.876923 7.876923-19.692308 0-27.569231l-155.56923-155.56923c-7.876923-7.876923-7.876923-19.692308 0-27.569231l55.138461-55.138462c7.876923-7.876923 19.692308-7.876923 27.569231 0l155.569231 155.569231c7.876923 7.876923 19.692308 7.876923 27.56923 0l153.6-153.6c7.876923-7.876923 19.692308-7.876923 27.569231 0l55.138462 55.138462c7.876923 7.876923 7.876923 19.692308 0 27.56923l-153.6 153.6c-5.907692 7.876923-5.907692 19.692308 0 27.569231z\"\n          p-id=\"2382\"\n          fill=\"#dbdbdb\"\n          className=\"ew-select-clear-icon-path\"\n        ></path>\n      </svg>\n    );\n  },\n);\nconst ArrowIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => (\n    <svg\n      className=\"ew-select-arrow-icon\"\n      viewBox=\"0 0 1024 1024\"\n      version=\"1.1\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      p-id=\"2216\"\n      ref={ref}\n      {...props}\n    >\n      <path\n        d=\"M512 714.666667c-8.533333 0-17.066667-2.133333-23.466667-8.533334l-341.333333-341.333333c-12.8-12.8-12.8-32 0-44.8 12.8-12.8 32-12.8 44.8 0l320 317.866667 317.866667-320c12.8-12.8 32-12.8 44.8 0 12.8 12.8 12.8 32 0 44.8L533.333333 704c-4.266667 8.533333-12.8 10.666667-21.333333 10.666667z\"\n        p-id=\"2217\"\n      ></path>\n    </svg>\n  ),\n);\nconst Select = (\n  props: Partial<Omit<SelectProps, 'children'>> & Pick<SelectProps, 'children'>,\n) => {\n  const {\n    disabled,\n    defaultValue,\n    value,\n    onChange,\n    placeholder = '\u8bf7\u8f93\u5165',\n    allowClear = true,\n    children,\n    labelProps = 'label',\n    ...rest\n  } = props;\n  const dropdownRef = createRef<HTMLDivElement>();\n  const clearIconRef = createRef<HTMLOrSVGElement>();\n  const [selectValue, setSelectValue] = useState<string | undefined>(\n    defaultValue,\n  );\n  const [option, setOption] = useState<Partial<OptionValueProps>>({});\n  const [visible, setVisible] = useState(false);\n  const [showClear, setShowClear] = useState(false);\n\n  const optionChildren = Array.isArray(children)\n    ? children\n    : [children]?.filter((item) => item?.type?.name === 'Option') || [];\n\n  useEffect(() => {\n    if (typeof value === 'string') {\n      setSelectValue(value);\n    }\n  }, [value]);\n\n  const onChangeHandler = (v: Partial<OptionValueProps>) => {\n    setOption(v);\n    setSelectValue(v.value);\n    if (!disabled) {\n      setVisible(false);\n      setShowClear(false);\n    }\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  const onClearHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setOption({ label: '', value: '' });\n    setSelectValue('');\n  };\n  const selectClassNames = {\n    'ew-select': true,\n    'ew-select-disabled': disabled,\n  };\n  const valueClassNames = {\n    'ew-select-selector': true,\n    'ew-select-selector-placeholder': !selectValue,\n  };\n  useClickOutside(dropdownRef, () => {\n    if (!disabled) {\n      setVisible(false);\n    }\n  });\n  return (\n    <div\n      className={classnames(selectClassNames)}\n      {...rest}\n      ref={dropdownRef}\n      onMouseEnter={() => {\n        if (!disabled) {\n          setShowClear(true);\n        }\n      }}\n      onMouseLeave={() => {\n        if (!disabled) {\n          setShowClear(false);\n        }\n      }}\n    >\n      <div\n        className={classnames(valueClassNames)}\n        placeholder={placeholder}\n        onClick={() => {\n          if (!disabled) {\n            setVisible(!visible);\n          }\n        }}\n      >\n        <span className=\"ew-select-selector-value\">{option[labelProps]}</span>\n      </div>\n      <div className=\"ew-select-arrow\">\n        {allowClear && selectValue && showClear ? (\n          <ClearIcon onClick={onClearHandler} ref={clearIconRef} />\n        ) : (\n          <ArrowIcon\n            onClick={() => {\n              if (!disabled) {\n                setVisible(!visible);\n              }\n            }}\n          />\n        )}\n      </div>\n      <div\n        className=\"ew-select-dropdown\"\n        style={{ display: visible ? 'block' : 'none' }}\n      >\n        {optionChildren.map((item, index) =>\n          cloneElement(item, {\n            onOptionChange: onChangeHandler,\n            defaultValue: selectValue,\n            key: item.key || String(index + 1),\n            active: item.props.value === selectValue,\n          }),\n        )}\n      </div>\n    </div>\n  );\n};\nSelect.Option = Option;\nexport default Select;",
       Ee =
-        "import React, { useState, useEffect } from 'react';\nimport type { ReactNode } from 'react';\nimport classnames from '../../utils/classnames';\nexport interface OptionValueProps {\n  label: string;\n  value: string;\n}\nexport interface OptionProps extends Record<string, any>, OptionValueProps {\n  disabled: boolean;\n  children: ReactNode;\n  defaultValue: string;\n  onOptionChange(v: Partial<OptionValueProps>): void;\n  active: boolean;\n}\nconst Option = (props: Partial<OptionProps>) => {\n  const {\n    label,\n    value,\n    disabled,\n    defaultValue,\n    children,\n    onOptionChange,\n    active,\n    ...rest\n  } = props;\n  const [currentValue, setCurrentValue] = useState<string | undefined>(\n    defaultValue,\n  );\n\n  const classNames = {\n    'ew-select-dropdown-option': true,\n    'ew-select-dropdown-option-disabled': disabled,\n    active: active,\n  };\n  const onChangeHandler = (options: Partial<OptionValueProps>) => {\n    if (disabled) {\n      return;\n    }\n\n    setCurrentValue(options.value);\n    if (onOptionChange) {\n      onOptionChange(options);\n    }\n  };\n\n  useEffect(() => {\n    if (currentValue) {\n      if (onOptionChange) {\n        onOptionChange({ label, value });\n      }\n    }\n  }, [currentValue]);\n  return (\n    <div\n      className={classnames(classNames)}\n      data-value={currentValue}\n      {...rest}\n      onClick={() => onChangeHandler({ label, value })}\n    >\n      {children ? children : label ? label : ''}\n    </div>\n  );\n};\nexport default Option;",
+        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
       ke =
-        "@prefix: ew-;\n\n.@{prefix}select {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: rgba(0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  cursor: pointer;\n  border-radius: 4px;\n  min-width: 120px;\n\n  &-disabled {\n    .@{prefix}select-selector {\n      background: #f5f5f5;\n      cursor: not-allowed;\n      color: rgba(0, 0, 0, 0.25);\n    }\n\n    .@{prefix}select-arrow {\n      cursor: not-allowed;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-selector,\n  &:not(.@{prefix}select-disabled):active &-selector {\n    border-color: #2396ef;\n  }\n\n  &-selector {\n    position: relative;\n    background-color: #fff;\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    width: 100%;\n    height: 32px;\n    padding: 0 11px;\n\n    &&-placeholder::after {\n      content:attr(placeholder);\n      display: inline-block;\n      padding-right: 18px;\n      color: rgba(0, 0, 0, 0.35);\n      position: relative;\n      left: -15px;\n    }\n\n    &-value {\n      padding-right: 18px;\n      line-height: 30px;\n      position: relative;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-value {\n    border-color: #2396ef;\n    border-right-width: 1px;\n  }\n\n  &-arrow {\n    display: inline-block;\n    color: inherit;\n    font-style: normal;\n    line-height: 0;\n    text-transform: none;\n    vertical-align: -0.125em;\n    text-rendering: optimizelegibility;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    position: absolute;\n    top: 50%;\n    right: 11px;\n    display: flex;\n    align-items: center;\n    margin-top: -6px;\n    font-size: 12px;\n    line-height: 1;\n    text-align: center;\n\n    &-icon,\n    .@{prefix}select-clear-icon {\n      width: 16px;\n      height: 16px;\n      display: inline-block;\n      color: rgba(0, 0, 0, 0.25);\n    }\n  }\n\n  .@{prefix}select-clear-icon {\n    position: relative;\n    top: -2px;\n  }\n\n  &-dropdown {\n    margin: 0;\n    color: rgba(0, 0, 0.85);\n    font-variant: tabular-nums;\n    line-height: 1.5715;\n    position: absolute;\n    z-index: 1050;\n    box-sizing: border-box;\n    padding: 4px 0;\n    overflow: hidden;\n    font-size: 14px;\n    font-variant: initial;\n    background-color: #fff;\n    border-radius: 2px;\n    outline: none;\n    width: 100%;\n    top: 40px;\n    box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014,\n      0 9px 28px 8px #0000000d;\n\n    &-option {\n      position: relative;\n      display: flex;\n      min-height: 32px;\n      padding: 5px 12px;\n      color: rgba(0, 0, 0.85);\n      font-weight: 400;\n      font-size: 14px;\n      line-height: 22px;\n      cursor: pointer;\n      transition: background 0.3s ease;\n      flex: auto;\n      overflow: hidden;\n      white-space: nowrap;\n      text-overflow: ellipsis;\n\n      &-disabled {\n        color: rgba(0, 0, 0, 0.25);\n        cursor: not-allowed;\n      }\n\n      &:not(:last-of-type) {\n        margin-bottom: 8px;\n      }\n\n      &:not(&-disabled):hover {\n        background-color: #f5f5f5;\n      }\n\n      &:not(&-disabled).active {\n        background-color: #e6f7ff;\n      }\n    }\n  }\n}",
+        "import React, { useState, useEffect } from 'react';\nimport type { ReactNode } from 'react';\nimport classnames from '../../utils/classnames';\nexport interface OptionValueProps {\n  label: string;\n  value: string;\n}\nexport interface OptionProps extends Record<string, any>, OptionValueProps {\n  disabled: boolean;\n  children: ReactNode;\n  defaultValue: string;\n  onOptionChange(v: Partial<OptionValueProps>): void;\n  active: boolean;\n}\nconst Option = (props: Partial<OptionProps>) => {\n  const {\n    label,\n    value,\n    disabled,\n    defaultValue,\n    children,\n    onOptionChange,\n    active,\n    ...rest\n  } = props;\n  const [currentValue, setCurrentValue] = useState<string | undefined>(\n    defaultValue,\n  );\n\n  const classNames = {\n    'ew-select-dropdown-option': true,\n    'ew-select-dropdown-option-disabled': disabled,\n    active: active,\n  };\n  const onChangeHandler = (options: Partial<OptionValueProps>) => {\n    if (disabled) {\n      return;\n    }\n\n    setCurrentValue(options.value);\n    if (onOptionChange) {\n      onOptionChange(options);\n    }\n  };\n\n  useEffect(() => {\n    if (currentValue) {\n      if (onOptionChange) {\n        onOptionChange({ label, value });\n      }\n    }\n  }, [currentValue]);\n  return (\n    <div\n      className={classnames(classNames)}\n      data-value={currentValue}\n      {...rest}\n      onClick={() => onChangeHandler({ label, value })}\n    >\n      {children ? children : label ? label : ''}\n    </div>\n  );\n};\nexport default Option;",
       Ce =
-        'import React from \'react\';\nimport Select from \'./Select\';\nimport type { SelectProps } from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler: SelectProps[\'onChange\'] = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
+        "@prefix: ew-;\n\n.@{prefix}select {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: rgba(0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  cursor: pointer;\n  border-radius: 4px;\n  min-width: 120px;\n\n  &-disabled {\n    .@{prefix}select-selector {\n      background: #f5f5f5;\n      cursor: not-allowed;\n      color: rgba(0, 0, 0, 0.25);\n    }\n\n    .@{prefix}select-arrow {\n      cursor: not-allowed;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-selector,\n  &:not(.@{prefix}select-disabled):active &-selector {\n    border-color: #2396ef;\n  }\n\n  &-selector {\n    position: relative;\n    background-color: #fff;\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    width: 100%;\n    height: 32px;\n    padding: 0 11px;\n\n    &&-placeholder::after {\n      content: attr(placeholder);\n      display: inline-block;\n      padding-right: 18px;\n      color: rgba(0, 0, 0, 0.35);\n      position: relative;\n      left: -15px;\n    }\n\n    &-value {\n      padding-right: 18px;\n      line-height: 30px;\n      position: relative;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-value {\n    border-color: #2396ef;\n    border-right-width: 1px;\n  }\n\n  &-arrow {\n    display: inline-block;\n    color: inherit;\n    font-style: normal;\n    line-height: 0;\n    text-transform: none;\n    vertical-align: -0.125em;\n    text-rendering: optimizelegibility;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    position: absolute;\n    top: 50%;\n    right: 11px;\n    display: flex;\n    align-items: center;\n    margin-top: -6px;\n    font-size: 12px;\n    line-height: 1;\n    text-align: center;\n\n    &-icon,\n    .@{prefix}select-clear-icon {\n      width: 16px;\n      height: 16px;\n      display: inline-block;\n      color: rgba(0, 0, 0, 0.25);\n    }\n  }\n\n  .@{prefix}select-clear-icon {\n    position: relative;\n    top: -2px;\n  }\n\n  &-dropdown {\n    margin: 0;\n    color: rgba(0, 0, 0.85);\n    font-variant: tabular-nums;\n    line-height: 1.5715;\n    position: absolute;\n    z-index: 1050;\n    box-sizing: border-box;\n    padding: 4px 0;\n    overflow: hidden;\n    font-size: 14px;\n    font-variant: initial;\n    background-color: #fff;\n    border-radius: 2px;\n    outline: none;\n    width: 100%;\n    top: 40px;\n    box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014,\n      0 9px 28px 8px #0000000d;\n\n    &-option {\n      position: relative;\n      display: flex;\n      min-height: 32px;\n      padding: 5px 12px;\n      color: rgba(0, 0, 0.85);\n      font-weight: 400;\n      font-size: 14px;\n      line-height: 22px;\n      cursor: pointer;\n      transition: background 0.3s ease;\n      flex: auto;\n      overflow: hidden;\n      white-space: nowrap;\n      text-overflow: ellipsis;\n\n      &-disabled {\n        color: rgba(0, 0, 0, 0.25);\n        cursor: not-allowed;\n      }\n\n      &:not(:last-of-type) {\n        margin-bottom: 8px;\n      }\n\n      &:not(&-disabled):hover {\n        background-color: #f5f5f5;\n      }\n\n      &:not(&-disabled).active {\n        background-color: #e6f7ff;\n      }\n    }\n  }\n}",
       Oe =
-        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['name1', 'name2', 'name3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
+        'import React from \'react\';\nimport Select from \'./Select\';\nimport type { SelectProps } from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler: SelectProps[\'onChange\'] = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
       Se =
-        "import { css } from '@emotion/css';\nimport React from 'react';\n\ninterface DataListProps {\n  data: string[];\n  isOrdered: boolean;\n  isBordered: boolean;\n}\nconst SimpleStyleDataList = css`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-size: 14px;\n  line-height: 1.5715;\n  list-style: none;\n  position: relative;\n  &.bordered {\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n  }\n`;\nconst SimpleDataListItem = css`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 24px;\n  color: rgba(0, 0, 0, 0.85);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  &:last-of-type {\n    border-bottom: 0;\n  }\n`;\nconst SimpleDataList = (props: Partial<DataListProps>) => {\n  const { data, isOrdered = false, isBordered = true } = props;\n  const List = data?.map((val, index) => (\n    <li className={SimpleDataListItem} key={`${val}-${index}`}>\n      {val}\n    </li>\n  ));\n  const containerClassName = `${SimpleStyleDataList}${\n    isBordered ? ' bordered' : ''\n  }`;\n  return isOrdered ? (\n    <ol className={containerClassName}>{List}</ol>\n  ) : (\n    <ul className={containerClassName}>{List}</ul>\n  );\n};\n\nexport default SimpleDataList;",
+        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['name1', 'name2', 'name3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
       je =
-        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['\u59d3\u540d1', '\u59d3\u540d2', '\u59d3\u540d3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
+        "import { css } from '@emotion/css';\nimport React from 'react';\n\ninterface DataListProps {\n  data: string[];\n  isOrdered: boolean;\n  isBordered: boolean;\n}\nconst SimpleStyleDataList = css`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-size: 14px;\n  line-height: 1.5715;\n  list-style: none;\n  position: relative;\n  &.bordered {\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n  }\n`;\nconst SimpleDataListItem = css`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 24px;\n  color: rgba(0, 0, 0, 0.85);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  &:last-of-type {\n    border-bottom: 0;\n  }\n`;\nconst SimpleDataList = (props: Partial<DataListProps>) => {\n  const { data, isOrdered = false, isBordered = true } = props;\n  const List = data?.map((val, index) => (\n    <li className={SimpleDataListItem} key={`${val}-${index}`}>\n      {val}\n    </li>\n  ));\n  const containerClassName = `${SimpleStyleDataList}${\n    isBordered ? ' bordered' : ''\n  }`;\n  return isOrdered ? (\n    <ol className={containerClassName}>{List}</ol>\n  ) : (\n    <ul className={containerClassName}>{List}</ul>\n  );\n};\n\nexport default SimpleDataList;",
       Te =
-        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
+        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['\u59d3\u540d1', '\u59d3\u540d2', '\u59d3\u540d3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
       Pe =
-        'import React from \'react\';\nimport \'./simpleDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleDataTable = (props: Partial<SimpleDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {data?.map((item) => (\n          <tr key={item.key} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleDataTable;',
+        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
       Ne =
+        'import React from \'react\';\nimport \'./simpleDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleDataTable = (props: Partial<SimpleDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {data?.map((item) => (\n          <tr key={item.key} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleDataTable;',
+      Re =
         '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
       Ie =
         "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
-      Re =
-        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
       Ae =
-        'import React from \'react\';\nimport \'./SimpleMappedDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleMappedDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleMappedDataTable = (props: Partial<SimpleMappedDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n\n  let filteredData = data?.map((v) =>\n    Object.keys(v)\n      .filter((k) => columns?.some((col) => col.dataIndex === k))\n      .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n  ) as DataProps[];\n\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {filteredData?.map((item, index) => (\n          <tr key={`${index}_${index}`} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleMappedDataTable;',
+        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
       Me =
-        '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
+        'import React from \'react\';\nimport \'./SimpleMappedDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleMappedDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleMappedDataTable = (props: Partial<SimpleMappedDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n\n  let filteredData = data?.map((v) =>\n    Object.keys(v)\n      .filter((k) => columns?.some((col) => col.dataIndex === k))\n      .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n  ) as DataProps[];\n\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {filteredData?.map((item, index) => (\n          <tr key={`${index}_${index}`} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleMappedDataTable;',
       Le =
+        '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
+      De =
         "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
-      _e = {
+      _e =
+        "import React from 'react';\nimport Button from '../../guide/Button/Button'\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top:10px;\n  color: #2396ef;\n`\nconst Container = styled.div`\n   display:flex;\n   align-items:center;\n   justify-content:center;\n   min-height:300px;\n   flex-direction:column;\n`\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        Load image\n      </Button>\n      { (imgFetch as StateType)?.loading && <LoadContainer><Loader size={16}></Loader></LoadContainer>}\n      { (imgFetch as StateType)?.error && <Alert type=\"error\" message={`Error ${(imgFetch as StateType)?.error}`}></Alert>}\n      { (imgFetch as StateType)?.value && <img\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n          style={{ display:'block',marginTop:10,borderRadius:5 }}\n        />}\n    </Container>\n  );\n};\n\nexport default Demo;",
+      ze =
+        "import { useReducer } from 'react';\nexport type StateType = {\n  loading: boolean;\n  value: any;\n  error: any;\n};\nexport type ActionType = Partial<StateType> & { type: string };\nexport type RunType = (args: unknown) => Promise<void>;\nconst useAsync = (handler: Function) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n  const stateReducer = (_: any, action: ActionType) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args: unknown) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
+      Fe =
+        "import React from 'react';\nimport Button from '../../guide/Button/Button'\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top:10px;\n  color: #2396ef;\n`\nconst Container = styled.div`\n   display:flex;\n   align-items:center;\n   justify-content:center;\n   min-height:300px;\n   flex-direction:column;\n`\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      { (imgFetch as StateType)?.loading && <LoadContainer><Loader size={16}></Loader></LoadContainer>}\n      { (imgFetch as StateType)?.error && <Alert type=\"error\" message={`\u9519\u8bef ${(imgFetch as StateType)?.error}`}></Alert>}\n      { (imgFetch as StateType)?.value && <img\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n          style={{ display:'block',marginTop:10,borderRadius:5 }}\n        />}\n    </Container>\n  );\n};\n\nexport default Demo;",
+      Be =
+        "import React, { useState } from 'react';\r\nimport Modal from '../../guide/Modal/Modal';\r\nimport Button from '../../guide/Button/Button';\r\nimport useBodyScrollLock from './useBodyScrollLock';\r\nimport styled from '@emotion/styled';\r\n\r\nexport interface ScrollModalProps {\r\n  visible: boolean;\r\n  onCancel(): void;\r\n  onOk(): void;\r\n}\r\nconst ScrollModal = (props: ScrollModalProps) => {\r\n  const { visible, onCancel, onOk } = props;\r\n\r\n  useBodyScrollLock();\r\n\r\n  return (\r\n    <Modal\r\n      title=\"scrollModal\"\r\n      visible={visible}\r\n      showCancel\r\n      cancelText=\"Cancel\"\r\n      okText=\"Ok\"\r\n      onCancel={onCancel}\r\n      onOk={onOk}\r\n    >\r\n      Scroll locked! <br />\r\n      <Button onClick={onCancel}>Click me to unlock</Button>\r\n    </Modal>\r\n  );\r\n};\r\n\r\nconst DemoContainer = styled.div`\r\n  height: 400vh;\r\n  text-align: center;\r\n  padding-top: 100px;\r\n  overflow: auto;\r\n`;\r\n\r\nconst Demo = () => {\r\n  const [visible, setVisible] = useState(false);\r\n  const handleClose = () => setVisible(false);\r\n  return (\r\n    <DemoContainer>\r\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\r\n      {visible && (\r\n        <ScrollModal\r\n          visible={visible}\r\n          onCancel={handleClose}\r\n          onOk={handleClose}\r\n        ></ScrollModal>\r\n      )}\r\n    </DemoContainer>\r\n  );\r\n};\r\n\r\nexport default Demo;",
+      Ue =
+        "import { useLayoutEffect } from 'react';\r\n\r\nconst useBodyScrollLock = () => {\r\n  // see https://zhuanlan.zhihu.com/p/147173241\r\n  useLayoutEffect(() => {\r\n    const container = document.body;\r\n    const originOverflowStyle = window.getComputedStyle(container!).overflow;\r\n    container!.style.overflow = 'hidden';\r\n    return () => {\r\n      container!.style.overflow = originOverflowStyle;\r\n    };\r\n  }, []);\r\n};\r\n\r\nexport default useBodyScrollLock;",
+      Ve =
+        "import React, { useState } from 'react';\r\nimport Modal from '../../guide/Modal/Modal';\r\nimport Button from '../../guide/Button/Button';\r\nimport useBodyScrollLock from './useBodyScrollLock';\r\nimport styled from '@emotion/styled';\r\n\r\nexport interface ScrollModalProps {\r\n  visible: boolean;\r\n  onCancel(): void;\r\n  onOk(): void;\r\n}\r\nconst ScrollModal = (props: ScrollModalProps) => {\r\n  const { visible, onCancel, onOk } = props;\r\n\r\n  useBodyScrollLock();\r\n\r\n  return (\r\n    <Modal\r\n      title=\"scrollModal\"\r\n      visible={visible}\r\n      showCancel\r\n      cancelText=\"Cancel\"\r\n      okText=\"Ok\"\r\n      onCancel={onCancel}\r\n      onOk={onOk}\r\n    >\r\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\r\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\r\n    </Modal>\r\n  );\r\n};\r\n\r\nconst DemoContainer = styled.div`\r\n  height: 400vh;\r\n  text-align: center;\r\n  padding-top: 100px;\r\n  overflow: auto;\r\n`;\r\n\r\nconst Demo = () => {\r\n  const [visible, setVisible] = useState(false);\r\n  const handleClose = () => setVisible(false);\r\n  return (\r\n    <DemoContainer>\r\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\r\n      {visible && (\r\n        <ScrollModal\r\n          visible={visible}\r\n          onCancel={handleClose}\r\n          onOk={handleClose}\r\n        ></ScrollModal>\r\n      )}\r\n    </DemoContainer>\r\n  );\r\n};\r\n\r\nexport default Demo;",
+      He =
+        "import React,{ useRef } from 'react'\r\nimport styled from '@emotion/styled'\r\nimport useClickOutside from './useClickOutside'\r\n\r\nconst ClickStyleBox = styled.div`\r\n    border:2px dashed #2396ef;\r\n    height:200px;\r\n    width:400px;\r\n    display:flex;\r\n    align-items:center;\r\n    justify-content:center;\r\n`;\r\n\r\nexport interface ClickBoxProps {\r\n    onClickOutside():void\r\n}\r\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\r\n    const { onClickOutside } = props;\r\n    const clickRef = useRef<HTMLDivElement | null>(null)\r\n    useClickOutside(clickRef,() => {\r\n        if(onClickOutside){\r\n            onClickOutside()\r\n        }\r\n    })\r\n    return (<ClickStyleBox ref={clickRef}><p>Click out of this element</p></ClickStyleBox>)\r\n}\r\nconst Demo = () => {\r\n    return (<ClickBox onClickOutside={() => alert(\"click outside\")}></ClickBox>)\r\n}\r\n\r\nexport default Demo;",
+      qe =
+        "import { useEffect } from 'react';\r\nimport type { MutableRefObject } from 'react';\r\n\r\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\r\n  const handleClick = (e: MouseEvent) => {\r\n    if (ref.current && !ref.current.contains(e.target)) {\r\n      callback();\r\n    }\r\n  };\r\n  useEffect(() => {\r\n    document.addEventListener('click', handleClick);\r\n    return () => document.removeEventListener('click', handleClick);\r\n  });\r\n};\r\n\r\nexport default useClickOutside;",
+      We =
+        "import React,{ useRef } from 'react'\r\nimport styled from '@emotion/styled'\r\nimport useClickOutside from './useClickOutside'\r\n\r\nconst ClickStyleBox = styled.div`\r\n    border:2px dashed #2396ef;\r\n    height:200px;\r\n    width:400px;\r\n    display:flex;\r\n    align-items:center;\r\n    justify-content:center;\r\n`;\r\n\r\nexport interface ClickBoxProps {\r\n    onClickOutside():void\r\n}\r\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\r\n    const { onClickOutside } = props;\r\n    const clickRef = useRef<HTMLDivElement | null>(null)\r\n    useClickOutside(clickRef,() => {\r\n        if(onClickOutside){\r\n            onClickOutside()\r\n        }\r\n    })\r\n    return (<ClickStyleBox ref={clickRef}><p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5916\u7684\u533a\u57df</p></ClickStyleBox>)\r\n}\r\nconst Demo = () => {\r\n    return (<ClickBox onClickOutside={() => alert(\"\u70b9\u51fb\u4e86\u533a\u57df\u4e4b\u5916\")}></ClickBox>)\r\n}\r\n\r\nexport default Demo;",
+      $e = {
         'loadingbutton-demo': {
           component: n('4ZnB').default,
           previewerProps: {
@@ -27642,46 +28189,48 @@
             identifier: 'accordion-accordion.zh-cn',
           },
         },
-        'alert-alert': {
-          component: n('/VS0').default,
+        'alert-demo': {
+          component: n('qAvn').default,
           previewerProps: {
             sources: {
               _: { tsx: b },
-              'alert.less': { import: './alert.less', content: y },
+              'Alert.tsx': { import: './Alert', content: y },
+              'alert.less': { import: './alert.less', content: x },
             },
             dependencies: {
-              react: { version: '>=16.8.0' },
+              react: { version: '16.14.0' },
               antd: { version: '4.21.5', css: 'antd/dist/antd.css' },
               '@emotion/styled': { version: '11.9.3' },
               'react-dom': { version: '>=16.9.0' },
               '@babel/core': { version: '^7.0.0' },
               '@emotion/react': { version: '^11.0.0-rc.0' },
             },
-            identifier: 'alert-alert',
+            identifier: 'alert-demo',
           },
         },
-        'alert-alert.zh-cn': {
-          component: n('PVRP').default,
+        'alert-demo.zh-cn': {
+          component: n('dyg2').default,
           previewerProps: {
             sources: {
-              _: { tsx: x },
-              'alert.less': { import: './alert.less', content: y },
+              _: { tsx: w },
+              'Alert.tsx': { import: './Alert', content: y },
+              'alert.less': { import: './alert.less', content: x },
             },
             dependencies: {
-              react: { version: '>=16.8.0' },
+              react: { version: '16.14.0' },
               antd: { version: '4.21.5', css: 'antd/dist/antd.css' },
               '@emotion/styled': { version: '11.9.3' },
               'react-dom': { version: '>=16.9.0' },
               '@babel/core': { version: '^7.0.0' },
               '@emotion/react': { version: '^11.0.0-rc.0' },
             },
-            identifier: 'alert-alert.zh-cn',
+            identifier: 'alert-demo.zh-cn',
           },
         },
         'autolink-autolink': {
           component: n('hVB/').default,
           previewerProps: {
-            sources: { _: { tsx: w } },
+            sources: { _: { tsx: E } },
             dependencies: {
               react: { version: '>=16.8.0' },
               '@emotion/styled': { version: '11.9.3' },
@@ -27694,7 +28243,7 @@
         'autolink-autolink.zh-cn': {
           component: n('KN+n').default,
           previewerProps: {
-            sources: { _: { tsx: E } },
+            sources: { _: { tsx: k } },
             dependencies: {
               react: { version: '>=16.8.0' },
               '@emotion/styled': { version: '11.9.3' },
@@ -27708,14 +28257,14 @@
           component: n('bBBo').default,
           previewerProps: {
             sources: {
-              _: { tsx: k },
-              'Button.tsx': { import: './Button', content: C },
-              'button.less': { import: './button.less', content: O },
+              _: { tsx: C },
+              'Button.tsx': { import: './Button', content: O },
+              'button.less': { import: './button.less', content: S },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
-                content: S,
+                content: j,
               },
-              'Loader/Loader.tsx': { import: '../Loader/Loader', content: j },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: T },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -27732,14 +28281,14 @@
           component: n('IUCc').default,
           previewerProps: {
             sources: {
-              _: { tsx: T },
-              'Button.tsx': { import: './Button', content: C },
-              'button.less': { import: './button.less', content: O },
+              _: { tsx: P },
+              'Button.tsx': { import: './Button', content: O },
+              'button.less': { import: './button.less', content: S },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
-                content: S,
+                content: j,
               },
-              'Loader/Loader.tsx': { import: '../Loader/Loader', content: j },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: T },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -27755,7 +28304,7 @@
         'callto-callto': {
           component: n('/9OQ').default,
           previewerProps: {
-            sources: { _: { tsx: P } },
+            sources: { _: { tsx: N } },
             dependencies: {
               '@emotion/styled': { version: '11.9.3' },
               react: { version: '>=16.8.0' },
@@ -27768,7 +28317,7 @@
         'callto-callto.zh-cn': {
           component: n('WMlh').default,
           previewerProps: {
-            sources: { _: { tsx: N } },
+            sources: { _: { tsx: R } },
             dependencies: {
               '@emotion/styled': { version: '11.9.3' },
               react: { version: '>=16.8.0' },
@@ -27783,7 +28332,7 @@
           previewerProps: {
             sources: {
               _: { tsx: I },
-              'Carousel.less': { import: './Carousel.less', content: R },
+              'Carousel.less': { import: './Carousel.less', content: A },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'carousel-carousel',
@@ -27793,8 +28342,8 @@
           component: n('cm6A').default,
           previewerProps: {
             sources: {
-              _: { tsx: A },
-              'Carousel.less': { import: './Carousel.less', content: R },
+              _: { tsx: M },
+              'Carousel.less': { import: './Carousel.less', content: A },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'carousel-carousel.zh-cn',
@@ -27804,8 +28353,8 @@
           component: n('oUx9').default,
           previewerProps: {
             sources: {
-              _: { tsx: M },
-              'Checkbox.tsx': { import: './Checkbox', content: L },
+              _: { tsx: L },
+              'Checkbox.tsx': { import: './Checkbox', content: D },
               'Checkbox.less': { import: './Checkbox.less', content: _ },
             },
             dependencies: {
@@ -27820,8 +28369,8 @@
           component: n('rSXV').default,
           previewerProps: {
             sources: {
-              _: { tsx: D },
-              'Checkbox.tsx': { import: './Checkbox', content: L },
+              _: { tsx: z },
+              'Checkbox.tsx': { import: './Checkbox', content: D },
               'Checkbox.less': { import: './Checkbox.less', content: _ },
             },
             dependencies: {
@@ -27836,8 +28385,8 @@
           component: n('lEqk').default,
           previewerProps: {
             sources: {
-              _: { tsx: z },
-              'Collapse.tsx': { import: './Collapse', content: F },
+              _: { tsx: F },
+              'Collapse.tsx': { import: './Collapse', content: B },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -27852,8 +28401,8 @@
           component: n('D9M6').default,
           previewerProps: {
             sources: {
-              _: { tsx: B },
-              'Collapse.tsx': { import: './Collapse', content: F },
+              _: { tsx: U },
+              'Collapse.tsx': { import: './Collapse', content: B },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -27868,10 +28417,10 @@
           component: n('TV3E').default,
           previewerProps: {
             sources: {
-              _: { tsx: U },
+              _: { tsx: V },
               'ControlledInput.tsx': {
                 import: './ControlledInput',
-                content: V,
+                content: H,
               },
             },
             dependencies: {
@@ -27887,10 +28436,10 @@
           component: n('zcSK').default,
           previewerProps: {
             sources: {
-              _: { tsx: H },
+              _: { tsx: q },
               'ControlledInput.tsx': {
                 import: './ControlledInput',
-                content: V,
+                content: H,
               },
             },
             dependencies: {
@@ -27906,9 +28455,9 @@
           component: n('wgCi').default,
           previewerProps: {
             sources: {
-              _: { tsx: q },
-              'CountDown.tsx': { import: './CountDown', content: W },
-              'helper.ts': { import: './helper', content: $ },
+              _: { tsx: W },
+              'CountDown.tsx': { import: './CountDown', content: $ },
+              'helper.ts': { import: './helper', content: G },
             },
             dependencies: {
               antd: { version: '4.21.5', css: 'antd/dist/antd.css' },
@@ -27925,9 +28474,9 @@
           component: n('lfEP').default,
           previewerProps: {
             sources: {
-              _: { tsx: G },
-              'CountDown.tsx': { import: './CountDown', content: W },
-              'helper.ts': { import: './helper', content: $ },
+              _: { tsx: K },
+              'CountDown.tsx': { import: './CountDown', content: $ },
+              'helper.ts': { import: './helper', content: G },
             },
             dependencies: {
               antd: { version: '4.21.5', css: 'antd/dist/antd.css' },
@@ -27944,8 +28493,8 @@
           component: n('JwaP').default,
           previewerProps: {
             sources: {
-              _: { tsx: K },
-              'FileDrop.tsx': { import: './FileDrop', content: Y },
+              _: { tsx: Y },
+              'FileDrop.tsx': { import: './FileDrop', content: Z },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -27960,8 +28509,8 @@
           component: n('CMoy').default,
           previewerProps: {
             sources: {
-              _: { tsx: Z },
-              'FileDrop.tsx': { import: './FileDrop', content: Y },
+              _: { tsx: X },
+              'FileDrop.tsx': { import: './FileDrop', content: Z },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -27976,7 +28525,7 @@
           component: n('8+C5').default,
           previewerProps: {
             sources: {
-              _: { tsx: X },
+              _: { tsx: J },
               'LazyLoadImage.tsx': { import: './LazyLoadImage', content: Q },
             },
             dependencies: {
@@ -27992,7 +28541,7 @@
           component: n('sd4G').default,
           previewerProps: {
             sources: {
-              _: { tsx: J },
+              _: { tsx: ee },
               'LazyLoadImage.tsx': { import: './LazyLoadImage', content: Q },
             },
             dependencies: {
@@ -28008,10 +28557,10 @@
           component: n('DCdD').default,
           previewerProps: {
             sources: {
-              _: { tsx: ee },
+              _: { tsx: te },
               'LimitedTextarea.tsx': {
                 import: './LimitedTextarea',
-                content: te,
+                content: ne,
               },
             },
             dependencies: {
@@ -28027,10 +28576,10 @@
           component: n('8coG').default,
           previewerProps: {
             sources: {
-              _: { tsx: ne },
+              _: { tsx: re },
               'LimitedTextarea.tsx': {
                 import: './LimitedTextarea',
-                content: te,
+                content: ne,
               },
             },
             dependencies: {
@@ -28046,10 +28595,10 @@
           component: n('KRMY').default,
           previewerProps: {
             sources: {
-              _: { tsx: re },
+              _: { tsx: ae },
               'LimitedWordTextarea.tsx': {
                 import: './LimitedWordTextarea',
-                content: ae,
+                content: oe,
               },
             },
             dependencies: {
@@ -28065,10 +28614,10 @@
           component: n('O8zO').default,
           previewerProps: {
             sources: {
-              _: { tsx: oe },
+              _: { tsx: ie },
               'LimitedWordTextarea.tsx': {
                 import: './LimitedWordTextarea',
-                content: ae,
+                content: oe,
               },
             },
             dependencies: {
@@ -28084,8 +28633,8 @@
           component: n('yNO/').default,
           previewerProps: {
             sources: {
-              _: { tsx: ie },
-              'Loader.tsx': { import: '../Loader/Loader', content: j },
+              _: { tsx: le },
+              'Loader.tsx': { import: '../Loader/Loader', content: T },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -28102,8 +28651,8 @@
           component: n('3QZg').default,
           previewerProps: {
             sources: {
-              _: { tsx: le },
-              'Loader.tsx': { import: '../Loader/Loader', content: j },
+              _: { tsx: ce },
+              'Loader.tsx': { import: '../Loader/Loader', content: T },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -28120,8 +28669,8 @@
           component: n('cfId').default,
           previewerProps: {
             sources: {
-              _: { tsx: ce },
-              'Mailto.tsx': { import: './Mailto', content: se },
+              _: { tsx: se },
+              'Mailto.tsx': { import: './Mailto', content: ue },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -28136,8 +28685,8 @@
           component: n('LwNu').default,
           previewerProps: {
             sources: {
-              _: { tsx: ue },
-              'Mailto.tsx': { import: './Mailto', content: se },
+              _: { tsx: de },
+              'Mailto.tsx': { import: './Mailto', content: ue },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -28152,9 +28701,9 @@
           component: n('aOC5').default,
           previewerProps: {
             sources: {
-              _: { tsx: de },
-              'Modal.tsx': { import: './Modal', content: fe },
-              'Modal.less': { import: './Modal.less', content: pe },
+              _: { tsx: fe },
+              'Modal.tsx': { import: './Modal', content: pe },
+              'Modal.less': { import: './Modal.less', content: me },
             },
             dependencies: {
               react: { version: '^16.14.0' },
@@ -28168,9 +28717,9 @@
           component: n('JuAD').default,
           previewerProps: {
             sources: {
-              _: { tsx: me },
-              'Modal.tsx': { import: './Modal', content: fe },
-              'Modal.less': { import: './Modal.less', content: pe },
+              _: { tsx: he },
+              'Modal.tsx': { import: './Modal', content: pe },
+              'Modal.less': { import: './Modal.less', content: me },
             },
             dependencies: {
               react: { version: '^16.14.0' },
@@ -28184,14 +28733,14 @@
           component: n('1Hsh').default,
           previewerProps: {
             sources: {
-              _: { tsx: he },
+              _: { tsx: ve },
               'PasswordRevealer.tsx': {
                 import: './PasswordRevealer',
-                content: ve,
+                content: ge,
               },
               'passwordRevealer.less': {
                 import: './passwordRevealer.less',
-                content: ge,
+                content: be,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -28202,14 +28751,14 @@
           component: n('pE9f').default,
           previewerProps: {
             sources: {
-              _: { tsx: be },
+              _: { tsx: ye },
               'PasswordRevealer.tsx': {
                 import: './PasswordRevealer',
-                content: ve,
+                content: ge,
               },
               'passwordRevealer.less': {
                 import: './passwordRevealer.less',
-                content: ge,
+                content: be,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -28220,18 +28769,18 @@
           component: n('/ukT').default,
           previewerProps: {
             sources: {
-              _: { tsx: ye },
-              'Select.tsx': { import: './Select', content: xe },
+              _: { tsx: xe },
+              'Select.tsx': { import: './Select', content: we },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
-                content: S,
+                content: j,
               },
               'utils/useClickOutside.ts': {
                 import: '../../utils/useClickOutside',
-                content: we,
+                content: Ee,
               },
-              'Option.tsx': { import: './Option', content: Ee },
-              'select.less': { import: './select.less', content: ke },
+              'Option.tsx': { import: './Option', content: ke },
+              'select.less': { import: './select.less', content: Ce },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -28245,18 +28794,18 @@
           component: n('Juw3').default,
           previewerProps: {
             sources: {
-              _: { tsx: Ce },
-              'Select.tsx': { import: './Select', content: xe },
+              _: { tsx: Oe },
+              'Select.tsx': { import: './Select', content: we },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
-                content: S,
+                content: j,
               },
               'utils/useClickOutside.ts': {
                 import: '../../utils/useClickOutside',
-                content: we,
+                content: Ee,
               },
-              'Option.tsx': { import: './Option', content: Ee },
-              'select.less': { import: './select.less', content: ke },
+              'Option.tsx': { import: './Option', content: ke },
+              'select.less': { import: './select.less', content: Ce },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -28270,8 +28819,8 @@
           component: n('kFD3').default,
           previewerProps: {
             sources: {
-              _: { tsx: Oe },
-              'SimpleDataList.tsx': { import: './SimpleDataList', content: Se },
+              _: { tsx: Se },
+              'SimpleDataList.tsx': { import: './SimpleDataList', content: je },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -28285,8 +28834,8 @@
           component: n('9yqU').default,
           previewerProps: {
             sources: {
-              _: { tsx: je },
-              'SimpleDataList.tsx': { import: './SimpleDataList', content: Se },
+              _: { tsx: Te },
+              'SimpleDataList.tsx': { import: './SimpleDataList', content: je },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -28300,14 +28849,14 @@
           component: n('iBx2').default,
           previewerProps: {
             sources: {
-              _: { tsx: Te },
+              _: { tsx: Pe },
               'SimpleDataTable.tsx': {
                 import: './SimpleDataTable',
-                content: Pe,
+                content: Ne,
               },
               'simpleDataTable.less': {
                 import: './simpleDataTable.less',
-                content: Ne,
+                content: Re,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -28321,11 +28870,11 @@
               _: { tsx: Ie },
               'SimpleDataTable.tsx': {
                 import: './SimpleDataTable',
-                content: Pe,
+                content: Ne,
               },
               'simpleDataTable.less': {
                 import: './simpleDataTable.less',
-                content: Ne,
+                content: Re,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -28336,14 +28885,14 @@
           component: n('X23V').default,
           previewerProps: {
             sources: {
-              _: { tsx: Re },
+              _: { tsx: Ae },
               'SimpleMappedDataTable.tsx': {
                 import: './SimpleMappedDataTable',
-                content: Ae,
+                content: Me,
               },
               'SimpleMappedDataTable.less': {
                 import: './SimpleMappedDataTable.less',
-                content: Me,
+                content: Le,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -28354,28 +28903,182 @@
           component: n('/ncw').default,
           previewerProps: {
             sources: {
-              _: { tsx: Le },
+              _: { tsx: De },
               'SimpleMappedDataTable.tsx': {
                 import: './SimpleMappedDataTable',
-                content: Ae,
+                content: Me,
               },
               'SimpleMappedDataTable.less': {
                 import: './SimpleMappedDataTable.less',
-                content: Me,
+                content: Le,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'simplemappeddatatable-demo.zh-cn',
           },
         },
+        'useasync-demo': {
+          component: n('sqNe').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: _e },
+              'guide/Button/Button.tsx': { import: './Button', content: O },
+              'button.less': { import: './button.less', content: S },
+              'utils/classnames.ts': {
+                import: '../../utils/classnames',
+                content: j,
+              },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: T },
+              'guide/Loader/Loader.tsx': {
+                import: '../Loader/Loader',
+                content: T,
+              },
+              'guide/Alert/Alert.tsx': { import: './Alert', content: y },
+              'alert.less': { import: './alert.less', content: x },
+              'useAsync.ts': { import: './useAsync', content: ze },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              '@emotion/styled': { version: '11.9.3' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+            },
+            identifier: 'useasync-demo',
+          },
+        },
+        'useasync-demo.zh-cn': {
+          component: n('mlG9').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: Fe },
+              'guide/Button/Button.tsx': { import: './Button', content: O },
+              'button.less': { import: './button.less', content: S },
+              'utils/classnames.ts': {
+                import: '../../utils/classnames',
+                content: j,
+              },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: T },
+              'guide/Loader/Loader.tsx': {
+                import: '../Loader/Loader',
+                content: T,
+              },
+              'guide/Alert/Alert.tsx': { import: './Alert', content: y },
+              'alert.less': { import: './alert.less', content: x },
+              'useAsync.ts': { import: './useAsync', content: ze },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              '@emotion/styled': { version: '11.9.3' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+            },
+            identifier: 'useasync-demo.zh-cn',
+          },
+        },
+        'usebodyscrolllock-demo': {
+          component: n('AgAx').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: Be },
+              'guide/Modal/Modal.tsx': { import: './Modal', content: pe },
+              'Modal.less': { import: './Modal.less', content: me },
+              'guide/Button/Button.tsx': { import: './Button', content: O },
+              'button.less': { import: './button.less', content: S },
+              'utils/classnames.ts': {
+                import: '../../utils/classnames',
+                content: j,
+              },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: T },
+              'useBodyScrollLock.ts': {
+                import: './useBodyScrollLock',
+                content: Ue,
+              },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              '@emotion/styled': { version: '11.9.3' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+              'react-dom': { version: '16.14.0' },
+            },
+            identifier: 'usebodyscrolllock-demo',
+          },
+        },
+        'usebodyscrolllock-demo.zh-cn': {
+          component: n('hVMu').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: Ve },
+              'guide/Modal/Modal.tsx': { import: './Modal', content: pe },
+              'Modal.less': { import: './Modal.less', content: me },
+              'guide/Button/Button.tsx': { import: './Button', content: O },
+              'button.less': { import: './button.less', content: S },
+              'utils/classnames.ts': {
+                import: '../../utils/classnames',
+                content: j,
+              },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: T },
+              'useBodyScrollLock.ts': {
+                import: './useBodyScrollLock',
+                content: Ue,
+              },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              '@emotion/styled': { version: '11.9.3' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+              'react-dom': { version: '16.14.0' },
+            },
+            identifier: 'usebodyscrolllock-demo.zh-cn',
+          },
+        },
+        'useclickoutside-demo': {
+          component: n('6srN').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: He },
+              'useClickOutside.tsx': {
+                import: './useClickOutside',
+                content: qe,
+              },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              '@emotion/styled': { version: '11.9.3' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+            },
+            identifier: 'useclickoutside-demo',
+          },
+        },
+        'useclickoutside-demo.zh-cn': {
+          component: n('6aGR').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: We },
+              'useClickOutside.tsx': {
+                import: './useClickOutside',
+                content: qe,
+              },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              '@emotion/styled': { version: '11.9.3' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+            },
+            identifier: 'useclickoutside-demo.zh-cn',
+          },
+        },
       },
-      De = n('Zs1V'),
-      ze = n('KcUY'),
-      Fe = n.n(ze);
+      Ge = n('Zs1V'),
+      Ke = n('KcUY'),
+      Ye = n.n(Ke);
     t['default'] = (e) =>
       o.a.createElement(
-        Fe.a,
-        Object(r['a'])({}, e, { config: i, demos: _e, apis: De }),
+        Ye.a,
+        Object(r['a'])({}, e, { config: i, demos: $e, apis: Ge }),
       );
   },
   'Of+w': function (e, t, n) {
@@ -28420,103 +29123,6 @@
           : ((e = r(n, a)), (t.index += e.length), { value: e, done: !1 });
       },
     );
-  },
-  PVRP: function (e, t, n) {
-    'use strict';
-    n.r(t);
-    var r,
-      a = n('tJVT'),
-      o = n('qqnG'),
-      i = n('q1tI'),
-      l = n.n(i),
-      c = (n('o4Vn'), n('zeV3')),
-      s = (n('k/c8'), n('5SEd')),
-      u = Object(s['a'])(c['b'])(
-        r || (r = Object(o['a'])(['\n  width: 100%;\n'])),
-      ),
-      d = (e) => {
-        var t = e.isDefaultShown,
-          n = e.timeout,
-          r = void 0 === n ? 250 : n,
-          o = e.type,
-          c = e.message,
-          s = e.showClose,
-          u = e.block,
-          d = Object(i['useState'])(t),
-          f = Object(a['a'])(d, 2),
-          p = f[0],
-          m = f[1],
-          h = Object(i['useState'])(!1),
-          v = Object(a['a'])(h, 2),
-          g = v[0],
-          b = v[1],
-          y = null;
-        Object(i['useEffect'])(
-          () => (
-            m(!0),
-            () => {
-              y && clearTimeout(y);
-            }
-          ),
-          [r, y, t],
-        );
-        var x = () => {
-          b(!0),
-            (y = setTimeout(() => {
-              b(!1), m(!1);
-            }, r));
-        };
-        return p
-          ? l.a.createElement(
-              'div',
-              {
-                className: 'alert '
-                  .concat('alert-' + o)
-                  .concat(g ? ' leaving' : '')
-                  .concat(u ? ' alert-block' : ''),
-                role: 'alert',
-              },
-              l.a.createElement(
-                'button',
-                {
-                  className: 'alert-close',
-                  onClick: x,
-                  style: { display: s ? 'block' : 'none' },
-                },
-                '\xd7',
-              ),
-              c,
-            )
-          : null;
-      },
-      f = () =>
-        l.a.createElement(
-          u,
-          { direction: 'vertical' },
-          l.a.createElement(d, {
-            type: 'info',
-            message:
-              '\u8fd9\u662f\u4fe1\u606f\u63d0\u793a\uff0c\u5e76\u5360\u6ee1\u7a7a\u95f4',
-            block: !0,
-          }),
-          l.a.createElement(d, {
-            type: 'success',
-            message:
-              '\u8fd9\u662f\u6210\u529f\u63d0\u793a\uff0c\u5e76\u663e\u793a\u5173\u95ed\u6309\u94ae',
-            showClose: !0,
-          }),
-          l.a.createElement(d, {
-            type: 'warning',
-            message:
-              '\u8fd9\u662f\u8b66\u544a\u63d0\u793a\uff0c\u4e0d\u5360\u6ee1\u7a7a\u95f4\uff0c\u4e0d\u663e\u793a\u5173\u95ed\u6309\u94ae',
-          }),
-          l.a.createElement(d, {
-            type: 'error',
-            message:
-              '\u8fd9\u662f\u9519\u8bef\u63d0\u793a\uff0c\u4e0d\u5360\u6ee1\u7a7a\u95f4\uff0c\u4e0d\u663e\u793a\u5173\u95ed\u6309\u94ae',
-          }),
-        );
-    t['default'] = f;
   },
   PYwp: function (e, t, n) {
     'use strict';
@@ -28689,6 +29295,73 @@
     n.d(t, 'a', function () {
       return a;
     });
+  },
+  Ptmx: function (e, t, n) {
+    'use strict';
+    var r = n('k1fw'),
+      a = n('9og8'),
+      o = n('tJVT'),
+      i = n('WmNS'),
+      l = n.n(i),
+      c = n('q1tI'),
+      s = (e) => {
+        var t = { loading: !1, error: null, value: null },
+          n = (e, t) => {
+            switch (t.type) {
+              case 'start':
+                return { loading: !0, error: null, value: null };
+              case 'finish':
+                return { loading: !1, error: null, value: t.value };
+              case 'error':
+                return { loading: !1, error: t.error, value: null };
+            }
+          },
+          i = Object(c['useReducer'])(n, t),
+          s = Object(o['a'])(i, 2),
+          u = s[0],
+          d = s[1],
+          f = (function () {
+            var t = Object(a['a'])(
+              l.a.mark(function t(n) {
+                var r;
+                return l.a.wrap(
+                  function (t) {
+                    while (1)
+                      switch ((t.prev = t.next)) {
+                        case 0:
+                          return (
+                            (t.prev = 0),
+                            d({ type: 'start' }),
+                            (t.next = 4),
+                            e(n)
+                          );
+                        case 4:
+                          (r = t.sent),
+                            d({ type: 'finish', value: r }),
+                            (t.next = 11);
+                          break;
+                        case 8:
+                          (t.prev = 8),
+                            (t.t0 = t['catch'](0)),
+                            d({ type: 'error', error: t.t0 });
+                        case 11:
+                        case 'end':
+                          return t.stop();
+                      }
+                  },
+                  t,
+                  null,
+                  [[0, 8]],
+                );
+              }),
+            );
+            return function (e) {
+              return t.apply(this, arguments);
+            };
+          })();
+        return Object(r['a'])(Object(r['a'])({}, u), {}, { run: f });
+      };
+    t['a'] = s;
   },
   Pw59: function (e, t, n) {
     'use strict';
@@ -29376,7 +30049,7 @@
   },
   RGYn: function (e) {
     e.exports = JSON.parse(
-      '{"menus":{"en-US":{"/getting-started":[{"path":"/getting-started","title":"react code-segment","meta":{}}],"*":[{"path":"/","title":"Welcome to the website","meta":{}}],"/antd":[{"title":"LoadingButton","path":"/antd/loading-button"},{"title":"OmitText","path":"/antd/omit-text"},{"title":"LoadingModal","path":"/antd/loading-modal"}],"/guide":[{"title":"Accordion","path":"/guide/Accordion/Accordion"},{"title":"Alert","path":"/guide/Alert/Alert"},{"title":"AutoLink","path":"/guide/auto-link/auto-link"},{"title":"Callto","path":"/guide/Callto/Callto"},{"title":"Carousel","path":"/guide/Carousel/Carousel"},{"title":"Collapse","path":"/guide/Collapse/Collapse"},{"title":"ControlledInput","path":"/guide/controlled-input/controlled-input"},{"title":"CountDown","path":"/guide/count-down/count-down"},{"title":"SimpleDataList","path":"/guide/simple-data-list/simple-data-list"},{"title":"SimpleDataTable","path":"/guide/simple-data-table/simple-data-table"},{"title":"FileDrop","path":"/guide/file-drop/file-drop"},{"title":"LazyLoadingImage","path":"/guide/lazy-loading-image/lazy-loading-image"},{"title":"LimitedTextarea","path":"/guide/limited-textarea/limited-textarea"},{"title":"LimitedWordTextarea","path":"/guide/limited-word-textarea/limited-word-textarea"},{"title":"Loader","path":"/guide/Loader/Loader"},{"title":"Mailto","path":"/guide/Mailto/Mailto"},{"title":"SimpleMappedDataTable","path":"/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"Modal","path":"/guide/Modal/Modal"},{"title":"Checkbox","path":"/guide/Checkbox/Checkbox"},{"title":"PasswordRevealer","path":"/guide/password-revealer/password-revealer"},{"title":"Button","path":"/guide/button/button"},{"title":"Select","path":"/guide/select/select"}]},"zh-CN":{"/zh-CN/getting-started":[{"path":"/zh-CN/getting-started","title":"react \u4ee3\u7801\u6bb5","meta":{}}],"*":[{"path":"/zh-CN","title":"\u6b22\u8fce\u6765\u5230\u672c\u7f51\u7ad9","meta":{}}],"/zh-CN/antd":[{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u6309\u94ae","path":"/zh-CN/antd/loading-button"},{"title":"\u7701\u7565\u6587\u672c\u7ec4\u4ef6","path":"/zh-CN/antd/omit-text"},{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u5f39\u6846","path":"/zh-CN/antd/loading-modal"}],"/zh-CN/guide":[{"title":"\u624b\u98ce\u7434","path":"/zh-CN/guide/Accordion/Accordion"},{"title":"\u63d0\u793a","path":"/zh-CN/guide/Alert/Alert"},{"title":"\u81ea\u52a8\u6587\u672c\u94fe\u63a5","path":"/zh-CN/guide/auto-link/auto-link"},{"title":"\u62e8\u7535\u81f3","path":"/zh-CN/guide/Callto/Callto"},{"title":"\u8f6e\u64ad\u56fe","path":"/zh-CN/guide/Carousel/Carousel"},{"title":"\u53ef\u6298\u53e0\u7684\u5185\u5bb9","path":"/zh-CN/guide/Collapse/Collapse"},{"title":"\u53d7\u63a7\u7684\u8f93\u5165\u6846","path":"/zh-CN/guide/controlled-input/controlled-input"},{"title":"\u5012\u8ba1\u65f6\u7ec4\u4ef6","path":"/zh-CN/guide/count-down/count-down"},{"title":"\u7b80\u6613\u6570\u636e\u5217\u8868\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-list/simple-data-list"},{"title":"\u7b80\u6613\u6570\u636e\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-table/simple-data-table"},{"title":"\u62d6\u62fd\u6587\u4ef6\u7ec4\u4ef6","path":"/zh-CN/guide/file-drop/file-drop"},{"title":"\u61d2\u52a0\u8f7d\u56fe\u7247","path":"/zh-CN/guide/lazy-loading-image/lazy-loading-image"},{"title":"\u9650\u5236\u5b57\u7b26\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-textarea/limited-textarea"},{"title":"\u9650\u5236\u5b57\u6570\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-word-textarea/limited-word-textarea"},{"title":"\u52a0\u8f7d\u7ec4\u4ef6","path":"/zh-CN/guide/Loader/Loader"},{"title":"\u90ae\u4ef6\u94fe\u63a5\u7ec4\u4ef6","path":"/zh-CN/guide/Mailto/Mailto"},{"title":"\u7b80\u6613\u5bf9\u8c61\u6570\u7ec4\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"\u5f39\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Modal/Modal"},{"title":"\u590d\u9009\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Checkbox/Checkbox"},{"title":"\u5bc6\u7801\u663e\u793a\u5668","path":"/zh-CN/guide/password-revealer/password-revealer"},{"title":"\u6309\u94ae","path":"/zh-CN/guide/button/button"},{"title":"\u9009\u62e9\u5668","path":"/zh-CN/guide/select/select"}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"\u4e2d\u6587"}],"navs":{"en-US":[{"title":"getting-started","path":"/getting-started"},{"title":"guide","path":"/guide"},{"title":"antd","path":"/antd"},{"title":"github","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"about me","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"jue jin","path":"https://juejin.im/user/4054654613988718"},{"title":"segmentfault","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"gitee","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"blog","path":"https://www.cnblogs.com/eveningwater/"},{"title":"website","path":"https://www.eveningwater.com/"},{"title":"My project","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"17sucai","path":"https://www.17sucai.com/user/800544"},{"title":"ewColorPicker","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}],"zh-CN":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/zh-CN/getting-started"},{"title":"\u6307\u5357","path":"/zh-CN/guide"},{"title":"\u8682\u8681\u8bbe\u8ba1","path":"/zh-CN/antd"},{"title":"\u6e90\u7801\u5730\u5740","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"\u5173\u4e8e\u6211","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"\u6398\u91d1","path":"https://juejin.im/user/4054654613988718"},{"title":"\u601d\u5426","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"\u7801\u4e91","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"\u535a\u5ba2","path":"https://www.cnblogs.com/eveningwater/"},{"title":"\u4e2a\u4eba\u7f51\u7ad9","path":"https://www.eveningwater.com/"},{"title":"\u4e2a\u4eba\u9879\u76ee","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"\u95e8\u7d20\u6750","path":"https://www.17sucai.com/user/800544"},{"title":"\u989c\u8272\u9009\u62e9\u5668","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}]},"title":"react-code-segment","logo":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K","mode":"site","repository":{"url":"","branch":"master"},"theme":{}}',
+      '{"menus":{"en-US":{"/getting-started":[{"path":"/getting-started","title":"react code-segment","meta":{}}],"*":[{"path":"/","title":"Welcome to the website","meta":{}}],"/antd":[{"title":"LoadingButton","path":"/antd/loading-button"},{"title":"OmitText","path":"/antd/omit-text"},{"title":"LoadingModal","path":"/antd/loading-modal"}],"/guide":[{"title":"Accordion","path":"/guide/Accordion/Accordion"},{"title":"Alert","path":"/guide/Alert/Alert"},{"title":"AutoLink","path":"/guide/auto-link/auto-link"},{"title":"Callto","path":"/guide/Callto/Callto"},{"title":"Carousel","path":"/guide/Carousel/Carousel"},{"title":"Collapse","path":"/guide/Collapse/Collapse"},{"title":"ControlledInput","path":"/guide/controlled-input/controlled-input"},{"title":"CountDown","path":"/guide/count-down/count-down"},{"title":"SimpleDataList","path":"/guide/simple-data-list/simple-data-list"},{"title":"SimpleDataTable","path":"/guide/simple-data-table/simple-data-table"},{"title":"FileDrop","path":"/guide/file-drop/file-drop"},{"title":"LazyLoadingImage","path":"/guide/lazy-loading-image/lazy-loading-image"},{"title":"LimitedTextarea","path":"/guide/limited-textarea/limited-textarea"},{"title":"LimitedWordTextarea","path":"/guide/limited-word-textarea/limited-word-textarea"},{"title":"Loader","path":"/guide/Loader/Loader"},{"title":"Mailto","path":"/guide/Mailto/Mailto"},{"title":"SimpleMappedDataTable","path":"/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"Modal","path":"/guide/Modal/Modal"},{"title":"Checkbox","path":"/guide/Checkbox/Checkbox"},{"title":"PasswordRevealer","path":"/guide/password-revealer/password-revealer"},{"title":"Button","path":"/guide/button/button"},{"title":"Select","path":"/guide/select/select"}],"/hooks":[{"title":"useClickOutside","path":"/hooks/use-click-outside/use-click-outside"},{"title":"useAsync","path":"/hooks/use-async/use-async"},{"title":"useBodyScrollLock","path":"/hooks/use-body-scroll-lock/use-body-scroll-lock"}]},"zh-CN":{"/zh-CN/getting-started":[{"path":"/zh-CN/getting-started","title":"react \u4ee3\u7801\u6bb5","meta":{}}],"*":[{"path":"/zh-CN","title":"\u6b22\u8fce\u6765\u5230\u672c\u7f51\u7ad9","meta":{}}],"/zh-CN/antd":[{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u6309\u94ae","path":"/zh-CN/antd/loading-button"},{"title":"\u7701\u7565\u6587\u672c\u7ec4\u4ef6","path":"/zh-CN/antd/omit-text"},{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u5f39\u6846","path":"/zh-CN/antd/loading-modal"}],"/zh-CN/guide":[{"title":"\u624b\u98ce\u7434","path":"/zh-CN/guide/Accordion/Accordion"},{"title":"\u63d0\u793a","path":"/zh-CN/guide/Alert/Alert"},{"title":"\u81ea\u52a8\u6587\u672c\u94fe\u63a5","path":"/zh-CN/guide/auto-link/auto-link"},{"title":"\u62e8\u7535\u81f3","path":"/zh-CN/guide/Callto/Callto"},{"title":"\u8f6e\u64ad\u56fe","path":"/zh-CN/guide/Carousel/Carousel"},{"title":"\u53ef\u6298\u53e0\u7684\u5185\u5bb9","path":"/zh-CN/guide/Collapse/Collapse"},{"title":"\u53d7\u63a7\u7684\u8f93\u5165\u6846","path":"/zh-CN/guide/controlled-input/controlled-input"},{"title":"\u5012\u8ba1\u65f6\u7ec4\u4ef6","path":"/zh-CN/guide/count-down/count-down"},{"title":"\u7b80\u6613\u6570\u636e\u5217\u8868\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-list/simple-data-list"},{"title":"\u7b80\u6613\u6570\u636e\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-table/simple-data-table"},{"title":"\u62d6\u62fd\u6587\u4ef6\u7ec4\u4ef6","path":"/zh-CN/guide/file-drop/file-drop"},{"title":"\u61d2\u52a0\u8f7d\u56fe\u7247","path":"/zh-CN/guide/lazy-loading-image/lazy-loading-image"},{"title":"\u9650\u5236\u5b57\u7b26\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-textarea/limited-textarea"},{"title":"\u9650\u5236\u5b57\u6570\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-word-textarea/limited-word-textarea"},{"title":"\u52a0\u8f7d\u7ec4\u4ef6","path":"/zh-CN/guide/Loader/Loader"},{"title":"\u90ae\u4ef6\u94fe\u63a5\u7ec4\u4ef6","path":"/zh-CN/guide/Mailto/Mailto"},{"title":"\u7b80\u6613\u5bf9\u8c61\u6570\u7ec4\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"\u5f39\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Modal/Modal"},{"title":"\u590d\u9009\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Checkbox/Checkbox"},{"title":"\u5bc6\u7801\u663e\u793a\u5668","path":"/zh-CN/guide/password-revealer/password-revealer"},{"title":"\u6309\u94ae","path":"/zh-CN/guide/button/button"},{"title":"\u9009\u62e9\u5668","path":"/zh-CN/guide/select/select"}],"/zh-CN/hooks":[{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5916","path":"/zh-CN/hooks/use-click-outside/use-click-outside"},{"title":"\u5f02\u6b65","path":"/zh-CN/hooks/use-async/use-async"},{"title":"\u9501\u5b9abody\u5143\u7d20\u7684\u6eda\u52a8","path":"/zh-CN/hooks/use-body-scroll-lock/use-body-scroll-lock"}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"\u4e2d\u6587"}],"navs":{"en-US":[{"title":"getting-started","path":"/getting-started"},{"title":"guide","path":"/guide"},{"title":"hooks","path":"/hooks"},{"title":"antd","path":"/antd"},{"title":"github","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"about me","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"jue jin","path":"https://juejin.im/user/4054654613988718"},{"title":"segmentfault","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"gitee","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"blog","path":"https://www.cnblogs.com/eveningwater/"},{"title":"website","path":"https://www.eveningwater.com/"},{"title":"My project","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"17sucai","path":"https://www.17sucai.com/user/800544"},{"title":"ewColorPicker","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}],"zh-CN":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/zh-CN/getting-started"},{"title":"\u6307\u5357","path":"/zh-CN/guide"},{"title":"\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks"},{"title":"\u8682\u8681\u8bbe\u8ba1","path":"/zh-CN/antd"},{"title":"\u6e90\u7801\u5730\u5740","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"\u5173\u4e8e\u6211","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"\u6398\u91d1","path":"https://juejin.im/user/4054654613988718"},{"title":"\u601d\u5426","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"\u7801\u4e91","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"\u535a\u5ba2","path":"https://www.cnblogs.com/eveningwater/"},{"title":"\u4e2a\u4eba\u7f51\u7ad9","path":"https://www.eveningwater.com/"},{"title":"\u4e2a\u4eba\u9879\u76ee","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"\u95e8\u7d20\u6750","path":"https://www.17sucai.com/user/800544"},{"title":"\u989c\u8272\u9009\u62e9\u5668","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}]},"title":"react-code-segment","logo":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K","mode":"site","repository":{"url":"","branch":"master"},"theme":{}}',
     );
   },
   RK3t: function (e, t, n) {
@@ -30594,15 +31267,15 @@
     }
     var P = {},
       N = 1e4,
-      I = 0;
-    function R(e, t) {
+      R = 0;
+    function I(e, t) {
       var n = '' + t.end + t.strict + t.sensitive,
         r = P[n] || (P[n] = {});
       if (r[e]) return r[e];
       var a = [],
         o = d()(e, a, t),
         i = { regexp: o, keys: a };
-      return I < N && ((r[e] = i), I++), i;
+      return R < N && ((r[e] = i), R++), i;
     }
     function A(e, t) {
       void 0 === t && (t = {}),
@@ -30619,7 +31292,7 @@
       return u.reduce(function (t, n) {
         if (!n && '' !== n) return null;
         if (t) return t;
-        var r = R(n, { end: o, strict: l, sensitive: s }),
+        var r = I(n, { end: o, strict: l, sensitive: s }),
           a = r.regexp,
           i = r.keys,
           c = a.exec(e);
@@ -30689,10 +31362,10 @@
     function L(e) {
       return '/' === e.charAt(0) ? e : '/' + e;
     }
-    function _(e, t) {
+    function D(e, t) {
       return e ? Object(s['a'])({}, t, { pathname: L(e) + t.pathname }) : t;
     }
-    function D(e, t) {
+    function _(e, t) {
       if (!e) return t;
       var n = L(e);
       return 0 !== t.pathname.indexOf(n)
@@ -30739,7 +31412,7 @@
             o = n.context,
             l = void 0 === o ? {} : o;
           (l.action = t),
-            (l.location = _(a, Object(i['c'])(e))),
+            (l.location = D(a, Object(i['c'])(e))),
             (l.url = z(l.location));
         }),
         (n.render = function () {
@@ -30756,7 +31429,7 @@
                 return L(n + z(e));
               },
               action: 'POP',
-              location: D(n, Object(i['c'])(c)),
+              location: _(n, Object(i['c'])(c)),
               push: this.handlePush,
               replace: this.handleReplace,
               go: F('go'),
@@ -31217,17 +31890,17 @@
               var T = String(k[0]),
                 P = d(f(l(k.index), p.length), 0),
                 N = [],
-                I = 1;
-              I < k.length;
-              I++
+                R = 1;
+              R < k.length;
+              R++
             )
-              N.push(v(k[I]));
-            var R = k.groups;
+              N.push(v(k[R]));
+            var I = k.groups;
             if (m) {
               var A = [T].concat(N, P, p);
-              void 0 !== R && A.push(R);
+              void 0 !== I && A.push(I);
               var M = String(r.apply(void 0, A));
-            } else M = x(T, p, P, N, R, r);
+            } else M = x(T, p, P, N, I, r);
             P >= S && ((O += p.slice(S, P) + M), (S = P + T.length));
           }
           return O + p.slice(S);
@@ -31294,6 +31967,22 @@
         },
       },
     );
+  },
+  Uyr4: function (e, t, n) {
+    'use strict';
+    var r = n('q1tI'),
+      a = (e, t) => {
+        var n = (n) => {
+          e.current && !e.current.contains(n.target) && t();
+        };
+        Object(r['useEffect'])(
+          () => (
+            document.addEventListener('click', n),
+            () => document.removeEventListener('click', n)
+          ),
+        );
+      };
+    t['a'] = a;
   },
   UzNg: function (e, t, n) {
     'use strict';
@@ -32138,7 +32827,7 @@
       c = n('dMo/'),
       s = a.a.memo((e) => {
         var t = e.demos,
-          n = t['alert-alert'].component;
+          n = t['alert-demo'].component;
         return a.a.createElement(
           a.a.Fragment,
           null,
@@ -32210,14 +32899,14 @@
                 lang: 'less',
               }),
               a.a.createElement(l['a'], {
-                code: "import React, { useState, useEffect } from 'react';\nimport './alert.less';\nimport { Space } from 'antd';\nimport 'antd/dist/antd.less';\nimport styled from '@emotion/styled';\n\ninterface AlertPropType {\n  isDefaultShown: boolean;\n  timeout: number;\n  type: string;\n  message: string;\n  showClose: boolean;\n  block: boolean;\n}\n\nconst SpaceBlock = styled(Space)`\n  width: 100%;\n`;\n\nconst Alert = (props: Partial<AlertPropType>) => {\n  const {\n    isDefaultShown,\n    timeout = 250,\n    type,\n    message,\n    showClose,\n    block,\n  } = props;\n  const [isShown, setIsShown] = useState(isDefaultShown);\n  const [isLeaving, setIsLeaving] = useState(false);\n\n  let timer: number | null = null;\n  useEffect(() => {\n    setIsShown(true);\n    return () => {\n      if (timer) {\n        clearTimeout(timer);\n      }\n    };\n  }, [timeout, timer, isDefaultShown]);\n\n  const closeAlert = () => {\n    setIsLeaving(true);\n    timer = setTimeout(() => {\n      setIsLeaving(false);\n      setIsShown(false);\n    }, timeout);\n  };\n\n  return isShown ? (\n    <div\n      className={`alert ${'alert-' + type}${isLeaving ? ' leaving' : ''}${\n        block ? ' alert-block' : ''\n      }`}\n      role=\"alert\"\n    >\n      <button\n        className=\"alert-close\"\n        onClick={closeAlert}\n        style={{ display: showClose ? 'block' : 'none' }}\n      >\n        &times;\n      </button>\n      {message}\n    </div>\n  ) : null;\n};\n\nconst Demo = () => {\n  return (\n    <SpaceBlock direction=\"vertical\">\n      <Alert type=\"info\" message=\"This is info\" block />\n      <Alert type=\"success\" message=\"This is success\" showClose />\n      <Alert type=\"warning\" message=\"This is warning\" />\n      <Alert type=\"error\" message=\"This is error\" />\n    </SpaceBlock>\n  );\n};\n\nexport default Demo;",
+                code: "import React, { useState, useEffect } from 'react';\nimport './alert.less';\n\ninterface AlertPropType {\n  isDefaultShown: boolean;\n  timeout: number;\n  type: string;\n  message: string;\n  showClose: boolean;\n  block: boolean;\n}\n\nconst Alert = (props: Partial<AlertPropType>) => {\n  const {\n    isDefaultShown,\n    timeout = 250,\n    type,\n    message,\n    showClose,\n    block,\n  } = props;\n  const [isShown, setIsShown] = useState(isDefaultShown);\n  const [isLeaving, setIsLeaving] = useState(false);\n\n  let timer: number | null = null;\n  useEffect(() => {\n    setIsShown(true);\n    return () => {\n      if (timer) {\n        clearTimeout(timer);\n      }\n    };\n  }, [timeout, timer, isDefaultShown]);\n\n  const closeAlert = () => {\n    setIsLeaving(true);\n    timer = setTimeout(() => {\n      setIsLeaving(false);\n      setIsShown(false);\n    }, timeout);\n  };\n\n  return isShown ? (\n    <div\n      className={`alert ${'alert-' + type}${isLeaving ? ' leaving' : ''}${\n        block ? ' alert-block' : ''\n      }`}\n      role=\"alert\"\n    >\n      <button\n        className=\"alert-close\"\n        onClick={closeAlert}\n        style={{ display: showClose ? 'block' : 'none' }}\n      >\n        &times;\n      </button>\n      {message}\n    </div>\n  ) : null;\n};\n\nexport default Alert;",
                 lang: 'tsx',
               }),
-              a.a.createElement('p', null, 'demo:'),
+              a.a.createElement('p', null, 'Demo:'),
             ),
             a.a.createElement(
               i['default'],
-              t['alert-alert'].previewerProps,
+              t['alert-demo'].previewerProps,
               a.a.createElement(n, null),
             ),
           ),
@@ -33999,8 +34688,8 @@
       return void 0 === e.state && -1 === navigator.userAgent.indexOf('CriOS');
     }
     var N = 'popstate',
-      I = 'hashchange';
-    function R() {
+      R = 'hashchange';
+    function I() {
       try {
         return window.history.state || {};
       } catch (e) {
@@ -34044,7 +34733,7 @@
         P(e) || L(h(e.state));
       }
       function A() {
-        L(h(R()));
+        L(h(I()));
       }
       var M = !1;
       function L(e) {
@@ -34052,11 +34741,11 @@
         else {
           var t = 'POP';
           y.confirmTransitionTo(e, t, s, function (n) {
-            n ? E({ action: t, location: e }) : _(e);
+            n ? E({ action: t, location: e }) : D(e);
           });
         }
       }
-      function _(e) {
+      function D(e) {
         var t = Z.location,
           n = z.indexOf(t.key);
         -1 === n && (n = 0);
@@ -34065,8 +34754,8 @@
         var a = n - r;
         a && ((M = !0), V(a));
       }
-      var D = h(R()),
-        z = [D.key];
+      var _ = h(I()),
+        z = [_.key];
       function F(e) {
         return f + x(e);
       }
@@ -34123,10 +34812,10 @@
         (W += e),
           1 === W && 1 === e
             ? (window.addEventListener(N, T),
-              a && window.addEventListener(I, A))
+              a && window.addEventListener(R, A))
             : 0 === W &&
               (window.removeEventListener(N, T),
-              a && window.removeEventListener(I, A));
+              a && window.removeEventListener(R, A));
       }
       var G = !1;
       function K(e) {
@@ -34151,7 +34840,7 @@
       var Z = {
         length: t.length,
         action: 'POP',
-        location: D,
+        location: _,
         createHref: F,
         push: B,
         replace: U,
@@ -34176,11 +34865,11 @@
         noslash: { encodePath: h, decodePath: m },
         slash: { encodePath: m, decodePath: m },
       };
-    function _(e) {
+    function D(e) {
       var t = e.indexOf('#');
       return -1 === t ? e : e.slice(0, t);
     }
-    function D() {
+    function _() {
       var e = window.location.href,
         t = e.indexOf('#');
       return -1 === t ? '' : e.substring(t + 1);
@@ -34189,7 +34878,7 @@
       window.location.hash = e;
     }
     function F(e) {
-      window.location.replace(_(window.location.href) + '#' + e);
+      window.location.replace(D(window.location.href) + '#' + e);
     }
     function B(e) {
       void 0 === e && (e = {}), C || Object(p['a'])(!1);
@@ -34204,14 +34893,14 @@
         u = s.encodePath,
         d = s.decodePath;
       function f() {
-        var e = d(D());
+        var e = d(_());
         return c && (e = g(e, c)), w(e);
       }
       var h = k();
       function v(e) {
-        Object(r['a'])(Q, e),
-          (Q.length = t.length),
-          h.notifyListeners(Q.location, Q.action);
+        Object(r['a'])(J, e),
+          (J.length = t.length),
+          h.notifyListeners(J.location, J.action);
       }
       var y = !1,
         E = null;
@@ -34223,12 +34912,12 @@
         );
       }
       function j() {
-        var e = D(),
+        var e = _(),
           t = u(e);
         if (e !== t) F(t);
         else {
           var n = f(),
-            r = Q.location;
+            r = J.location;
           if (!y && S(r, n)) return;
           if (E === x(n)) return;
           (E = null), P(n);
@@ -34244,7 +34933,7 @@
         }
       }
       function N(e) {
-        var t = Q.location,
+        var t = J.location,
           n = B.lastIndexOf(x(t));
         -1 === n && (n = 0);
         var r = B.lastIndexOf(x(e));
@@ -34252,30 +34941,30 @@
         var a = n - r;
         a && ((y = !0), q(a));
       }
-      var I = D(),
-        R = u(I);
-      I !== R && F(R);
+      var R = _(),
+        I = u(R);
+      R !== I && F(I);
       var A = f(),
         B = [x(A)];
       function U(e) {
         var t = document.querySelector('base'),
           n = '';
         return (
-          t && t.getAttribute('href') && (n = _(window.location.href)),
+          t && t.getAttribute('href') && (n = D(window.location.href)),
           n + '#' + u(c + x(e))
         );
       }
       function V(e, t) {
         var n = 'PUSH',
-          r = w(e, void 0, void 0, Q.location);
+          r = w(e, void 0, void 0, J.location);
         h.confirmTransitionTo(r, n, o, function (e) {
           if (e) {
             var t = x(r),
               a = u(c + t),
-              o = D() !== a;
+              o = _() !== a;
             if (o) {
               (E = t), z(a);
-              var i = B.lastIndexOf(x(Q.location)),
+              var i = B.lastIndexOf(x(J.location)),
                 l = B.slice(0, i + 1);
               l.push(t), (B = l), v({ action: n, location: r });
             } else v();
@@ -34284,14 +34973,14 @@
       }
       function H(e, t) {
         var n = 'REPLACE',
-          r = w(e, void 0, void 0, Q.location);
+          r = w(e, void 0, void 0, J.location);
         h.confirmTransitionTo(r, n, o, function (e) {
           if (e) {
             var t = x(r),
               a = u(c + t),
-              o = D() !== a;
+              o = _() !== a;
             o && ((E = t), F(a));
-            var i = B.indexOf(x(Q.location));
+            var i = B.indexOf(x(J.location));
             -1 !== i && (B[i] = t), v({ action: n, location: r });
           }
         });
@@ -34332,7 +35021,7 @@
           }
         );
       }
-      var Q = {
+      var J = {
         length: t.length,
         action: 'POP',
         location: A,
@@ -34345,7 +35034,7 @@
         block: Z,
         listen: X,
       };
-      return Q;
+      return J;
     }
     function U(e, t, n) {
       return Math.min(Math.max(e, t), n);
@@ -34467,15 +35156,15 @@
       T = r[k],
       P = T,
       N = r[C],
-      I = N && N[O],
-      R = Object.prototype,
+      R = N && N[O],
+      I = Object.prototype,
       A = r.RangeError,
       M = p.pack,
       L = p.unpack,
-      _ = function (e) {
+      D = function (e) {
         return [255 & e];
       },
-      D = function (e) {
+      _ = function (e) {
         return [255 & e, (e >> 8) & 255];
       },
       z = function (e) {
@@ -34536,14 +35225,14 @@
           (W = G[K++]) in P || i(P, W, T[W]);
         $.constructor = P;
       }
-      h && m(I) !== R && h(I, R);
+      h && m(R) !== I && h(R, I);
       var Y = new N(new P(2)),
-        Z = I.setInt8;
+        Z = R.setInt8;
       Y.setInt8(0, 2147483648),
         Y.setInt8(1, 2147483649),
         (!Y.getInt8(0) && Y.getInt8(1)) ||
           l(
-            I,
+            R,
             {
               setInt8: function (e, t) {
                 Z.call(this, e, (t << 24) >> 24);
@@ -34615,16 +35304,16 @@
             );
           },
           setInt8: function (e, t) {
-            q(this, 1, e, _, t);
+            q(this, 1, e, D, t);
           },
           setUint8: function (e, t) {
-            q(this, 1, e, _, t);
+            q(this, 1, e, D, t);
           },
           setInt16: function (e, t) {
-            q(this, 2, e, D, t, arguments.length > 2 ? arguments[2] : void 0);
+            q(this, 2, e, _, t, arguments.length > 2 ? arguments[2] : void 0);
           },
           setUint16: function (e, t) {
-            q(this, 2, e, D, t, arguments.length > 2 ? arguments[2] : void 0);
+            q(this, 2, e, _, t, arguments.length > 2 ? arguments[2] : void 0);
           },
           setInt32: function (e, t) {
             q(this, 4, e, z, t, arguments.length > 2 ? arguments[2] : void 0);
@@ -35626,50 +36315,50 @@
     var T = n('1j5w'),
       P = n('uciX'),
       N = { adjustX: 1, adjustY: 1 },
-      I = [0, 0],
-      R = {
+      R = [0, 0],
+      I = {
         topLeft: {
           points: ['bl', 'tl'],
           overflow: N,
           offset: [0, -4],
-          targetOffset: I,
+          targetOffset: R,
         },
         topCenter: {
           points: ['bc', 'tc'],
           overflow: N,
           offset: [0, -4],
-          targetOffset: I,
+          targetOffset: R,
         },
         topRight: {
           points: ['br', 'tr'],
           overflow: N,
           offset: [0, -4],
-          targetOffset: I,
+          targetOffset: R,
         },
         bottomLeft: {
           points: ['tl', 'bl'],
           overflow: N,
           offset: [0, 4],
-          targetOffset: I,
+          targetOffset: R,
         },
         bottomCenter: {
           points: ['tc', 'bc'],
           overflow: N,
           offset: [0, 4],
-          targetOffset: I,
+          targetOffset: R,
         },
         bottomRight: {
           points: ['tr', 'br'],
           overflow: N,
           offset: [0, 4],
-          targetOffset: I,
+          targetOffset: R,
         },
       },
-      A = R,
+      A = I,
       M = n('qE6j'),
       L = w['a'].ESC,
-      _ = w['a'].TAB;
-    function D(e) {
+      D = w['a'].TAB;
+    function _(e) {
       var t = e.visible,
         n = e.setTriggerVisible,
         a = e.triggerRef,
@@ -35720,7 +36409,7 @@
             case L:
               c();
               break;
-            case _:
+            case D:
               var t = !1;
               l.current || (t = s()), t ? e.preventDefault() : c();
               break;
@@ -35781,18 +36470,18 @@
         j = e.autoFocus,
         T = Object(s['a'])(e, z),
         N = r['useState'](),
-        I = Object(l['a'])(N, 2),
-        R = I[0],
-        M = I[1],
-        L = 'visible' in e ? C : R,
-        _ = r['useRef'](null);
+        R = Object(l['a'])(N, 2),
+        I = R[0],
+        M = R[1],
+        L = 'visible' in e ? C : I,
+        D = r['useRef'](null);
       r['useImperativeHandle'](t, function () {
-        return _.current;
+        return D.current;
       }),
-        D({
+        _({
           visible: L,
           setTriggerVisible: M,
-          triggerRef: _,
+          triggerRef: D,
           onVisibleChange: e.onVisibleChange,
           autoFocus: j,
         });
@@ -35848,7 +36537,7 @@
             {},
             {
               prefixCls: c,
-              ref: _,
+              ref: D,
               popupClassName: f()(
                 E,
                 Object(i['a'])({}, ''.concat(c, '-show-arrow'), a),
@@ -35924,17 +36613,17 @@
         j = Object(r['useState'])(null),
         P = Object(l['a'])(j, 2),
         N = P[0],
-        I = P[1],
-        R = ''.concat(a, '-more-popup'),
+        R = P[1],
+        I = ''.concat(a, '-more-popup'),
         A = ''.concat(n, '-dropdown'),
-        M = null !== N ? ''.concat(R, '-').concat(N) : null,
+        M = null !== N ? ''.concat(I, '-').concat(N) : null,
         L = null === c || void 0 === c ? void 0 : c.dropdownAriaLabel;
-      function _(e, t) {
+      function D(e, t) {
         e.preventDefault(),
           e.stopPropagation(),
           v.onEdit('remove', { key: t, event: e });
       }
-      var D = r['createElement'](
+      var _ = r['createElement'](
         T['e'],
         {
           onClick: function (e) {
@@ -35943,7 +36632,7 @@
             x(t, n), S(!1);
           },
           prefixCls: ''.concat(A, '-menu'),
-          id: R,
+          id: I,
           tabIndex: -1,
           role: 'listbox',
           'aria-activedescendant': M,
@@ -35956,7 +36645,7 @@
             T['b'],
             {
               key: e.key,
-              id: ''.concat(R, '-').concat(e.key),
+              id: ''.concat(I, '-').concat(e.key),
               role: 'option',
               'aria-controls': a && ''.concat(a, '-panel-').concat(e.key),
               disabled: e.disabled,
@@ -35971,7 +36660,7 @@
                   tabIndex: 0,
                   className: ''.concat(A, '-menu-item-remove'),
                   onClick: function (t) {
-                    t.stopPropagation(), _(t, e.key);
+                    t.stopPropagation(), D(t, e.key);
                   },
                 },
                 e.closeIcon || v.removeIcon || '\xd7',
@@ -35995,7 +36684,7 @@
         ) {
           n = (n + e + r) % r;
           var i = t[n];
-          if (!i.disabled) return void I(i.key);
+          if (!i.disabled) return void R(i.key);
         }
       }
       function F(e) {
@@ -36029,7 +36718,7 @@
       ),
         Object(r['useEffect'])(
           function () {
-            O || I(null);
+            O || R(null);
           },
           [O],
         );
@@ -36042,7 +36731,7 @@
               U,
               {
                 prefixCls: A,
-                overlay: D,
+                overlay: _,
                 trigger: ['hover'],
                 visible: O,
                 transitionName: p,
@@ -36060,7 +36749,7 @@
                   tabIndex: -1,
                   'aria-hidden': 'true',
                   'aria-haspopup': 'listbox',
-                  'aria-controls': R,
+                  'aria-controls': I,
                   id: ''.concat(a, '-more'),
                   'aria-expanded': O,
                   onKeyDown: F,
@@ -36187,7 +36876,7 @@
           );
         }, []);
     }
-    function Q() {
+    function J() {
       var e = Object(r['useRef'])(new Map());
       function t(t) {
         return (
@@ -36200,7 +36889,7 @@
       }
       return [t, n];
     }
-    function J(e, t) {
+    function Q(e, t) {
       var n = r['useRef'](e),
         a = r['useState']({}),
         o = Object(l['a'])(a, 2),
@@ -36249,25 +36938,25 @@
         T = e.locale,
         P = e.tabPosition,
         N = e.tabBarGutter,
-        I = e.children,
-        R = e.onTabClick,
+        R = e.children,
+        I = e.onTabClick,
         A = e.onTabScroll,
         M = Object(r['useRef'])(),
         L = Object(r['useRef'])(),
-        _ = Object(r['useRef'])(),
         D = Object(r['useRef'])(),
-        z = Q(),
+        _ = Object(r['useRef'])(),
+        z = J(),
         F = Object(l['a'])(z, 2),
         B = F[0],
         U = F[1],
         V = 'top' === P || 'bottom' === P,
-        q = J(0, function (e, t) {
+        q = Q(0, function (e, t) {
           V && A && A({ direction: e > t ? 'left' : 'right' });
         }),
         G = Object(l['a'])(q, 2),
         K = G[0],
         Y = G[1],
-        Z = J(0, function (e, t) {
+        Z = Q(0, function (e, t) {
           !V && A && A({ direction: e > t ? 'top' : 'bottom' });
         }),
         te = Object(l['a'])(Z, 2),
@@ -36300,12 +36989,12 @@
         Te = x(new Map()),
         Pe = Object(l['a'])(Te, 2),
         Ne = Pe[0],
-        Ie = Pe[1],
-        Re = O(s, Ne, ie),
+        Re = Pe[1],
+        Ie = O(s, Ne, ie),
         Ae = ''.concat(c, '-nav-operations-hidden'),
         Me = 0,
         Le = 0;
-      function _e(e) {
+      function De(e) {
         return e < Me ? Me : e > Le ? Le : e;
       }
       V
@@ -36313,7 +37002,7 @@
           ? ((Me = 0), (Le = Math.max(0, ie - me)))
           : ((Me = Math.min(0, me - ie)), (Le = 0))
         : ((Me = Math.min(0, be - ue)), (Le = 0));
-      var De = Object(r['useRef'])(),
+      var _e = Object(r['useRef'])(),
         ze = Object(r['useState'])(),
         Fe = Object(l['a'])(ze, 2),
         Be = Fe[0],
@@ -36322,12 +37011,12 @@
         Ue(Date.now());
       }
       function He() {
-        window.clearTimeout(De.current);
+        window.clearTimeout(_e.current);
       }
       function qe() {
         var e =
             arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : w,
-          t = Re.get(e) || { width: 0, height: 0, left: 0, right: 0, top: 0 };
+          t = Ie.get(e) || { width: 0, height: 0, left: 0, right: 0, top: 0 };
         if (V) {
           var n = K;
           E
@@ -36338,20 +37027,20 @@
             ? (n = -t.left)
             : t.left + t.width > -K + me && (n = -(t.left + t.width - me)),
             re(0),
-            Y(_e(n));
+            Y(De(n));
         } else {
           var r = ne;
           t.top < -ne
             ? (r = -t.top)
             : t.top + t.height > -ne + be && (r = -(t.top + t.height - be)),
             Y(0),
-            re(_e(r));
+            re(De(r));
         }
       }
       X(M, function (e, t) {
         function n(e, t) {
           e(function (e) {
-            var n = _e(e + t);
+            var n = De(e + t);
             return n;
           });
         }
@@ -36369,7 +37058,7 @@
             return (
               He(),
               Be &&
-                (De.current = window.setTimeout(function () {
+                (_e.current = window.setTimeout(function () {
                   Ue(0);
                 }, 100)),
               He
@@ -36378,7 +37067,7 @@
           [Be],
         );
       var We = j(
-          Re,
+          Ie,
           { width: me, height: be, left: K, top: ne },
           { width: ie, height: ue },
           { width: Ee, height: Se },
@@ -36402,12 +37091,12 @@
             closable: e.closable,
             editable: S,
             active: n === w,
-            renderWrapper: I,
+            renderWrapper: R,
             removeAriaLabel:
               null === T || void 0 === T ? void 0 : T.removeAriaLabel,
             ref: B(n),
             onClick: function (e) {
-              R(n, e);
+              I(n, e);
             },
             onRemove: function () {
               U(n);
@@ -36436,11 +37125,11 @@
                 ? void 0
                 : t.offsetHeight) || 0,
             c =
-              (null === (n = D.current) || void 0 === n
+              (null === (n = _.current) || void 0 === n
                 ? void 0
                 : n.offsetWidth) || 0,
             u =
-              (null === (r = D.current) || void 0 === r
+              (null === (r = _.current) || void 0 === r
                 ? void 0
                 : r.offsetHeight) || 0;
           he(i), ye(l), ke(c), je(u);
@@ -36454,7 +37143,7 @@
                 : o.offsetHeight) || 0) - u;
           le(d),
             de(f),
-            Ie(function () {
+            Re(function () {
               var e = new Map();
               return (
                 s.forEach(function (t) {
@@ -36472,14 +37161,14 @@
               );
             });
         }),
-        Qe = s.slice(0, Ge),
-        Je = s.slice(Ke + 1),
-        et = [].concat(Object(v['a'])(Qe), Object(v['a'])(Je)),
+        Je = s.slice(0, Ge),
+        Qe = s.slice(Ke + 1),
+        et = [].concat(Object(v['a'])(Je), Object(v['a'])(Qe)),
         tt = Object(r['useState'])(),
         nt = Object(l['a'])(tt, 2),
         rt = nt[0],
         at = nt[1],
-        ot = Re.get(w),
+        ot = Ie.get(w),
         it = Object(r['useRef'])();
       function lt() {
         g['a'].cancel(it.current);
@@ -36506,7 +37195,7 @@
           function () {
             qe();
           },
-          [w, ot, Re, V],
+          [w, ot, Ie, V],
         ),
         Object(r['useEffect'])(
           function () {
@@ -36581,7 +37270,7 @@
                   },
                   Ze,
                   r['createElement'](H, {
-                    ref: D,
+                    ref: _,
                     prefixCls: c,
                     locale: T,
                     editable: S,
@@ -36611,7 +37300,7 @@
             Object(o['a'])({}, e, {
               removeAriaLabel:
                 null === T || void 0 === T ? void 0 : T.removeAriaLabel,
-              ref: _,
+              ref: D,
               prefixCls: c,
               tabs: et,
               className: !ft && Ae,
@@ -36781,13 +37470,13 @@
         T = e.tabBarStyle,
         P = e.tabBarExtraContent,
         N = e.locale,
-        I = e.moreIcon,
-        R = e.moreTransitionName,
+        R = e.moreIcon,
+        I = e.moreTransitionName,
         A = e.destroyInactiveTabPane,
         M = e.renderTabBar,
         L = e.onChange,
-        _ = e.onTabClick,
-        D = e.onTabScroll,
+        D = e.onTabClick,
+        _ = e.onTabScroll,
         z = e.popupClassName,
         F = Object(s['a'])(e, oe),
         B = le(b),
@@ -36823,9 +37512,9 @@
             return e.key === Y;
           });
         }),
-        Q = Object(l['a'])(X, 2),
-        J = Q[0],
-        ee = Q[1];
+        J = Object(l['a'])(X, 2),
+        Q = J[0],
+        ee = J[1];
       Object(r['useEffect'])(
         function () {
           var e,
@@ -36833,7 +37522,7 @@
               return e.key === Y;
             });
           -1 === t &&
-            ((t = Math.max(0, Math.min(J, B.length - 1))),
+            ((t = Math.max(0, Math.min(Q, B.length - 1))),
             Z(null === (e = B[t]) || void 0 === e ? void 0 : e.key));
           ee(t);
         },
@@ -36842,7 +37531,7 @@
             return e.key;
           }).join('_'),
           Y,
-          J,
+          Q,
         ],
       );
       var te = Object(h['a'])(null, { value: d }),
@@ -36851,7 +37540,7 @@
         se = ae[1],
         ue = S;
       function de(e, t) {
-        null === _ || void 0 === _ || _(e, t);
+        null === D || void 0 === D || D(e, t);
         var n = e !== Y;
         Z(e), n && (null === L || void 0 === L || L(e));
       }
@@ -36874,11 +37563,11 @@
           {
             editable: E,
             locale: N,
-            moreIcon: I,
-            moreTransitionName: R,
+            moreIcon: R,
+            moreTransitionName: I,
             tabBarGutter: j,
             onTabClick: de,
-            onTabScroll: D,
+            onTabScroll: _,
             extra: P,
             style: T,
             panes: b,
@@ -37043,15 +37732,15 @@
         T = Object(r['useState'])(ke(S, s.sources[S])),
         P = ge(T, 2),
         N = P[0],
-        I = P[1],
-        R = Object(r['useState'])(Boolean(s.defaultShowCode)),
-        A = ge(R, 2),
+        R = P[1],
+        I = Object(r['useState'])(Boolean(s.defaultShowCode)),
+        A = ge(I, 2),
         M = A[0],
         L = A[1],
-        _ = Object(r['useState'])(Math.random()),
-        D = ge(_, 2),
-        z = D[0],
-        F = D[1],
+        D = Object(r['useState'])(Math.random()),
+        _ = ge(D, 2),
+        z = _[0],
+        F = _[1],
         B = s.sources[S][N] || s.sources[S].content,
         U = Object(me['useTSPlaygroundUrl'])(c, B),
         V = Object(r['useRef'])(),
@@ -37066,7 +37755,7 @@
               }
             : $;
       function K(e) {
-        j(e), I(ke(e, s.sources[e]));
+        j(e), R(ke(e, s.sources[e]));
       }
       return (
         Object(r['useEffect'])(
@@ -37428,6 +38117,140 @@
         });
     }
     e.exports = { set: r, get: a, has: o, enforce: m, getterFor: h };
+  },
+  akM7: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n('q1tI'),
+      a = n.n(r),
+      o = n('dEAq'),
+      i = n('Zxc8'),
+      l = n('H1Ra'),
+      c = n('dMo/'),
+      s = a.a.memo((e) => {
+        var t = e.demos,
+          n = t['useasync-demo.zh-cn'].component;
+        return a.a.createElement(
+          a.a.Fragment,
+          null,
+          a.a.createElement(
+            a.a.Fragment,
+            null,
+            a.a.createElement(
+              'div',
+              { className: 'markdown' },
+              a.a.createElement(
+                c['a'],
+                null,
+                a.a.createElement(
+                  'thead',
+                  null,
+                  a.a.createElement(
+                    'tr',
+                    null,
+                    a.a.createElement('th', null, '\u6807\u9898'),
+                    a.a.createElement('th', null, '\u6807\u7b7e'),
+                    a.a.createElement(
+                      'th',
+                      null,
+                      '\u9996\u6b21\u6dfb\u52a0\u65f6\u95f4',
+                    ),
+                    a.a.createElement('th', null, '\u66f4\u65b0\u65f6\u95f4'),
+                  ),
+                ),
+                a.a.createElement(
+                  'tbody',
+                  null,
+                  a.a.createElement(
+                    'tr',
+                    null,
+                    a.a.createElement(
+                      'td',
+                      null,
+                      '\u4f7f\u7528\u5f02\u6b65\u7684\u94a9\u5b50\u51fd\u6570',
+                    ),
+                    a.a.createElement(
+                      'td',
+                      null,
+                      '\u94a9\u5b50\u51fd\u6570\uff0c\u72b6\u6001\uff0c\u6298\u53e0\u5668',
+                    ),
+                    a.a.createElement('td', null, '2022/8/04'),
+                    a.a.createElement('td', null, '2022/8/04'),
+                  ),
+                ),
+              ),
+              a.a.createElement(
+                'p',
+                null,
+                '\u5904\u7406\u5f02\u6b65\u8c03\u7528\u3002',
+              ),
+              a.a.createElement(
+                'ul',
+                null,
+                a.a.createElement(
+                  'li',
+                  null,
+                  '\u521b\u5efa\u4e00\u4e2a\u5e26\u6709\u5904\u7406\u51fd\u6570\u7684\u81ea\u5b9a\u4e49\u94a9\u5b50\uff0chandler\u3002',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  '\u4e3a\u81ea\u5b9a\u4e49\u94a9\u5b50\u7684\u72b6\u6001\u5b9a\u4e49\u4e00\u4e2a reducer \u51fd\u6570\u548c\u4e00\u4e2a\u521d\u59cb\u72b6\u6001\u3002',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 useReducer() \u94a9\u5b50\u521d\u59cb\u5316\u72b6\u6001\u53d8\u91cf\u548c\u8c03\u5ea6\u51fd\u6570\u3002',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  '\u5b9a\u4e49\u4e00\u4e2a\u5f02\u6b65\u8fd0\u884c\u51fd\u6570\uff0c\u5b83\u5c06\u8fd0\u884c\u63d0\u4f9b\u7684\u56de\u8c03\u3001\u5904\u7406\u7a0b\u5e8f\uff0c\u540c\u65f6\u6839\u636e\u9700\u8981\u4f7f\u7528\u8c03\u5ea6\u66f4\u65b0\u72b6\u6001\u3002',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  '\u8fd4\u56de\u4e00\u4e2a\u5305\u542b\u72b6\u6001\u5c5e\u6027\uff08\u503c\u3001\u9519\u8bef\u548c\u52a0\u8f7d\uff09\u548c\u8fd0\u884c\u51fd\u6570\u7684\u5bf9\u8c61\u3002',
+                ),
+              ),
+              a.a.createElement('p', null, 'hooks:'),
+              a.a.createElement(l['a'], {
+                code: "import { useReducer } from 'react';\nexport type StateType = {\n  loading: boolean;\n  value: any;\n  error: any;\n};\nexport type ActionType = Partial<StateType> & { type: string };\nexport type RunType = (args: unknown) => Promise<void>;\nconst useAsync = (handler: Function) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n  const stateReducer = (_: any, action: ActionType) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args: unknown) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
+                lang: 'ts',
+              }),
+              a.a.createElement('p', null, 'Demo:'),
+              a.a.createElement(l['a'], {
+                code: "import React from 'react';\nimport Button from '../../guide/Button/Button'\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top:10px;\n  color: #2396ef;\n`\nconst Container = styled.div`\n   display:flex;\n   align-items:center;\n   justify-content:center;\n   min-height:300px;\n   flex-direction:column;\n`\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      { (imgFetch as StateType)?.loading && <LoadContainer><Loader size={16}></Loader></LoadContainer>}\n      { (imgFetch as StateType)?.error && <Alert type=\"error\" message={`\u9519\u8bef ${(imgFetch as StateType)?.error}`}></Alert>}\n      { (imgFetch as StateType)?.value && <img\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n          style={{ display:'block',marginTop:10,borderRadius:5 }}\n        />}\n    </Container>\n  );\n};\n\nexport default Demo;",
+                lang: 'tsx',
+              }),
+              a.a.createElement('p', null, '\u793a\u4f8b:'),
+            ),
+            a.a.createElement(
+              i['default'],
+              t['useasync-demo.zh-cn'].previewerProps,
+              a.a.createElement(n, null),
+            ),
+          ),
+        );
+      });
+    t['default'] = (e) => {
+      var t = a.a.useContext(o['context']),
+        n = t.demos;
+      return (
+        a.a.useEffect(() => {
+          var t;
+          null !== e &&
+            void 0 !== e &&
+            null !== (t = e.location) &&
+            void 0 !== t &&
+            t.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        a.a.createElement(s, { demos: n })
+      );
+    };
   },
   ao5G: function (e, t, n) {
     'use strict';
@@ -39690,7 +40513,7 @@
       T = '[object Uint16Array]',
       P = '[object Uint32Array]',
       N = {};
-    function I(e) {
+    function R(e) {
       return o(e) && a(e.length) && !!N[r(e)];
     }
     (N[w] = N[E] = N[k] = N[C] = N[O] = N[S] = N[j] = N[T] = N[P] = !0),
@@ -39710,7 +40533,7 @@
         N[g] =
         N[b] =
           !1),
-      (e.exports = I);
+      (e.exports = R);
   },
   dEAq: function (e, t, n) {
     'use strict';
@@ -39989,8 +40812,8 @@
           T = e.align,
           P = void 0 === T ? {} : T,
           N = e.destroyTooltipOnHide,
-          I = void 0 !== N && N,
-          R = e.defaultVisible,
+          R = void 0 !== N && N,
+          I = e.defaultVisible,
           A = e.getTooltipContainer,
           M = e.overlayInnerStyle,
           L = Object(h['a'])(e, [
@@ -40013,12 +40836,12 @@
             'getTooltipContainer',
             'overlayInnerStyle',
           ]),
-          _ = Object(i['useRef'])(null);
+          D = Object(i['useRef'])(null);
         Object(i['useImperativeHandle'])(t, function () {
-          return _.current;
+          return D.current;
         });
-        var D = Object(m['a'])({}, L);
-        'visible' in e && (D.popupVisible = e.visible);
+        var _ = Object(m['a'])({}, L);
+        'visible' in e && (_.popupVisible = e.visible);
         var z = function () {
             var t = e.arrowContent,
               n = void 0 === t ? null : t,
@@ -40041,9 +40864,9 @@
           },
           F = !1,
           B = !1;
-        if ('boolean' === typeof I) F = I;
-        else if (I && 'object' === Object(p['a'])(I)) {
-          var U = I.keepParent;
+        if ('boolean' === typeof R) F = R;
+        else if (R && 'object' === Object(p['a'])(R)) {
+          var U = R.keepParent;
           (F = !0 === U), (B = !1 === U);
         }
         return i['createElement'](
@@ -40056,7 +40879,7 @@
               action: a,
               builtinPlacements: y,
               popupPlacement: j,
-              ref: _,
+              ref: D,
               popupAlign: P,
               getPopupContainer: A,
               onPopupVisibleChange: x,
@@ -40064,14 +40887,14 @@
               popupTransitionName: k,
               popupAnimation: C,
               popupMotion: O,
-              defaultPopupVisible: R,
+              defaultPopupVisible: I,
               destroyPopupOnHide: F,
               autoDestroy: B,
               mouseLeaveDelay: s,
               popupStyle: d,
               mouseEnterDelay: l,
             },
-            D,
+            _,
           ),
           b,
         );
@@ -40100,14 +40923,14 @@
         )),
       P = n('EXcs'),
       N = { adjustX: 1, adjustY: 1 },
-      I = { adjustX: 0, adjustY: 0 },
-      R = [0, 0];
+      R = { adjustX: 0, adjustY: 0 },
+      I = [0, 0];
     function A(e) {
       return 'boolean' === typeof e
         ? e
           ? N
-          : I
-        : Object(u['a'])(Object(u['a'])({}, I), e);
+          : R
+        : Object(u['a'])(Object(u['a'])({}, R), e);
     }
     function M(e) {
       var t = e.arrowWidth,
@@ -40137,7 +40960,7 @@
           (s[e] = c
             ? Object(u['a'])(Object(u['a'])({}, s[e]), {
                 overflow: A(l),
-                targetOffset: R,
+                targetOffset: I,
               })
             : Object(u['a'])(Object(u['a'])({}, y[e]), { overflow: A(l) })),
             (s[e].ignoreShake = !0);
@@ -40146,7 +40969,7 @@
       );
     }
     var L = n('0n0R'),
-      _ = function (e, t) {
+      D = function (e, t) {
         var n = {};
         for (var r in e)
           Object.prototype.hasOwnProperty.call(e, r) &&
@@ -40161,7 +40984,7 @@
         }
         return n;
       },
-      D = function (e, t) {
+      _ = function (e, t) {
         var n = {},
           r = Object(u['a'])({}, e);
         return (
@@ -40178,7 +41001,7 @@
         ((!0 === n.__ANT_BUTTON || 'button' === e.type) && e.props.disabled) ||
         (!0 === n.__ANT_SWITCH && (e.props.disabled || e.props.loading))
       ) {
-        var r = D(e.props.style, [
+        var r = _(e.props.style, [
             'position',
             'left',
             'right',
@@ -40269,42 +41092,42 @@
           return 0 === t ? t : n || t || '';
         },
         w = e.getPopupContainer,
-        E = _(e, ['getPopupContainer']),
+        E = D(e, ['getPopupContainer']),
         k = e.prefixCls,
         j = e.openClassName,
         T = e.getTooltipContainer,
         N = e.overlayClassName,
-        I = e.color,
-        R = e.overlayInnerStyle,
+        R = e.color,
+        I = e.overlayInnerStyle,
         A = e.children,
-        D = o('tooltip', k),
+        _ = o('tooltip', k),
         B = o(),
         U = m;
       !('visible' in e) && v() && (U = !1);
       var V,
-        H = F(Object(L['b'])(A) ? A : i['createElement']('span', null, A), D),
+        H = F(Object(L['b'])(A) ? A : i['createElement']('span', null, A), _),
         q = H.props,
         W = f()(
           q.className,
-          Object(c['a'])({}, j || ''.concat(D, '-open'), !0),
+          Object(c['a'])({}, j || ''.concat(_, '-open'), !0),
         ),
         $ = f()(
           N,
           ((n = {}),
-          Object(c['a'])(n, ''.concat(D, '-rtl'), 'rtl' === l),
-          Object(c['a'])(n, ''.concat(D, '-').concat(I), I && z.test(I)),
+          Object(c['a'])(n, ''.concat(_, '-rtl'), 'rtl' === l),
+          Object(c['a'])(n, ''.concat(_, '-').concat(R), R && z.test(R)),
           n),
         ),
-        G = R;
+        G = I;
       return (
-        I &&
-          !z.test(I) &&
-          ((G = Object(u['a'])(Object(u['a'])({}, R), { background: I })),
-          (V = { '--antd-arrow-background-color': I })),
+        R &&
+          !z.test(R) &&
+          ((G = Object(u['a'])(Object(u['a'])({}, I), { background: R })),
+          (V = { '--antd-arrow-background-color': R })),
         i['createElement'](
           C,
           Object(u['a'])({}, E, {
-            prefixCls: D,
+            prefixCls: _,
             overlayClassName: $,
             getTooltipContainer: w || T || a,
             ref: t,
@@ -40315,7 +41138,7 @@
             onPopupAlign: y,
             overlayInnerStyle: G,
             arrowContent: i['createElement']('span', {
-              className: ''.concat(D, '-arrow-content'),
+              className: ''.concat(_, '-arrow-content'),
               style: V,
             }),
             motion: {
@@ -40561,13 +41384,13 @@
       T = n('cVYH'),
       P = j.get,
       N = j.set,
-      I = O.f,
-      R = S.f,
+      R = O.f,
+      I = S.f,
       A = Math.round,
       M = a.RangeError,
       L = c.ArrayBuffer,
-      _ = c.DataView,
-      D = l.NATIVE_ARRAY_BUFFER_VIEWS,
+      D = c.DataView,
+      _ = l.NATIVE_ARRAY_BUFFER_VIEWS,
       z = l.TYPED_ARRAY_TAG,
       F = l.TypedArray,
       B = l.TypedArrayPrototype,
@@ -40583,7 +41406,7 @@
         return a;
       },
       $ = function (e, t) {
-        I(e, t, {
+        R(e, t, {
           get: function () {
             return P(this)[t];
           },
@@ -40603,7 +41426,7 @@
         );
       },
       Y = function (e, t) {
-        return K(e, (t = h(t, !0))) ? u(2, e[t]) : R(e, t);
+        return K(e, (t = h(t, !0))) ? u(2, e[t]) : I(e, t);
       },
       Z = function (e, t, n) {
         return !(K(e, (t = h(t, !0))) && b(n) && v(n, 'value')) ||
@@ -40612,11 +41435,11 @@
           n.configurable ||
           (v(n, 'writable') && !n.writable) ||
           (v(n, 'enumerable') && !n.enumerable)
-          ? I(e, t, n)
+          ? R(e, t, n)
           : ((e[t] = n.value), e);
       };
     o
-      ? (D ||
+      ? (_ ||
           ((S.f = Y),
           (O.f = Z),
           $(B, 'buffer'),
@@ -40624,7 +41447,7 @@
           $(B, 'byteLength'),
           $(B, 'length')),
         r(
-          { target: 'Object', stat: !0, forced: !D },
+          { target: 'Object', stat: !0, forced: !_ },
           { getOwnPropertyDescriptor: Y, defineProperty: Z },
         ),
         (e.exports = function (e, t, n) {
@@ -40645,8 +41468,8 @@
               n && (r = (r = A(r)) < 0 ? 0 : r > 255 ? 255 : 255 & r),
                 a.view[u](t * o + a.byteOffset, r, !0);
             },
-            R = function (e, t) {
-              I(e, t, {
+            I = function (e, t) {
+              R(e, t, {
                 get: function () {
                   return S(this, t);
                 },
@@ -40656,7 +41479,7 @@
                 enumerable: !0,
               });
             };
-          D
+          _
             ? i &&
               ((v = t(function (e, t, n, r) {
                 return (
@@ -40707,16 +41530,16 @@
                   byteOffset: d,
                   byteLength: i,
                   length: c,
-                  view: new _(a),
+                  view: new D(a),
                 });
-                while (u < c) R(e, u++);
+                while (u < c) I(e, u++);
               })),
               x && x(v, F),
               (g = v.prototype = y(B))),
             g.constructor !== v && d(g, 'constructor', v),
             z && d(g, z, l),
             (O[l] = v),
-            r({ global: !0, forced: v != h, sham: !D }, O),
+            r({ global: !0, forced: v != h, sham: !_ }, O),
             H in v || d(v, H, o),
             H in g || d(g, H, o),
             C(l);
@@ -40982,6 +41805,48 @@
       );
     }
     e.exports = n;
+  },
+  dyg2: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r,
+      a = n('qqnG'),
+      o = n('q1tI'),
+      i = n.n(o),
+      l = n('zeV3'),
+      c = (n('k/c8'), n('5SEd')),
+      s = n('/VS0'),
+      u = Object(c['a'])(l['b'])(
+        r || (r = Object(a['a'])(['\n  width: 100%;\n'])),
+      ),
+      d = () =>
+        i.a.createElement(
+          u,
+          { direction: 'vertical' },
+          i.a.createElement(s['a'], {
+            type: 'info',
+            message:
+              '\u8fd9\u662f\u4fe1\u606f\u63d0\u793a\uff0c\u5e76\u5360\u6ee1\u7a7a\u95f4',
+            block: !0,
+          }),
+          i.a.createElement(s['a'], {
+            type: 'success',
+            message:
+              '\u8fd9\u662f\u6210\u529f\u63d0\u793a\uff0c\u5e76\u663e\u793a\u5173\u95ed\u6309\u94ae',
+            showClose: !0,
+          }),
+          i.a.createElement(s['a'], {
+            type: 'warning',
+            message:
+              '\u8fd9\u662f\u8b66\u544a\u63d0\u793a\uff0c\u4e0d\u5360\u6ee1\u7a7a\u95f4\uff0c\u4e0d\u663e\u793a\u5173\u95ed\u6309\u94ae',
+          }),
+          i.a.createElement(s['a'], {
+            type: 'error',
+            message:
+              '\u8fd9\u662f\u9519\u8bef\u63d0\u793a\uff0c\u4e0d\u5360\u6ee1\u7a7a\u95f4\uff0c\u4e0d\u663e\u793a\u5173\u95ed\u6309\u94ae',
+          }),
+        );
+    t['default'] = d;
   },
   e4Nc: function (e, t, n) {
     var r = n('fGT3'),
@@ -41456,7 +42321,7 @@
         C,
         O,
         S = function (e) {
-          if (e === p && I) return I;
+          if (e === p && R) return R;
           if (!h && e in P) return P[e];
           switch (e) {
             case g:
@@ -41480,11 +42345,11 @@
         T = !1,
         P = e.prototype,
         N = P[v] || P['@@iterator'] || (p && P[p]),
-        I = (!h && N) || S(p),
-        R = ('Array' == t && P.entries) || N;
+        R = (!h && N) || S(p),
+        I = ('Array' == t && P.entries) || N;
       if (
-        (R &&
-          ((k = o(R.call(new e()))),
+        (I &&
+          ((k = o(I.call(new e()))),
           m !== Object.prototype &&
             k.next &&
             (d ||
@@ -41496,14 +42361,14 @@
           N &&
           N.name !== b &&
           ((T = !0),
-          (I = function () {
+          (R = function () {
             return N.call(this);
           })),
-        (d && !E) || P[v] === I || c(P, v, I),
-        (f[t] = I),
+        (d && !E) || P[v] === R || c(P, v, R),
+        (f[t] = R),
         p)
       )
-        if (((C = { values: S(b), keys: w ? I : S(g), entries: S(y) }), E))
+        if (((C = { values: S(b), keys: w ? R : S(g), entries: S(y) }), E))
           for (O in C) (h || T || !(O in P)) && s(P, O, C[O]);
         else r({ target: t, proto: !0, forced: h || T }, C);
       return C;
@@ -42568,6 +43433,70 @@
       );
     };
   },
+  hVMu: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r,
+      a = n('tJVT'),
+      o = n('qqnG'),
+      i = n('q1tI'),
+      l = n.n(i),
+      c = n('m8iu'),
+      s = n('1Y2s'),
+      u = n('uZkO'),
+      d = n('5SEd'),
+      f = (e) => {
+        var t = e.visible,
+          n = e.onCancel,
+          r = e.onOk;
+        return (
+          Object(u['a'])(),
+          l.a.createElement(
+            c['a'],
+            {
+              title: 'scrollModal',
+              visible: t,
+              showCancel: !0,
+              cancelText: 'Cancel',
+              okText: 'Ok',
+              onCancel: n,
+              onOk: r,
+            },
+            '\u6eda\u52a8\u88ab\u9501\u5b9a! ',
+            l.a.createElement('br', null),
+            l.a.createElement(
+              s['a'],
+              { onClick: n },
+              '\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a',
+            ),
+          )
+        );
+      },
+      p = d['a'].div(
+        r ||
+          (r = Object(o['a'])([
+            '\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n',
+          ])),
+      ),
+      m = () => {
+        var e = Object(i['useState'])(!1),
+          t = Object(a['a'])(e, 2),
+          n = t[0],
+          r = t[1],
+          o = () => r(!1);
+        return l.a.createElement(
+          p,
+          null,
+          l.a.createElement(
+            s['a'],
+            { onClick: () => r(!0) },
+            '\u6253\u5f00\u5f39\u51fa\u6846',
+          ),
+          n && l.a.createElement(f, { visible: n, onCancel: o, onOk: o }),
+        );
+      };
+    t['default'] = m;
+  },
   hcok: function (e, t, n) {
     'use strict';
     var r = n('I+eb'),
@@ -42734,20 +43663,20 @@
             },
           };
         });
-        var I,
-          R,
+        var R,
+          I,
           A,
           M = {};
         void 0 !== j && (M.width = j),
           void 0 !== T && (M.height = T),
           f &&
-            (I = i.a.createElement(
+            (R = i.a.createElement(
               'div',
               { className: ''.concat(n, '-footer') },
               f,
             )),
           s &&
-            (R = i.a.createElement(
+            (I = i.a.createElement(
               'div',
               { className: ''.concat(n, '-header') },
               i.a.createElement(
@@ -42774,13 +43703,13 @@
           'div',
           { className: ''.concat(n, '-content') },
           A,
-          R,
+          I,
           i.a.createElement(
             'div',
             Object(r['a'])({ className: ''.concat(n, '-body'), style: g }, b),
             v,
           ),
-          I,
+          R,
         );
         return i.a.createElement(
           'div',
@@ -42890,13 +43819,13 @@
         T = e.transitionName,
         P = e.animation,
         N = e.closable,
-        I = void 0 === N || N,
-        R = e.mask,
-        A = void 0 === R || R,
+        R = void 0 === N || N,
+        I = e.mask,
+        A = void 0 === I || I,
         M = e.maskTransitionName,
         L = e.maskAnimation,
-        _ = e.maskClosable,
-        D = void 0 === _ || _,
+        D = e.maskClosable,
+        _ = void 0 === D || D,
         z = e.maskStyle,
         F = e.maskProps,
         B = e.rootClassName,
@@ -42928,12 +43857,12 @@
         null === O || void 0 === O || O(e);
       }
       var X = Object(o['useRef'])(!1),
-        Q = Object(o['useRef'])(),
-        J = function () {
-          clearTimeout(Q.current), (X.current = !0);
+        J = Object(o['useRef'])(),
+        Q = function () {
+          clearTimeout(J.current), (X.current = !0);
         },
         ee = function () {
-          Q.current = setTimeout(function () {
+          J.current = setTimeout(function () {
             X.current = !1;
           });
         },
@@ -42944,7 +43873,7 @@
         s && e.keyCode === d['a'].TAB && H.current.changeActive(!e.shiftKey);
       }
       return (
-        D &&
+        _ &&
           (te = function (e) {
             X.current ? (X.current = !1) : V.current === e.target && Z(e);
           }),
@@ -42956,7 +43885,7 @@
         ),
         Object(o['useEffect'])(function () {
           return function () {
-            clearTimeout(Q.current);
+            clearTimeout(J.current);
           };
         }, []),
         Object(o['useEffect'])(
@@ -43001,10 +43930,10 @@
             o['createElement'](
               j,
               Object(r['a'])({}, e, {
-                onMouseDown: J,
+                onMouseDown: Q,
                 onMouseUp: ee,
                 ref: H,
-                closable: I,
+                closable: R,
                 ariaId: K,
                 prefixCls: n,
                 visible: s,
@@ -43386,17 +44315,17 @@
           T = j[0],
           P = void 0 === T ? 0 : T,
           N = j[1],
-          I = void 0 === N ? 0 : N,
-          R = j[2],
-          A = void 0 === R ? 0 : R,
+          R = void 0 === N ? 0 : N,
+          I = j[2],
+          A = void 0 === I ? 0 : I,
           M = S[1],
           L = () => {
             if (!y && !k) {
               var e = P,
-                t = I,
+                t = R,
                 n = A;
-              0 === P && 0 === I && 0 === A && C(!0),
-                0 === I && 0 === A && (e--, (t = 59), (n = 59)),
+              0 === P && 0 === R && 0 === A && C(!0),
+                0 === R && 0 === A && (e--, (t = 59), (n = 59)),
                 0 === A && (t--, (n = 60)),
                 n--,
                 M([e, t, n]);
@@ -43411,10 +44340,10 @@
               x(!1), C(!0);
             }, []),
             onRestart: Object(l['useCallback'])(() => {
-              M([P, I, A]), x(!1), C(!1);
+              M([P, R, A]), x(!1), C(!1);
             }, []),
           });
-        var _ = (e) => e.toString().padStart(2, '0');
+        var D = (e) => e.toString().padStart(2, '0');
         return c.a.createElement(
           p,
           null,
@@ -43422,7 +44351,7 @@
             ? s
             : y
             ? m
-            : ''.concat(_(P)).concat(v).concat(_(I)).concat(v).concat(_(A)),
+            : ''.concat(D(P)).concat(v).concat(D(R)).concat(v).concat(D(A)),
         );
       });
     t['a'] = m;
@@ -44207,6 +45136,118 @@
       };
     t['default'] = s;
   },
+  lfnK: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n('q1tI'),
+      a = n.n(r),
+      o = n('dEAq'),
+      i = n('Zxc8'),
+      l = n('H1Ra'),
+      c = n('dMo/'),
+      s = a.a.memo((e) => {
+        var t = e.demos,
+          n = t['usebodyscrolllock-demo'].component;
+        return a.a.createElement(
+          a.a.Fragment,
+          null,
+          a.a.createElement(
+            a.a.Fragment,
+            null,
+            a.a.createElement(
+              'div',
+              { className: 'markdown' },
+              a.a.createElement(
+                c['a'],
+                null,
+                a.a.createElement(
+                  'thead',
+                  null,
+                  a.a.createElement(
+                    'tr',
+                    null,
+                    a.a.createElement('th', null, 'title'),
+                    a.a.createElement('th', null, 'tags'),
+                    a.a.createElement('th', null, 'firstSeen'),
+                    a.a.createElement('th', null, 'lastUpdated'),
+                  ),
+                ),
+                a.a.createElement(
+                  'tbody',
+                  null,
+                  a.a.createElement(
+                    'tr',
+                    null,
+                    a.a.createElement(
+                      'td',
+                      null,
+                      'React useBodyScrollLock hook',
+                    ),
+                    a.a.createElement('td', null, 'hooks,effect'),
+                    a.a.createElement('td', null, '2022/8/4'),
+                    a.a.createElement('td', null, '2022/8/4'),
+                  ),
+                ),
+              ),
+              a.a.createElement('p', null, 'Enables body scroll locking.'),
+              a.a.createElement(
+                'ul',
+                null,
+                a.a.createElement(
+                  'li',
+                  null,
+                  'Use the useLayoutEffect() with an empty array as the second argument to execute the provided callback only once when the component is mounted.',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  'Use Window.getComputedStyle() to get the overflow value of the body element and store it in a variable.',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  "Replace the overflow value of the body element with 'hidden' and restore it to its original value when unmounting.",
+                ),
+              ),
+              a.a.createElement('p', null, 'useBodyScrollLock.ts:'),
+              a.a.createElement(l['a'], {
+                code: "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container!).overflow;\n    container!.style.overflow = 'hidden';\n    return () => {\n      container!.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
+                lang: 'tsx',
+              }),
+              a.a.createElement('p', null, 'Demo:'),
+              a.a.createElement(l['a'], {
+                code: "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      Scroll locked! <br />\n      <Button onClick={onCancel}>Click me to unlock</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+                lang: 'tsx',
+              }),
+              a.a.createElement('p', null, 'Demo:'),
+            ),
+            a.a.createElement(
+              i['default'],
+              t['usebodyscrolllock-demo'].previewerProps,
+              a.a.createElement(n, null),
+            ),
+          ),
+        );
+      });
+    t['default'] = (e) => {
+      var t = a.a.useContext(o['context']),
+        n = t.demos;
+      return (
+        a.a.useEffect(() => {
+          var t;
+          null !== e &&
+            void 0 !== e &&
+            null !== (t = e.location) &&
+            void 0 !== t &&
+            t.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        a.a.createElement(s, { demos: n })
+      );
+    };
+  },
   ljhN: function (e, t) {
     function n(e, t) {
       return e === t || (e !== e && t !== t);
@@ -44401,14 +45442,14 @@
           T = S[1],
           P = Object(i['useState'])({}),
           N = Object(r['a'])(P, 2),
-          I = N[0],
-          R = N[1],
+          R = N[0],
+          I = N[1],
           A = Object(i['useState'])(!1),
           M = Object(r['a'])(A, 2),
           L = M[0],
-          _ = M[1],
-          D = Object(i['useState'])(!1),
-          z = Object(r['a'])(D, 2),
+          D = M[1],
+          _ = Object(i['useState'])(!1),
+          z = Object(r['a'])(_, 2),
           F = z[0],
           B = z[1],
           U = Array.isArray(y)
@@ -44431,10 +45472,10 @@
           'string' === typeof d && T(d);
         }, [d]);
         var V = (e) => {
-            R(e), T(e.value), n || (_(!1), B(!1)), f && f(e);
+            I(e), T(e.value), n || (D(!1), B(!1)), f && f(e);
           },
           H = () => {
-            n || (R({ label: '', value: '' }), T(''));
+            n || (I({ label: '', value: '' }), T(''));
           },
           q = { 'ew-select': !0, 'ew-select-disabled': n },
           W = {
@@ -44443,7 +45484,7 @@
           };
         return (
           u(k, () => {
-            n || _(!1);
+            n || D(!1);
           }),
           l.a.createElement(
             'div',
@@ -44462,13 +45503,13 @@
                 className: Object(c['a'])(W),
                 placeholder: v,
                 onClick: () => {
-                  n || _(!L);
+                  n || D(!L);
                 },
               },
               l.a.createElement(
                 'span',
                 { className: 'ew-select-selector-value' },
-                I[w],
+                R[w],
               ),
             ),
             l.a.createElement(
@@ -44478,7 +45519,7 @@
                 ? l.a.createElement(p, { onClick: H, ref: C })
                 : l.a.createElement(m, {
                     onClick: () => {
-                      n || _(!L);
+                      n || D(!L);
                     },
                   }),
             ),
@@ -44578,9 +45619,9 @@
               'onMask',
             ]),
             N = Object(l['useState'])(!1),
-            I = Object(o['a'])(N, 2),
-            R = I[0],
-            A = I[1],
+            R = Object(o['a'])(N, 2),
+            I = R[0],
+            A = R[1],
             M = (e) => {
               var t = e.key;
               switch (t) {
@@ -44604,12 +45645,12 @@
             'number' === typeof k
               ? (L['width'] = k + 'px')
               : 'string' === typeof k && (L['width'] = k),
-            O && !R
+            O && !I
               ? null
               : c.a.createElement(
                   'div',
                   Object(a['a'])({ className: 'modal-container' }, P, {
-                    style: { display: R ? 'block' : 'none' },
+                    style: { display: I ? 'block' : 'none' },
                   }),
                   c.a.createElement(
                     'div',
@@ -44819,10 +45860,10 @@
       T = u.getterFor(O),
       P = u.getterFor(S),
       N = /\+/g,
-      I = Array(4),
-      R = function (e) {
+      R = Array(4),
+      I = function (e) {
         return (
-          I[e - 1] || (I[e - 1] = RegExp('((?:%[\\da-f]{2}){' + e + '})', 'gi'))
+          R[e - 1] || (R[e - 1] = RegExp('((?:%[\\da-f]{2}){' + e + '})', 'gi'))
         );
       },
       A = function (e) {
@@ -44838,12 +45879,12 @@
         try {
           return decodeURIComponent(t);
         } catch (r) {
-          while (n) t = t.replace(R(n--), A);
+          while (n) t = t.replace(I(n--), A);
           return t;
         }
       },
       L = /[!'()~]|%20/g,
-      _ = {
+      D = {
         '!': '%21',
         "'": '%27',
         '(': '%28',
@@ -44851,11 +45892,11 @@
         '~': '%7E',
         '%20': '+',
       },
-      D = function (e) {
-        return _[e];
+      _ = function (e) {
+        return D[e];
       },
       z = function (e) {
-        return encodeURIComponent(e).replace(L, D);
+        return encodeURIComponent(e).replace(L, _);
       },
       F = function (e, t) {
         if (t) {
@@ -45193,6 +46234,63 @@
         throw TypeError(String(e) + ' is not iterable');
       return r(t.call(e));
     };
+  },
+  mlG9: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r,
+      a,
+      o = n('qqnG'),
+      i = n('q1tI'),
+      l = n.n(i),
+      c = n('1Y2s'),
+      s = n('rqK0'),
+      u = n('/VS0'),
+      d = n('Ptmx'),
+      f = n('5SEd'),
+      p = f['a'].div(
+        r ||
+          (r = Object(o['a'])(['\n  margin-top:10px;\n  color: #2396ef;\n'])),
+      ),
+      m = f['a'].div(
+        a ||
+          (a = Object(o['a'])([
+            '\n   display:flex;\n   align-items:center;\n   justify-content:center;\n   min-height:300px;\n   flex-direction:column;\n',
+          ])),
+      ),
+      h = () => {
+        var e = Object(d['a'])((e) => fetch(e).then((e) => e.json()));
+        return l.a.createElement(
+          m,
+          null,
+          l.a.createElement(
+            c['a'],
+            {
+              onClick: () => e.run('https://dog.ceo/api/breeds/image/random'),
+              disabled: null === e || void 0 === e ? void 0 : e.loading,
+            },
+            '\u52a0\u8f7d\u56fe\u7247',
+          ),
+          (null === e || void 0 === e ? void 0 : e.loading) &&
+            l.a.createElement(p, null, l.a.createElement(s['a'], { size: 16 })),
+          (null === e || void 0 === e ? void 0 : e.error) &&
+            l.a.createElement(u['a'], {
+              type: 'error',
+              message: '\u9519\u8bef '.concat(
+                null === e || void 0 === e ? void 0 : e.error,
+              ),
+            }),
+          (null === e || void 0 === e ? void 0 : e.value) &&
+            l.a.createElement('img', {
+              src: null === e || void 0 === e ? void 0 : e.value.message,
+              alt: 'avatar',
+              width: 400,
+              height: 'auto',
+              style: { display: 'block', marginTop: 10, borderRadius: 5 },
+            }),
+        );
+      };
+    t['default'] = h;
   },
   'n3/R': function (e, t, n) {
     'use strict';
@@ -46079,20 +47177,20 @@
       T = n('busE'),
       P = n('VpIT'),
       N = n('93I0'),
-      I = n('0BK2'),
-      R = n('kOOl'),
+      R = n('0BK2'),
+      I = n('kOOl'),
       A = n('tiKp'),
       M = n('5Tg+'),
       L = n('dG/n'),
-      _ = n('1E5z'),
-      D = n('afO8'),
+      D = n('1E5z'),
+      _ = n('afO8'),
       z = n('tycR').forEach,
       F = N('hidden'),
       B = 'Symbol',
       U = 'prototype',
       V = A('toPrimitive'),
-      H = D.set,
-      q = D.getterFor(B),
+      H = _.set,
+      q = _.getterFor(B),
       W = Object[U],
       $ = a.Symbol,
       G = o('JSON', 'stringify'),
@@ -46100,8 +47198,8 @@
       Y = O.f,
       Z = E.f,
       X = S.f,
-      Q = P('symbols'),
-      J = P('op-symbols'),
+      J = P('symbols'),
+      Q = P('op-symbols'),
       ee = P('string-to-symbol-registry'),
       te = P('symbol-to-string-registry'),
       ne = P('wks'),
@@ -46127,7 +47225,7 @@
             }
           : Y,
       ie = function (e, t) {
-        var n = (Q[e] = y($[U]));
+        var n = (J[e] = y($[U]));
         return (
           H(n, { type: B, tag: e, description: t }), l || (n.description = t), n
         );
@@ -46140,11 +47238,11 @@
             return Object(e) instanceof $;
           },
       ce = function (e, t, n) {
-        e === W && ce(J, t, n), m(e);
+        e === W && ce(Q, t, n), m(e);
         var r = g(t, !0);
         return (
           m(n),
-          d(Q, r)
+          d(J, r)
             ? (n.enumerable
                 ? (d(e, F) && e[F][r] && (e[F][r] = !1),
                   (n = y(n, { enumerable: b(0, !1) })))
@@ -46171,17 +47269,17 @@
         var t = g(e, !0),
           n = X.call(this, t);
         return (
-          !(this === W && d(Q, t) && !d(J, t)) &&
-          (!(n || !d(this, t) || !d(Q, t) || (d(this, F) && this[F][t])) || n)
+          !(this === W && d(J, t) && !d(Q, t)) &&
+          (!(n || !d(this, t) || !d(J, t) || (d(this, F) && this[F][t])) || n)
         );
       },
       fe = function (e, t) {
         var n = v(e),
           r = g(t, !0);
-        if (n !== W || !d(Q, r) || d(J, r)) {
+        if (n !== W || !d(J, r) || d(Q, r)) {
           var a = K(n, r);
           return (
-            !a || !d(Q, r) || (d(n, F) && n[F][r]) || (a.enumerable = !0), a
+            !a || !d(J, r) || (d(n, F) && n[F][r]) || (a.enumerable = !0), a
           );
         }
       },
@@ -46190,18 +47288,18 @@
           n = [];
         return (
           z(t, function (e) {
-            d(Q, e) || d(I, e) || n.push(e);
+            d(J, e) || d(R, e) || n.push(e);
           }),
           n
         );
       },
       me = function (e) {
         var t = e === W,
-          n = Z(t ? J : v(e)),
+          n = Z(t ? Q : v(e)),
           r = [];
         return (
           z(n, function (e) {
-            !d(Q, e) || (t && !d(W, e)) || r.push(Q[e]);
+            !d(J, e) || (t && !d(W, e)) || r.push(J[e]);
           }),
           r
         );
@@ -46214,9 +47312,9 @@
               arguments.length && void 0 !== arguments[0]
                 ? String(arguments[0])
                 : void 0,
-            t = R(e),
+            t = I(e),
             n = function (e) {
-              this === W && n.call(J, e),
+              this === W && n.call(Q, e),
                 d(this, F) && d(this[F], t) && (this[F][t] = !1),
                 oe(this, t, b(1, e));
             };
@@ -46226,7 +47324,7 @@
           return q(this).tag;
         }),
         T($, 'withoutSetter', function (e) {
-          return ie(R(e), e);
+          return ie(I(e), e);
         }),
         (S.f = de),
         (O.f = ce),
@@ -46331,7 +47429,7 @@
         },
       );
     }
-    $[U][V] || j($[U], V, $[U].valueOf), _($, B), (I[F] = !0);
+    $[U][V] || j($[U], V, $[U].valueOf), D($, B), (R[F] = !0);
   },
   pSRY: function (e, t, n) {
     var r = n('QkVE');
@@ -46757,6 +47855,44 @@
   q1tI: function (e, t, n) {
     'use strict';
     e.exports = n('viRO');
+  },
+  qAvn: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r,
+      a = n('qqnG'),
+      o = n('q1tI'),
+      i = n.n(o),
+      l = n('zeV3'),
+      c = (n('k/c8'), n('5SEd')),
+      s = n('/VS0'),
+      u = Object(c['a'])(l['b'])(
+        r || (r = Object(a['a'])(['\n  width: 100%;\n'])),
+      ),
+      d = () =>
+        i.a.createElement(
+          u,
+          { direction: 'vertical' },
+          i.a.createElement(s['a'], {
+            type: 'info',
+            message: 'This is info',
+            block: !0,
+          }),
+          i.a.createElement(s['a'], {
+            type: 'success',
+            message: 'This is success',
+            showClose: !0,
+          }),
+          i.a.createElement(s['a'], {
+            type: 'warning',
+            message: 'This is warning',
+          }),
+          i.a.createElement(s['a'], {
+            type: 'error',
+            message: 'This is error',
+          }),
+        );
+    t['default'] = d;
   },
   qE6j: function (e, t, n) {
     'use strict';
@@ -48026,6 +49162,63 @@
       a = n('qY7S');
     r({ target: 'WeakSet', stat: !0 }, { from: a });
   },
+  sqNe: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r,
+      a,
+      o = n('qqnG'),
+      i = n('q1tI'),
+      l = n.n(i),
+      c = n('1Y2s'),
+      s = n('rqK0'),
+      u = n('/VS0'),
+      d = n('Ptmx'),
+      f = n('5SEd'),
+      p = f['a'].div(
+        r ||
+          (r = Object(o['a'])(['\n  margin-top:10px;\n  color: #2396ef;\n'])),
+      ),
+      m = f['a'].div(
+        a ||
+          (a = Object(o['a'])([
+            '\n   display:flex;\n   align-items:center;\n   justify-content:center;\n   min-height:300px;\n   flex-direction:column;\n',
+          ])),
+      ),
+      h = () => {
+        var e = Object(d['a'])((e) => fetch(e).then((e) => e.json()));
+        return l.a.createElement(
+          m,
+          null,
+          l.a.createElement(
+            c['a'],
+            {
+              onClick: () => e.run('https://dog.ceo/api/breeds/image/random'),
+              disabled: null === e || void 0 === e ? void 0 : e.loading,
+            },
+            'Load image',
+          ),
+          (null === e || void 0 === e ? void 0 : e.loading) &&
+            l.a.createElement(p, null, l.a.createElement(s['a'], { size: 16 })),
+          (null === e || void 0 === e ? void 0 : e.error) &&
+            l.a.createElement(u['a'], {
+              type: 'error',
+              message: 'Error '.concat(
+                null === e || void 0 === e ? void 0 : e.error,
+              ),
+            }),
+          (null === e || void 0 === e ? void 0 : e.value) &&
+            l.a.createElement('img', {
+              src: null === e || void 0 === e ? void 0 : e.value.message,
+              alt: 'avatar',
+              width: 400,
+              height: 'auto',
+              style: { display: 'block', marginTop: 10, borderRadius: 5 },
+            }),
+        );
+      };
+    t['default'] = h;
+  },
   't/kZ': function (e, t, n) {
     'use strict';
     var r = n('R5yR');
@@ -48763,6 +49956,132 @@
     }
     e.exports = a;
   },
+  tNrF: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n('q1tI'),
+      a = n.n(r),
+      o = n('dEAq'),
+      i = n('Zxc8'),
+      l = n('H1Ra'),
+      c = n('dMo/'),
+      s = a.a.memo((e) => {
+        var t = e.demos,
+          n = t['useclickoutside-demo'].component;
+        return a.a.createElement(
+          a.a.Fragment,
+          null,
+          a.a.createElement(
+            a.a.Fragment,
+            null,
+            a.a.createElement(
+              'div',
+              { className: 'markdown' },
+              a.a.createElement(
+                c['a'],
+                null,
+                a.a.createElement(
+                  'thead',
+                  null,
+                  a.a.createElement(
+                    'tr',
+                    null,
+                    a.a.createElement('th', null, 'title'),
+                    a.a.createElement('th', null, 'tags'),
+                    a.a.createElement('th', null, 'firstSeen'),
+                    a.a.createElement('th', null, 'lastUpdated'),
+                  ),
+                ),
+                a.a.createElement(
+                  'tbody',
+                  null,
+                  a.a.createElement(
+                    'tr',
+                    null,
+                    a.a.createElement('td', null, 'React useClickOutside hook'),
+                    a.a.createElement('td', null, 'hooks,effect,event'),
+                    a.a.createElement('td', null, '2022/8/5'),
+                    a.a.createElement('td', null, '2022/8/5'),
+                  ),
+                ),
+              ),
+              a.a.createElement(
+                'p',
+                null,
+                'Handles the event of clicking outside of the wrapped component.',
+              ),
+              a.a.createElement(
+                'ul',
+                null,
+                a.a.createElement(
+                  'li',
+                  null,
+                  'Create a custom hook that takes a ref and a callback to handle the click event.',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  'Use the useEffect() hook to append and clean up the click event.',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  'Use the useRef() hook to create a ref for your click component and pass it to the useClickOutside hook.',
+                ),
+              ),
+              a.a.createElement(l['a'], {
+                code: "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
+                lang: 'ts',
+              }),
+              a.a.createElement('p', null, 'Demo:'),
+              a.a.createElement(l['a'], {
+                code: "import React,{ useRef } from 'react'\nimport styled from '@emotion/styled'\nimport useClickOutside from './useClickOutside'\n\nconst ClickStyleBox = styled.div`\n    border:2px dashed #2396ef;\n    height:200px;\n    width:400px;\n    display:flex;\n    align-items:center;\n    justify-content:center;\n`;\n\nexport interface ClickBoxProps {\n    onClickOutside():void\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n    const { onClickOutside } = props;\n    const clickRef = useRef<HTMLDivElement | null>(null)\n    useClickOutside(clickRef,() => {\n        if(onClickOutside){\n            onClickOutside()\n        }\n    })\n    return (<ClickStyleBox ref={clickRef}><p>Click out of this element</p></ClickStyleBox>)\n}\nconst Demo = () => {\n    return (<ClickBox onClickOutside={() => alert(\"click outside\")}></ClickBox>)\n}\n\nexport default Demo;",
+                lang: 'tsx',
+              }),
+              a.a.createElement('p', null, 'Demo:'),
+            ),
+            a.a.createElement(
+              i['default'],
+              t['useclickoutside-demo'].previewerProps,
+              a.a.createElement(n, null),
+            ),
+            a.a.createElement(
+              'div',
+              { className: 'markdown' },
+              a.a.createElement(
+                'p',
+                null,
+                'more Demo see ',
+                a.a.createElement(
+                  o['Link'],
+                  { to: '../../guide/Select/Select' },
+                  'Select component',
+                ),
+                '.',
+              ),
+            ),
+          ),
+        );
+      });
+    t['default'] = (e) => {
+      var t = a.a.useContext(o['context']),
+        n = t.demos;
+      return (
+        a.a.useEffect(() => {
+          var t;
+          null !== e &&
+            void 0 !== e &&
+            null !== (t = e.location) &&
+            void 0 !== t &&
+            t.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        a.a.createElement(s, { demos: n })
+      );
+    };
+  },
   tO71: function (e, t, n) {
     'use strict';
     var r = n('q1tI'),
@@ -49105,6 +50424,124 @@
   tl68: function (e, t, n) {
     'use strict';
     n('MNnm');
+  },
+  tleZ: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n('q1tI'),
+      a = n.n(r),
+      o = n('dEAq'),
+      i = n('Zxc8'),
+      l = n('H1Ra'),
+      c = n('dMo/'),
+      s = a.a.memo((e) => {
+        var t = e.demos,
+          n = t['useasync-demo'].component;
+        return a.a.createElement(
+          a.a.Fragment,
+          null,
+          a.a.createElement(
+            a.a.Fragment,
+            null,
+            a.a.createElement(
+              'div',
+              { className: 'markdown' },
+              a.a.createElement(
+                c['a'],
+                null,
+                a.a.createElement(
+                  'thead',
+                  null,
+                  a.a.createElement(
+                    'tr',
+                    null,
+                    a.a.createElement('th', null, 'title'),
+                    a.a.createElement('th', null, 'tags'),
+                    a.a.createElement('th', null, 'firstSeen'),
+                    a.a.createElement('th', null, 'lastUpdated'),
+                  ),
+                ),
+                a.a.createElement(
+                  'tbody',
+                  null,
+                  a.a.createElement(
+                    'tr',
+                    null,
+                    a.a.createElement('td', null, 'React useAsync hook'),
+                    a.a.createElement('td', null, 'hooks,state,reducer'),
+                    a.a.createElement('td', null, '2022/8/2'),
+                    a.a.createElement('td', null, '2022/8/2'),
+                  ),
+                ),
+              ),
+              a.a.createElement('p', null, 'Handles asynchronous calls.'),
+              a.a.createElement(
+                'ul',
+                null,
+                a.a.createElement(
+                  'li',
+                  null,
+                  'Create a custom hook that takes a handler function, handler.',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  "Define a reducer function and an initial state for the custom hook's state.",
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  'Use the useReducer() hook to initialize the state variable and the dispatch function.',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  'Define an asynchronous run function that will run the provided callback, handler, while using dispatch to update state as necessary.',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  'Return an object containing the properties of state (value, error and loading) and the run function.',
+                ),
+              ),
+              a.a.createElement('p', null, 'hooks:'),
+              a.a.createElement(l['a'], {
+                code: "import { useReducer } from 'react';\nexport type StateType = {\n  loading: boolean;\n  value: any;\n  error: any;\n};\nexport type ActionType = Partial<StateType> & { type: string };\nexport type RunType = (args: unknown) => Promise<void>;\nconst useAsync = (handler: Function) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n  const stateReducer = (_: any, action: ActionType) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args: unknown) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
+                lang: 'ts',
+              }),
+              a.a.createElement('p', null, 'Demo:'),
+              a.a.createElement(l['a'], {
+                code: "import React from 'react';\nimport Button from '../../guide/Button/Button'\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top:10px;\n  color: #2396ef;\n`\nconst Container = styled.div`\n   display:flex;\n   align-items:center;\n   justify-content:center;\n   min-height:300px;\n   flex-direction:column;\n`\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        Load image\n      </Button>\n      { (imgFetch as StateType)?.loading && <LoadContainer><Loader size={16}></Loader></LoadContainer>}\n      { (imgFetch as StateType)?.error && <Alert type=\"error\" message={`Error ${(imgFetch as StateType)?.error}`}></Alert>}\n      { (imgFetch as StateType)?.value && <img\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n          style={{ display:'block',marginTop:10,borderRadius:5 }}\n        />}\n    </Container>\n  );\n};\n\nexport default Demo;",
+                lang: 'tsx',
+              }),
+              a.a.createElement('p', null, 'Demo:'),
+            ),
+            a.a.createElement(
+              i['default'],
+              t['useasync-demo'].previewerProps,
+              a.a.createElement(n, null),
+            ),
+          ),
+        );
+      });
+    t['default'] = (e) => {
+      var t = a.a.useContext(o['context']),
+        n = t.demos;
+      return (
+        a.a.useEffect(() => {
+          var t;
+          null !== e &&
+            void 0 !== e &&
+            null !== (t = e.location) &&
+            void 0 !== t &&
+            t.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        a.a.createElement(s, { demos: n })
+      );
+    };
   },
   toAj: function (e, t, n) {
     'use strict';
@@ -49612,6 +51049,23 @@
       },
     );
   },
+  uZkO: function (e, t, n) {
+    'use strict';
+    var r = n('q1tI'),
+      a = () => {
+        Object(r['useLayoutEffect'])(() => {
+          var e = document.body,
+            t = window.getComputedStyle(e).overflow;
+          return (
+            (e.style.overflow = 'hidden'),
+            () => {
+              e.style.overflow = t;
+            }
+          );
+        }, []);
+      };
+    t['a'] = a;
+  },
   uciX: function (e, t, n) {
     'use strict';
     var r = n('VTBJ'),
@@ -49694,8 +51148,8 @@
         )
       );
     }
-    var I,
-      R = n('U8pU'),
+    var R,
+      I = n('U8pU'),
       A = n('x/xZ');
     function M(e, t) {
       var n = Object.keys(e);
@@ -49714,7 +51168,7 @@
         var n = null != arguments[t] ? arguments[t] : {};
         t % 2
           ? M(Object(n), !0).forEach(function (t) {
-              D(e, t, n[t]);
+              _(e, t, n[t]);
             })
           : Object.getOwnPropertyDescriptors
           ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n))
@@ -49728,9 +51182,9 @@
       }
       return e;
     }
-    function _(e) {
+    function D(e) {
       return (
-        (_ =
+        (D =
           'function' === typeof Symbol && 'symbol' === typeof Symbol.iterator
             ? function (e) {
                 return typeof e;
@@ -49743,10 +51197,10 @@
                   ? 'symbol'
                   : typeof e;
               }),
-        _(e)
+        D(e)
       );
     }
-    function D(e, t, n) {
+    function _(e, t, n) {
       return (
         t in e
           ? Object.defineProperty(e, t, {
@@ -49761,12 +51215,12 @@
     }
     var z = { Webkit: '-webkit-', Moz: '-moz-', ms: '-ms-', O: '-o-' };
     function F() {
-      if (void 0 !== I) return I;
-      I = '';
+      if (void 0 !== R) return R;
+      R = '';
       var e = document.createElement('p').style,
         t = 'Transform';
-      for (var n in z) n + t in e && (I = n);
-      return I;
+      for (var n in z) n + t in e && (R = n);
+      return R;
     }
     function B() {
       return F() ? ''.concat(F(), 'TransitionProperty') : 'transitionProperty';
@@ -49838,16 +51292,16 @@
       var t = e.style.display;
       (e.style.display = 'none'), e.offsetHeight, (e.style.display = t);
     }
-    function Q(e, t, n) {
+    function J(e, t, n) {
       var r = n;
-      if ('object' !== _(t))
+      if ('object' !== D(t))
         return 'undefined' !== typeof r
           ? ('number' === typeof r && (r = ''.concat(r, 'px')),
             void (e.style[t] = r))
           : Y(e, t);
-      for (var a in t) t.hasOwnProperty(a) && Q(e, a, t[a]);
+      for (var a in t) t.hasOwnProperty(a) && J(e, a, t[a]);
     }
-    function J(e) {
+    function Q(e) {
       var t,
         n,
         r,
@@ -49879,7 +51333,7 @@
       return ee(e, !0);
     }
     function re(e) {
-      var t = J(e),
+      var t = Q(e),
         n = e.ownerDocument,
         r = n.defaultView || n.parentWindow;
       return (t.left += te(r)), (t.top += ne(r)), t;
@@ -49941,7 +51395,7 @@
         : void 0;
     }
     function ve(e, t, n) {
-      'static' === Q(e, 'position') && (e.style.position = 'relative');
+      'static' === J(e, 'position') && (e.style.position = 'relative');
       var r = -999,
         a = -999,
         o = me('left', n),
@@ -49964,7 +51418,7 @@
             v = u[p] - d[p];
           f[m] = m === p ? h + v : h - v;
         }
-      Q(e, f), X(e), ('left' in t || 'top' in t) && V(e, s);
+      J(e, f), X(e), ('left' in t || 'top' in t) && V(e, s);
       var g = {};
       for (var b in t)
         if (t.hasOwnProperty(b)) {
@@ -49972,7 +51426,7 @@
             x = t[b] - u[b];
           g[y] = b === y ? f[y] + x : f[y] - x;
         }
-      Q(e, g);
+      J(e, g);
     }
     function ge(e, t) {
       var n = re(e),
@@ -50090,7 +51544,7 @@
         });
     });
     var Ne = { position: 'absolute', visibility: 'hidden', display: 'block' };
-    function Ie() {
+    function Re() {
       for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++)
         t[n] = arguments[n];
       var r,
@@ -50104,22 +51558,22 @@
         r
       );
     }
-    function Re(e, t) {
+    function Ie(e, t) {
       for (var n in t) t.hasOwnProperty(n) && (e[n] = t[n]);
       return e;
     }
     ye(['width', 'height'], function (e) {
       var t = e.charAt(0).toUpperCase() + e.slice(1);
       Te['outer'.concat(t)] = function (t, n) {
-        return t && Ie(t, e, n ? Oe : Ce);
+        return t && Re(t, e, n ? Oe : Ce);
       };
       var n = 'width' === e ? ['Left', 'Right'] : ['Top', 'Bottom'];
       Te[e] = function (t, r) {
         var a = r;
-        if (void 0 === a) return t && Ie(t, e, Ee);
+        if (void 0 === a) return t && Re(t, e, Ee);
         if (t) {
           var o = xe(t);
-          return o && (a += je(t, ['padding', 'border'], n)), Q(t, e, a);
+          return o && (a += je(t, ['padding', 'border'], n)), J(t, e, a);
         }
       };
     });
@@ -50136,7 +51590,7 @@
       },
       isWindow: ae,
       each: ye,
-      css: Q,
+      css: J,
       clone: function (e) {
         var t,
           n = {};
@@ -50146,7 +51600,7 @@
           for (t in e) e.hasOwnProperty(t) && (n.overflow[t] = e.overflow[t]);
         return n;
       },
-      mix: Re,
+      mix: Ie,
       getWindowScrollLeft: function (e) {
         return te(e);
       },
@@ -50161,7 +51615,7 @@
       viewportWidth: 0,
       viewportHeight: 0,
     };
-    Re(Ae, Te);
+    Ie(Ae, Te);
     var Me = Ae.getParent;
     function Le(e) {
       if (Ae.isWindow(e) || 9 === e.nodeType) return null;
@@ -50175,13 +51629,13 @@
         if (((a = Ae.css(t, 'position')), 'static' !== a)) return t;
       return null;
     }
-    var _e = Ae.getParent;
-    function De(e) {
+    var De = Ae.getParent;
+    function _e(e) {
       if (Ae.isWindow(e) || 9 === e.nodeType) return !1;
       var t = Ae.getDocument(e),
         n = t.body,
         r = null;
-      for (r = _e(e); r && r !== n && r !== t; r = _e(r)) {
+      for (r = De(e); r && r !== n && r !== t; r = De(r)) {
         var a = Ae.css(r, 'position');
         if ('fixed' === a) return !0;
       }
@@ -50230,7 +51684,7 @@
         ('hidden' === g.overflowX && (h = o.innerWidth),
         'hidden' === g.overflowY && (v = o.innerHeight),
         e.style && (e.style.position = s),
-        t || De(e))
+        t || _e(e))
       )
         (n.left = Math.max(n.left, d)),
           (n.top = Math.max(n.top, f)),
@@ -50408,7 +51862,7 @@
         { points: a, offset: o, targetOffset: i, overflow: s }
       );
     }
-    function Qe(e, t) {
+    function Je(e, t) {
       var n = ze(e, t),
         r = Be(e);
       return (
@@ -50419,10 +51873,10 @@
         r.top >= n.bottom
       );
     }
-    function Je(e, t, n) {
+    function Qe(e, t, n) {
       var r = n.target || t,
         a = Be(r),
-        o = !Qe(r, n.overflow && n.overflow.alwaysByViewport);
+        o = !Je(r, n.overflow && n.overflow.alwaysByViewport);
       return Xe(e, a, n, o);
     }
     function et(e, t, n) {
@@ -50441,7 +51895,7 @@
         p = [n.points[0], 'cc'];
       return Xe(e, d, L(L({}, n), {}, { points: p }), f);
     }
-    (Je.__getOffsetParent = Le), (Je.__getVisibleRectForElement = ze);
+    (Qe.__getOffsetParent = Le), (Qe.__getVisibleRectForElement = ze);
     var tt = n('Y+p1'),
       nt = n.n(tt),
       rt = n('bdgK');
@@ -50521,7 +51975,7 @@
       return 'function' !== typeof e ? null : e();
     }
     function st(e) {
-      return 'object' === Object(R['a'])(e) && e ? e : null;
+      return 'object' === Object(I['a'])(e) && e ? e : null;
     }
     var ut = function (e, t) {
         var n = e.children,
@@ -50558,7 +52012,7 @@
                 d = s.activeElement;
               return (
                 l && Object(A['a'])(l)
-                  ? (o = Je(i, l, r))
+                  ? (o = Qe(i, l, r))
                   : c && (o = et(i, c, r)),
                 ot(d, i),
                 a && o && a(i, o),
@@ -50757,15 +52211,15 @@
           S = Object(u['useRef'])(),
           j = Object(u['useRef'])(),
           N = Object(u['useState'])(),
-          I = Object(O['a'])(N, 2),
-          R = I[0],
-          A = I[1],
+          R = Object(O['a'])(N, 2),
+          I = R[0],
+          A = R[1],
           M = xt(d),
           L = Object(O['a'])(M, 2),
-          _ = L[0],
-          D = L[1];
+          D = L[0],
+          _ = L[1];
         function z() {
-          d && D(v());
+          d && _(v());
         }
         var F = yt(n, z),
           B = Object(O['a'])(F, 2),
@@ -50785,7 +52239,7 @@
         }
         function Z(e, t) {
           var n = g(t);
-          R !== n && A(n),
+          I !== n && A(n),
             $(function (e) {
               return e + 1;
             }),
@@ -50810,7 +52264,7 @@
             [W],
           );
         var X = Object(r['a'])({}, P(e));
-        function Q() {
+        function J() {
           return new Promise(function (e) {
             G.current = e;
           });
@@ -50835,8 +52289,8 @@
               },
             };
           });
-        var J = Object(r['a'])(
-            Object(r['a'])({}, _),
+        var Q = Object(r['a'])(
+            Object(r['a'])({}, D),
             {},
             {
               zIndex: s,
@@ -50863,8 +52317,8 @@
               { visible: n, ref: j, leavedClassName: ''.concat(o, '-hidden') },
               X,
               {
-                onAppearPrepare: Q,
-                onEnterPrepare: Q,
+                onAppearPrepare: J,
+                onEnterPrepare: J,
                 removeOnLeave: f,
                 forceRender: p,
               },
@@ -50872,7 +52326,7 @@
             function (e, t) {
               var n = e.className,
                 a = e.style,
-                l = w()(o, i, R, n);
+                l = w()(o, i, I, n);
               return u['createElement'](
                 pt,
                 {
@@ -50894,7 +52348,7 @@
                     onMouseDownCapture: E,
                     onTouchStartCapture: k,
                     onClick: C,
-                    style: Object(r['a'])(Object(r['a'])({}, a), J),
+                    style: Object(r['a'])(Object(r['a'])({}, a), Q),
                   },
                   te,
                 ),
@@ -50990,10 +52444,10 @@
       Tt = u['createContext'](null),
       Pt = Tt;
     function Nt() {}
-    function It() {
+    function Rt() {
       return '';
     }
-    function Rt(e) {
+    function It(e) {
       return e ? e.ownerDocument : window.document;
     }
     var At = [
@@ -51604,8 +53058,8 @@
         (t.contextType = Pt),
         (t.defaultProps = {
           prefixCls: 'rc-trigger-popup',
-          getPopupClassNameFromAlign: It,
-          getDocument: Rt,
+          getPopupClassNameFromAlign: Rt,
+          getDocument: It,
           onPopupVisibleChange: Nt,
           afterPopupVisibleChange: Nt,
           onPopupAlign: Nt,
@@ -52207,11 +53661,11 @@
         })
       );
     }
-    var I = /\/+/g,
-      R = [];
+    var R = /\/+/g,
+      I = [];
     function A(e, t, n, r) {
-      if (R.length) {
-        var a = R.pop();
+      if (I.length) {
+        var a = I.pop();
         return (
           (a.result = e),
           (a.keyPrefix = t),
@@ -52229,7 +53683,7 @@
         (e.func = null),
         (e.context = null),
         (e.count = 0),
-        10 > R.length && R.push(e);
+        10 > I.length && I.push(e);
     }
     function L(e, t, n, r) {
       var a = typeof e;
@@ -52249,11 +53703,11 @@
                 l = !0;
             }
         }
-      if (l) return n(r, e, '' === t ? '.' + D(e, 0) : t), 1;
+      if (l) return n(r, e, '' === t ? '.' + _(e, 0) : t), 1;
       if (((l = 0), (t = '' === t ? '.' : t + ':'), Array.isArray(e)))
         for (var c = 0; c < e.length; c++) {
           a = e[c];
-          var s = t + D(a, c);
+          var s = t + _(a, c);
           l += L(a, s, n, r);
         }
       else if (
@@ -52264,7 +53718,7 @@
         'function' === typeof s)
       )
         for (e = s.call(e), c = 0; !(a = e.next()).done; )
-          (a = a.value), (s = t + D(a, c++)), (l += L(a, s, n, r));
+          (a = a.value), (s = t + _(a, c++)), (l += L(a, s, n, r));
       else if ('object' === a)
         throw (
           ((n = '' + e),
@@ -52280,10 +53734,10 @@
         );
       return l;
     }
-    function _(e, t, n) {
+    function D(e, t, n) {
       return null == e ? 0 : L(e, '', t, n);
     }
-    function D(e, t) {
+    function _(e, t) {
       return 'object' === typeof e && null !== e && null != e.key
         ? N(e.key)
         : t.toString(36);
@@ -52306,16 +53760,16 @@
                 a +
                   (!e.key || (t && t.key === e.key)
                     ? ''
-                    : ('' + e.key).replace(I, '$&/') + '/') +
+                    : ('' + e.key).replace(R, '$&/') + '/') +
                   n,
               )),
             r.push(e));
     }
     function B(e, t, n, r, a) {
       var o = '';
-      null != n && (o = ('' + n).replace(I, '$&/') + '/'),
+      null != n && (o = ('' + n).replace(R, '$&/') + '/'),
         (t = A(t, o, r, a)),
-        _(e, F, t),
+        D(e, F, t),
         M(t);
     }
     var U = { current: null };
@@ -52339,10 +53793,10 @@
       },
       forEach: function (e, t, n) {
         if (null == e) return e;
-        (t = A(null, null, t, n)), _(e, z, t), M(t);
+        (t = A(null, null, t, n)), D(e, z, t), M(t);
       },
       count: function (e) {
-        return _(
+        return D(
           e,
           function () {
             return null;
@@ -52708,12 +54162,12 @@
       T = n('TSYQ'),
       P = n.n(T),
       N = n('Ff2n'),
-      I = n('VTBJ'),
-      R = n('bJ/+'),
+      R = n('VTBJ'),
+      I = n('bJ/+'),
       A = n('8XRh'),
       M = n('i8i4'),
       L = n.n(M),
-      _ = (function (e) {
+      D = (function (e) {
         Object(u['a'])(n, e);
         var t = Object(d['a'])(n);
         function n() {
@@ -52839,8 +54293,8 @@
           n
         );
       })(l['Component']);
-    _.defaultProps = { onClose: function () {}, duration: 1.5 };
-    var D = n('KQm4'),
+    D.defaultProps = { onClose: function () {}, duration: 1.5 };
+    var _ = n('KQm4'),
       z = n('ODXe');
     function F(e) {
       var t = l['useRef']({}),
@@ -52853,14 +54307,14 @@
         e.add(n, function (e, n) {
           var o = n.key;
           if (e && (!t.current[o] || a)) {
-            var c = l['createElement'](_, Object(r['a'])({}, n, { holder: e }));
+            var c = l['createElement'](D, Object(r['a'])({}, n, { holder: e }));
             (t.current[o] = c),
               i(function (e) {
                 var t = e.findIndex(function (e) {
                   return e.key === n.key;
                 });
-                if (-1 === t) return [].concat(Object(D['a'])(e), [c]);
-                var r = Object(D['a'])(e);
+                if (-1 === t) return [].concat(Object(_['a'])(e), [c]);
+                var r = Object(_['a'])(e);
                 return (r[t] = c), r;
               });
           }
@@ -52890,7 +54344,7 @@
           (e.hookRefs = new Map()),
           (e.add = function (t, n) {
             var r = t.key || H(),
-              a = Object(I['a'])(Object(I['a'])({}, t), {}, { key: r }),
+              a = Object(R['a'])(Object(R['a'])({}, t), {}, { key: r }),
               o = e.props.maxCount;
             e.setState(function (e) {
               var t = e.notices,
@@ -52962,9 +54416,9 @@
                     c = r === t.length - 1 ? o.updateMark : void 0,
                     u = o.key,
                     d = o.userPassKey,
-                    f = Object(I['a'])(
-                      Object(I['a'])(
-                        Object(I['a'])({ prefixCls: a, closeIcon: i }, o),
+                    f = Object(R['a'])(
+                      Object(R['a'])(
+                        Object(R['a'])({ prefixCls: a, closeIcon: i }, o),
                         o.props,
                       ),
                       {},
@@ -53011,7 +54465,7 @@
                         ? l['createElement']('div', {
                             key: n,
                             className: P()(o, ''.concat(a, '-hook-holder')),
-                            style: Object(I['a'])({}, i),
+                            style: Object(R['a'])({}, i),
                             ref: function (t) {
                               'undefined' !== typeof n &&
                                 (t
@@ -53020,7 +54474,7 @@
                             },
                           })
                         : l['createElement'](
-                            _,
+                            D,
                             Object(r['a'])({}, u, {
                               className: P()(
                                 o,
@@ -53028,8 +54482,8 @@
                                   ? void 0
                                   : u.className,
                               ),
-                              style: Object(I['a'])(
-                                Object(I['a'])({}, i),
+                              style: Object(R['a'])(
+                                Object(R['a'])({}, i),
                                 null === u || void 0 === u ? void 0 : u.style,
                               ),
                               visible: c,
@@ -53073,14 +54527,14 @@
               },
               component: e,
               destroy: function () {
-                Object(R['b'])(i), i.parentNode && i.parentNode.removeChild(i);
+                Object(I['b'])(i), i.parentNode && i.parentNode.removeChild(i);
               },
               useNotification: function () {
                 return F(e);
               },
             }));
         }
-        Object(R['a'])(
+        Object(I['a'])(
           l['createElement'](q, Object(r['a'])({}, o, { ref: u })),
           i,
         );
@@ -53163,8 +54617,8 @@
     }
     var Z,
       X,
-      Q,
-      J = 3,
+      J,
+      Q = 3,
       ee = 1,
       te = '',
       ne = 'move-up',
@@ -53175,12 +54629,12 @@
     }
     function ie(e) {
       void 0 !== e.top && ((Z = e.top), (W = null)),
-        void 0 !== e.duration && (J = e.duration),
+        void 0 !== e.duration && (Q = e.duration),
         void 0 !== e.prefixCls && (te = e.prefixCls),
         void 0 !== e.getContainer && ((X = e.getContainer), (W = null)),
         void 0 !== e.transitionName &&
           ((ne = e.transitionName), (W = null), (re = !0)),
-        void 0 !== e.maxCount && ((Q = e.maxCount), (W = null)),
+        void 0 !== e.maxCount && ((J = e.maxCount), (W = null)),
         void 0 !== e.rtl && (ae = e.rtl);
     }
     function le(e, t) {
@@ -53201,7 +54655,7 @@
           transitionName: re ? ne : ''.concat(s, '-').concat(ne),
           style: { top: Z },
           getContainer: X || r,
-          maxCount: Q,
+          maxCount: J,
         };
         G.newInstance(d, function (e) {
           W
@@ -53231,7 +54685,7 @@
       se = Object.keys(ce);
     function ue(e, t, n) {
       var r,
-        a = void 0 !== e.duration ? e.duration : J,
+        a = void 0 !== e.duration ? e.duration : Q,
         o = ce[e.type],
         i = P()(
           ''.concat(t, '-custom-content'),
@@ -53383,8 +54837,8 @@
       Te = 24,
       Pe = '',
       Ne = 'topRight',
-      Ie = !1;
-    function Re(e) {
+      Re = !1;
+    function Ie(e) {
       var t = e.duration,
         n = e.placement,
         r = e.bottom,
@@ -53399,7 +54853,7 @@
         void 0 !== a && (je = a),
         void 0 !== o && (Ee = o),
         void 0 !== i && (ke = i),
-        void 0 !== e.rtl && (Ie = e.rtl),
+        void 0 !== e.rtl && (Re = e.rtl),
         void 0 !== e.maxCount && (Ce = e.maxCount);
     }
     function Ae(e) {
@@ -53466,7 +54920,7 @@
       else {
         var v = P()(
           ''.concat(f, '-').concat(r),
-          Object(E['a'])({}, ''.concat(f, '-rtl'), !0 === Ie),
+          Object(E['a'])({}, ''.concat(f, '-rtl'), !0 === Re),
         );
         Oe[m] = new Promise(function (e) {
           G.newInstance(
@@ -53495,7 +54949,7 @@
       error: ge['a'],
       warning: ye['a'],
     };
-    function _e(e, t, n) {
+    function De(e, t, n) {
       var r = e.duration,
         a = e.icon,
         o = e.type,
@@ -53573,16 +55027,16 @@
         className: P()(m, Object(E['a'])({}, ''.concat(t, '-').concat(o), !!o)),
       };
     }
-    function De(e) {
+    function _e(e) {
       Me(e, function (t) {
         var n = t.prefixCls,
           r = t.iconPrefixCls,
           a = t.instance;
-        a.notice(_e(e, n, r));
+        a.notice(De(e, n, r));
       });
     }
     var ze = {
-      open: De,
+      open: _e,
       close: function (e) {
         Object.keys(Oe).forEach(function (t) {
           return Promise.resolve(Oe[t]).then(function (t) {
@@ -53590,7 +55044,7 @@
           });
         });
       },
-      config: Re,
+      config: Ie,
       destroy: function () {
         Object.keys(Oe).forEach(function (e) {
           Promise.resolve(Oe[e]).then(function (e) {
@@ -53606,7 +55060,7 @@
       };
     }),
       (ze.warn = ze.warning),
-      (ze.useNotification = we(Me, _e));
+      (ze.useNotification = we(Me, De));
     var Fe = ze,
       Be = n('AJpP'),
       Ue = n('FER5'),
@@ -54016,8 +55470,8 @@
       Object($e['a'])() && Object(Ge['a'])(n, ''.concat(Ke, '-dynamic-theme'));
     }
     var Xe,
-      Qe,
-      Je = n('caoh'),
+      Je,
+      Qe = n('caoh'),
       et = n('3Nzz'),
       tt = [
         'getTargetContainer',
@@ -54034,13 +55488,13 @@
       return Xe || nt;
     }
     function ot() {
-      return Qe || rt;
+      return Je || rt;
     }
     var it = function (e) {
         var t = e.prefixCls,
           n = e.iconPrefixCls,
           r = e.theme;
-        void 0 !== t && (Xe = t), void 0 !== n && (Qe = n), r && Ze(at(), r);
+        void 0 !== t && (Xe = t), void 0 !== n && (Je = n), r && Ze(at(), r);
       },
       lt = function () {
         return {
@@ -54140,7 +55594,7 @@
           (k || s) &&
             (P = l['createElement'](a['a'].Provider, { value: T }, P)),
           p && (P = l['createElement'](et['a'], { size: p }, P)),
-          void 0 !== C && (P = l['createElement'](Je['a'], { disabled: C }, P)),
+          void 0 !== C && (P = l['createElement'](Qe['a'], { disabled: C }, P)),
           l['createElement'](K['b'].Provider, { value: j }, P)
         );
       },
@@ -55097,7 +56551,7 @@
       c = n('dMo/'),
       s = a.a.memo((e) => {
         var t = e.demos,
-          n = t['alert-alert.zh-cn'].component;
+          n = t['alert-demo.zh-cn'].component;
         return a.a.createElement(
           a.a.Fragment,
           null,
@@ -55188,7 +56642,7 @@
             ),
             a.a.createElement(
               i['default'],
-              t['alert-alert.zh-cn'].previewerProps,
+              t['alert-demo.zh-cn'].previewerProps,
               a.a.createElement(n, null),
             ),
           ),
@@ -55582,8 +57036,8 @@
       ),
       P = null,
       N = null,
-      I = null;
-    function R(e) {
+      R = null;
+    function I(e) {
       if ((e = v(e))) {
         if ('function' !== typeof P) throw Error(i(280));
         var t = e.stateNode;
@@ -55591,27 +57045,27 @@
       }
     }
     function A(e) {
-      N ? (I ? I.push(e) : (I = [e])) : (N = e);
+      N ? (R ? R.push(e) : (R = [e])) : (N = e);
     }
     function M() {
       if (N) {
         var e = N,
-          t = I;
-        if (((I = N = null), R(e), t)) for (e = 0; e < t.length; e++) R(t[e]);
+          t = R;
+        if (((R = N = null), I(e), t)) for (e = 0; e < t.length; e++) I(t[e]);
       }
     }
     function L(e, t) {
       return e(t);
     }
-    function _(e, t, n, r, a) {
+    function D(e, t, n, r, a) {
       return e(t, n, r, a);
     }
-    function D() {}
+    function _() {}
     var z = L,
       F = !1,
       B = !1;
     function U() {
-      (null === N && null === I) || (D(), M());
+      (null === N && null === R) || (_(), M());
     }
     function V(e, t, n) {
       if (B) return e(t, n);
@@ -55721,24 +57175,24 @@
       ['rowSpan', 'start'].forEach(function (e) {
         X[e] = new Z(e, 5, !1, e.toLowerCase(), null, !1);
       });
-    var Q = /[\-:]([a-z])/g;
-    function J(e) {
+    var J = /[\-:]([a-z])/g;
+    function Q(e) {
       return e[1].toUpperCase();
     }
     'accent-height alignment-baseline arabic-form baseline-shift cap-height clip-path clip-rule color-interpolation color-interpolation-filters color-profile color-rendering dominant-baseline enable-background fill-opacity fill-rule flood-color flood-opacity font-family font-size font-size-adjust font-stretch font-style font-variant font-weight glyph-name glyph-orientation-horizontal glyph-orientation-vertical horiz-adv-x horiz-origin-x image-rendering letter-spacing lighting-color marker-end marker-mid marker-start overline-position overline-thickness paint-order panose-1 pointer-events rendering-intent shape-rendering stop-color stop-opacity strikethrough-position strikethrough-thickness stroke-dasharray stroke-dashoffset stroke-linecap stroke-linejoin stroke-miterlimit stroke-opacity stroke-width text-anchor text-decoration text-rendering underline-position underline-thickness unicode-bidi unicode-range units-per-em v-alphabetic v-hanging v-ideographic v-mathematical vector-effect vert-adv-y vert-origin-x vert-origin-y word-spacing writing-mode xmlns:xlink x-height'
       .split(' ')
       .forEach(function (e) {
-        var t = e.replace(Q, J);
+        var t = e.replace(J, Q);
         X[t] = new Z(t, 1, !1, e, null, !1);
       }),
       'xlink:actuate xlink:arcrole xlink:role xlink:show xlink:title xlink:type'
         .split(' ')
         .forEach(function (e) {
-          var t = e.replace(Q, J);
+          var t = e.replace(J, Q);
           X[t] = new Z(t, 1, !1, e, 'http://www.w3.org/1999/xlink', !1);
         }),
       ['xml:base', 'xml:lang', 'xml:space'].forEach(function (e) {
-        var t = e.replace(Q, J);
+        var t = e.replace(J, Q);
         X[t] = new Z(t, 1, !1, e, 'http://www.w3.org/XML/1998/namespace', !1);
       }),
       ['tabIndex', 'crossOrigin'].forEach(function (e) {
@@ -55995,7 +57449,7 @@
     function Ne(e, t) {
       (t = t.checked), null != t && te(e, 'checked', t, !1);
     }
-    function Ie(e, t) {
+    function Re(e, t) {
       Ne(e, t);
       var n = ke(t.value),
         r = t.type;
@@ -56012,7 +57466,7 @@
           null != t.defaultChecked &&
           (e.defaultChecked = !!t.defaultChecked);
     }
-    function Re(e, t, n) {
+    function Ie(e, t, n) {
       if (t.hasOwnProperty('value') || t.hasOwnProperty('defaultValue')) {
         var r = t.type;
         if (
@@ -56053,7 +57507,7 @@
         e
       );
     }
-    function _e(e, t, n, r) {
+    function De(e, t, n, r) {
       if (((e = e.options), t)) {
         t = {};
         for (var a = 0; a < n.length; a++) t['$' + n[a]] = !0;
@@ -56072,7 +57526,7 @@
         null !== t && (t.selected = !0);
       }
     }
-    function De(e, t) {
+    function _e(e, t) {
       if (null != t.dangerouslySetInnerHTML) throw Error(i(91));
       return a({}, t, {
         value: void 0,
@@ -56196,8 +57650,8 @@
         delete Ke.animationiteration.animation,
         delete Ke.animationstart.animation),
       'TransitionEvent' in window || delete Ke.transitionend.transition);
-    var Qe = Xe('animationend'),
-      Je = Xe('animationiteration'),
+    var Je = Xe('animationend'),
+      Qe = Xe('animationiteration'),
       et = Xe('animationstart'),
       tt = Xe('transitionend'),
       nt =
@@ -56458,8 +57912,8 @@
       Tt = null,
       Pt = null,
       Nt = new Map(),
-      It = new Map(),
-      Rt = [],
+      Rt = new Map(),
+      It = [],
       At =
         'mousedown mouseup touchcancel touchend touchstart auxclick dblclick pointercancel pointerdown pointerup dragend dragstart drop compositionend compositionstart keydown keypress keyup input textInput close cancel copy cut paste click change contextmenu reset submit'.split(
           ' ',
@@ -56477,7 +57931,7 @@
           wt(e, t, n);
         });
     }
-    function _t(e, t, n, r, a) {
+    function Dt(e, t, n, r, a) {
       return {
         blockedOn: e,
         topLevelType: t,
@@ -56486,7 +57940,7 @@
         container: r,
       };
     }
-    function Dt(e, t) {
+    function _t(e, t) {
       switch (e) {
         case 'focus':
         case 'blur':
@@ -56506,12 +57960,12 @@
           break;
         case 'gotpointercapture':
         case 'lostpointercapture':
-          It.delete(t.pointerId);
+          Rt.delete(t.pointerId);
       }
     }
     function zt(e, t, n, r, a, o) {
       return null === e || e.nativeEvent !== o
-        ? ((e = _t(t, n, r, a, o)),
+        ? ((e = Dt(t, n, r, a, o)),
           null !== t && ((t = Vn(t)), null !== t && kt(t)),
           e)
         : ((e.eventSystemFlags |= r), e);
@@ -56530,7 +57984,7 @@
         case 'gotpointercapture':
           return (
             (o = a.pointerId),
-            It.set(o, zt(It.get(o) || null, e, t, n, r, a)),
+            Rt.set(o, zt(Rt.get(o) || null, e, t, n, r, a)),
             !0
           );
       }
@@ -56591,7 +58045,7 @@
         null !== Tt && Ut(Tt) && (Tt = null),
         null !== Pt && Ut(Pt) && (Pt = null),
         Nt.forEach(Vt),
-        It.forEach(Vt);
+        Rt.forEach(Vt);
     }
     function qt(e, t) {
       e.blockedOn === t &&
@@ -56616,14 +58070,14 @@
           null !== Tt && qt(Tt, e),
           null !== Pt && qt(Pt, e),
           Nt.forEach(t),
-          It.forEach(t),
+          Rt.forEach(t),
           n = 0;
-        n < Rt.length;
+        n < It.length;
         n++
       )
-        (r = Rt[n]), r.blockedOn === e && (r.blockedOn = null);
-      for (; 0 < Rt.length && ((n = Rt[0]), null === n.blockedOn); )
-        Bt(n), null === n.blockedOn && Rt.shift();
+        (r = It[n]), r.blockedOn === e && (r.blockedOn = null);
+      for (; 0 < It.length && ((n = It[0]), null === n.blockedOn); )
+        Bt(n), null === n.blockedOn && It.shift();
     }
     var $t = {},
       Gt = new Map(),
@@ -56631,9 +58085,9 @@
       Yt = [
         'abort',
         'abort',
-        Qe,
-        'animationEnd',
         Je,
+        'animationEnd',
+        Qe,
         'animationIteration',
         et,
         'animationStart',
@@ -56713,12 +58167,12 @@
           'change selectionchange textInput compositionstart compositionend compositionupdate'.split(
             ' ',
           ),
-        Qt = 0;
-      Qt < Xt.length;
-      Qt++
+        Jt = 0;
+      Jt < Xt.length;
+      Jt++
     )
-      Kt.set(Xt[Qt], 0);
-    var Jt = o.unstable_UserBlockingPriority,
+      Kt.set(Xt[Jt], 0);
+    var Qt = o.unstable_UserBlockingPriority,
       en = o.unstable_runWithPriority,
       tn = !0;
     function nn(e, t) {
@@ -56739,29 +58193,29 @@
       n ? e.addEventListener(t, r, !0) : e.addEventListener(t, r, !1);
     }
     function an(e, t, n, r) {
-      F || D();
+      F || _();
       var a = ln,
         o = F;
       F = !0;
       try {
-        _(a, e, t, n, r);
+        D(a, e, t, n, r);
       } finally {
         (F = o) || U();
       }
     }
     function on(e, t, n, r) {
-      en(Jt, ln.bind(null, e, t, n, r));
+      en(Qt, ln.bind(null, e, t, n, r));
     }
     function ln(e, t, n, r) {
       if (tn)
         if (0 < St.length && -1 < At.indexOf(e))
-          (e = _t(null, e, t, n, r)), St.push(e);
+          (e = Dt(null, e, t, n, r)), St.push(e);
         else {
           var a = cn(e, t, n, r);
-          if (null === a) Dt(e, r);
-          else if (-1 < At.indexOf(e)) (e = _t(a, e, t, n, r)), St.push(e);
+          if (null === a) _t(e, r);
+          else if (-1 < At.indexOf(e)) (e = Dt(a, e, t, n, r)), St.push(e);
           else if (!Ft(a, e, t, n, r)) {
-            Dt(e, r), (e = yt(e, r, null, t));
+            _t(e, r), (e = yt(e, r, null, t));
             try {
               V(xt, e);
             } finally {
@@ -57006,7 +58460,7 @@
       Tn = '$!',
       Pn = null,
       Nn = null;
-    function In(e, t) {
+    function Rn(e, t) {
       switch (e) {
         case 'button':
         case 'input':
@@ -57016,7 +58470,7 @@
       }
       return !1;
     }
-    function Rn(e, t) {
+    function In(e, t) {
       return (
         'textarea' === e ||
         'option' === e ||
@@ -57037,7 +58491,7 @@
       }
       return e;
     }
-    function _n(e) {
+    function Dn(e) {
       e = e.previousSibling;
       for (var t = 0; e; ) {
         if (8 === e.nodeType) {
@@ -57051,10 +58505,10 @@
       }
       return null;
     }
-    var Dn = Math.random().toString(36).slice(2),
-      zn = '__reactInternalInstance$' + Dn,
-      Fn = '__reactEventHandlers$' + Dn,
-      Bn = '__reactContainere$' + Dn;
+    var _n = Math.random().toString(36).slice(2),
+      zn = '__reactInternalInstance$' + _n,
+      Fn = '__reactEventHandlers$' + _n,
+      Bn = '__reactContainere$' + _n;
     function Un(e) {
       var t = e[zn];
       if (t) return t;
@@ -57064,9 +58518,9 @@
             ((n = t.alternate),
             null !== t.child || (null !== n && null !== n.child))
           )
-            for (e = _n(e); null !== e; ) {
+            for (e = Dn(e); null !== e; ) {
               if ((n = e[zn])) return n;
-              e = _n(e);
+              e = Dn(e);
             }
           return t;
         }
@@ -57156,16 +58610,16 @@
     function Xn(e) {
       dt(e, Kn);
     }
-    var Qn = null,
-      Jn = null,
+    var Jn = null,
+      Qn = null,
       er = null;
     function tr() {
       if (er) return er;
       var e,
         t,
-        n = Jn,
+        n = Qn,
         r = n.length,
-        a = 'value' in Qn ? Qn.value : Qn.textContent,
+        a = 'value' in Jn ? Jn.value : Jn.textContent,
         o = a.length;
       for (e = 0; e < r && n[e] === a[e]; e++);
       var i = r - e;
@@ -57359,7 +58813,7 @@
     function Er(e, t) {
       if (xr)
         return 'compositionend' === e || (!dr && br(e, t))
-          ? ((e = tr()), (er = Jn = Qn = null), (xr = !1), e)
+          ? ((e = tr()), (er = Qn = Jn = null), (xr = !1), e)
           : null;
       switch (e) {
         case 'paste':
@@ -57410,8 +58864,8 @@
                   'ko' !== n.locale &&
                   (xr || o !== vr.compositionStart
                     ? o === vr.compositionEnd && xr && (a = tr())
-                    : ((Qn = r),
-                      (Jn = 'value' in Qn ? Qn.value : Qn.textContent),
+                    : ((Jn = r),
+                      (Qn = 'value' in Jn ? Jn.value : Jn.textContent),
                       (xr = !0))),
                 (o = cr.getPooled(o, t, n, r)),
                 a ? (o.data = a) : ((a = yr(n)), null !== a && (o.data = a)),
@@ -57474,11 +58928,11 @@
     function Nr(e) {
       mt(e);
     }
-    function Ir(e) {
+    function Rr(e) {
       var t = Hn(e);
       if (je(t)) return e;
     }
-    function Rr(e, t) {
+    function Ir(e, t) {
       if ('change' === e) return t;
     }
     var Ar = !1;
@@ -57486,7 +58940,7 @@
       Tr && (Tr.detachEvent('onpropertychange', Lr), (Pr = Tr = null));
     }
     function Lr(e) {
-      if ('value' === e.propertyName && Ir(Pr))
+      if ('value' === e.propertyName && Rr(Pr))
         if (((e = jr(Pr, e, ht(e))), F)) mt(e);
         else {
           F = !0;
@@ -57497,20 +58951,20 @@
           }
         }
     }
-    function _r(e, t, n) {
+    function Dr(e, t, n) {
       'focus' === e
         ? (Mr(), (Tr = t), (Pr = n), Tr.attachEvent('onpropertychange', Lr))
         : 'blur' === e && Mr();
     }
-    function Dr(e) {
+    function _r(e) {
       if ('selectionchange' === e || 'keyup' === e || 'keydown' === e)
-        return Ir(Pr);
+        return Rr(Pr);
     }
     function zr(e, t) {
-      if ('click' === e) return Ir(t);
+      if ('click' === e) return Rr(t);
     }
     function Fr(e, t) {
-      if ('input' === e || 'change' === e) return Ir(t);
+      if ('input' === e || 'change' === e) return Rr(t);
     }
     T &&
       (Ar =
@@ -57522,12 +58976,12 @@
           var a = t ? Hn(t) : window,
             o = a.nodeName && a.nodeName.toLowerCase();
           if ('select' === o || ('input' === o && 'file' === a.type))
-            var i = Rr;
+            var i = Ir;
           else if (Or(a))
             if (Ar) i = Fr;
             else {
-              i = Dr;
-              var l = _r;
+              i = _r;
+              var l = Dr;
             }
           else
             (o = a.nodeName) &&
@@ -57630,7 +59084,7 @@
           dependencies: ['pointerout', 'pointerover'],
         },
       },
-      Qr = {
+      Jr = {
         eventTypes: Xr,
         extractEvents: function (e, t, n, r, a) {
           var o = 'mouseover' === e || 'pointerover' === e,
@@ -57710,10 +59164,10 @@
           return 0 === (64 & a) ? [s] : [s, n];
         },
       };
-    function Jr(e, t) {
+    function Qr(e, t) {
       return (e === t && (0 !== e || 1 / e === 1 / t)) || (e !== e && t !== t);
     }
-    var ea = 'function' === typeof Object.is ? Object.is : Jr,
+    var ea = 'function' === typeof Object.is ? Object.is : Qr,
       ta = Object.prototype.hasOwnProperty;
     function na(e, t) {
       if (ea(e, t)) return !0;
@@ -58011,8 +59465,8 @@
             case 'touchstart':
               e = ya;
               break;
-            case Qe:
             case Je:
+            case Qe:
             case et:
               e = da;
               break;
@@ -58059,7 +59513,7 @@
       (g = Hn),
       j({
         SimpleEventPlugin: Ea,
-        EnterLeaveEventPlugin: Qr,
+        EnterLeaveEventPlugin: Jr,
         ChangeEventPlugin: Br,
         SelectEventPlugin: ua,
         BeforeInputEventPlugin: kr,
@@ -58075,8 +59529,8 @@
     var Ta = {},
       Pa = { current: Ta },
       Na = { current: !1 },
-      Ia = Ta;
-    function Ra(e, t) {
+      Ra = Ta;
+    function Ia(e, t) {
       var n = e.type.contextTypes;
       if (!n) return Ta;
       var r = e.stateNode;
@@ -58103,7 +59557,7 @@
       if (Pa.current !== Ta) throw Error(i(168));
       ja(Pa, t), ja(Na, n);
     }
-    function _a(e, t, n) {
+    function Da(e, t, n) {
       var r = e.stateNode;
       if (((e = t.childContextTypes), 'function' !== typeof r.getChildContext))
         return n;
@@ -58111,12 +59565,12 @@
         if (!(o in e)) throw Error(i(108, we(t) || 'Unknown', o));
       return a({}, n, {}, r);
     }
-    function Da(e) {
+    function _a(e) {
       return (
         (e =
           ((e = e.stateNode) && e.__reactInternalMemoizedMergedChildContext) ||
           Ta),
-        (Ia = Pa.current),
+        (Ra = Pa.current),
         ja(Pa, e),
         ja(Na, Na.current),
         !0
@@ -58126,7 +59580,7 @@
       var r = e.stateNode;
       if (!r) throw Error(i(169));
       n
-        ? ((e = _a(e, t, Ia)),
+        ? ((e = Da(e, t, Ra)),
           (r.__reactInternalMemoizedMergedChildContext = e),
           Sa(Na),
           Sa(Pa),
@@ -58147,8 +59601,8 @@
       Ya = o.unstable_IdlePriority,
       Za = {},
       Xa = o.unstable_shouldYield,
-      Qa = void 0 !== Va ? Va : function () {},
-      Ja = null,
+      Ja = void 0 !== Va ? Va : function () {},
+      Qa = null,
       eo = null,
       to = !1,
       no = Ha(),
@@ -58197,7 +59651,7 @@
       return (e = oo(e)), Ba(e, t, n);
     }
     function co(e) {
-      return null === Ja ? ((Ja = [e]), (eo = Ba(Wa, uo))) : Ja.push(e), Za;
+      return null === Qa ? ((Qa = [e]), (eo = Ba(Wa, uo))) : Qa.push(e), Za;
     }
     function so() {
       if (null !== eo) {
@@ -58207,11 +59661,11 @@
       uo();
     }
     function uo() {
-      if (!to && null !== Ja) {
+      if (!to && null !== Qa) {
         to = !0;
         var e = 0;
         try {
-          var t = Ja;
+          var t = Qa;
           io(99, function () {
             for (; e < t.length; e++) {
               var n = t[e];
@@ -58220,9 +59674,9 @@
               } while (null !== n);
             }
           }),
-            (Ja = null);
+            (Qa = null);
         } catch (n) {
-          throw (null !== Ja && (Ja = Ja.slice(e + 1)), Ba(Wa, so), n);
+          throw (null !== Qa && (Qa = Qa.slice(e + 1)), Ba(Wa, so), n);
         } finally {
           to = !1;
         }
@@ -58387,7 +59841,7 @@
                     callback: m.callback,
                     next: null,
                   }),
-                _c(l, m.suspenseConfig);
+                Dc(l, m.suspenseConfig);
               e: {
                 var v = e,
                   g = m;
@@ -58431,7 +59885,7 @@
         null === p ? (d = s) : (p.next = f),
           (o.baseState = d),
           (o.baseQueue = p),
-          Dc(u),
+          _c(u),
           (e.expirationTime = u),
           (e.memoizedState = s);
       }
@@ -58450,8 +59904,8 @@
           }
         }
     }
-    var Io = ee.ReactCurrentBatchConfig,
-      Ro = new r.Component().refs;
+    var Ro = ee.ReactCurrentBatchConfig,
+      Io = new r.Component().refs;
     function Ao(e, t, n, r) {
       (t = e.memoizedState),
         (n = n(r, t)),
@@ -58466,7 +59920,7 @@
       enqueueSetState: function (e, t, n) {
         e = e._reactInternalFiber;
         var r = Ec(),
-          a = Io.suspense;
+          a = Ro.suspense;
         (r = kc(r, e, a)),
           (a = So(r, a)),
           (a.payload = t),
@@ -58477,7 +59931,7 @@
       enqueueReplaceState: function (e, t, n) {
         e = e._reactInternalFiber;
         var r = Ec(),
-          a = Io.suspense;
+          a = Ro.suspense;
         (r = kc(r, e, a)),
           (a = So(r, a)),
           (a.tag = 1),
@@ -58489,7 +59943,7 @@
       enqueueForceUpdate: function (e, t) {
         e = e._reactInternalFiber;
         var n = Ec(),
-          r = Io.suspense;
+          r = Ro.suspense;
         (n = kc(n, e, r)),
           (r = So(n, r)),
           (r.tag = 2),
@@ -58509,16 +59963,16 @@
             !na(a, o)
       );
     }
-    function _o(e, t, n) {
+    function Do(e, t, n) {
       var r = !1,
         a = Ta,
         o = t.contextType;
       return (
         'object' === typeof o && null !== o
           ? (o = Eo(o))
-          : ((a = Aa(t) ? Ia : Pa.current),
+          : ((a = Aa(t) ? Ra : Pa.current),
             (r = t.contextTypes),
-            (o = (r = null !== r && void 0 !== r) ? Ra(e, a) : Ta)),
+            (o = (r = null !== r && void 0 !== r) ? Ia(e, a) : Ta)),
         (t = new t(n, o)),
         (e.memoizedState =
           null !== t.state && void 0 !== t.state ? t.state : null),
@@ -58532,7 +59986,7 @@
         t
       );
     }
-    function Do(e, t, n, r) {
+    function _o(e, t, n, r) {
       (e = t.state),
         'function' === typeof t.componentWillReceiveProps &&
           t.componentWillReceiveProps(n, r),
@@ -58542,11 +59996,11 @@
     }
     function zo(e, t, n, r) {
       var a = e.stateNode;
-      (a.props = n), (a.state = e.memoizedState), (a.refs = Ro), Co(e);
+      (a.props = n), (a.state = e.memoizedState), (a.refs = Io), Co(e);
       var o = t.contextType;
       'object' === typeof o && null !== o
         ? (a.context = Eo(o))
-        : ((o = Aa(t) ? Ia : Pa.current), (a.context = Ra(e, o))),
+        : ((o = Aa(t) ? Ra : Pa.current), (a.context = Ia(e, o))),
         Po(e, n, a, r),
         (a.state = e.memoizedState),
         (o = t.getDerivedStateFromProps),
@@ -58585,7 +60039,7 @@
             ? t.ref
             : ((t = function (e) {
                 var t = r.refs;
-                t === Ro && (t = r.refs = {}),
+                t === Io && (t = r.refs = {}),
                   null === e ? delete t[a] : (t[a] = e);
               }),
               (t._stringRef = a),
@@ -58951,13 +60405,13 @@
     function Xo() {
       Sa($o), Sa(Go), Sa(Ko);
     }
-    function Qo(e) {
+    function Jo(e) {
       Yo(Ko.current);
       var t = Yo($o.current),
         n = He(t, e.type);
       t !== n && (ja(Go, e), ja($o, n));
     }
-    function Jo(e) {
+    function Qo(e) {
       Go.current === e && (Sa($o), Sa(Go));
     }
     var ei = { current: 0 };
@@ -59011,7 +60465,7 @@
         (t.memoizedState = null),
         (t.updateQueue = null),
         (t.expirationTime = 0),
-        (ri.current = null === e || null === e.memoizedState ? Li : _i),
+        (ri.current = null === e || null === e.memoizedState ? Li : Di),
         (e = n(r, a)),
         t.expirationTime === oi)
       ) {
@@ -59021,7 +60475,7 @@
           (o += 1),
             (ci = li = null),
             (t.updateQueue = null),
-            (ri.current = Di),
+            (ri.current = _i),
             (e = n(r, a));
         } while (t.expirationTime === oi);
       }
@@ -59101,7 +60555,7 @@
               next: null,
             };
             null === c ? ((l = c = d), (o = r)) : (c = c.next = d),
-              u > ii.expirationTime && ((ii.expirationTime = u), Dc(u));
+              u > ii.expirationTime && ((ii.expirationTime = u), _c(u));
           } else
             null !== c &&
               (c = c.next =
@@ -59113,7 +60567,7 @@
                   eagerState: s.eagerState,
                   next: null,
                 }),
-              _c(u, s.suspenseConfig),
+              Dc(u, s.suspenseConfig),
               (r = s.eagerReducer === e ? s.eagerState : e(r, s.action));
           s = s.next;
         } while (null !== s && s !== a);
@@ -59239,7 +60693,7 @@
         ? r[0]
         : ((n.memoizedState = [e, t]), e);
     }
-    function Ii(e, t) {
+    function Ri(e, t) {
       var n = mi();
       t = void 0 === t ? null : t;
       var r = n.memoizedState;
@@ -59247,7 +60701,7 @@
         ? r[0]
         : ((e = e()), (n.memoizedState = [e, t]), e);
     }
-    function Ri(e, t, n) {
+    function Ii(e, t, n) {
       var r = ao();
       io(98 > r ? 98 : r, function () {
         e(!0);
@@ -59264,7 +60718,7 @@
     }
     function Ai(e, t, n) {
       var r = Ec(),
-        a = Io.suspense;
+        a = Ro.suspense;
       (r = kc(r, e, a)),
         (a = {
           expirationTime: r,
@@ -59381,17 +60835,17 @@
         useTransition: function (e) {
           var t = bi(!1),
             n = t[0];
-          return (t = t[1]), [Pi(Ri.bind(null, t, e), [t, e]), n];
+          return (t = t[1]), [Pi(Ii.bind(null, t, e), [t, e]), n];
         },
       },
-      _i = {
+      Di = {
         readContext: Eo,
         useCallback: Ni,
         useContext: Eo,
         useEffect: Ci,
         useImperativeHandle: ji,
         useLayoutEffect: Oi,
-        useMemo: Ii,
+        useMemo: Ri,
         useReducer: vi,
         useRef: xi,
         useState: function () {
@@ -59422,17 +60876,17 @@
         useTransition: function (e) {
           var t = vi(hi),
             n = t[0];
-          return (t = t[1]), [Ni(Ri.bind(null, t, e), [t, e]), n];
+          return (t = t[1]), [Ni(Ii.bind(null, t, e), [t, e]), n];
         },
       },
-      Di = {
+      _i = {
         readContext: Eo,
         useCallback: Ni,
         useContext: Eo,
         useEffect: Ci,
         useImperativeHandle: ji,
         useLayoutEffect: Oi,
-        useMemo: Ii,
+        useMemo: Ri,
         useReducer: gi,
         useRef: xi,
         useState: function () {
@@ -59463,7 +60917,7 @@
         useTransition: function (e) {
           var t = gi(hi),
             n = t[0];
-          return (t = t[1]), [Ni(Ri.bind(null, t, e), [t, e]), n];
+          return (t = t[1]), [Ni(Ii.bind(null, t, e), [t, e]), n];
         },
       },
       zi = null,
@@ -59535,7 +60989,7 @@
       var t = e.type;
       if (
         5 !== e.tag ||
-        ('head' !== t && 'body' !== t && !Rn(t, e.memoizedProps))
+        ('head' !== t && 'body' !== t && !In(t, e.memoizedProps))
       )
         for (t = Fi; t; ) Ui(e, t), (t = Ln(t.nextSibling));
       if ((qi(e), 13 === e.tag)) {
@@ -59594,7 +61048,7 @@
             (e.ref = t.ref),
             (e.return = t),
             (t.child = e))
-          : ((t.tag = 15), (t.type = i), Qi(e, t, i, r, a, o));
+          : ((t.tag = 15), (t.type = i), Ji(e, t, i, r, a, o));
       }
       return (
         (i = e.child),
@@ -59611,7 +61065,7 @@
             (t.child = e))
       );
     }
-    function Qi(e, t, n, r, a, o) {
+    function Ji(e, t, n, r, a, o) {
       return null !== e &&
         na(e.memoizedProps, r) &&
         e.ref === t.ref &&
@@ -59619,15 +61073,15 @@
         ? ((t.expirationTime = e.expirationTime), pl(e, t, o))
         : el(e, t, n, r, o);
     }
-    function Ji(e, t) {
+    function Qi(e, t) {
       var n = t.ref;
       ((null === e && null !== n) || (null !== e && e.ref !== n)) &&
         (t.effectTag |= 128);
     }
     function el(e, t, n, r, a) {
-      var o = Aa(n) ? Ia : Pa.current;
+      var o = Aa(n) ? Ra : Pa.current;
       return (
-        (o = Ra(t, o)),
+        (o = Ia(t, o)),
         wo(t, a),
         (n = fi(e, t, n, r, o, a)),
         null === e || Ki
@@ -59641,12 +61095,12 @@
     function tl(e, t, n, r, a) {
       if (Aa(n)) {
         var o = !0;
-        Da(t);
+        _a(t);
       } else o = !1;
       if ((wo(t, a), null === t.stateNode))
         null !== e &&
           ((e.alternate = null), (t.alternate = null), (t.effectTag |= 2)),
-          _o(t, n, r),
+          Do(t, n, r),
           zo(t, n, r, a),
           (r = !0);
       else if (null === e) {
@@ -59657,7 +61111,7 @@
           s = n.contextType;
         'object' === typeof s && null !== s
           ? (s = Eo(s))
-          : ((s = Aa(n) ? Ia : Pa.current), (s = Ra(t, s)));
+          : ((s = Aa(n) ? Ra : Pa.current), (s = Ia(t, s)));
         var u = n.getDerivedStateFromProps,
           d =
             'function' === typeof u ||
@@ -59665,7 +61119,7 @@
         d ||
           ('function' !== typeof i.UNSAFE_componentWillReceiveProps &&
             'function' !== typeof i.componentWillReceiveProps) ||
-          ((l !== r || c !== s) && Do(t, i, r, s)),
+          ((l !== r || c !== s) && _o(t, i, r, s)),
           (ko = !1);
         var f = t.memoizedState;
         (i.state = f),
@@ -59703,14 +61157,14 @@
           (s = n.contextType),
           'object' === typeof s && null !== s
             ? (s = Eo(s))
-            : ((s = Aa(n) ? Ia : Pa.current), (s = Ra(t, s))),
+            : ((s = Aa(n) ? Ra : Pa.current), (s = Ia(t, s))),
           (u = n.getDerivedStateFromProps),
           (d =
             'function' === typeof u ||
             'function' === typeof i.getSnapshotBeforeUpdate) ||
             ('function' !== typeof i.UNSAFE_componentWillReceiveProps &&
               'function' !== typeof i.componentWillReceiveProps) ||
-            ((l !== r || c !== s) && Do(t, i, r, s)),
+            ((l !== r || c !== s) && _o(t, i, r, s)),
           (ko = !1),
           (c = t.memoizedState),
           (i.state = c),
@@ -59753,7 +61207,7 @@
       return nl(e, t, n, r, o, a);
     }
     function nl(e, t, n, r, a, o) {
-      Ji(e, t);
+      Qi(e, t);
       var i = 0 !== (64 & t.effectTag);
       if (!r && !i) return a && za(t, n, !1), pl(e, t, o);
       (r = t.stateNode), (Gi.current = t);
@@ -59972,7 +61426,7 @@
     function pl(e, t, n) {
       null !== e && (t.dependencies = e.dependencies);
       var r = t.expirationTime;
-      if ((0 !== r && Dc(r), t.childExpirationTime < n)) return null;
+      if ((0 !== r && _c(r), t.childExpirationTime < n)) return null;
       if (null !== e && t.child !== e.child) throw Error(i(153));
       if (null !== t.child) {
         for (
@@ -60035,7 +61489,7 @@
             null
           );
         case 5:
-          Jo(t), (n = Yo(Ko.current));
+          Qo(t), (n = Yo(Ko.current));
           var o = t.type;
           if (null !== e && null != t.stateNode)
             il(e, t, o, r, n), e.ref !== t.ref && (t.effectTag |= 128);
@@ -60095,7 +61549,7 @@
                 }
               switch (o) {
                 case 'input':
-                  Se(r), Re(r, l, !0);
+                  Se(r), Ie(r, l, !0);
                   break;
                 case 'textarea':
                   Se(r), Be(r);
@@ -60169,7 +61623,7 @@
                     gn(n, 'onChange');
                   break;
                 case 'textarea':
-                  ze(e, r), (s = De(e, r)), nn('invalid', e), gn(n, 'onChange');
+                  ze(e, r), (s = _e(e, r)), nn('invalid', e), gn(n, 'onChange');
                   break;
                 default:
                   s = r;
@@ -60196,7 +61650,7 @@
                 }
               switch (o) {
                 case 'input':
-                  Se(e), Re(e, r, !1);
+                  Se(e), Ie(e, r, !1);
                   break;
                 case 'textarea':
                   Se(e), Be(e);
@@ -60208,14 +61662,14 @@
                   (e.multiple = !!r.multiple),
                     (n = r.value),
                     null != n
-                      ? _e(e, !!r.multiple, n, !1)
+                      ? De(e, !!r.multiple, n, !1)
                       : null != r.defaultValue &&
-                        _e(e, !!r.multiple, r.defaultValue, !0);
+                        De(e, !!r.multiple, r.defaultValue, !0);
                   break;
                 default:
                   'function' === typeof s.onClick && (e.onclick = bn);
               }
-              In(o, r) && (t.effectTag |= 4);
+              Rn(o, r) && (t.effectTag |= 4);
             }
             null !== t.ref && (t.effectTag |= 128);
           }
@@ -60269,7 +61723,7 @@
                   0 !== (1 & ei.current)
                     ? nc === $l && (nc = Yl)
                     : ((nc !== $l && nc !== Yl) || (nc = Zl),
-                      0 !== lc && null !== Jl && (fs(Jl, tc), ps(Jl, lc)))),
+                      0 !== lc && null !== Ql && (fs(Ql, tc), ps(Ql, lc)))),
                 (n || r) && (t.effectTag |= 4),
                 null)
           );
@@ -60387,7 +61841,7 @@
             throw Error(i(285));
           return (e.effectTag = (-4097 & t) | 64), e;
         case 5:
-          return Jo(e), null;
+          return Qo(e), null;
         case 13:
           return (
             Sa(ei),
@@ -60442,7 +61896,7 @@
                 (e = []);
               break;
             case 'textarea':
-              (i = De(s, i)), (r = De(s, r)), (e = []);
+              (i = _e(s, i)), (r = _e(s, r)), (e = []);
               break;
             default:
               'function' !== typeof i.onClick &&
@@ -60640,7 +62094,7 @@
             void (
               null === t &&
               4 & n.effectTag &&
-              In(n.type, n.memoizedProps) &&
+              Rn(n.type, n.memoizedProps) &&
               e.focus()
             )
           );
@@ -60667,7 +62121,7 @@
       throw Error(i(163));
     }
     function Sl(e, t, n) {
-      switch (('function' === typeof Jc && Jc(t), t.tag)) {
+      switch (('function' === typeof Qc && Qc(t), t.tag)) {
         case 0:
         case 11:
         case 14:
@@ -60704,7 +62158,7 @@
           wl(t);
           break;
         case 4:
-          Rl(e, t, n);
+          Il(e, t, n);
       }
     }
     function jl(e) {
@@ -60772,7 +62226,7 @@
           break e;
         }
       }
-      r ? Nl(e, n, t) : Il(e, n, t);
+      r ? Nl(e, n, t) : Rl(e, n, t);
     }
     function Nl(e, t, n) {
       var r = e.tag,
@@ -60794,17 +62248,17 @@
         for (Nl(e, t, n), e = e.sibling; null !== e; )
           Nl(e, t, n), (e = e.sibling);
     }
-    function Il(e, t, n) {
+    function Rl(e, t, n) {
       var r = e.tag,
         a = 5 === r || 6 === r;
       if (a)
         (e = a ? e.stateNode : e.stateNode.instance),
           t ? n.insertBefore(e, t) : n.appendChild(e);
       else if (4 !== r && ((e = e.child), null !== e))
-        for (Il(e, t, n), e = e.sibling; null !== e; )
-          Il(e, t, n), (e = e.sibling);
+        for (Rl(e, t, n), e = e.sibling; null !== e; )
+          Rl(e, t, n), (e = e.sibling);
     }
-    function Rl(e, t, n) {
+    function Il(e, t, n) {
       for (var r, a, o = t, l = !1; ; ) {
         if (!l) {
           l = o.return;
@@ -60904,7 +62358,7 @@
               }
               switch (e) {
                 case 'input':
-                  Ie(n, r);
+                  Re(n, r);
                   break;
                 case 'textarea':
                   Fe(n, r);
@@ -60914,11 +62368,11 @@
                     (n._wrapperState.wasMultiple = !!r.multiple),
                     (e = r.value),
                     null != e
-                      ? _e(n, !!r.multiple, e, !1)
+                      ? De(n, !!r.multiple, e, !1)
                       : t !== !!r.multiple &&
                         (null != r.defaultValue
-                          ? _e(n, !!r.multiple, r.defaultValue, !0)
-                          : _e(n, !!r.multiple, r.multiple ? [] : '', !1));
+                          ? De(n, !!r.multiple, r.defaultValue, !0)
+                          : De(n, !!r.multiple, r.multiple ? [] : '', !1));
               }
             }
           }
@@ -61002,7 +62456,7 @@
       }
     }
     var Ll = 'function' === typeof WeakMap ? WeakMap : Map;
-    function _l(e, t, n) {
+    function Dl(e, t, n) {
       (n = So(n, null)), (n.tag = 3), (n.payload = { element: null });
       var r = t.value;
       return (
@@ -61012,7 +62466,7 @@
         n
       );
     }
-    function Dl(e, t, n) {
+    function _l(e, t, n) {
       (n = So(n, null)), (n.tag = 3);
       var r = e.type.getDerivedStateFromError;
       if ('function' === typeof r) {
@@ -61050,8 +62504,8 @@
       Yl = 3,
       Zl = 4,
       Xl = 5,
-      Ql = Vl,
-      Jl = null,
+      Jl = Vl,
+      Ql = null,
       ec = null,
       tc = 0,
       nc = $l,
@@ -61075,7 +62529,7 @@
       xc = null,
       wc = 0;
     function Ec() {
-      return (Ql & (ql | Wl)) !== Vl
+      return (Jl & (ql | Wl)) !== Vl
         ? 1073741821 - ((ro() / 10) | 0)
         : 0 !== wc
         ? wc
@@ -61085,7 +62539,7 @@
       if (((t = t.mode), 0 === (2 & t))) return 1073741823;
       var r = ao();
       if (0 === (4 & t)) return 99 === r ? 1073741823 : 1073741822;
-      if ((Ql & ql) !== Vl) return tc;
+      if ((Jl & ql) !== Vl) return tc;
       if (null !== n) e = fo(e, 0 | n.timeoutMs || 5e3, 250);
       else
         switch (r) {
@@ -61105,18 +62559,18 @@
           default:
             throw Error(i(326));
         }
-      return null !== Jl && e === tc && --e, e;
+      return null !== Ql && e === tc && --e, e;
     }
     function Cc(e, t) {
       if (50 < yc) throw ((yc = 0), (xc = null), Error(i(185)));
       if (((e = Oc(e, t)), null !== e)) {
         var n = ao();
         1073741823 === t
-          ? (Ql & Hl) !== Vl && (Ql & (ql | Wl)) === Vl
+          ? (Jl & Hl) !== Vl && (Jl & (ql | Wl)) === Vl
             ? Pc(e)
-            : (jc(e), Ql === Vl && so())
+            : (jc(e), Jl === Vl && so())
           : jc(e),
-          (4 & Ql) === Vl ||
+          (4 & Jl) === Vl ||
             (98 !== n && 99 !== n) ||
             (null === bc
               ? (bc = new Map([[e, t]]))
@@ -61146,7 +62600,7 @@
           r = r.return;
         }
       return (
-        null !== a && (Jl === a && (Dc(t), nc === Zl && fs(a, tc)), ps(a, t)), a
+        null !== a && (Ql === a && (_c(t), nc === Zl && fs(a, tc)), ps(a, t)), a
       );
     }
     function Sc(e) {
@@ -61204,11 +62658,11 @@
       if (((wc = 0), t)) return (t = Ec()), ms(e, t), jc(e), null;
       var n = Sc(e);
       if (0 !== n) {
-        if (((t = e.callbackNode), (Ql & (ql | Wl)) !== Vl))
+        if (((t = e.callbackNode), (Jl & (ql | Wl)) !== Vl))
           throw Error(i(327));
-        if (($c(), (e === Jl && n === tc) || Ac(e, n), null !== ec)) {
-          var r = Ql;
-          Ql |= ql;
+        if (($c(), (e === Ql && n === tc) || Ac(e, n), null !== ec)) {
+          var r = Jl;
+          Jl |= ql;
           var a = Lc();
           do {
             try {
@@ -61218,14 +62672,14 @@
               Mc(e, c);
             }
           } while (1);
-          if ((bo(), (Ql = r), (Bl.current = a), nc === Gl))
+          if ((bo(), (Jl = r), (Bl.current = a), nc === Gl))
             throw ((t = rc), Ac(e, n), fs(e, n), jc(e), t);
           if (null === ec)
             switch (
               ((a = e.finishedWork = e.current.alternate),
               (e.finishedExpirationTime = n),
               (r = nc),
-              (Jl = null),
+              (Ql = null),
               r)
             ) {
               case $l:
@@ -61336,11 +62790,11 @@
     }
     function Pc(e) {
       var t = e.lastExpiredTime;
-      if (((t = 0 !== t ? t : 1073741823), (Ql & (ql | Wl)) !== Vl))
+      if (((t = 0 !== t ? t : 1073741823), (Jl & (ql | Wl)) !== Vl))
         throw Error(i(327));
-      if (($c(), (e === Jl && t === tc) || Ac(e, t), null !== ec)) {
-        var n = Ql;
-        Ql |= ql;
+      if (($c(), (e === Ql && t === tc) || Ac(e, t), null !== ec)) {
+        var n = Jl;
+        Jl |= ql;
         var r = Lc();
         do {
           try {
@@ -61350,12 +62804,12 @@
             Mc(e, a);
           }
         } while (1);
-        if ((bo(), (Ql = n), (Bl.current = r), nc === Gl))
+        if ((bo(), (Jl = n), (Bl.current = r), nc === Gl))
           throw ((n = rc), Ac(e, t), fs(e, t), jc(e), n);
         if (null !== ec) throw Error(i(261));
         (e.finishedWork = e.current.alternate),
           (e.finishedExpirationTime = t),
-          (Jl = null),
+          (Ql = null),
           Hc(e),
           jc(e);
       }
@@ -61371,22 +62825,22 @@
           so();
       }
     }
-    function Ic(e, t) {
-      var n = Ql;
-      Ql |= 1;
+    function Rc(e, t) {
+      var n = Jl;
+      Jl |= 1;
       try {
         return e(t);
       } finally {
-        (Ql = n), Ql === Vl && so();
+        (Jl = n), Jl === Vl && so();
       }
     }
-    function Rc(e, t) {
-      var n = Ql;
-      (Ql &= -2), (Ql |= Hl);
+    function Ic(e, t) {
+      var n = Jl;
+      (Jl &= -2), (Jl |= Hl);
       try {
         return e(t);
       } finally {
-        (Ql = n), Ql === Vl && so();
+        (Jl = n), Jl === Vl && so();
       }
     }
     function Ac(e, t) {
@@ -61404,7 +62858,7 @@
               Xo(), Sa(Na), Sa(Pa);
               break;
             case 5:
-              Jo(r);
+              Qo(r);
               break;
             case 4:
               Xo();
@@ -61420,7 +62874,7 @@
           }
           n = n.return;
         }
-      (Jl = e),
+      (Ql = e),
         (ec = os(e.current, null)),
         (tc = t),
         (nc = $l),
@@ -61530,7 +62984,7 @@
               switch (d.tag) {
                 case 3:
                   (c = l), (d.effectTag |= 4096), (d.expirationTime = t);
-                  var x = _l(d, c, t);
+                  var x = Dl(d, c, t);
                   To(d, x);
                   break e;
                 case 1:
@@ -61545,7 +62999,7 @@
                         (null === mc || !mc.has(E))))
                   ) {
                     (d.effectTag |= 4096), (d.expirationTime = t);
-                    var k = Dl(d, c, t);
+                    var k = _l(d, c, t);
                     To(d, k);
                     break e;
                   }
@@ -61565,11 +63019,11 @@
       var e = Bl.current;
       return (Bl.current = Mi), null === e ? Mi : e;
     }
-    function _c(e, t) {
+    function Dc(e, t) {
       e < ac && 2 < e && (ac = e),
         null !== t && e < oc && 2 < e && ((oc = e), (ic = t));
     }
-    function Dc(e) {
+    function _c(e) {
       e > lc && (lc = e);
     }
     function zc() {
@@ -61635,7 +63089,7 @@
       do {
         $c();
       } while (null !== vc);
-      if ((Ql & (ql | Wl)) !== Vl) throw Error(i(327));
+      if ((Jl & (ql | Wl)) !== Vl) throw Error(i(327));
       var n = e.finishedWork,
         r = e.finishedExpirationTime;
       if (null === n) return null;
@@ -61660,7 +63114,7 @@
           : r <= e.firstSuspendedTime && (e.firstSuspendedTime = r - 1),
         r <= e.lastPingedTime && (e.lastPingedTime = 0),
         r <= e.lastExpiredTime && (e.lastExpiredTime = 0),
-        e === Jl && ((ec = Jl = null), (tc = 0)),
+        e === Ql && ((ec = Ql = null), (tc = 0)),
         1 < n.effectTag
           ? null !== n.lastEffect
             ? ((n.lastEffect.nextEffect = n), (a = n.firstEffect))
@@ -61668,8 +63122,8 @@
           : (a = n.firstEffect),
         null !== a)
       ) {
-        var o = Ql;
-        (Ql |= Wl), (Ul.current = null), (Pn = tn);
+        var o = Jl;
+        (Jl |= Wl), (Ul.current = null), (Pn = tn);
         var l = kn();
         if (Cn(l)) {
           if ('selectionStart' in l)
@@ -61769,7 +63223,7 @@
                   Al(dc.alternate, dc);
                   break;
                 case 8:
-                  (u = dc), Rl(l, u, c), jl(u);
+                  (u = dc), Il(l, u, c), jl(u);
               }
               dc = dc.nextEffect;
             }
@@ -61860,7 +63314,7 @@
             Yc(dc, S), (dc = dc.nextEffect);
           }
         } while (null !== dc);
-        (dc = null), Qa(), (Ql = o);
+        (dc = null), Ja(), (Jl = o);
       } else e.current = n;
       if (hc) (hc = !1), (vc = e), (gc = t);
       else
@@ -61870,12 +63324,12 @@
         ((t = e.firstPendingTime),
         0 === t && (mc = null),
         1073741823 === t ? (e === xc ? yc++ : ((yc = 0), (xc = e))) : (yc = 0),
-        'function' === typeof Qc && Qc(n.stateNode, r),
+        'function' === typeof Jc && Jc(n.stateNode, r),
         jc(e),
         fc)
       )
         throw ((fc = !1), (e = pc), (pc = null), e);
-      return (Ql & Hl) !== Vl || so(), null;
+      return (Jl & Hl) !== Vl || so(), null;
     }
     function Wc() {
       for (; null !== dc; ) {
@@ -61899,9 +63353,9 @@
     function Gc() {
       if (null === vc) return !1;
       var e = vc;
-      if (((vc = null), (Ql & (ql | Wl)) !== Vl)) throw Error(i(331));
-      var t = Ql;
-      for (Ql |= Wl, e = e.current.firstEffect; null !== e; ) {
+      if (((vc = null), (Jl & (ql | Wl)) !== Vl)) throw Error(i(331));
+      var t = Jl;
+      for (Jl |= Wl, e = e.current.firstEffect; null !== e; ) {
         try {
           var n = e;
           if (0 !== (512 & n.effectTag))
@@ -61918,11 +63372,11 @@
         }
         (n = e.nextEffect), (e.nextEffect = null), (e = n);
       }
-      return (Ql = t), so(), !0;
+      return (Jl = t), so(), !0;
     }
     function Kc(e, t, n) {
       (t = gl(n, t)),
-        (t = _l(e, t, 1073741823)),
+        (t = Dl(e, t, 1073741823)),
         jo(e, t),
         (e = Oc(e, 1073741823)),
         null !== e && jc(e);
@@ -61943,7 +63397,7 @@
                 (null === mc || !mc.has(r)))
             ) {
               (e = gl(t, e)),
-                (e = Dl(n, e, 1073741823)),
+                (e = _l(n, e, 1073741823)),
                 jo(n, e),
                 (n = Oc(n, 1073741823)),
                 null !== n && jc(n);
@@ -61956,7 +63410,7 @@
     function Zc(e, t, n) {
       var r = e.pingCache;
       null !== r && r.delete(t),
-        Jl === e && tc === n
+        Ql === e && tc === n
           ? nc === Zl || (nc === Yl && 1073741823 === ac && ro() - sc < uc)
             ? Ac(e, tc)
             : (cc = !0)
@@ -61984,11 +63438,11 @@
                 rl(t), $i();
                 break;
               case 5:
-                if ((Qo(t), 4 & t.mode && 1 !== n && a.hidden))
+                if ((Jo(t), 4 & t.mode && 1 !== n && a.hidden))
                   return (t.expirationTime = t.childExpirationTime = 1), null;
                 break;
               case 1:
-                Aa(t.type) && Da(t);
+                Aa(t.type) && _a(t);
                 break;
               case 4:
                 Zo(t, t.stateNode.containerInfo);
@@ -62038,7 +63492,7 @@
             null !== e &&
               ((e.alternate = null), (t.alternate = null), (t.effectTag |= 2)),
             (e = t.pendingProps),
-            (a = Ra(t, Pa.current)),
+            (a = Ia(t, Pa.current)),
             wo(t, n),
             (a = fi(null, t, r, e, a, n)),
             (t.effectTag |= 1),
@@ -62054,7 +63508,7 @@
               Aa(r))
             ) {
               var o = !0;
-              Da(t);
+              _a(t);
             } else o = !1;
             (t.memoizedState =
               null !== a.state && void 0 !== a.state ? a.state : null),
@@ -62147,16 +63601,16 @@
           return t;
         case 5:
           return (
-            Qo(t),
+            Jo(t),
             null === e && Hi(t),
             (r = t.type),
             (a = t.pendingProps),
             (o = null !== e ? e.memoizedProps : null),
             (l = a.children),
-            Rn(r, a)
+            In(r, a)
               ? (l = null)
-              : null !== o && Rn(r, o) && (t.effectTag |= 16),
-            Ji(e, t),
+              : null !== o && In(r, o) && (t.effectTag |= 16),
+            Qi(e, t),
             4 & t.mode && 1 !== n && a.hidden
               ? ((t.expirationTime = t.childExpirationTime = 1), (t = null))
               : (Yi(e, t, l, n), (t = t.child)),
@@ -62267,7 +63721,7 @@
             Xi(e, t, a, o, r, n)
           );
         case 15:
-          return Qi(e, t, t.type, t.pendingProps, r, n);
+          return Ji(e, t, t.type, t.pendingProps, r, n);
         case 17:
           return (
             (r = t.type),
@@ -62276,9 +63730,9 @@
             null !== e &&
               ((e.alternate = null), (t.alternate = null), (t.effectTag |= 2)),
             (t.tag = 1),
-            Aa(r) ? ((e = !0), Da(t)) : (e = !1),
+            Aa(r) ? ((e = !0), _a(t)) : (e = !1),
             wo(t, n),
-            _o(t, r, a),
+            Do(t, r, a),
             zo(t, r, a, n),
             nl(null, t, r, !0, e, n)
           );
@@ -62287,15 +63741,15 @@
       }
       throw Error(i(156, t.tag));
     };
-    var Qc = null,
-      Jc = null;
+    var Jc = null,
+      Qc = null;
     function es(e) {
       if ('undefined' === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__) return !1;
       var t = __REACT_DEVTOOLS_GLOBAL_HOOK__;
       if (t.isDisabled || !t.supportsFiber) return !0;
       try {
         var n = t.inject(e);
-        (Qc = function (e) {
+        (Jc = function (e) {
           try {
             t.onCommitFiberRoot(
               n,
@@ -62305,7 +63759,7 @@
             );
           } catch (r) {}
         }),
-          (Jc = function (e) {
+          (Qc = function (e) {
             try {
               t.onCommitFiberUnmount(n, e);
             } catch (r) {}
@@ -62525,7 +63979,7 @@
     function hs(e, t, n, r) {
       var a = t.current,
         o = Ec(),
-        l = Io.suspense;
+        l = Ro.suspense;
       o = kc(o, a, l);
       e: if (n) {
         n = n._reactInternalFiber;
@@ -62550,7 +64004,7 @@
         if (1 === n.tag) {
           var s = n.type;
           if (Aa(s)) {
-            n = _a(n, s, c);
+            n = Da(n, s, c);
             break e;
           }
         }
@@ -62644,7 +64098,7 @@
             c.call(e);
           };
         }
-        Rc(function () {
+        Ic(function () {
           hs(t, i, e, a);
         });
       }
@@ -62695,7 +64149,7 @@
       (P = function (e, t, n) {
         switch (t) {
           case 'input':
-            if ((Ie(e, n), (t = n.name), 'radio' === n.type && null != t)) {
+            if ((Re(e, n), (t = n.name), 'radio' === n.type && null != t)) {
               for (n = e; n.parentNode; ) n = n.parentNode;
               for (
                 n = n.querySelectorAll(
@@ -62709,7 +64163,7 @@
                 if (r !== e && r.form === e.form) {
                   var a = qn(r);
                   if (!a) throw Error(i(90));
-                  je(r), Ie(r, a);
+                  je(r), Re(r, a);
                 }
               }
             }
@@ -62718,29 +64172,29 @@
             Fe(e, n);
             break;
           case 'select':
-            (t = n.value), null != t && _e(e, !!n.multiple, t, !1);
+            (t = n.value), null != t && De(e, !!n.multiple, t, !1);
         }
       }),
-      (L = Ic),
-      (_ = function (e, t, n, r, a) {
-        var o = Ql;
-        Ql |= 4;
+      (L = Rc),
+      (D = function (e, t, n, r, a) {
+        var o = Jl;
+        Jl |= 4;
         try {
           return io(98, e.bind(null, t, n, r, a));
         } finally {
-          (Ql = o), Ql === Vl && so();
+          (Jl = o), Jl === Vl && so();
         }
       }),
-      (D = function () {
-        (Ql & (1 | ql | Wl)) === Vl && (Nc(), $c());
+      (_ = function () {
+        (Jl & (1 | ql | Wl)) === Vl && (Nc(), $c());
       }),
       (z = function (e, t) {
-        var n = Ql;
-        Ql |= 2;
+        var n = Jl;
+        Jl |= 2;
         try {
           return e(t);
         } finally {
-          (Ql = n), Ql === Vl && so();
+          (Jl = n), Jl === Vl && so();
         }
       });
     var Os = {
@@ -62803,13 +64257,13 @@
         return (e = st(t)), (e = null === e ? null : e.stateNode), e;
       }),
       (t.flushSync = function (e, t) {
-        if ((Ql & (ql | Wl)) !== Vl) throw Error(i(187));
-        var n = Ql;
-        Ql |= 1;
+        if ((Jl & (ql | Wl)) !== Vl) throw Error(i(187));
+        var n = Jl;
+        Jl |= 1;
         try {
           return io(99, e.bind(null, t));
         } finally {
-          (Ql = n), so();
+          (Jl = n), so();
         }
       }),
       (t.hydrate = function (e, t, n) {
@@ -62824,7 +64278,7 @@
         if (!xs(e)) throw Error(i(40));
         return (
           !!e._reactRootContainer &&
-          (Rc(function () {
+          (Ic(function () {
             Es(null, null, e, !1, function () {
               (e._reactRootContainer = null), (e[Bn] = null);
             });
@@ -62832,7 +64286,7 @@
           !0)
         );
       }),
-      (t.unstable_batchedUpdates = Ic),
+      (t.unstable_batchedUpdates = Rc),
       (t.unstable_createPortal = function (e, t) {
         return Cs(
           e,
@@ -63226,8 +64680,8 @@
           'style',
           'wrap',
         ]),
-        I = f(),
-        R = s['useMemo'](
+        R = f(),
+        I = s['useMemo'](
           function () {
             return (Array.isArray(y) ? y : [y, y]).map(function (e) {
               return g(e);
@@ -63235,25 +64689,25 @@
           },
           [y],
         ),
-        A = Object(o['a'])(R, 2),
+        A = Object(o['a'])(I, 2),
         M = A[0],
         L = A[1],
-        _ = Object(c['a'])(E, { keepEmpty: !0 }),
-        D = void 0 === x && 'horizontal' === C ? 'center' : x,
+        D = Object(c['a'])(E, { keepEmpty: !0 }),
+        _ = void 0 === x && 'horizontal' === C ? 'center' : x,
         z = i('space', O),
         F = l()(
           z,
           ''.concat(z, '-').concat(C),
           ((t = {}),
           Object(a['a'])(t, ''.concat(z, '-rtl'), 'rtl' === v),
-          Object(a['a'])(t, ''.concat(z, '-align-').concat(D), D),
+          Object(a['a'])(t, ''.concat(z, '-align-').concat(_), _),
           t),
           w,
         ),
         B = ''.concat(z, '-item'),
         U = 'rtl' === v ? 'marginLeft' : 'marginRight',
         V = 0,
-        H = _.map(function (e, t) {
+        H = D.map(function (e, t) {
           null !== e && void 0 !== e && (V = t);
           var n = (e && e.key) || ''.concat(B, '-').concat(t);
           return s['createElement'](
@@ -63276,16 +64730,16 @@
               horizontalSize: M,
               verticalSize: L,
               latestIndex: V,
-              supportFlexGap: I,
+              supportFlexGap: R,
             };
           },
-          [M, L, V, I],
+          [M, L, V, R],
         );
-      if (0 === _.length) return null;
+      if (0 === D.length) return null;
       var W = {};
       return (
-        P && ((W.flexWrap = 'wrap'), I || (W.marginBottom = -L)),
-        I && ((W.columnGap = M), (W.rowGap = L)),
+        P && ((W.flexWrap = 'wrap'), R || (W.marginBottom = -L)),
+        R && ((W.columnGap = M), (W.rowGap = L)),
         s['createElement'](
           'div',
           Object(r['a'])(
@@ -63702,7 +65156,7 @@
       var t = e.route,
         n = e.opts,
         r = e.props,
-        a = R(
+        a = I(
           d(d({}, n), {}, { routes: t.routes || [], rootRoutes: n.rootRoutes }),
           { location: r.location },
         ),
@@ -63724,7 +65178,7 @@
       }
       return a;
     }
-    function I(e) {
+    function R(e) {
       var t,
         n,
         r,
@@ -63764,7 +65218,7 @@
             }),
           ));
     }
-    function R(e) {
+    function I(e) {
       var t =
         arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
       return e.routes
@@ -63772,7 +65226,7 @@
             j,
             t,
             e.routes.map(function (t, n) {
-              return I({
+              return R({
                 route: t,
                 index: n,
                 opts: d(d({}, e), {}, { rootRoutes: e.rootRoutes || e.routes }),
@@ -63815,7 +65269,7 @@
           },
           [t],
         ),
-        s['default'].createElement(a.Router, { history: t }, R(n))
+        s['default'].createElement(a.Router, { history: t }, I(n))
       );
     }
     function L(e) {
@@ -63832,12 +65286,12 @@
         args: { history: e.history, routes: e.routes, plugin: e.plugin },
       });
     }
-    function _(e) {
-      return D.apply(this, arguments);
+    function D(e) {
+      return _.apply(this, arguments);
     }
-    function D() {
+    function _() {
       return (
-        (D = p(
+        (_ = p(
           r.mark(function e(t) {
             var n,
               a,
@@ -63885,7 +65339,7 @@
                         e.next = 17;
                         break;
                       }
-                      return (e.next = 16), _(u.routes, n);
+                      return (e.next = 16), D(u.routes, n);
                     case 16:
                       u.routes = e.sent;
                     case 17:
@@ -63911,7 +65365,7 @@
             );
           }),
         )),
-        D.apply(this, arguments)
+        _.apply(this, arguments)
       );
     }
     function z(e) {
@@ -63924,13 +65378,13 @@
         r = e.callback || function () {};
       window.g_useSSR
         ? e.dynamicImport
-          ? _(e.routes).then(function () {
+          ? D(e.routes).then(function () {
               i.hydrate(t, n, r);
             })
           : i.hydrate(t, n, r)
         : i.render(t, n, r);
     }
-    (t.renderClient = z), (t.renderRoutes = R);
+    (t.renderClient = z), (t.renderRoutes = I);
   },
   zqmC: function (e, t, n) {
     'use strict';
@@ -64092,7 +65546,7 @@
   zvFY: function (e, t, n) {
     'use strict';
     n.d(t, 'a', function () {
-      return _;
+      return D;
     });
     var r = n('wx14'),
       a = n('rePB'),
@@ -64228,10 +65682,10 @@
       },
       P = /^[\u4e00-\u9fa5]{2}$/,
       N = P.test.bind(P);
-    function I(e) {
+    function R(e) {
       return 'string' === typeof e;
     }
-    function R(e) {
+    function I(e) {
       return 'text' === e || 'link' === e;
     }
     function A(e) {
@@ -64242,7 +65696,7 @@
         var n = t ? ' ' : '';
         return 'string' !== typeof e &&
           'number' !== typeof e &&
-          I(e.type) &&
+          R(e.type) &&
           N(e.props.children)
           ? Object(h['a'])(e, { children: e.props.children.split('').join(n) })
           : 'string' === typeof e
@@ -64276,10 +65730,10 @@
     Object(v['a'])('default', 'primary', 'ghost', 'dashed', 'link', 'text'),
       Object(v['a'])('default', 'circle', 'round'),
       Object(v['a'])('submit', 'button', 'reset');
-    function _(e) {
+    function D(e) {
       return 'danger' === e ? { danger: !0 } : { type: e };
     }
-    var D = function (e, t) {
+    var _ = function (e, t) {
         var n,
           i = e.loading,
           l = void 0 !== i && i,
@@ -64295,11 +65749,11 @@
           O = e.children,
           S = e.icon,
           P = e.ghost,
-          I = void 0 !== P && P,
+          R = void 0 !== P && P,
           A = e.block,
           M = void 0 !== A && A,
-          _ = e.htmlType,
-          D = void 0 === _ ? 'button' : _,
+          D = e.htmlType,
+          _ = void 0 === D ? 'button' : D,
           z = T(e, [
             'loading',
             'prefixCls',
@@ -64328,15 +65782,15 @@
           Y = K[0],
           Z = K[1],
           X = u['useContext'](f['b']),
-          Q = X.getPrefixCls,
-          J = X.autoInsertSpaceInButton,
+          J = X.getPrefixCls,
+          Q = X.autoInsertSpaceInButton,
           ee = X.direction,
           te = t || u['createRef'](),
           ne = function () {
-            return 1 === u['Children'].count(O) && !S && !R(v);
+            return 1 === u['Children'].count(O) && !S && !I(v);
           },
           re = function () {
-            if (te && te.current && !1 !== J) {
+            if (te && te.current && !1 !== Q) {
               var e = te.current.textContent;
               ne() && N(e) ? Y || Z(!0) : Y && Z(!1);
             }
@@ -64366,8 +65820,8 @@
             var n = e.onClick;
             W || U ? t.preventDefault() : null === n || void 0 === n || n(t);
           },
-          ie = Q('btn', d),
-          le = !1 !== J,
+          ie = J('btn', d),
+          le = !1 !== Q,
           ce = { large: 'lg', small: 'sm', middle: void 0 },
           se = V || E || F,
           ue = (se && ce[se]) || '',
@@ -64388,7 +65842,7 @@
               ''.concat(ie, '-icon-only'),
               !O && 0 !== O && !!de,
             ),
-            Object(a['a'])(n, ''.concat(ie, '-background-ghost'), I && !R(v)),
+            Object(a['a'])(n, ''.concat(ie, '-background-ghost'), R && !I(v)),
             Object(a['a'])(n, ''.concat(ie, '-loading'), W),
             Object(a['a'])(
               n,
@@ -64425,7 +65879,7 @@
         var ve = u['createElement'](
           'button',
           Object(r['a'])({}, z, {
-            type: D,
+            type: _,
             className: pe,
             onClick: oe,
             disabled: U,
@@ -64434,9 +65888,9 @@
           me,
           he,
         );
-        return R(v) ? ve : u['createElement'](g['a'], { disabled: !!W }, ve);
+        return I(v) ? ve : u['createElement'](g['a'], { disabled: !!W }, ve);
       },
-      z = u['forwardRef'](D);
+      z = u['forwardRef'](_);
     (z.Group = w), (z.__ANT_BUTTON = !0);
     t['b'] = z;
   },

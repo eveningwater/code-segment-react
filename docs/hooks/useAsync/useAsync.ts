@@ -12,7 +12,7 @@ const useAsync = (handler: Function) => {
     error: null,
     value: null,
   };
-  const stateReducer = (_, action: ActionType) => {
+  const stateReducer = (_: any, action: ActionType) => {
     switch (action.type) {
       case 'start':
         return { loading: true, error: null, value: null };
