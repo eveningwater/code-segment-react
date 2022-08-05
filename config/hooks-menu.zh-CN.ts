@@ -15,4 +15,8 @@ export default [
     title: '点击区域之外',
     path: '/zh-CN/hooks/use-click-outside/use-click-outside',
   },
+  {
+    title: '模拟函数组件的挂载生命周期',
+    path: '/zh-CN/hooks/use-component-did-mount/use-component-did-mount',
+  },
 ];

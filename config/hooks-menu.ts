@@ -15,4 +15,8 @@ export default [
     title: 'useClickOutside',
     path: '/hooks/use-click-outside/use-click-outside',
   },
+  {
+    title: 'useComponentDidMount',
+    path: '/hooks/use-component-did-mount/use-component-did-mount',
+  },
 ];
