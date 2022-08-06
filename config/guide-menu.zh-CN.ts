@@ -87,4 +87,8 @@ export default [
     title: '选择器',
     path: '/zh-CN/guide/select/select',
   },
+  // {
+  //   title: '滑块条',
+  //   path: '/zh-CN/guide/slider/slider',
+  // },
 ];

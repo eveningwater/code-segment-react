@@ -19,4 +19,8 @@ export default [
     title: 'useComponentDidMount',
     path: '/hooks/use-component-did-mount/use-component-did-mount',
   },
+  {
+    title: 'useComponentDidUpdate',
+    path: '/hooks/use-component-did-update/use-component-did-update',
+  },
 ];

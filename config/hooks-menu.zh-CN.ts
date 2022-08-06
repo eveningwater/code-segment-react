@@ -19,4 +19,8 @@ export default [
     title: '模拟函数组件的挂载生命周期',
     path: '/zh-CN/hooks/use-component-did-mount/use-component-did-mount',
   },
+  {
+    title: '模拟函数组件的状态更新生命周期',
+    path: '/zh-CN/hooks/use-component-did-update/use-component-did-update',
+  },
 ];

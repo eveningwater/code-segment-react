@@ -87,4 +87,8 @@ export default [
     title: 'Select',
     path: '/guide/select/select',
   },
+  // {
+  //   title: 'Slider',
+  //   path: '/guide/slider/slider',
+  // },
 ];
