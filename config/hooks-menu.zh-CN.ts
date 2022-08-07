@@ -27,4 +27,8 @@ export default [
     title: '组件即将卸载',
     path: '/zh-CN/hooks/use-component-will-unmount/use-component-will-unmount',
   },
+  {
+    title: '复制到剪贴板',
+    path: '/zh-CN/hooks/use-copy-to-clipboard/use-copy-to-clipboard',
+  },
 ];

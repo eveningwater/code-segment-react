@@ -27,4 +27,8 @@ export default [
     title: 'useComponentWillUnmount',
     path: '/hooks/use-component-will-unmount/use-component-will-unmount',
   },
+  {
+    title: 'useCopyToClipboard',
+    path: '/hooks/use-copy-to-clipboard/use-copy-to-clipboard',
+  },
 ];

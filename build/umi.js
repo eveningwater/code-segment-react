@@ -4727,6 +4727,44 @@
               title: 'UseComponentWillUnmount - react-code-segment',
             },
             {
+              path: '/hooks/use-copy-to-clipboard/use-copy-to-clipboard',
+              component: n('1WrV').default,
+              exact: !0,
+              meta: {
+                filePath: 'docs/hooks/useCopyToClipboard/useCopyToClipboard.md',
+                updatedTime: 1659883002570,
+                slugs: [],
+                hasPreviewer: !0,
+                nav: { path: '/hooks', title: 'Hooks' },
+                group: {
+                  path: '/hooks/use-copy-to-clipboard',
+                  title: 'UseCopyToClipboard',
+                },
+                title: 'UseCopyToClipboard',
+              },
+              title: 'UseCopyToClipboard - react-code-segment',
+            },
+            {
+              path: '/zh-CN/hooks/use-copy-to-clipboard/use-copy-to-clipboard',
+              component: n('iZt5').default,
+              exact: !0,
+              meta: {
+                filePath:
+                  'docs/hooks/useCopyToClipboard/useCopyToClipboard.zh-CN.md',
+                updatedTime: 1659883033565,
+                slugs: [],
+                hasPreviewer: !0,
+                locale: 'zh-CN',
+                nav: { path: '/zh-CN/hooks', title: 'Hooks' },
+                group: {
+                  path: '/zh-CN/hooks/use-copy-to-clipboard',
+                  title: 'UseCopyToClipboard',
+                },
+                title: 'UseCopyToClipboard',
+              },
+              title: 'UseCopyToClipboard - react-code-segment',
+            },
+            {
               path: '/antd',
               meta: {},
               exact: !0,
@@ -5131,6 +5169,19 @@
               exact: !0,
               redirect:
                 '/zh-CN/hooks/use-component-will-unmount/use-component-will-unmount',
+            },
+            {
+              path: '/hooks/use-copy-to-clipboard',
+              meta: {},
+              exact: !0,
+              redirect: '/hooks/use-copy-to-clipboard/use-copy-to-clipboard',
+            },
+            {
+              path: '/zh-CN/hooks/use-copy-to-clipboard',
+              meta: {},
+              exact: !0,
+              redirect:
+                '/zh-CN/hooks/use-copy-to-clipboard/use-copy-to-clipboard',
             },
           ],
           title: 'react-code-segment',
@@ -6009,6 +6060,144 @@
         );
       })(c['Component']);
     t['a'] = P;
+  },
+  '1WrV': function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n('q1tI'),
+      a = n.n(r),
+      o = n('dEAq'),
+      i = n('Zxc8'),
+      l = n('H1Ra'),
+      c = n('dMo/'),
+      s = a.a.memo((e) => {
+        var t = e.demos,
+          n = t['usecopytoclipboard-demo'].component;
+        return a.a.createElement(
+          a.a.Fragment,
+          null,
+          a.a.createElement(
+            a.a.Fragment,
+            null,
+            a.a.createElement(
+              'div',
+              { className: 'markdown' },
+              a.a.createElement(
+                c['a'],
+                null,
+                a.a.createElement(
+                  'thead',
+                  null,
+                  a.a.createElement(
+                    'tr',
+                    null,
+                    a.a.createElement('th', null, 'title'),
+                    a.a.createElement('th', null, 'tags'),
+                    a.a.createElement('th', null, 'firstSeen'),
+                    a.a.createElement('th', null, 'lastUpdated'),
+                  ),
+                ),
+                a.a.createElement(
+                  'tbody',
+                  null,
+                  a.a.createElement(
+                    'tr',
+                    null,
+                    a.a.createElement(
+                      'td',
+                      null,
+                      'React useCopyToClipboard hook',
+                    ),
+                    a.a.createElement(
+                      'td',
+                      null,
+                      'hooks,effect,state,callback',
+                    ),
+                    a.a.createElement('td', null, '2022/8/7'),
+                    a.a.createElement('td', null, '2022/8/7'),
+                  ),
+                ),
+              ),
+              a.a.createElement(
+                'p',
+                null,
+                'Copies the given text to the clipboard.',
+              ),
+              a.a.createElement(
+                'ul',
+                null,
+                a.a.createElement(
+                  'li',
+                  null,
+                  'Use the ',
+                  a.a.createElement(
+                    o['Link'],
+                    {
+                      to: 'https://github.com/eveningwater/code-segment-react/tree/main/docs/hooks/useCopyToClipboard',
+                    },
+                    'copyToClipboard',
+                  ),
+                  ' snippet to copy the text to clipboard.',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  'Use the useState() hook to initialize the copied variable.',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  'Use the useCallback() hook to create a callback for the copyToClipboard method.',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  'Use the useEffect() hook to reset the copied state variable if the text changes.',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  'Return the copied state variable and the copy callback.',
+                ),
+              ),
+              a.a.createElement('p', null, 'hooks:'),
+              a.a.createElement(l['a'], {
+                code: "import { useState,useCallback,useEffect } from 'react'\n\nconst useCopyToClipboard = (text: string) => {\n    const copyToClipboard = (str: string) => {\n        const el = document.createElement(\"textarea\");\n        el.value = str;\n        el.setAttribute('readonly','');\n        el.style.position = 'absolute';\n        el.style.left = '-9999px';\n        document.body.appendChild(el);\n        const selected = document.getSelection()!.rangeCount > 0 ? document.getSelection()?.getRangeAt(0) : false;\n        el.select();\n        const success = document.execCommand('copy');\n        document.body.removeChild(el);\n        if(selected){\n            document.getSelection()?.removeAllRanges();\n            document.getSelection()?.addRange(selected);\n        }\n        return success;\n    }\n\n    const [copied,setCopied] = useState(false);\n\n    const copy = useCallback(() => {\n        if(!copied){\n            setCopied(copyToClipboard(text));\n        }\n    },[text]);\n\n    useEffect(() => () => setCopied(false),[text]);\n\n    return [copied,copy];\n}\n\nexport default useCopyToClipboard;",
+                lang: 'ts',
+              }),
+              a.a.createElement('p', null, 'Demo:'),
+              a.a.createElement(l['a'], {
+                code: "import React, { SyntheticEvent } from 'react'\nimport useCopyToClipboard from \"./useCopyToClipboard\"\nimport { Space } from 'antd'\nimport Button from '../../guide/Button/Button'\n\nexport interface TextCopyProps {\n    text:string\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n    const { text = 'Lorem ipsum' } = props;\n    const [copied,copy] = useCopyToClipboard(text);\n    return (\n        <Space>\n            <Button type='primary' ripple onClick={copy as (e: SyntheticEvent) => void}>Click to Copy!</Button>\n            <span>{ copied && 'Copied!' }</span>\n        </Space>\n    )\n}\n\nconst Demo = () => <TextCopy text='The copy text!'/>;\n\nexport default Demo;",
+                lang: 'tsx',
+              }),
+              a.a.createElement('p', null, 'Demo:'),
+            ),
+            a.a.createElement(
+              i['default'],
+              t['usecopytoclipboard-demo'].previewerProps,
+              a.a.createElement(n, null),
+            ),
+          ),
+        );
+      });
+    t['default'] = (e) => {
+      var t = a.a.useContext(o['context']),
+        n = t.demos;
+      return (
+        a.a.useEffect(() => {
+          var t;
+          null !== e &&
+            void 0 !== e &&
+            null !== (t = e.location) &&
+            void 0 !== t &&
+            t.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        a.a.createElement(s, { demos: n })
+      );
+    };
   },
   '1Y/n': function (e, t, n) {
     var r = n('HAuM'),
@@ -11677,6 +11866,36 @@
       TypedArray: E,
       TypedArrayPrototype: w,
     };
+  },
+  '6Hiq': function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n('tJVT'),
+      a = n('q1tI'),
+      o = n.n(a),
+      i = n('k9Jo'),
+      l = n('zeV3'),
+      c = n('1Y2s'),
+      s = (e) => {
+        var t = e.text,
+          n = void 0 === t ? 'Lorem ipsum' : t,
+          a = Object(i['a'])(n),
+          s = Object(r['a'])(a, 2),
+          u = s[0],
+          d = s[1];
+        return o.a.createElement(
+          l['b'],
+          null,
+          o.a.createElement(
+            c['a'],
+            { type: 'primary', ripple: !0, onClick: d },
+            'Click to Copy!',
+          ),
+          o.a.createElement('span', null, u && 'Copied!'),
+        );
+      },
+      u = () => o.a.createElement(s, { text: 'The copy text!' });
+    t['default'] = u;
   },
   '6JNq': function (e, t, n) {
     var r = n('UTVS'),
@@ -28509,6 +28728,37 @@
       if (void 0 != e) return e[i] || e['@@iterator'] || a[r(e)];
     };
   },
+  NfPr: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n('tJVT'),
+      a = n('q1tI'),
+      o = n.n(a),
+      i = n('k9Jo'),
+      l = n('zeV3'),
+      c = n('1Y2s'),
+      s = (e) => {
+        var t = e.text,
+          n = void 0 === t ? 'Lorem ipsum' : t,
+          a = Object(i['a'])(n),
+          s = Object(r['a'])(a, 2),
+          u = s[0],
+          d = s[1];
+        return o.a.createElement(
+          l['b'],
+          null,
+          o.a.createElement(
+            c['a'],
+            { type: 'primary', ripple: !0, onClick: d },
+            '\u70b9\u51fb\u8fd9\u91cc\u590d\u5236!',
+          ),
+          o.a.createElement('span', null, u && '\u5df2\u590d\u5236!'),
+        );
+      },
+      u = () =>
+        o.a.createElement(s, { text: '\u590d\u5236\u7684\u6587\u672c!' });
+    t['default'] = u;
+  },
   Npjl: function (e, t) {
     function n(e, t) {
       return null == e ? void 0 : e[t];
@@ -28946,7 +29196,13 @@
         "import { useEffect } from 'react';\n\nconst useComponentWillUnmount = (onUnmountHandler) => {\n  useEffect(() => () => onUnmountHandler?.(), []);\n};\n\nexport default useComponentWillUnmount;",
       it =
         "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d'));\n  return <div>\u68c0\u67e5\u63a7\u5236\u53f0</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
-      lt = {
+      lt =
+        "import React, { SyntheticEvent } from 'react'\r\nimport useCopyToClipboard from \"./useCopyToClipboard\"\r\nimport { Space } from 'antd'\r\nimport Button from '../../guide/Button/Button'\r\n\r\nexport interface TextCopyProps {\r\n    text:string\r\n}\r\n\r\nconst TextCopy = (props: Partial<TextCopyProps>) => {\r\n    const { text = 'Lorem ipsum' } = props;\r\n    const [copied,copy] = useCopyToClipboard(text);\r\n    return (\r\n        <Space>\r\n            <Button type='primary' ripple onClick={copy as (e: SyntheticEvent) => void}>Click to Copy!</Button>\r\n            <span>{ copied && 'Copied!' }</span>\r\n        </Space>\r\n    )\r\n}\r\n\r\nconst Demo = () => <TextCopy text='The copy text!'/>;\r\n\r\nexport default Demo;",
+      ct =
+        "import { useState,useCallback,useEffect } from 'react'\r\n\r\nconst useCopyToClipboard = (text: string) => {\r\n    const copyToClipboard = (str: string) => {\r\n        const el = document.createElement(\"textarea\");\r\n        el.value = str;\r\n        el.setAttribute('readonly','');\r\n        el.style.position = 'absolute';\r\n        el.style.left = '-9999px';\r\n        document.body.appendChild(el);\r\n        const selected = document.getSelection()!.rangeCount > 0 ? document.getSelection()?.getRangeAt(0) : false;\r\n        el.select();\r\n        const success = document.execCommand('copy');\r\n        document.body.removeChild(el);\r\n        if(selected){\r\n            document.getSelection()?.removeAllRanges();\r\n            document.getSelection()?.addRange(selected);\r\n        }\r\n        return success;\r\n    }\r\n\r\n    const [copied,setCopied] = useState(false);\r\n\r\n    const copy = useCallback(() => {\r\n        if(!copied){\r\n            setCopied(copyToClipboard(text));\r\n        }\r\n    },[text]);\r\n\r\n    useEffect(() => () => setCopied(false),[text]);\r\n\r\n    return [copied,copy];\r\n}\r\n\r\nexport default useCopyToClipboard;",
+      st =
+        "import React, { SyntheticEvent } from 'react'\r\nimport useCopyToClipboard from \"./useCopyToClipboard\"\r\nimport { Space } from 'antd'\r\nimport Button from '../../guide/Button/Button'\r\n\r\nexport interface TextCopyProps {\r\n    text:string\r\n}\r\n\r\nconst TextCopy = (props: Partial<TextCopyProps>) => {\r\n    const { text = 'Lorem ipsum' } = props;\r\n    const [copied,copy] = useCopyToClipboard(text);\r\n    return (\r\n        <Space>\r\n            <Button type='primary' ripple onClick={copy as (e: SyntheticEvent) => void}>\u70b9\u51fb\u8fd9\u91cc\u590d\u5236!</Button>\r\n            <span>{ copied && '\u5df2\u590d\u5236!' }</span>\r\n        </Space>\r\n    )\r\n}\r\n\r\nconst Demo = () => <TextCopy text='\u590d\u5236\u7684\u6587\u672c!'/>;\r\n\r\nexport default Demo;",
+      ut = {
         'loadingbutton-demo': {
           component: n('4ZnB').default,
           previewerProps: {
@@ -30115,14 +30371,70 @@
             identifier: 'usecomponentwillunmount-demo.zh-cn',
           },
         },
+        'usecopytoclipboard-demo': {
+          component: n('6Hiq').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: lt },
+              'useCopyToClipboard.ts': {
+                import: './useCopyToClipboard',
+                content: ct,
+              },
+              'guide/Button/Button.tsx': { import: './Button', content: O },
+              'button.less': { import: './button.less', content: S },
+              'utils/classnames.ts': {
+                import: '../../utils/classnames',
+                content: j,
+              },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: T },
+            },
+            dependencies: {
+              react: { version: '>=16.8.0' },
+              antd: { version: '4.21.5', css: 'antd/dist/antd.css' },
+              'react-dom': { version: '>=16.9.0' },
+              '@emotion/styled': { version: '11.9.3' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+            },
+            identifier: 'usecopytoclipboard-demo',
+          },
+        },
+        'usecopytoclipboard-demo.zh-cn': {
+          component: n('NfPr').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: st },
+              'useCopyToClipboard.ts': {
+                import: './useCopyToClipboard',
+                content: ct,
+              },
+              'guide/Button/Button.tsx': { import: './Button', content: O },
+              'button.less': { import: './button.less', content: S },
+              'utils/classnames.ts': {
+                import: '../../utils/classnames',
+                content: j,
+              },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: T },
+            },
+            dependencies: {
+              react: { version: '>=16.8.0' },
+              antd: { version: '4.21.5', css: 'antd/dist/antd.css' },
+              'react-dom': { version: '>=16.9.0' },
+              '@emotion/styled': { version: '11.9.3' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+            },
+            identifier: 'usecopytoclipboard-demo.zh-cn',
+          },
+        },
       },
-      ct = n('Zs1V'),
-      st = n('KcUY'),
-      ut = n.n(st);
+      dt = n('Zs1V'),
+      ft = n('KcUY'),
+      pt = n.n(ft);
     t['default'] = (e) =>
       o.a.createElement(
-        ut.a,
-        Object(r['a'])({}, e, { config: i, demos: lt, apis: ct }),
+        pt.a,
+        Object(r['a'])({}, e, { config: i, demos: ut, apis: dt }),
       );
   },
   'Of+w': function (e, t, n) {
@@ -31216,7 +31528,7 @@
   },
   RGYn: function (e) {
     e.exports = JSON.parse(
-      '{"menus":{"en-US":{"/getting-started":[{"path":"/getting-started","title":"react code-segment","meta":{}}],"*":[{"path":"/","title":"Welcome to the website","meta":{}}],"/antd":[{"title":"LoadingButton","path":"/antd/loading-button"},{"title":"OmitText","path":"/antd/omit-text"},{"title":"LoadingModal","path":"/antd/loading-modal"}],"/guide":[{"title":"Accordion","path":"/guide/Accordion/Accordion"},{"title":"Alert","path":"/guide/Alert/Alert"},{"title":"AutoLink","path":"/guide/auto-link/auto-link"},{"title":"Callto","path":"/guide/Callto/Callto"},{"title":"Carousel","path":"/guide/Carousel/Carousel"},{"title":"Collapse","path":"/guide/Collapse/Collapse"},{"title":"ControlledInput","path":"/guide/controlled-input/controlled-input"},{"title":"CountDown","path":"/guide/count-down/count-down"},{"title":"SimpleDataList","path":"/guide/simple-data-list/simple-data-list"},{"title":"SimpleDataTable","path":"/guide/simple-data-table/simple-data-table"},{"title":"FileDrop","path":"/guide/file-drop/file-drop"},{"title":"LazyLoadingImage","path":"/guide/lazy-loading-image/lazy-loading-image"},{"title":"LimitedTextarea","path":"/guide/limited-textarea/limited-textarea"},{"title":"LimitedWordTextarea","path":"/guide/limited-word-textarea/limited-word-textarea"},{"title":"Loader","path":"/guide/Loader/Loader"},{"title":"Mailto","path":"/guide/Mailto/Mailto"},{"title":"SimpleMappedDataTable","path":"/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"Modal","path":"/guide/Modal/Modal"},{"title":"Checkbox","path":"/guide/Checkbox/Checkbox"},{"title":"PasswordRevealer","path":"/guide/password-revealer/password-revealer"},{"title":"Button","path":"/guide/button/button"},{"title":"Select","path":"/guide/select/select"}],"/hooks":[{"title":"useAsync","path":"/hooks/use-async/use-async"},{"title":"useBodyScrollLock","path":"/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"useClickInside","path":"/hooks/use-click-inside/use-click-inside"},{"title":"useClickOutside","path":"/hooks/use-click-outside/use-click-outside"},{"title":"useComponentDidMount","path":"/hooks/use-component-did-mount/use-component-did-mount"},{"title":"useComponentDidUpdate","path":"/hooks/use-component-did-update/use-component-did-update"},{"title":"useComponentWillUnmount","path":"/hooks/use-component-will-unmount/use-component-will-unmount"}]},"zh-CN":{"/zh-CN/getting-started":[{"path":"/zh-CN/getting-started","title":"react \u4ee3\u7801\u6bb5","meta":{}}],"*":[{"path":"/zh-CN","title":"\u6b22\u8fce\u6765\u5230\u672c\u7f51\u7ad9","meta":{}}],"/zh-CN/antd":[{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u6309\u94ae","path":"/zh-CN/antd/loading-button"},{"title":"\u7701\u7565\u6587\u672c\u7ec4\u4ef6","path":"/zh-CN/antd/omit-text"},{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u5f39\u6846","path":"/zh-CN/antd/loading-modal"}],"/zh-CN/guide":[{"title":"\u624b\u98ce\u7434","path":"/zh-CN/guide/Accordion/Accordion"},{"title":"\u63d0\u793a","path":"/zh-CN/guide/Alert/Alert"},{"title":"\u81ea\u52a8\u6587\u672c\u94fe\u63a5","path":"/zh-CN/guide/auto-link/auto-link"},{"title":"\u62e8\u7535\u81f3","path":"/zh-CN/guide/Callto/Callto"},{"title":"\u8f6e\u64ad\u56fe","path":"/zh-CN/guide/Carousel/Carousel"},{"title":"\u53ef\u6298\u53e0\u7684\u5185\u5bb9","path":"/zh-CN/guide/Collapse/Collapse"},{"title":"\u53d7\u63a7\u7684\u8f93\u5165\u6846","path":"/zh-CN/guide/controlled-input/controlled-input"},{"title":"\u5012\u8ba1\u65f6\u7ec4\u4ef6","path":"/zh-CN/guide/count-down/count-down"},{"title":"\u7b80\u6613\u6570\u636e\u5217\u8868\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-list/simple-data-list"},{"title":"\u7b80\u6613\u6570\u636e\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-table/simple-data-table"},{"title":"\u62d6\u62fd\u6587\u4ef6\u7ec4\u4ef6","path":"/zh-CN/guide/file-drop/file-drop"},{"title":"\u61d2\u52a0\u8f7d\u56fe\u7247","path":"/zh-CN/guide/lazy-loading-image/lazy-loading-image"},{"title":"\u9650\u5236\u5b57\u7b26\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-textarea/limited-textarea"},{"title":"\u9650\u5236\u5b57\u6570\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-word-textarea/limited-word-textarea"},{"title":"\u52a0\u8f7d\u7ec4\u4ef6","path":"/zh-CN/guide/Loader/Loader"},{"title":"\u90ae\u4ef6\u94fe\u63a5\u7ec4\u4ef6","path":"/zh-CN/guide/Mailto/Mailto"},{"title":"\u7b80\u6613\u5bf9\u8c61\u6570\u7ec4\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"\u5f39\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Modal/Modal"},{"title":"\u590d\u9009\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Checkbox/Checkbox"},{"title":"\u5bc6\u7801\u663e\u793a\u5668","path":"/zh-CN/guide/password-revealer/password-revealer"},{"title":"\u6309\u94ae","path":"/zh-CN/guide/button/button"},{"title":"\u9009\u62e9\u5668","path":"/zh-CN/guide/select/select"}],"/zh-CN/hooks":[{"title":"\u5f02\u6b65","path":"/zh-CN/hooks/use-async/use-async"},{"title":"\u9501\u5b9abody\u5143\u7d20\u7684\u6eda\u52a8","path":"/zh-CN/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5185","path":"/zh-CN/hooks/use-click-inside/use-click-inside"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5916","path":"/zh-CN/hooks/use-click-outside/use-click-outside"},{"title":"\u7ec4\u4ef6\u7684\u6302\u8f7d","path":"/zh-CN/hooks/use-component-did-mount/use-component-did-mount"},{"title":"\u7ec4\u4ef6\u7684\u72b6\u6001\u66f4\u65b0","path":"/zh-CN/hooks/use-component-did-update/use-component-did-update"},{"title":"\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d","path":"/zh-CN/hooks/use-component-will-unmount/use-component-will-unmount"}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"\u4e2d\u6587"}],"navs":{"en-US":[{"title":"getting-started","path":"/getting-started"},{"title":"guide","path":"/guide"},{"title":"hooks","path":"/hooks"},{"title":"antd","path":"/antd"},{"title":"github","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"about me","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"jue jin","path":"https://juejin.im/user/4054654613988718"},{"title":"segmentfault","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"gitee","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"blog","path":"https://www.cnblogs.com/eveningwater/"},{"title":"website","path":"https://www.eveningwater.com/"},{"title":"My project","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"17sucai","path":"https://www.17sucai.com/user/800544"},{"title":"ewColorPicker","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}],"zh-CN":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/zh-CN/getting-started"},{"title":"\u6307\u5357","path":"/zh-CN/guide"},{"title":"\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks"},{"title":"\u8682\u8681\u8bbe\u8ba1","path":"/zh-CN/antd"},{"title":"\u6e90\u7801\u5730\u5740","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"\u5173\u4e8e\u6211","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"\u6398\u91d1","path":"https://juejin.im/user/4054654613988718"},{"title":"\u601d\u5426","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"\u7801\u4e91","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"\u535a\u5ba2","path":"https://www.cnblogs.com/eveningwater/"},{"title":"\u4e2a\u4eba\u7f51\u7ad9","path":"https://www.eveningwater.com/"},{"title":"\u4e2a\u4eba\u9879\u76ee","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"\u95e8\u7d20\u6750","path":"https://www.17sucai.com/user/800544"},{"title":"\u989c\u8272\u9009\u62e9\u5668","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}]},"title":"react-code-segment","logo":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K","mode":"site","repository":{"url":"","branch":"master"},"theme":{}}',
+      '{"menus":{"en-US":{"/getting-started":[{"path":"/getting-started","title":"react code-segment","meta":{}}],"*":[{"path":"/","title":"Welcome to the website","meta":{}}],"/antd":[{"title":"LoadingButton","path":"/antd/loading-button"},{"title":"OmitText","path":"/antd/omit-text"},{"title":"LoadingModal","path":"/antd/loading-modal"}],"/guide":[{"title":"Accordion","path":"/guide/Accordion/Accordion"},{"title":"Alert","path":"/guide/Alert/Alert"},{"title":"AutoLink","path":"/guide/auto-link/auto-link"},{"title":"Callto","path":"/guide/Callto/Callto"},{"title":"Carousel","path":"/guide/Carousel/Carousel"},{"title":"Collapse","path":"/guide/Collapse/Collapse"},{"title":"ControlledInput","path":"/guide/controlled-input/controlled-input"},{"title":"CountDown","path":"/guide/count-down/count-down"},{"title":"SimpleDataList","path":"/guide/simple-data-list/simple-data-list"},{"title":"SimpleDataTable","path":"/guide/simple-data-table/simple-data-table"},{"title":"FileDrop","path":"/guide/file-drop/file-drop"},{"title":"LazyLoadingImage","path":"/guide/lazy-loading-image/lazy-loading-image"},{"title":"LimitedTextarea","path":"/guide/limited-textarea/limited-textarea"},{"title":"LimitedWordTextarea","path":"/guide/limited-word-textarea/limited-word-textarea"},{"title":"Loader","path":"/guide/Loader/Loader"},{"title":"Mailto","path":"/guide/Mailto/Mailto"},{"title":"SimpleMappedDataTable","path":"/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"Modal","path":"/guide/Modal/Modal"},{"title":"Checkbox","path":"/guide/Checkbox/Checkbox"},{"title":"PasswordRevealer","path":"/guide/password-revealer/password-revealer"},{"title":"Button","path":"/guide/button/button"},{"title":"Select","path":"/guide/select/select"}],"/hooks":[{"title":"useAsync","path":"/hooks/use-async/use-async"},{"title":"useBodyScrollLock","path":"/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"useClickInside","path":"/hooks/use-click-inside/use-click-inside"},{"title":"useClickOutside","path":"/hooks/use-click-outside/use-click-outside"},{"title":"useComponentDidMount","path":"/hooks/use-component-did-mount/use-component-did-mount"},{"title":"useComponentDidUpdate","path":"/hooks/use-component-did-update/use-component-did-update"},{"title":"useComponentWillUnmount","path":"/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"useCopyToClipboard","path":"/hooks/use-copy-to-clipboard/use-copy-to-clipboard"}]},"zh-CN":{"/zh-CN/getting-started":[{"path":"/zh-CN/getting-started","title":"react \u4ee3\u7801\u6bb5","meta":{}}],"*":[{"path":"/zh-CN","title":"\u6b22\u8fce\u6765\u5230\u672c\u7f51\u7ad9","meta":{}}],"/zh-CN/antd":[{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u6309\u94ae","path":"/zh-CN/antd/loading-button"},{"title":"\u7701\u7565\u6587\u672c\u7ec4\u4ef6","path":"/zh-CN/antd/omit-text"},{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u5f39\u6846","path":"/zh-CN/antd/loading-modal"}],"/zh-CN/guide":[{"title":"\u624b\u98ce\u7434","path":"/zh-CN/guide/Accordion/Accordion"},{"title":"\u63d0\u793a","path":"/zh-CN/guide/Alert/Alert"},{"title":"\u81ea\u52a8\u6587\u672c\u94fe\u63a5","path":"/zh-CN/guide/auto-link/auto-link"},{"title":"\u62e8\u7535\u81f3","path":"/zh-CN/guide/Callto/Callto"},{"title":"\u8f6e\u64ad\u56fe","path":"/zh-CN/guide/Carousel/Carousel"},{"title":"\u53ef\u6298\u53e0\u7684\u5185\u5bb9","path":"/zh-CN/guide/Collapse/Collapse"},{"title":"\u53d7\u63a7\u7684\u8f93\u5165\u6846","path":"/zh-CN/guide/controlled-input/controlled-input"},{"title":"\u5012\u8ba1\u65f6\u7ec4\u4ef6","path":"/zh-CN/guide/count-down/count-down"},{"title":"\u7b80\u6613\u6570\u636e\u5217\u8868\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-list/simple-data-list"},{"title":"\u7b80\u6613\u6570\u636e\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-table/simple-data-table"},{"title":"\u62d6\u62fd\u6587\u4ef6\u7ec4\u4ef6","path":"/zh-CN/guide/file-drop/file-drop"},{"title":"\u61d2\u52a0\u8f7d\u56fe\u7247","path":"/zh-CN/guide/lazy-loading-image/lazy-loading-image"},{"title":"\u9650\u5236\u5b57\u7b26\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-textarea/limited-textarea"},{"title":"\u9650\u5236\u5b57\u6570\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-word-textarea/limited-word-textarea"},{"title":"\u52a0\u8f7d\u7ec4\u4ef6","path":"/zh-CN/guide/Loader/Loader"},{"title":"\u90ae\u4ef6\u94fe\u63a5\u7ec4\u4ef6","path":"/zh-CN/guide/Mailto/Mailto"},{"title":"\u7b80\u6613\u5bf9\u8c61\u6570\u7ec4\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"\u5f39\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Modal/Modal"},{"title":"\u590d\u9009\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Checkbox/Checkbox"},{"title":"\u5bc6\u7801\u663e\u793a\u5668","path":"/zh-CN/guide/password-revealer/password-revealer"},{"title":"\u6309\u94ae","path":"/zh-CN/guide/button/button"},{"title":"\u9009\u62e9\u5668","path":"/zh-CN/guide/select/select"}],"/zh-CN/hooks":[{"title":"\u5f02\u6b65","path":"/zh-CN/hooks/use-async/use-async"},{"title":"\u9501\u5b9abody\u5143\u7d20\u7684\u6eda\u52a8","path":"/zh-CN/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5185","path":"/zh-CN/hooks/use-click-inside/use-click-inside"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5916","path":"/zh-CN/hooks/use-click-outside/use-click-outside"},{"title":"\u7ec4\u4ef6\u7684\u6302\u8f7d","path":"/zh-CN/hooks/use-component-did-mount/use-component-did-mount"},{"title":"\u7ec4\u4ef6\u7684\u72b6\u6001\u66f4\u65b0","path":"/zh-CN/hooks/use-component-did-update/use-component-did-update"},{"title":"\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d","path":"/zh-CN/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"\u590d\u5236\u5230\u526a\u8d34\u677f","path":"/zh-CN/hooks/use-copy-to-clipboard/use-copy-to-clipboard"}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"\u4e2d\u6587"}],"navs":{"en-US":[{"title":"getting-started","path":"/getting-started"},{"title":"guide","path":"/guide"},{"title":"hooks","path":"/hooks"},{"title":"antd","path":"/antd"},{"title":"github","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"about me","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"jue jin","path":"https://juejin.im/user/4054654613988718"},{"title":"segmentfault","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"gitee","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"blog","path":"https://www.cnblogs.com/eveningwater/"},{"title":"website","path":"https://www.eveningwater.com/"},{"title":"My project","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"17sucai","path":"https://www.17sucai.com/user/800544"},{"title":"ewColorPicker","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}],"zh-CN":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/zh-CN/getting-started"},{"title":"\u6307\u5357","path":"/zh-CN/guide"},{"title":"\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks"},{"title":"\u8682\u8681\u8bbe\u8ba1","path":"/zh-CN/antd"},{"title":"\u6e90\u7801\u5730\u5740","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"\u5173\u4e8e\u6211","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"\u6398\u91d1","path":"https://juejin.im/user/4054654613988718"},{"title":"\u601d\u5426","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"\u7801\u4e91","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"\u535a\u5ba2","path":"https://www.cnblogs.com/eveningwater/"},{"title":"\u4e2a\u4eba\u7f51\u7ad9","path":"https://www.eveningwater.com/"},{"title":"\u4e2a\u4eba\u9879\u76ee","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"\u95e8\u7d20\u6750","path":"https://www.17sucai.com/user/800544"},{"title":"\u989c\u8272\u9009\u62e9\u5668","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}]},"title":"react-code-segment","logo":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K","mode":"site","repository":{"url":"","branch":"master"},"theme":{}}',
     );
   },
   RH9F: function (e, t, n) {
@@ -45766,6 +46078,152 @@
       });
     t['a'] = m;
   },
+  iZt5: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n('q1tI'),
+      a = n.n(r),
+      o = n('dEAq'),
+      i = n('Zxc8'),
+      l = n('H1Ra'),
+      c = n('dMo/'),
+      s = a.a.memo((e) => {
+        var t = e.demos,
+          n = t['usecopytoclipboard-demo.zh-cn'].component;
+        return a.a.createElement(
+          a.a.Fragment,
+          null,
+          a.a.createElement(
+            a.a.Fragment,
+            null,
+            a.a.createElement(
+              'div',
+              { className: 'markdown' },
+              a.a.createElement(
+                c['a'],
+                null,
+                a.a.createElement(
+                  'thead',
+                  null,
+                  a.a.createElement(
+                    'tr',
+                    null,
+                    a.a.createElement('th', null, '\u6807\u9898'),
+                    a.a.createElement('th', null, '\u6807\u7b7e'),
+                    a.a.createElement(
+                      'th',
+                      null,
+                      '\u9996\u6b21\u6dfb\u52a0\u65f6\u95f4',
+                    ),
+                    a.a.createElement('th', null, '\u66f4\u65b0\u65f6\u95f4'),
+                  ),
+                ),
+                a.a.createElement(
+                  'tbody',
+                  null,
+                  a.a.createElement(
+                    'tr',
+                    null,
+                    a.a.createElement(
+                      'td',
+                      null,
+                      '\u590d\u5236\u6587\u672c\u5230\u526a\u8d34\u677f\u7684\u94a9\u5b50\u51fd\u6570',
+                    ),
+                    a.a.createElement(
+                      'td',
+                      null,
+                      '\u94a9\u5b50\u51fd\u6570,\u526f\u4f5c\u7528,\u72b6\u6001,\u56de\u8c03\u51fd\u6570',
+                    ),
+                    a.a.createElement('td', null, '2022/8/7'),
+                    a.a.createElement('td', null, '2022/8/7'),
+                  ),
+                ),
+              ),
+              a.a.createElement(
+                'p',
+                null,
+                '\u5c06\u7ed9\u5b9a\u7684\u6587\u672c\u590d\u5236\u5230\u526a\u8d34\u677f\u3002',
+              ),
+              a.a.createElement(
+                'ul',
+                null,
+                a.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 ',
+                  a.a.createElement(
+                    o['Link'],
+                    {
+                      to: 'https://github.com/eveningwater/code-segment-react/tree/main/docs/hooks/useCopyToClipboard',
+                    },
+                    'copyToClipboard',
+                  ),
+                  ' \u7247\u6bb5\u5c06\u6587\u672c\u590d\u5236\u5230\u526a\u8d34\u677f\u3002',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 useState() \u6302\u94a9\u6765\u521d\u59cb\u5316\u590d\u5236\u7684\u53d8\u91cf\u3002',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 useCallback() \u6302\u94a9\u4e3a copyToClipboard \u65b9\u6cd5\u521b\u5efa\u56de\u8c03\u3002',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  '\u5982\u679c\u6587\u672c\u66f4\u6539\uff0c\u8bf7\u4f7f\u7528 useEffect() \u6302\u94a9\u91cd\u7f6e\u590d\u5236\u7684\u72b6\u6001\u53d8\u91cf\u3002',
+                ),
+                a.a.createElement(
+                  'li',
+                  null,
+                  '\u8fd4\u56de\u590d\u5236\u7684\u72b6\u6001\u53d8\u91cf\u548c\u590d\u5236\u56de\u8c03\u3002',
+                ),
+              ),
+              a.a.createElement(
+                'p',
+                null,
+                '\u94a9\u5b50\u51fd\u6570\u4ee3\u7801:',
+              ),
+              a.a.createElement(l['a'], {
+                code: "import { useState,useCallback,useEffect } from 'react'\n\nconst useCopyToClipboard = (text: string) => {\n    const copyToClipboard = (str: string) => {\n        const el = document.createElement(\"textarea\");\n        el.value = str;\n        el.setAttribute('readonly','');\n        el.style.position = 'absolute';\n        el.style.left = '-9999px';\n        document.body.appendChild(el);\n        const selected = document.getSelection()!.rangeCount > 0 ? document.getSelection()?.getRangeAt(0) : false;\n        el.select();\n        const success = document.execCommand('copy');\n        document.body.removeChild(el);\n        if(selected){\n            document.getSelection()?.removeAllRanges();\n            document.getSelection()?.addRange(selected);\n        }\n        return success;\n    }\n\n    const [copied,setCopied] = useState(false);\n\n    const copy = useCallback(() => {\n        if(!copied){\n            setCopied(copyToClipboard(text));\n        }\n    },[text]);\n\n    useEffect(() => () => setCopied(false),[text]);\n\n    return [copied,copy];\n}\n\nexport default useCopyToClipboard;",
+                lang: 'ts',
+              }),
+              a.a.createElement('p', null, '\u793a\u4f8b\u4ee3\u7801:'),
+              a.a.createElement(l['a'], {
+                code: "import React, { SyntheticEvent } from 'react'\nimport useCopyToClipboard from \"./useCopyToClipboard\"\nimport { Space } from 'antd'\nimport Button from '../../guide/Button/Button'\n\nexport interface TextCopyProps {\n    text:string\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n    const { text = 'Lorem ipsum' } = props;\n    const [copied,copy] = useCopyToClipboard(text);\n    return (\n        <Space>\n            <Button type='primary' ripple onClick={copy as (e: SyntheticEvent) => void}>\u70b9\u51fb\u8fd9\u91cc\u590d\u5236!</Button>\n            <span>{ copied && '\u5df2\u590d\u5236!' }</span>\n        </Space>\n    )\n}\n\nconst Demo = () => <TextCopy text='\u590d\u5236\u7684\u6587\u672c!'/>;\n\nexport default Demo;",
+                lang: 'tsx',
+              }),
+              a.a.createElement('p', null, '\u793a\u4f8b:'),
+            ),
+            a.a.createElement(
+              i['default'],
+              t['usecopytoclipboard-demo.zh-cn'].previewerProps,
+              a.a.createElement(n, null),
+            ),
+          ),
+        );
+      });
+    t['default'] = (e) => {
+      var t = a.a.useContext(o['context']),
+        n = t.demos;
+      return (
+        a.a.useEffect(() => {
+          var t;
+          null !== e &&
+            void 0 !== e &&
+            null !== (t = e.location) &&
+            void 0 !== t &&
+            t.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        a.a.createElement(s, { demos: n })
+      );
+    };
+  },
   ihrJ: function (e, t, n) {
     'use strict';
     var r = n('I+eb'),
@@ -46005,6 +46463,48 @@
     n.d(t, 'a', function () {
       return o;
     });
+  },
+  k9Jo: function (e, t, n) {
+    'use strict';
+    var r = n('tJVT'),
+      a = n('q1tI'),
+      o = (e) => {
+        var t = (e) => {
+            var t,
+              n = document.createElement('textarea');
+            (n.value = e),
+              n.setAttribute('readonly', ''),
+              (n.style.position = 'absolute'),
+              (n.style.left = '-9999px'),
+              document.body.appendChild(n);
+            var r =
+              document.getSelection().rangeCount > 0 &&
+              (null === (t = document.getSelection()) || void 0 === t
+                ? void 0
+                : t.getRangeAt(0));
+            n.select();
+            var a,
+              o,
+              i = document.execCommand('copy');
+            (document.body.removeChild(n), r) &&
+              (null === (a = document.getSelection()) ||
+                void 0 === a ||
+                a.removeAllRanges(),
+              null === (o = document.getSelection()) ||
+                void 0 === o ||
+                o.addRange(r));
+            return i;
+          },
+          n = Object(a['useState'])(!1),
+          o = Object(r['a'])(n, 2),
+          i = o[0],
+          l = o[1],
+          c = Object(a['useCallback'])(() => {
+            i || l(t(e));
+          }, [e]);
+        return Object(a['useEffect'])(() => () => l(!1), [e]), [i, c];
+      };
+    t['a'] = o;
   },
   kCkZ: function (e, t, n) {
     'use strict';
