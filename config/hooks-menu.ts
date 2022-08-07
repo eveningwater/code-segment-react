@@ -23,4 +23,8 @@ export default [
     title: 'useComponentDidUpdate',
     path: '/hooks/use-component-did-update/use-component-did-update',
   },
+  {
+    title: 'useComponentWillUnmount',
+    path: '/hooks/use-component-will-unmount/use-component-will-unmount',
+  },
 ];

@@ -16,11 +16,15 @@ export default [
     path: '/zh-CN/hooks/use-click-outside/use-click-outside',
   },
   {
-    title: '模拟函数组件的挂载生命周期',
+    title: '组件的挂载',
     path: '/zh-CN/hooks/use-component-did-mount/use-component-did-mount',
   },
   {
-    title: '模拟函数组件的状态更新生命周期',
+    title: '组件的状态更新',
     path: '/zh-CN/hooks/use-component-did-update/use-component-did-update',
+  },
+  {
+    title: '组件即将卸载',
+    path: '/zh-CN/hooks/use-component-will-unmount/use-component-will-unmount',
   },
 ];

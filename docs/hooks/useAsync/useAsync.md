@@ -104,7 +104,12 @@ const Demo = () => {
           alt="avatar"
           width={400}
           height="auto"
-          style={{ display: 'block', marginTop: 10, borderRadius: 5 }}
+          style={{
+            display: 'block',
+            marginTop: 10,
+            borderRadius: 5,
+            maxWidth: '100%',
+          }}
         />
       )}
     </Container>
