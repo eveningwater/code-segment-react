@@ -110,17 +110,5 @@ const Accordion = (props: Partial<AccordionType>) => {
   );
 };
 
-const Demo = () => {
-  return (
-    <Accordion defaultIndex="1" onItemClick={console.log}>
-      <AccordionItem label="A" index="1">
-        Lorem ipsum
-      </AccordionItem>
-      <AccordionItem label="B" index="2">
-        Dolor sit amet
-      </AccordionItem>
-    </Accordion>
-  );
-};
-
-export default Demo;
+Accordion.AccordionItem = AccordionItem;
+export default Accordion;

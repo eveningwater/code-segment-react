@@ -1,6 +1,5 @@
 import { cx, css } from '@emotion/css';
 import React, { useState } from 'react';
-import type { ReactNode, SyntheticEvent } from 'react';
 
 const baseStyle = css`
   line-height: 1.5715;
@@ -51,20 +50,7 @@ const AccordionItemContent = css`
   }
 `;
 
-interface AccordionItemType {
-  index: string | number;
-  label: string;
-  isCollapsed: boolean;
-  handleClick(e: SyntheticEvent): void;
-  children: ReactNode;
-}
-interface AccordionType {
-  defaultIndex: number | string;
-  onItemClick(key: number | string): void;
-  children: JSX.Element[];
-}
-
-const AccordionItem = (props: Partial<AccordionItemType>) => {
+const AccordionItem = (props) => {
   const { label, isCollapsed, handleClick, children } = props;
   return (
     <div className={AccordionItemContainer} onClick={handleClick}>
@@ -81,10 +67,10 @@ const AccordionItem = (props: Partial<AccordionItemType>) => {
   );
 };
 
-const Accordion = (props: Partial<AccordionType>) => {
+const Accordion = (props) => {
   const { defaultIndex, onItemClick, children } = props;
   const [bindIndex, setBindIndex] = useState(defaultIndex);
-  const changeItem = (index: number | string) => {
+  const changeItem = (index) => {
     if (typeof onItemClick === 'function') {
       onItemClick(index);
     }
@@ -110,17 +96,5 @@ const Accordion = (props: Partial<AccordionType>) => {
   );
 };
 
-const Demo = () => {
-  return (
-    <Accordion defaultIndex="1" onItemClick={console.log}>
-      <AccordionItem label="标题1" index="1">
-        项目1
-      </AccordionItem>
-      <AccordionItem label="标题2" index="2">
-        项目2
-      </AccordionItem>
-    </Accordion>
-  );
-};
-
-export default Demo;
+Accordion.AccordionItem = AccordionItem;
+export default Accordion;
