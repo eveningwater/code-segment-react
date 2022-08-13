@@ -190,8 +190,8 @@
     }
     var T = 1,
       P = 1,
-      R = 0,
       I = 0,
+      R = 0,
       N = 0,
       A = '';
     function M(e, t, n, r, o, a, i) {
@@ -220,16 +220,16 @@
       return N;
     }
     function _() {
-      return (N = I > 0 ? w(A, --I) : 0), P--, 10 === N && ((P = 1), T--), N;
+      return (N = R > 0 ? w(A, --R) : 0), P--, 10 === N && ((P = 1), T--), N;
     }
     function z() {
-      return (N = I < R ? w(A, I++) : 0), P++, 10 === N && ((P = 1), T++), N;
+      return (N = R < I ? w(A, R++) : 0), P++, 10 === N && ((P = 1), T++), N;
     }
     function F() {
-      return w(A, I);
+      return w(A, R);
     }
     function B() {
-      return I;
+      return R;
     }
     function U(e, t) {
       return k(A, e, t);
@@ -267,13 +267,13 @@
       return 0;
     }
     function H(e) {
-      return (T = P = 1), (R = C((A = e))), (I = 0), [];
+      return (T = P = 1), (I = C((A = e))), (R = 0), [];
     }
     function q(e) {
       return (A = ''), e;
     }
     function W(e) {
-      return b(U(I - 1, K(91 === e ? e + 2 : 40 === e ? e + 1 : e)));
+      return b(U(R - 1, K(91 === e ? e + 2 : 40 === e ? e + 1 : e)));
     }
     function $(e) {
       while ((N = F())) {
@@ -292,7 +292,7 @@
       while (z())
         switch (N) {
           case e:
-            return I;
+            return R;
           case 34:
           case 39:
             34 !== e && 39 !== e && K(N);
@@ -304,18 +304,18 @@
             z();
             break;
         }
-      return I;
+      return R;
     }
     function Y(e, t) {
       while (z()) {
         if (e + N === 57) break;
         if (e + N === 84 && 47 === F()) break;
       }
-      return '/*' + U(t, I - 1) + '*' + h(47 === e ? e : z());
+      return '/*' + U(t, R - 1) + '*' + h(47 === e ? e : z());
     }
     function Z(e) {
       while (!V(F())) z();
-      return U(e, I);
+      return U(e, R);
     }
     function X(e) {
       return q(J('', null, null, null, [''], (e = H(e)), 0, [0], e));
@@ -703,7 +703,7 @@
             break;
           z();
         }
-        return U(e, I);
+        return U(e, R);
       },
       se = function (e, t) {
         var n = -1,
@@ -711,7 +711,7 @@
         do {
           switch (V(r)) {
             case 0:
-              38 === r && 12 === F() && (t[n] = 1), (e[n] += ce(I - 1, t, n));
+              38 === r && 12 === F() && (t[n] = 1), (e[n] += ce(R - 1, t, n));
               break;
             case 2:
               e[n] += W(r);
@@ -1036,7 +1036,7 @@
       },
       T = { success: i['a'], info: p['a'], error: c['a'], warning: d['a'] },
       P = { success: l['a'], info: m['a'], error: s['a'], warning: f['a'] },
-      R = function (e) {
+      I = function (e) {
         var t = e.description,
           n = e.icon,
           r = e.prefixCls,
@@ -1061,7 +1061,7 @@
             )
           : b['createElement'](i, { className: ''.concat(r, '-icon') });
       },
-      I = function (e) {
+      R = function (e) {
         var t = e.isClosable,
           n = e.closeText,
           r = e.prefixCls,
@@ -1185,7 +1185,7 @@
                 G,
               ),
               W
-                ? b['createElement'](R, {
+                ? b['createElement'](I, {
                     description: n,
                     icon: P.icon,
                     prefixCls: B,
@@ -1217,7 +1217,7 @@
                     T,
                   )
                 : null,
-              b['createElement'](I, {
+              b['createElement'](R, {
                 isClosable: !!H,
                 closeText: C,
                 prefixCls: B,
@@ -1487,28 +1487,28 @@
       return 0 !== n ? n : e.id - t.id;
     }
     var P = [],
-      R = [],
-      I = 1,
+      I = [],
+      R = 1,
       N = null,
       A = 3,
       M = !1,
       L = !1,
       D = !1;
     function _(e) {
-      for (var t = S(R); null !== t; ) {
-        if (null === t.callback) j(R);
+      for (var t = S(I); null !== t; ) {
+        if (null === t.callback) j(I);
         else {
           if (!(t.startTime <= e)) break;
-          j(R), (t.sortIndex = t.expirationTime), O(P, t);
+          j(I), (t.sortIndex = t.expirationTime), O(P, t);
         }
-        t = S(R);
+        t = S(I);
       }
     }
     function z(e) {
       if (((D = !1), _(e), !L))
         if (null !== S(P)) (L = !0), r(F);
         else {
-          var t = S(R);
+          var t = S(I);
           null !== t && o(z, t.startTime - e);
         }
     }
@@ -1533,7 +1533,7 @@
         }
         if (null !== N) var s = !0;
         else {
-          var u = S(R);
+          var u = S(I);
           null !== u && o(z, u.startTime - n), (s = !1);
         }
         return s;
@@ -1623,7 +1623,7 @@
         return (
           (i = c + i),
           (e = {
-            id: I++,
+            id: R++,
             callback: n,
             priorityLevel: e,
             startTime: c,
@@ -1632,8 +1632,8 @@
           }),
           c > l
             ? ((e.sortIndex = c),
-              O(R, e),
-              null === S(P) && e === S(R) && (D ? a() : (D = !0), o(z, c - l)))
+              O(I, e),
+              null === S(P) && e === S(I) && (D ? a() : (D = !0), o(z, c - l)))
             : ((e.sortIndex = i), O(P, e), L || M || ((L = !0), r(F))),
           e
         );
@@ -2640,16 +2640,16 @@
       };
     n('Zkgb');
     function T(e, t) {
-      return A(e) || N(e, t) || R(e, t) || P();
+      return A(e) || N(e, t) || I(e, t) || P();
     }
     function P() {
       throw new TypeError(
         'Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
       );
     }
-    function R(e, t) {
+    function I(e, t) {
       if (e) {
-        if ('string' === typeof e) return I(e, t);
+        if ('string' === typeof e) return R(e, t);
         var n = Object.prototype.toString.call(e).slice(8, -1);
         return (
           'Object' === n && e.constructor && (n = e.constructor.name),
@@ -2657,12 +2657,12 @@
             ? Array.from(e)
             : 'Arguments' === n ||
               /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-            ? I(e, t)
+            ? R(e, t)
             : void 0
         );
       }
     }
-    function I(e, t) {
+    function R(e, t) {
       (null == t || t > e.length) && (t = e.length);
       for (var n = 0, r = new Array(t); n < t; n++) r[n] = e[n];
       return r;
@@ -2968,12 +2968,12 @@
           S = O[0],
           T = O[1],
           P = 'site' === d,
-          R = P && p.hero,
-          I = P && p.features,
-          N = !1 !== p.sidemenu && !R && !I && !p.gapless,
+          I = P && p.hero,
+          R = P && p.features,
+          N = !1 !== p.sidemenu && !I && !R && !p.gapless,
           A =
-            !R &&
             !I &&
+            !R &&
             Boolean(
               null === (t = p.slugs) || void 0 === t ? void 0 : t.length,
             ) &&
@@ -3033,14 +3033,14 @@
               slugs: p.slugs,
               className: '__dumi-default-layout-toc',
             }),
-          R && V(p.hero),
-          I && H(p.features),
+          I && V(p.hero),
+          R && H(p.features),
           o.a.createElement(
             'div',
             { className: '__dumi-default-layout-content' },
             i,
-            !R &&
-              !I &&
+            !I &&
+              !R &&
               p.filePath &&
               !p.gapless &&
               o.a.createElement(
@@ -3069,7 +3069,7 @@
                   z,
                 ),
               ),
-            (R || I) &&
+            (I || R) &&
               p.footer &&
               o.a.createElement('div', {
                 className: '__dumi-default-layout-footer',
@@ -3117,6 +3117,70 @@
         ? a(r[e]) || a(o[e])
         : (r[e] && r[e][t]) || (o[e] && o[e][t]);
     };
+  },
+  '0NDP': function (e, t, n) {
+    'use strict';
+    var r = n('tJVT'),
+      o = n('q1tI'),
+      a = n.n(o),
+      i =
+        (n('o4Vn'),
+        (e) => {
+          var t = e.isDefaultShown,
+            n = e.timeout,
+            i = void 0 === n ? 250 : n,
+            l = e.type,
+            c = e.message,
+            s = e.showClose,
+            u = e.block,
+            d = Object(o['useState'])(t),
+            f = Object(r['a'])(d, 2),
+            p = f[0],
+            m = f[1],
+            h = Object(o['useState'])(!1),
+            v = Object(r['a'])(h, 2),
+            g = v[0],
+            b = v[1],
+            y = null;
+          Object(o['useEffect'])(
+            () => (
+              m(!0),
+              () => {
+                y && clearTimeout(y);
+              }
+            ),
+            [i, y, t],
+          );
+          var x = () => {
+            b(!0),
+              (y = setTimeout(() => {
+                b(!1), m(!1);
+              }, i));
+          };
+          return p
+            ? a.a.createElement(
+                'div',
+                {
+                  className: 'alert '
+                    .concat('alert-' + l)
+                    .concat(g ? ' leaving' : '')
+                    .concat(u ? ' alert-block' : ''),
+                  role: 'alert',
+                },
+                a.a.createElement(
+                  'button',
+                  {
+                    className: 'alert-close',
+                    onClick: x,
+                    style: { display: s ? 'block' : 'none' },
+                  },
+                  '\xd7',
+                ),
+                c,
+              )
+            : null;
+        });
+    t['a'] = i;
   },
   '0Owb': function (e, t, n) {
     'use strict';
@@ -3706,7 +3770,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/Accordion/Accordion.md',
-                updatedTime: 1660318979818,
+                updatedTime: 1660379115116,
                 slugs: [],
                 hasPreviewer: !0,
                 nav: { path: '/guide', title: 'Guide' },
@@ -3721,7 +3785,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/Accordion/Accordion.zh-CN.md',
-                updatedTime: 1660319045165,
+                updatedTime: 1660319155657,
                 slugs: [],
                 hasPreviewer: !0,
                 locale: 'zh-CN',
@@ -3737,7 +3801,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/Alert/Alert.md',
-                updatedTime: 1659630720623,
+                updatedTime: 1660379055682,
                 slugs: [],
                 hasPreviewer: !0,
                 nav: { path: '/guide', title: 'Guide' },
@@ -3752,7 +3816,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/Alert/Alert.zh-CN.md',
-                updatedTime: 1659630720688,
+                updatedTime: 1660380365092,
                 slugs: [],
                 hasPreviewer: !0,
                 locale: 'zh-CN',
@@ -6274,16 +6338,16 @@
           j = O[1],
           T = Object(i['useState'])(!1),
           P = Object(o['a'])(T, 2),
-          R = P[0],
-          I = P[1];
+          I = P[0],
+          R = P[1];
         Object(i['useEffect'])(() => {
           -1 !== S.x && -1 !== S.y
-            ? (I(!0), setTimeout(() => I(!1), 300))
-            : I(!1);
+            ? (R(!0), setTimeout(() => R(!1), 300))
+            : R(!1);
         }, [S]),
           Object(i['useEffect'])(() => {
-            R || j({ x: -1, y: -1 });
-          }, [R]);
+            I || j({ x: -1, y: -1 });
+          }, [I]);
         var N = {
             'ew-btn': !0,
             ['ew-btn-'.concat(t)]: !h,
@@ -6337,7 +6401,7 @@
                   },
                   k,
                 ),
-                R && u
+                I && u
                   ? l.a.createElement('span', {
                       className: 'ripple',
                       style: { left: S.x, top: S.y },
@@ -6449,7 +6513,7 @@
       );
     }
     var P = ['item'];
-    function R(e) {
+    function I(e) {
       var t = e.item,
         n = Object(c['a'])(e, P);
       return (
@@ -6467,7 +6531,7 @@
         n
       );
     }
-    function I(e) {
+    function R(e) {
       var t,
         n = e.icon,
         r = e.props,
@@ -6619,7 +6683,7 @@
           re = function (e) {
             if (!K) {
               var t = Z(e);
-              null === b || void 0 === b || b(R(t)), j(t);
+              null === b || void 0 === b || b(I(t)), j(t);
             }
           },
           oe = function (e) {
@@ -6627,7 +6691,7 @@
               (null === y || void 0 === y || y(e), e.which === E['a'].ENTER)
             ) {
               var t = Z(e);
-              null === b || void 0 === b || b(R(t)), j(t);
+              null === b || void 0 === b || b(I(t)), j(t);
             }
           },
           ae = function (e) {
@@ -6667,7 +6731,7 @@
             },
           ),
           m,
-          s['createElement'](I, {
+          s['createElement'](R, {
             props: Object(a['a'])(
               Object(a['a'])({}, e),
               {},
@@ -6855,8 +6919,8 @@
         j = s['useState'](!1),
         T = Object(l['a'])(j, 2),
         P = T[0],
-        R = T[1],
-        I = g
+        I = T[1],
+        R = g
           ? Object(a['a'])(Object(a['a'])({}, fe), x)
           : Object(a['a'])(Object(a['a'])({}, de), x),
         N = me[p],
@@ -6876,7 +6940,7 @@
           function () {
             return (
               (L.current = Object(se['a'])(function () {
-                R(n);
+                I(n);
               })),
               function () {
                 se['a'].cancel(L.current);
@@ -6897,7 +6961,7 @@
             ),
             stretch: 'horizontal' === p ? 'minWidth' : null,
             getPopupContainer: v,
-            builtinPlacements: I,
+            builtinPlacements: R,
             popupPlacement: N,
             popupVisible: P,
             popup: i,
@@ -7065,13 +7129,13 @@
             [F, ve, W, ke, f, te],
           ),
           Pe = N(ne.length),
-          Re = function (e) {
+          Ie = function (e) {
             ae ||
               (null === C || void 0 === C || C({ key: f, domEvent: e }),
               'inline' === F && Z(f, !de));
           },
-          Ie = re(function (e) {
-            null === E || void 0 === E || E(R(e)), Y(e);
+          Re = re(function (e) {
+            null === E || void 0 === E || E(I(e)), Y(e);
           }),
           Ne = function (e) {
             'inline' !== F && Z(f, e);
@@ -7095,14 +7159,14 @@
                 'aria-haspopup': !0,
                 'aria-controls': Me,
                 'aria-disabled': ae,
-                onClick: Re,
+                onClick: Ie,
                 onFocus: Ae,
               },
               xe,
             ),
             u,
             s['createElement'](
-              I,
+              R,
               {
                 icon: 'horizontal' !== F ? ue : null,
                 props: Object(a['a'])(
@@ -7171,7 +7235,7 @@
           s['createElement'](
             j,
             {
-              onItemClick: Ie,
+              onItemClick: Re,
               mode: 'horizontal' === F ? 'vertical' : F,
               itemIcon: se,
               expandIcon: ue,
@@ -7212,8 +7276,8 @@
       je = E['a'].ENTER,
       Te = E['a'].ESC,
       Pe = E['a'].HOME,
-      Re = E['a'].END,
-      Ie = [Oe, Se, ke, Ce];
+      Ie = E['a'].END,
+      Re = [Oe, Se, ke, Ce];
     function Ne(e, t, n, r) {
       var a,
         i,
@@ -7318,7 +7382,7 @@
         }, []),
         function (s) {
           var m = s.which;
-          if ([].concat(Ie, [je, Te, Pe, Re]).includes(m)) {
+          if ([].concat(Re, [je, Te, Pe, Ie]).includes(m)) {
             var h,
               v,
               g,
@@ -7340,8 +7404,8 @@
               x = Me(y, h),
               E = g.get(x),
               w = Ne(e, 1 === i(E, !0).length, n, m);
-            if (!w && m !== Pe && m !== Re) return;
-            (Ie.includes(m) || [Pe, Re].includes(m)) && s.preventDefault();
+            if (!w && m !== Pe && m !== Ie) return;
+            (Re.includes(m) || [Pe, Ie].includes(m)) && s.preventDefault();
             var k = function (e) {
               if (e) {
                 var t = e,
@@ -7357,14 +7421,14 @@
                   }));
               }
             };
-            if ([Pe, Re].includes(m) || w.sibling || !x) {
+            if ([Pe, Ie].includes(m) || w.sibling || !x) {
               var C, O;
               C = x && 'inline' !== e ? Ae(x) : o.current;
               var S = Le(C, h);
               (O =
                 m === Pe
                   ? S[0]
-                  : m === Re
+                  : m === Ie
                   ? S[S.length - 1]
                   : De(C, h, x, w.offset)),
                 k(O);
@@ -7558,7 +7622,7 @@
           S = e.mode,
           T = void 0 === S ? 'vertical' : S,
           P = e.inlineCollapsed,
-          I = e.disabled,
+          R = e.disabled,
           N = e.disabledOverflow,
           A = e.subMenuOpenDelay,
           L = void 0 === A ? 0.1 : A,
@@ -7608,8 +7672,8 @@
           je = Se[0],
           Te = Se[1],
           Pe = s['useRef'](),
-          Re = Be(O),
-          Ie = 'rtl' === C;
+          Ie = Be(O),
+          Re = 'rtl' === C;
         var Ne = s['useMemo'](
             function () {
               return ('inline' !== T && 'vertical' !== T) || !P
@@ -7723,7 +7787,7 @@
                   void 0 === n ||
                   null ===
                     (r = n.querySelector(
-                      "li[data-menu-id='".concat(B(Re, a), "']"),
+                      "li[data-menu-id='".concat(B(Ie, a), "']"),
                     )) ||
                   void 0 === r ||
                   null === (o = r.focus) ||
@@ -7770,7 +7834,7 @@
             !X && Ye.length && 'inline' !== Me && Xe(Ke);
           },
           Ot = re(function (e) {
-            null === ge || void 0 === ge || ge(R(e)), Ct(e);
+            null === ge || void 0 === ge || ge(I(e)), Ct(e);
           }),
           St = re(function (e, t) {
             var n = Ye.filter(function (t) {
@@ -7790,11 +7854,11 @@
             var n = null !== t && void 0 !== t ? t : !Ye.includes(e);
             St(e, n);
           },
-          Pt = _e(Me, vt, Ie, Re, Pe, ut, st, gt, Tt, ye);
+          Pt = _e(Me, vt, Re, Ie, Pe, ut, st, gt, Tt, ye);
         s['useEffect'](function () {
           Te(!0);
         }, []);
-        var Rt = s['useMemo'](
+        var It = s['useMemo'](
             function () {
               return {
                 _internalRenderMenuItem: xe,
@@ -7803,7 +7867,7 @@
             },
             [xe, we],
           ),
-          It =
+          Rt =
             'horizontal' !== Me || N
               ? Ce
               : Ce.map(function (e, t) {
@@ -7829,7 +7893,7 @@
                   y,
                   ((u = {}),
                   Object(o['a'])(u, ''.concat(h, '-inline-collapsed'), Le),
-                  Object(o['a'])(u, ''.concat(h, '-rtl'), Ie),
+                  Object(o['a'])(u, ''.concat(h, '-rtl'), Re),
                   u),
                   g,
                 ),
@@ -7837,7 +7901,7 @@
                 style: b,
                 role: 'menu',
                 tabIndex: E,
-                data: It,
+                data: Rt,
                 renderRawItem: function (e) {
                   return e;
                 },
@@ -7872,10 +7936,10 @@
           );
         return s['createElement'](
           H.Provider,
-          { value: Rt },
+          { value: It },
           s['createElement'](
             F.Provider,
-            { value: Re },
+            { value: Ie },
             s['createElement'](
               j,
               {
@@ -7883,8 +7947,8 @@
                 rootClassName: g,
                 mode: Me,
                 openKeys: Ye,
-                rtl: Ie,
-                disabled: I,
+                rtl: Re,
+                disabled: R,
                 motion: je ? ie : null,
                 defaultMotions: je ? le : null,
                 activeKey: vt,
@@ -8847,7 +8911,7 @@
               }),
               o.a.createElement('p', null, 'jsx:'),
               o.a.createElement(l['a'], {
-                code: "import { cx, css } from '@emotion/css';\nimport React, { useState } from 'react';\n\nconst baseStyle = css`\n  line-height: 1.5715;\n`;\nconst AccordionContainer = cx(\n  baseStyle,\n  css`\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    color: #000000d9;\n    font-size: 14px;\n    background-color: #fafafa;\n    border: 1px solid #d9d9d9;\n    border-bottom: 0;\n    border-radius: 2px;\n  `,\n);\nconst AccordionItemContainer = css`\n  border-bottom: 1px solid #d9d9d9;\n`;\nconst AccordionItemHeader = cx(\n  baseStyle,\n  css`\n    position: relative;\n    display: flex;\n    flex-wrap: nowrap;\n    align-items: flex-start;\n    padding: 12px 16px;\n    color: rgba(0, 0, 0, 0.85);\n    cursor: pointer;\n    transition: all 0.3s, visibility 0s;\n    box-sizing: border-box;\n  `,\n);\n\nconst AccordionItemContent = css`\n  color: #000000d9;\n  background-color: #fff;\n  border-top: 1px solid #d9d9d9;\n  transition: all 0.3s ease-in-out;\n  padding: 16px;\n  &.collapsed {\n    display: none;\n  }\n  &.expanded {\n    display: block;\n  }\n`;\n\n\nconst AccordionItem = (props) => {\n  const { label, isCollapsed, handleClick, children } = props;\n  return (\n    <div className={AccordionItemContainer} onClick={handleClick}>\n      <div className={AccordionItemHeader}>{label}</div>\n      <div\n        aria-expanded={isCollapsed}\n        className={`${AccordionItemContent}${\n          isCollapsed ? ' collapsed' : ' expanded'\n        }`}\n      >\n        {children}\n      </div>\n    </div>\n  );\n};\n\nconst Accordion = (props) => {\n  const { defaultIndex, onItemClick, children } = props;\n  const [bindIndex, setBindIndex] = useState(defaultIndex);\n  const changeItem = (index) => {\n    if (typeof onItemClick === 'function') {\n      onItemClick(index);\n    }\n    if (index !== bindIndex) {\n      setBindIndex(index);\n    }\n  };\n  const items = children?.filter(\n    (item) => item?.type?.name === 'AccordionItem',\n  );\n  return (\n    <div className={AccordionContainer}>\n      {items?.map(({ props: { index, label, children } }) => (\n        <AccordionItem\n          key={index}\n          label={label}\n          children={children}\n          isCollapsed={bindIndex !== index}\n          handleClick={() => changeItem(index)}\n        />\n      ))}\n    </div>\n  );\n};\n\nAccordion.AccordionItem = AccordionItem;\nexport default Accordion;",
+                code: "import { cx, css } from '@emotion/css';\nimport React, { useState } from 'react';\n\nconst baseStyle = css`\n  line-height: 1.5715;\n`;\nconst AccordionContainer = cx(\n  baseStyle,\n  css`\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    color: #000000d9;\n    font-size: 14px;\n    background-color: #fafafa;\n    border: 1px solid #d9d9d9;\n    border-bottom: 0;\n    border-radius: 2px;\n  `,\n);\nconst AccordionItemContainer = css`\n  border-bottom: 1px solid #d9d9d9;\n`;\nconst AccordionItemHeader = cx(\n  baseStyle,\n  css`\n    position: relative;\n    display: flex;\n    flex-wrap: nowrap;\n    align-items: flex-start;\n    padding: 12px 16px;\n    color: rgba(0, 0, 0, 0.85);\n    cursor: pointer;\n    transition: all 0.3s, visibility 0s;\n    box-sizing: border-box;\n  `,\n);\n\nconst AccordionItemContent = css`\n  color: #000000d9;\n  background-color: #fff;\n  border-top: 1px solid #d9d9d9;\n  transition: all 0.3s ease-in-out;\n  padding: 16px;\n  &.collapsed {\n    display: none;\n  }\n  &.expanded {\n    display: block;\n  }\n`;\n\nconst AccordionItem = (props) => {\n  const { label, isCollapsed, handleClick, children } = props;\n  return (\n    <div className={AccordionItemContainer} onClick={handleClick}>\n      <div className={AccordionItemHeader}>{label}</div>\n      <div\n        aria-expanded={isCollapsed}\n        className={`${AccordionItemContent}${\n          isCollapsed ? ' collapsed' : ' expanded'\n        }`}\n      >\n        {children}\n      </div>\n    </div>\n  );\n};\n\nconst Accordion = (props) => {\n  const { defaultIndex, onItemClick, children } = props;\n  const [bindIndex, setBindIndex] = useState(defaultIndex);\n  const changeItem = (index) => {\n    if (typeof onItemClick === 'function') {\n      onItemClick(index);\n    }\n    if (index !== bindIndex) {\n      setBindIndex(index);\n    }\n  };\n  const items = children?.filter(\n    (item) => item?.type?.name === 'AccordionItem',\n  );\n  return (\n    <div className={AccordionContainer}>\n      {items?.map(({ props: { index, label, children } }) => (\n        <AccordionItem\n          key={index}\n          label={label}\n          children={children}\n          isCollapsed={bindIndex !== index}\n          handleClick={() => changeItem(index)}\n        />\n      ))}\n    </div>\n  );\n};\n\nAccordion.AccordionItem = AccordionItem;\nexport default Accordion;",
                 lang: 'jsx',
               }),
               o.a.createElement('p', null, '\u793a\u4f8b:'),
@@ -10536,15 +10600,15 @@
       j = n('RN6c'),
       T = n('8GlL'),
       P = n('5mdu'),
-      R = n('afO8'),
-      I = n('lMq5'),
+      I = n('afO8'),
+      R = n('lMq5'),
       N = n('tiKp'),
       A = n('LQDL'),
       M = N('species'),
       L = 'Promise',
-      D = R.get,
-      _ = R.set,
-      z = R.getterFor(L),
+      D = I.get,
+      _ = I.set,
+      z = I.getterFor(L),
       F = d,
       B = s.TypeError,
       U = s.document,
@@ -10561,7 +10625,7 @@
       J = 2,
       Q = 1,
       ee = 2,
-      te = I(L, function () {
+      te = R(L, function () {
         var e = x(F) !== String(F);
         if (!e) {
           if (66 === A) return !0;
@@ -10929,8 +10993,8 @@
         );
       },
       P = T,
-      R = n('EXcs'),
-      I = n('4i/N'),
+      I = n('EXcs'),
+      R = n('4i/N'),
       N = n('hzQT'),
       A = n('H84U'),
       M = (n('85Yc'), n('bT9E'), u['createContext']({})),
@@ -11050,7 +11114,7 @@
           'span',
           { className: ''.concat(k, '-close-x') },
           g ||
-            u['createElement'](I['a'], {
+            u['createElement'](R['a'], {
               className: ''.concat(k, '-close-icon'),
             }),
         ),
@@ -11076,8 +11140,8 @@
             onClose: i,
             closeIcon: P,
             focusTriggerAfterClose: x,
-            transitionName: Object(R['a'])(S, 'zoom', e.transitionName),
-            maskTransitionName: Object(R['a'])(S, 'fade', e.maskTransitionName),
+            transitionName: Object(I['a'])(S, 'zoom', e.transitionName),
+            maskTransitionName: Object(I['a'])(S, 'fade', e.maskTransitionName),
           }),
         ),
       );
@@ -11114,7 +11178,7 @@
           S = e.closable,
           j = void 0 !== S && S,
           T = e.closeIcon,
-          I = e.modalRender,
+          R = e.modalRender,
           N = e.focusTriggerAfterClose,
           A = e.okType || 'primary',
           M = ''.concat(x, '-confirm'),
@@ -11161,8 +11225,8 @@
               visible: l,
               title: '',
               footer: '',
-              transitionName: Object(R['a'])(k, 'zoom', e.transitionName),
-              maskTransitionName: Object(R['a'])(
+              transitionName: Object(I['a'])(k, 'zoom', e.transitionName),
+              maskTransitionName: Object(I['a'])(
                 k,
                 'fade',
                 e.maskTransitionName,
@@ -11180,7 +11244,7 @@
               getContainer: d,
               closable: j,
               closeIcon: T,
-              modalRender: I,
+              modalRender: R,
               focusTriggerAfterClose: N,
             },
             u['createElement'](
@@ -11806,15 +11870,15 @@
         Float32Array: 4,
         Float64Array: 8,
       },
-      R = function (e) {
+      I = function (e) {
         var t = s(e);
         return 'DataView' === t || c(P, t);
       },
-      I = function (e) {
+      R = function (e) {
         return l(e) && c(P, s(e));
       },
       N = function (e) {
-        if (I(e)) return e;
+        if (R(e)) return e;
         throw TypeError('Target is not a typed array');
       },
       A = function (e) {
@@ -11878,8 +11942,8 @@
       aTypedArrayConstructor: A,
       exportTypedArrayMethod: M,
       exportTypedArrayStaticMethod: L,
-      isView: R,
-      isTypedArray: I,
+      isView: I,
+      isTypedArray: R,
       TypedArray: E,
       TypedArrayPrototype: w,
     };
@@ -12231,14 +12295,14 @@
       (T.getTwoToneColors = j),
       (T.setTwoToneColors = S);
     var P = T;
-    function R(e) {
+    function I(e) {
       var t = E(e),
         n = Object(o['a'])(t, 2),
         r = n[0],
         a = n[1];
       return P.setTwoToneColors({ primaryColor: r, secondaryColor: a });
     }
-    function I() {
+    function R() {
       var e = P.getTwoToneColors();
       return e.calculated ? [e.primaryColor, e.secondaryColor] : e.primaryColor;
     }
@@ -12251,7 +12315,7 @@
       'onClick',
       'twoToneColor',
     ];
-    R('#1890ff');
+    I('#1890ff');
     var A = l['forwardRef'](function (e, t) {
       var n,
         c = e.className,
@@ -12301,8 +12365,8 @@
       );
     });
     (A.displayName = 'AntdIcon'),
-      (A.getTwoToneColor = I),
-      (A.setTwoToneColor = R);
+      (A.getTwoToneColor = R),
+      (A.setTwoToneColor = I);
     t['a'] = A;
   },
   '6VoE': function (e, t, n) {
@@ -13380,13 +13444,13 @@
         o
       );
     }
-    function R(e, t, n) {
+    function I(e, t, n) {
       var r = arguments.length > 3 && void 0 !== arguments[3] && arguments[3];
       return t.length && r && void 0 === n && !j(e, t.slice(0, -1))
         ? e
         : P(e, t, n, r);
     }
-    function I(e) {
+    function R(e) {
       return Array.isArray(e)
         ? A(e)
         : 'object' === Object(S['a'])(e) && null !== e
@@ -13396,17 +13460,17 @@
     function N(e) {
       if (Object.getPrototypeOf(e) === Object.prototype) {
         var t = {};
-        for (var n in e) t[n] = I(e[n]);
+        for (var n in e) t[n] = R(e[n]);
         return t;
       }
       return e;
     }
     function A(e) {
       return e.map(function (e) {
-        return I(e);
+        return R(e);
       });
     }
-    var M = I;
+    var M = R;
     function L(e) {
       return x(e);
     }
@@ -13416,7 +13480,7 @@
     }
     function _(e, t, n) {
       var r = arguments.length > 3 && void 0 !== arguments[3] && arguments[3],
-        o = R(e, t, n, r);
+        o = I(e, t, n, r);
       return o;
     }
     function z(e, t) {
@@ -15248,8 +15312,8 @@
           j = S[0],
           T = j.getInternalHooks(v),
           P = T.useSubscribe,
-          R = T.setInitialValues,
-          I = T.setCallbacks,
+          I = T.setInitialValues,
+          R = T.setCallbacks,
           N = T.setValidateMessages,
           A = T.setPreserve,
           M = T.destroyForm;
@@ -15268,7 +15332,7 @@
             [C, j, n],
           ),
           N(Object(l['a'])(Object(l['a'])({}, C.validateMessages), m)),
-          I({
+          R({
             onValuesChange: b,
             onFieldsChange: function (e) {
               if ((C.triggerFormChange(n, e), x)) {
@@ -15291,7 +15355,7 @@
           A(u);
         var L,
           D = r['useRef'](null);
-        R(i, !D.current),
+        I(i, !D.current),
           D.current || (D.current = !0),
           r['useEffect'](function () {
             return M;
@@ -15347,7 +15411,7 @@
         return Math.random();
       }
     }
-    function Re() {
+    function Ie() {
       var e =
           arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : [],
         t = arguments.length > 1 ? arguments[1] : void 0,
@@ -15388,14 +15452,14 @@
         a
       );
     }
-    var Ie = Re,
+    var Re = Ie,
       Ne = r['forwardRef'](Te),
       Ae = Ne;
     (Ae.FormProvider = Ce),
       (Ae.Field = ce),
       (Ae.List = fe),
       (Ae.useForm = we),
-      (Ae.useWatch = Ie);
+      (Ae.useWatch = Re);
   },
   '8GlL': function (e, t, n) {
     'use strict';
@@ -15531,8 +15595,8 @@
       j = 'appear',
       T = 'enter',
       P = 'leave',
-      R = 'none',
-      I = 'prepare',
+      I = 'none',
+      R = 'prepare',
       N = 'start',
       A = 'active',
       M = 'end',
@@ -15569,14 +15633,14 @@
       },
       z = Object(f['a'])() ? l['useLayoutEffect'] : l['useEffect'],
       F = z,
-      B = [I, N, A, M],
+      B = [R, N, A, M],
       U = !1,
       V = !0;
     function H(e) {
       return e === A || e === M;
     }
     var q = function (e, t) {
-        var n = Object(L['a'])(R),
+        var n = Object(L['a'])(I),
           r = Object(a['a'])(n, 2),
           o = r[0],
           i = r[1],
@@ -15585,12 +15649,12 @@
           u = s[0],
           d = s[1];
         function f() {
-          i(I, !0);
+          i(R, !0);
         }
         return (
           F(
             function () {
-              if (o !== R && o !== M) {
+              if (o !== I && o !== M) {
                 var e = B.indexOf(o),
                   n = B[e + 1],
                   r = t(o);
@@ -15660,7 +15724,7 @@
         k = i.onEnterActive,
         C = i.onLeaveActive,
         O = i.onAppearEnd,
-        R = i.onEnterEnd,
+        I = i.onEnterEnd,
         M = i.onLeaveEnd,
         D = i.onVisibleChanged,
         _ = Object(L['a'])(),
@@ -15689,7 +15753,7 @@
           Y === j && r
             ? (n = null === O || void 0 === O ? void 0 : O(t, e))
             : Y === T && r
-            ? (n = null === R || void 0 === R ? void 0 : R(t, e))
+            ? (n = null === I || void 0 === I ? void 0 : I(t, e))
             : Y === P &&
               r &&
               (n = null === M || void 0 === M ? void 0 : M(t, e)),
@@ -15706,7 +15770,7 @@
               case j:
                 return (
                   (e = {}),
-                  Object(r['a'])(e, I, v),
+                  Object(r['a'])(e, R, v),
                   Object(r['a'])(e, N, y),
                   Object(r['a'])(e, A, w),
                   e
@@ -15714,7 +15778,7 @@
               case T:
                 return (
                   (t = {}),
-                  Object(r['a'])(t, I, g),
+                  Object(r['a'])(t, R, g),
                   Object(r['a'])(t, N, x),
                   Object(r['a'])(t, A, k),
                   t
@@ -15722,7 +15786,7 @@
               case P:
                 return (
                   (n = {}),
-                  Object(r['a'])(n, I, b),
+                  Object(r['a'])(n, R, b),
                   Object(r['a'])(n, N, E),
                   Object(r['a'])(n, A, C),
                   n
@@ -15734,8 +15798,8 @@
           [Y],
         ),
         ue = q(Y, function (e) {
-          if (e === I) {
-            var t = se[I];
+          if (e === R) {
+            var t = se[R];
             return t ? t(re()) : U;
           }
           var n;
@@ -15793,7 +15857,7 @@
         );
       var he = Q;
       return (
-        se[I] && pe === N && (he = Object(o['a'])({ transition: 'none' }, he)),
+        se[R] && pe === N && (he = Object(o['a'])({ transition: 'none' }, he)),
         [Y, pe, he, null !== B && void 0 !== B ? B : t]
       );
     }
@@ -15853,9 +15917,9 @@
           j = C[0],
           T = C[1],
           P = C[2],
-          R = C[3],
-          A = l['useRef'](R);
-        R && (A.current = !0);
+          I = C[3],
+          A = l['useRef'](I);
+        I && (A.current = !0);
         var M,
           L = l['useCallback'](
             function (e) {
@@ -15867,7 +15931,7 @@
         if (h)
           if (j !== S && n(e)) {
             var _, z;
-            T === I
+            T === R
               ? (z = 'prepare')
               : H(T)
               ? (z = 'active')
@@ -15890,7 +15954,7 @@
                 L,
               ));
           } else
-            M = R
+            M = I
               ? h(Object(o['a'])({}, D), L)
               : !p && A.current
               ? h(
@@ -16338,16 +16402,16 @@
           pointerEvents: S ? 'none' : p,
           position: S ? 'absolute' : p,
         });
-      var R = {};
-      S && (R['aria-hidden'] = !0);
-      var I = l['createElement'](
+      var I = {};
+      S && (I['aria-hidden'] = !0);
+      var R = l['createElement'](
         C,
         Object(r['a'])(
           {
             className: s()(!a && n, b),
             style: Object(o['a'])(Object(o['a'])({}, T), y),
           },
-          R,
+          I,
           O,
           { ref: t },
         ),
@@ -16355,7 +16419,7 @@
       );
       return (
         m &&
-          (I = l['createElement'](
+          (R = l['createElement'](
             u['a'],
             {
               onResize: function (e) {
@@ -16364,9 +16428,9 @@
               },
               disabled: h,
             },
-            I,
+            R,
           )),
-        I
+        R
       );
     }
     var h = l['forwardRef'](m);
@@ -16444,10 +16508,10 @@
       j = l['createContext'](null),
       T = 'responsive',
       P = 'invalidate';
-    function R(e) {
+    function I(e) {
       return '+ '.concat(e.length, ' ...');
     }
-    function I(e, t) {
+    function R(e, t) {
       var n = e.prefixCls,
         c = void 0 === n ? 'rc-overflow' : n,
         f = e.data,
@@ -16462,7 +16526,7 @@
         k = e.className,
         C = e.maxCount,
         O = e.renderRest,
-        I = e.renderRawRest,
+        R = e.renderRawRest,
         N = e.suffix,
         A = e.component,
         M = void 0 === A ? 'div' : A,
@@ -16555,10 +16619,10 @@
             },
           [m],
         );
-      function Re(e, t) {
+      function Ie(e, t) {
         me(e), t || (ye(e < p.length - 1), null === D || void 0 === D || D(e));
       }
-      function Ie(e, t) {
+      function Re(e, t) {
         H(t.clientWidth);
       }
       function Ne(e, t) {
@@ -16582,22 +16646,22 @@
             var e = ae,
               t = Se.length,
               n = t - 1;
-            if (!t) return Re(0), void ue(null);
+            if (!t) return Ie(0), void ue(null);
             for (var r = 0; r < t; r += 1) {
               var o = Le(r);
               if ((F && (o = o || 0), void 0 === o)) {
-                Re(r - 1, !0);
+                Ie(r - 1, !0);
                 break;
               }
               if (
                 ((e += o),
                 (0 === n && e <= q) || (r === n - 1 && e + Le(n) <= q))
               ) {
-                Re(n), ue(null);
+                Ie(n), ue(null);
                 break;
               }
               if (e + Ee > q) {
-                Re(r - 1), ue(e - o - ae + te);
+                Ie(r - 1), ue(e - o - ae + te);
                 break;
               }
             }
@@ -16654,15 +16718,15 @@
           registerSize: Ae,
           display: De,
         };
-      if (I)
-        I &&
+      if (R)
+        R &&
           (ze = l['createElement'](
             j.Provider,
             { value: Object(o['a'])(Object(o['a'])({}, Fe), Ue) },
-            I(je),
+            R(je),
           ));
       else {
-        var Ve = O || R;
+        var Ve = O || I;
         ze = l['createElement'](
           v,
           Object(r['a'])({}, Fe, Ue),
@@ -16693,13 +16757,13 @@
         we &&
           (He = l['createElement'](
             u['a'],
-            { onResize: Ie, disabled: !ke },
+            { onResize: Re, disabled: !ke },
             He,
           )),
         He
       );
     }
-    var N = l['forwardRef'](I);
+    var N = l['forwardRef'](R);
     (N.displayName = 'Overflow'),
       (N.Item = O),
       (N.RESPONSIVE = T),
@@ -19932,22 +19996,22 @@
                       )
                         continue;
                       for (
-                        var R = w;
-                        R !== t.tail && (P < T || 'string' === typeof R.value);
-                        R = R.next
+                        var I = w;
+                        I !== t.tail && (P < T || 'string' === typeof I.value);
+                        I = I.next
                       )
-                        S++, (P += R.value.length);
+                        S++, (P += I.value.length);
                       S--, (C = e.slice(k, P)), (O.index -= k);
                     } else if (((O = a(E, 0, C, g)), !O)) continue;
                     j = O.index;
-                    var I = O[0],
+                    var R = O[0],
                       N = C.slice(0, j),
-                      A = C.slice(j + I.length),
+                      A = C.slice(j + R.length),
                       M = k + C.length;
                     d && M > d.reach && (d.reach = M);
                     var L = w.prev;
                     N && ((L = c(t, L, N)), (k += N.length)), s(t, L, S);
-                    var D = new o(f, v ? r.tokenize(I, v) : I, y, I);
+                    var D = new o(f, v ? r.tokenize(R, v) : R, y, R);
                     if (((w = c(t, L, D)), A && c(t, w, A), S > 1)) {
                       var _ = { cause: f + ',' + m, reach: M };
                       i(e, t, n, w.prev, k, _),
@@ -23732,7 +23796,7 @@
               }),
               o.a.createElement('p', null, 'jsx:'),
               o.a.createElement(l['a'], {
-                code: "import { cx, css } from '@emotion/css';\nimport React, { useState } from 'react';\n\nconst baseStyle = css`\n  line-height: 1.5715;\n`;\nconst AccordionContainer = cx(\n  baseStyle,\n  css`\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    color: #000000d9;\n    font-size: 14px;\n    background-color: #fafafa;\n    border: 1px solid #d9d9d9;\n    border-bottom: 0;\n    border-radius: 2px;\n  `,\n);\nconst AccordionItemContainer = css`\n  border-bottom: 1px solid #d9d9d9;\n`;\nconst AccordionItemHeader = cx(\n  baseStyle,\n  css`\n    position: relative;\n    display: flex;\n    flex-wrap: nowrap;\n    align-items: flex-start;\n    padding: 12px 16px;\n    color: rgba(0, 0, 0, 0.85);\n    cursor: pointer;\n    transition: all 0.3s, visibility 0s;\n    box-sizing: border-box;\n  `,\n);\n\nconst AccordionItemContent = css`\n  color: #000000d9;\n  background-color: #fff;\n  border-top: 1px solid #d9d9d9;\n  transition: all 0.3s ease-in-out;\n  padding: 16px;\n  &.collapsed {\n    display: none;\n  }\n  &.expanded {\n    display: block;\n  }\n`;\n\n\nconst AccordionItem = (props) => {\n  const { label, isCollapsed, handleClick, children } = props;\n  return (\n    <div className={AccordionItemContainer} onClick={handleClick}>\n      <div className={AccordionItemHeader}>{label}</div>\n      <div\n        aria-expanded={isCollapsed}\n        className={`${AccordionItemContent}${\n          isCollapsed ? ' collapsed' : ' expanded'\n        }`}\n      >\n        {children}\n      </div>\n    </div>\n  );\n};\n\nconst Accordion = (props) => {\n  const { defaultIndex, onItemClick, children } = props;\n  const [bindIndex, setBindIndex] = useState(defaultIndex);\n  const changeItem = (index) => {\n    if (typeof onItemClick === 'function') {\n      onItemClick(index);\n    }\n    if (index !== bindIndex) {\n      setBindIndex(index);\n    }\n  };\n  const items = children?.filter(\n    (item) => item?.type?.name === 'AccordionItem',\n  );\n  return (\n    <div className={AccordionContainer}>\n      {items?.map(({ props: { index, label, children } }) => (\n        <AccordionItem\n          key={index}\n          label={label}\n          children={children}\n          isCollapsed={bindIndex !== index}\n          handleClick={() => changeItem(index)}\n        />\n      ))}\n    </div>\n  );\n};\n\nAccordion.AccordionItem = AccordionItem;\nexport default Accordion;",
+                code: "import { cx, css } from '@emotion/css';\nimport React, { useState } from 'react';\n\nconst baseStyle = css`\n  line-height: 1.5715;\n`;\nconst AccordionContainer = cx(\n  baseStyle,\n  css`\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    color: #000000d9;\n    font-size: 14px;\n    background-color: #fafafa;\n    border: 1px solid #d9d9d9;\n    border-bottom: 0;\n    border-radius: 2px;\n  `,\n);\nconst AccordionItemContainer = css`\n  border-bottom: 1px solid #d9d9d9;\n`;\nconst AccordionItemHeader = cx(\n  baseStyle,\n  css`\n    position: relative;\n    display: flex;\n    flex-wrap: nowrap;\n    align-items: flex-start;\n    padding: 12px 16px;\n    color: rgba(0, 0, 0, 0.85);\n    cursor: pointer;\n    transition: all 0.3s, visibility 0s;\n    box-sizing: border-box;\n  `,\n);\n\nconst AccordionItemContent = css`\n  color: #000000d9;\n  background-color: #fff;\n  border-top: 1px solid #d9d9d9;\n  transition: all 0.3s ease-in-out;\n  padding: 16px;\n  &.collapsed {\n    display: none;\n  }\n  &.expanded {\n    display: block;\n  }\n`;\n\nconst AccordionItem = (props) => {\n  const { label, isCollapsed, handleClick, children } = props;\n  return (\n    <div className={AccordionItemContainer} onClick={handleClick}>\n      <div className={AccordionItemHeader}>{label}</div>\n      <div\n        aria-expanded={isCollapsed}\n        className={`${AccordionItemContent}${\n          isCollapsed ? ' collapsed' : ' expanded'\n        }`}\n      >\n        {children}\n      </div>\n    </div>\n  );\n};\n\nconst Accordion = (props) => {\n  const { defaultIndex, onItemClick, children } = props;\n  const [bindIndex, setBindIndex] = useState(defaultIndex);\n  const changeItem = (index) => {\n    if (typeof onItemClick === 'function') {\n      onItemClick(index);\n    }\n    if (index !== bindIndex) {\n      setBindIndex(index);\n    }\n  };\n  const items = children?.filter(\n    (item) => item?.type?.name === 'AccordionItem',\n  );\n  return (\n    <div className={AccordionContainer}>\n      {items?.map(({ props: { index, label, children } }) => (\n        <AccordionItem\n          key={index}\n          label={label}\n          children={children}\n          isCollapsed={bindIndex !== index}\n          handleClick={() => changeItem(index)}\n        />\n      ))}\n    </div>\n  );\n};\n\nAccordion.AccordionItem = AccordionItem;\nexport default Accordion;",
                 lang: 'jsx',
               }),
               o.a.createElement('p', null, 'demo:'),
@@ -24426,6 +24490,48 @@
       a = n('/oCk'),
       i = () => o.a.createElement(a['a'], { limit: 5, value: 'hello,there!' });
     t['default'] = i;
+  },
+  KV9B: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r,
+      o = n('qqnG'),
+      a = n('q1tI'),
+      i = n.n(a),
+      l = n('zeV3'),
+      c = (n('k/c8'), n('5SEd')),
+      s = n('0NDP'),
+      u = Object(c['a'])(l['b'])(
+        r || (r = Object(o['a'])(['\n  width: 100%;\n'])),
+      ),
+      d = () =>
+        i.a.createElement(
+          u,
+          { direction: 'vertical' },
+          i.a.createElement(s['a'], {
+            type: 'info',
+            message:
+              '\u8fd9\u662f\u4fe1\u606f\u63d0\u793a\uff0c\u5e76\u5360\u6ee1\u7a7a\u95f4',
+            block: !0,
+          }),
+          i.a.createElement(s['a'], {
+            type: 'success',
+            message:
+              '\u8fd9\u662f\u6210\u529f\u63d0\u793a\uff0c\u5e76\u663e\u793a\u5173\u95ed\u6309\u94ae',
+            showClose: !0,
+          }),
+          i.a.createElement(s['a'], {
+            type: 'warning',
+            message:
+              '\u8fd9\u662f\u8b66\u544a\u63d0\u793a\uff0c\u4e0d\u5360\u6ee1\u7a7a\u95f4\uff0c\u4e0d\u663e\u793a\u5173\u95ed\u6309\u94ae',
+          }),
+          i.a.createElement(s['a'], {
+            type: 'error',
+            message:
+              '\u8fd9\u662f\u9519\u8bef\u63d0\u793a\uff0c\u4e0d\u5360\u6ee1\u7a7a\u95f4\uff0c\u4e0d\u663e\u793a\u5173\u95ed\u6309\u94ae',
+          }),
+        );
+    t['default'] = d;
   },
   KcUY: function (e, t, n) {
     'use strict';
@@ -25257,17 +25363,17 @@
               g;
           return (S = new RegExp('(?:^' + b + '$)', 'i')), S;
         },
-        R = {
+        I = {
           email:
             /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+\.)+[a-zA-Z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]{2,}))$/,
           hex: /^#?([a-f0-9]{6}|[a-f0-9]{3})$/i,
         },
-        I = {
+        R = {
           integer: function (e) {
-            return I.number(e) && parseInt(e, 10) === e;
+            return R.number(e) && parseInt(e, 10) === e;
           },
           float: function (e) {
-            return I.number(e) && !I.integer(e);
+            return R.number(e) && !R.integer(e);
           },
           array: function (e) {
             return Array.isArray(e);
@@ -25292,21 +25398,21 @@
             return !isNaN(e) && 'number' === typeof e;
           },
           object: function (e) {
-            return 'object' === typeof e && !I.array(e);
+            return 'object' === typeof e && !R.array(e);
           },
           method: function (e) {
             return 'function' === typeof e;
           },
           email: function (e) {
             return (
-              'string' === typeof e && e.length <= 320 && !!e.match(R.email)
+              'string' === typeof e && e.length <= 320 && !!e.match(I.email)
             );
           },
           url: function (e) {
             return 'string' === typeof e && e.length <= 2048 && !!e.match(P());
           },
           hex: function (e) {
-            return 'string' === typeof e && !!e.match(R.hex);
+            return 'string' === typeof e && !!e.match(I.hex);
           },
         },
         N = function (e, t, n, r, o) {
@@ -25327,7 +25433,7 @@
               ],
               i = e.type;
             a.indexOf(i) > -1
-              ? I[i](t) || r.push(m(o.messages.types[i], e.fullField, e.type))
+              ? R[i](t) || r.push(m(o.messages.types[i], e.fullField, e.type))
               : i &&
                 typeof t !== e.type &&
                 r.push(m(o.messages.types[i], e.fullField, e.type));
@@ -25883,8 +25989,8 @@
       j = 'Invalid scheme',
       T = 'Invalid host',
       P = 'Invalid port',
-      R = /[A-Za-z]/,
-      I = /[\d+-.A-Za-z]/,
+      I = /[A-Za-z]/,
+      R = /[\d+-.A-Za-z]/,
       N = /\d/,
       A = /^(0x|0X)/,
       M = /^[0-7]+$/,
@@ -26068,7 +26174,7 @@
         var n;
         return (
           2 == e.length &&
-          R.test(e.charAt(0)) &&
+          I.test(e.charAt(0)) &&
           (':' == (n = e.charAt(1)) || (!t && '|' == n))
         );
       },
@@ -26146,7 +26252,7 @@
         while (u <= a.length) {
           switch (((i = a[u]), s)) {
             case ie:
-              if (!i || !R.test(i)) {
+              if (!i || !I.test(i)) {
                 if (n) return j;
                 s = ce;
                 continue;
@@ -26154,7 +26260,7 @@
               (f += i.toLowerCase()), (s = le);
               break;
             case le:
-              if (i && (I.test(i) || '+' == i || '-' == i || '.' == i))
+              if (i && (R.test(i) || '+' == i || '-' == i || '.' == i))
                 f += i.toLowerCase();
               else {
                 if (':' != i) {
@@ -26482,8 +26588,8 @@
             l.query = String(c) || null;
           }),
           a ||
-            ((r.href = Re.call(r)),
-            (r.origin = Ie.call(r)),
+            ((r.href = Ie.call(r)),
+            (r.origin = Re.call(r)),
             (r.protocol = Ne.call(r)),
             (r.username = Ae.call(r)),
             (r.password = Me.call(r)),
@@ -26496,7 +26602,7 @@
             (r.hash = Ue.call(r)));
       },
       Pe = Te.prototype,
-      Re = function () {
+      Ie = function () {
         var e = k(this),
           t = e.scheme,
           n = e.username,
@@ -26520,7 +26626,7 @@
           s
         );
       },
-      Ie = function () {
+      Re = function () {
         var e = k(this),
           t = e.scheme,
           n = e.port;
@@ -26579,14 +26685,14 @@
     if (
       (a &&
         c(Pe, {
-          href: Ve(Re, function (e) {
+          href: Ve(Ie, function (e) {
             var t = k(this),
               n = String(e),
               r = je(t, n);
             if (r) throw TypeError(r);
             E(t.searchParams).updateSearchParams(t.query);
           }),
-          origin: Ve(Ie),
+          origin: Ve(Re),
           protocol: Ve(Ne, function (e) {
             var t = k(this);
             je(t, String(e) + ':', ie);
@@ -26649,7 +26755,7 @@
         Pe,
         'toJSON',
         function () {
-          return Re.call(this);
+          return Ie.call(this);
         },
         { enumerable: !0 },
       ),
@@ -26657,7 +26763,7 @@
         Pe,
         'toString',
         function () {
-          return Re.call(this);
+          return Ie.call(this);
         },
         { enumerable: !0 },
       ),
@@ -27275,13 +27381,13 @@
                   strict: k,
                 })
               : null,
-            R = !!(v ? v(P, n) : P),
-            I = R ? w(c, a) : c,
-            N = R ? Object(u['a'])({}, C, {}, l) : C,
+            I = !!(v ? v(P, n) : P),
+            R = I ? w(c, a) : c,
+            N = I ? Object(u['a'])({}, C, {}, l) : C,
             A = Object(u['a'])(
               {
-                'aria-current': (R && r) || null,
-                className: I,
+                'aria-current': (I && r) || null,
+                className: R,
                 style: N,
                 to: o,
               },
@@ -27368,11 +27474,11 @@
         });
       };
     }
-    function R(e, t) {
+    function I(e, t) {
       if (!(e instanceof t))
         throw new TypeError('Cannot call a class as a function');
     }
-    function I(e, t) {
+    function R(e, t) {
       for (var n = 0; n < t.length; n++) {
         var r = t[n];
         (r.enumerable = r.enumerable || !1),
@@ -27382,7 +27488,7 @@
       }
     }
     function N(e, t, n) {
-      return t && I(e.prototype, t), n && I(e, n), e;
+      return t && R(e.prototype, t), n && R(e, n), e;
     }
     function A(e, t, n) {
       return (
@@ -27625,7 +27731,7 @@
     }
     var Z = (function () {
       function e(t, n) {
-        R(this, e),
+        I(this, e),
           (this._loadFn = t),
           (this._opts = n),
           (this._callbacks = new Set()),
@@ -27801,7 +27907,7 @@
     })(ne || (ne = {}));
     var ie = (function () {
       function e(t) {
-        R(this, e),
+        I(this, e),
           (this.validKeys = void 0),
           (this.hooks = {}),
           (this.validKeys =
@@ -29182,17 +29288,17 @@
       h =
         "import { Space } from 'antd';\nimport React from 'react';\nimport OmitText from './OmitText';\n\nconst Index = () => {\n  const text =\n    '\u8fd9\u662f\u4e00\u6bb5\u5f88\u957f\u5f88\u957f\u5f88\u957f\u5f88\u957f\u5f88\u957f\u5f88\u957f\u5f88\u957f\u5f88\u957f\u5f88\u957f\u5f88\u957f\u5f88\u957f\u5f88\u957f\u5f88\u957f\u5f88\u957f\u5f88\u957f\u5f88\u957f\u5f88\u957f\u5f88\u957f\u5f88\u957f\u5f88\u957f\u7684\u6d4b\u8bd5\u6587\u672c';\n  //tooltipProps\u914d\u7f6e\u5c5e\u6027\u540cantd\u7684tooltip\n  return (\n    <Space>\n      <OmitText>{text}</OmitText>\n      <OmitText tooltipProps={{ color: '#2396ef', placement: 'right' }}>\n        {text}\n      </OmitText>\n      <OmitText\n        width=\"90%\"\n        tooltipProps={{ color: '#ff0002', placement: 'bottom' }}\n      >\n        {text}\n      </OmitText>\n    </Space>\n  );\n};\n\nexport default Index;",
       v =
-        'import React from \'react\';\r\nimport Accordion from \'./Accordion\';\r\n\r\nconst { AccordionItem } = Accordion;\r\n\r\nconst Demo = () => {\r\n  return (\r\n    <Accordion defaultIndex="1" onItemClick={console.log}>\r\n      <AccordionItem label="A" index="1">\r\n        Lorem ipsum\r\n      </AccordionItem>\r\n      <AccordionItem label="B" index="2">\r\n        Dolor sit amet\r\n      </AccordionItem>\r\n    </Accordion>\r\n  );\r\n};\r\n\r\nexport default Demo;',
+        'import React from \'react\';\nimport Accordion from \'./Accordion\';\n\nconst { AccordionItem } = Accordion;\n\nconst Demo = () => {\n  return (\n    <Accordion defaultIndex="1" onItemClick={console.log}>\n      <AccordionItem label="A" index="1">\n        Lorem ipsum\n      </AccordionItem>\n      <AccordionItem label="B" index="2">\n        Dolor sit amet\n      </AccordionItem>\n    </Accordion>\n  );\n};\n\nexport default Demo;',
       g =
-        "import { cx, css } from '@emotion/css';\r\nimport React, { useState } from 'react';\r\nimport type { ReactNode, SyntheticEvent } from 'react';\r\n\r\nconst baseStyle = css`\r\n  line-height: 1.5715;\r\n`;\r\nconst AccordionContainer = cx(\r\n  baseStyle,\r\n  css`\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0;\r\n    color: #000000d9;\r\n    font-size: 14px;\r\n    background-color: #fafafa;\r\n    border: 1px solid #d9d9d9;\r\n    border-bottom: 0;\r\n    border-radius: 2px;\r\n  `,\r\n);\r\nconst AccordionItemContainer = css`\r\n  border-bottom: 1px solid #d9d9d9;\r\n`;\r\nconst AccordionItemHeader = cx(\r\n  baseStyle,\r\n  css`\r\n    position: relative;\r\n    display: flex;\r\n    flex-wrap: nowrap;\r\n    align-items: flex-start;\r\n    padding: 12px 16px;\r\n    color: rgba(0, 0, 0, 0.85);\r\n    cursor: pointer;\r\n    transition: all 0.3s, visibility 0s;\r\n    box-sizing: border-box;\r\n  `,\r\n);\r\n\r\nconst AccordionItemContent = css`\r\n  color: #000000d9;\r\n  background-color: #fff;\r\n  border-top: 1px solid #d9d9d9;\r\n  transition: all 0.3s ease-in-out;\r\n  padding: 16px;\r\n  &.collapsed {\r\n    display: none;\r\n  }\r\n  &.expanded {\r\n    display: block;\r\n  }\r\n`;\r\n\r\ninterface AccordionItemType {\r\n  index: string | number;\r\n  label: string;\r\n  isCollapsed: boolean;\r\n  handleClick(e: SyntheticEvent): void;\r\n  children: ReactNode;\r\n}\r\ninterface AccordionType {\r\n  defaultIndex: number | string;\r\n  onItemClick(key: number | string): void;\r\n  children: JSX.Element[];\r\n}\r\n\r\nconst AccordionItem = (props: Partial<AccordionItemType>) => {\r\n  const { label, isCollapsed, handleClick, children } = props;\r\n  return (\r\n    <div className={AccordionItemContainer} onClick={handleClick}>\r\n      <div className={AccordionItemHeader}>{label}</div>\r\n      <div\r\n        aria-expanded={isCollapsed}\r\n        className={`${AccordionItemContent}${\r\n          isCollapsed ? ' collapsed' : ' expanded'\r\n        }`}\r\n      >\r\n        {children}\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nconst Accordion = (props: Partial<AccordionType>) => {\r\n  const { defaultIndex, onItemClick, children } = props;\r\n  const [bindIndex, setBindIndex] = useState(defaultIndex);\r\n  const changeItem = (index: number | string) => {\r\n    if (typeof onItemClick === 'function') {\r\n      onItemClick(index);\r\n    }\r\n    if (index !== bindIndex) {\r\n      setBindIndex(index);\r\n    }\r\n  };\r\n  const items = children?.filter(\r\n    (item) => item?.type?.name === 'AccordionItem',\r\n  );\r\n  return (\r\n    <div className={AccordionContainer}>\r\n      {items?.map(({ props: { index, label, children } }) => (\r\n        <AccordionItem\r\n          key={index}\r\n          label={label}\r\n          children={children}\r\n          isCollapsed={bindIndex !== index}\r\n          handleClick={() => changeItem(index)}\r\n        />\r\n      ))}\r\n    </div>\r\n  );\r\n};\r\n\r\nAccordion.AccordionItem = AccordionItem;\r\nexport default Accordion;",
+        "import { cx, css } from '@emotion/css';\nimport React, { useState } from 'react';\nimport type { ReactNode, SyntheticEvent } from 'react';\n\nconst baseStyle = css`\n  line-height: 1.5715;\n`;\nconst AccordionContainer = cx(\n  baseStyle,\n  css`\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    color: #000000d9;\n    font-size: 14px;\n    background-color: #fafafa;\n    border: 1px solid #d9d9d9;\n    border-bottom: 0;\n    border-radius: 2px;\n  `,\n);\nconst AccordionItemContainer = css`\n  border-bottom: 1px solid #d9d9d9;\n`;\nconst AccordionItemHeader = cx(\n  baseStyle,\n  css`\n    position: relative;\n    display: flex;\n    flex-wrap: nowrap;\n    align-items: flex-start;\n    padding: 12px 16px;\n    color: rgba(0, 0, 0, 0.85);\n    cursor: pointer;\n    transition: all 0.3s, visibility 0s;\n    box-sizing: border-box;\n  `,\n);\n\nconst AccordionItemContent = css`\n  color: #000000d9;\n  background-color: #fff;\n  border-top: 1px solid #d9d9d9;\n  transition: all 0.3s ease-in-out;\n  padding: 16px;\n  &.collapsed {\n    display: none;\n  }\n  &.expanded {\n    display: block;\n  }\n`;\n\ninterface AccordionItemType {\n  index: string | number;\n  label: string;\n  isCollapsed: boolean;\n  handleClick(e: SyntheticEvent): void;\n  children: ReactNode;\n}\ninterface AccordionType {\n  defaultIndex: number | string;\n  onItemClick(key: number | string): void;\n  children: JSX.Element[];\n}\n\nconst AccordionItem = (props: Partial<AccordionItemType>) => {\n  const { label, isCollapsed, handleClick, children } = props;\n  return (\n    <div className={AccordionItemContainer} onClick={handleClick}>\n      <div className={AccordionItemHeader}>{label}</div>\n      <div\n        aria-expanded={isCollapsed}\n        className={`${AccordionItemContent}${\n          isCollapsed ? ' collapsed' : ' expanded'\n        }`}\n      >\n        {children}\n      </div>\n    </div>\n  );\n};\n\nconst Accordion = (props: Partial<AccordionType>) => {\n  const { defaultIndex, onItemClick, children } = props;\n  const [bindIndex, setBindIndex] = useState(defaultIndex);\n  const changeItem = (index: number | string) => {\n    if (typeof onItemClick === 'function') {\n      onItemClick(index);\n    }\n    if (index !== bindIndex) {\n      setBindIndex(index);\n    }\n  };\n  const items = children?.filter(\n    (item) => item?.type?.name === 'AccordionItem',\n  );\n  return (\n    <div className={AccordionContainer}>\n      {items?.map(({ props: { index, label, children } }) => (\n        <AccordionItem\n          key={index}\n          label={label}\n          children={children}\n          isCollapsed={bindIndex !== index}\n          handleClick={() => changeItem(index)}\n        />\n      ))}\n    </div>\n  );\n};\n\nAccordion.AccordionItem = AccordionItem;\nexport default Accordion;",
       b =
-        'import React from \'react\';\r\nimport Accordion from \'./Accordion\';\r\n\r\nconst { AccordionItem } = Accordion;\r\n\r\nconst Demo = () => {\r\n  return (\r\n    <Accordion defaultIndex="1" onItemClick={console.log}>\r\n      <AccordionItem label="A" index="1">\r\n        Lorem ipsum\r\n      </AccordionItem>\r\n      <AccordionItem label="B" index="2">\r\n        Dolor sit amet\r\n      </AccordionItem>\r\n    </Accordion>\r\n  );\r\n};\r\n\r\nexport default Demo;',
+        'import React from \'react\';\nimport Accordion from \'./Accordion\';\n\nconst { AccordionItem } = Accordion;\n\nconst Demo = () => {\n  return (\n    <Accordion defaultIndex="1" onItemClick={console.log}>\n      <AccordionItem label="A" index="1">\n        Lorem ipsum\n      </AccordionItem>\n      <AccordionItem label="B" index="2">\n        Dolor sit amet\n      </AccordionItem>\n    </Accordion>\n  );\n};\n\nexport default Demo;',
       y =
-        "import { cx, css } from '@emotion/css';\r\nimport React, { useState } from 'react';\r\n\r\nconst baseStyle = css`\r\n  line-height: 1.5715;\r\n`;\r\nconst AccordionContainer = cx(\r\n  baseStyle,\r\n  css`\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0;\r\n    color: #000000d9;\r\n    font-size: 14px;\r\n    background-color: #fafafa;\r\n    border: 1px solid #d9d9d9;\r\n    border-bottom: 0;\r\n    border-radius: 2px;\r\n  `,\r\n);\r\nconst AccordionItemContainer = css`\r\n  border-bottom: 1px solid #d9d9d9;\r\n`;\r\nconst AccordionItemHeader = cx(\r\n  baseStyle,\r\n  css`\r\n    position: relative;\r\n    display: flex;\r\n    flex-wrap: nowrap;\r\n    align-items: flex-start;\r\n    padding: 12px 16px;\r\n    color: rgba(0, 0, 0, 0.85);\r\n    cursor: pointer;\r\n    transition: all 0.3s, visibility 0s;\r\n    box-sizing: border-box;\r\n  `,\r\n);\r\n\r\nconst AccordionItemContent = css`\r\n  color: #000000d9;\r\n  background-color: #fff;\r\n  border-top: 1px solid #d9d9d9;\r\n  transition: all 0.3s ease-in-out;\r\n  padding: 16px;\r\n  &.collapsed {\r\n    display: none;\r\n  }\r\n  &.expanded {\r\n    display: block;\r\n  }\r\n`;\r\n\r\n\r\nconst AccordionItem = (props) => {\r\n  const { label, isCollapsed, handleClick, children } = props;\r\n  return (\r\n    <div className={AccordionItemContainer} onClick={handleClick}>\r\n      <div className={AccordionItemHeader}>{label}</div>\r\n      <div\r\n        aria-expanded={isCollapsed}\r\n        className={`${AccordionItemContent}${\r\n          isCollapsed ? ' collapsed' : ' expanded'\r\n        }`}\r\n      >\r\n        {children}\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nconst Accordion = (props) => {\r\n  const { defaultIndex, onItemClick, children } = props;\r\n  const [bindIndex, setBindIndex] = useState(defaultIndex);\r\n  const changeItem = (index) => {\r\n    if (typeof onItemClick === 'function') {\r\n      onItemClick(index);\r\n    }\r\n    if (index !== bindIndex) {\r\n      setBindIndex(index);\r\n    }\r\n  };\r\n  const items = children?.filter(\r\n    (item) => item?.type?.name === 'AccordionItem',\r\n  );\r\n  return (\r\n    <div className={AccordionContainer}>\r\n      {items?.map(({ props: { index, label, children } }) => (\r\n        <AccordionItem\r\n          key={index}\r\n          label={label}\r\n          children={children}\r\n          isCollapsed={bindIndex !== index}\r\n          handleClick={() => changeItem(index)}\r\n        />\r\n      ))}\r\n    </div>\r\n  );\r\n};\r\n\r\nAccordion.AccordionItem = AccordionItem;\r\nexport default Accordion;",
+        "import { cx, css } from '@emotion/css';\nimport React, { useState } from 'react';\n\nconst baseStyle = css`\n  line-height: 1.5715;\n`;\nconst AccordionContainer = cx(\n  baseStyle,\n  css`\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    color: #000000d9;\n    font-size: 14px;\n    background-color: #fafafa;\n    border: 1px solid #d9d9d9;\n    border-bottom: 0;\n    border-radius: 2px;\n  `,\n);\nconst AccordionItemContainer = css`\n  border-bottom: 1px solid #d9d9d9;\n`;\nconst AccordionItemHeader = cx(\n  baseStyle,\n  css`\n    position: relative;\n    display: flex;\n    flex-wrap: nowrap;\n    align-items: flex-start;\n    padding: 12px 16px;\n    color: rgba(0, 0, 0, 0.85);\n    cursor: pointer;\n    transition: all 0.3s, visibility 0s;\n    box-sizing: border-box;\n  `,\n);\n\nconst AccordionItemContent = css`\n  color: #000000d9;\n  background-color: #fff;\n  border-top: 1px solid #d9d9d9;\n  transition: all 0.3s ease-in-out;\n  padding: 16px;\n  &.collapsed {\n    display: none;\n  }\n  &.expanded {\n    display: block;\n  }\n`;\n\nconst AccordionItem = (props) => {\n  const { label, isCollapsed, handleClick, children } = props;\n  return (\n    <div className={AccordionItemContainer} onClick={handleClick}>\n      <div className={AccordionItemHeader}>{label}</div>\n      <div\n        aria-expanded={isCollapsed}\n        className={`${AccordionItemContent}${\n          isCollapsed ? ' collapsed' : ' expanded'\n        }`}\n      >\n        {children}\n      </div>\n    </div>\n  );\n};\n\nconst Accordion = (props) => {\n  const { defaultIndex, onItemClick, children } = props;\n  const [bindIndex, setBindIndex] = useState(defaultIndex);\n  const changeItem = (index) => {\n    if (typeof onItemClick === 'function') {\n      onItemClick(index);\n    }\n    if (index !== bindIndex) {\n      setBindIndex(index);\n    }\n  };\n  const items = children?.filter(\n    (item) => item?.type?.name === 'AccordionItem',\n  );\n  return (\n    <div className={AccordionContainer}>\n      {items?.map(({ props: { index, label, children } }) => (\n        <AccordionItem\n          key={index}\n          label={label}\n          children={children}\n          isCollapsed={bindIndex !== index}\n          handleClick={() => changeItem(index)}\n        />\n      ))}\n    </div>\n  );\n};\n\nAccordion.AccordionItem = AccordionItem;\nexport default Accordion;",
       x =
-        'import React from \'react\';\r\nimport Accordion from \'./Accordion\';\r\nconst { AccordionItem } = Accordion;\r\nconst Demo = () => {\r\n  return (\r\n    <Accordion defaultIndex="1" onItemClick={console.log}>\r\n      <AccordionItem label="\u6807\u98981" index="1">\r\n        \u9879\u76ee1\r\n      </AccordionItem>\r\n      <AccordionItem label="\u6807\u98982" index="2">\r\n        \u9879\u76ee2\r\n      </AccordionItem>\r\n    </Accordion>\r\n  );\r\n};\r\n\r\nexport default Demo;',
+        'import React from \'react\';\nimport Accordion from \'./Accordion\';\nconst { AccordionItem } = Accordion;\nconst Demo = () => {\n  return (\n    <Accordion defaultIndex="1" onItemClick={console.log}>\n      <AccordionItem label="\u6807\u98981" index="1">\n        \u9879\u76ee1\n      </AccordionItem>\n      <AccordionItem label="\u6807\u98982" index="2">\n        \u9879\u76ee2\n      </AccordionItem>\n    </Accordion>\n  );\n};\n\nexport default Demo;',
       E =
-        'import React from \'react\';\r\nimport Accordion from \'./Accordion\';\r\nconst { AccordionItem } = Accordion;\r\nconst Demo = () => {\r\n  return (\r\n    <Accordion defaultIndex="1" onItemClick={console.log}>\r\n      <AccordionItem label="\u6807\u98981" index="1">\r\n        \u9879\u76ee1\r\n      </AccordionItem>\r\n      <AccordionItem label="\u6807\u98982" index="2">\r\n        \u9879\u76ee2\r\n      </AccordionItem>\r\n    </Accordion>\r\n  );\r\n};\r\n\r\nexport default Demo;',
+        'import React from \'react\';\nimport Accordion from \'./Accordion\';\nconst { AccordionItem } = Accordion;\nconst Demo = () => {\n  return (\n    <Accordion defaultIndex="1" onItemClick={console.log}>\n      <AccordionItem label="\u6807\u98981" index="1">\n        \u9879\u76ee1\n      </AccordionItem>\n      <AccordionItem label="\u6807\u98982" index="2">\n        \u9879\u76ee2\n      </AccordionItem>\n    </Accordion>\n  );\n};\n\nexport default Demo;',
       w =
         'import React from \'react\';\nimport { Space } from \'antd\';\nimport \'antd/dist/antd.less\';\nimport styled from \'@emotion/styled\';\nimport Alert from \'./Alert\';\nconst SpaceBlock = styled(Space)`\n  width: 100%;\n`;\nconst Demo = () => {\n  return (\n    <SpaceBlock direction="vertical">\n      <Alert type="info" message="This is info" block />\n      <Alert type="success" message="This is success" showClose />\n      <Alert type="warning" message="This is warning" />\n      <Alert type="error" message="This is error" />\n    </SpaceBlock>\n  );\n};\n\nexport default Demo;',
       k =
@@ -29200,200 +29306,206 @@
       C =
         '@keyframes leave {\r\n  0% {\r\n    opacity: 1;\r\n  }\r\n\r\n  100% {\r\n    opacity: 0;\r\n  }\r\n}\r\n\r\n@baseSelector: alert;\r\n@infoBgColor: #e6f7ff;\r\n@infoBorderColor: #91d5ff;\r\n@warningBgColor: #fffbe6;\r\n@warningBorderColor: #ffe58f;\r\n@errorBgColor: #fff2f0;\r\n@errorBorderColor: #ffccc7;\r\n@successBgColor: #f6ffed;\r\n@successBorderColor: #b7eb8f;\r\n@color: rgba(0, 0, 0, 0.85);\r\n@closeActiveColor: fadeout(@color, 25%);\r\n.@{baseSelector} {\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  color: @color;\r\n  font-size: 14px;\r\n  line-height: 1.5715;\r\n  list-style: none;\r\n  position: relative;\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 8px 15px;\r\n  word-wrap: break-word;\r\n  border-radius: 2px;\r\n  border: 1px solid transparent;\r\n  &.@{baseSelector}-block {\r\n    width: percentage(1);\r\n  }\r\n  &.@{baseSelector}-info {\r\n    background-color: @infoBgColor;\r\n    border-color: @infoBorderColor;\r\n  }\r\n\r\n  &.@{baseSelector}-warning {\r\n    background-color: @warningBgColor;\r\n    border-color: @warningBorderColor;\r\n  }\r\n\r\n  &.@{baseSelector}-error {\r\n    background-color: @errorBgColor;\r\n    border-color: @errorBorderColor;\r\n  }\r\n\r\n  &.@{baseSelector}-success {\r\n    background-color: @successBgColor;\r\n    border-color: @successBorderColor;\r\n  }\r\n\r\n  .@{baseSelector}-close {\r\n    margin-left: 8px;\r\n    padding: 0;\r\n    overflow: hidden;\r\n    font-size: 16px;\r\n    line-height: 12px;\r\n    background-color: transparent;\r\n    border: none;\r\n    outline: none;\r\n    cursor: pointer;\r\n    margin: 0;\r\n    color: @color;\r\n    position: absolute;\r\n    right: 10px;\r\n    top: 10px;\r\n    &:hover {\r\n      color: @closeActiveColor;\r\n    }\r\n  }\r\n}',
       O =
-        'import React from \'react\';\nimport { Space } from \'antd\';\nimport \'antd/dist/antd.less\';\nimport styled from \'@emotion/styled\';\nimport Alert from \'./Alert\';\nconst SpaceBlock = styled(Space)`\n  width: 100%;\n`;\nconst Demo = () => {\n  return (\n    <SpaceBlock direction="vertical">\n      <Alert type="info" message="\u8fd9\u662f\u4fe1\u606f\u63d0\u793a\uff0c\u5e76\u5360\u6ee1\u7a7a\u95f4" block />\n      <Alert type="success" message="\u8fd9\u662f\u6210\u529f\u63d0\u793a\uff0c\u5e76\u663e\u793a\u5173\u95ed\u6309\u94ae" showClose />\n      <Alert\n        type="warning"\n        message="\u8fd9\u662f\u8b66\u544a\u63d0\u793a\uff0c\u4e0d\u5360\u6ee1\u7a7a\u95f4\uff0c\u4e0d\u663e\u793a\u5173\u95ed\u6309\u94ae"\n      />\n      <Alert type="error" message="\u8fd9\u662f\u9519\u8bef\u63d0\u793a\uff0c\u4e0d\u5360\u6ee1\u7a7a\u95f4\uff0c\u4e0d\u663e\u793a\u5173\u95ed\u6309\u94ae" />\n    </SpaceBlock>\n  );\n};\n\nexport default Demo;',
+        'import React from \'react\';\nimport { Space } from \'antd\';\nimport \'antd/dist/antd.less\';\nimport styled from \'@emotion/styled\';\nimport Alert from \'./Alert\';\nconst SpaceBlock = styled(Space)`\n  width: 100%;\n`;\nconst Demo = () => {\n  return (\n    <SpaceBlock direction="vertical">\n      <Alert type="info" message="This is info" block />\n      <Alert type="success" message="This is success" showClose />\n      <Alert type="warning" message="This is warning" />\n      <Alert type="error" message="This is error" />\n    </SpaceBlock>\n  );\n};\n\nexport default Demo;',
       S =
-        'import React from \'react\';\nimport styled from \'@emotion/styled\';\n\nconst LinkContainer = styled.span`\n  display: inline-block;\n  a {\n    line-height: 1.5715;\n    position: relative;\n    display: inline-block;\n    font-weight: 400;\n    white-space: nowrap;\n    text-align: center;\n    cursor: pointer;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    user-select: none;\n    touch-action: manipulation;\n    height: 32px;\n    padding: 4px 15px;\n    font-size: 14px;\n    border-radius: 2px;\n    color: #1890ff;\n    background: transparent;\n    text-decoration: none;\n    &:hover {\n      color: #40a9ff;\n    }\n  }\n`;\n\ninterface AutoLinkPropType {\n  text: string;\n}\nconst AutoLink = (props: Partial<AutoLinkPropType>) => {\n  const { text } = props;\n  const delimiter =\n    /((?:https?:\\/\\/)?(?:(?:[a-z0-9]?(?:[a-z0-9\\-]{1,61}[a-z0-9])?\\.[^\\.|\\s])+[a-z\\.]*[a-z]+|(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3})(?::\\d{1,5})*[a-z0-9.,_\\/~#&=;%+?\\-\\\\(\\\\)]*)/gi;\n  return (\n    <LinkContainer>\n      {text?.split(delimiter).map((word) => {\n        const match = word.match(delimiter);\n        if (match) {\n          const url = match[0];\n          return (\n            <a\n              href={url.startsWith(\'http\') ? url : `http://${url}`}\n              target="_blank"\n              rel="noopener noreferrer"\n            >\n              {url}\n            </a>\n          );\n        }\n        return word;\n      })}\n    </LinkContainer>\n  );\n};\n\nconst Demo = () => {\n  return <AutoLink text="foo bar baz https://www.eveningwater.com bar" />;\n};\n\nexport default Demo;',
+        "import React, { useState, useEffect } from 'react';\nimport '../alert.less';\n\nconst Alert = (props) => {\n  const {\n    isDefaultShown,\n    timeout = 250,\n    type,\n    message,\n    showClose,\n    block,\n  } = props;\n  const [isShown, setIsShown] = useState(isDefaultShown);\n  const [isLeaving, setIsLeaving] = useState(false);\n\n  let timer = null;\n  useEffect(() => {\n    setIsShown(true);\n    return () => {\n      if (timer) {\n        clearTimeout(timer);\n      }\n    };\n  }, [timeout, timer, isDefaultShown]);\n\n  const closeAlert = () => {\n    setIsLeaving(true);\n    timer = setTimeout(() => {\n      setIsLeaving(false);\n      setIsShown(false);\n    }, timeout);\n  };\n\n  return isShown ? (\n    <div\n      className={`alert ${'alert-' + type}${isLeaving ? ' leaving' : ''}${\n        block ? ' alert-block' : ''\n      }`}\n      role=\"alert\"\n    >\n      <button\n        className=\"alert-close\"\n        onClick={closeAlert}\n        style={{ display: showClose ? 'block' : 'none' }}\n      >\n        &times;\n      </button>\n      {message}\n    </div>\n  ) : null;\n};\n\nexport default Alert;",
       j =
-        'import React from \'react\';\nimport styled from \'@emotion/styled\';\n\nconst LinkContainer = styled.span`\n  display: inline-block;\n  a {\n    line-height: 1.5715;\n    position: relative;\n    display: inline-block;\n    font-weight: 400;\n    white-space: nowrap;\n    text-align: center;\n    cursor: pointer;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    user-select: none;\n    touch-action: manipulation;\n    height: 32px;\n    padding: 4px 15px;\n    font-size: 14px;\n    border-radius: 2px;\n    color: #1890ff;\n    background: transparent;\n    text-decoration: none;\n    &:hover {\n      color: #40a9ff;\n    }\n  }\n`;\n\ninterface AutoLinkPropType {\n  text: string;\n}\nconst AutoLink = (props: Partial<AutoLinkPropType>) => {\n  const { text } = props;\n  const delimiter =\n    /((?:https?:\\/\\/)?(?:(?:[a-z0-9]?(?:[a-z0-9\\-]{1,61}[a-z0-9])?\\.[^\\.|\\s])+[a-z\\.]*[a-z]+|(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3})(?::\\d{1,5})*[a-z0-9.,_\\/~#&=;%+?\\-\\\\(\\\\)]*)/gi;\n  return (\n    <LinkContainer>\n      {text?.split(delimiter).map((word) => {\n        const match = word.match(delimiter);\n        if (match) {\n          const url = match[0];\n          return (\n            <a\n              href={url.startsWith(\'http\') ? url : `http://${url}`}\n              target="_blank"\n              rel="noopener noreferrer"\n            >\n              {url}\n            </a>\n          );\n        }\n        return word;\n      })}\n    </LinkContainer>\n  );\n};\n\nconst Demo = () => {\n  return <AutoLink text="\u70b9\u51fbhttps://www.eveningwater.com\u6211\u554a" />;\n};\n\nexport default Demo;',
+        'import React from \'react\';\nimport { Space } from \'antd\';\nimport \'antd/dist/antd.less\';\nimport styled from \'@emotion/styled\';\nimport Alert from \'./Alert\';\nconst SpaceBlock = styled(Space)`\n  width: 100%;\n`;\nconst Demo = () => {\n  return (\n    <SpaceBlock direction="vertical">\n      <Alert type="info" message="\u8fd9\u662f\u4fe1\u606f\u63d0\u793a\uff0c\u5e76\u5360\u6ee1\u7a7a\u95f4" block />\n      <Alert type="success" message="\u8fd9\u662f\u6210\u529f\u63d0\u793a\uff0c\u5e76\u663e\u793a\u5173\u95ed\u6309\u94ae" showClose />\n      <Alert\n        type="warning"\n        message="\u8fd9\u662f\u8b66\u544a\u63d0\u793a\uff0c\u4e0d\u5360\u6ee1\u7a7a\u95f4\uff0c\u4e0d\u663e\u793a\u5173\u95ed\u6309\u94ae"\n      />\n      <Alert type="error" message="\u8fd9\u662f\u9519\u8bef\u63d0\u793a\uff0c\u4e0d\u5360\u6ee1\u7a7a\u95f4\uff0c\u4e0d\u663e\u793a\u5173\u95ed\u6309\u94ae" />\n    </SpaceBlock>\n  );\n};\n\nexport default Demo;',
       T =
-        'import React from \'react\';\nimport Button from \'./Button\';\nimport { Space } from \'antd\';\nimport styled from \'@emotion/styled\';\n\nconst MarginTop = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  return (\n    <>\n      <Space wrap>\n        <Button>default button</Button>\n        <Button type="link">link button</Button>\n        <Button type="link" href="https://www.eveningwater.com" target="_blank">\n          Hyperlink\n        </Button>\n        <Button ripple>ripple button</Button>\n        <Button type="primary">primary button</Button>\n        <Button type="dashed">dashed button</Button>\n        <Button type="text">text button</Button>\n        <Button danger>danger button</Button>\n        <Button danger disabled>\n          disabled button\n        </Button>\n      </Space>\n      <MarginTop>\n        <Button block>block button</Button>\n      </MarginTop>\n    </>\n  );\n};\n\nexport default Demo;',
+        'import React from \'react\';\nimport { Space } from \'antd\';\nimport \'antd/dist/antd.less\';\nimport styled from \'@emotion/styled\';\nimport Alert from \'./Alert\';\nconst SpaceBlock = styled(Space)`\n  width: 100%;\n`;\nconst Demo = () => {\n  return (\n    <SpaceBlock direction="vertical">\n      <Alert type="info" message="\u8fd9\u662f\u4fe1\u606f\u63d0\u793a\uff0c\u5e76\u5360\u6ee1\u7a7a\u95f4" block />\n      <Alert type="success" message="\u8fd9\u662f\u6210\u529f\u63d0\u793a\uff0c\u5e76\u663e\u793a\u5173\u95ed\u6309\u94ae" showClose />\n      <Alert\n        type="warning"\n        message="\u8fd9\u662f\u8b66\u544a\u63d0\u793a\uff0c\u4e0d\u5360\u6ee1\u7a7a\u95f4\uff0c\u4e0d\u663e\u793a\u5173\u95ed\u6309\u94ae"\n      />\n      <Alert type="error" message="\u8fd9\u662f\u9519\u8bef\u63d0\u793a\uff0c\u4e0d\u5360\u6ee1\u7a7a\u95f4\uff0c\u4e0d\u663e\u793a\u5173\u95ed\u6309\u94ae" />\n    </SpaceBlock>\n  );\n};\n\nexport default Demo;',
       P =
-        "import React, { useState, useEffect } from 'react';\nimport type { SyntheticEvent, ReactNode } from 'react';\nimport './button.less';\nimport classnames from '../../utils/classnames';\nimport Loader from '../Loader/Loader';\nexport interface ButtonProps extends Record<string, any> {\n  ripple: boolean;\n  block: boolean;\n  danger: boolean;\n  disabled: boolean;\n  type: 'primary' | 'dashed' | 'link' | 'text' | 'default';\n  size: 'large' | 'default' | 'small';\n  loading: boolean;\n  target: string;\n  href: string;\n  shape: 'default' | 'circle' | 'round';\n  nativeType: 'submit' | 'reset' | 'button';\n  children: ReactNode;\n  icon: ReactNode;\n  onClick(e: SyntheticEvent): void;\n}\n\nconst Button = (props: Partial<ButtonProps>) => {\n  const {\n    type,\n    block,\n    ripple,\n    nativeType = 'button',\n    disabled,\n    children,\n    href,\n    shape,\n    target,\n    danger,\n    loading,\n    icon,\n    size,\n    onClick,\n    ...rest\n  } = props;\n\n  const [coords, setCoords] = useState({ x: -1, y: -1 });\n  const [isRippling, setIsRippling] = useState(false);\n\n  useEffect(() => {\n    if (coords.x !== -1 && coords.y !== -1) {\n      setIsRippling(true);\n      setTimeout(() => setIsRippling(false), 300);\n    } else {\n      setIsRippling(false);\n    }\n  }, [coords]);\n\n  useEffect(() => {\n    if (!isRippling) {\n      setCoords({ x: -1, y: -1 });\n    }\n  }, [isRippling]);\n\n  const classNames = {\n    'ew-btn': true,\n    [`ew-btn-${type}`]: !href,\n    'ew-btn-ripple': ripple,\n    'ew-btn-link': type === 'link',\n    'ew-btn-block': block,\n    'ew-btn-disabled': disabled,\n    [`ew-btn-${shape}`]: !href,\n    'ew-btn-danger': danger,\n    [`ew-btn-${size}`]: size,\n  };\n  const classContentNames = {\n    'ew-btn-content': true,\n    'ew-btn-ripple-content': ripple,\n  };\n\n  const onClickHandler = (e: SyntheticEvent) => {\n    if (ripple) {\n      const event = e.nativeEvent as MouseEvent;\n      const rect = (e.target as HTMLButtonElement).getBoundingClientRect();\n      setCoords({ x: event.clientX - rect.left, y: event.clientY - rect.top });\n    }\n    if (onClick) {\n      onClick(e);\n    }\n  };\n\n  return (\n    <>\n      {href ? (\n        <a\n          href={href}\n          className={classnames(classNames)}\n          target={target}\n          onClick={onClickHandler}\n          {...rest}\n        >\n          <span className={classnames(classContentNames)}>\n            {icon}\n            {loading ? <Loader size={24} /> : children}\n          </span>\n        </a>\n      ) : (\n        <button\n          type={nativeType}\n          disabled={disabled}\n          className={classnames(classNames)}\n          onClick={onClickHandler}\n          {...rest}\n        >\n          {isRippling && ripple ? (\n            <span\n              className=\"ripple\"\n              style={{ left: coords.x, top: coords.y }}\n            ></span>\n          ) : null}\n          <span className={classnames(classContentNames)}>\n            {icon}\n            {loading ? <Loader size={24} /> : children}\n          </span>\n        </button>\n      )}\n    </>\n  );\n};\n\nexport default Button;",
-      R =
-        "@prefix: ew-;\n\n.@{prefix}btn {\n  line-height: 1.5715;\n  position: relative;\n  display: inline-block;\n  font-weight: 400;\n  white-space: nowrap;\n  text-align: center;\n  background-image: none;\n  border: 1px solid transparent;\n  cursor: pointer;\n  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n  user-select: none;\n  height: 32px;\n  padding: 4px 15px;\n  font-size: 14px;\n  border-radius: 2px;\n  color: rgba(0, 0, 0, 0.85);\n  border-color: #d9d9d9;\n  background: #fff;\n  outline: none;\n  &.@{prefix}btn-large {\n    height: 40px;\n    padding: 6.4px 15px;\n    font-size: 16px;\n    border-radius: 2px;\n  }\n  &.@{prefix}btn-small {\n    height: 24px;\n    padding: 0 7px;\n    font-size: 14px;\n    border-radius: 2px;\n  }\n  &.@{prefix}btn-danger {\n    color: #ff4d4f;\n    border-color: #ff4d4f;\n    background: #fff;\n\n    &:hover,\n    &:active {\n      color: #ff7875;\n      border-color: #ff7875;\n    }\n  }\n\n  &[disabled],\n  &[disabled]:hover,\n  &[disabled]:active {\n    color: rgba(0, 0, 0, 0.25);\n    border-color: #d9d9d9;\n    background: #f5f5f5;\n    text-shadow: none;\n    box-shadow: none;\n    cursor: not-allowed;\n  }\n\n  &.@{prefix}btn-block {\n    width: percentage(1);\n  }\n\n  &:hover,\n  &:active {\n    color: #40a9ff;\n    border-color: #40a9ff;\n  }\n\n  &-link {\n    text-decoration: none;\n    border-color: transparent;\n    background: 0 0;\n    box-shadow: none;\n    color: #1890ff;\n\n    &:hover,\n    &:active {\n      border-color: transparent;\n      background: 0 0;\n      color: #40a9ff;\n    }\n\n    &.@{prefix}btn-danger {\n      color: #ff4d4f;\n      border-color: transparent;\n      background: transparent;\n\n      &:hover {\n        color: #ff7875;\n        border-color: transparent;\n        background: transparent;\n      }\n    }\n  }\n\n  &-primary {\n    color: #fff;\n    border-color: #1890ff;\n    background: #1890ff;\n    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);\n    box-shadow: 0 2px rgba(0, 0, 0, 0.05);\n\n    &.@{prefix}btn-danger {\n      color: #fff;\n      border-color: #ff4d4f;\n      background: #ff4d4f;\n      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);\n      box-shadow: 0 2px rgba(0, 0, 0, 0.04);\n\n      &:hover {\n        color: #fff;\n        border-color: #ff7875;\n        background: #ff7875;\n      }\n    }\n\n    &[disabled],\n    &[disabled]:hover,\n    &[disabled]:active {\n      color: rgba(0, 0, 0, 0.25);\n      border-color: #d9d9d9;\n      background: #f5f5f5;\n      text-shadow: none;\n      box-shadow: none;\n    }\n\n    &:hover {\n      border-color: #40a9ff;\n      background: #40a9ff;\n      color: #fff;\n    }\n\n    &:active {\n      border-color: #096dd9;\n      background: #096dd9;\n      color: #fff;\n    }\n  }\n\n  &-dashed {\n    color: rgba(0, 0, 0, 0.85);\n    border-color: #d9d9d9;\n    background: #fff;\n    border-style: dashed;\n\n    &:hover {\n      border-color: #40a9ff;\n      color: #40a9ff;\n      background: #fff;\n    }\n\n    &:active {\n      border-color: #096dd9;\n      color: #096dd9;\n      background: #fff;\n    }\n  }\n\n  &-text {\n    color: rgba(0, 0, 0, 0.85);\n    border-color: transparent;\n    background: 0 0;\n    box-shadow: none;\n\n    &.@{prefix}btn-danger {\n      color: #ff4d4f;\n      border-color: transparent;\n      background: transparent;\n\n      &:hover {\n        color: #ff7875;\n        border-color: transparent;\n        background: rgba(0, 0, 0, 0.018);\n      }\n    }\n\n    &:hover {\n      border-color: transparent;\n      color: rgba(0, 0, 0, 0.85);\n      background: rgba(0, 0, 0, 0.018);\n    }\n\n    &:active {\n      border-color: transparent;\n      color: rgba(0, 0, 0, 0.85);\n      background: rgba(0, 0, 0, 0.028);\n    }\n\n    &[disabled],\n    &[disabled]:hover,\n    &[disabled]:active {\n      color: rgba(0, 0, 0, 0.25);\n      border-color: transparent;\n      background: 0 0;\n      text-shadow: none;\n      box-shadow: none;\n    }\n  }\n\n  &-ripple {\n    overflow: hidden;\n\n    .ripple {\n      width: 10px;\n      height: 10px;\n      position: absolute;\n      background: #dfdfdf;\n      display: block;\n      content: '';\n      border-radius: 50%;\n      opacity: 1;\n      animation: 0.8s ease 1 forwards ripple-effect;\n    }\n\n    &-content {\n      position: relative;\n      z-index: 2;\n    }\n  }\n\n  @keyframes ripple-effect {\n    0% {\n      transform: scale(1);\n      opacity: 1;\n    }\n\n    50% {\n      transform: scale(6);\n      opacity: 0.375;\n    }\n\n    100% {\n      transform: scale(12);\n      opacity: 0;\n    }\n  }\n}",
+        'import React from \'react\';\nimport styled from \'@emotion/styled\';\n\nconst LinkContainer = styled.span`\n  display: inline-block;\n  a {\n    line-height: 1.5715;\n    position: relative;\n    display: inline-block;\n    font-weight: 400;\n    white-space: nowrap;\n    text-align: center;\n    cursor: pointer;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    user-select: none;\n    touch-action: manipulation;\n    height: 32px;\n    padding: 4px 15px;\n    font-size: 14px;\n    border-radius: 2px;\n    color: #1890ff;\n    background: transparent;\n    text-decoration: none;\n    &:hover {\n      color: #40a9ff;\n    }\n  }\n`;\n\ninterface AutoLinkPropType {\n  text: string;\n}\nconst AutoLink = (props: Partial<AutoLinkPropType>) => {\n  const { text } = props;\n  const delimiter =\n    /((?:https?:\\/\\/)?(?:(?:[a-z0-9]?(?:[a-z0-9\\-]{1,61}[a-z0-9])?\\.[^\\.|\\s])+[a-z\\.]*[a-z]+|(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3})(?::\\d{1,5})*[a-z0-9.,_\\/~#&=;%+?\\-\\\\(\\\\)]*)/gi;\n  return (\n    <LinkContainer>\n      {text?.split(delimiter).map((word) => {\n        const match = word.match(delimiter);\n        if (match) {\n          const url = match[0];\n          return (\n            <a\n              href={url.startsWith(\'http\') ? url : `http://${url}`}\n              target="_blank"\n              rel="noopener noreferrer"\n            >\n              {url}\n            </a>\n          );\n        }\n        return word;\n      })}\n    </LinkContainer>\n  );\n};\n\nconst Demo = () => {\n  return <AutoLink text="foo bar baz https://www.eveningwater.com bar" />;\n};\n\nexport default Demo;',
       I =
-        "export type Value = boolean | string | number | undefined | null | Symbol;\nexport type Mapping = Record<string, unknown>;\nexport interface ArgumentArray extends Array<Argument> {}\nexport type Argument = Mapping | Mapping | ArgumentArray;\nconst hasOwn = Object.prototype.hasOwnProperty;\nexport default function classnames(...args: ArgumentArray): string {\n  const classes: any[] = [];\n  for (let i = 0, len = args.length; i < len; i++) {\n    const arg = args[i];\n    if (!arg) {\n      continue;\n    }\n    if (typeof arg === 'string' || typeof arg === 'number') {\n      classes.push(arg);\n    } else if (Array.isArray(arg)) {\n      if (arg.length) {\n        const __class = classnames.apply(null, arg) as string;\n        if (__class) {\n          classes.push(__class);\n        }\n      }\n    } else if (typeof arg === 'object') {\n      if (arg.toString === Object.prototype.toString) {\n        for (let key in arg) {\n          if (hasOwn.call(arg, key) && arg[key]) {\n            classes.push(key);\n          }\n        }\n      } else {\n        classes.push(String(arg));\n      }\n    }\n  }\n  return classes.join(' ');\n}",
+        'import React from \'react\';\nimport styled from \'@emotion/styled\';\n\nconst LinkContainer = styled.span`\n  display: inline-block;\n  a {\n    line-height: 1.5715;\n    position: relative;\n    display: inline-block;\n    font-weight: 400;\n    white-space: nowrap;\n    text-align: center;\n    cursor: pointer;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    user-select: none;\n    touch-action: manipulation;\n    height: 32px;\n    padding: 4px 15px;\n    font-size: 14px;\n    border-radius: 2px;\n    color: #1890ff;\n    background: transparent;\n    text-decoration: none;\n    &:hover {\n      color: #40a9ff;\n    }\n  }\n`;\n\ninterface AutoLinkPropType {\n  text: string;\n}\nconst AutoLink = (props: Partial<AutoLinkPropType>) => {\n  const { text } = props;\n  const delimiter =\n    /((?:https?:\\/\\/)?(?:(?:[a-z0-9]?(?:[a-z0-9\\-]{1,61}[a-z0-9])?\\.[^\\.|\\s])+[a-z\\.]*[a-z]+|(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3})(?::\\d{1,5})*[a-z0-9.,_\\/~#&=;%+?\\-\\\\(\\\\)]*)/gi;\n  return (\n    <LinkContainer>\n      {text?.split(delimiter).map((word) => {\n        const match = word.match(delimiter);\n        if (match) {\n          const url = match[0];\n          return (\n            <a\n              href={url.startsWith(\'http\') ? url : `http://${url}`}\n              target="_blank"\n              rel="noopener noreferrer"\n            >\n              {url}\n            </a>\n          );\n        }\n        return word;\n      })}\n    </LinkContainer>\n  );\n};\n\nconst Demo = () => {\n  return <AutoLink text="\u70b9\u51fbhttps://www.eveningwater.com\u6211\u554a" />;\n};\n\nexport default Demo;',
+      R =
+        'import React from \'react\';\nimport Button from \'./Button\';\nimport { Space } from \'antd\';\nimport styled from \'@emotion/styled\';\n\nconst MarginTop = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  return (\n    <>\n      <Space wrap>\n        <Button>default button</Button>\n        <Button type="link">link button</Button>\n        <Button type="link" href="https://www.eveningwater.com" target="_blank">\n          Hyperlink\n        </Button>\n        <Button ripple>ripple button</Button>\n        <Button type="primary">primary button</Button>\n        <Button type="dashed">dashed button</Button>\n        <Button type="text">text button</Button>\n        <Button danger>danger button</Button>\n        <Button danger disabled>\n          disabled button\n        </Button>\n      </Space>\n      <MarginTop>\n        <Button block>block button</Button>\n      </MarginTop>\n    </>\n  );\n};\n\nexport default Demo;',
       N =
-        'import React from \'react\';\nimport styled from \'@emotion/styled\';\nconst StyleLoader = styled.svg`\n  animation: rotate 2s linear infinite;\n  & circle {\n    animation: dash 1.5s ease-in-out infinite;\n  }\n  @keyframes rotate {\n    100% {\n      transform: rotate(360deg);\n    }\n  }\n  @keyframes dash {\n    0% {\n      stroke-dasharray: 1, 150;\n      stroke-dashoffset: 0;\n    }\n    50% {\n      stroke-dasharray: 90, 150;\n      stroke-dashoffset: -35;\n    }\n    100% {\n      stroke-dasharray: 90, 150;\n      stroke-dashoffset: -124;\n    }\n  }\n`;\nexport interface LoaderProps extends Record<string, unknown> {\n  size: number | string;\n}\nconst Loader = (props: Partial<LoaderProps>) => {\n  const { size, ...rest } = props;\n\n  return (\n    <StyleLoader\n      width={size}\n      height={size}\n      xmlns="http://www.w3.org/2000/svg"\n      {...rest}\n      viewBox="0 0 24 24"\n      fill="none"\n      stroke="currentColor"\n      strokeWidth="2"\n      strokeLinecap="round"\n      strokeLinejoin="round"\n    >\n      <circle cx="12" cy="12" r="10" />\n    </StyleLoader>\n  );\n};\n\nexport default Loader;',
+        "import React, { useState, useEffect } from 'react';\nimport type { SyntheticEvent, ReactNode } from 'react';\nimport './button.less';\nimport classnames from '../../utils/classnames';\nimport Loader from '../Loader/Loader';\nexport interface ButtonProps extends Record<string, any> {\n  ripple: boolean;\n  block: boolean;\n  danger: boolean;\n  disabled: boolean;\n  type: 'primary' | 'dashed' | 'link' | 'text' | 'default';\n  size: 'large' | 'default' | 'small';\n  loading: boolean;\n  target: string;\n  href: string;\n  shape: 'default' | 'circle' | 'round';\n  nativeType: 'submit' | 'reset' | 'button';\n  children: ReactNode;\n  icon: ReactNode;\n  onClick(e: SyntheticEvent): void;\n}\n\nconst Button = (props: Partial<ButtonProps>) => {\n  const {\n    type,\n    block,\n    ripple,\n    nativeType = 'button',\n    disabled,\n    children,\n    href,\n    shape,\n    target,\n    danger,\n    loading,\n    icon,\n    size,\n    onClick,\n    ...rest\n  } = props;\n\n  const [coords, setCoords] = useState({ x: -1, y: -1 });\n  const [isRippling, setIsRippling] = useState(false);\n\n  useEffect(() => {\n    if (coords.x !== -1 && coords.y !== -1) {\n      setIsRippling(true);\n      setTimeout(() => setIsRippling(false), 300);\n    } else {\n      setIsRippling(false);\n    }\n  }, [coords]);\n\n  useEffect(() => {\n    if (!isRippling) {\n      setCoords({ x: -1, y: -1 });\n    }\n  }, [isRippling]);\n\n  const classNames = {\n    'ew-btn': true,\n    [`ew-btn-${type}`]: !href,\n    'ew-btn-ripple': ripple,\n    'ew-btn-link': type === 'link',\n    'ew-btn-block': block,\n    'ew-btn-disabled': disabled,\n    [`ew-btn-${shape}`]: !href,\n    'ew-btn-danger': danger,\n    [`ew-btn-${size}`]: size,\n  };\n  const classContentNames = {\n    'ew-btn-content': true,\n    'ew-btn-ripple-content': ripple,\n  };\n\n  const onClickHandler = (e: SyntheticEvent) => {\n    if (ripple) {\n      const event = e.nativeEvent as MouseEvent;\n      const rect = (e.target as HTMLButtonElement).getBoundingClientRect();\n      setCoords({ x: event.clientX - rect.left, y: event.clientY - rect.top });\n    }\n    if (onClick) {\n      onClick(e);\n    }\n  };\n\n  return (\n    <>\n      {href ? (\n        <a\n          href={href}\n          className={classnames(classNames)}\n          target={target}\n          onClick={onClickHandler}\n          {...rest}\n        >\n          <span className={classnames(classContentNames)}>\n            {icon}\n            {loading ? <Loader size={24} /> : children}\n          </span>\n        </a>\n      ) : (\n        <button\n          type={nativeType}\n          disabled={disabled}\n          className={classnames(classNames)}\n          onClick={onClickHandler}\n          {...rest}\n        >\n          {isRippling && ripple ? (\n            <span\n              className=\"ripple\"\n              style={{ left: coords.x, top: coords.y }}\n            ></span>\n          ) : null}\n          <span className={classnames(classContentNames)}>\n            {icon}\n            {loading ? <Loader size={24} /> : children}\n          </span>\n        </button>\n      )}\n    </>\n  );\n};\n\nexport default Button;",
       A =
-        'import React from \'react\';\nimport Button from \'./Button\';\nimport { Space } from \'antd\';\nimport styled from \'@emotion/styled\';\n\nconst MarginTop = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  return (\n    <>\n      <Space wrap>\n        <Button>\u9ed8\u8ba4\u6309\u94ae</Button>\n        <Button type="link">\u94fe\u63a5\u6309\u94ae</Button>\n        <Button type="link" href="https://www.eveningwater.com" target="_blank">\n          \u8d85\u94fe\u63a5\n        </Button>\n        <Button ripple>\u6ce2\u6d6a\u6309\u94ae</Button>\n        <Button type="primary">\u57fa\u672c\u6309\u94ae</Button>\n        <Button type="dashed">\u865a\u7ebf\u6309\u94ae</Button>\n        <Button type="text">\u6587\u672c\u6309\u94ae</Button>\n        <Button danger>\u5371\u9669\u6309\u94ae</Button>\n        <Button danger disabled>\n          \u7981\u7528\u6309\u94ae\n        </Button>\n        <Button size="small">\u5c0f\u6309\u94ae</Button>\n        <Button size="large">\u5927\u6309\u94ae</Button>\n      </Space>\n      <MarginTop>\n        <Button block>\u5757\u6309\u94ae</Button>\n      </MarginTop>\n    </>\n  );\n};\n\nexport default Demo;',
+        "@prefix: ew-;\n\n.@{prefix}btn {\n  line-height: 1.5715;\n  position: relative;\n  display: inline-block;\n  font-weight: 400;\n  white-space: nowrap;\n  text-align: center;\n  background-image: none;\n  border: 1px solid transparent;\n  cursor: pointer;\n  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n  user-select: none;\n  height: 32px;\n  padding: 4px 15px;\n  font-size: 14px;\n  border-radius: 2px;\n  color: rgba(0, 0, 0, 0.85);\n  border-color: #d9d9d9;\n  background: #fff;\n  outline: none;\n  &.@{prefix}btn-large {\n    height: 40px;\n    padding: 6.4px 15px;\n    font-size: 16px;\n    border-radius: 2px;\n  }\n  &.@{prefix}btn-small {\n    height: 24px;\n    padding: 0 7px;\n    font-size: 14px;\n    border-radius: 2px;\n  }\n  &.@{prefix}btn-danger {\n    color: #ff4d4f;\n    border-color: #ff4d4f;\n    background: #fff;\n\n    &:hover,\n    &:active {\n      color: #ff7875;\n      border-color: #ff7875;\n    }\n  }\n\n  &[disabled],\n  &[disabled]:hover,\n  &[disabled]:active {\n    color: rgba(0, 0, 0, 0.25);\n    border-color: #d9d9d9;\n    background: #f5f5f5;\n    text-shadow: none;\n    box-shadow: none;\n    cursor: not-allowed;\n  }\n\n  &.@{prefix}btn-block {\n    width: percentage(1);\n  }\n\n  &:hover,\n  &:active {\n    color: #40a9ff;\n    border-color: #40a9ff;\n  }\n\n  &-link {\n    text-decoration: none;\n    border-color: transparent;\n    background: 0 0;\n    box-shadow: none;\n    color: #1890ff;\n\n    &:hover,\n    &:active {\n      border-color: transparent;\n      background: 0 0;\n      color: #40a9ff;\n    }\n\n    &.@{prefix}btn-danger {\n      color: #ff4d4f;\n      border-color: transparent;\n      background: transparent;\n\n      &:hover {\n        color: #ff7875;\n        border-color: transparent;\n        background: transparent;\n      }\n    }\n  }\n\n  &-primary {\n    color: #fff;\n    border-color: #1890ff;\n    background: #1890ff;\n    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);\n    box-shadow: 0 2px rgba(0, 0, 0, 0.05);\n\n    &.@{prefix}btn-danger {\n      color: #fff;\n      border-color: #ff4d4f;\n      background: #ff4d4f;\n      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);\n      box-shadow: 0 2px rgba(0, 0, 0, 0.04);\n\n      &:hover {\n        color: #fff;\n        border-color: #ff7875;\n        background: #ff7875;\n      }\n    }\n\n    &[disabled],\n    &[disabled]:hover,\n    &[disabled]:active {\n      color: rgba(0, 0, 0, 0.25);\n      border-color: #d9d9d9;\n      background: #f5f5f5;\n      text-shadow: none;\n      box-shadow: none;\n    }\n\n    &:hover {\n      border-color: #40a9ff;\n      background: #40a9ff;\n      color: #fff;\n    }\n\n    &:active {\n      border-color: #096dd9;\n      background: #096dd9;\n      color: #fff;\n    }\n  }\n\n  &-dashed {\n    color: rgba(0, 0, 0, 0.85);\n    border-color: #d9d9d9;\n    background: #fff;\n    border-style: dashed;\n\n    &:hover {\n      border-color: #40a9ff;\n      color: #40a9ff;\n      background: #fff;\n    }\n\n    &:active {\n      border-color: #096dd9;\n      color: #096dd9;\n      background: #fff;\n    }\n  }\n\n  &-text {\n    color: rgba(0, 0, 0, 0.85);\n    border-color: transparent;\n    background: 0 0;\n    box-shadow: none;\n\n    &.@{prefix}btn-danger {\n      color: #ff4d4f;\n      border-color: transparent;\n      background: transparent;\n\n      &:hover {\n        color: #ff7875;\n        border-color: transparent;\n        background: rgba(0, 0, 0, 0.018);\n      }\n    }\n\n    &:hover {\n      border-color: transparent;\n      color: rgba(0, 0, 0, 0.85);\n      background: rgba(0, 0, 0, 0.018);\n    }\n\n    &:active {\n      border-color: transparent;\n      color: rgba(0, 0, 0, 0.85);\n      background: rgba(0, 0, 0, 0.028);\n    }\n\n    &[disabled],\n    &[disabled]:hover,\n    &[disabled]:active {\n      color: rgba(0, 0, 0, 0.25);\n      border-color: transparent;\n      background: 0 0;\n      text-shadow: none;\n      box-shadow: none;\n    }\n  }\n\n  &-ripple {\n    overflow: hidden;\n\n    .ripple {\n      width: 10px;\n      height: 10px;\n      position: absolute;\n      background: #dfdfdf;\n      display: block;\n      content: '';\n      border-radius: 50%;\n      opacity: 1;\n      animation: 0.8s ease 1 forwards ripple-effect;\n    }\n\n    &-content {\n      position: relative;\n      z-index: 2;\n    }\n  }\n\n  @keyframes ripple-effect {\n    0% {\n      transform: scale(1);\n      opacity: 1;\n    }\n\n    50% {\n      transform: scale(6);\n      opacity: 0.375;\n    }\n\n    100% {\n      transform: scale(12);\n      opacity: 0;\n    }\n  }\n}",
       M =
-        "import styled from '@emotion/styled';\nimport React from 'react';\nimport type { ReactNode } from 'react';\n\nconst Link = styled.a`\n  text-decoration: none;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 18px;\n  transition: color 0.3s ease-in-out;\n  &:hover {\n    color: #2396ef;\n  }\n`;\ninterface CallToType {\n  phone: string;\n  children: ReactNode;\n}\nconst CallTo = (props: Partial<CallToType>) => {\n  const { phone, children } = props;\n  return (\n    <Link href={`tel:${phone}`} className=\"tel-link\">\n      {children}\n    </Link>\n  );\n};\n\nconst Demo = () => {\n  return <CallTo phone=\"18283984473\">eveningwater</CallTo>;\n};\n\nexport default Demo;",
+        "export type Value = boolean | string | number | undefined | null | Symbol;\nexport type Mapping = Record<string, unknown>;\nexport interface ArgumentArray extends Array<Argument> {}\nexport type Argument = Mapping | Mapping | ArgumentArray;\nconst hasOwn = Object.prototype.hasOwnProperty;\nexport default function classnames(...args: ArgumentArray): string {\n  const classes: any[] = [];\n  for (let i = 0, len = args.length; i < len; i++) {\n    const arg = args[i];\n    if (!arg) {\n      continue;\n    }\n    if (typeof arg === 'string' || typeof arg === 'number') {\n      classes.push(arg);\n    } else if (Array.isArray(arg)) {\n      if (arg.length) {\n        const __class = classnames.apply(null, arg) as string;\n        if (__class) {\n          classes.push(__class);\n        }\n      }\n    } else if (typeof arg === 'object') {\n      if (arg.toString === Object.prototype.toString) {\n        for (let key in arg) {\n          if (hasOwn.call(arg, key) && arg[key]) {\n            classes.push(key);\n          }\n        }\n      } else {\n        classes.push(String(arg));\n      }\n    }\n  }\n  return classes.join(' ');\n}",
       L =
-        "import styled from '@emotion/styled';\nimport React from 'react';\nimport type { ReactNode } from 'react';\n\nconst Link = styled.a`\n  text-decoration: none;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 18px;\n  transition: color 0.3s ease-in-out;\n  &:hover {\n    color: #2396ef;\n  }\n`;\ninterface CallToType {\n  phone: string;\n  children: ReactNode;\n}\nconst CallTo = (props: Partial<CallToType>) => {\n  const { phone, children } = props;\n  return (\n    <Link href={`tel:${phone}`} className=\"tel-link\">\n      {children}\n    </Link>\n  );\n};\n\nconst Demo = () => {\n  return <CallTo phone=\"18283984473\">\u5915\u6c34</CallTo>;\n};\n\nexport default Demo;",
+        'import React from \'react\';\nimport styled from \'@emotion/styled\';\nconst StyleLoader = styled.svg`\n  animation: rotate 2s linear infinite;\n  & circle {\n    animation: dash 1.5s ease-in-out infinite;\n  }\n  @keyframes rotate {\n    100% {\n      transform: rotate(360deg);\n    }\n  }\n  @keyframes dash {\n    0% {\n      stroke-dasharray: 1, 150;\n      stroke-dashoffset: 0;\n    }\n    50% {\n      stroke-dasharray: 90, 150;\n      stroke-dashoffset: -35;\n    }\n    100% {\n      stroke-dasharray: 90, 150;\n      stroke-dashoffset: -124;\n    }\n  }\n`;\nexport interface LoaderProps extends Record<string, unknown> {\n  size: number | string;\n}\nconst Loader = (props: Partial<LoaderProps>) => {\n  const { size, ...rest } = props;\n\n  return (\n    <StyleLoader\n      width={size}\n      height={size}\n      xmlns="http://www.w3.org/2000/svg"\n      {...rest}\n      viewBox="0 0 24 24"\n      fill="none"\n      stroke="currentColor"\n      strokeWidth="2"\n      strokeLinecap="round"\n      strokeLinejoin="round"\n    >\n      <circle cx="12" cy="12" r="10" />\n    </StyleLoader>\n  );\n};\n\nexport default Loader;',
       D =
-        "import React, { useState, useEffect, cloneElement } from 'react';\nimport type { ReactNode } from 'react';\nimport './Carousel.less';\n\ninterface CarouselItemProps {\n  children: ReactNode;\n  className: string | Record<string, string | number>;\n}\n\ninterface CarouselProps {\n  options: ReactNode[];\n  duration: number;\n  children: JSX.Element[];\n  defaultKey: string;\n}\n\nconst CarouselItem = (props: Partial<CarouselItemProps>) => {\n  const { children } = props;\n  return <div className=\"carousel-item\">{children}</div>;\n};\n\nconst Carousel = (props: Partial<CarouselProps>) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer: number | undefined;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter((item) => item?.type?.name === 'CarouselItem') || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className=\"carousel\">\n      <div\n        className=\"carousel-slide\"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(<CarouselItem key={item}>{item}</CarouselItem>, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nconst Demo = () => {\n  return (\n    <Carousel\n      options={['carousel item 1', 'carousel item 2', 'carousel item 3']}\n    />\n  );\n};\n\nexport default Demo;",
+        'import React from \'react\';\nimport Button from \'./Button\';\nimport { Space } from \'antd\';\nimport styled from \'@emotion/styled\';\n\nconst MarginTop = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  return (\n    <>\n      <Space wrap>\n        <Button>\u9ed8\u8ba4\u6309\u94ae</Button>\n        <Button type="link">\u94fe\u63a5\u6309\u94ae</Button>\n        <Button type="link" href="https://www.eveningwater.com" target="_blank">\n          \u8d85\u94fe\u63a5\n        </Button>\n        <Button ripple>\u6ce2\u6d6a\u6309\u94ae</Button>\n        <Button type="primary">\u57fa\u672c\u6309\u94ae</Button>\n        <Button type="dashed">\u865a\u7ebf\u6309\u94ae</Button>\n        <Button type="text">\u6587\u672c\u6309\u94ae</Button>\n        <Button danger>\u5371\u9669\u6309\u94ae</Button>\n        <Button danger disabled>\n          \u7981\u7528\u6309\u94ae\n        </Button>\n        <Button size="small">\u5c0f\u6309\u94ae</Button>\n        <Button size="large">\u5927\u6309\u94ae</Button>\n      </Space>\n      <MarginTop>\n        <Button block>\u5757\u6309\u94ae</Button>\n      </MarginTop>\n    </>\n  );\n};\n\nexport default Demo;',
       _ =
-        ".carousel {\n  position: relative;\n  height: 100px;\n  width: 200px;\n  overflow: hidden;\n  border: 1px solid #dedede;\n  background-color: fadeout(#880cee, 25%);\n  border-radius: 8px;\n  .carousel-slide {\n    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 0.75);\n    height: 100%;\n    &::after {\n      clear: both;\n      content: '';\n      display: table;\n    }\n    .carousel-item {\n      width: 200px;\n      height: 100%;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      font-size: 18px;\n      color: fade(rgba(255, 255, 255, 1), 85%);\n      float: left;\n      letter-spacing: 2px;\n    }\n  }\n}",
+        "import styled from '@emotion/styled';\nimport React from 'react';\nimport type { ReactNode } from 'react';\n\nconst Link = styled.a`\n  text-decoration: none;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 18px;\n  transition: color 0.3s ease-in-out;\n  &:hover {\n    color: #2396ef;\n  }\n`;\ninterface CallToType {\n  phone: string;\n  children: ReactNode;\n}\nconst CallTo = (props: Partial<CallToType>) => {\n  const { phone, children } = props;\n  return (\n    <Link href={`tel:${phone}`} className=\"tel-link\">\n      {children}\n    </Link>\n  );\n};\n\nconst Demo = () => {\n  return <CallTo phone=\"18283984473\">eveningwater</CallTo>;\n};\n\nexport default Demo;",
       z =
-        'import React, { useState, useEffect, cloneElement } from \'react\';\nimport type { ReactNode } from \'react\';\nimport \'./Carousel.less\';\n\ninterface CarouselItemProps {\n  children: ReactNode;\n  className: string | Record<string, string | number>;\n}\n\ninterface CarouselProps {\n  options: ReactNode[];\n  duration: number;\n  children: JSX.Element[];\n  defaultKey: string;\n}\n\nconst CarouselItem = (props: Partial<CarouselItemProps>) => {\n  const { children } = props;\n  return <div className="carousel-item">{children}</div>;\n};\n\nconst Carousel = (props: Partial<CarouselProps>) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer: number | undefined;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter((item) => item?.type?.name === \'CarouselItem\') || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className="carousel">\n      <div\n        className="carousel-slide"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(item, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nconst Demo = () => {\n  return (\n    <Carousel defaultKey="2">\n      <CarouselItem key="1">\u8f6e\u64ad\u56fe1</CarouselItem>\n      <CarouselItem key="2">\u8f6e\u64ad\u56fe 2</CarouselItem>\n      <CarouselItem key="3">\u8f6e\u64ad\u56fe 3</CarouselItem>\n    </Carousel>\n  );\n};\n\nexport default Demo;',
+        "import styled from '@emotion/styled';\nimport React from 'react';\nimport type { ReactNode } from 'react';\n\nconst Link = styled.a`\n  text-decoration: none;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 18px;\n  transition: color 0.3s ease-in-out;\n  &:hover {\n    color: #2396ef;\n  }\n`;\ninterface CallToType {\n  phone: string;\n  children: ReactNode;\n}\nconst CallTo = (props: Partial<CallToType>) => {\n  const { phone, children } = props;\n  return (\n    <Link href={`tel:${phone}`} className=\"tel-link\">\n      {children}\n    </Link>\n  );\n};\n\nconst Demo = () => {\n  return <CallTo phone=\"18283984473\">\u5915\u6c34</CallTo>;\n};\n\nexport default Demo;",
       F =
-        "import React, { useState } from 'react';\nimport Checkbox from './Checkbox';\nimport { Space } from 'antd';\n\nconst Demo = () => {\n  const [checked, setChecked] = useState(false);\n  const onChange = (v: boolean) => {\n    console.log(v);\n  };\n  const onControlledChange = () => {\n    setChecked(!checked);\n  };\n  return (\n    <Space>\n      <Checkbox onChange={onChange}>checkbox</Checkbox>\n      <Checkbox disabled>disabled checkbox</Checkbox>\n      <Checkbox checked={checked} onChange={onControlledChange}>\n        controlled checkbox\n      </Checkbox>\n    </Space>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState, useEffect, cloneElement } from 'react';\nimport type { ReactNode } from 'react';\nimport './Carousel.less';\n\ninterface CarouselItemProps {\n  children: ReactNode;\n  className: string | Record<string, string | number>;\n}\n\ninterface CarouselProps {\n  options: ReactNode[];\n  duration: number;\n  children: JSX.Element[];\n  defaultKey: string;\n}\n\nconst CarouselItem = (props: Partial<CarouselItemProps>) => {\n  const { children } = props;\n  return <div className=\"carousel-item\">{children}</div>;\n};\n\nconst Carousel = (props: Partial<CarouselProps>) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer: number | undefined;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter((item) => item?.type?.name === 'CarouselItem') || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className=\"carousel\">\n      <div\n        className=\"carousel-slide\"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(<CarouselItem key={item}>{item}</CarouselItem>, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nconst Demo = () => {\n  return (\n    <Carousel\n      options={['carousel item 1', 'carousel item 2', 'carousel item 3']}\n    />\n  );\n};\n\nexport default Demo;",
       B =
-        "import React, { useState, useEffect, createRef } from 'react';\nimport type { ReactNode, SyntheticEvent } from 'react';\nimport './Checkbox.less';\n\nexport interface CheckboxProps extends Record<string, any> {\n  disabled: boolean;\n  checked: boolean;\n  defaultChecked: boolean;\n  children: ReactNode;\n  onChange(v: boolean): void;\n}\n\nconst Checkbox = (props: Partial<CheckboxProps>) => {\n  const { disabled, checked, defaultChecked, children, onChange } = props;\n  const [value, setValue] = useState(!!defaultChecked);\n  useEffect(() => {\n    if (typeof checked === 'boolean') {\n      if (disabled) {\n        return;\n      }\n      setValue(checked);\n    }\n  }, [checked]);\n  const onChangeHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setValue(!value);\n    if (onChange) {\n      onChange(!value);\n    }\n  };\n\n  return (\n    <label\n      className={`ant-checkbox-wrapper${disabled ? ' is-disabled' : ''}`}\n      onClick={onChangeHandler}\n    >\n      <span className={`ant-checkbox${value ? ' checked' : ''}`}>\n        <span className=\"ant-checkbox-inner\"></span>\n      </span>\n      {children}\n    </label>\n  );\n};\n\nexport default Checkbox;",
+        ".carousel {\n  position: relative;\n  height: 100px;\n  width: 200px;\n  overflow: hidden;\n  border: 1px solid #dedede;\n  background-color: fadeout(#880cee, 25%);\n  border-radius: 8px;\n  .carousel-slide {\n    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 0.75);\n    height: 100%;\n    &::after {\n      clear: both;\n      content: '';\n      display: table;\n    }\n    .carousel-item {\n      width: 200px;\n      height: 100%;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      font-size: 18px;\n      color: fade(rgba(255, 255, 255, 1), 85%);\n      float: left;\n      letter-spacing: 2px;\n    }\n  }\n}",
       U =
-        "@baseSelector: ant-;\n.@{baseSelector}checkbox-wrapper {\n  font-size: 14px;\n  line-height: 1.57;\n  display: inline-flex;\n  align-items: baseline;\n  cursor: pointer;\n  &.is-disabled {\n    color: #9f9f9f;\n    cursor: not-allowed;\n    .@{baseSelector}checkbox.checked,\n    .@{baseSelector}checkbox {\n      cursor: not-allowed;\n      .@{baseSelector}checkbox-inner {\n        border-color: #d9d9d9;\n        background-color: #f5f5f5;\n        &::after {\n          border-color: rgba(0, 0, 0, 0.4);\n        }\n      }\n    }\n  }\n  .@{baseSelector}checkbox {\n    position: relative;\n    top: 0.2em;\n    line-height: 1;\n    cursor: pointer;\n    white-space: nowrap;\n    margin-right: 8px;\n    &.checked {\n      .@{baseSelector}checkbox-inner {\n        border-color: #1890ff;\n        background-color: #1890ff;\n        &::after {\n          opacity: 1;\n          transform: translate(-50%, -50%) scale(1) rotate(45deg);\n        }\n      }\n    }\n    .@{baseSelector}checkbox-inner {\n      width: 16px;\n      height: 16px;\n      position: relative;\n      left: 0;\n      top: 0;\n      display: block;\n      background-color: #fff;\n      border: 1px solid #d9d9d9;\n      border-radius: 2px;\n      transition: all 0.3s;\n      &::after {\n        position: absolute;\n        top: 35%;\n        left: 50%;\n        display: table;\n        width: 5.714px;\n        height: 9.14px;\n        border: 2px solid #fff;\n        border-top: 0;\n        border-left: 0;\n        transform: rotate(45deg) scale(0) translate(-50%, -50%);\n        opacity: 0;\n        content: ' ';\n        transition: all 0.3s;\n      }\n    }\n  }\n}",
+        'import React, { useState, useEffect, cloneElement } from \'react\';\nimport type { ReactNode } from \'react\';\nimport \'./Carousel.less\';\n\ninterface CarouselItemProps {\n  children: ReactNode;\n  className: string | Record<string, string | number>;\n}\n\ninterface CarouselProps {\n  options: ReactNode[];\n  duration: number;\n  children: JSX.Element[];\n  defaultKey: string;\n}\n\nconst CarouselItem = (props: Partial<CarouselItemProps>) => {\n  const { children } = props;\n  return <div className="carousel-item">{children}</div>;\n};\n\nconst Carousel = (props: Partial<CarouselProps>) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer: number | undefined;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter((item) => item?.type?.name === \'CarouselItem\') || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className="carousel">\n      <div\n        className="carousel-slide"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(item, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nconst Demo = () => {\n  return (\n    <Carousel defaultKey="2">\n      <CarouselItem key="1">\u8f6e\u64ad\u56fe1</CarouselItem>\n      <CarouselItem key="2">\u8f6e\u64ad\u56fe 2</CarouselItem>\n      <CarouselItem key="3">\u8f6e\u64ad\u56fe 3</CarouselItem>\n    </Carousel>\n  );\n};\n\nexport default Demo;',
       V =
-        "import React, { useState } from 'react';\nimport Checkbox from './Checkbox';\nimport { Space } from 'antd';\n\nconst Demo = () => {\n  const [checked, setChecked] = useState(false);\n  const onChange = (v: boolean) => {\n    console.log(v);\n  };\n  const onControlledChange = () => {\n    setChecked(!checked);\n  };\n  return (\n    <Space>\n      <Checkbox onChange={onChange}>\u590d\u9009\u6846</Checkbox>\n      <Checkbox disabled>\u7981\u7528\u7684\u590d\u9009\u6846</Checkbox>\n      <Checkbox checked={checked} onChange={onControlledChange}>\n        \u53d7\u63a7\u7684\u590d\u9009\u6846\n      </Checkbox>\n    </Space>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Checkbox from './Checkbox';\nimport { Space } from 'antd';\n\nconst Demo = () => {\n  const [checked, setChecked] = useState(false);\n  const onChange = (v: boolean) => {\n    console.log(v);\n  };\n  const onControlledChange = () => {\n    setChecked(!checked);\n  };\n  return (\n    <Space>\n      <Checkbox onChange={onChange}>checkbox</Checkbox>\n      <Checkbox disabled>disabled checkbox</Checkbox>\n      <Checkbox checked={checked} onChange={onControlledChange}>\n        controlled checkbox\n      </Checkbox>\n    </Space>\n  );\n};\n\nexport default Demo;",
       H =
-        "import React from 'react';\nimport Collapse from './Collapse';\nconst Demo = () => {\n  return (\n    <Collapse>\n      <h1>This is a collapse</h1>\n      <p>Hello world!</p>\n    </Collapse>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState, useEffect, createRef } from 'react';\nimport type { ReactNode, SyntheticEvent } from 'react';\nimport './Checkbox.less';\n\nexport interface CheckboxProps extends Record<string, any> {\n  disabled: boolean;\n  checked: boolean;\n  defaultChecked: boolean;\n  children: ReactNode;\n  onChange(v: boolean): void;\n}\n\nconst Checkbox = (props: Partial<CheckboxProps>) => {\n  const { disabled, checked, defaultChecked, children, onChange } = props;\n  const [value, setValue] = useState(!!defaultChecked);\n  useEffect(() => {\n    if (typeof checked === 'boolean') {\n      if (disabled) {\n        return;\n      }\n      setValue(checked);\n    }\n  }, [checked]);\n  const onChangeHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setValue(!value);\n    if (onChange) {\n      onChange(!value);\n    }\n  };\n\n  return (\n    <label\n      className={`ant-checkbox-wrapper${disabled ? ' is-disabled' : ''}`}\n      onClick={onChangeHandler}\n    >\n      <span className={`ant-checkbox${value ? ' checked' : ''}`}>\n        <span className=\"ant-checkbox-inner\"></span>\n      </span>\n      {children}\n    </label>\n  );\n};\n\nexport default Checkbox;",
       q =
-        "import styled from '@emotion/styled';\nimport type { ReactNode } from 'react';\nimport React, { useState } from 'react';\n\nconst CollapseStyle = styled.div`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: #000000d9;\n  font-size: 14px;\n  background-color: #fafafa;\n  border: 1px solid #d9d9d9;\n  border-bottom: 0;\n  border-radius: 2px;\n  & .collapse-header {\n    line-height: 1.5715;\n    position: relative;\n    display: flex;\n    flex-wrap: nowrap;\n    align-items: flex-start;\n    padding: 12px 16px;\n    color: rgba(0, 0, 0, 0.85);\n    cursor: pointer;\n    transition: all 0.3s, visibility 0s;\n    box-sizing: border-box;\n  }\n`;\nconst CollapseStyleItem = styled.div`\n  border-bottom: 1px solid #d9d9d9;\n  & .collapse-content {\n    color: #000000d9;\n    background-color: #fff;\n    border-top: 1px solid #d9d9d9;\n    transition: all 0.3s ease-in-out;\n    padding: 16px;\n    &.collapsed {\n      display: none;\n    }\n    &.expanded {\n      display: block;\n    }\n  }\n`;\n\ninterface CollapseProps {\n  collapsed: boolean;\n  children: ReactNode;\n  header: ReactNode;\n}\n\ntype CollapseItemProps = Omit<Omit<CollapseProps, 'collapsed'>, 'header'> & {\n  className: string;\n};\n\nconst CollapseItem = (props: Partial<CollapseItemProps>) => {\n  const { children, className } = props;\n  return (\n    <CollapseStyleItem>\n      <div className={`${'collapse-content'}${className}`}>{children}</div>\n    </CollapseStyleItem>\n  );\n};\n\nconst Collapse = (props: Partial<CollapseProps>) => {\n  const { collapsed, children, header } = props;\n  const [isCollapsed, setIsCollapsed] = useState(collapsed);\n\n  return (\n    <CollapseStyle>\n      <div\n        className=\"collapse-header\"\n        onClick={() => setIsCollapsed(!isCollapsed)}\n      >\n        {header || (isCollapsed ? 'show' : 'hide') + ' content'}\n      </div>\n      <CollapseItem className={`${isCollapsed ? ' collapsed' : ' expanded'}`}>\n        {children}\n      </CollapseItem>\n    </CollapseStyle>\n  );\n};\n\nexport default Collapse;",
+        "@baseSelector: ant-;\n.@{baseSelector}checkbox-wrapper {\n  font-size: 14px;\n  line-height: 1.57;\n  display: inline-flex;\n  align-items: baseline;\n  cursor: pointer;\n  &.is-disabled {\n    color: #9f9f9f;\n    cursor: not-allowed;\n    .@{baseSelector}checkbox.checked,\n    .@{baseSelector}checkbox {\n      cursor: not-allowed;\n      .@{baseSelector}checkbox-inner {\n        border-color: #d9d9d9;\n        background-color: #f5f5f5;\n        &::after {\n          border-color: rgba(0, 0, 0, 0.4);\n        }\n      }\n    }\n  }\n  .@{baseSelector}checkbox {\n    position: relative;\n    top: 0.2em;\n    line-height: 1;\n    cursor: pointer;\n    white-space: nowrap;\n    margin-right: 8px;\n    &.checked {\n      .@{baseSelector}checkbox-inner {\n        border-color: #1890ff;\n        background-color: #1890ff;\n        &::after {\n          opacity: 1;\n          transform: translate(-50%, -50%) scale(1) rotate(45deg);\n        }\n      }\n    }\n    .@{baseSelector}checkbox-inner {\n      width: 16px;\n      height: 16px;\n      position: relative;\n      left: 0;\n      top: 0;\n      display: block;\n      background-color: #fff;\n      border: 1px solid #d9d9d9;\n      border-radius: 2px;\n      transition: all 0.3s;\n      &::after {\n        position: absolute;\n        top: 35%;\n        left: 50%;\n        display: table;\n        width: 5.714px;\n        height: 9.14px;\n        border: 2px solid #fff;\n        border-top: 0;\n        border-left: 0;\n        transform: rotate(45deg) scale(0) translate(-50%, -50%);\n        opacity: 0;\n        content: ' ';\n        transition: all 0.3s;\n      }\n    }\n  }\n}",
       W =
-        "import React from 'react';\nimport Collapse from './Collapse';\nconst Demo = () => {\n  return (\n    <Collapse header=\"\u8fd9\u662f\u6807\u9898\">\n      <h1>\u8fd9\u662f\u4e00\u4e2a\u6298\u53e0\u7ec4\u4ef6</h1>\n      <p>\u4f60\u597d\uff0c\u4e16\u754c!</p>\n    </Collapse>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Checkbox from './Checkbox';\nimport { Space } from 'antd';\n\nconst Demo = () => {\n  const [checked, setChecked] = useState(false);\n  const onChange = (v: boolean) => {\n    console.log(v);\n  };\n  const onControlledChange = () => {\n    setChecked(!checked);\n  };\n  return (\n    <Space>\n      <Checkbox onChange={onChange}>\u590d\u9009\u6846</Checkbox>\n      <Checkbox disabled>\u7981\u7528\u7684\u590d\u9009\u6846</Checkbox>\n      <Checkbox checked={checked} onChange={onControlledChange}>\n        \u53d7\u63a7\u7684\u590d\u9009\u6846\n      </Checkbox>\n    </Space>\n  );\n};\n\nexport default Demo;",
       $ =
-        "import React, { useState } from 'react';\nimport ControlledInput from './ControlledInput';\n\nconst Demo = () => {\n  const [value, setValue] = useState('');\n\n  return (\n    <ControlledInput\n      type=\"text\"\n      value={value}\n      onChange={setValue}\n      placeholder=\"Insert some text here...\"\n    ></ControlledInput>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport Collapse from './Collapse';\nconst Demo = () => {\n  return (\n    <Collapse>\n      <h1>This is a collapse</h1>\n      <p>Hello world!</p>\n    </Collapse>\n  );\n};\n\nexport default Demo;",
       G =
-        "import styled from '@emotion/styled';\nimport React from 'react';\nimport type { SyntheticEvent } from 'react';\n\nconst StyleInput = styled.input`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: #000000d9;\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  transition: all 0.3s;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n`;\n/** https://github.com/Microsoft/TypeScript/issues/29729 */\n// eslint-disable-next-line @typescript-eslint/ban-types\ntype LiteralUnion<T extends U, U> = T & (U & {});\ninterface ControlledInputProps {\n  type: LiteralUnion<\n    | 'button'\n    | 'checkbox'\n    | 'color'\n    | 'date'\n    | 'datetime-local'\n    | 'email'\n    | 'file'\n    | 'hidden'\n    | 'image'\n    | 'month'\n    | 'number'\n    | 'password'\n    | 'radio'\n    | 'range'\n    | 'reset'\n    | 'search'\n    | 'submit'\n    | 'tel'\n    | 'text'\n    | 'time'\n    | 'url'\n    | 'week',\n    string\n  >;\n  value: string;\n  onChange(v: string): void;\n  placeholder: string;\n}\nconst ControlledInput = (props: Partial<ControlledInputProps>) => {\n  const { value, onChange, ...rest } = props;\n  const onChangeHandler = (e: SyntheticEvent) => {\n    if (onChange) {\n      onChange((e.target as HTMLInputElement).value);\n    }\n  };\n  return (\n    <StyleInput value={value} onChange={onChangeHandler} {...rest}></StyleInput>\n  );\n};\n\nexport default ControlledInput;",
+        "import styled from '@emotion/styled';\nimport type { ReactNode } from 'react';\nimport React, { useState } from 'react';\n\nconst CollapseStyle = styled.div`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: #000000d9;\n  font-size: 14px;\n  background-color: #fafafa;\n  border: 1px solid #d9d9d9;\n  border-bottom: 0;\n  border-radius: 2px;\n  & .collapse-header {\n    line-height: 1.5715;\n    position: relative;\n    display: flex;\n    flex-wrap: nowrap;\n    align-items: flex-start;\n    padding: 12px 16px;\n    color: rgba(0, 0, 0, 0.85);\n    cursor: pointer;\n    transition: all 0.3s, visibility 0s;\n    box-sizing: border-box;\n  }\n`;\nconst CollapseStyleItem = styled.div`\n  border-bottom: 1px solid #d9d9d9;\n  & .collapse-content {\n    color: #000000d9;\n    background-color: #fff;\n    border-top: 1px solid #d9d9d9;\n    transition: all 0.3s ease-in-out;\n    padding: 16px;\n    &.collapsed {\n      display: none;\n    }\n    &.expanded {\n      display: block;\n    }\n  }\n`;\n\ninterface CollapseProps {\n  collapsed: boolean;\n  children: ReactNode;\n  header: ReactNode;\n}\n\ntype CollapseItemProps = Omit<Omit<CollapseProps, 'collapsed'>, 'header'> & {\n  className: string;\n};\n\nconst CollapseItem = (props: Partial<CollapseItemProps>) => {\n  const { children, className } = props;\n  return (\n    <CollapseStyleItem>\n      <div className={`${'collapse-content'}${className}`}>{children}</div>\n    </CollapseStyleItem>\n  );\n};\n\nconst Collapse = (props: Partial<CollapseProps>) => {\n  const { collapsed, children, header } = props;\n  const [isCollapsed, setIsCollapsed] = useState(collapsed);\n\n  return (\n    <CollapseStyle>\n      <div\n        className=\"collapse-header\"\n        onClick={() => setIsCollapsed(!isCollapsed)}\n      >\n        {header || (isCollapsed ? 'show' : 'hide') + ' content'}\n      </div>\n      <CollapseItem className={`${isCollapsed ? ' collapsed' : ' expanded'}`}>\n        {children}\n      </CollapseItem>\n    </CollapseStyle>\n  );\n};\n\nexport default Collapse;",
       K =
-        "import React, { useState } from 'react';\nimport ControlledInput from './ControlledInput';\n\nconst Demo = () => {\n  const [value, setValue] = useState('');\n\n  return (\n    <ControlledInput\n      type=\"text\"\n      value={value}\n      onChange={setValue}\n      placeholder=\"\u8bf7\u8f93\u5165\u4e00\u4e9b\u63d0\u793a\u4fe1\u606f...\"\n    ></ControlledInput>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport Collapse from './Collapse';\nconst Demo = () => {\n  return (\n    <Collapse header=\"\u8fd9\u662f\u6807\u9898\">\n      <h1>\u8fd9\u662f\u4e00\u4e2a\u6298\u53e0\u7ec4\u4ef6</h1>\n      <p>\u4f60\u597d\uff0c\u4e16\u754c!</p>\n    </Collapse>\n  );\n};\n\nexport default Demo;",
       Y =
-        "import { Space, Button } from 'antd';\nimport React, { useRef, useState } from 'react';\nimport type { MutableRefObject } from 'react';\nimport CountDown from './CountDown';\nimport type { ImperRef } from './helper';\n\nconst Demo = () => {\n  const countdownRef = useRef() as MutableRefObject<ImperRef>;\n  const [paused, setPaused] = useState(false);\n  const onPaused = () => {\n    setPaused(!paused);\n    countdownRef.current.onPaused(paused);\n  };\n  const onRestart = () => {\n    countdownRef.current.onRestart();\n  };\n  return (\n    <>\n      <CountDown ref={countdownRef} hours={1} minutes={45} />\n      <Space>\n        <Button onClick={onPaused}>{paused ? 'resume' : 'Pause'}</Button>\n        <Button onClick={onRestart}>Restart</Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport ControlledInput from './ControlledInput';\n\nconst Demo = () => {\n  const [value, setValue] = useState('');\n\n  return (\n    <ControlledInput\n      type=\"text\"\n      value={value}\n      onChange={setValue}\n      placeholder=\"Insert some text here...\"\n    ></ControlledInput>\n  );\n};\n\nexport default Demo;",
       Z =
-        "import React, { forwardRef, useState, useCallback } from 'react';\nimport type { MutableRefObject } from 'react';\nimport styled from '@emotion/styled';\nimport type { ImperItem, ImperRef } from './helper';\nimport { useChildrenHandler, useTimeout } from './helper';\n\ninterface CountDownProps {\n  hours: number;\n  minutes: number;\n  seconds: number;\n  overText?: string;\n  pausedText?: string;\n  delimiter?: string;\n}\n\nconst StyleCountdown = styled.div`\n  color: rgba(0, 0, 0.85);\n  margin-bottom: 10px;\n  font-size: 16px;\n`;\n\nconst CountDown = forwardRef(\n  (props: Partial<CountDownProps>, ref: ImperItem['ref']) => {\n    const {\n      hours,\n      minutes,\n      seconds,\n      overText = 'Time is up!',\n      pausedText = 'paused!',\n      delimiter = ':',\n    } = props;\n    const [paused, setPaused] = useState(false);\n    const [over, setOver] = useState(false);\n    const [[h = 0, m = 0, s = 0], setTime] = useState([\n      hours,\n      minutes,\n      seconds,\n    ]);\n\n    const tick = () => {\n      if (paused || over) {\n        return;\n      }\n      let newH = h,\n        newM = m,\n        newS = s;\n      if (h === 0 && m === 0 && s === 0) {\n        setOver(true);\n      }\n\n      if (m === 0 && s === 0) {\n        newH--;\n        newM = 59;\n        newS = 59;\n      }\n\n      if (s === 0) {\n        newM--;\n        newS = 60;\n      }\n      newS--;\n      setTime([newH, newM, newS]);\n    };\n    useTimeout(tick, 1000);\n    useChildrenHandler(ref as MutableRefObject<ImperRef>, {\n      onPaused: useCallback((status: boolean) => {\n        setPaused(!status);\n      }, []),\n      onOver: useCallback(() => {\n        setPaused(false);\n        setOver(true);\n      }, []),\n      onRestart: useCallback(() => {\n        setTime([h, m, s]);\n        setPaused(false);\n        setOver(false);\n      }, []),\n    });\n    const fillZero = (n: number) => n.toString().padStart(2, '0');\n    return (\n      <StyleCountdown>\n        {over\n          ? overText\n          : paused\n          ? pausedText\n          : `${fillZero(h)}${delimiter}${fillZero(m)}${delimiter}${fillZero(\n              s,\n            )}`}\n      </StyleCountdown>\n    );\n  },\n);\n\nexport default CountDown;",
+        "import styled from '@emotion/styled';\nimport React from 'react';\nimport type { SyntheticEvent } from 'react';\n\nconst StyleInput = styled.input`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: #000000d9;\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  transition: all 0.3s;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n`;\n/** https://github.com/Microsoft/TypeScript/issues/29729 */\n// eslint-disable-next-line @typescript-eslint/ban-types\ntype LiteralUnion<T extends U, U> = T & (U & {});\ninterface ControlledInputProps {\n  type: LiteralUnion<\n    | 'button'\n    | 'checkbox'\n    | 'color'\n    | 'date'\n    | 'datetime-local'\n    | 'email'\n    | 'file'\n    | 'hidden'\n    | 'image'\n    | 'month'\n    | 'number'\n    | 'password'\n    | 'radio'\n    | 'range'\n    | 'reset'\n    | 'search'\n    | 'submit'\n    | 'tel'\n    | 'text'\n    | 'time'\n    | 'url'\n    | 'week',\n    string\n  >;\n  value: string;\n  onChange(v: string): void;\n  placeholder: string;\n}\nconst ControlledInput = (props: Partial<ControlledInputProps>) => {\n  const { value, onChange, ...rest } = props;\n  const onChangeHandler = (e: SyntheticEvent) => {\n    if (onChange) {\n      onChange((e.target as HTMLInputElement).value);\n    }\n  };\n  return (\n    <StyleInput value={value} onChange={onChangeHandler} {...rest}></StyleInput>\n  );\n};\n\nexport default ControlledInput;",
       X =
-        "import type { MutableRefObject, DependencyList, Ref } from 'react';\nimport { useImperativeHandle, useEffect, useRef } from 'react';\n\nexport const useChildrenHandler = <T, K extends object>(\n  originRef: MutableRefObject<T>,\n  handler: K,\n  deps?: DependencyList,\n): void =>\n  useImperativeHandle(\n    originRef,\n    () => {\n      return {\n        ...originRef.current,\n        ...handler,\n      };\n    },\n    deps,\n  );\n\nexport type ImperFunc = (...args: any[]) => any;\nexport type ImperRef = Record<string, ImperFunc>;\nexport type ImperItem = {\n  ref: Ref<ImperRef>;\n};\nlet timer: number;\n// see this:https://www.aaron-powell.com/posts/2019-09-23-recursive-settimeout-with-react-hooks/\nexport const useTimeout = (callback, delay = 1000) => {\n  const ref = useRef() as MutableRefObject<() => void>;\n  useEffect(() => {\n    ref.current = callback;\n  });\n  useEffect(() => {\n    const handler = () => {\n      ref.current();\n      timer = setTimeout(handler, delay);\n    };\n    handler();\n    return () => clearTimeout(timer);\n  }, [delay]);\n};",
+        "import React, { useState } from 'react';\nimport ControlledInput from './ControlledInput';\n\nconst Demo = () => {\n  const [value, setValue] = useState('');\n\n  return (\n    <ControlledInput\n      type=\"text\"\n      value={value}\n      onChange={setValue}\n      placeholder=\"\u8bf7\u8f93\u5165\u4e00\u4e9b\u63d0\u793a\u4fe1\u606f...\"\n    ></ControlledInput>\n  );\n};\n\nexport default Demo;",
       J =
-        "import { Space, Button } from 'antd';\nimport React, { useRef, useState } from 'react';\nimport type { MutableRefObject } from 'react';\nimport CountDown from './CountDown';\nimport type { ImperRef } from './helper';\n\nconst Demo = () => {\n  const countdownRef = useRef() as MutableRefObject<ImperRef>;\n  const [paused, setPaused] = useState(false);\n  const onPaused = () => {\n    setPaused(!paused);\n    countdownRef.current.onPaused(paused);\n  };\n  const onRestart = () => {\n    countdownRef.current.onRestart();\n  };\n  return (\n    <>\n      <CountDown\n        ref={countdownRef}\n        hours={1}\n        minutes={45}\n        overText=\"\u5012\u8ba1\u65f6\u7ed3\u675f\"\n        pausedText=\"\u6682\u505c\u4e2d\"\n      />\n      <Space>\n        <Button onClick={onPaused}>{paused ? '\u7ee7\u7eed' : '\u6682\u505c'}</Button>\n        <Button onClick={onRestart}>\u91cd\u65b0\u5f00\u59cb</Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
+        "import { Space, Button } from 'antd';\nimport React, { useRef, useState } from 'react';\nimport type { MutableRefObject } from 'react';\nimport CountDown from './CountDown';\nimport type { ImperRef } from './helper';\n\nconst Demo = () => {\n  const countdownRef = useRef() as MutableRefObject<ImperRef>;\n  const [paused, setPaused] = useState(false);\n  const onPaused = () => {\n    setPaused(!paused);\n    countdownRef.current.onPaused(paused);\n  };\n  const onRestart = () => {\n    countdownRef.current.onRestart();\n  };\n  return (\n    <>\n      <CountDown ref={countdownRef} hours={1} minutes={45} />\n      <Space>\n        <Button onClick={onPaused}>{paused ? 'resume' : 'Pause'}</Button>\n        <Button onClick={onRestart}>Restart</Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
       Q =
-        "import React from 'react';\nimport FileDrop from './FileDrop';\n\nconst Demo = () => {\n  return <FileDrop onDrop={console.log} />;\n};\nexport default Demo;",
+        "import React, { forwardRef, useState, useCallback } from 'react';\nimport type { MutableRefObject } from 'react';\nimport styled from '@emotion/styled';\nimport type { ImperItem, ImperRef } from './helper';\nimport { useChildrenHandler, useTimeout } from './helper';\n\ninterface CountDownProps {\n  hours: number;\n  minutes: number;\n  seconds: number;\n  overText?: string;\n  pausedText?: string;\n  delimiter?: string;\n}\n\nconst StyleCountdown = styled.div`\n  color: rgba(0, 0, 0.85);\n  margin-bottom: 10px;\n  font-size: 16px;\n`;\n\nconst CountDown = forwardRef(\n  (props: Partial<CountDownProps>, ref: ImperItem['ref']) => {\n    const {\n      hours,\n      minutes,\n      seconds,\n      overText = 'Time is up!',\n      pausedText = 'paused!',\n      delimiter = ':',\n    } = props;\n    const [paused, setPaused] = useState(false);\n    const [over, setOver] = useState(false);\n    const [[h = 0, m = 0, s = 0], setTime] = useState([\n      hours,\n      minutes,\n      seconds,\n    ]);\n\n    const tick = () => {\n      if (paused || over) {\n        return;\n      }\n      let newH = h,\n        newM = m,\n        newS = s;\n      if (h === 0 && m === 0 && s === 0) {\n        setOver(true);\n      }\n\n      if (m === 0 && s === 0) {\n        newH--;\n        newM = 59;\n        newS = 59;\n      }\n\n      if (s === 0) {\n        newM--;\n        newS = 60;\n      }\n      newS--;\n      setTime([newH, newM, newS]);\n    };\n    useTimeout(tick, 1000);\n    useChildrenHandler(ref as MutableRefObject<ImperRef>, {\n      onPaused: useCallback((status: boolean) => {\n        setPaused(!status);\n      }, []),\n      onOver: useCallback(() => {\n        setPaused(false);\n        setOver(true);\n      }, []),\n      onRestart: useCallback(() => {\n        setTime([h, m, s]);\n        setPaused(false);\n        setOver(false);\n      }, []),\n    });\n    const fillZero = (n: number) => n.toString().padStart(2, '0');\n    return (\n      <StyleCountdown>\n        {over\n          ? overText\n          : paused\n          ? pausedText\n          : `${fillZero(h)}${delimiter}${fillZero(m)}${delimiter}${fillZero(\n              s,\n            )}`}\n      </StyleCountdown>\n    );\n  },\n);\n\nexport default CountDown;",
       ee =
-        "import React, { createRef, useEffect, useState } from 'react';\nimport styled from '@emotion/styled';\nconst DropContainer = styled.div`\n  min-height: 120px;\n  border: 3px solid #d3d3d3;\n  text-align: center;\n  font-size: 24px;\n  padding: 32px;\n  border-radius: 4px;\n  &.drag {\n    border: 3px dashed #1e90ff;\n  }\n  &.ready {\n    border: 3px solid #32cd32;\n  }\n`;\ninterface FileDropProps {\n  onDrop(file?: File): void;\n  emptyText: string;\n}\nconst FileDrop = (props: Partial<FileDropProps>) => {\n  const { onDrop, emptyText } = props;\n  const [drag, setDrag] = useState(false);\n  const [filename, setFilename] = useState('');\n  const dropRef = createRef<HTMLDivElement>();\n  let dragCount = 0;\n  const commonHandler = (e: Event) => {\n    e.preventDefault();\n    e.stopPropagation();\n  };\n  const onDragEnterHandler = (e: Event) => {\n    commonHandler(e);\n    dragCount++;\n    const event = e as DragEvent;\n    if (event.dataTransfer?.items && event.dataTransfer.items.length) {\n      setDrag(true);\n    }\n  };\n  const onDragLeaveHandler = (e: Event) => {\n    commonHandler(e);\n    dragCount--;\n    if (dragCount === 0) {\n      setDrag(false);\n    }\n  };\n  const onDragOverHandler = (e: Event) => {\n    commonHandler(e);\n  };\n  const onDropHandler = (e: Event) => {\n    commonHandler(e);\n    setDrag(false);\n    const event = e as DragEvent;\n    if (event.dataTransfer?.files && event.dataTransfer.files.length) {\n      if (onDrop) {\n        onDrop(event.dataTransfer?.files[0]);\n        setFilename(event.dataTransfer?.files[0].name);\n        event.dataTransfer.clearData();\n        dragCount = 0;\n      }\n    }\n  };\n  const events = [\n    { type: 'dragenter', handlerName: onDragEnterHandler },\n    { type: 'dragleave', handlerName: onDragLeaveHandler },\n    { type: 'dragover', handlerName: onDragOverHandler },\n    { type: 'drop', handlerName: onDropHandler },\n  ];\n  useEffect(() => {\n    const container = dropRef.current;\n    events.forEach((item) =>\n      container?.addEventListener(item.type, item.handlerName),\n    );\n    return () => {\n      events.forEach((item) =>\n        container?.removeEventListener(item.type, item.handlerName),\n      );\n    };\n  }, []);\n\n  return (\n    <DropContainer\n      ref={dropRef}\n      className={drag ? ' drag' : filename ? ' ready' : ''}\n    >\n      {filename && !drag ? filename : emptyText || 'Drop a file here!'}\n    </DropContainer>\n  );\n};\nexport default FileDrop;",
+        "import type { MutableRefObject, DependencyList, Ref } from 'react';\nimport { useImperativeHandle, useEffect, useRef } from 'react';\n\nexport const useChildrenHandler = <T, K extends object>(\n  originRef: MutableRefObject<T>,\n  handler: K,\n  deps?: DependencyList,\n): void =>\n  useImperativeHandle(\n    originRef,\n    () => {\n      return {\n        ...originRef.current,\n        ...handler,\n      };\n    },\n    deps,\n  );\n\nexport type ImperFunc = (...args: any[]) => any;\nexport type ImperRef = Record<string, ImperFunc>;\nexport type ImperItem = {\n  ref: Ref<ImperRef>;\n};\nlet timer: number;\n// see this:https://www.aaron-powell.com/posts/2019-09-23-recursive-settimeout-with-react-hooks/\nexport const useTimeout = (callback, delay = 1000) => {\n  const ref = useRef() as MutableRefObject<() => void>;\n  useEffect(() => {\n    ref.current = callback;\n  });\n  useEffect(() => {\n    const handler = () => {\n      ref.current();\n      timer = setTimeout(handler, delay);\n    };\n    handler();\n    return () => clearTimeout(timer);\n  }, [delay]);\n};",
       te =
-        "import React from 'react';\nimport FileDrop from './FileDrop';\n\nconst Demo = () => {\n  return <FileDrop onDrop={console.log} emptyText=\"\u62d6\u62fd\u6587\u4ef6\u5230\u8fd9\u91cc!\" />;\n};\nexport default Demo;",
+        "import { Space, Button } from 'antd';\nimport React, { useRef, useState } from 'react';\nimport type { MutableRefObject } from 'react';\nimport CountDown from './CountDown';\nimport type { ImperRef } from './helper';\n\nconst Demo = () => {\n  const countdownRef = useRef() as MutableRefObject<ImperRef>;\n  const [paused, setPaused] = useState(false);\n  const onPaused = () => {\n    setPaused(!paused);\n    countdownRef.current.onPaused(paused);\n  };\n  const onRestart = () => {\n    countdownRef.current.onRestart();\n  };\n  return (\n    <>\n      <CountDown\n        ref={countdownRef}\n        hours={1}\n        minutes={45}\n        overText=\"\u5012\u8ba1\u65f6\u7ed3\u675f\"\n        pausedText=\"\u6682\u505c\u4e2d\"\n      />\n      <Space>\n        <Button onClick={onPaused}>{paused ? '\u7ee7\u7eed' : '\u6682\u505c'}</Button>\n        <Button onClick={onRestart}>\u91cd\u65b0\u5f00\u59cb</Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
       ne =
-        "import React from 'react';\nimport LazyLoadingImage from './LazyLoadImage';\nimport styled from '@emotion/styled';\n\nconst LazyStyleLoadingImage = styled(LazyLoadingImage)`\n  max-width: 100%;\n  min-width: 200px;\n`;\nconst Demo = () => {\n  return (\n    <LazyStyleLoadingImage src=\"https://www.eveningwater.com/static/page/CSS/css-code-50-image/comic-girl-02.jpg\" />\n  );\n};\nexport default Demo;",
+        "import React from 'react';\nimport FileDrop from './FileDrop';\n\nconst Demo = () => {\n  return <FileDrop onDrop={console.log} />;\n};\nexport default Demo;",
       re =
-        "import React, { useRef, useState, useCallback, useEffect } from 'react';\nexport interface LazyLoadingImageProps {\n  className: string;\n  alt: string;\n  src: string;\n  loadInitially: boolean;\n  observerOptions: Record<string, null | string | unknown>;\n}\nconst LazyLoadingImage = (props: Partial<LazyLoadingImageProps>) => {\n  const {\n    alt,\n    src,\n    className,\n    loadInitially = false,\n    observerOptions = { root: null, rootMargin: '200px 0px' },\n    ...rest\n  } = props;\n  const observerRef = useRef<IntersectionObserver | null>(null);\n  const imgRef = useRef<HTMLImageElement | null>(null);\n  const [isLoaded, setIsLoaded] = useState(false);\n  const observerCallback = useCallback(\n    (entries) => {\n      if (entries[0].isIntersecting) {\n        observerRef.current?.disconnect();\n        setIsLoaded(true);\n      }\n    },\n    [observerRef],\n  );\n  useEffect(() => {\n    if (loadInitially) {\n      return;\n    }\n    if ('loading' in HTMLImageElement.prototype) {\n      setIsLoaded(true);\n      return;\n    }\n    observerRef.current = new IntersectionObserver(\n      observerCallback,\n      observerOptions,\n    );\n    observerRef.current.observe(imgRef.current as HTMLImageElement);\n    return () => {\n      observerRef.current?.disconnect();\n    };\n  }, []);\n\n  return (\n    <img\n      src={isLoaded ? src : ''}\n      alt={alt}\n      ref={imgRef}\n      className={className}\n      loading={loadInitially ? undefined : 'lazy'}\n      {...rest}\n    />\n  );\n};\nexport default LazyLoadingImage;",
+        "import React, { createRef, useEffect, useState } from 'react';\nimport styled from '@emotion/styled';\nconst DropContainer = styled.div`\n  min-height: 120px;\n  border: 3px solid #d3d3d3;\n  text-align: center;\n  font-size: 24px;\n  padding: 32px;\n  border-radius: 4px;\n  &.drag {\n    border: 3px dashed #1e90ff;\n  }\n  &.ready {\n    border: 3px solid #32cd32;\n  }\n`;\ninterface FileDropProps {\n  onDrop(file?: File): void;\n  emptyText: string;\n}\nconst FileDrop = (props: Partial<FileDropProps>) => {\n  const { onDrop, emptyText } = props;\n  const [drag, setDrag] = useState(false);\n  const [filename, setFilename] = useState('');\n  const dropRef = createRef<HTMLDivElement>();\n  let dragCount = 0;\n  const commonHandler = (e: Event) => {\n    e.preventDefault();\n    e.stopPropagation();\n  };\n  const onDragEnterHandler = (e: Event) => {\n    commonHandler(e);\n    dragCount++;\n    const event = e as DragEvent;\n    if (event.dataTransfer?.items && event.dataTransfer.items.length) {\n      setDrag(true);\n    }\n  };\n  const onDragLeaveHandler = (e: Event) => {\n    commonHandler(e);\n    dragCount--;\n    if (dragCount === 0) {\n      setDrag(false);\n    }\n  };\n  const onDragOverHandler = (e: Event) => {\n    commonHandler(e);\n  };\n  const onDropHandler = (e: Event) => {\n    commonHandler(e);\n    setDrag(false);\n    const event = e as DragEvent;\n    if (event.dataTransfer?.files && event.dataTransfer.files.length) {\n      if (onDrop) {\n        onDrop(event.dataTransfer?.files[0]);\n        setFilename(event.dataTransfer?.files[0].name);\n        event.dataTransfer.clearData();\n        dragCount = 0;\n      }\n    }\n  };\n  const events = [\n    { type: 'dragenter', handlerName: onDragEnterHandler },\n    { type: 'dragleave', handlerName: onDragLeaveHandler },\n    { type: 'dragover', handlerName: onDragOverHandler },\n    { type: 'drop', handlerName: onDropHandler },\n  ];\n  useEffect(() => {\n    const container = dropRef.current;\n    events.forEach((item) =>\n      container?.addEventListener(item.type, item.handlerName),\n    );\n    return () => {\n      events.forEach((item) =>\n        container?.removeEventListener(item.type, item.handlerName),\n      );\n    };\n  }, []);\n\n  return (\n    <DropContainer\n      ref={dropRef}\n      className={drag ? ' drag' : filename ? ' ready' : ''}\n    >\n      {filename && !drag ? filename : emptyText || 'Drop a file here!'}\n    </DropContainer>\n  );\n};\nexport default FileDrop;",
       oe =
-        "import React from 'react';\nimport LazyLoadingImage from './LazyLoadImage';\nimport styled from '@emotion/styled';\n\nconst LazyStyleLoadingImage = styled(LazyLoadingImage)`\n  max-width: 100%;\n  min-width: 200px;\n`;\nconst Demo = () => {\n  return (\n    <LazyStyleLoadingImage src=\"https://www.eveningwater.com/static/page/CSS/css-code-50-image/comic-girl-02.jpg\" />\n  );\n};\nexport default Demo;",
+        "import React from 'react';\nimport FileDrop from './FileDrop';\n\nconst Demo = () => {\n  return <FileDrop onDrop={console.log} emptyText=\"\u62d6\u62fd\u6587\u4ef6\u5230\u8fd9\u91cc!\" />;\n};\nexport default Demo;",
       ae =
-        "import React from 'react';\nimport LimitedTextarea from './LimitedTextarea';\n\nconst Demo = () => {\n  return <LimitedTextarea limit={100}></LimitedTextarea>;\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport LazyLoadingImage from './LazyLoadImage';\nimport styled from '@emotion/styled';\n\nconst LazyStyleLoadingImage = styled(LazyLoadingImage)`\n  max-width: 100%;\n  min-width: 200px;\n`;\nconst Demo = () => {\n  return (\n    <LazyStyleLoadingImage src=\"https://www.eveningwater.com/static/page/CSS/css-code-50-image/comic-girl-02.jpg\" />\n  );\n};\nexport default Demo;",
       ie =
-        "import React, { useState, useCallback } from 'react';\nimport type { ChangeEvent } from 'react';\nimport styled from '@emotion/styled';\ninterface LimitedTextareaProps extends Record<string, unknown> {\n  limit: number;\n  rows: number;\n  cols: number;\n  value: string;\n}\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedTextarea = (props: Partial<LimitedTextareaProps>) => {\n  const { limit, rows, cols, value, ...rest } = props;\n\n  const [content, setContent] = useState(value?.slice(0, limit));\n\n  const setFormattedContent = useCallback(\n    (text: string) => {\n      setContent(text.slice(0, limit));\n    },\n    [limit, setContent],\n  );\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e: ChangeEvent) =>\n          setFormattedContent((e.target as HTMLTextAreaElement).value)\n        }\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedTextarea;",
+        "import React, { useRef, useState, useCallback, useEffect } from 'react';\nexport interface LazyLoadingImageProps {\n  className: string;\n  alt: string;\n  src: string;\n  loadInitially: boolean;\n  observerOptions: Record<string, null | string | unknown>;\n}\nconst LazyLoadingImage = (props: Partial<LazyLoadingImageProps>) => {\n  const {\n    alt,\n    src,\n    className,\n    loadInitially = false,\n    observerOptions = { root: null, rootMargin: '200px 0px' },\n    ...rest\n  } = props;\n  const observerRef = useRef<IntersectionObserver | null>(null);\n  const imgRef = useRef<HTMLImageElement | null>(null);\n  const [isLoaded, setIsLoaded] = useState(false);\n  const observerCallback = useCallback(\n    (entries) => {\n      if (entries[0].isIntersecting) {\n        observerRef.current?.disconnect();\n        setIsLoaded(true);\n      }\n    },\n    [observerRef],\n  );\n  useEffect(() => {\n    if (loadInitially) {\n      return;\n    }\n    if ('loading' in HTMLImageElement.prototype) {\n      setIsLoaded(true);\n      return;\n    }\n    observerRef.current = new IntersectionObserver(\n      observerCallback,\n      observerOptions,\n    );\n    observerRef.current.observe(imgRef.current as HTMLImageElement);\n    return () => {\n      observerRef.current?.disconnect();\n    };\n  }, []);\n\n  return (\n    <img\n      src={isLoaded ? src : ''}\n      alt={alt}\n      ref={imgRef}\n      className={className}\n      loading={loadInitially ? undefined : 'lazy'}\n      {...rest}\n    />\n  );\n};\nexport default LazyLoadingImage;",
       le =
-        "import React from 'react';\nimport LimitedTextarea from './LimitedTextarea';\n\nconst Demo = () => {\n  return <LimitedTextarea limit={120}></LimitedTextarea>;\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport LazyLoadingImage from './LazyLoadImage';\nimport styled from '@emotion/styled';\n\nconst LazyStyleLoadingImage = styled(LazyLoadingImage)`\n  max-width: 100%;\n  min-width: 200px;\n`;\nconst Demo = () => {\n  return (\n    <LazyStyleLoadingImage src=\"https://www.eveningwater.com/static/page/CSS/css-code-50-image/comic-girl-02.jpg\" />\n  );\n};\nexport default Demo;",
       ce =
-        "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea limit={5} value=\"hello,there!\"></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport LimitedTextarea from './LimitedTextarea';\n\nconst Demo = () => {\n  return <LimitedTextarea limit={100}></LimitedTextarea>;\n};\n\nexport default Demo;",
       se =
-        "import React, { useState, useCallback, useEffect } from 'react';\nimport type { ChangeEvent } from 'react';\nimport styled from '@emotion/styled';\ninterface LimitedWordTextareaProps extends Record<string, unknown> {\n  limit: number;\n  rows: number;\n  cols: number;\n  value: string;\n}\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedWordTextarea = (props: Partial<LimitedWordTextareaProps>) => {\n  const { limit = 0, rows, cols, value, ...rest } = props;\n\n  const [{ content, wordCount }, setContent] = useState({\n    content: value,\n    wordCount: 0,\n  });\n\n  const setFormattedContent = useCallback(\n    (text: string) => {\n      let words = text.split(' ').filter(Boolean);\n      setContent(() => {\n        if (words.length > limit) {\n          return {\n            wordCount: limit,\n            content: words.slice(0, limit).join(' '),\n          };\n        }\n        return {\n          wordCount: words.length,\n          content: text,\n        };\n      });\n    },\n    [limit, setContent],\n  );\n  useEffect(() => {\n    setFormattedContent(content || '');\n  }, []);\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e: ChangeEvent) =>\n          setFormattedContent((e.target as HTMLTextAreaElement).value)\n        }\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedWordTextarea;",
+        "import React, { useState, useCallback } from 'react';\nimport type { ChangeEvent } from 'react';\nimport styled from '@emotion/styled';\ninterface LimitedTextareaProps extends Record<string, unknown> {\n  limit: number;\n  rows: number;\n  cols: number;\n  value: string;\n}\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedTextarea = (props: Partial<LimitedTextareaProps>) => {\n  const { limit, rows, cols, value, ...rest } = props;\n\n  const [content, setContent] = useState(value?.slice(0, limit));\n\n  const setFormattedContent = useCallback(\n    (text: string) => {\n      setContent(text.slice(0, limit));\n    },\n    [limit, setContent],\n  );\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e: ChangeEvent) =>\n          setFormattedContent((e.target as HTMLTextAreaElement).value)\n        }\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedTextarea;",
       ue =
-        "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea\n      limit={6}\n      value=\"\u4f60\u597d\u554a,\u8fd9\u91cc\u7684\u4e16\u754c!\"\n    ></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport LimitedTextarea from './LimitedTextarea';\n\nconst Demo = () => {\n  return <LimitedTextarea limit={120}></LimitedTextarea>;\n};\n\nexport default Demo;",
       de =
-        'import React, { useState } from \'react\';\nimport { Alert, Space, Spin, Switch } from \'antd\';\nimport Loader from \'./Loader\';\nimport styled from \'@emotion/styled\';\n\nconst Row = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  const [loading, setLoading] = useState(true);\n  const antIcon = <Loader size={24} spin />;\n  return (\n    <Space direction="vertical" style={{ width: \'100%\' }}>\n      <Spin tip="Loading..." indicator={antIcon} spinning={loading}>\n        <Alert\n          message="Alert message title"\n          description="Further details about the context of this alert."\n          type="info"\n        />\n      </Spin>\n      <Row>\n        Loading state\uff1a\n        <Switch checked={loading} onChange={() => setLoading(!loading)} />\n      </Row>\n    </Space>\n  );\n};\nexport default Demo;',
+        "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea limit={5} value=\"hello,there!\"></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
       fe =
-        'import React, { useState } from \'react\';\nimport { Alert, Space, Spin, Switch } from \'antd\';\nimport Loader from \'./Loader\';\nimport styled from \'@emotion/styled\';\n\nconst Row = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  const [loading, setLoading] = useState(true);\n  const antIcon = <Loader size={24} spin />;\n  return (\n    <Space direction="vertical" style={{ width: \'100%\' }}>\n      <Spin tip="\u52a0\u8f7d\u4e2d..." indicator={antIcon} spinning={loading}>\n        <Alert\n          message="\u63d0\u793a\u6846\u6d88\u606f\u6807\u9898"\n          description="\u6709\u5173\u6b64\u63d0\u793a\u6846\u4e0a\u4e0b\u6587\u7684\u66f4\u591a\u8be6\u7ec6\u4fe1\u606f\u3002"\n          type="info"\n        />\n      </Spin>\n      <Row>\n        \u52a0\u8f7d\u72b6\u6001\uff1a\n        <Switch checked={loading} onChange={() => setLoading(!loading)} />\n      </Row>\n    </Space>\n  );\n};\nexport default Demo;',
+        "import React, { useState, useCallback, useEffect } from 'react';\nimport type { ChangeEvent } from 'react';\nimport styled from '@emotion/styled';\ninterface LimitedWordTextareaProps extends Record<string, unknown> {\n  limit: number;\n  rows: number;\n  cols: number;\n  value: string;\n}\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedWordTextarea = (props: Partial<LimitedWordTextareaProps>) => {\n  const { limit = 0, rows, cols, value, ...rest } = props;\n\n  const [{ content, wordCount }, setContent] = useState({\n    content: value,\n    wordCount: 0,\n  });\n\n  const setFormattedContent = useCallback(\n    (text: string) => {\n      let words = text.split(' ').filter(Boolean);\n      setContent(() => {\n        if (words.length > limit) {\n          return {\n            wordCount: limit,\n            content: words.slice(0, limit).join(' '),\n          };\n        }\n        return {\n          wordCount: words.length,\n          content: text,\n        };\n      });\n    },\n    [limit, setContent],\n  );\n  useEffect(() => {\n    setFormattedContent(content || '');\n  }, []);\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e: ChangeEvent) =>\n          setFormattedContent((e.target as HTMLTextAreaElement).value)\n        }\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedWordTextarea;",
       pe =
-        'import React from \'react\';\nimport Mailto from \'./Mailto\';\n\nconst Demo = () => {\n  return (\n    <Mailto\n      email="854806732@qq.com"\n      subject="hello & welcome"\n      body="hello,world"\n    >\n      Mail me!\n    </Mailto>\n  );\n};\n\nexport default Demo;',
+        "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea\n      limit={6}\n      value=\"\u4f60\u597d\u554a,\u8fd9\u91cc\u7684\u4e16\u754c!\"\n    ></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
       me =
-        "import styled from '@emotion/styled';\nimport React from 'react';\nimport type { ReactNode } from 'react';\n\nconst Link = styled.a`\n  text-decoration: none;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 18px;\n  transition: color 0.3s ease-in-out;\n  &:hover {\n    color: #2396ef;\n  }\n`;\n\ninterface MailtoProps extends Record<string, unknown> {\n  email: string;\n  subject: string;\n  body: string;\n  children: ReactNode;\n}\n\nconst Mailto = (props: Partial<MailtoProps>) => {\n  const { email, subject = '', body = '', children, ...rest } = props;\n  let params = subject || body ? '?' : '';\n  if (subject) {\n    params += `subject=${encodeURIComponent(subject)}`;\n  }\n  if (body) {\n    params += `body=${encodeURIComponent(body)}`;\n  }\n  return (\n    <Link href={`mailto:${email}${params}`} className=\"mail-link\" {...rest}>\n      {children}\n    </Link>\n  );\n};\n\nexport default Mailto;",
+        'import React, { useState } from \'react\';\nimport { Alert, Space, Spin, Switch } from \'antd\';\nimport Loader from \'./Loader\';\nimport styled from \'@emotion/styled\';\n\nconst Row = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  const [loading, setLoading] = useState(true);\n  const antIcon = <Loader size={24} spin />;\n  return (\n    <Space direction="vertical" style={{ width: \'100%\' }}>\n      <Spin tip="Loading..." indicator={antIcon} spinning={loading}>\n        <Alert\n          message="Alert message title"\n          description="Further details about the context of this alert."\n          type="info"\n        />\n      </Spin>\n      <Row>\n        Loading state\uff1a\n        <Switch checked={loading} onChange={() => setLoading(!loading)} />\n      </Row>\n    </Space>\n  );\n};\nexport default Demo;',
       he =
-        'import React from \'react\';\nimport Mailto from \'./Mailto\';\n\nconst Demo = () => {\n  return (\n    <Mailto email="854806732@qq.com" subject="\u4f60\u597d&\u6b22\u8fce" body="\u4f60\u597d\uff0c\u4e16\u754c">\n      \u7ed9\u6211\u53d1\u90ae\u4ef6\n    </Mailto>\n  );\n};\n\nexport default Demo;',
+        'import React, { useState } from \'react\';\nimport { Alert, Space, Spin, Switch } from \'antd\';\nimport Loader from \'./Loader\';\nimport styled from \'@emotion/styled\';\n\nconst Row = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  const [loading, setLoading] = useState(true);\n  const antIcon = <Loader size={24} spin />;\n  return (\n    <Space direction="vertical" style={{ width: \'100%\' }}>\n      <Spin tip="\u52a0\u8f7d\u4e2d..." indicator={antIcon} spinning={loading}>\n        <Alert\n          message="\u63d0\u793a\u6846\u6d88\u606f\u6807\u9898"\n          description="\u6709\u5173\u6b64\u63d0\u793a\u6846\u4e0a\u4e0b\u6587\u7684\u66f4\u591a\u8be6\u7ec6\u4fe1\u606f\u3002"\n          type="info"\n        />\n      </Spin>\n      <Row>\n        \u52a0\u8f7d\u72b6\u6001\uff1a\n        <Switch checked={loading} onChange={() => setLoading(!loading)} />\n      </Row>\n    </Space>\n  );\n};\nexport default Demo;',
       ve =
-        "import React, { useState } from 'react';\nimport Modal from './Modal';\nimport { Button, Space } from 'antd';\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const onCreate = () => {\n    Modal.confirm({\n      title: 'The modal title',\n      content: (\n        <>\n          <p>The modal content</p>\n          <p>The modal content</p>\n          <p>The modal content</p>\n        </>\n      ),\n      cancelText: 'Cancel',\n      okText: 'Sure',\n    });\n  };\n  return (\n    <Space>\n      <Button onClick={() => setVisible(true)}>clicked me</Button>\n      <Button onClick={onCreate}>clicked me</Button>\n      <Modal\n        visible={visible}\n        onCancel={() => setVisible(false)}\n        title=\"The modal title\"\n        showCancel\n        onOk={() => setVisible(false)}\n        cancelText=\"Cancel\"\n        okText=\"Sure\"\n      >\n        <p>The modal content</p>\n        <p>The modal content</p>\n        <p>The modal content</p>\n      </Modal>\n    </Space>\n  );\n};\n\nexport default Demo;",
+        'import React from \'react\';\nimport Mailto from \'./Mailto\';\n\nconst Demo = () => {\n  return (\n    <Mailto\n      email="854806732@qq.com"\n      subject="hello & welcome"\n      body="hello,world"\n    >\n      Mail me!\n    </Mailto>\n  );\n};\n\nexport default Demo;',
       ge =
-        "import React, { useState, useEffect } from 'react';\nimport type { ReactNode, SyntheticEvent } from 'react';\nimport ReactDOM from 'react-dom';\nimport './Modal.less';\n\nexport interface ModalProps extends Record<string, any> {\n  mask: boolean;\n  footer: ReactNode;\n  title: ReactNode;\n  visible: boolean;\n  showCancel: boolean;\n  maskClosable: boolean;\n  onMask: Function;\n  onCancel: Function;\n  onOk: Function;\n  onClose: Function;\n  content: ReactNode;\n  showClose: boolean;\n  closeMask: boolean;\n  autoClose: boolean;\n  autoCloseTime: number;\n  isRenderHTML: boolean;\n  okText: string;\n  cancelText: string;\n  width: string | number;\n  children: ReactNode;\n  isDestroy: boolean;\n  keyboard: boolean;\n}\n\nconst Modal = (props: Partial<ModalProps>) => {\n  const {\n    mask = true,\n    footer,\n    children,\n    isRenderHTML,\n    title,\n    visible,\n    onCancel,\n    maskClosable = true,\n    onOk,\n    showCancel,\n    showClose = true,\n    onClose,\n    okText,\n    cancelText,\n    width = 520,\n    isDestroy = true,\n    keyboard = true,\n    onMask,\n    ...rest\n  } = props;\n\n  const [modalVisible, setModalVisible] = useState(false);\n\n  const keydownHandler = ({ key }) => {\n    switch (key) {\n      case 'Escape':\n        if (typeof onCancel === 'function' && keyboard) {\n          onCancel();\n        }\n        break;\n      default:\n    }\n  };\n\n  useEffect(() => {\n    if (typeof visible === 'boolean') {\n      setModalVisible(visible);\n    }\n  }, [visible]);\n\n  useEffect(() => {\n    document.addEventListener('keydown', keydownHandler);\n    return () => document.removeEventListener('keydown', keydownHandler);\n  });\n\n  // Set the width\n  const contentStyle: Partial<Record<'width', ModalProps['width']>> = {};\n  if (typeof width === 'number') {\n    contentStyle['width'] = width + 'px';\n  } else if (typeof width === 'string') {\n    contentStyle['width'] = width;\n  }\n\n  return isDestroy && !modalVisible ? null : (\n    <div\n      className=\"modal-container\"\n      {...rest}\n      style={{ display: modalVisible ? 'block' : 'none' }}\n    >\n      <div className=\"modal-wrapper\">\n        {mask ? (\n          <div\n            className=\"modal-mask\"\n            onClick={(e: SyntheticEvent) => {\n              if (maskClosable) {\n                if (typeof onMask === 'function') {\n                  return onMask(e);\n                }\n                if (typeof onCancel === 'function') {\n                  onCancel(e);\n                }\n              }\n            }}\n          />\n        ) : null}\n        <div className=\"modal-box\" style={contentStyle}>\n          <div className=\"modal-content\">\n            {showClose ? (\n              <div\n                className=\"modal-content-close\"\n                onClick={(e: SyntheticEvent) => {\n                  if (typeof onCancel === 'function') {\n                    onCancel(e);\n                  }\n                }}\n              >\n                <svg\n                  className=\"close-icon\"\n                  viewBox=\"0 0 1024 1024\"\n                  version=\"1.1\"\n                  xmlns=\"http://www.w3.org/2000/svg\"\n                  p-id=\"2217\"\n                >\n                  <path\n                    d=\"M546.942134 511.818772l327.456957-326.128977c9.617355-9.577423 9.648071-25.135361 0.070648-34.751692-9.577423-9.617355-25.137409-9.647048-34.750668-0.070648L512.119795 477.137729 184.520518 150.868479c-9.616331-9.577423-25.176316-9.545683-34.751692 0.070648-9.577423 9.616331-9.545683 25.174268 0.070648 34.751692l327.457981 326.127953-327.457981 326.128978c-9.616331 9.577423-9.647048 25.135361-0.070648 34.751692a24.496456 24.496456 0 0 0 17.41117 7.231702 24.500552 24.500552 0 0 0 17.340522-7.162078L512.119795 546.499816l327.599276 326.26925a24.492361 24.492361 0 0 0 17.340522 7.162078 24.5026 24.5026 0 0 0 17.41117-7.231702c9.577423-9.617355 9.545683-25.175292-0.070648-34.751692L546.942134 511.818772z\"\n                    fill=\"#bfbfbf\"\n                    p-id=\"2218\"\n                  ></path>\n                </svg>\n              </div>\n            ) : null}\n            {title ? <div className=\"modal-content-header\">{title}</div> : null}\n            <div className=\"modal-content-body\">\n              {isRenderHTML ? (\n                <div dangerouslySetInnerHTML={{ __html: String(children) }} />\n              ) : (\n                children\n              )}\n            </div>\n            {footer === null ? null : footer ? (\n              footer\n            ) : (\n              <div className=\"modal-content-footer\">\n                {showCancel ? (\n                  <button\n                    type=\"button\"\n                    className=\"modal-content-footer-button modal-content-footer-button-cancel\"\n                    onClick={(e: SyntheticEvent) => {\n                      if (typeof onCancel === 'function') {\n                        onCancel(e);\n                      }\n                    }}\n                  >\n                    {cancelText ? cancelText : '\u53d6\u6d88'}\n                  </button>\n                ) : null}\n                <button\n                  type=\"button\"\n                  className=\"modal-content-footer-button modal-content-footer-button-sure\"\n                  onClick={(e: SyntheticEvent) => {\n                    if (typeof onOk === 'function') {\n                      onOk(e);\n                    } else {\n                      if (typeof onCancel === 'function') {\n                        onCancel(e);\n                      }\n                    }\n                  }}\n                >\n                  {okText ? okText : '\u786e\u5b9a'}\n                </button>\n              </div>\n            )}\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nconst destroyFns: Array<() => void> = [];\nconst closeFns: Array<() => void> = [];\n\ninterface MethodModalProps extends ModalProps {}\nexport type ConfirmConfig = ModalProps | ((config: ModalProps) => ModalProps);\nexport type ReturnType = {\n  destroy: () => void;\n  close: () => void;\n  update: (updateConfig: ModalProps) => void;\n};\nexport type ModalType = (config: ModalProps) => ReturnType;\n\nModal.confirm = (config: Partial<MethodModalProps> | string) => {\n  const div = document.createElement('div');\n  document.body.appendChild(div);\n  const defaultConfig = {\n    visible: true,\n    showCancel: true,\n    onOk: () => destroy(),\n    onCancel: () => destroy(),\n    onMask: () => destroy(),\n  };\n  let currentConfig =\n    typeof config === 'object' && config\n      ? {\n          ...config,\n          ...defaultConfig,\n        }\n      : ({\n          content: config,\n          ...defaultConfig,\n        } as any);\n  function destroy() {\n    const unMountResult = ReactDOM.unmountComponentAtNode(div);\n    if (unMountResult && div.parentElement) {\n      div.parentElement.removeChild(div);\n    }\n    for (let i = 0, l = destroyFns.length; i < l; i++) {\n      const fn = destroyFns[i];\n      if (fn === close) {\n        destroyFns.splice(i, 1);\n        break;\n      }\n    }\n  }\n  function close() {\n    currentConfig = {\n      ...currentConfig,\n      visible: false,\n    };\n    render(currentConfig);\n  }\n  function render(props: MethodModalProps) {\n    setTimeout(() => {\n      ReactDOM.render(<Modal {...props}>{props.content}</Modal>, div);\n    });\n  }\n  function update(updateConfig: ConfirmConfig) {\n    if (typeof updateConfig === 'function') {\n      currentConfig = updateConfig(currentConfig);\n    } else {\n      currentConfig = {\n        ...currentConfig,\n        ...updateConfig,\n      };\n    }\n    render(currentConfig);\n  }\n  render(currentConfig);\n  closeFns.push(close);\n  destroyFns.push(destroy);\n  if (currentConfig.autoClose) {\n    let autoCloseTime = Number(currentConfig.autoCloseTime);\n    autoCloseTime = Number.isNaN(autoCloseTime)\n      ? 1000\n      : Math.min(10000, autoCloseTime);\n    setTimeout(() => {\n      destroy();\n    }, autoCloseTime);\n  }\n  return {\n    destroy,\n    close,\n    update,\n  };\n};\n\nModal.closeAll = () => {\n  closeFns.forEach((close: Function) => {\n    close && close();\n  });\n};\n\nModal.destroyAll = () => {\n  destroyFns.forEach((destroy: Function) => {\n    destroy && destroy();\n  });\n};\n\ntype GlobalModal = typeof Modal;\nexport { GlobalModal };\nexport default Modal;",
+        "import styled from '@emotion/styled';\nimport React from 'react';\nimport type { ReactNode } from 'react';\n\nconst Link = styled.a`\n  text-decoration: none;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 18px;\n  transition: color 0.3s ease-in-out;\n  &:hover {\n    color: #2396ef;\n  }\n`;\n\ninterface MailtoProps extends Record<string, unknown> {\n  email: string;\n  subject: string;\n  body: string;\n  children: ReactNode;\n}\n\nconst Mailto = (props: Partial<MailtoProps>) => {\n  const { email, subject = '', body = '', children, ...rest } = props;\n  let params = subject || body ? '?' : '';\n  if (subject) {\n    params += `subject=${encodeURIComponent(subject)}`;\n  }\n  if (body) {\n    params += `body=${encodeURIComponent(body)}`;\n  }\n  return (\n    <Link href={`mailto:${email}${params}`} className=\"mail-link\" {...rest}>\n      {children}\n    </Link>\n  );\n};\n\nexport default Mailto;",
       be =
-        "@black: rgba(0, 0, 0, 1);\n@baseSelector: modal;\n\n.@{baseSelector}-container {\n  .base-fixed {\n    inset: 0;\n    position: fixed;\n  }\n\n  .@{baseSelector}-mask {\n    height: 100%;\n    background-color: fade(@black, 65%);\n    .base-fixed();\n  }\n\n  .@{baseSelector}-wrapper {\n    .base-fixed();\n    overflow: auto;\n    outline: 0;\n    z-index: 1000;\n\n    .@{baseSelector}-box {\n      box-sizing: border-box;\n      padding: 0 0 24px;\n      color: fadeout(@black, 15%);\n      font-size: 14px;\n      font-variant: tabular-nums;\n      line-height: 1.5715;\n      list-style: none;\n      font-feature-settings: 'tnum';\n      pointer-events: none;\n      position: relative;\n      top: 100px;\n      width: auto;\n      max-width: calc(100vw - 32px);\n      margin: 0 auto;\n\n      .@{baseSelector}-content {\n        position: relative;\n        background-color: #fff;\n        background-clip: padding-box;\n        border: 0;\n        border-radius: 2px;\n        box-shadow: 0 3px 6px -4px fade(@black, 5%), 0 6px 16px fade(@black, 7%),\n          0 9px 28px 8px fade(@black, 9%);\n        pointer-events: auto;\n\n        &-header {\n          padding: 16px 24px;\n          color: fade(@black, 90%);\n          background: #fff;\n          border-bottom: 1px solid fade(@black, 6%);\n          border-radius: 2px 2px 0 0;\n          margin: 0;\n          font-weight: 500;\n          font-size: 16px;\n          line-height: 22px;\n          word-wrap: break-word;\n        }\n\n        &-body {\n          padding: 24px;\n          font-size: 14px;\n          line-height: 1.5715;\n          word-wrap: break-word;\n        }\n\n        &-footer {\n          padding: 10px 16px;\n          text-align: right;\n          background: 0 0;\n          border-top: 1px solid fadeout(@black, 94%);\n          border-radius: 0 0 2px 2px;\n\n          &-button {\n            line-height: 1.5715;\n            position: relative;\n            display: inline-block;\n            font-weight: 400;\n            white-space: nowrap;\n            text-align: center;\n            background-image: none;\n            border: 1px solid transparent;\n            box-shadow: 0 2px fadeout(@black, 95%);\n            cursor: pointer;\n            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n            -webkit-user-select: none;\n            -moz-user-select: none;\n            -ms-user-select: none;\n            user-select: none;\n            touch-action: manipulation;\n            height: 32px;\n            padding: 4px 15px;\n            font-size: 14px;\n            letter-spacing: 2px;\n            border-radius: 2px;\n            color: fade(@black, 97%);\n            border-color: #d9d9d9;\n            background: #fff;\n            border-radius: 4px;\n\n            &-cancel {\n              margin-right: 15px;\n\n              &:hover,\n              &:active {\n                border-color: #2499f1;\n                color: #2396ef;\n              }\n            }\n\n            &-sure {\n              background-color: #34a1f5;\n              border-color: #1e9af8;\n              color: #fff;\n\n              &:hover,\n              &:active {\n                background-color: #0f8ff1;\n                border-color: #1794f5;\n              }\n            }\n          }\n        }\n\n        &-close {\n          position: absolute;\n          top: 0;\n          right: 0;\n          z-index: 10;\n          padding: 0;\n          color: fadeout(@black, 75%);\n          font-weight: 700;\n          text-decoration: none;\n          background: 0 0;\n          border: 0;\n          outline: 0;\n          cursor: pointer;\n          width: 54px;\n          height: 54px;\n          font-size: 16px;\n          font-style: normal;\n          line-height: 54px;\n          text-align: center;\n          text-transform: none;\n          text-rendering: auto;\n          transition: color 0.3s;\n\n          & .close-icon {\n            width: 16px;\n            height: 16px;\n          }\n        }\n      }\n    }\n  }\n}",
+        'import React from \'react\';\nimport Mailto from \'./Mailto\';\n\nconst Demo = () => {\n  return (\n    <Mailto email="854806732@qq.com" subject="\u4f60\u597d&\u6b22\u8fce" body="\u4f60\u597d\uff0c\u4e16\u754c">\n      \u7ed9\u6211\u53d1\u90ae\u4ef6\n    </Mailto>\n  );\n};\n\nexport default Demo;',
       ye =
-        "import React, { useState } from 'react';\nimport Modal from './Modal';\nimport { Button, Space } from 'antd';\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const onCreate = () => {\n    Modal.confirm({\n      title: '\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898',\n      content: (\n        <>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        </>\n      ),\n    });\n  };\n  return (\n    <Space>\n      <Button onClick={() => setVisible(true)}>clicked me</Button>\n      <Button onClick={onCreate}>clicked me</Button>\n      <Modal\n        visible={visible}\n        onCancel={() => setVisible(false)}\n        title=\"\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898\"\n        showCancel\n        onOk={() => setVisible(false)}\n      >\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n      </Modal>\n    </Space>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Modal from './Modal';\nimport { Button, Space } from 'antd';\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const onCreate = () => {\n    Modal.confirm({\n      title: 'The modal title',\n      content: (\n        <>\n          <p>The modal content</p>\n          <p>The modal content</p>\n          <p>The modal content</p>\n        </>\n      ),\n      cancelText: 'Cancel',\n      okText: 'Sure',\n    });\n  };\n  return (\n    <Space>\n      <Button onClick={() => setVisible(true)}>clicked me</Button>\n      <Button onClick={onCreate}>clicked me</Button>\n      <Modal\n        visible={visible}\n        onCancel={() => setVisible(false)}\n        title=\"The modal title\"\n        showCancel\n        onOk={() => setVisible(false)}\n        cancelText=\"Cancel\"\n        okText=\"Sure\"\n      >\n        <p>The modal content</p>\n        <p>The modal content</p>\n        <p>The modal content</p>\n      </Modal>\n    </Space>\n  );\n};\n\nexport default Demo;",
       xe =
-        "import React, { useState } from 'react';\nimport PasswordRevealer from './PasswordRevealer';\nconst Demo = () => {\n  const [value, setValue] = useState('');\n  const onChange = (v: string) => {\n    console.log(v);\n    setValue(v);\n  };\n  return (\n    <PasswordRevealer\n      placeholder=\"Please Input the password\"\n      value={value}\n      onChange={onChange}\n    ></PasswordRevealer>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState, useEffect } from 'react';\nimport type { ReactNode, SyntheticEvent } from 'react';\nimport ReactDOM from 'react-dom';\nimport './Modal.less';\n\nexport interface ModalProps extends Record<string, any> {\n  mask: boolean;\n  footer: ReactNode;\n  title: ReactNode;\n  visible: boolean;\n  showCancel: boolean;\n  maskClosable: boolean;\n  onMask: Function;\n  onCancel: Function;\n  onOk: Function;\n  onClose: Function;\n  content: ReactNode;\n  showClose: boolean;\n  closeMask: boolean;\n  autoClose: boolean;\n  autoCloseTime: number;\n  isRenderHTML: boolean;\n  okText: string;\n  cancelText: string;\n  width: string | number;\n  children: ReactNode;\n  isDestroy: boolean;\n  keyboard: boolean;\n}\n\nconst Modal = (props: Partial<ModalProps>) => {\n  const {\n    mask = true,\n    footer,\n    children,\n    isRenderHTML,\n    title,\n    visible,\n    onCancel,\n    maskClosable = true,\n    onOk,\n    showCancel,\n    showClose = true,\n    onClose,\n    okText,\n    cancelText,\n    width = 520,\n    isDestroy = true,\n    keyboard = true,\n    onMask,\n    ...rest\n  } = props;\n\n  const [modalVisible, setModalVisible] = useState(false);\n\n  const keydownHandler = ({ key }) => {\n    switch (key) {\n      case 'Escape':\n        if (typeof onCancel === 'function' && keyboard) {\n          onCancel();\n        }\n        break;\n      default:\n    }\n  };\n\n  useEffect(() => {\n    if (typeof visible === 'boolean') {\n      setModalVisible(visible);\n    }\n  }, [visible]);\n\n  useEffect(() => {\n    document.addEventListener('keydown', keydownHandler);\n    return () => document.removeEventListener('keydown', keydownHandler);\n  });\n\n  // Set the width\n  const contentStyle: Partial<Record<'width', ModalProps['width']>> = {};\n  if (typeof width === 'number') {\n    contentStyle['width'] = width + 'px';\n  } else if (typeof width === 'string') {\n    contentStyle['width'] = width;\n  }\n\n  return isDestroy && !modalVisible ? null : (\n    <div\n      className=\"modal-container\"\n      {...rest}\n      style={{ display: modalVisible ? 'block' : 'none' }}\n    >\n      <div className=\"modal-wrapper\">\n        {mask ? (\n          <div\n            className=\"modal-mask\"\n            onClick={(e: SyntheticEvent) => {\n              if (maskClosable) {\n                if (typeof onMask === 'function') {\n                  return onMask(e);\n                }\n                if (typeof onCancel === 'function') {\n                  onCancel(e);\n                }\n              }\n            }}\n          />\n        ) : null}\n        <div className=\"modal-box\" style={contentStyle}>\n          <div className=\"modal-content\">\n            {showClose ? (\n              <div\n                className=\"modal-content-close\"\n                onClick={(e: SyntheticEvent) => {\n                  if (typeof onCancel === 'function') {\n                    onCancel(e);\n                  }\n                }}\n              >\n                <svg\n                  className=\"close-icon\"\n                  viewBox=\"0 0 1024 1024\"\n                  version=\"1.1\"\n                  xmlns=\"http://www.w3.org/2000/svg\"\n                  p-id=\"2217\"\n                >\n                  <path\n                    d=\"M546.942134 511.818772l327.456957-326.128977c9.617355-9.577423 9.648071-25.135361 0.070648-34.751692-9.577423-9.617355-25.137409-9.647048-34.750668-0.070648L512.119795 477.137729 184.520518 150.868479c-9.616331-9.577423-25.176316-9.545683-34.751692 0.070648-9.577423 9.616331-9.545683 25.174268 0.070648 34.751692l327.457981 326.127953-327.457981 326.128978c-9.616331 9.577423-9.647048 25.135361-0.070648 34.751692a24.496456 24.496456 0 0 0 17.41117 7.231702 24.500552 24.500552 0 0 0 17.340522-7.162078L512.119795 546.499816l327.599276 326.26925a24.492361 24.492361 0 0 0 17.340522 7.162078 24.5026 24.5026 0 0 0 17.41117-7.231702c9.577423-9.617355 9.545683-25.175292-0.070648-34.751692L546.942134 511.818772z\"\n                    fill=\"#bfbfbf\"\n                    p-id=\"2218\"\n                  ></path>\n                </svg>\n              </div>\n            ) : null}\n            {title ? <div className=\"modal-content-header\">{title}</div> : null}\n            <div className=\"modal-content-body\">\n              {isRenderHTML ? (\n                <div dangerouslySetInnerHTML={{ __html: String(children) }} />\n              ) : (\n                children\n              )}\n            </div>\n            {footer === null ? null : footer ? (\n              footer\n            ) : (\n              <div className=\"modal-content-footer\">\n                {showCancel ? (\n                  <button\n                    type=\"button\"\n                    className=\"modal-content-footer-button modal-content-footer-button-cancel\"\n                    onClick={(e: SyntheticEvent) => {\n                      if (typeof onCancel === 'function') {\n                        onCancel(e);\n                      }\n                    }}\n                  >\n                    {cancelText ? cancelText : '\u53d6\u6d88'}\n                  </button>\n                ) : null}\n                <button\n                  type=\"button\"\n                  className=\"modal-content-footer-button modal-content-footer-button-sure\"\n                  onClick={(e: SyntheticEvent) => {\n                    if (typeof onOk === 'function') {\n                      onOk(e);\n                    } else {\n                      if (typeof onCancel === 'function') {\n                        onCancel(e);\n                      }\n                    }\n                  }}\n                >\n                  {okText ? okText : '\u786e\u5b9a'}\n                </button>\n              </div>\n            )}\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nconst destroyFns: Array<() => void> = [];\nconst closeFns: Array<() => void> = [];\n\ninterface MethodModalProps extends ModalProps {}\nexport type ConfirmConfig = ModalProps | ((config: ModalProps) => ModalProps);\nexport type ReturnType = {\n  destroy: () => void;\n  close: () => void;\n  update: (updateConfig: ModalProps) => void;\n};\nexport type ModalType = (config: ModalProps) => ReturnType;\n\nModal.confirm = (config: Partial<MethodModalProps> | string) => {\n  const div = document.createElement('div');\n  document.body.appendChild(div);\n  const defaultConfig = {\n    visible: true,\n    showCancel: true,\n    onOk: () => destroy(),\n    onCancel: () => destroy(),\n    onMask: () => destroy(),\n  };\n  let currentConfig =\n    typeof config === 'object' && config\n      ? {\n          ...config,\n          ...defaultConfig,\n        }\n      : ({\n          content: config,\n          ...defaultConfig,\n        } as any);\n  function destroy() {\n    const unMountResult = ReactDOM.unmountComponentAtNode(div);\n    if (unMountResult && div.parentElement) {\n      div.parentElement.removeChild(div);\n    }\n    for (let i = 0, l = destroyFns.length; i < l; i++) {\n      const fn = destroyFns[i];\n      if (fn === close) {\n        destroyFns.splice(i, 1);\n        break;\n      }\n    }\n  }\n  function close() {\n    currentConfig = {\n      ...currentConfig,\n      visible: false,\n    };\n    render(currentConfig);\n  }\n  function render(props: MethodModalProps) {\n    setTimeout(() => {\n      ReactDOM.render(<Modal {...props}>{props.content}</Modal>, div);\n    });\n  }\n  function update(updateConfig: ConfirmConfig) {\n    if (typeof updateConfig === 'function') {\n      currentConfig = updateConfig(currentConfig);\n    } else {\n      currentConfig = {\n        ...currentConfig,\n        ...updateConfig,\n      };\n    }\n    render(currentConfig);\n  }\n  render(currentConfig);\n  closeFns.push(close);\n  destroyFns.push(destroy);\n  if (currentConfig.autoClose) {\n    let autoCloseTime = Number(currentConfig.autoCloseTime);\n    autoCloseTime = Number.isNaN(autoCloseTime)\n      ? 1000\n      : Math.min(10000, autoCloseTime);\n    setTimeout(() => {\n      destroy();\n    }, autoCloseTime);\n  }\n  return {\n    destroy,\n    close,\n    update,\n  };\n};\n\nModal.closeAll = () => {\n  closeFns.forEach((close: Function) => {\n    close && close();\n  });\n};\n\nModal.destroyAll = () => {\n  destroyFns.forEach((destroy: Function) => {\n    destroy && destroy();\n  });\n};\n\ntype GlobalModal = typeof Modal;\nexport { GlobalModal };\nexport default Modal;",
       Ee =
-        'import React, { useState } from \'react\';\nimport type { SyntheticEvent } from \'react\';\nimport \'./passwordRevealer.less\';\n\nexport interface PasswordRevealerProps extends Record<string, any> {\n  value: string;\n  onChange(v: string): void;\n  placeholder: string;\n}\n\nconst Eye = () => (\n  <svg\n    viewBox="64 64 896 896"\n    className="ant-password-suffix-icon"\n    data-icon="eye"\n    width="1em"\n    height="1em"\n    fill="currentColor"\n  >\n    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>\n  </svg>\n);\nconst EyeClose = () => (\n  <svg\n    viewBox="64 64 896 896"\n    data-icon="eye-invisible"\n    className="ant-password-suffix-icon"\n    width="1em"\n    height="1em"\n    fill="currentColor"\n  >\n    <path d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"></path>\n    <path d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"></path>\n  </svg>\n);\n\nconst PasswordRevealer = (props: Partial<PasswordRevealerProps>) => {\n  const {\n    value,\n    onChange,\n    placeholder = \'Please Input the password\',\n    ...rest\n  } = props;\n  const [isShown, setIsShown] = useState(false);\n  const [isFocus, setIsFocus] = useState(false);\n\n  const onChangeHandler = (e: SyntheticEvent) => {\n    const v = (e.target as HTMLInputElement).value;\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  return (\n    <span className={`ant-password${isFocus ? \' is-focused\' : \'\'}`} {...rest}>\n      <input\n        type={isShown ? \'text\' : \'password\'}\n        className="ant-password-input"\n        value={value}\n        onChange={onChangeHandler}\n        placeholder={placeholder}\n        onFocus={() => setIsFocus(true)}\n        onBlur={() => setIsFocus(false)}\n      />\n      <span\n        className="ant-password-suffix"\n        onClick={() => setIsShown(!isShown)}\n      >\n        {isShown ? <Eye /> : <EyeClose />}\n      </span>\n    </span>\n  );\n};\n\nexport default PasswordRevealer;',
+        "@black: rgba(0, 0, 0, 1);\n@baseSelector: modal;\n\n.@{baseSelector}-container {\n  .base-fixed {\n    inset: 0;\n    position: fixed;\n  }\n\n  .@{baseSelector}-mask {\n    height: 100%;\n    background-color: fade(@black, 65%);\n    .base-fixed();\n  }\n\n  .@{baseSelector}-wrapper {\n    .base-fixed();\n    overflow: auto;\n    outline: 0;\n    z-index: 1000;\n\n    .@{baseSelector}-box {\n      box-sizing: border-box;\n      padding: 0 0 24px;\n      color: fadeout(@black, 15%);\n      font-size: 14px;\n      font-variant: tabular-nums;\n      line-height: 1.5715;\n      list-style: none;\n      font-feature-settings: 'tnum';\n      pointer-events: none;\n      position: relative;\n      top: 100px;\n      width: auto;\n      max-width: calc(100vw - 32px);\n      margin: 0 auto;\n\n      .@{baseSelector}-content {\n        position: relative;\n        background-color: #fff;\n        background-clip: padding-box;\n        border: 0;\n        border-radius: 2px;\n        box-shadow: 0 3px 6px -4px fade(@black, 5%), 0 6px 16px fade(@black, 7%),\n          0 9px 28px 8px fade(@black, 9%);\n        pointer-events: auto;\n\n        &-header {\n          padding: 16px 24px;\n          color: fade(@black, 90%);\n          background: #fff;\n          border-bottom: 1px solid fade(@black, 6%);\n          border-radius: 2px 2px 0 0;\n          margin: 0;\n          font-weight: 500;\n          font-size: 16px;\n          line-height: 22px;\n          word-wrap: break-word;\n        }\n\n        &-body {\n          padding: 24px;\n          font-size: 14px;\n          line-height: 1.5715;\n          word-wrap: break-word;\n        }\n\n        &-footer {\n          padding: 10px 16px;\n          text-align: right;\n          background: 0 0;\n          border-top: 1px solid fadeout(@black, 94%);\n          border-radius: 0 0 2px 2px;\n\n          &-button {\n            line-height: 1.5715;\n            position: relative;\n            display: inline-block;\n            font-weight: 400;\n            white-space: nowrap;\n            text-align: center;\n            background-image: none;\n            border: 1px solid transparent;\n            box-shadow: 0 2px fadeout(@black, 95%);\n            cursor: pointer;\n            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n            -webkit-user-select: none;\n            -moz-user-select: none;\n            -ms-user-select: none;\n            user-select: none;\n            touch-action: manipulation;\n            height: 32px;\n            padding: 4px 15px;\n            font-size: 14px;\n            letter-spacing: 2px;\n            border-radius: 2px;\n            color: fade(@black, 97%);\n            border-color: #d9d9d9;\n            background: #fff;\n            border-radius: 4px;\n\n            &-cancel {\n              margin-right: 15px;\n\n              &:hover,\n              &:active {\n                border-color: #2499f1;\n                color: #2396ef;\n              }\n            }\n\n            &-sure {\n              background-color: #34a1f5;\n              border-color: #1e9af8;\n              color: #fff;\n\n              &:hover,\n              &:active {\n                background-color: #0f8ff1;\n                border-color: #1794f5;\n              }\n            }\n          }\n        }\n\n        &-close {\n          position: absolute;\n          top: 0;\n          right: 0;\n          z-index: 10;\n          padding: 0;\n          color: fadeout(@black, 75%);\n          font-weight: 700;\n          text-decoration: none;\n          background: 0 0;\n          border: 0;\n          outline: 0;\n          cursor: pointer;\n          width: 54px;\n          height: 54px;\n          font-size: 16px;\n          font-style: normal;\n          line-height: 54px;\n          text-align: center;\n          text-transform: none;\n          text-rendering: auto;\n          transition: color 0.3s;\n\n          & .close-icon {\n            width: 16px;\n            height: 16px;\n          }\n        }\n      }\n    }\n  }\n}",
       we =
-        "@baseSelector: ant-;\n\n.@{baseSelector}password {\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  transition: all 0.3s;\n  display: inline-flex;\n  padding: 4px 11px;\n  &-suffix {\n    margin-left: 4px;\n    display: flex;\n    flex: none;\n    align-items: center;\n    cursor: pointer;\n    &-icon {\n      &:hover {\n        color: rgba(0, 0, 0, 0.6);\n      }\n    }\n  }\n  &-input {\n    box-sizing: border-box;\n    margin: 0;\n    font-variant: tabular-nums;\n    list-style: none;\n    font-feature-settings: 'tnum';\n    position: relative;\n    display: inline-block;\n    width: 100%;\n    min-width: 0;\n    color: rgba(0, 0, 0, 0.85);\n    font-size: 14px;\n    outline: none;\n    line-height: 1.5715;\n    background-color: #fff;\n    background-image: none;\n    border: none;\n    border-radius: 2px;\n    transition: all 0.3s;\n  }\n  &.is-focused {\n    border-color: #40a9ff;\n  }\n}",
+        "import React, { useState } from 'react';\nimport Modal from './Modal';\nimport { Button, Space } from 'antd';\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const onCreate = () => {\n    Modal.confirm({\n      title: '\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898',\n      content: (\n        <>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        </>\n      ),\n    });\n  };\n  return (\n    <Space>\n      <Button onClick={() => setVisible(true)}>clicked me</Button>\n      <Button onClick={onCreate}>clicked me</Button>\n      <Modal\n        visible={visible}\n        onCancel={() => setVisible(false)}\n        title=\"\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898\"\n        showCancel\n        onOk={() => setVisible(false)}\n      >\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n      </Modal>\n    </Space>\n  );\n};\n\nexport default Demo;",
       ke =
-        "import React, { useState } from 'react';\nimport PasswordRevealer from './PasswordRevealer';\nconst Demo = () => {\n  const [value, setValue] = useState('');\n  const onChange = (v: string) => {\n    console.log(v);\n    setValue(v);\n  };\n  return (\n    <PasswordRevealer\n      placeholder=\"\u8bf7\u8f93\u5165\u5bc6\u7801\"\n      value={value}\n      onChange={onChange}\n    ></PasswordRevealer>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport PasswordRevealer from './PasswordRevealer';\nconst Demo = () => {\n  const [value, setValue] = useState('');\n  const onChange = (v: string) => {\n    console.log(v);\n    setValue(v);\n  };\n  return (\n    <PasswordRevealer\n      placeholder=\"Please Input the password\"\n      value={value}\n      onChange={onChange}\n    ></PasswordRevealer>\n  );\n};\n\nexport default Demo;",
       Ce =
-        'import React from \'react\';\nimport Select from \'./Select\';\nimport type { SelectProps } from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler: SelectProps[\'onChange\'] = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="please select"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="grapefruit" value="Grapefruit"></Option>\n        <Option label="lime" value="lime"></Option>\n        <Option label="coconut" value="coconut" disabled></Option>\n        <Option label="mango" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="please select"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="grapefruit" value="Grapefruit"></Option>\n        <Option label="lime" value="lime"></Option>\n        <Option label="coconut" value="coconut" disabled></Option>\n        <Option label="mango" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
+        'import React, { useState } from \'react\';\nimport type { SyntheticEvent } from \'react\';\nimport \'./passwordRevealer.less\';\n\nexport interface PasswordRevealerProps extends Record<string, any> {\n  value: string;\n  onChange(v: string): void;\n  placeholder: string;\n}\n\nconst Eye = () => (\n  <svg\n    viewBox="64 64 896 896"\n    className="ant-password-suffix-icon"\n    data-icon="eye"\n    width="1em"\n    height="1em"\n    fill="currentColor"\n  >\n    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>\n  </svg>\n);\nconst EyeClose = () => (\n  <svg\n    viewBox="64 64 896 896"\n    data-icon="eye-invisible"\n    className="ant-password-suffix-icon"\n    width="1em"\n    height="1em"\n    fill="currentColor"\n  >\n    <path d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"></path>\n    <path d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"></path>\n  </svg>\n);\n\nconst PasswordRevealer = (props: Partial<PasswordRevealerProps>) => {\n  const {\n    value,\n    onChange,\n    placeholder = \'Please Input the password\',\n    ...rest\n  } = props;\n  const [isShown, setIsShown] = useState(false);\n  const [isFocus, setIsFocus] = useState(false);\n\n  const onChangeHandler = (e: SyntheticEvent) => {\n    const v = (e.target as HTMLInputElement).value;\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  return (\n    <span className={`ant-password${isFocus ? \' is-focused\' : \'\'}`} {...rest}>\n      <input\n        type={isShown ? \'text\' : \'password\'}\n        className="ant-password-input"\n        value={value}\n        onChange={onChangeHandler}\n        placeholder={placeholder}\n        onFocus={() => setIsFocus(true)}\n        onBlur={() => setIsFocus(false)}\n      />\n      <span\n        className="ant-password-suffix"\n        onClick={() => setIsShown(!isShown)}\n      >\n        {isShown ? <Eye /> : <EyeClose />}\n      </span>\n    </span>\n  );\n};\n\nexport default PasswordRevealer;',
       Oe =
-        "import React, {\n  useState,\n  useEffect,\n  cloneElement,\n  createRef,\n  forwardRef,\n} from 'react';\nimport type { OptionValueProps } from './Option';\nimport classnames from '../../utils/classnames';\nimport useClickOutside from '../../utils/useClickOutside';\nimport Option from './Option';\nimport './select.less';\n\nexport interface SelectProps extends Record<string, any> {\n  disabled: boolean;\n  defaultValue: string;\n  value: string;\n  onChange(v: Partial<OptionValueProps>): void;\n  placeholder: string;\n  children: JSX.Element[] | JSX.Element;\n  allowClear: boolean;\n  labelProps: string;\n}\nconst ClearIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => {\n    const { onClick, ...rest } = props;\n    return (\n      <svg\n        className=\"ew-select-clear-icon\"\n        viewBox=\"0 0 1024 1024\"\n        version=\"1.1\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n        p-id=\"2381\"\n        ref={ref}\n        onClick={(e) => {\n          if (onClick) {\n            onClick(e);\n          }\n        }}\n        {...rest}\n      >\n        <path\n          d=\"M512 39.384615C250.092308 39.384615 39.384615 250.092308 39.384615 512s210.707692 472.615385 472.615385 472.615385 472.615385-210.707692 472.615385-472.615385S773.907692 39.384615 512 39.384615z m96.492308 488.369231l153.6 153.6c7.876923 7.876923 7.876923 19.692308 0 27.569231l-55.138462 55.138461c-7.876923 7.876923-19.692308 7.876923-27.569231 0L525.784615 610.461538c-7.876923-7.876923-19.692308-7.876923-27.56923 0l-153.6 153.6c-7.876923 7.876923-19.692308 7.876923-27.569231 0L261.907692 708.923077c-7.876923-7.876923-7.876923-19.692308 0-27.569231l153.6-153.6c7.876923-7.876923 7.876923-19.692308 0-27.569231l-155.56923-155.56923c-7.876923-7.876923-7.876923-19.692308 0-27.569231l55.138461-55.138462c7.876923-7.876923 19.692308-7.876923 27.569231 0l155.569231 155.569231c7.876923 7.876923 19.692308 7.876923 27.56923 0l153.6-153.6c7.876923-7.876923 19.692308-7.876923 27.569231 0l55.138462 55.138462c7.876923 7.876923 7.876923 19.692308 0 27.56923l-153.6 153.6c-5.907692 7.876923-5.907692 19.692308 0 27.569231z\"\n          p-id=\"2382\"\n          fill=\"#dbdbdb\"\n          className=\"ew-select-clear-icon-path\"\n        ></path>\n      </svg>\n    );\n  },\n);\nconst ArrowIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => (\n    <svg\n      className=\"ew-select-arrow-icon\"\n      viewBox=\"0 0 1024 1024\"\n      version=\"1.1\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      p-id=\"2216\"\n      ref={ref}\n      {...props}\n    >\n      <path\n        d=\"M512 714.666667c-8.533333 0-17.066667-2.133333-23.466667-8.533334l-341.333333-341.333333c-12.8-12.8-12.8-32 0-44.8 12.8-12.8 32-12.8 44.8 0l320 317.866667 317.866667-320c12.8-12.8 32-12.8 44.8 0 12.8 12.8 12.8 32 0 44.8L533.333333 704c-4.266667 8.533333-12.8 10.666667-21.333333 10.666667z\"\n        p-id=\"2217\"\n      ></path>\n    </svg>\n  ),\n);\nconst Select = (\n  props: Partial<Omit<SelectProps, 'children'>> & Pick<SelectProps, 'children'>,\n) => {\n  const {\n    disabled,\n    defaultValue,\n    value,\n    onChange,\n    placeholder = '\u8bf7\u8f93\u5165',\n    allowClear = true,\n    children,\n    labelProps = 'label',\n    ...rest\n  } = props;\n  const dropdownRef = createRef<HTMLDivElement>();\n  const clearIconRef = createRef<HTMLOrSVGElement>();\n  const [selectValue, setSelectValue] = useState<string | undefined>(\n    defaultValue,\n  );\n  const [option, setOption] = useState<Partial<OptionValueProps>>({});\n  const [visible, setVisible] = useState(false);\n  const [showClear, setShowClear] = useState(false);\n\n  const optionChildren = Array.isArray(children)\n    ? children\n    : [children]?.filter((item) => item?.type?.name === 'Option') || [];\n\n  useEffect(() => {\n    if (typeof value === 'string') {\n      setSelectValue(value);\n    }\n  }, [value]);\n\n  const onChangeHandler = (v: Partial<OptionValueProps>) => {\n    setOption(v);\n    setSelectValue(v.value);\n    if (!disabled) {\n      setVisible(false);\n      setShowClear(false);\n    }\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  const onClearHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setOption({ label: '', value: '' });\n    setSelectValue('');\n  };\n  const selectClassNames = {\n    'ew-select': true,\n    'ew-select-disabled': disabled,\n  };\n  const valueClassNames = {\n    'ew-select-selector': true,\n    'ew-select-selector-placeholder': !selectValue,\n  };\n  useClickOutside(dropdownRef, () => {\n    if (!disabled) {\n      setVisible(false);\n    }\n  });\n  return (\n    <div\n      className={classnames(selectClassNames)}\n      {...rest}\n      ref={dropdownRef}\n      onMouseEnter={() => {\n        if (!disabled) {\n          setShowClear(true);\n        }\n      }}\n      onMouseLeave={() => {\n        if (!disabled) {\n          setShowClear(false);\n        }\n      }}\n    >\n      <div\n        className={classnames(valueClassNames)}\n        placeholder={placeholder}\n        onClick={() => {\n          if (!disabled) {\n            setVisible(!visible);\n          }\n        }}\n      >\n        <span className=\"ew-select-selector-value\">{option[labelProps]}</span>\n      </div>\n      <div className=\"ew-select-arrow\">\n        {allowClear && selectValue && showClear ? (\n          <ClearIcon onClick={onClearHandler} ref={clearIconRef} />\n        ) : (\n          <ArrowIcon\n            onClick={() => {\n              if (!disabled) {\n                setVisible(!visible);\n              }\n            }}\n          />\n        )}\n      </div>\n      <div\n        className=\"ew-select-dropdown\"\n        style={{ display: visible ? 'block' : 'none' }}\n      >\n        {optionChildren.map((item, index) =>\n          cloneElement(item, {\n            onOptionChange: onChangeHandler,\n            defaultValue: selectValue,\n            key: item.key || String(index + 1),\n            active: item.props.value === selectValue,\n          }),\n        )}\n      </div>\n    </div>\n  );\n};\nSelect.Option = Option;\nexport default Select;",
+        "@baseSelector: ant-;\n\n.@{baseSelector}password {\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  transition: all 0.3s;\n  display: inline-flex;\n  padding: 4px 11px;\n  &-suffix {\n    margin-left: 4px;\n    display: flex;\n    flex: none;\n    align-items: center;\n    cursor: pointer;\n    &-icon {\n      &:hover {\n        color: rgba(0, 0, 0, 0.6);\n      }\n    }\n  }\n  &-input {\n    box-sizing: border-box;\n    margin: 0;\n    font-variant: tabular-nums;\n    list-style: none;\n    font-feature-settings: 'tnum';\n    position: relative;\n    display: inline-block;\n    width: 100%;\n    min-width: 0;\n    color: rgba(0, 0, 0, 0.85);\n    font-size: 14px;\n    outline: none;\n    line-height: 1.5715;\n    background-color: #fff;\n    background-image: none;\n    border: none;\n    border-radius: 2px;\n    transition: all 0.3s;\n  }\n  &.is-focused {\n    border-color: #40a9ff;\n  }\n}",
       Se =
-        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
+        "import React, { useState } from 'react';\nimport PasswordRevealer from './PasswordRevealer';\nconst Demo = () => {\n  const [value, setValue] = useState('');\n  const onChange = (v: string) => {\n    console.log(v);\n    setValue(v);\n  };\n  return (\n    <PasswordRevealer\n      placeholder=\"\u8bf7\u8f93\u5165\u5bc6\u7801\"\n      value={value}\n      onChange={onChange}\n    ></PasswordRevealer>\n  );\n};\n\nexport default Demo;",
       je =
-        "import React, { useState, useEffect } from 'react';\nimport type { ReactNode } from 'react';\nimport classnames from '../../utils/classnames';\nexport interface OptionValueProps {\n  label: string;\n  value: string;\n}\nexport interface OptionProps extends Record<string, any>, OptionValueProps {\n  disabled: boolean;\n  children: ReactNode;\n  defaultValue: string;\n  onOptionChange(v: Partial<OptionValueProps>): void;\n  active: boolean;\n}\nconst Option = (props: Partial<OptionProps>) => {\n  const {\n    label,\n    value,\n    disabled,\n    defaultValue,\n    children,\n    onOptionChange,\n    active,\n    ...rest\n  } = props;\n  const [currentValue, setCurrentValue] = useState<string | undefined>(\n    defaultValue,\n  );\n\n  const classNames = {\n    'ew-select-dropdown-option': true,\n    'ew-select-dropdown-option-disabled': disabled,\n    active: active,\n  };\n  const onChangeHandler = (options: Partial<OptionValueProps>) => {\n    if (disabled) {\n      return;\n    }\n\n    setCurrentValue(options.value);\n    if (onOptionChange) {\n      onOptionChange(options);\n    }\n  };\n\n  useEffect(() => {\n    if (currentValue) {\n      if (onOptionChange) {\n        onOptionChange({ label, value });\n      }\n    }\n  }, [currentValue]);\n  return (\n    <div\n      className={classnames(classNames)}\n      data-value={currentValue}\n      {...rest}\n      onClick={() => onChangeHandler({ label, value })}\n    >\n      {children ? children : label ? label : ''}\n    </div>\n  );\n};\nexport default Option;",
+        'import React from \'react\';\nimport Select from \'./Select\';\nimport type { SelectProps } from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler: SelectProps[\'onChange\'] = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="please select"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="grapefruit" value="Grapefruit"></Option>\n        <Option label="lime" value="lime"></Option>\n        <Option label="coconut" value="coconut" disabled></Option>\n        <Option label="mango" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="please select"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="grapefruit" value="Grapefruit"></Option>\n        <Option label="lime" value="lime"></Option>\n        <Option label="coconut" value="coconut" disabled></Option>\n        <Option label="mango" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
       Te =
-        "@prefix: ew-;\n\n.@{prefix}select {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: rgba(0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  cursor: pointer;\n  border-radius: 4px;\n  min-width: 120px;\n\n  &-disabled {\n    .@{prefix}select-selector {\n      background: #f5f5f5;\n      cursor: not-allowed;\n      color: rgba(0, 0, 0, 0.25);\n    }\n\n    .@{prefix}select-arrow {\n      cursor: not-allowed;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-selector,\n  &:not(.@{prefix}select-disabled):active &-selector {\n    border-color: #2396ef;\n  }\n\n  &-selector {\n    position: relative;\n    background-color: #fff;\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    width: 100%;\n    height: 32px;\n    padding: 0 11px;\n\n    &&-placeholder::after {\n      content: attr(placeholder);\n      display: inline-block;\n      padding-right: 18px;\n      color: rgba(0, 0, 0, 0.35);\n      position: relative;\n      left: -15px;\n    }\n\n    &-value {\n      padding-right: 18px;\n      line-height: 30px;\n      position: relative;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-value {\n    border-color: #2396ef;\n    border-right-width: 1px;\n  }\n\n  &-arrow {\n    display: inline-block;\n    color: inherit;\n    font-style: normal;\n    line-height: 0;\n    text-transform: none;\n    vertical-align: -0.125em;\n    text-rendering: optimizelegibility;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    position: absolute;\n    top: 50%;\n    right: 11px;\n    display: flex;\n    align-items: center;\n    margin-top: -6px;\n    font-size: 12px;\n    line-height: 1;\n    text-align: center;\n\n    &-icon,\n    .@{prefix}select-clear-icon {\n      width: 16px;\n      height: 16px;\n      display: inline-block;\n      color: rgba(0, 0, 0, 0.25);\n    }\n  }\n\n  .@{prefix}select-clear-icon {\n    position: relative;\n    top: -2px;\n  }\n\n  &-dropdown {\n    margin: 0;\n    color: rgba(0, 0, 0.85);\n    font-variant: tabular-nums;\n    line-height: 1.5715;\n    position: absolute;\n    z-index: 1050;\n    box-sizing: border-box;\n    padding: 4px 0;\n    overflow: hidden;\n    font-size: 14px;\n    font-variant: initial;\n    background-color: #fff;\n    border-radius: 2px;\n    outline: none;\n    width: 100%;\n    top: 40px;\n    box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014,\n      0 9px 28px 8px #0000000d;\n\n    &-option {\n      position: relative;\n      display: flex;\n      min-height: 32px;\n      padding: 5px 12px;\n      color: rgba(0, 0, 0.85);\n      font-weight: 400;\n      font-size: 14px;\n      line-height: 22px;\n      cursor: pointer;\n      transition: background 0.3s ease;\n      flex: auto;\n      overflow: hidden;\n      white-space: nowrap;\n      text-overflow: ellipsis;\n\n      &-disabled {\n        color: rgba(0, 0, 0, 0.25);\n        cursor: not-allowed;\n      }\n\n      &:not(:last-of-type) {\n        margin-bottom: 8px;\n      }\n\n      &:not(&-disabled):hover {\n        background-color: #f5f5f5;\n      }\n\n      &:not(&-disabled).active {\n        background-color: #e6f7ff;\n      }\n    }\n  }\n}",
+        "import React, {\n  useState,\n  useEffect,\n  cloneElement,\n  createRef,\n  forwardRef,\n} from 'react';\nimport type { OptionValueProps } from './Option';\nimport classnames from '../../utils/classnames';\nimport useClickOutside from '../../utils/useClickOutside';\nimport Option from './Option';\nimport './select.less';\n\nexport interface SelectProps extends Record<string, any> {\n  disabled: boolean;\n  defaultValue: string;\n  value: string;\n  onChange(v: Partial<OptionValueProps>): void;\n  placeholder: string;\n  children: JSX.Element[] | JSX.Element;\n  allowClear: boolean;\n  labelProps: string;\n}\nconst ClearIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => {\n    const { onClick, ...rest } = props;\n    return (\n      <svg\n        className=\"ew-select-clear-icon\"\n        viewBox=\"0 0 1024 1024\"\n        version=\"1.1\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n        p-id=\"2381\"\n        ref={ref}\n        onClick={(e) => {\n          if (onClick) {\n            onClick(e);\n          }\n        }}\n        {...rest}\n      >\n        <path\n          d=\"M512 39.384615C250.092308 39.384615 39.384615 250.092308 39.384615 512s210.707692 472.615385 472.615385 472.615385 472.615385-210.707692 472.615385-472.615385S773.907692 39.384615 512 39.384615z m96.492308 488.369231l153.6 153.6c7.876923 7.876923 7.876923 19.692308 0 27.569231l-55.138462 55.138461c-7.876923 7.876923-19.692308 7.876923-27.569231 0L525.784615 610.461538c-7.876923-7.876923-19.692308-7.876923-27.56923 0l-153.6 153.6c-7.876923 7.876923-19.692308 7.876923-27.569231 0L261.907692 708.923077c-7.876923-7.876923-7.876923-19.692308 0-27.569231l153.6-153.6c7.876923-7.876923 7.876923-19.692308 0-27.569231l-155.56923-155.56923c-7.876923-7.876923-7.876923-19.692308 0-27.569231l55.138461-55.138462c7.876923-7.876923 19.692308-7.876923 27.569231 0l155.569231 155.569231c7.876923 7.876923 19.692308 7.876923 27.56923 0l153.6-153.6c7.876923-7.876923 19.692308-7.876923 27.569231 0l55.138462 55.138462c7.876923 7.876923 7.876923 19.692308 0 27.56923l-153.6 153.6c-5.907692 7.876923-5.907692 19.692308 0 27.569231z\"\n          p-id=\"2382\"\n          fill=\"#dbdbdb\"\n          className=\"ew-select-clear-icon-path\"\n        ></path>\n      </svg>\n    );\n  },\n);\nconst ArrowIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => (\n    <svg\n      className=\"ew-select-arrow-icon\"\n      viewBox=\"0 0 1024 1024\"\n      version=\"1.1\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      p-id=\"2216\"\n      ref={ref}\n      {...props}\n    >\n      <path\n        d=\"M512 714.666667c-8.533333 0-17.066667-2.133333-23.466667-8.533334l-341.333333-341.333333c-12.8-12.8-12.8-32 0-44.8 12.8-12.8 32-12.8 44.8 0l320 317.866667 317.866667-320c12.8-12.8 32-12.8 44.8 0 12.8 12.8 12.8 32 0 44.8L533.333333 704c-4.266667 8.533333-12.8 10.666667-21.333333 10.666667z\"\n        p-id=\"2217\"\n      ></path>\n    </svg>\n  ),\n);\nconst Select = (\n  props: Partial<Omit<SelectProps, 'children'>> & Pick<SelectProps, 'children'>,\n) => {\n  const {\n    disabled,\n    defaultValue,\n    value,\n    onChange,\n    placeholder = '\u8bf7\u8f93\u5165',\n    allowClear = true,\n    children,\n    labelProps = 'label',\n    ...rest\n  } = props;\n  const dropdownRef = createRef<HTMLDivElement>();\n  const clearIconRef = createRef<HTMLOrSVGElement>();\n  const [selectValue, setSelectValue] = useState<string | undefined>(\n    defaultValue,\n  );\n  const [option, setOption] = useState<Partial<OptionValueProps>>({});\n  const [visible, setVisible] = useState(false);\n  const [showClear, setShowClear] = useState(false);\n\n  const optionChildren = Array.isArray(children)\n    ? children\n    : [children]?.filter((item) => item?.type?.name === 'Option') || [];\n\n  useEffect(() => {\n    if (typeof value === 'string') {\n      setSelectValue(value);\n    }\n  }, [value]);\n\n  const onChangeHandler = (v: Partial<OptionValueProps>) => {\n    setOption(v);\n    setSelectValue(v.value);\n    if (!disabled) {\n      setVisible(false);\n      setShowClear(false);\n    }\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  const onClearHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setOption({ label: '', value: '' });\n    setSelectValue('');\n  };\n  const selectClassNames = {\n    'ew-select': true,\n    'ew-select-disabled': disabled,\n  };\n  const valueClassNames = {\n    'ew-select-selector': true,\n    'ew-select-selector-placeholder': !selectValue,\n  };\n  useClickOutside(dropdownRef, () => {\n    if (!disabled) {\n      setVisible(false);\n    }\n  });\n  return (\n    <div\n      className={classnames(selectClassNames)}\n      {...rest}\n      ref={dropdownRef}\n      onMouseEnter={() => {\n        if (!disabled) {\n          setShowClear(true);\n        }\n      }}\n      onMouseLeave={() => {\n        if (!disabled) {\n          setShowClear(false);\n        }\n      }}\n    >\n      <div\n        className={classnames(valueClassNames)}\n        placeholder={placeholder}\n        onClick={() => {\n          if (!disabled) {\n            setVisible(!visible);\n          }\n        }}\n      >\n        <span className=\"ew-select-selector-value\">{option[labelProps]}</span>\n      </div>\n      <div className=\"ew-select-arrow\">\n        {allowClear && selectValue && showClear ? (\n          <ClearIcon onClick={onClearHandler} ref={clearIconRef} />\n        ) : (\n          <ArrowIcon\n            onClick={() => {\n              if (!disabled) {\n                setVisible(!visible);\n              }\n            }}\n          />\n        )}\n      </div>\n      <div\n        className=\"ew-select-dropdown\"\n        style={{ display: visible ? 'block' : 'none' }}\n      >\n        {optionChildren.map((item, index) =>\n          cloneElement(item, {\n            onOptionChange: onChangeHandler,\n            defaultValue: selectValue,\n            key: item.key || String(index + 1),\n            active: item.props.value === selectValue,\n          }),\n        )}\n      </div>\n    </div>\n  );\n};\nSelect.Option = Option;\nexport default Select;",
       Pe =
-        'import React from \'react\';\nimport Select from \'./Select\';\nimport type { SelectProps } from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler: SelectProps[\'onChange\'] = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
-      Re =
-        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['name1', 'name2', 'name3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
-      Ie =
-        "import { css } from '@emotion/css';\nimport React from 'react';\n\ninterface DataListProps {\n  data: string[];\n  isOrdered: boolean;\n  isBordered: boolean;\n}\nconst SimpleStyleDataList = css`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-size: 14px;\n  line-height: 1.5715;\n  list-style: none;\n  position: relative;\n  &.bordered {\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n  }\n`;\nconst SimpleDataListItem = css`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 24px;\n  color: rgba(0, 0, 0, 0.85);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  &:last-of-type {\n    border-bottom: 0;\n  }\n`;\nconst SimpleDataList = (props: Partial<DataListProps>) => {\n  const { data, isOrdered = false, isBordered = true } = props;\n  const List = data?.map((val, index) => (\n    <li className={SimpleDataListItem} key={`${val}-${index}`}>\n      {val}\n    </li>\n  ));\n  const containerClassName = `${SimpleStyleDataList}${\n    isBordered ? ' bordered' : ''\n  }`;\n  return isOrdered ? (\n    <ol className={containerClassName}>{List}</ol>\n  ) : (\n    <ul className={containerClassName}>{List}</ul>\n  );\n};\n\nexport default SimpleDataList;",
-      Ne =
-        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['\u59d3\u540d1', '\u59d3\u540d2', '\u59d3\u540d3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
-      Ae =
-        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
-      Me =
-        'import React from \'react\';\nimport \'./simpleDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleDataTable = (props: Partial<SimpleDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {data?.map((item) => (\n          <tr key={item.key} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleDataTable;',
-      Le =
-        '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
-      De =
-        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
-      _e =
-        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
-      ze =
-        'import React from \'react\';\nimport \'./SimpleMappedDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleMappedDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleMappedDataTable = (props: Partial<SimpleMappedDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n\n  let filteredData = data?.map((v) =>\n    Object.keys(v)\n      .filter((k) => columns?.some((col) => col.dataIndex === k))\n      .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n  ) as DataProps[];\n\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {filteredData?.map((item, index) => (\n          <tr key={`${index}_${index}`} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleMappedDataTable;',
-      Fe =
-        '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
-      Be =
-        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
-      Ue =
-        "import React from 'react';\nimport Slider from './Slider';\n\nconst Demo = () => {\n  return <Slider></Slider>;\n};\n\nexport default Demo;",
-      Ve =
-        "import React from 'react';\nimport './slider.less';\nimport classnames from '../../utils/classnames';\n\nexport interface SliderProps extends Record<string, any> {\n  direction: 'horizontal' | 'vertical';\n  min: number;\n  max: number;\n  step: number;\n  disabled: boolean;\n  value: number;\n}\n\nconst Slider = (props: Partial<SliderProps>) => {\n  const { direction = 'horizontal' } = props;\n\n  const prefixClasses = {\n    'ew-slider': true,\n    [`ew-slider-${direction}`]: direction,\n  };\n\n  return (\n    <div className={classnames(prefixClasses)}>\n      <div className=\"ew-slider-rail\"></div>\n      <div className=\"ew-slider-track\"></div>\n      <div className=\"ew-slider-step\"></div>\n      <div className=\"ew-slider-handle\"></div>\n    </div>\n  );\n};\n\nexport default Slider;",
-      He =
-        "@prefix: ew-;\n\n.@{prefix}slider {\n  box-sizing: border-box;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  height: 12px;\n  margin: 10px 6px;\n  padding: 4px 0;\n  cursor: pointer;\n\n  &-rail {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background-color: #f5f5f5;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-track {\n    position: absolute;\n    height: 4px;\n    background-color: #2396ef;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-step {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background: 0 0;\n  }\n}",
-      qe =
-        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        Load image\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`Error ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <img\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n          style={{\n            display: 'block',\n            marginTop: 10,\n            borderRadius: 5,\n            maxWidth: '100%',\n          }}\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
-      We =
-        "import { useReducer } from 'react';\nexport type StateType = {\n  loading: boolean;\n  value: any;\n  error: any;\n};\nexport type ActionType = Partial<StateType> & { type: string };\nexport type RunType = (args: unknown) => Promise<void>;\nconst useAsync = (handler: Function) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n  const stateReducer = (_: any, action: ActionType) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args: unknown) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
-      $e =
-        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`\u9519\u8bef ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <img\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n          style={{\n            display: 'block',\n            marginTop: 10,\n            borderRadius: 5,\n            maxWidth: '100%',\n          }}\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
-      Ge =
-        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      Scroll locked! <br />\n      <Button onClick={onCancel}>Click me to unlock</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
-      Ke =
-        "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  // see https://zhuanlan.zhihu.com/p/147173241\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container!).overflow;\n    container!.style.overflow = 'hidden';\n    return () => {\n      container!.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
-      Ye =
-        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
-      Ze =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click inside this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox\n      onClickInside={() =>\n        Modal.confirm({\n          content: 'click inside',\n          cancelText: 'Cancel',\n          okText: 'Ok',\n        })\n      }\n    ></ClickBox>\n  );\n};\n\nexport default Demo;",
-      Xe =
-        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
-      Je =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5185\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox onClickInside={() => Modal.confirm('\u70b9\u51fb\u4e86\u8be5\u533a\u57df\u5185')}></ClickBox>\n  );\n};\n\nexport default Demo;",
-      Qe =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click out of this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('click outside')}></ClickBox>;\n};\n\nexport default Demo;",
-      et =
         "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
+      Ie =
+        "import React, { useState, useEffect } from 'react';\nimport type { ReactNode } from 'react';\nimport classnames from '../../utils/classnames';\nexport interface OptionValueProps {\n  label: string;\n  value: string;\n}\nexport interface OptionProps extends Record<string, any>, OptionValueProps {\n  disabled: boolean;\n  children: ReactNode;\n  defaultValue: string;\n  onOptionChange(v: Partial<OptionValueProps>): void;\n  active: boolean;\n}\nconst Option = (props: Partial<OptionProps>) => {\n  const {\n    label,\n    value,\n    disabled,\n    defaultValue,\n    children,\n    onOptionChange,\n    active,\n    ...rest\n  } = props;\n  const [currentValue, setCurrentValue] = useState<string | undefined>(\n    defaultValue,\n  );\n\n  const classNames = {\n    'ew-select-dropdown-option': true,\n    'ew-select-dropdown-option-disabled': disabled,\n    active: active,\n  };\n  const onChangeHandler = (options: Partial<OptionValueProps>) => {\n    if (disabled) {\n      return;\n    }\n\n    setCurrentValue(options.value);\n    if (onOptionChange) {\n      onOptionChange(options);\n    }\n  };\n\n  useEffect(() => {\n    if (currentValue) {\n      if (onOptionChange) {\n        onOptionChange({ label, value });\n      }\n    }\n  }, [currentValue]);\n  return (\n    <div\n      className={classnames(classNames)}\n      data-value={currentValue}\n      {...rest}\n      onClick={() => onChangeHandler({ label, value })}\n    >\n      {children ? children : label ? label : ''}\n    </div>\n  );\n};\nexport default Option;",
+      Re =
+        "@prefix: ew-;\n\n.@{prefix}select {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: rgba(0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  cursor: pointer;\n  border-radius: 4px;\n  min-width: 120px;\n\n  &-disabled {\n    .@{prefix}select-selector {\n      background: #f5f5f5;\n      cursor: not-allowed;\n      color: rgba(0, 0, 0, 0.25);\n    }\n\n    .@{prefix}select-arrow {\n      cursor: not-allowed;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-selector,\n  &:not(.@{prefix}select-disabled):active &-selector {\n    border-color: #2396ef;\n  }\n\n  &-selector {\n    position: relative;\n    background-color: #fff;\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    width: 100%;\n    height: 32px;\n    padding: 0 11px;\n\n    &&-placeholder::after {\n      content: attr(placeholder);\n      display: inline-block;\n      padding-right: 18px;\n      color: rgba(0, 0, 0, 0.35);\n      position: relative;\n      left: -15px;\n    }\n\n    &-value {\n      padding-right: 18px;\n      line-height: 30px;\n      position: relative;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-value {\n    border-color: #2396ef;\n    border-right-width: 1px;\n  }\n\n  &-arrow {\n    display: inline-block;\n    color: inherit;\n    font-style: normal;\n    line-height: 0;\n    text-transform: none;\n    vertical-align: -0.125em;\n    text-rendering: optimizelegibility;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    position: absolute;\n    top: 50%;\n    right: 11px;\n    display: flex;\n    align-items: center;\n    margin-top: -6px;\n    font-size: 12px;\n    line-height: 1;\n    text-align: center;\n\n    &-icon,\n    .@{prefix}select-clear-icon {\n      width: 16px;\n      height: 16px;\n      display: inline-block;\n      color: rgba(0, 0, 0, 0.25);\n    }\n  }\n\n  .@{prefix}select-clear-icon {\n    position: relative;\n    top: -2px;\n  }\n\n  &-dropdown {\n    margin: 0;\n    color: rgba(0, 0, 0.85);\n    font-variant: tabular-nums;\n    line-height: 1.5715;\n    position: absolute;\n    z-index: 1050;\n    box-sizing: border-box;\n    padding: 4px 0;\n    overflow: hidden;\n    font-size: 14px;\n    font-variant: initial;\n    background-color: #fff;\n    border-radius: 2px;\n    outline: none;\n    width: 100%;\n    top: 40px;\n    box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014,\n      0 9px 28px 8px #0000000d;\n\n    &-option {\n      position: relative;\n      display: flex;\n      min-height: 32px;\n      padding: 5px 12px;\n      color: rgba(0, 0, 0.85);\n      font-weight: 400;\n      font-size: 14px;\n      line-height: 22px;\n      cursor: pointer;\n      transition: background 0.3s ease;\n      flex: auto;\n      overflow: hidden;\n      white-space: nowrap;\n      text-overflow: ellipsis;\n\n      &-disabled {\n        color: rgba(0, 0, 0, 0.25);\n        cursor: not-allowed;\n      }\n\n      &:not(:last-of-type) {\n        margin-bottom: 8px;\n      }\n\n      &:not(&-disabled):hover {\n        background-color: #f5f5f5;\n      }\n\n      &:not(&-disabled).active {\n        background-color: #e6f7ff;\n      }\n    }\n  }\n}",
+      Ne =
+        'import React from \'react\';\nimport Select from \'./Select\';\nimport type { SelectProps } from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler: SelectProps[\'onChange\'] = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
+      Ae =
+        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['name1', 'name2', 'name3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
+      Me =
+        "import { css } from '@emotion/css';\nimport React from 'react';\n\ninterface DataListProps {\n  data: string[];\n  isOrdered: boolean;\n  isBordered: boolean;\n}\nconst SimpleStyleDataList = css`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-size: 14px;\n  line-height: 1.5715;\n  list-style: none;\n  position: relative;\n  &.bordered {\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n  }\n`;\nconst SimpleDataListItem = css`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 24px;\n  color: rgba(0, 0, 0, 0.85);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  &:last-of-type {\n    border-bottom: 0;\n  }\n`;\nconst SimpleDataList = (props: Partial<DataListProps>) => {\n  const { data, isOrdered = false, isBordered = true } = props;\n  const List = data?.map((val, index) => (\n    <li className={SimpleDataListItem} key={`${val}-${index}`}>\n      {val}\n    </li>\n  ));\n  const containerClassName = `${SimpleStyleDataList}${\n    isBordered ? ' bordered' : ''\n  }`;\n  return isOrdered ? (\n    <ol className={containerClassName}>{List}</ol>\n  ) : (\n    <ul className={containerClassName}>{List}</ul>\n  );\n};\n\nexport default SimpleDataList;",
+      Le =
+        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['\u59d3\u540d1', '\u59d3\u540d2', '\u59d3\u540d3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
+      De =
+        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
+      _e =
+        'import React from \'react\';\nimport \'./simpleDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleDataTable = (props: Partial<SimpleDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {data?.map((item) => (\n          <tr key={item.key} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleDataTable;',
+      ze =
+        '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
+      Fe =
+        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
+      Be =
+        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
+      Ue =
+        'import React from \'react\';\nimport \'./SimpleMappedDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleMappedDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleMappedDataTable = (props: Partial<SimpleMappedDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n\n  let filteredData = data?.map((v) =>\n    Object.keys(v)\n      .filter((k) => columns?.some((col) => col.dataIndex === k))\n      .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n  ) as DataProps[];\n\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {filteredData?.map((item, index) => (\n          <tr key={`${index}_${index}`} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleMappedDataTable;',
+      Ve =
+        '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
+      He =
+        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
+      qe =
+        "import React from 'react';\nimport Slider from './Slider';\n\nconst Demo = () => {\n  return <Slider></Slider>;\n};\n\nexport default Demo;",
+      We =
+        "import React from 'react';\nimport './slider.less';\nimport classnames from '../../utils/classnames';\n\nexport interface SliderProps extends Record<string, any> {\n  direction: 'horizontal' | 'vertical';\n  min: number;\n  max: number;\n  step: number;\n  disabled: boolean;\n  value: number;\n}\n\nconst Slider = (props: Partial<SliderProps>) => {\n  const { direction = 'horizontal' } = props;\n\n  const prefixClasses = {\n    'ew-slider': true,\n    [`ew-slider-${direction}`]: direction,\n  };\n\n  return (\n    <div className={classnames(prefixClasses)}>\n      <div className=\"ew-slider-rail\"></div>\n      <div className=\"ew-slider-track\"></div>\n      <div className=\"ew-slider-step\"></div>\n      <div className=\"ew-slider-handle\"></div>\n    </div>\n  );\n};\n\nexport default Slider;",
+      $e =
+        "@prefix: ew-;\n\n.@{prefix}slider {\n  box-sizing: border-box;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  height: 12px;\n  margin: 10px 6px;\n  padding: 4px 0;\n  cursor: pointer;\n\n  &-rail {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background-color: #f5f5f5;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-track {\n    position: absolute;\n    height: 4px;\n    background-color: #2396ef;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-step {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background: 0 0;\n  }\n}",
+      Ge =
+        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        Load image\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`Error ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <img\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n          style={{\n            display: 'block',\n            marginTop: 10,\n            borderRadius: 5,\n            maxWidth: '100%',\n          }}\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+      Ke =
+        "import { useReducer } from 'react';\nexport type StateType = {\n  loading: boolean;\n  value: any;\n  error: any;\n};\nexport type ActionType = Partial<StateType> & { type: string };\nexport type RunType = (args: unknown) => Promise<void>;\nconst useAsync = (handler: Function) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n  const stateReducer = (_: any, action: ActionType) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args: unknown) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
+      Ye =
+        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`\u9519\u8bef ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <img\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n          style={{\n            display: 'block',\n            marginTop: 10,\n            borderRadius: 5,\n            maxWidth: '100%',\n          }}\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+      Ze =
+        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      Scroll locked! <br />\n      <Button onClick={onCancel}>Click me to unlock</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+      Xe =
+        "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  // see https://zhuanlan.zhihu.com/p/147173241\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container!).overflow;\n    container!.style.overflow = 'hidden';\n    return () => {\n      container!.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
+      Je =
+        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+      Qe =
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click inside this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox\n      onClickInside={() =>\n        Modal.confirm({\n          content: 'click inside',\n          cancelText: 'Cancel',\n          okText: 'Ok',\n        })\n      }\n    ></ClickBox>\n  );\n};\n\nexport default Demo;",
+      et =
+        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
       tt =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5916\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('\u70b9\u51fb\u4e86\u533a\u57df\u4e4b\u5916')}></ClickBox>;\n};\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5185\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox onClickInside={() => Modal.confirm('\u70b9\u51fb\u4e86\u8be5\u533a\u57df\u5185')}></ClickBox>\n  );\n};\n\nexport default Demo;",
       nt =
-        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      'Component did mount, get the element:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click out of this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('click outside')}></ClickBox>;\n};\n\nexport default Demo;",
       rt =
-        "import { useEffect } from 'react';\nconst useComponentDidMount = (onMountHandler: Function) => {\n  useEffect(() => {\n    onMountHandler();\n  }, []);\n};\nexport default useComponentDidMount;",
+        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
       ot =
-        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      '\u7ec4\u4ef6\u786e\u5b9e\u6302\u8f7d\uff0c\u83b7\u53d6\u5143\u7d20:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5916\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('\u70b9\u51fb\u4e86\u533a\u57df\u4e4b\u5916')}></ClickBox>;\n};\n\nexport default Demo;",
       at =
-        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('Current value is:' + value + '.');\n  }, [value]);\n  return (\n    <>\n      <p>\n        Value:{value},otherValue: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          Increment value\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          Increment other value\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      'Component did mount, get the element:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
       it =
-        "import { useEffect, DependencyList, useRef } from 'react';\nconst useComponentDidUpdate = (\n  handler: (...args: any[]) => any,\n  deps: DependencyList,\n) => {\n  const mounted = useRef(false);\n  useEffect(() => {\n    if (mounted.current) {\n      handler?.();\n    } else {\n      mounted.current = true;\n    }\n  }, deps);\n};\n\nexport default useComponentDidUpdate;",
+        "import { useEffect } from 'react';\nconst useComponentDidMount = (onMountHandler: Function) => {\n  useEffect(() => {\n    onMountHandler();\n  }, []);\n};\nexport default useComponentDidMount;",
       lt =
-        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('\u5f53\u524d\u7684\u503c\u662f:' + value + '\u3002');\n  }, [value]);\n  return (\n    <>\n      <p>\n        \u503c\u662f:{value},\u5176\u5b83\u503c\u662f: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          \u589e\u52a0\u503c\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          \u589e\u52a0\u5176\u5b83\u503c\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      '\u7ec4\u4ef6\u786e\u5b9e\u6302\u8f7d\uff0c\u83b7\u53d6\u5143\u7d20:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
       ct =
-        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('Component will unmount'));\n  return <div>Check the console</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('Current value is:' + value + '.');\n  }, [value]);\n  return (\n    <>\n      <p>\n        Value:{value},otherValue: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          Increment value\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          Increment other value\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
       st =
-        "import { useEffect } from 'react';\n\nconst useComponentWillUnmount = (onUnmountHandler) => {\n  useEffect(() => () => onUnmountHandler?.(), []);\n};\n\nexport default useComponentWillUnmount;",
+        "import { useEffect, DependencyList, useRef } from 'react';\nconst useComponentDidUpdate = (\n  handler: (...args: any[]) => any,\n  deps: DependencyList,\n) => {\n  const mounted = useRef(false);\n  useEffect(() => {\n    if (mounted.current) {\n      handler?.();\n    } else {\n      mounted.current = true;\n    }\n  }, deps);\n};\n\nexport default useComponentDidUpdate;",
       ut =
-        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d'));\n  return <div>\u68c0\u67e5\u63a7\u5236\u53f0</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('\u5f53\u524d\u7684\u503c\u662f:' + value + '\u3002');\n  }, [value]);\n  return (\n    <>\n      <p>\n        \u503c\u662f:{value},\u5176\u5b83\u503c\u662f: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          \u589e\u52a0\u503c\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          \u589e\u52a0\u5176\u5b83\u503c\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
       dt =
-        "import React, { SyntheticEvent } from 'react';\nimport useCopyToClipboard from './useCopyToClipboard';\nimport { Space } from 'antd';\nimport Button from '../../guide/Button/Button';\n\nexport interface TextCopyProps {\n  text: string;\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n  const { text = 'Lorem ipsum' } = props;\n  const [copied, copy] = useCopyToClipboard(text);\n  return (\n    <Space>\n      <Button\n        type=\"primary\"\n        ripple\n        onClick={copy as (e: SyntheticEvent) => void}\n      >\n        Click to Copy!\n      </Button>\n      <span>{copied && 'Copied!'}</span>\n    </Space>\n  );\n};\n\nconst Demo = () => <TextCopy text=\"The copy text!\" />;\n\nexport default Demo;",
+        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('Component will unmount'));\n  return <div>Check the console</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
       ft =
-        "import { useState, useCallback, useEffect } from 'react';\n\nconst useCopyToClipboard = (text: string) => {\n  const copyToClipboard = (str: string) => {\n    const el = document.createElement('textarea');\n    el.value = str;\n    el.setAttribute('readonly', '');\n    el.style.position = 'absolute';\n    el.style.left = '-9999px';\n    document.body.appendChild(el);\n    const selected =\n      document.getSelection()!.rangeCount > 0\n        ? document.getSelection()?.getRangeAt(0)\n        : false;\n    el.select();\n    const success = document.execCommand('copy');\n    document.body.removeChild(el);\n    if (selected) {\n      document.getSelection()?.removeAllRanges();\n      document.getSelection()?.addRange(selected);\n    }\n    return success;\n  };\n\n  const [copied, setCopied] = useState(false);\n\n  const copy = useCallback(() => {\n    if (!copied) {\n      setCopied(copyToClipboard(text));\n    }\n  }, [text]);\n\n  useEffect(() => () => setCopied(false), [text]);\n\n  return [copied, copy];\n};\n\nexport default useCopyToClipboard;",
+        "import { useEffect } from 'react';\n\nconst useComponentWillUnmount = (onUnmountHandler) => {\n  useEffect(() => () => onUnmountHandler?.(), []);\n};\n\nexport default useComponentWillUnmount;",
       pt =
+        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d'));\n  return <div>\u68c0\u67e5\u63a7\u5236\u53f0</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
+      mt =
+        "import React, { SyntheticEvent } from 'react';\nimport useCopyToClipboard from './useCopyToClipboard';\nimport { Space } from 'antd';\nimport Button from '../../guide/Button/Button';\n\nexport interface TextCopyProps {\n  text: string;\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n  const { text = 'Lorem ipsum' } = props;\n  const [copied, copy] = useCopyToClipboard(text);\n  return (\n    <Space>\n      <Button\n        type=\"primary\"\n        ripple\n        onClick={copy as (e: SyntheticEvent) => void}\n      >\n        Click to Copy!\n      </Button>\n      <span>{copied && 'Copied!'}</span>\n    </Space>\n  );\n};\n\nconst Demo = () => <TextCopy text=\"The copy text!\" />;\n\nexport default Demo;",
+      ht =
+        "import { useState, useCallback, useEffect } from 'react';\n\nconst useCopyToClipboard = (text: string) => {\n  const copyToClipboard = (str: string) => {\n    const el = document.createElement('textarea');\n    el.value = str;\n    el.setAttribute('readonly', '');\n    el.style.position = 'absolute';\n    el.style.left = '-9999px';\n    document.body.appendChild(el);\n    const selected =\n      document.getSelection()!.rangeCount > 0\n        ? document.getSelection()?.getRangeAt(0)\n        : false;\n    el.select();\n    const success = document.execCommand('copy');\n    document.body.removeChild(el);\n    if (selected) {\n      document.getSelection()?.removeAllRanges();\n      document.getSelection()?.addRange(selected);\n    }\n    return success;\n  };\n\n  const [copied, setCopied] = useState(false);\n\n  const copy = useCallback(() => {\n    if (!copied) {\n      setCopied(copyToClipboard(text));\n    }\n  }, [text]);\n\n  useEffect(() => () => setCopied(false), [text]);\n\n  return [copied, copy];\n};\n\nexport default useCopyToClipboard;",
+      vt =
         "import React, { SyntheticEvent } from 'react';\nimport useCopyToClipboard from './useCopyToClipboard';\nimport { Space } from 'antd';\nimport Button from '../../guide/Button/Button';\n\nexport interface TextCopyProps {\n  text: string;\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n  const { text = 'Lorem ipsum' } = props;\n  const [copied, copy] = useCopyToClipboard(text);\n  return (\n    <Space>\n      <Button\n        type=\"primary\"\n        ripple\n        onClick={copy as (e: SyntheticEvent) => void}\n      >\n        \u70b9\u51fb\u8fd9\u91cc\u590d\u5236!\n      </Button>\n      <span>{copied && '\u5df2\u590d\u5236!'}</span>\n    </Space>\n  );\n};\n\nconst Demo = () => <TextCopy text=\"\u590d\u5236\u7684\u6587\u672c!\" />;\n\nexport default Demo;",
-      mt = {
+      gt = {
         'loadingbutton-demo': {
           component: n('4ZnB').default,
           previewerProps: {
@@ -29569,11 +29681,30 @@
             identifier: 'alert-demo',
           },
         },
+        'jsx-demo-1': {
+          component: n('ydVG').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: O },
+              'Alert.jsx': { import: './Alert', content: S },
+              'alert.less': { import: './alert.less', content: C },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              antd: { version: '4.21.5', css: 'antd/dist/antd.css' },
+              '@emotion/styled': { version: '11.9.3' },
+              'react-dom': { version: '>=16.9.0' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+            },
+            identifier: 'jsx-demo-1',
+          },
+        },
         'alert-demo.zh-cn': {
           component: n('dyg2').default,
           previewerProps: {
             sources: {
-              _: { tsx: O },
+              _: { tsx: j },
               'Alert.tsx': { import: './Alert', content: k },
               'alert.less': { import: './alert.less', content: C },
             },
@@ -29588,10 +29719,29 @@
             identifier: 'alert-demo.zh-cn',
           },
         },
+        'jsx-demo.zh-cn-1': {
+          component: n('KV9B').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: T },
+              'Alert.jsx': { import: './Alert', content: S },
+              'alert.less': { import: './alert.less', content: C },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              antd: { version: '4.21.5', css: 'antd/dist/antd.css' },
+              '@emotion/styled': { version: '11.9.3' },
+              'react-dom': { version: '>=16.9.0' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+            },
+            identifier: 'jsx-demo.zh-cn-1',
+          },
+        },
         'autolink-autolink': {
           component: n('hVB/').default,
           previewerProps: {
-            sources: { _: { tsx: S } },
+            sources: { _: { tsx: P } },
             dependencies: {
               react: { version: '>=16.8.0' },
               '@emotion/styled': { version: '11.9.3' },
@@ -29604,7 +29754,7 @@
         'autolink-autolink.zh-cn': {
           component: n('KN+n').default,
           previewerProps: {
-            sources: { _: { tsx: j } },
+            sources: { _: { tsx: I } },
             dependencies: {
               react: { version: '>=16.8.0' },
               '@emotion/styled': { version: '11.9.3' },
@@ -29618,14 +29768,14 @@
           component: n('bBBo').default,
           previewerProps: {
             sources: {
-              _: { tsx: T },
-              'Button.tsx': { import: './Button', content: P },
-              'button.less': { import: './button.less', content: R },
+              _: { tsx: R },
+              'Button.tsx': { import: './Button', content: N },
+              'button.less': { import: './button.less', content: A },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
-                content: I,
+                content: M,
               },
-              'Loader/Loader.tsx': { import: '../Loader/Loader', content: N },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: L },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -29642,14 +29792,14 @@
           component: n('IUCc').default,
           previewerProps: {
             sources: {
-              _: { tsx: A },
-              'Button.tsx': { import: './Button', content: P },
-              'button.less': { import: './button.less', content: R },
+              _: { tsx: D },
+              'Button.tsx': { import: './Button', content: N },
+              'button.less': { import: './button.less', content: A },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
-                content: I,
+                content: M,
               },
-              'Loader/Loader.tsx': { import: '../Loader/Loader', content: N },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: L },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -29665,7 +29815,7 @@
         'callto-callto': {
           component: n('/9OQ').default,
           previewerProps: {
-            sources: { _: { tsx: M } },
+            sources: { _: { tsx: _ } },
             dependencies: {
               '@emotion/styled': { version: '11.9.3' },
               react: { version: '>=16.8.0' },
@@ -29678,7 +29828,7 @@
         'callto-callto.zh-cn': {
           component: n('WMlh').default,
           previewerProps: {
-            sources: { _: { tsx: L } },
+            sources: { _: { tsx: z } },
             dependencies: {
               '@emotion/styled': { version: '11.9.3' },
               react: { version: '>=16.8.0' },
@@ -29692,8 +29842,8 @@
           component: n('Xbub').default,
           previewerProps: {
             sources: {
-              _: { tsx: D },
-              'Carousel.less': { import: './Carousel.less', content: _ },
+              _: { tsx: F },
+              'Carousel.less': { import: './Carousel.less', content: B },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'carousel-carousel',
@@ -29703,8 +29853,8 @@
           component: n('cm6A').default,
           previewerProps: {
             sources: {
-              _: { tsx: z },
-              'Carousel.less': { import: './Carousel.less', content: _ },
+              _: { tsx: U },
+              'Carousel.less': { import: './Carousel.less', content: B },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'carousel-carousel.zh-cn',
@@ -29714,9 +29864,9 @@
           component: n('oUx9').default,
           previewerProps: {
             sources: {
-              _: { tsx: F },
-              'Checkbox.tsx': { import: './Checkbox', content: B },
-              'Checkbox.less': { import: './Checkbox.less', content: U },
+              _: { tsx: V },
+              'Checkbox.tsx': { import: './Checkbox', content: H },
+              'Checkbox.less': { import: './Checkbox.less', content: q },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -29730,9 +29880,9 @@
           component: n('rSXV').default,
           previewerProps: {
             sources: {
-              _: { tsx: V },
-              'Checkbox.tsx': { import: './Checkbox', content: B },
-              'Checkbox.less': { import: './Checkbox.less', content: U },
+              _: { tsx: W },
+              'Checkbox.tsx': { import: './Checkbox', content: H },
+              'Checkbox.less': { import: './Checkbox.less', content: q },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -29746,8 +29896,8 @@
           component: n('lEqk').default,
           previewerProps: {
             sources: {
-              _: { tsx: H },
-              'Collapse.tsx': { import: './Collapse', content: q },
+              _: { tsx: $ },
+              'Collapse.tsx': { import: './Collapse', content: G },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -29762,8 +29912,8 @@
           component: n('D9M6').default,
           previewerProps: {
             sources: {
-              _: { tsx: W },
-              'Collapse.tsx': { import: './Collapse', content: q },
+              _: { tsx: K },
+              'Collapse.tsx': { import: './Collapse', content: G },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -29778,10 +29928,10 @@
           component: n('TV3E').default,
           previewerProps: {
             sources: {
-              _: { tsx: $ },
+              _: { tsx: Y },
               'ControlledInput.tsx': {
                 import: './ControlledInput',
-                content: G,
+                content: Z,
               },
             },
             dependencies: {
@@ -29797,10 +29947,10 @@
           component: n('zcSK').default,
           previewerProps: {
             sources: {
-              _: { tsx: K },
+              _: { tsx: X },
               'ControlledInput.tsx': {
                 import: './ControlledInput',
-                content: G,
+                content: Z,
               },
             },
             dependencies: {
@@ -29816,9 +29966,9 @@
           component: n('wgCi').default,
           previewerProps: {
             sources: {
-              _: { tsx: Y },
-              'CountDown.tsx': { import: './CountDown', content: Z },
-              'helper.ts': { import: './helper', content: X },
+              _: { tsx: J },
+              'CountDown.tsx': { import: './CountDown', content: Q },
+              'helper.ts': { import: './helper', content: ee },
             },
             dependencies: {
               antd: { version: '4.21.5', css: 'antd/dist/antd.css' },
@@ -29835,9 +29985,9 @@
           component: n('lfEP').default,
           previewerProps: {
             sources: {
-              _: { tsx: J },
-              'CountDown.tsx': { import: './CountDown', content: Z },
-              'helper.ts': { import: './helper', content: X },
+              _: { tsx: te },
+              'CountDown.tsx': { import: './CountDown', content: Q },
+              'helper.ts': { import: './helper', content: ee },
             },
             dependencies: {
               antd: { version: '4.21.5', css: 'antd/dist/antd.css' },
@@ -29854,8 +30004,8 @@
           component: n('JwaP').default,
           previewerProps: {
             sources: {
-              _: { tsx: Q },
-              'FileDrop.tsx': { import: './FileDrop', content: ee },
+              _: { tsx: ne },
+              'FileDrop.tsx': { import: './FileDrop', content: re },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -29870,8 +30020,8 @@
           component: n('CMoy').default,
           previewerProps: {
             sources: {
-              _: { tsx: te },
-              'FileDrop.tsx': { import: './FileDrop', content: ee },
+              _: { tsx: oe },
+              'FileDrop.tsx': { import: './FileDrop', content: re },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -29886,8 +30036,8 @@
           component: n('8+C5').default,
           previewerProps: {
             sources: {
-              _: { tsx: ne },
-              'LazyLoadImage.tsx': { import: './LazyLoadImage', content: re },
+              _: { tsx: ae },
+              'LazyLoadImage.tsx': { import: './LazyLoadImage', content: ie },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -29902,8 +30052,8 @@
           component: n('sd4G').default,
           previewerProps: {
             sources: {
-              _: { tsx: oe },
-              'LazyLoadImage.tsx': { import: './LazyLoadImage', content: re },
+              _: { tsx: le },
+              'LazyLoadImage.tsx': { import: './LazyLoadImage', content: ie },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -29918,10 +30068,10 @@
           component: n('DCdD').default,
           previewerProps: {
             sources: {
-              _: { tsx: ae },
+              _: { tsx: ce },
               'LimitedTextarea.tsx': {
                 import: './LimitedTextarea',
-                content: ie,
+                content: se,
               },
             },
             dependencies: {
@@ -29937,10 +30087,10 @@
           component: n('8coG').default,
           previewerProps: {
             sources: {
-              _: { tsx: le },
+              _: { tsx: ue },
               'LimitedTextarea.tsx': {
                 import: './LimitedTextarea',
-                content: ie,
+                content: se,
               },
             },
             dependencies: {
@@ -29956,10 +30106,10 @@
           component: n('KRMY').default,
           previewerProps: {
             sources: {
-              _: { tsx: ce },
+              _: { tsx: de },
               'LimitedWordTextarea.tsx': {
                 import: './LimitedWordTextarea',
-                content: se,
+                content: fe,
               },
             },
             dependencies: {
@@ -29975,10 +30125,10 @@
           component: n('O8zO').default,
           previewerProps: {
             sources: {
-              _: { tsx: ue },
+              _: { tsx: pe },
               'LimitedWordTextarea.tsx': {
                 import: './LimitedWordTextarea',
-                content: se,
+                content: fe,
               },
             },
             dependencies: {
@@ -29994,8 +30144,8 @@
           component: n('yNO/').default,
           previewerProps: {
             sources: {
-              _: { tsx: de },
-              'Loader.tsx': { import: '../Loader/Loader', content: N },
+              _: { tsx: me },
+              'Loader.tsx': { import: '../Loader/Loader', content: L },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -30012,8 +30162,8 @@
           component: n('3QZg').default,
           previewerProps: {
             sources: {
-              _: { tsx: fe },
-              'Loader.tsx': { import: '../Loader/Loader', content: N },
+              _: { tsx: he },
+              'Loader.tsx': { import: '../Loader/Loader', content: L },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -30030,8 +30180,8 @@
           component: n('cfId').default,
           previewerProps: {
             sources: {
-              _: { tsx: pe },
-              'Mailto.tsx': { import: './Mailto', content: me },
+              _: { tsx: ve },
+              'Mailto.tsx': { import: './Mailto', content: ge },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -30046,8 +30196,8 @@
           component: n('LwNu').default,
           previewerProps: {
             sources: {
-              _: { tsx: he },
-              'Mailto.tsx': { import: './Mailto', content: me },
+              _: { tsx: be },
+              'Mailto.tsx': { import: './Mailto', content: ge },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -30062,9 +30212,9 @@
           component: n('aOC5').default,
           previewerProps: {
             sources: {
-              _: { tsx: ve },
-              'Modal.tsx': { import: './Modal', content: ge },
-              'Modal.less': { import: './Modal.less', content: be },
+              _: { tsx: ye },
+              'Modal.tsx': { import: './Modal', content: xe },
+              'Modal.less': { import: './Modal.less', content: Ee },
             },
             dependencies: {
               react: { version: '^16.14.0' },
@@ -30078,9 +30228,9 @@
           component: n('JuAD').default,
           previewerProps: {
             sources: {
-              _: { tsx: ye },
-              'Modal.tsx': { import: './Modal', content: ge },
-              'Modal.less': { import: './Modal.less', content: be },
+              _: { tsx: we },
+              'Modal.tsx': { import: './Modal', content: xe },
+              'Modal.less': { import: './Modal.less', content: Ee },
             },
             dependencies: {
               react: { version: '^16.14.0' },
@@ -30094,14 +30244,14 @@
           component: n('1Hsh').default,
           previewerProps: {
             sources: {
-              _: { tsx: xe },
+              _: { tsx: ke },
               'PasswordRevealer.tsx': {
                 import: './PasswordRevealer',
-                content: Ee,
+                content: Ce,
               },
               'passwordRevealer.less': {
                 import: './passwordRevealer.less',
-                content: we,
+                content: Oe,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -30112,14 +30262,14 @@
           component: n('pE9f').default,
           previewerProps: {
             sources: {
-              _: { tsx: ke },
+              _: { tsx: Se },
               'PasswordRevealer.tsx': {
                 import: './PasswordRevealer',
-                content: Ee,
+                content: Ce,
               },
               'passwordRevealer.less': {
                 import: './passwordRevealer.less',
-                content: we,
+                content: Oe,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -30130,18 +30280,18 @@
           component: n('/ukT').default,
           previewerProps: {
             sources: {
-              _: { tsx: Ce },
-              'Select.tsx': { import: './Select', content: Oe },
+              _: { tsx: je },
+              'Select.tsx': { import: './Select', content: Te },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
-                content: I,
+                content: M,
               },
               'utils/useClickOutside.ts': {
                 import: '../../utils/useClickOutside',
-                content: Se,
+                content: Pe,
               },
-              'Option.tsx': { import: './Option', content: je },
-              'select.less': { import: './select.less', content: Te },
+              'Option.tsx': { import: './Option', content: Ie },
+              'select.less': { import: './select.less', content: Re },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -30155,18 +30305,18 @@
           component: n('Juw3').default,
           previewerProps: {
             sources: {
-              _: { tsx: Pe },
-              'Select.tsx': { import: './Select', content: Oe },
+              _: { tsx: Ne },
+              'Select.tsx': { import: './Select', content: Te },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
-                content: I,
+                content: M,
               },
               'utils/useClickOutside.ts': {
                 import: '../../utils/useClickOutside',
-                content: Se,
+                content: Pe,
               },
-              'Option.tsx': { import: './Option', content: je },
-              'select.less': { import: './select.less', content: Te },
+              'Option.tsx': { import: './Option', content: Ie },
+              'select.less': { import: './select.less', content: Re },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -30180,8 +30330,8 @@
           component: n('kFD3').default,
           previewerProps: {
             sources: {
-              _: { tsx: Re },
-              'SimpleDataList.tsx': { import: './SimpleDataList', content: Ie },
+              _: { tsx: Ae },
+              'SimpleDataList.tsx': { import: './SimpleDataList', content: Me },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -30195,8 +30345,8 @@
           component: n('9yqU').default,
           previewerProps: {
             sources: {
-              _: { tsx: Ne },
-              'SimpleDataList.tsx': { import: './SimpleDataList', content: Ie },
+              _: { tsx: Le },
+              'SimpleDataList.tsx': { import: './SimpleDataList', content: Me },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -30210,14 +30360,14 @@
           component: n('iBx2').default,
           previewerProps: {
             sources: {
-              _: { tsx: Ae },
+              _: { tsx: De },
               'SimpleDataTable.tsx': {
                 import: './SimpleDataTable',
-                content: Me,
+                content: _e,
               },
               'simpleDataTable.less': {
                 import: './simpleDataTable.less',
-                content: Le,
+                content: ze,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -30228,14 +30378,14 @@
           component: n('LCi9').default,
           previewerProps: {
             sources: {
-              _: { tsx: De },
+              _: { tsx: Fe },
               'SimpleDataTable.tsx': {
                 import: './SimpleDataTable',
-                content: Me,
+                content: _e,
               },
               'simpleDataTable.less': {
                 import: './simpleDataTable.less',
-                content: Le,
+                content: ze,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -30246,14 +30396,14 @@
           component: n('X23V').default,
           previewerProps: {
             sources: {
-              _: { tsx: _e },
+              _: { tsx: Be },
               'SimpleMappedDataTable.tsx': {
                 import: './SimpleMappedDataTable',
-                content: ze,
+                content: Ue,
               },
               'SimpleMappedDataTable.less': {
                 import: './SimpleMappedDataTable.less',
-                content: Fe,
+                content: Ve,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -30264,14 +30414,14 @@
           component: n('/ncw').default,
           previewerProps: {
             sources: {
-              _: { tsx: Be },
+              _: { tsx: He },
               'SimpleMappedDataTable.tsx': {
                 import: './SimpleMappedDataTable',
-                content: ze,
+                content: Ue,
               },
               'SimpleMappedDataTable.less': {
                 import: './SimpleMappedDataTable.less',
-                content: Fe,
+                content: Ve,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -30282,12 +30432,12 @@
           component: n('5VUJ').default,
           previewerProps: {
             sources: {
-              _: { tsx: Ue },
-              'Slider.tsx': { import: './Slider', content: Ve },
-              'slider.less': { import: './slider.less', content: He },
+              _: { tsx: qe },
+              'Slider.tsx': { import: './Slider', content: We },
+              'slider.less': { import: './slider.less', content: $e },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
-                content: I,
+                content: M,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -30298,21 +30448,21 @@
           component: n('sqNe').default,
           previewerProps: {
             sources: {
-              _: { tsx: qe },
-              'guide/Button/Button.tsx': { import: './Button', content: P },
-              'button.less': { import: './button.less', content: R },
+              _: { tsx: Ge },
+              'guide/Button/Button.tsx': { import: './Button', content: N },
+              'button.less': { import: './button.less', content: A },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
-                content: I,
+                content: M,
               },
-              'Loader/Loader.tsx': { import: '../Loader/Loader', content: N },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: L },
               'guide/Loader/Loader.tsx': {
                 import: '../Loader/Loader',
-                content: N,
+                content: L,
               },
               'guide/Alert/Alert.tsx': { import: './Alert', content: k },
               'alert.less': { import: './alert.less', content: C },
-              'useAsync.ts': { import: './useAsync', content: We },
+              'useAsync.ts': { import: './useAsync', content: Ke },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -30327,21 +30477,21 @@
           component: n('mlG9').default,
           previewerProps: {
             sources: {
-              _: { tsx: $e },
-              'guide/Button/Button.tsx': { import: './Button', content: P },
-              'button.less': { import: './button.less', content: R },
+              _: { tsx: Ye },
+              'guide/Button/Button.tsx': { import: './Button', content: N },
+              'button.less': { import: './button.less', content: A },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
-                content: I,
+                content: M,
               },
-              'Loader/Loader.tsx': { import: '../Loader/Loader', content: N },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: L },
               'guide/Loader/Loader.tsx': {
                 import: '../Loader/Loader',
-                content: N,
+                content: L,
               },
               'guide/Alert/Alert.tsx': { import: './Alert', content: k },
               'alert.less': { import: './alert.less', content: C },
-              'useAsync.ts': { import: './useAsync', content: We },
+              'useAsync.ts': { import: './useAsync', content: Ke },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -30356,19 +30506,19 @@
           component: n('AgAx').default,
           previewerProps: {
             sources: {
-              _: { tsx: Ge },
-              'guide/Modal/Modal.tsx': { import: './Modal', content: ge },
-              'Modal.less': { import: './Modal.less', content: be },
-              'guide/Button/Button.tsx': { import: './Button', content: P },
-              'button.less': { import: './button.less', content: R },
+              _: { tsx: Ze },
+              'guide/Modal/Modal.tsx': { import: './Modal', content: xe },
+              'Modal.less': { import: './Modal.less', content: Ee },
+              'guide/Button/Button.tsx': { import: './Button', content: N },
+              'button.less': { import: './button.less', content: A },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
-                content: I,
+                content: M,
               },
-              'Loader/Loader.tsx': { import: '../Loader/Loader', content: N },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: L },
               'useBodyScrollLock.ts': {
                 import: './useBodyScrollLock',
-                content: Ke,
+                content: Xe,
               },
             },
             dependencies: {
@@ -30385,19 +30535,19 @@
           component: n('hVMu').default,
           previewerProps: {
             sources: {
-              _: { tsx: Ye },
-              'guide/Modal/Modal.tsx': { import: './Modal', content: ge },
-              'Modal.less': { import: './Modal.less', content: be },
-              'guide/Button/Button.tsx': { import: './Button', content: P },
-              'button.less': { import: './button.less', content: R },
+              _: { tsx: Je },
+              'guide/Modal/Modal.tsx': { import: './Modal', content: xe },
+              'Modal.less': { import: './Modal.less', content: Ee },
+              'guide/Button/Button.tsx': { import: './Button', content: N },
+              'button.less': { import: './button.less', content: A },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
-                content: I,
+                content: M,
               },
-              'Loader/Loader.tsx': { import: '../Loader/Loader', content: N },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: L },
               'useBodyScrollLock.ts': {
                 import: './useBodyScrollLock',
-                content: Ke,
+                content: Xe,
               },
             },
             dependencies: {
@@ -30414,10 +30564,10 @@
           component: n('n4d3').default,
           previewerProps: {
             sources: {
-              _: { tsx: Ze },
-              'useClickInside.ts': { import: './useClickInside', content: Xe },
-              'guide/Modal/Modal.tsx': { import: './Modal', content: ge },
-              'Modal.less': { import: './Modal.less', content: be },
+              _: { tsx: Qe },
+              'useClickInside.ts': { import: './useClickInside', content: et },
+              'guide/Modal/Modal.tsx': { import: './Modal', content: xe },
+              'Modal.less': { import: './Modal.less', content: Ee },
             },
             dependencies: {
               react: { version: '^16.14.0' },
@@ -30433,10 +30583,10 @@
           component: n('nKlt').default,
           previewerProps: {
             sources: {
-              _: { tsx: Je },
-              'useClickInside.ts': { import: './useClickInside', content: Xe },
-              'guide/Modal/Modal.tsx': { import: './Modal', content: ge },
-              'Modal.less': { import: './Modal.less', content: be },
+              _: { tsx: tt },
+              'useClickInside.ts': { import: './useClickInside', content: et },
+              'guide/Modal/Modal.tsx': { import: './Modal', content: xe },
+              'Modal.less': { import: './Modal.less', content: Ee },
             },
             dependencies: {
               react: { version: '^16.14.0' },
@@ -30452,10 +30602,10 @@
           component: n('6srN').default,
           previewerProps: {
             sources: {
-              _: { tsx: Qe },
+              _: { tsx: nt },
               'useClickOutside.ts': {
                 import: './useClickOutside',
-                content: et,
+                content: rt,
               },
             },
             dependencies: {
@@ -30471,10 +30621,10 @@
           component: n('6aGR').default,
           previewerProps: {
             sources: {
-              _: { tsx: tt },
+              _: { tsx: ot },
               'useClickOutside.ts': {
                 import: './useClickOutside',
-                content: et,
+                content: rt,
               },
             },
             dependencies: {
@@ -30490,10 +30640,10 @@
           component: n('4BP0').default,
           previewerProps: {
             sources: {
-              _: { tsx: nt },
+              _: { tsx: at },
               'useComponentDidMount.ts': {
                 import: './useComponentDidMount',
-                content: rt,
+                content: it,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -30504,10 +30654,10 @@
           component: n('3Mo/').default,
           previewerProps: {
             sources: {
-              _: { tsx: ot },
+              _: { tsx: lt },
               'useComponentDidMount.ts': {
                 import: './useComponentDidMount',
-                content: rt,
+                content: it,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -30518,17 +30668,17 @@
           component: n('+EnM').default,
           previewerProps: {
             sources: {
-              _: { tsx: at },
-              'guide/Button/Button.tsx': { import: './Button', content: P },
-              'button.less': { import: './button.less', content: R },
+              _: { tsx: ct },
+              'guide/Button/Button.tsx': { import: './Button', content: N },
+              'button.less': { import: './button.less', content: A },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
-                content: I,
+                content: M,
               },
-              'Loader/Loader.tsx': { import: '../Loader/Loader', content: N },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: L },
               'useComponentDidUpdate.ts': {
                 import: './useComponentDidUpdate',
-                content: it,
+                content: st,
               },
             },
             dependencies: {
@@ -30546,17 +30696,17 @@
           component: n('pc0r').default,
           previewerProps: {
             sources: {
-              _: { tsx: lt },
-              'guide/Button/Button.tsx': { import: './Button', content: P },
-              'button.less': { import: './button.less', content: R },
+              _: { tsx: ut },
+              'guide/Button/Button.tsx': { import: './Button', content: N },
+              'button.less': { import: './button.less', content: A },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
-                content: I,
+                content: M,
               },
-              'Loader/Loader.tsx': { import: '../Loader/Loader', content: N },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: L },
               'useComponentDidUpdate.ts': {
                 import: './useComponentDidUpdate',
-                content: it,
+                content: st,
               },
             },
             dependencies: {
@@ -30574,10 +30724,10 @@
           component: n('YT/L').default,
           previewerProps: {
             sources: {
-              _: { tsx: ct },
+              _: { tsx: dt },
               'useComponentWillUnmount.ts': {
                 import: './useComponentWillUnmount',
-                content: st,
+                content: ft,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -30588,10 +30738,10 @@
           component: n('s6jP').default,
           previewerProps: {
             sources: {
-              _: { tsx: ut },
+              _: { tsx: pt },
               'useComponentWillUnmount.ts': {
                 import: './useComponentWillUnmount',
-                content: st,
+                content: ft,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -30602,18 +30752,18 @@
           component: n('6Hiq').default,
           previewerProps: {
             sources: {
-              _: { tsx: dt },
+              _: { tsx: mt },
               'useCopyToClipboard.ts': {
                 import: './useCopyToClipboard',
-                content: ft,
+                content: ht,
               },
-              'guide/Button/Button.tsx': { import: './Button', content: P },
-              'button.less': { import: './button.less', content: R },
+              'guide/Button/Button.tsx': { import: './Button', content: N },
+              'button.less': { import: './button.less', content: A },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
-                content: I,
+                content: M,
               },
-              'Loader/Loader.tsx': { import: '../Loader/Loader', content: N },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: L },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -30630,18 +30780,18 @@
           component: n('NfPr').default,
           previewerProps: {
             sources: {
-              _: { tsx: pt },
+              _: { tsx: vt },
               'useCopyToClipboard.ts': {
                 import: './useCopyToClipboard',
-                content: ft,
+                content: ht,
               },
-              'guide/Button/Button.tsx': { import: './Button', content: P },
-              'button.less': { import: './button.less', content: R },
+              'guide/Button/Button.tsx': { import: './Button', content: N },
+              'button.less': { import: './button.less', content: A },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
-                content: I,
+                content: M,
               },
-              'Loader/Loader.tsx': { import: '../Loader/Loader', content: N },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: L },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -30655,13 +30805,13 @@
           },
         },
       },
-      ht = n('Zs1V'),
-      vt = n('KcUY'),
-      gt = n.n(vt);
+      bt = n('Zs1V'),
+      yt = n('KcUY'),
+      xt = n.n(yt);
     t['default'] = (e) =>
       a.a.createElement(
-        gt.a,
-        Object(r['a'])({}, e, { config: i, demos: mt, apis: ht }),
+        xt.a,
+        Object(r['a'])({}, e, { config: i, demos: gt, apis: bt }),
       );
   },
   'Of+w': function (e, t, n) {
@@ -31948,7 +32098,7 @@
           var t = j(!O, e);
           null === y || void 0 === y || y(t, e);
         }
-        var R = l()(
+        var I = l()(
           a,
           i,
           ((n = {}),
@@ -31963,7 +32113,7 @@
             role: 'switch',
             'aria-checked': O,
             disabled: h,
-            className: R,
+            className: I,
             ref: t,
             onKeyDown: T,
             onClick: P,
@@ -32863,8 +33013,8 @@
       });
     }
     var P = {},
-      R = 1e4,
-      I = 0;
+      I = 1e4,
+      R = 0;
     function N(e, t) {
       var n = '' + t.end + t.strict + t.sensitive,
         r = P[n] || (P[n] = {});
@@ -32872,7 +33022,7 @@
       var o = [],
         a = d()(e, o, t),
         i = { regexp: a, keys: o };
-      return I < R && ((r[e] = i), I++), i;
+      return R < I && ((r[e] = i), R++), i;
     }
     function A(e, t) {
       void 0 === t && (t = {}),
@@ -33486,18 +33636,18 @@
             for (
               var T = String(k[0]),
                 P = d(f(l(k.index), p.length), 0),
-                R = [],
-                I = 1;
-              I < k.length;
-              I++
+                I = [],
+                R = 1;
+              R < k.length;
+              R++
             )
-              R.push(v(k[I]));
+              I.push(v(k[R]));
             var N = k.groups;
             if (m) {
-              var A = [T].concat(R, P, p);
+              var A = [T].concat(I, P, p);
               void 0 !== N && A.push(N);
               var M = String(r.apply(void 0, A));
-            } else M = x(T, p, P, R, N, r);
+            } else M = x(T, p, P, I, N, r);
             P >= S && ((O += p.slice(S, P) + M), (S = P + T.length));
           }
           return O + p.slice(S);
@@ -34077,7 +34227,7 @@
           if (r === f) throw new Error('Generator is already running');
           if (r === p) {
             if ('throw' === o) throw a;
-            return R();
+            return I();
           }
           (n.method = o), (n.arg = a);
           while (1) {
@@ -34171,9 +34321,9 @@
             return (i.next = i);
           }
         }
-        return { next: R };
+        return { next: I };
       }
-      function R() {
+      function I() {
         return { value: t, done: !0 };
       }
       return (
@@ -34424,7 +34574,8 @@
       c = n('dMo/'),
       s = o.a.memo((e) => {
         var t = e.demos,
-          n = t['alert-demo'].component;
+          n = t['alert-demo'].component,
+          r = t['jsx-demo-1'].component;
         return o.a.createElement(
           o.a.Fragment,
           null,
@@ -34495,9 +34646,15 @@
                 code: '@keyframes leave {\n  0% {\n    opacity: 1;\n  }\n\n  100% {\n    opacity: 0;\n  }\n}\n\n@baseSelector: alert;\n@infoBgColor: #e6f7ff;\n@infoBorderColor: #91d5ff;\n@warningBgColor: #fffbe6;\n@warningBorderColor: #ffe58f;\n@errorBgColor: #fff2f0;\n@errorBorderColor: #ffccc7;\n@successBgColor: #f6ffed;\n@successBorderColor: #b7eb8f;\n@color: rgba(0, 0, 0, 0.85);\n@closeActiveColor: fadeout(@color, 25%);\n.@{baseSelector} {\n  box-sizing: border-box;\n  margin: 0;\n  color: @color;\n  font-size: 14px;\n  line-height: 1.5715;\n  list-style: none;\n  position: relative;\n  display: flex;\n  align-items: center;\n  padding: 8px 15px;\n  word-wrap: break-word;\n  border-radius: 2px;\n  border: 1px solid transparent;\n  &.@{baseSelector}-block {\n    width: percentage(1);\n  }\n  &.@{baseSelector}-info {\n    background-color: @infoBgColor;\n    border-color: @infoBorderColor;\n  }\n\n  &.@{baseSelector}-warning {\n    background-color: @warningBgColor;\n    border-color: @warningBorderColor;\n  }\n\n  &.@{baseSelector}-error {\n    background-color: @errorBgColor;\n    border-color: @errorBorderColor;\n  }\n\n  &.@{baseSelector}-success {\n    background-color: @successBgColor;\n    border-color: @successBorderColor;\n  }\n\n  .@{baseSelector}-close {\n    margin-left: 8px;\n    padding: 0;\n    overflow: hidden;\n    font-size: 16px;\n    line-height: 12px;\n    background-color: transparent;\n    border: none;\n    outline: none;\n    cursor: pointer;\n    margin: 0;\n    color: @color;\n    position: absolute;\n    right: 10px;\n    top: 10px;\n    &:hover {\n      color: @closeActiveColor;\n    }\n  }\n}',
                 lang: 'less',
               }),
+              o.a.createElement('p', null, 'tsx:'),
               o.a.createElement(l['a'], {
                 code: "import React, { useState, useEffect } from 'react';\nimport './alert.less';\n\ninterface AlertPropType {\n  isDefaultShown: boolean;\n  timeout: number;\n  type: string;\n  message: string;\n  showClose: boolean;\n  block: boolean;\n}\n\nconst Alert = (props: Partial<AlertPropType>) => {\n  const {\n    isDefaultShown,\n    timeout = 250,\n    type,\n    message,\n    showClose,\n    block,\n  } = props;\n  const [isShown, setIsShown] = useState(isDefaultShown);\n  const [isLeaving, setIsLeaving] = useState(false);\n\n  let timer: number | null = null;\n  useEffect(() => {\n    setIsShown(true);\n    return () => {\n      if (timer) {\n        clearTimeout(timer);\n      }\n    };\n  }, [timeout, timer, isDefaultShown]);\n\n  const closeAlert = () => {\n    setIsLeaving(true);\n    timer = setTimeout(() => {\n      setIsLeaving(false);\n      setIsShown(false);\n    }, timeout);\n  };\n\n  return isShown ? (\n    <div\n      className={`alert ${'alert-' + type}${isLeaving ? ' leaving' : ''}${\n        block ? ' alert-block' : ''\n      }`}\n      role=\"alert\"\n    >\n      <button\n        className=\"alert-close\"\n        onClick={closeAlert}\n        style={{ display: showClose ? 'block' : 'none' }}\n      >\n        &times;\n      </button>\n      {message}\n    </div>\n  ) : null;\n};\n\nexport default Alert;",
                 lang: 'tsx',
+              }),
+              o.a.createElement('p', null, 'jsx:'),
+              o.a.createElement(l['a'], {
+                code: "import React, { useState, useEffect } from 'react';\nimport '../alert.less';\n\nconst Alert = (props) => {\n  const {\n    isDefaultShown,\n    timeout = 250,\n    type,\n    message,\n    showClose,\n    block,\n  } = props;\n  const [isShown, setIsShown] = useState(isDefaultShown);\n  const [isLeaving, setIsLeaving] = useState(false);\n\n  let timer = null;\n  useEffect(() => {\n    setIsShown(true);\n    return () => {\n      if (timer) {\n        clearTimeout(timer);\n      }\n    };\n  }, [timeout, timer, isDefaultShown]);\n\n  const closeAlert = () => {\n    setIsLeaving(true);\n    timer = setTimeout(() => {\n      setIsLeaving(false);\n      setIsShown(false);\n    }, timeout);\n  };\n\n  return isShown ? (\n    <div\n      className={`alert ${'alert-' + type}${isLeaving ? ' leaving' : ''}${\n        block ? ' alert-block' : ''\n      }`}\n      role=\"alert\"\n    >\n      <button\n        className=\"alert-close\"\n        onClick={closeAlert}\n        style={{ display: showClose ? 'block' : 'none' }}\n      >\n        &times;\n      </button>\n      {message}\n    </div>\n  ) : null;\n};\n\nexport default Alert;",
+                lang: 'jsx',
               }),
               o.a.createElement('p', null, 'Demo:'),
             ),
@@ -34505,6 +34662,16 @@
               i['default'],
               t['alert-demo'].previewerProps,
               o.a.createElement(n, null),
+            ),
+            o.a.createElement(
+              'div',
+              { className: 'markdown' },
+              o.a.createElement('p', null, 'jsx demo:'),
+            ),
+            o.a.createElement(
+              i['default'],
+              t['jsx-demo-1'].previewerProps,
+              o.a.createElement(r, null),
             ),
           ),
         );
@@ -36403,8 +36570,8 @@
     function P(e) {
       return void 0 === e.state && -1 === navigator.userAgent.indexOf('CriOS');
     }
-    var R = 'popstate',
-      I = 'hashchange';
+    var I = 'popstate',
+      R = 'hashchange';
     function N() {
       try {
         return window.history.state || {};
@@ -36527,11 +36694,11 @@
       function $(e) {
         (W += e),
           1 === W && 1 === e
-            ? (window.addEventListener(R, T),
-              o && window.addEventListener(I, A))
+            ? (window.addEventListener(I, T),
+              o && window.addEventListener(R, A))
             : 0 === W &&
-              (window.removeEventListener(R, T),
-              o && window.removeEventListener(I, A));
+              (window.removeEventListener(I, T),
+              o && window.removeEventListener(R, A));
       }
       var G = !1;
       function K(e) {
@@ -36644,11 +36811,11 @@
         else {
           var t = 'POP';
           h.confirmTransitionTo(e, t, a, function (n) {
-            n ? v({ action: t, location: e }) : R(e);
+            n ? v({ action: t, location: e }) : I(e);
           });
         }
       }
-      function R(e) {
+      function I(e) {
         var t = J.location,
           n = B.lastIndexOf(x(t));
         -1 === n && (n = 0);
@@ -36657,9 +36824,9 @@
         var o = n - r;
         o && ((y = !0), q(o));
       }
-      var I = _(),
-        N = u(I);
-      I !== N && F(N);
+      var R = _(),
+        N = u(R);
+      R !== N && F(N);
       var A = f(),
         B = [x(A)];
       function U(e) {
@@ -36884,8 +37051,8 @@
       j = 'Wrong index',
       T = r[k],
       P = T,
-      R = r[C],
-      I = R && R[O],
+      I = r[C],
+      R = I && I[O],
       N = Object.prototype,
       A = r.RangeError,
       M = p.pack,
@@ -36954,14 +37121,14 @@
           (W = G[K++]) in P || i(P, W, T[W]);
         $.constructor = P;
       }
-      h && m(I) !== N && h(I, N);
-      var Y = new R(new P(2)),
-        Z = I.setInt8;
+      h && m(R) !== N && h(R, N);
+      var Y = new I(new P(2)),
+        Z = R.setInt8;
       Y.setInt8(0, 2147483648),
         Y.setInt8(1, 2147483649),
         (!Y.getInt8(0) && Y.getInt8(1)) ||
           l(
-            I,
+            R,
             {
               setInt8: function (e, t) {
                 Z.call(this, e, (t << 24) >> 24);
@@ -36979,8 +37146,8 @@
         w(this, { bytes: b.call(new Array(t), 0), byteLength: t }),
           o || (this.byteLength = t);
       }),
-        (R = function (e, t, n) {
-          s(this, R, C), s(e, P, C);
+        (I = function (e, t, n) {
+          s(this, I, C), s(e, P, C);
           var r = E(e).byteLength,
             a = u(t);
           if (a < 0 || a > r) throw A('Wrong offset');
@@ -36991,10 +37158,10 @@
         }),
         o &&
           (V(P, 'byteLength'),
-          V(R, 'buffer'),
-          V(R, 'byteLength'),
-          V(R, 'byteOffset')),
-        l(R[O], {
+          V(I, 'buffer'),
+          V(I, 'byteLength'),
+          V(I, 'byteOffset')),
+        l(I[O], {
           getInt8: function (e) {
             return (H(this, 1, e)[0] << 24) >> 24;
           },
@@ -37057,7 +37224,7 @@
             q(this, 8, e, U, t, arguments.length > 2 ? arguments[2] : void 0);
           },
         });
-    y(P, k), y(R, C), (e.exports = { ArrayBuffer: P, DataView: R });
+    y(P, k), y(I, C), (e.exports = { ArrayBuffer: P, DataView: I });
   },
   YlG9: function (e, t, n) {
     'use strict';
@@ -38043,44 +38210,44 @@
     }
     var T = n('1j5w'),
       P = n('uciX'),
-      R = { adjustX: 1, adjustY: 1 },
-      I = [0, 0],
+      I = { adjustX: 1, adjustY: 1 },
+      R = [0, 0],
       N = {
         topLeft: {
           points: ['bl', 'tl'],
-          overflow: R,
+          overflow: I,
           offset: [0, -4],
-          targetOffset: I,
+          targetOffset: R,
         },
         topCenter: {
           points: ['bc', 'tc'],
-          overflow: R,
+          overflow: I,
           offset: [0, -4],
-          targetOffset: I,
+          targetOffset: R,
         },
         topRight: {
           points: ['br', 'tr'],
-          overflow: R,
+          overflow: I,
           offset: [0, -4],
-          targetOffset: I,
+          targetOffset: R,
         },
         bottomLeft: {
           points: ['tl', 'bl'],
-          overflow: R,
+          overflow: I,
           offset: [0, 4],
-          targetOffset: I,
+          targetOffset: R,
         },
         bottomCenter: {
           points: ['tc', 'bc'],
-          overflow: R,
+          overflow: I,
           offset: [0, 4],
-          targetOffset: I,
+          targetOffset: R,
         },
         bottomRight: {
           points: ['tr', 'br'],
-          overflow: R,
+          overflow: I,
           offset: [0, 4],
-          targetOffset: I,
+          targetOffset: R,
         },
       },
       A = N,
@@ -38198,10 +38365,10 @@
         S = void 0 === O ? ['hover'] : O,
         j = e.autoFocus,
         T = Object(s['a'])(e, z),
-        R = r['useState'](),
-        I = Object(l['a'])(R, 2),
-        N = I[0],
-        M = I[1],
+        I = r['useState'](),
+        R = Object(l['a'])(I, 2),
+        N = R[0],
+        M = R[1],
         L = 'visible' in e ? C : N,
         D = r['useRef'](null);
       r['useImperativeHandle'](t, function () {
@@ -38341,11 +38508,11 @@
         S = C[1],
         j = Object(r['useState'])(null),
         P = Object(l['a'])(j, 2),
-        R = P[0],
-        I = P[1],
+        I = P[0],
+        R = P[1],
         N = ''.concat(o, '-more-popup'),
         A = ''.concat(n, '-dropdown'),
-        M = null !== R ? ''.concat(N, '-').concat(R) : null,
+        M = null !== I ? ''.concat(N, '-').concat(I) : null,
         L = null === c || void 0 === c ? void 0 : c.dropdownAriaLabel;
       function D(e, t) {
         e.preventDefault(),
@@ -38365,7 +38532,7 @@
           tabIndex: -1,
           role: 'listbox',
           'aria-activedescendant': M,
-          selectedKeys: [R],
+          selectedKeys: [I],
           'aria-label': void 0 !== L ? L : 'expanded dropdown',
         },
         a.map(function (e) {
@@ -38404,7 +38571,7 @@
             }),
             n =
               t.findIndex(function (e) {
-                return e.key === R;
+                return e.key === I;
               }) || 0,
             r = t.length,
             o = 0;
@@ -38413,7 +38580,7 @@
         ) {
           n = (n + e + r) % r;
           var i = t[n];
-          if (!i.disabled) return void I(i.key);
+          if (!i.disabled) return void R(i.key);
         }
       }
       function F(e) {
@@ -38431,7 +38598,7 @@
               break;
             case E['a'].SPACE:
             case E['a'].ENTER:
-              null !== R && x(R, e);
+              null !== I && x(I, e);
               break;
           }
         else
@@ -38443,11 +38610,11 @@
           var e = document.getElementById(M);
           e && e.scrollIntoView && e.scrollIntoView(!1);
         },
-        [R],
+        [I],
       ),
         Object(r['useEffect'])(
           function () {
-            O || I(null);
+            O || R(null);
           },
           [O],
         );
@@ -38666,8 +38833,8 @@
         S = e.editable,
         T = e.locale,
         P = e.tabPosition,
-        R = e.tabBarGutter,
-        I = e.children,
+        I = e.tabBarGutter,
+        R = e.children,
         N = e.onTabClick,
         A = e.onTabScroll,
         M = Object(r['useRef'])(),
@@ -38717,9 +38884,9 @@
         je = Oe[1],
         Te = x(new Map()),
         Pe = Object(l['a'])(Te, 2),
-        Re = Pe[0],
-        Ie = Pe[1],
-        Ne = O(s, Re, ie),
+        Ie = Pe[0],
+        Re = Pe[1],
+        Ne = O(s, Ie, ie),
         Ae = ''.concat(c, '-nav-operations-hidden'),
         Me = 0,
         Le = 0;
@@ -38807,8 +38974,8 @@
         Ke = $e[1],
         Ye = {};
       'top' === P || 'bottom' === P
-        ? (Ye[w ? 'marginRight' : 'marginLeft'] = R)
-        : (Ye.marginTop = R);
+        ? (Ye[w ? 'marginRight' : 'marginLeft'] = I)
+        : (Ye.marginTop = I);
       var Ze = s.map(function (e, t) {
           var n = e.key;
           return r['createElement'](k, {
@@ -38820,7 +38987,7 @@
             closable: e.closable,
             editable: S,
             active: n === E,
-            renderWrapper: I,
+            renderWrapper: R,
             removeAriaLabel:
               null === T || void 0 === T ? void 0 : T.removeAriaLabel,
             ref: B(n),
@@ -38872,7 +39039,7 @@
                 : a.offsetHeight) || 0) - u;
           le(d),
             de(f),
-            Ie(function () {
+            Re(function () {
               var e = new Map();
               return (
                 s.forEach(function (t) {
@@ -38932,7 +39099,7 @@
           },
           [
             w,
-            R,
+            I,
             E,
             s
               .map(function (e) {
@@ -39198,8 +39365,8 @@
         j = e.tabBarGutter,
         T = e.tabBarStyle,
         P = e.tabBarExtraContent,
-        R = e.locale,
-        I = e.moreIcon,
+        I = e.locale,
+        R = e.moreIcon,
         N = e.moreTransitionName,
         A = e.destroyInactiveTabPane,
         M = e.renderTabBar,
@@ -39291,8 +39458,8 @@
           {},
           {
             editable: w,
-            locale: R,
-            moreIcon: I,
+            locale: I,
+            moreIcon: R,
             moreTransitionName: N,
             tabBarGutter: j,
             onTabClick: de,
@@ -39460,8 +39627,8 @@
         j = O[1],
         T = Object(r['useState'])(ke(S, s.sources[S])),
         P = ge(T, 2),
-        R = P[0],
-        I = P[1],
+        I = P[0],
+        R = P[1],
         N = Object(r['useState'])(Boolean(s.defaultShowCode)),
         A = ge(N, 2),
         M = A[0],
@@ -39470,7 +39637,7 @@
         _ = ge(D, 2),
         z = _[0],
         F = _[1],
-        B = s.sources[S][R] || s.sources[S].content,
+        B = s.sources[S][I] || s.sources[S].content,
         U = Object(me['useTSPlaygroundUrl'])(c, B),
         V = Object(r['useRef'])(),
         H = Object(me['usePrefersColor'])(),
@@ -39484,7 +39651,7 @@
               }
             : $;
       function K(e) {
-        j(e), I(ke(e, s.sources[e]));
+        j(e), R(ke(e, s.sources[e]));
       }
       return (
         Object(r['useEffect'])(
@@ -39638,7 +39805,7 @@
                     return w(B);
                   },
                 }),
-                'tsx' === R &&
+                'tsx' === I &&
                   M &&
                   o.a.createElement(
                     me['Link'],
@@ -39688,7 +39855,7 @@
               o.a.createElement(
                 'div',
                 { className: '__dumi-default-previewer-source' },
-                o.a.createElement(he['a'], { code: B, lang: R, showCopy: !1 }),
+                o.a.createElement(he['a'], { code: B, lang: I, showCopy: !1 }),
               ),
             ),
         )
@@ -41394,10 +41561,10 @@
           return (t = T.get(this))[e].apply(t, arguments);
         };
       });
-      var R = (function () {
+      var I = (function () {
         return 'undefined' !== typeof o.ResizeObserver ? o.ResizeObserver : P;
       })();
-      t['a'] = R;
+      t['a'] = I;
     }.call(this, n('IyRk')));
   },
   beRK: function (e, t, n) {
@@ -42257,28 +42424,28 @@
       j = '[object Uint8ClampedArray]',
       T = '[object Uint16Array]',
       P = '[object Uint32Array]',
-      R = {};
-    function I(e) {
-      return a(e) && o(e.length) && !!R[r(e)];
+      I = {};
+    function R(e) {
+      return a(e) && o(e.length) && !!I[r(e)];
     }
-    (R[E] = R[w] = R[k] = R[C] = R[O] = R[S] = R[j] = R[T] = R[P] = !0),
-      (R[i] =
-        R[l] =
-        R[y] =
-        R[c] =
-        R[x] =
-        R[s] =
-        R[u] =
-        R[d] =
-        R[f] =
-        R[p] =
-        R[m] =
-        R[h] =
-        R[v] =
-        R[g] =
-        R[b] =
+    (I[E] = I[w] = I[k] = I[C] = I[O] = I[S] = I[j] = I[T] = I[P] = !0),
+      (I[i] =
+        I[l] =
+        I[y] =
+        I[c] =
+        I[x] =
+        I[s] =
+        I[u] =
+        I[d] =
+        I[f] =
+        I[p] =
+        I[m] =
+        I[h] =
+        I[v] =
+        I[g] =
+        I[b] =
           !1),
-      (e.exports = I);
+      (e.exports = R);
   },
   dEAq: function (e, t, n) {
     'use strict';
@@ -42556,8 +42723,8 @@
           j = void 0 === S ? 'right' : S,
           T = e.align,
           P = void 0 === T ? {} : T,
-          R = e.destroyTooltipOnHide,
-          I = void 0 !== R && R,
+          I = e.destroyTooltipOnHide,
+          R = void 0 !== I && I,
           N = e.defaultVisible,
           A = e.getTooltipContainer,
           M = e.overlayInnerStyle,
@@ -42609,9 +42776,9 @@
           },
           F = !1,
           B = !1;
-        if ('boolean' === typeof I) F = I;
-        else if (I && 'object' === Object(p['a'])(I)) {
-          var U = I.keepParent;
+        if ('boolean' === typeof R) F = R;
+        else if (R && 'object' === Object(p['a'])(R)) {
+          var U = R.keepParent;
           (F = !0 === U), (B = !1 === U);
         }
         return i['createElement'](
@@ -42667,15 +42834,15 @@
           'lime',
         )),
       P = n('EXcs'),
-      R = { adjustX: 1, adjustY: 1 },
-      I = { adjustX: 0, adjustY: 0 },
+      I = { adjustX: 1, adjustY: 1 },
+      R = { adjustX: 0, adjustY: 0 },
       N = [0, 0];
     function A(e) {
       return 'boolean' === typeof e
         ? e
-          ? R
-          : I
-        : Object(u['a'])(Object(u['a'])({}, I), e);
+          ? I
+          : R
+        : Object(u['a'])(Object(u['a'])({}, R), e);
     }
     function M(e) {
       var t = e.arrowWidth,
@@ -42841,8 +43008,8 @@
         k = e.prefixCls,
         j = e.openClassName,
         T = e.getTooltipContainer,
-        R = e.overlayClassName,
-        I = e.color,
+        I = e.overlayClassName,
+        R = e.color,
         N = e.overlayInnerStyle,
         A = e.children,
         _ = a('tooltip', k),
@@ -42857,18 +43024,18 @@
           Object(c['a'])({}, j || ''.concat(_, '-open'), !0),
         ),
         $ = f()(
-          R,
+          I,
           ((n = {}),
           Object(c['a'])(n, ''.concat(_, '-rtl'), 'rtl' === l),
-          Object(c['a'])(n, ''.concat(_, '-').concat(I), I && z.test(I)),
+          Object(c['a'])(n, ''.concat(_, '-').concat(R), R && z.test(R)),
           n),
         ),
         G = N;
       return (
-        I &&
-          !z.test(I) &&
-          ((G = Object(u['a'])(Object(u['a'])({}, N), { background: I })),
-          (V = { '--antd-arrow-background-color': I })),
+        R &&
+          !z.test(R) &&
+          ((G = Object(u['a'])(Object(u['a'])({}, N), { background: R })),
+          (V = { '--antd-arrow-background-color': R })),
         i['createElement'](
           C,
           Object(u['a'])({}, w, {
@@ -43128,8 +43295,8 @@
       j = n('afO8'),
       T = n('cVYH'),
       P = j.get,
-      R = j.set,
-      I = O.f,
+      I = j.set,
+      R = O.f,
       N = S.f,
       A = Math.round,
       M = o.RangeError,
@@ -43151,7 +43318,7 @@
         return o;
       },
       $ = function (e, t) {
-        I(e, t, {
+        R(e, t, {
           get: function () {
             return P(this)[t];
           },
@@ -43180,7 +43347,7 @@
           n.configurable ||
           (v(n, 'writable') && !n.writable) ||
           (v(n, 'enumerable') && !n.enumerable)
-          ? I(e, t, n)
+          ? R(e, t, n)
           : ((e[t] = n.value), e);
       };
     a
@@ -43214,7 +43381,7 @@
                 o.view[u](t * a + o.byteOffset, r, !0);
             },
             N = function (e, t) {
-              I(e, t, {
+              R(e, t, {
                 get: function () {
                   return S(this, t);
                 },
@@ -43270,7 +43437,7 @@
                   } else if (((i = f(r) * a), i + d > h)) throw M(q);
                   c = i / a;
                 } else (c = p(t)), (i = c * a), (o = new L(i));
-                R(e, {
+                I(e, {
                   buffer: o,
                   byteOffset: d,
                   byteLength: i,
@@ -44177,7 +44344,7 @@
         C,
         O,
         S = function (e) {
-          if (e === p && I) return I;
+          if (e === p && R) return R;
           if (!h && e in P) return P[e];
           switch (e) {
             case g:
@@ -44200,9 +44367,9 @@
         j = t + ' Iterator',
         T = !1,
         P = e.prototype,
-        R = P[v] || P['@@iterator'] || (p && P[p]),
-        I = (!h && R) || S(p),
-        N = ('Array' == t && P.entries) || R;
+        I = P[v] || P['@@iterator'] || (p && P[p]),
+        R = (!h && I) || S(p),
+        N = ('Array' == t && P.entries) || I;
       if (
         (N &&
           ((k = a(N.call(new e()))),
@@ -44214,17 +44381,17 @@
             l(k, j, !0, !0),
             d && (f[j] = x))),
         p == b &&
-          R &&
-          R.name !== b &&
+          I &&
+          I.name !== b &&
           ((T = !0),
-          (I = function () {
-            return R.call(this);
+          (R = function () {
+            return I.call(this);
           })),
-        (d && !w) || P[v] === I || c(P, v, I),
-        (f[t] = I),
+        (d && !w) || P[v] === R || c(P, v, R),
+        (f[t] = R),
         p)
       )
-        if (((C = { values: S(b), keys: E ? I : S(g), entries: S(y) }), w))
+        if (((C = { values: S(b), keys: E ? R : S(g), entries: S(y) }), w))
           for (O in C) (h || T || !(O in P)) && s(P, O, C[O]);
         else r({ target: t, proto: !0, forced: h || T }, C);
       return C;
@@ -45503,7 +45670,7 @@
           j = e.width,
           T = e.height,
           P = Object(a['useRef'])(),
-          R = Object(a['useRef'])();
+          I = Object(a['useRef'])();
         i.a.useImperativeHandle(t, function () {
           return {
             focus: function () {
@@ -45513,20 +45680,20 @@
             changeActive: function (e) {
               var t = document,
                 n = t.activeElement;
-              e && n === R.current
+              e && n === I.current
                 ? P.current.focus()
-                : e || n !== P.current || R.current.focus();
+                : e || n !== P.current || I.current.focus();
             },
           };
         });
-        var I,
+        var R,
           N,
           A,
           M = {};
         void 0 !== j && (M.width = j),
           void 0 !== T && (M.height = T),
           f &&
-            (I = i.a.createElement(
+            (R = i.a.createElement(
               'div',
               { className: ''.concat(n, '-footer') },
               f,
@@ -45565,7 +45732,7 @@
             Object(r['a'])({ className: ''.concat(n, '-body'), style: g }, b),
             v,
           ),
-          I,
+          R,
         );
         return i.a.createElement(
           'div',
@@ -45589,7 +45756,7 @@
           i.a.createElement(w, { shouldUpdate: O || S }, y ? y(L) : L),
           i.a.createElement('div', {
             tabIndex: 0,
-            ref: R,
+            ref: I,
             style: k,
             'aria-hidden': 'true',
           }),
@@ -45674,8 +45841,8 @@
         S = e.afterClose,
         T = e.transitionName,
         P = e.animation,
-        R = e.closable,
-        I = void 0 === R || R,
+        I = e.closable,
+        R = void 0 === I || I,
         N = e.mask,
         A = void 0 === N || N,
         M = e.maskTransitionName,
@@ -45789,7 +45956,7 @@
                 onMouseDown: Q,
                 onMouseUp: ee,
                 ref: H,
-                closable: I,
+                closable: R,
                 ariaId: K,
                 prefixCls: n,
                 visible: s,
@@ -45854,8 +46021,8 @@
       );
     };
     P.displayName = 'Dialog';
-    var R = P;
-    t['a'] = R;
+    var I = P;
+    t['a'] = I;
   },
   i4U9: function (e, t) {
     e.exports = function (e, t) {
@@ -46170,18 +46337,18 @@
           j = Object(a['a'])(S[0], 3),
           T = j[0],
           P = void 0 === T ? 0 : T,
-          R = j[1],
-          I = void 0 === R ? 0 : R,
+          I = j[1],
+          R = void 0 === I ? 0 : I,
           N = j[2],
           A = void 0 === N ? 0 : N,
           M = S[1],
           L = () => {
             if (!y && !k) {
               var e = P,
-                t = I,
+                t = R,
                 n = A;
-              0 === P && 0 === I && 0 === A && C(!0),
-                0 === I && 0 === A && (e--, (t = 59), (n = 59)),
+              0 === P && 0 === R && 0 === A && C(!0),
+                0 === R && 0 === A && (e--, (t = 59), (n = 59)),
                 0 === A && (t--, (n = 60)),
                 n--,
                 M([e, t, n]);
@@ -46196,7 +46363,7 @@
               x(!1), C(!0);
             }, []),
             onRestart: Object(l['useCallback'])(() => {
-              M([P, I, A]), x(!1), C(!1);
+              M([P, R, A]), x(!1), C(!1);
             }, []),
           });
         var D = (e) => e.toString().padStart(2, '0');
@@ -46207,7 +46374,7 @@
             ? s
             : y
             ? m
-            : ''.concat(D(P)).concat(v).concat(D(I)).concat(v).concat(D(A)),
+            : ''.concat(D(P)).concat(v).concat(D(R)).concat(v).concat(D(A)),
         );
       });
     t['a'] = m;
@@ -47485,9 +47652,9 @@
           j = S[0],
           T = S[1],
           P = Object(i['useState'])({}),
-          R = Object(r['a'])(P, 2),
-          I = R[0],
-          N = R[1],
+          I = Object(r['a'])(P, 2),
+          R = I[0],
+          N = I[1],
           A = Object(i['useState'])(!1),
           M = Object(r['a'])(A, 2),
           L = M[0],
@@ -47553,7 +47720,7 @@
               l.a.createElement(
                 'span',
                 { className: 'ew-select-selector-value' },
-                I[E],
+                R[E],
               ),
             ),
             l.a.createElement(
@@ -47662,10 +47829,10 @@
               'keyboard',
               'onMask',
             ]),
-            R = Object(l['useState'])(!1),
-            I = Object(a['a'])(R, 2),
-            N = I[0],
-            A = I[1],
+            I = Object(l['useState'])(!1),
+            R = Object(a['a'])(I, 2),
+            N = R[0],
+            A = R[1],
             M = (e) => {
               var t = e.key;
               switch (t) {
@@ -47903,11 +48070,11 @@
       j = u.set,
       T = u.getterFor(O),
       P = u.getterFor(S),
-      R = /\+/g,
-      I = Array(4),
+      I = /\+/g,
+      R = Array(4),
       N = function (e) {
         return (
-          I[e - 1] || (I[e - 1] = RegExp('((?:%[\\da-f]{2}){' + e + '})', 'gi'))
+          R[e - 1] || (R[e - 1] = RegExp('((?:%[\\da-f]{2}){' + e + '})', 'gi'))
         );
       },
       A = function (e) {
@@ -47918,7 +48085,7 @@
         }
       },
       M = function (e) {
-        var t = e.replace(R, ' '),
+        var t = e.replace(I, ' '),
           n = 4;
         try {
           return decodeURIComponent(t);
@@ -49079,7 +49246,7 @@
             : ((e.done = !0), { value: r, done: !1 });
         },
       ),
-      R = function (e) {
+      I = function (e) {
         var t,
           n,
           r,
@@ -49122,7 +49289,7 @@
             if (j) return S.apply(i, arguments);
             if (
               ((r = e[y]),
-              void 0 === r && b && 'RegExp' == s(e) && (r = R),
+              void 0 === r && b && 'RegExp' == s(e) && (r = I),
               null != r)
             )
               return l(r).call(e, i);
@@ -49130,12 +49297,12 @@
           return (
             (n = String(i)),
             (o = new RegExp(e, 'g')),
-            b ? R.call(o, n) : o[y](n)
+            b ? I.call(o, n) : o[y](n)
           );
         },
       },
     ),
-      b || y in C || f(C, y, R);
+      b || y in C || f(C, y, I);
   },
   ogwx: function (e, t, n) {
     'use strict';
@@ -49418,8 +49585,8 @@
       j = n('kRJp'),
       T = n('busE'),
       P = n('VpIT'),
-      R = n('93I0'),
-      I = n('0BK2'),
+      I = n('93I0'),
+      R = n('0BK2'),
       N = n('kOOl'),
       A = n('tiKp'),
       M = n('5Tg+'),
@@ -49427,7 +49594,7 @@
       D = n('1E5z'),
       _ = n('afO8'),
       z = n('tycR').forEach,
-      F = R('hidden'),
+      F = I('hidden'),
       B = 'Symbol',
       U = 'prototype',
       V = A('toPrimitive'),
@@ -49530,7 +49697,7 @@
           n = [];
         return (
           z(t, function (e) {
-            d(J, e) || d(I, e) || n.push(e);
+            d(J, e) || d(R, e) || n.push(e);
           }),
           n
         );
@@ -49671,7 +49838,7 @@
         },
       );
     }
-    $[U][V] || j($[U], V, $[U].valueOf), D($, B), (I[F] = !0);
+    $[U][V] || j($[U], V, $[U].valueOf), D($, B), (R[F] = !0);
   },
   pSRY: function (e, t, n) {
     var r = n('QkVE');
@@ -53444,7 +53611,7 @@
           : null)
       );
     }
-    function R(e) {
+    function I(e) {
       var t = e.prefixCls,
         n = e.visible,
         a = e.zIndex,
@@ -53473,7 +53640,7 @@
         )
       );
     }
-    var I,
+    var R,
       N = n('U8pU'),
       A = n('x/xZ');
     function M(e, t) {
@@ -53540,12 +53707,12 @@
     }
     var z = { Webkit: '-webkit-', Moz: '-moz-', ms: '-ms-', O: '-o-' };
     function F() {
-      if (void 0 !== I) return I;
-      I = '';
+      if (void 0 !== R) return R;
+      R = '';
       var e = document.createElement('p').style,
         t = 'Transform';
-      for (var n in z) n + t in e && (I = n);
-      return I;
+      for (var n in z) n + t in e && (R = n);
+      return R;
     }
     function B() {
       return F() ? ''.concat(F(), 'TransitionProperty') : 'transitionProperty';
@@ -53868,8 +54035,8 @@
           return ('CSS1Compat' === r.compatMode && i) || (o && o[n]) || i;
         });
     });
-    var Re = { position: 'absolute', visibility: 'hidden', display: 'block' };
-    function Ie() {
+    var Ie = { position: 'absolute', visibility: 'hidden', display: 'block' };
+    function Re() {
       for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++)
         t[n] = arguments[n];
       var r,
@@ -53877,7 +54044,7 @@
       return (
         0 !== o.offsetWidth
           ? (r = Pe.apply(void 0, t))
-          : Se(o, Re, function () {
+          : Se(o, Ie, function () {
               r = Pe.apply(void 0, t);
             }),
         r
@@ -53890,12 +54057,12 @@
     ye(['width', 'height'], function (e) {
       var t = e.charAt(0).toUpperCase() + e.slice(1);
       Te['outer'.concat(t)] = function (t, n) {
-        return t && Ie(t, e, n ? Oe : Ce);
+        return t && Re(t, e, n ? Oe : Ce);
       };
       var n = 'width' === e ? ['Left', 'Right'] : ['Top', 'Bottom'];
       Te[e] = function (t, r) {
         var o = r;
-        if (void 0 === o) return t && Ie(t, e, we);
+        if (void 0 === o) return t && Re(t, e, we);
         if (t) {
           var a = xe(t);
           return a && (o += je(t, ['padding', 'border'], n)), J(t, e, o);
@@ -54535,10 +54702,10 @@
           C = e.onClick,
           S = Object(u['useRef'])(),
           j = Object(u['useRef'])(),
-          R = Object(u['useState'])(),
-          I = Object(O['a'])(R, 2),
-          N = I[0],
-          A = I[1],
+          I = Object(u['useState'])(),
+          R = Object(O['a'])(I, 2),
+          N = R[0],
+          A = R[1],
           M = xt(d),
           L = Object(O['a'])(M, 2),
           D = L[0],
@@ -54762,14 +54929,14 @@
         var g = m
           ? u['createElement'](Ct, Object(o['a'])({}, v, { mobile: a, ref: t }))
           : u['createElement'](wt, Object(o['a'])({}, v, { ref: t }));
-        return u['createElement']('div', null, u['createElement'](R, v), g);
+        return u['createElement']('div', null, u['createElement'](I, v), g);
       });
     St.displayName = 'Popup';
     var jt = St,
       Tt = u['createContext'](null),
       Pt = Tt;
-    function Rt() {}
-    function It() {
+    function It() {}
+    function Rt() {
       return '';
     }
     function Nt(e) {
@@ -55383,11 +55550,11 @@
         (t.contextType = Pt),
         (t.defaultProps = {
           prefixCls: 'rc-trigger-popup',
-          getPopupClassNameFromAlign: It,
+          getPopupClassNameFromAlign: Rt,
           getDocument: Nt,
-          onPopupVisibleChange: Rt,
-          afterPopupVisibleChange: Rt,
-          onPopupAlign: Rt,
+          onPopupVisibleChange: It,
+          afterPopupVisibleChange: It,
+          onPopupAlign: It,
           popupClassName: '',
           mouseEnterDelay: 0,
           mouseLeaveDelay: 0.1,
@@ -55977,7 +56144,7 @@
     function P(e) {
       return 'object' === typeof e && null !== e && e.$$typeof === a;
     }
-    function R(e) {
+    function I(e) {
       var t = { '=': '=0', ':': '=2' };
       return (
         '$' +
@@ -55986,7 +56153,7 @@
         })
       );
     }
-    var I = /\/+/g,
+    var R = /\/+/g,
       N = [];
     function A(e, t, n, r) {
       if (N.length) {
@@ -56064,7 +56231,7 @@
     }
     function _(e, t) {
       return 'object' === typeof e && null !== e && null != e.key
-        ? R(e.key)
+        ? I(e.key)
         : t.toString(36);
     }
     function z(e, t) {
@@ -56085,14 +56252,14 @@
                 o +
                   (!e.key || (t && t.key === e.key)
                     ? ''
-                    : ('' + e.key).replace(I, '$&/') + '/') +
+                    : ('' + e.key).replace(R, '$&/') + '/') +
                   n,
               )),
             r.push(e));
     }
     function B(e, t, n, r, o) {
       var a = '';
-      null != n && (a = ('' + n).replace(I, '$&/') + '/'),
+      null != n && (a = ('' + n).replace(R, '$&/') + '/'),
         (t = A(t, a, r, o)),
         D(e, F, t),
         M(t);
@@ -56486,8 +56653,8 @@
       j = n('ye1Q'),
       T = n('TSYQ'),
       P = n.n(T),
-      R = n('Ff2n'),
-      I = n('VTBJ'),
+      I = n('Ff2n'),
+      R = n('VTBJ'),
       N = n('bJ/+'),
       A = n('8XRh'),
       M = n('i8i4'),
@@ -56669,7 +56836,7 @@
           (e.hookRefs = new Map()),
           (e.add = function (t, n) {
             var r = t.key || H(),
-              o = Object(I['a'])(Object(I['a'])({}, t), {}, { key: r }),
+              o = Object(R['a'])(Object(R['a'])({}, t), {}, { key: r }),
               a = e.props.maxCount;
             e.setState(function (e) {
               var t = e.notices,
@@ -56741,9 +56908,9 @@
                     c = r === t.length - 1 ? a.updateMark : void 0,
                     u = a.key,
                     d = a.userPassKey,
-                    f = Object(I['a'])(
-                      Object(I['a'])(
-                        Object(I['a'])({ prefixCls: o, closeIcon: i }, a),
+                    f = Object(R['a'])(
+                      Object(R['a'])(
+                        Object(R['a'])({ prefixCls: o, closeIcon: i }, a),
                         a.props,
                       ),
                       {},
@@ -56790,7 +56957,7 @@
                         ? l['createElement']('div', {
                             key: n,
                             className: P()(a, ''.concat(o, '-hook-holder')),
-                            style: Object(I['a'])({}, i),
+                            style: Object(R['a'])({}, i),
                             ref: function (t) {
                               'undefined' !== typeof n &&
                                 (t
@@ -56807,8 +56974,8 @@
                                   ? void 0
                                   : u.className,
                               ),
-                              style: Object(I['a'])(
-                                Object(I['a'])({}, i),
+                              style: Object(R['a'])(
+                                Object(R['a'])({}, i),
                                 null === u || void 0 === u ? void 0 : u.style,
                               ),
                               visible: c,
@@ -56833,7 +57000,7 @@
       (q.newInstance = function (e, t) {
         var n = e || {},
           o = n.getContainer,
-          a = Object(R['a'])(n, B),
+          a = Object(I['a'])(n, B),
           i = document.createElement('div');
         if (o) {
           var c = o();
@@ -57161,8 +57328,8 @@
       je = 24,
       Te = 24,
       Pe = '',
-      Re = 'topRight',
-      Ie = !1;
+      Ie = 'topRight',
+      Re = !1;
     function Ne(e) {
       var t = e.duration,
         n = e.placement,
@@ -57173,12 +57340,12 @@
         l = e.prefixCls;
       void 0 !== l && (Pe = l),
         void 0 !== t && (Se = t),
-        void 0 !== n ? (Re = n) : e.rtl && (Re = 'topLeft'),
+        void 0 !== n ? (Ie = n) : e.rtl && (Ie = 'topLeft'),
         void 0 !== r && (Te = r),
         void 0 !== o && (je = o),
         void 0 !== a && (we = a),
         void 0 !== i && (ke = i),
-        void 0 !== e.rtl && (Ie = e.rtl),
+        void 0 !== e.rtl && (Re = e.rtl),
         void 0 !== e.maxCount && (Ce = e.maxCount);
     }
     function Ae(e) {
@@ -57221,7 +57388,7 @@
     }
     function Me(e, t) {
       var n = e.placement,
-        r = void 0 === n ? Re : n,
+        r = void 0 === n ? Ie : n,
         o = e.top,
         a = e.bottom,
         i = e.getContainer,
@@ -57245,7 +57412,7 @@
       else {
         var v = P()(
           ''.concat(f, '-').concat(r),
-          Object(w['a'])({}, ''.concat(f, '-rtl'), !0 === Ie),
+          Object(w['a'])({}, ''.concat(f, '-rtl'), !0 === Re),
         );
         Oe[m] = new Promise(function (e) {
           G.newInstance(
@@ -57899,10 +58066,10 @@
             [k, s],
           ),
           P = c,
-          R = {};
+          I = {};
         return (
           f &&
-            (R =
+            (I =
               (null === (t = f.Form) || void 0 === t
                 ? void 0
                 : t.defaultValidateMessages) ||
@@ -57912,9 +58079,9 @@
               {}),
           d &&
             d.validateMessages &&
-            (R = Object(r['a'])(Object(r['a'])({}, R), d.validateMessages)),
-          Object.keys(R).length > 0 &&
-            (P = l['createElement'](a['b'], { validateMessages: R }, c)),
+            (I = Object(r['a'])(Object(r['a'])({}, I), d.validateMessages)),
+          Object.keys(I).length > 0 &&
+            (P = l['createElement'](a['b'], { validateMessages: I }, c)),
           f && (P = l['createElement'](y, { locale: f, _ANT_MARK__: b }, P)),
           (k || s) &&
             (P = l['createElement'](o['a'].Provider, { value: T }, P)),
@@ -59002,7 +59169,8 @@
       c = n('dMo/'),
       s = o.a.memo((e) => {
         var t = e.demos,
-          n = t['alert-demo.zh-cn'].component;
+          n = t['alert-demo.zh-cn'].component,
+          r = t['jsx-demo.zh-cn-1'].component;
         return o.a.createElement(
           o.a.Fragment,
           null,
@@ -59085,16 +59253,32 @@
                 code: '@keyframes leave {\n  0% {\n    opacity: 1;\n  }\n\n  100% {\n    opacity: 0;\n  }\n}\n\n@baseSelector: alert;\n@infoBgColor: #e6f7ff;\n@infoBorderColor: #91d5ff;\n@warningBgColor: #fffbe6;\n@warningBorderColor: #ffe58f;\n@errorBgColor: #fff2f0;\n@errorBorderColor: #ffccc7;\n@successBgColor: #f6ffed;\n@successBorderColor: #b7eb8f;\n@color: rgba(0, 0, 0, 0.85);\n@closeActiveColor: fadeout(@color, 25%);\n.@{baseSelector} {\n  box-sizing: border-box;\n  margin: 0;\n  color: @color;\n  font-size: 14px;\n  line-height: 1.5715;\n  list-style: none;\n  position: relative;\n  display: flex;\n  align-items: center;\n  padding: 8px 15px;\n  word-wrap: break-word;\n  border-radius: 2px;\n  border: 1px solid transparent;\n  &.@{baseSelector}-block {\n    width: percentage(1);\n  }\n  &.@{baseSelector}-info {\n    background-color: @infoBgColor;\n    border-color: @infoBorderColor;\n  }\n\n  &.@{baseSelector}-warning {\n    background-color: @warningBgColor;\n    border-color: @warningBorderColor;\n  }\n\n  &.@{baseSelector}-error {\n    background-color: @errorBgColor;\n    border-color: @errorBorderColor;\n  }\n\n  &.@{baseSelector}-success {\n    background-color: @successBgColor;\n    border-color: @successBorderColor;\n  }\n\n  .@{baseSelector}-close {\n    margin-left: 8px;\n    padding: 0;\n    overflow: hidden;\n    font-size: 16px;\n    line-height: 12px;\n    background-color: transparent;\n    border: none;\n    outline: none;\n    cursor: pointer;\n    margin: 0;\n    color: @color;\n    position: absolute;\n    right: 10px;\n    top: 10px;\n    &:hover {\n      color: @closeActiveColor;\n    }\n  }\n}',
                 lang: 'less',
               }),
+              o.a.createElement('p', null, 'tsx:'),
               o.a.createElement(l['a'], {
-                code: "import React, { useState, useEffect } from 'react';\nimport './alert.less';\nimport { Space } from 'antd';\nimport 'antd/dist/antd.less';\nimport styled from '@emotion/styled';\n\ninterface AlertPropType {\n  isDefaultShown: boolean;\n  timeout: number;\n  type: string;\n  message: string;\n  showClose: boolean;\n  block: boolean;\n}\n\nconst SpaceBlock = styled(Space)`\n  width: 100%;\n`;\n\nconst Alert = (props: Partial<AlertPropType>) => {\n  const {\n    isDefaultShown,\n    timeout = 250,\n    type,\n    message,\n    showClose,\n    block,\n  } = props;\n  const [isShown, setIsShown] = useState(isDefaultShown);\n  const [isLeaving, setIsLeaving] = useState(false);\n\n  let timer: number | null = null;\n  useEffect(() => {\n    setIsShown(true);\n    return () => {\n      if (timer) {\n        clearTimeout(timer);\n      }\n    };\n  }, [timeout, timer, isDefaultShown]);\n\n  const closeAlert = () => {\n    setIsLeaving(true);\n    timer = setTimeout(() => {\n      setIsLeaving(false);\n      setIsShown(false);\n    }, timeout);\n  };\n\n  return isShown ? (\n    <div\n      className={`alert ${'alert-' + type}${isLeaving ? ' leaving' : ''}${\n        block ? ' alert-block' : ''\n      }`}\n      role=\"alert\"\n    >\n      <button\n        className=\"alert-close\"\n        onClick={closeAlert}\n        style={{ display: showClose ? 'block' : 'none' }}\n      >\n        &times;\n      </button>\n      {message}\n    </div>\n  ) : null;\n};\n\nconst Demo = () => {\n  return (\n    <SpaceBlock direction=\"vertical\">\n      <Alert type=\"info\" message=\"\u8fd9\u662f\u4fe1\u606f\u63d0\u793a\uff0c\u5e76\u5360\u6ee1\u7a7a\u95f4\" block />\n      <Alert type=\"success\" message=\"\u8fd9\u662f\u6210\u529f\u63d0\u793a\uff0c\u5e76\u663e\u793a\u5173\u95ed\u6309\u94ae\" showClose />\n      <Alert\n        type=\"warning\"\n        message=\"\u8fd9\u662f\u8b66\u544a\u63d0\u793a\uff0c\u4e0d\u5360\u6ee1\u7a7a\u95f4\uff0c\u4e0d\u663e\u793a\u5173\u95ed\u6309\u94ae\"\n      />\n      <Alert type=\"error\" message=\"\u8fd9\u662f\u9519\u8bef\u63d0\u793a\uff0c\u4e0d\u5360\u6ee1\u7a7a\u95f4\uff0c\u4e0d\u663e\u793a\u5173\u95ed\u6309\u94ae\" />\n    </SpaceBlock>\n  );\n};\n\nexport default Demo;",
+                code: "import React, { useState, useEffect } from 'react';\nimport './alert.less';\n\ninterface AlertPropType {\n  isDefaultShown: boolean;\n  timeout: number;\n  type: string;\n  message: string;\n  showClose: boolean;\n  block: boolean;\n}\n\nconst Alert = (props: Partial<AlertPropType>) => {\n  const {\n    isDefaultShown,\n    timeout = 250,\n    type,\n    message,\n    showClose,\n    block,\n  } = props;\n  const [isShown, setIsShown] = useState(isDefaultShown);\n  const [isLeaving, setIsLeaving] = useState(false);\n\n  let timer: number | null = null;\n  useEffect(() => {\n    setIsShown(true);\n    return () => {\n      if (timer) {\n        clearTimeout(timer);\n      }\n    };\n  }, [timeout, timer, isDefaultShown]);\n\n  const closeAlert = () => {\n    setIsLeaving(true);\n    timer = setTimeout(() => {\n      setIsLeaving(false);\n      setIsShown(false);\n    }, timeout);\n  };\n\n  return isShown ? (\n    <div\n      className={`alert ${'alert-' + type}${isLeaving ? ' leaving' : ''}${\n        block ? ' alert-block' : ''\n      }`}\n      role=\"alert\"\n    >\n      <button\n        className=\"alert-close\"\n        onClick={closeAlert}\n        style={{ display: showClose ? 'block' : 'none' }}\n      >\n        &times;\n      </button>\n      {message}\n    </div>\n  ) : null;\n};\n\nexport default Alert;",
                 lang: 'tsx',
               }),
-              o.a.createElement('p', null, 'demo:'),
+              o.a.createElement('p', null, 'jsx:'),
+              o.a.createElement(l['a'], {
+                code: "import React, { useState, useEffect } from 'react';\nimport '../alert.less';\n\nconst Alert = (props) => {\n  const {\n    isDefaultShown,\n    timeout = 250,\n    type,\n    message,\n    showClose,\n    block,\n  } = props;\n  const [isShown, setIsShown] = useState(isDefaultShown);\n  const [isLeaving, setIsLeaving] = useState(false);\n\n  let timer = null;\n  useEffect(() => {\n    setIsShown(true);\n    return () => {\n      if (timer) {\n        clearTimeout(timer);\n      }\n    };\n  }, [timeout, timer, isDefaultShown]);\n\n  const closeAlert = () => {\n    setIsLeaving(true);\n    timer = setTimeout(() => {\n      setIsLeaving(false);\n      setIsShown(false);\n    }, timeout);\n  };\n\n  return isShown ? (\n    <div\n      className={`alert ${'alert-' + type}${isLeaving ? ' leaving' : ''}${\n        block ? ' alert-block' : ''\n      }`}\n      role=\"alert\"\n    >\n      <button\n        className=\"alert-close\"\n        onClick={closeAlert}\n        style={{ display: showClose ? 'block' : 'none' }}\n      >\n        &times;\n      </button>\n      {message}\n    </div>\n  ) : null;\n};\n\nexport default Alert;",
+                lang: 'jsx',
+              }),
+              o.a.createElement('p', null, '\u793a\u4f8b:'),
             ),
             o.a.createElement(
               i['default'],
               t['alert-demo.zh-cn'].previewerProps,
               o.a.createElement(n, null),
+            ),
+            o.a.createElement(
+              'div',
+              { className: 'markdown' },
+              o.a.createElement('p', null, 'jsx \u793a\u4f8b:'),
+            ),
+            o.a.createElement(
+              i['default'],
+              t['jsx-demo.zh-cn-1'].previewerProps,
+              o.a.createElement(r, null),
             ),
           ),
         );
@@ -59342,6 +59526,44 @@
       },
     );
   },
+  ydVG: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r,
+      o = n('qqnG'),
+      a = n('q1tI'),
+      i = n.n(a),
+      l = n('zeV3'),
+      c = (n('k/c8'), n('5SEd')),
+      s = n('0NDP'),
+      u = Object(c['a'])(l['b'])(
+        r || (r = Object(o['a'])(['\n  width: 100%;\n'])),
+      ),
+      d = () =>
+        i.a.createElement(
+          u,
+          { direction: 'vertical' },
+          i.a.createElement(s['a'], {
+            type: 'info',
+            message: 'This is info',
+            block: !0,
+          }),
+          i.a.createElement(s['a'], {
+            type: 'success',
+            message: 'This is success',
+            showClose: !0,
+          }),
+          i.a.createElement(s['a'], {
+            type: 'warning',
+            message: 'This is warning',
+          }),
+          i.a.createElement(s['a'], {
+            type: 'error',
+            message: 'This is error',
+          }),
+        );
+    t['default'] = d;
+  },
   ye1Q: function (e, t, n) {
     'use strict';
     var r = n('VTBJ'),
@@ -59486,8 +59708,8 @@
         'undefined' === typeof window.document.createElement
       ),
       P = null,
-      R = null,
-      I = null;
+      I = null,
+      R = null;
     function N(e) {
       if ((e = v(e))) {
         if ('function' !== typeof P) throw Error(i(280));
@@ -59496,13 +59718,13 @@
       }
     }
     function A(e) {
-      R ? (I ? I.push(e) : (I = [e])) : (R = e);
+      I ? (R ? R.push(e) : (R = [e])) : (I = e);
     }
     function M() {
-      if (R) {
-        var e = R,
-          t = I;
-        if (((I = R = null), N(e), t)) for (e = 0; e < t.length; e++) N(t[e]);
+      if (I) {
+        var e = I,
+          t = R;
+        if (((R = I = null), N(e), t)) for (e = 0; e < t.length; e++) N(t[e]);
       }
     }
     function L(e, t) {
@@ -59516,7 +59738,7 @@
       F = !1,
       B = !1;
     function U() {
-      (null === R && null === I) || (_(), M());
+      (null === I && null === R) || (_(), M());
     }
     function V(e, t, n) {
       if (B) return e(t, n);
@@ -59897,11 +60119,11 @@
               : null != t.value,
         });
     }
-    function Re(e, t) {
+    function Ie(e, t) {
       (t = t.checked), null != t && te(e, 'checked', t, !1);
     }
-    function Ie(e, t) {
-      Re(e, t);
+    function Re(e, t) {
+      Ie(e, t);
       var n = ke(t.value),
         r = t.type;
       if (null != n)
@@ -60362,8 +60584,8 @@
       jt = null,
       Tt = null,
       Pt = null,
-      Rt = new Map(),
       It = new Map(),
+      Rt = new Map(),
       Nt = [],
       At =
         'mousedown mouseup touchcancel touchend touchstart auxclick dblclick pointercancel pointerdown pointerup dragend dragstart drop compositionend compositionstart keydown keypress keyup input textInput close cancel copy cut paste click change contextmenu reset submit'.split(
@@ -60407,11 +60629,11 @@
           break;
         case 'pointerover':
         case 'pointerout':
-          Rt.delete(t.pointerId);
+          It.delete(t.pointerId);
           break;
         case 'gotpointercapture':
         case 'lostpointercapture':
-          It.delete(t.pointerId);
+          Rt.delete(t.pointerId);
       }
     }
     function zt(e, t, n, r, o, a) {
@@ -60431,11 +60653,11 @@
           return (Pt = zt(Pt, e, t, n, r, o)), !0;
         case 'pointerover':
           var a = o.pointerId;
-          return Rt.set(a, zt(Rt.get(a) || null, e, t, n, r, o)), !0;
+          return It.set(a, zt(It.get(a) || null, e, t, n, r, o)), !0;
         case 'gotpointercapture':
           return (
             (a = o.pointerId),
-            It.set(a, zt(It.get(a) || null, e, t, n, r, o)),
+            Rt.set(a, zt(Rt.get(a) || null, e, t, n, r, o)),
             !0
           );
       }
@@ -60495,8 +60717,8 @@
       null !== jt && Ut(jt) && (jt = null),
         null !== Tt && Ut(Tt) && (Tt = null),
         null !== Pt && Ut(Pt) && (Pt = null),
-        Rt.forEach(Vt),
-        It.forEach(Vt);
+        It.forEach(Vt),
+        Rt.forEach(Vt);
     }
     function qt(e, t) {
       e.blockedOn === t &&
@@ -60520,8 +60742,8 @@
         null !== jt && qt(jt, e),
           null !== Tt && qt(Tt, e),
           null !== Pt && qt(Pt, e),
-          Rt.forEach(t),
           It.forEach(t),
+          Rt.forEach(t),
           n = 0;
         n < Nt.length;
         n++
@@ -60910,8 +61132,8 @@
       jn = '$?',
       Tn = '$!',
       Pn = null,
-      Rn = null;
-    function In(e, t) {
+      In = null;
+    function Rn(e, t) {
       switch (e) {
         case 'button':
         case 'input':
@@ -61376,10 +61598,10 @@
     }
     var Tr = null,
       Pr = null;
-    function Rr(e) {
+    function Ir(e) {
       mt(e);
     }
-    function Ir(e) {
+    function Rr(e) {
       var t = Hn(e);
       if (je(t)) return e;
     }
@@ -61391,12 +61613,12 @@
       Tr && (Tr.detachEvent('onpropertychange', Lr), (Pr = Tr = null));
     }
     function Lr(e) {
-      if ('value' === e.propertyName && Ir(Pr))
+      if ('value' === e.propertyName && Rr(Pr))
         if (((e = jr(Pr, e, ht(e))), F)) mt(e);
         else {
           F = !0;
           try {
-            L(Rr, e);
+            L(Ir, e);
           } finally {
             (F = !1), U();
           }
@@ -61409,13 +61631,13 @@
     }
     function _r(e) {
       if ('selectionchange' === e || 'keyup' === e || 'keydown' === e)
-        return Ir(Pr);
+        return Rr(Pr);
     }
     function zr(e, t) {
-      if ('click' === e) return Ir(t);
+      if ('click' === e) return Rr(t);
     }
     function Fr(e, t) {
-      if ('input' === e || 'change' === e) return Ir(t);
+      if ('input' === e || 'change' === e) return Rr(t);
     }
     T &&
       (Ar =
@@ -61978,8 +62200,8 @@
       So++, (Oo[So] = e.current), (e.current = t);
     }
     var Po = {},
-      Ro = { current: Po },
-      Io = { current: !1 },
+      Io = { current: Po },
+      Ro = { current: !1 },
       No = Po;
     function Ao(e, t) {
       var n = e.type.contextTypes;
@@ -62002,11 +62224,11 @@
       return (e = e.childContextTypes), null !== e && void 0 !== e;
     }
     function Lo() {
-      jo(Io), jo(Ro);
+      jo(Ro), jo(Io);
     }
     function Do(e, t, n) {
-      if (Ro.current !== Po) throw Error(i(168));
-      To(Ro, t), To(Io, n);
+      if (Io.current !== Po) throw Error(i(168));
+      To(Io, t), To(Ro, n);
     }
     function _o(e, t, n) {
       var r = e.stateNode;
@@ -62021,9 +62243,9 @@
         (e =
           ((e = e.stateNode) && e.__reactInternalMemoizedMergedChildContext) ||
           Po),
-        (No = Ro.current),
-        To(Ro, e),
-        To(Io, Io.current),
+        (No = Io.current),
+        To(Io, e),
+        To(Ro, Ro.current),
         !0
       );
     }
@@ -62033,11 +62255,11 @@
       n
         ? ((e = _o(e, t, No)),
           (r.__reactInternalMemoizedMergedChildContext = e),
-          jo(Io),
           jo(Ro),
-          To(Ro, e))
-        : jo(Io),
-        To(Io, n);
+          jo(Io),
+          To(Io, e))
+        : jo(Ro),
+        To(Ro, n);
     }
     var Bo = a.unstable_runWithPriority,
       Uo = a.unstable_scheduleCallback,
@@ -62341,7 +62563,7 @@
           (e.memoizedState = s);
       }
     }
-    function Ra(e, t, n) {
+    function Ia(e, t, n) {
       if (((e = t.effects), (t.effects = null), null !== e))
         for (t = 0; t < e.length; t++) {
           var r = e[t],
@@ -62355,7 +62577,7 @@
           }
         }
     }
-    var Ia = ee.ReactCurrentBatchConfig,
+    var Ra = ee.ReactCurrentBatchConfig,
       Na = new r.Component().refs;
     function Aa(e, t, n, r) {
       (t = e.memoizedState),
@@ -62371,7 +62593,7 @@
       enqueueSetState: function (e, t, n) {
         e = e._reactInternalFiber;
         var r = wc(),
-          o = Ia.suspense;
+          o = Ra.suspense;
         (r = kc(r, e, o)),
           (o = Sa(r, o)),
           (o.payload = t),
@@ -62382,7 +62604,7 @@
       enqueueReplaceState: function (e, t, n) {
         e = e._reactInternalFiber;
         var r = wc(),
-          o = Ia.suspense;
+          o = Ra.suspense;
         (r = kc(r, e, o)),
           (o = Sa(r, o)),
           (o.tag = 1),
@@ -62394,7 +62616,7 @@
       enqueueForceUpdate: function (e, t) {
         e = e._reactInternalFiber;
         var n = wc(),
-          r = Ia.suspense;
+          r = Ra.suspense;
         (n = kc(n, e, r)),
           (r = Sa(n, r)),
           (r.tag = 2),
@@ -62421,7 +62643,7 @@
       return (
         'object' === typeof a && null !== a
           ? (a = wa(a))
-          : ((o = Mo(t) ? No : Ro.current),
+          : ((o = Mo(t) ? No : Io.current),
             (r = t.contextTypes),
             (a = (r = null !== r && void 0 !== r) ? Ao(e, o) : Po)),
         (t = new t(n, a)),
@@ -62451,7 +62673,7 @@
       var a = t.contextType;
       'object' === typeof a && null !== a
         ? (o.context = wa(a))
-        : ((a = Mo(t) ? No : Ro.current), (o.context = Ao(e, a))),
+        : ((a = Mo(t) ? No : Io.current), (o.context = Ao(e, a))),
         Pa(e, n, o, r),
         (o.state = e.memoizedState),
         (a = t.getDerivedStateFromProps),
@@ -63136,7 +63358,7 @@
     function Pi(e, t) {
       return (pi().memoizedState = [e, void 0 === t ? null : t]), e;
     }
-    function Ri(e, t) {
+    function Ii(e, t) {
       var n = mi();
       t = void 0 === t ? null : t;
       var r = n.memoizedState;
@@ -63144,7 +63366,7 @@
         ? r[0]
         : ((n.memoizedState = [e, t]), e);
     }
-    function Ii(e, t) {
+    function Ri(e, t) {
       var n = mi();
       t = void 0 === t ? null : t;
       var r = n.memoizedState;
@@ -63169,7 +63391,7 @@
     }
     function Ai(e, t, n) {
       var r = wc(),
-        o = Ia.suspense;
+        o = Ra.suspense;
       (r = kc(r, e, o)),
         (o = {
           expirationTime: r,
@@ -63291,12 +63513,12 @@
       },
       Di = {
         readContext: wa,
-        useCallback: Ri,
+        useCallback: Ii,
         useContext: wa,
         useEffect: Ci,
         useImperativeHandle: ji,
         useLayoutEffect: Oi,
-        useMemo: Ii,
+        useMemo: Ri,
         useReducer: vi,
         useRef: xi,
         useState: function () {
@@ -63327,17 +63549,17 @@
         useTransition: function (e) {
           var t = vi(hi),
             n = t[0];
-          return (t = t[1]), [Ri(Ni.bind(null, t, e), [t, e]), n];
+          return (t = t[1]), [Ii(Ni.bind(null, t, e), [t, e]), n];
         },
       },
       _i = {
         readContext: wa,
-        useCallback: Ri,
+        useCallback: Ii,
         useContext: wa,
         useEffect: Ci,
         useImperativeHandle: ji,
         useLayoutEffect: Oi,
-        useMemo: Ii,
+        useMemo: Ri,
         useReducer: gi,
         useRef: xi,
         useState: function () {
@@ -63368,7 +63590,7 @@
         useTransition: function (e) {
           var t = gi(hi),
             n = t[0];
-          return (t = t[1]), [Ri(Ni.bind(null, t, e), [t, e]), n];
+          return (t = t[1]), [Ii(Ni.bind(null, t, e), [t, e]), n];
         },
       },
       zi = null,
@@ -63530,7 +63752,7 @@
         (t.effectTag |= 128);
     }
     function el(e, t, n, r, o) {
-      var a = Mo(n) ? No : Ro.current;
+      var a = Mo(n) ? No : Io.current;
       return (
         (a = Ao(t, a)),
         Ea(t, o),
@@ -63562,7 +63784,7 @@
           s = n.contextType;
         'object' === typeof s && null !== s
           ? (s = wa(s))
-          : ((s = Mo(n) ? No : Ro.current), (s = Ao(t, s)));
+          : ((s = Mo(n) ? No : Io.current), (s = Ao(t, s)));
         var u = n.getDerivedStateFromProps,
           d =
             'function' === typeof u ||
@@ -63576,7 +63798,7 @@
         (i.state = f),
           Pa(t, r, i, o),
           (c = t.memoizedState),
-          l !== r || f !== c || Io.current || ka
+          l !== r || f !== c || Ro.current || ka
             ? ('function' === typeof u &&
                 (Aa(t, n, u, r), (c = t.memoizedState)),
               (l = ka || La(t, n, l, r, f, c, s))
@@ -63608,7 +63830,7 @@
           (s = n.contextType),
           'object' === typeof s && null !== s
             ? (s = wa(s))
-            : ((s = Mo(n) ? No : Ro.current), (s = Ao(t, s))),
+            : ((s = Mo(n) ? No : Io.current), (s = Ao(t, s))),
           (u = n.getDerivedStateFromProps),
           (d =
             'function' === typeof u ||
@@ -63621,7 +63843,7 @@
           (i.state = c),
           Pa(t, r, i, o),
           (f = t.memoizedState),
-          l !== r || c !== f || Io.current || ka
+          l !== r || c !== f || Ro.current || ka
             ? ('function' === typeof u &&
                 (Aa(t, n, u, r), (f = t.memoizedState)),
               (u = ka || La(t, n, l, r, c, f, s))
@@ -63930,8 +64152,8 @@
         case 3:
           return (
             Xa(),
-            jo(Io),
             jo(Ro),
+            jo(Io),
             (n = t.stateNode),
             n.pendingContext &&
               ((n.context = n.pendingContext), (n.pendingContext = null)),
@@ -64120,7 +64342,7 @@
                 default:
                   'function' === typeof s.onClick && (e.onclick = bn);
               }
-              In(a, r) && (t.effectTag |= 4);
+              Rn(a, r) && (t.effectTag |= 4);
             }
             null !== t.ref && (t.effectTag |= 128);
           }
@@ -64288,7 +64510,7 @@
           var t = e.effectTag;
           return 4096 & t ? ((e.effectTag = (-4097 & t) | 64), e) : null;
         case 3:
-          if ((Xa(), jo(Io), jo(Ro), (t = e.effectTag), 0 !== (64 & t)))
+          if ((Xa(), jo(Ro), jo(Io), (t = e.effectTag), 0 !== (64 & t)))
             throw Error(i(285));
           return (e.effectTag = (-4097 & t) | 64), e;
         case 5:
@@ -64525,7 +64747,7 @@
                 e.__reactInternalSnapshotBeforeUpdate,
               );
             }
-          return (t = n.updateQueue), void (null !== t && Ra(n, t, e));
+          return (t = n.updateQueue), void (null !== t && Ia(n, t, e));
         case 3:
           if (((t = n.updateQueue), null !== t)) {
             if (((e = null), null !== n.child))
@@ -64536,7 +64758,7 @@
                 case 1:
                   e = n.child.stateNode;
               }
-            Ra(n, t, e);
+            Ia(n, t, e);
           }
           return;
         case 5:
@@ -64545,7 +64767,7 @@
             void (
               null === t &&
               4 & n.effectTag &&
-              In(n.type, n.memoizedProps) &&
+              Rn(n.type, n.memoizedProps) &&
               e.focus()
             )
           );
@@ -64677,9 +64899,9 @@
           break e;
         }
       }
-      r ? Rl(e, n, t) : Il(e, n, t);
+      r ? Il(e, n, t) : Rl(e, n, t);
     }
-    function Rl(e, t, n) {
+    function Il(e, t, n) {
       var r = e.tag,
         o = 5 === r || 6 === r;
       if (o)
@@ -64696,18 +64918,18 @@
                 null !== t.onclick ||
                 (t.onclick = bn));
       else if (4 !== r && ((e = e.child), null !== e))
-        for (Rl(e, t, n), e = e.sibling; null !== e; )
-          Rl(e, t, n), (e = e.sibling);
+        for (Il(e, t, n), e = e.sibling; null !== e; )
+          Il(e, t, n), (e = e.sibling);
     }
-    function Il(e, t, n) {
+    function Rl(e, t, n) {
       var r = e.tag,
         o = 5 === r || 6 === r;
       if (o)
         (e = o ? e.stateNode : e.stateNode.instance),
           t ? n.insertBefore(e, t) : n.appendChild(e);
       else if (4 !== r && ((e = e.child), null !== e))
-        for (Il(e, t, n), e = e.sibling; null !== e; )
-          Il(e, t, n), (e = e.sibling);
+        for (Rl(e, t, n), e = e.sibling; null !== e; )
+          Rl(e, t, n), (e = e.sibling);
     }
     function Nl(e, t, n) {
       for (var r, o, a = t, l = !1; ; ) {
@@ -64790,7 +65012,7 @@
                   'input' === e &&
                     'radio' === r.type &&
                     null != r.name &&
-                    Re(n, r),
+                    Ie(n, r),
                   hn(e, o),
                   t = hn(e, r),
                   o = 0;
@@ -64809,7 +65031,7 @@
               }
               switch (e) {
                 case 'input':
-                  Ie(n, r);
+                  Re(n, r);
                   break;
                 case 'textarea':
                   Fe(n, r);
@@ -65266,7 +65488,7 @@
       }
       return null;
     }
-    function Rc() {
+    function Ic() {
       if (null !== bc) {
         var e = bc;
         (bc = null),
@@ -65276,7 +65498,7 @@
           ua();
       }
     }
-    function Ic(e, t) {
+    function Rc(e, t) {
       var n = Jl;
       Jl |= 1;
       try {
@@ -65306,7 +65528,7 @@
                 null !== r && void 0 !== r && Lo();
               break;
             case 3:
-              Xa(), jo(Io), jo(Ro);
+              Xa(), jo(Ro), jo(Io);
               break;
             case 5:
               Qa(r);
@@ -65629,7 +65851,7 @@
             }
           c = c || { start: 0, end: 0 };
         } else c = null;
-        (Rn = {
+        (In = {
           activeElementDetached: null,
           focusedElem: l,
           selectionRange: c,
@@ -65684,7 +65906,7 @@
           }
         } while (null !== dc);
         if (
-          ((w = Rn),
+          ((w = In),
           (E = kn()),
           (x = w.focusedElem),
           (c = w.selectionRange),
@@ -65738,7 +65960,7 @@
               (w.element.scrollLeft = w.left),
               (w.element.scrollTop = w.top);
         }
-        (tn = !!Pn), (Rn = Pn = null), (e.current = n), (dc = o);
+        (tn = !!Pn), (In = Pn = null), (e.current = n), (dc = o);
         do {
           try {
             for (x = e; null !== dc; ) {
@@ -65881,7 +66103,7 @@
       var r = t.expirationTime;
       if (null !== e) {
         var o = t.pendingProps;
-        if (e.memoizedProps !== o || Io.current) Ki = !0;
+        if (e.memoizedProps !== o || Ro.current) Ki = !0;
         else {
           if (r < n) {
             switch (((Ki = !1), t.tag)) {
@@ -65943,7 +66165,7 @@
             null !== e &&
               ((e.alternate = null), (t.alternate = null), (t.effectTag |= 2)),
             (e = t.pendingProps),
-            (o = Ao(t, Ro.current)),
+            (o = Ao(t, Io.current)),
             Ea(t, n),
             (o = fi(null, t, r, e, o, n)),
             (t.effectTag |= 1),
@@ -66109,7 +66331,7 @@
                       : 1073741823)),
                 0 === a)
               ) {
-                if (l.children === o.children && !Io.current) {
+                if (l.children === o.children && !Ro.current) {
                   t = pl(e, t, n);
                   break e;
                 }
@@ -66430,7 +66652,7 @@
     function hs(e, t, n, r) {
       var o = t.current,
         a = wc(),
-        l = Ia.suspense;
+        l = Ra.suspense;
       a = kc(a, o, l);
       e: if (n) {
         n = n._reactInternalFiber;
@@ -66600,7 +66822,7 @@
       (P = function (e, t, n) {
         switch (t) {
           case 'input':
-            if ((Ie(e, n), (t = n.name), 'radio' === n.type && null != t)) {
+            if ((Re(e, n), (t = n.name), 'radio' === n.type && null != t)) {
               for (n = e; n.parentNode; ) n = n.parentNode;
               for (
                 n = n.querySelectorAll(
@@ -66614,7 +66836,7 @@
                 if (r !== e && r.form === e.form) {
                   var o = qn(r);
                   if (!o) throw Error(i(90));
-                  je(r), Ie(r, o);
+                  je(r), Re(r, o);
                 }
               }
             }
@@ -66626,7 +66848,7 @@
             (t = n.value), null != t && De(e, !!n.multiple, t, !1);
         }
       }),
-      (L = Ic),
+      (L = Rc),
       (D = function (e, t, n, r, o) {
         var a = Jl;
         Jl |= 4;
@@ -66637,7 +66859,7 @@
         }
       }),
       (_ = function () {
-        (Jl & (1 | ql | Wl)) === Vl && (Rc(), $c());
+        (Jl & (1 | ql | Wl)) === Vl && (Ic(), $c());
       }),
       (z = function (e, t) {
         var n = Jl;
@@ -66737,7 +66959,7 @@
           !0)
         );
       }),
-      (t.unstable_batchedUpdates = Ic),
+      (t.unstable_batchedUpdates = Rc),
       (t.unstable_createPortal = function (e, t) {
         return Cs(
           e,
@@ -67120,7 +67342,7 @@
         j = e.style,
         T = e.wrap,
         P = void 0 !== T && T,
-        R = m(e, [
+        I = m(e, [
           'size',
           'align',
           'className',
@@ -67131,7 +67353,7 @@
           'style',
           'wrap',
         ]),
-        I = f(),
+        R = f(),
         N = s['useMemo'](
           function () {
             return (Array.isArray(y) ? y : [y, y]).map(function (e) {
@@ -67181,21 +67403,21 @@
               horizontalSize: M,
               verticalSize: L,
               latestIndex: V,
-              supportFlexGap: I,
+              supportFlexGap: R,
             };
           },
-          [M, L, V, I],
+          [M, L, V, R],
         );
       if (0 === D.length) return null;
       var W = {};
       return (
-        P && ((W.flexWrap = 'wrap'), I || (W.marginBottom = -L)),
-        I && ((W.columnGap = M), (W.rowGap = L)),
+        P && ((W.flexWrap = 'wrap'), R || (W.marginBottom = -L)),
+        R && ((W.columnGap = M), (W.rowGap = L)),
         s['createElement'](
           'div',
           Object(r['a'])(
             { className: F, style: Object(r['a'])(Object(r['a'])({}, W), j) },
-            R,
+            I,
           ),
           s['createElement'](h.Provider, { value: q }, H),
         )
@@ -67603,7 +67825,7 @@
         l
       );
     }
-    function R(e) {
+    function I(e) {
       var t = e.route,
         n = e.opts,
         r = e.props,
@@ -67629,7 +67851,7 @@
       }
       return o;
     }
-    function I(e) {
+    function R(e) {
       var t,
         n,
         r,
@@ -67664,7 +67886,7 @@
             O,
             h({}, c, {
               render: function (e) {
-                return R({ route: a, opts: l, props: e });
+                return I({ route: a, opts: l, props: e });
               },
             }),
           ));
@@ -67677,7 +67899,7 @@
             j,
             t,
             e.routes.map(function (t, n) {
-              return I({
+              return R({
                 route: t,
                 index: n,
                 opts: d(d({}, e), {}, { rootRoutes: e.rootRoutes || e.routes }),
@@ -68132,8 +68354,8 @@
         return n;
       },
       P = /^[\u4e00-\u9fa5]{2}$/,
-      R = P.test.bind(P);
-    function I(e) {
+      I = P.test.bind(P);
+    function R(e) {
       return 'string' === typeof e;
     }
     function N(e) {
@@ -68147,11 +68369,11 @@
         var n = t ? ' ' : '';
         return 'string' !== typeof e &&
           'number' !== typeof e &&
-          I(e.type) &&
-          R(e.props.children)
+          R(e.type) &&
+          I(e.props.children)
           ? Object(h['a'])(e, { children: e.props.children.split('').join(n) })
           : 'string' === typeof e
-          ? R(e)
+          ? I(e)
             ? u['createElement']('span', null, e.split('').join(n))
             : u['createElement']('span', null, e)
           : A(e)
@@ -68200,7 +68422,7 @@
           O = e.children,
           S = e.icon,
           P = e.ghost,
-          I = void 0 !== P && P,
+          R = void 0 !== P && P,
           A = e.block,
           M = void 0 !== A && A,
           D = e.htmlType,
@@ -68243,7 +68465,7 @@
           re = function () {
             if (te && te.current && !1 !== Q) {
               var e = te.current.textContent;
-              ne() && R(e) ? Y || Z(!0) : Y && Z(!1);
+              ne() && I(e) ? Y || Z(!0) : Y && Z(!1);
             }
           },
           oe =
@@ -68293,7 +68515,7 @@
               ''.concat(ie, '-icon-only'),
               !O && 0 !== O && !!de,
             ),
-            Object(o['a'])(n, ''.concat(ie, '-background-ghost'), I && !N(v)),
+            Object(o['a'])(n, ''.concat(ie, '-background-ghost'), R && !N(v)),
             Object(o['a'])(n, ''.concat(ie, '-loading'), W),
             Object(o['a'])(
               n,
