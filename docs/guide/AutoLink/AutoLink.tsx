@@ -56,8 +56,4 @@ const AutoLink = (props: Partial<AutoLinkPropType>) => {
   );
 };
 
-const Demo = () => {
-  return <AutoLink text="foo bar baz https://www.eveningwater.com bar" />;
-};
-
-export default Demo;
+export default AutoLink;
