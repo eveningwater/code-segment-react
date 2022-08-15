@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import type { ReactNode } from 'react';
 
 const Link = styled.a`
   text-decoration: none;
@@ -11,11 +10,8 @@ const Link = styled.a`
     color: #2396ef;
   }
 `;
-interface CallToType {
-  phone: string;
-  children: ReactNode;
-}
-const CallTo = (props: Partial<CallToType>) => {
+
+const CallTo = (props) => {
   const { phone, children } = props;
   return (
     <Link href={`tel:${phone}`} className="tel-link">
@@ -24,8 +20,4 @@ const CallTo = (props: Partial<CallToType>) => {
   );
 };
 
-const Demo = () => {
-  return <CallTo phone="18283984473">夕水</CallTo>;
-};
-
-export default Demo;
+export default CallTo;

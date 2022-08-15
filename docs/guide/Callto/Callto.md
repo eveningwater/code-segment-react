@@ -7,6 +7,8 @@ Renders a link formatted to call a phone number (tel: link).
 - Use phone to create a `<a>` element with an appropriate href attribute.
 - Render the link with children as its content.
 
+tsx:
+
 ```tsx | pure
 import styled from '@emotion/styled';
 import React from 'react';
@@ -34,13 +36,41 @@ const CallTo = (props: Partial<CallToType>) => {
   );
 };
 
-const Demo = () => {
-  return <CallTo phone="18283984473">eveningwater</CallTo>;
+export default CallTo;
+```
+
+jsx:
+
+```jsx | pure
+import styled from '@emotion/styled';
+import React from 'react';
+
+const Link = styled.a`
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+  &:hover {
+    color: #2396ef;
+  }
+`;
+
+const CallTo = (props) => {
+  const { phone, children } = props;
+  return (
+    <Link href={`tel:${phone}`} className="tel-link">
+      {children}
+    </Link>
+  );
 };
 
-export default Demo;
+export default CallTo;
 ```
 
 demo:
 
-<code src="./CallTo.tsx"></code>
+<code src="./Demo.tsx"></code>
+
+jsx demo:
+
+<code src="./jsx/Demo.jsx"></code>

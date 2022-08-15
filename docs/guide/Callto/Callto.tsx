@@ -24,8 +24,4 @@ const CallTo = (props: Partial<CallToType>) => {
   );
 };
 
-const Demo = () => {
-  return <CallTo phone="18283984473">eveningwater</CallTo>;
-};
-
-export default Demo;
+export default CallTo;
