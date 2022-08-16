@@ -1,9 +1,9 @@
 import React from 'react';
-import Button from '../../guide/Button/Button';
-import Loader from '../../guide/Loader/Loader';
-import Alert from '../../guide/Alert/Alert';
-import useAsync, { StateType } from './useAsync';
+import Button from '../../../guide/Button/Button';
+import Loader from '../../../guide/Loader/Loader';
+import Alert from '../../../guide/Alert/Alert';
 import styled from '@emotion/styled';
+import useAsync from './useAsync';
 
 const LoadContainer = styled.div`
   margin-top: 10px;
@@ -30,24 +30,21 @@ const Demo = () => {
     <Container>
       <Button
         onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}
-        disabled={(imgFetch as StateType)?.loading}
+        disabled={imgFetch?.loading}
       >
-        Load image
+        加载图片
       </Button>
-      {(imgFetch as StateType)?.loading && (
+      {imgFetch?.loading && (
         <LoadContainer>
           <Loader size={16}></Loader>
         </LoadContainer>
       )}
-      {(imgFetch as StateType)?.error && (
-        <Alert
-          type="error"
-          message={`Error ${(imgFetch as StateType)?.error}`}
-        ></Alert>
+      {imgFetch?.error && (
+        <Alert type="error" message={`错误 ${imgFetch?.error}`}></Alert>
       )}
-      {(imgFetch as StateType)?.value && (
+      {imgFetch?.value && (
         <FetchImage
-          src={(imgFetch as StateType)?.value.message}
+          src={imgFetch?.value.message}
           alt="avatar"
           width={400}
           height="auto"

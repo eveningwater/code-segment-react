@@ -53,12 +53,6 @@ const Carousel = (props: Partial<CarouselProps>) => {
   );
 };
 
-const Demo = () => {
-  return (
-    <Carousel
-      options={['carousel item 1', 'carousel item 2', 'carousel item 3']}
-    />
-  );
-};
+Carousel.CarouselItem = CarouselItem;
 
-export default Demo;
+export default Carousel;

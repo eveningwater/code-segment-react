@@ -1,28 +1,15 @@
 import React, { useState, useEffect, cloneElement } from 'react';
-import type { ReactNode } from 'react';
-import './Carousel.less';
+import '../Carousel.less';
 
-interface CarouselItemProps {
-  children: ReactNode;
-  className: string | Record<string, string | number>;
-}
-
-interface CarouselProps {
-  options: ReactNode[];
-  duration: number;
-  children: JSX.Element[];
-  defaultKey: string;
-}
-
-const CarouselItem = (props: Partial<CarouselItemProps>) => {
+const CarouselItem = (props) => {
   const { children } = props;
   return <div className="carousel-item">{children}</div>;
 };
 
-const Carousel = (props: Partial<CarouselProps>) => {
+const Carousel = (props) => {
   const { options, duration, children, defaultKey, ...rest } = props;
   const [active, setActive] = useState(Number(defaultKey || 1) - 1);
-  let timer: number | undefined;
+  let timer;
   const width = window.innerWidth;
   const items =
     Array.isArray(options) && options.length
@@ -44,7 +31,7 @@ const Carousel = (props: Partial<CarouselProps>) => {
         }}
       >
         {items?.map((item) => {
-          return cloneElement(item, {
+          return cloneElement(<CarouselItem key={item}>{item}</CarouselItem>, {
             ...rest,
           });
         })}
@@ -53,14 +40,6 @@ const Carousel = (props: Partial<CarouselProps>) => {
   );
 };
 
-const Demo = () => {
-  return (
-    <Carousel defaultKey="2">
-      <CarouselItem key="1">轮播图1</CarouselItem>
-      <CarouselItem key="2">轮播图 2</CarouselItem>
-      <CarouselItem key="3">轮播图 3</CarouselItem>
-    </Carousel>
-  );
-};
+Carousel.CarouselItem = CarouselItem;
 
-export default Demo;
+export default Carousel;

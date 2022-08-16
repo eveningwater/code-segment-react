@@ -16,6 +16,12 @@ const Container = styled.div`
   min-height: 300px;
   flex-direction: column;
 `;
+const FetchImage = styled.img({
+  display: 'block',
+  marginTop: 10,
+  borderRadius: 5,
+  maxWidth: '100%',
+});
 const Demo = () => {
   const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));
   return (
@@ -38,17 +44,11 @@ const Demo = () => {
         ></Alert>
       )}
       {(imgFetch as StateType)?.value && (
-        <img
+        <FetchImage
           src={(imgFetch as StateType)?.value.message}
           alt="avatar"
           width={400}
           height="auto"
-          style={{
-            display: 'block',
-            marginTop: 10,
-            borderRadius: 5,
-            maxWidth: '100%',
-          }}
         />
       )}
     </Container>

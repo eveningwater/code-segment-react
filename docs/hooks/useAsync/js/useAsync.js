@@ -1,18 +1,13 @@
 import { useReducer } from 'react';
-export type StateType = {
-  loading: boolean;
-  value: any;
-  error: any;
-};
-export type ActionType = Partial<StateType> & { type: string };
-export type RunType = (args: unknown) => Promise<void>;
-const useAsync = (handler: (...args: any) => any) => {
+
+const useAsync = (handler) => {
   const initialState = {
     loading: false,
     error: null,
     value: null,
   };
-  const stateReducer = (_: any, action: ActionType) => {
+
+  const stateReducer = (_, action) => {
     switch (action.type) {
       case 'start':
         return { loading: true, error: null, value: null };
@@ -25,7 +20,7 @@ const useAsync = (handler: (...args: any) => any) => {
 
   const [state, dispatch] = useReducer(stateReducer, initialState);
 
-  const run = async (args: unknown) => {
+  const run = async (args) => {
     try {
       dispatch({ type: 'start' });
       const value = await handler(args);
