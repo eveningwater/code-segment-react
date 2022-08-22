@@ -3945,7 +3945,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/Checkbox/Checkbox.zh-CN.md',
-                updatedTime: 1660893205761,
+                updatedTime: 1660893489487,
                 slugs: [],
                 hasPreviewer: !0,
                 locale: 'zh-CN',
@@ -3961,7 +3961,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/Collapse/Collapse.md',
-                updatedTime: 1657972949366,
+                updatedTime: 1661134380098,
                 slugs: [],
                 hasPreviewer: !0,
                 nav: { path: '/guide', title: 'Guide' },
@@ -3976,7 +3976,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/Collapse/Collapse.zh-CN.md',
-                updatedTime: 1657973260716,
+                updatedTime: 1661134442397,
                 slugs: [],
                 hasPreviewer: !0,
                 locale: 'zh-CN',
@@ -23520,7 +23520,7 @@
             a.a.createElement(
               'div',
               { className: 'markdown' },
-              a.a.createElement('p', null, 'jsx\u793a\u4f8b:'),
+              a.a.createElement('p', null, 'jsx \u793a\u4f8b:'),
             ),
             a.a.createElement(
               i['default'],
@@ -29732,178 +29732,184 @@
       oe =
         "@baseSelector: ant-;\n.@{baseSelector}checkbox-wrapper {\n  font-size: 14px;\n  line-height: 1.57;\n  display: inline-flex;\n  align-items: baseline;\n  cursor: pointer;\n  &.is-disabled {\n    color: #9f9f9f;\n    cursor: not-allowed;\n    .@{baseSelector}checkbox.checked,\n    .@{baseSelector}checkbox {\n      cursor: not-allowed;\n      .@{baseSelector}checkbox-inner {\n        border-color: #d9d9d9;\n        background-color: #f5f5f5;\n        &::after {\n          border-color: rgba(0, 0, 0, 0.4);\n        }\n      }\n    }\n  }\n  .@{baseSelector}checkbox {\n    position: relative;\n    top: 0.2em;\n    line-height: 1;\n    cursor: pointer;\n    white-space: nowrap;\n    margin-right: 8px;\n    &.checked {\n      .@{baseSelector}checkbox-inner {\n        border-color: #1890ff;\n        background-color: #1890ff;\n        &::after {\n          opacity: 1;\n          transform: translate(-50%, -50%) scale(1) rotate(45deg);\n        }\n      }\n    }\n    .@{baseSelector}checkbox-inner {\n      width: 16px;\n      height: 16px;\n      position: relative;\n      left: 0;\n      top: 0;\n      display: block;\n      background-color: #fff;\n      border: 1px solid #d9d9d9;\n      border-radius: 2px;\n      transition: all 0.3s;\n      &::after {\n        position: absolute;\n        top: 35%;\n        left: 50%;\n        display: table;\n        width: 5.714px;\n        height: 9.14px;\n        border: 2px solid #fff;\n        border-top: 0;\n        border-left: 0;\n        transform: rotate(45deg) scale(0) translate(-50%, -50%);\n        opacity: 0;\n        content: ' ';\n        transition: all 0.3s;\n      }\n    }\n  }\n}",
       ie =
-        "import React, { useState } from 'react';\r\nimport Checkbox from './Checkbox';\r\nimport { Space } from 'antd';\r\n\r\nconst Demo = () => {\r\n  const [checked, setChecked] = useState(false);\r\n  const onChange = (v) => {\r\n    console.log(v);\r\n  };\r\n  const onControlledChange = () => {\r\n    setChecked(!checked);\r\n  };\r\n  return (\r\n    <Space>\r\n      <Checkbox onChange={onChange}>checkbox</Checkbox>\r\n      <Checkbox disabled>disabled checkbox</Checkbox>\r\n      <Checkbox checked={checked} onChange={onControlledChange}>\r\n        controlled checkbox\r\n      </Checkbox>\r\n    </Space>\r\n  );\r\n};\r\n\r\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Checkbox from './Checkbox';\nimport { Space } from 'antd';\n\nconst Demo = () => {\n  const [checked, setChecked] = useState(false);\n  const onChange = (v) => {\n    console.log(v);\n  };\n  const onControlledChange = () => {\n    setChecked(!checked);\n  };\n  return (\n    <Space>\n      <Checkbox onChange={onChange}>checkbox</Checkbox>\n      <Checkbox disabled>disabled checkbox</Checkbox>\n      <Checkbox checked={checked} onChange={onControlledChange}>\n        controlled checkbox\n      </Checkbox>\n    </Space>\n  );\n};\n\nexport default Demo;",
       le =
-        "import React, { useState, useEffect, createRef } from 'react';\r\nimport '../Checkbox.less';\r\n\r\nconst Checkbox = (props) => {\r\n  const { disabled, checked, defaultChecked, children, onChange } = props;\r\n  const [value, setValue] = useState(!!defaultChecked);\r\n  useEffect(() => {\r\n    if (typeof checked === 'boolean') {\r\n      if (disabled) {\r\n        return;\r\n      }\r\n      setValue(checked);\r\n    }\r\n  }, [checked]);\r\n  const onChangeHandler = () => {\r\n    if (disabled) {\r\n      return;\r\n    }\r\n    setValue(!value);\r\n    if (onChange) {\r\n      onChange(!value);\r\n    }\r\n  };\r\n\r\n  return (\r\n    <label\r\n      className={`ant-checkbox-wrapper${disabled ? ' is-disabled' : ''}`}\r\n      onClick={onChangeHandler}\r\n    >\r\n      <span className={`ant-checkbox${value ? ' checked' : ''}`}>\r\n        <span className=\"ant-checkbox-inner\"></span>\r\n      </span>\r\n      {children}\r\n    </label>\r\n  );\r\n};\r\n\r\nexport default Checkbox;",
+        "import React, { useState, useEffect, createRef } from 'react';\nimport '../Checkbox.less';\n\nconst Checkbox = (props) => {\n  const { disabled, checked, defaultChecked, children, onChange } = props;\n  const [value, setValue] = useState(!!defaultChecked);\n  useEffect(() => {\n    if (typeof checked === 'boolean') {\n      if (disabled) {\n        return;\n      }\n      setValue(checked);\n    }\n  }, [checked]);\n  const onChangeHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setValue(!value);\n    if (onChange) {\n      onChange(!value);\n    }\n  };\n\n  return (\n    <label\n      className={`ant-checkbox-wrapper${disabled ? ' is-disabled' : ''}`}\n      onClick={onChangeHandler}\n    >\n      <span className={`ant-checkbox${value ? ' checked' : ''}`}>\n        <span className=\"ant-checkbox-inner\"></span>\n      </span>\n      {children}\n    </label>\n  );\n};\n\nexport default Checkbox;",
       ce =
         "import React, { useState } from 'react';\nimport Checkbox from './Checkbox';\nimport { Space } from 'antd';\n\nconst Demo = () => {\n  const [checked, setChecked] = useState(false);\n  const onChange = (v: boolean) => {\n    console.log(v);\n  };\n  const onControlledChange = () => {\n    setChecked(!checked);\n  };\n  return (\n    <Space>\n      <Checkbox onChange={onChange}>\u590d\u9009\u6846</Checkbox>\n      <Checkbox disabled>\u7981\u7528\u7684\u590d\u9009\u6846</Checkbox>\n      <Checkbox checked={checked} onChange={onControlledChange}>\n        \u53d7\u63a7\u7684\u590d\u9009\u6846\n      </Checkbox>\n    </Space>\n  );\n};\n\nexport default Demo;",
       se =
-        "import React, { useState } from 'react';\r\nimport Checkbox from './Checkbox';\r\nimport { Space } from 'antd';\r\n\r\nconst Demo = () => {\r\n  const [checked, setChecked] = useState(false);\r\n  const onChange = (v) => {\r\n    console.log(v);\r\n  };\r\n  const onControlledChange = () => {\r\n    setChecked(!checked);\r\n  };\r\n  return (\r\n    <Space>\r\n      <Checkbox onChange={onChange}>\u590d\u9009\u6846</Checkbox>\r\n      <Checkbox disabled>\u7981\u7528\u7684\u590d\u9009\u6846</Checkbox>\r\n      <Checkbox checked={checked} onChange={onControlledChange}>\r\n        \u53d7\u63a7\u7684\u590d\u9009\u6846\r\n      </Checkbox>\r\n    </Space>\r\n  );\r\n};\r\n\r\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Checkbox from './Checkbox';\nimport { Space } from 'antd';\n\nconst Demo = () => {\n  const [checked, setChecked] = useState(false);\n  const onChange = (v) => {\n    console.log(v);\n  };\n  const onControlledChange = () => {\n    setChecked(!checked);\n  };\n  return (\n    <Space>\n      <Checkbox onChange={onChange}>\u590d\u9009\u6846</Checkbox>\n      <Checkbox disabled>\u7981\u7528\u7684\u590d\u9009\u6846</Checkbox>\n      <Checkbox checked={checked} onChange={onControlledChange}>\n        \u53d7\u63a7\u7684\u590d\u9009\u6846\n      </Checkbox>\n    </Space>\n  );\n};\n\nexport default Demo;",
       ue =
         "import React from 'react';\nimport Collapse from './Collapse';\nconst Demo = () => {\n  return (\n    <Collapse>\n      <h1>This is a collapse</h1>\n      <p>Hello world!</p>\n    </Collapse>\n  );\n};\n\nexport default Demo;",
       de =
         "import styled from '@emotion/styled';\nimport type { ReactNode } from 'react';\nimport React, { useState } from 'react';\n\nconst CollapseStyle = styled.div`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: #000000d9;\n  font-size: 14px;\n  background-color: #fafafa;\n  border: 1px solid #d9d9d9;\n  border-bottom: 0;\n  border-radius: 2px;\n  & .collapse-header {\n    line-height: 1.5715;\n    position: relative;\n    display: flex;\n    flex-wrap: nowrap;\n    align-items: flex-start;\n    padding: 12px 16px;\n    color: rgba(0, 0, 0, 0.85);\n    cursor: pointer;\n    transition: all 0.3s, visibility 0s;\n    box-sizing: border-box;\n  }\n`;\nconst CollapseStyleItem = styled.div`\n  border-bottom: 1px solid #d9d9d9;\n  & .collapse-content {\n    color: #000000d9;\n    background-color: #fff;\n    border-top: 1px solid #d9d9d9;\n    transition: all 0.3s ease-in-out;\n    padding: 16px;\n    &.collapsed {\n      display: none;\n    }\n    &.expanded {\n      display: block;\n    }\n  }\n`;\n\ninterface CollapseProps {\n  collapsed: boolean;\n  children: ReactNode;\n  header: ReactNode;\n}\n\ntype CollapseItemProps = Omit<Omit<CollapseProps, 'collapsed'>, 'header'> & {\n  className: string;\n};\n\nconst CollapseItem = (props: Partial<CollapseItemProps>) => {\n  const { children, className } = props;\n  return (\n    <CollapseStyleItem>\n      <div className={`${'collapse-content'}${className}`}>{children}</div>\n    </CollapseStyleItem>\n  );\n};\n\nconst Collapse = (props: Partial<CollapseProps>) => {\n  const { collapsed, children, header } = props;\n  const [isCollapsed, setIsCollapsed] = useState(collapsed);\n\n  return (\n    <CollapseStyle>\n      <div\n        className=\"collapse-header\"\n        onClick={() => setIsCollapsed(!isCollapsed)}\n      >\n        {header || (isCollapsed ? 'show' : 'hide') + ' content'}\n      </div>\n      <CollapseItem className={`${isCollapsed ? ' collapsed' : ' expanded'}`}>\n        {children}\n      </CollapseItem>\n    </CollapseStyle>\n  );\n};\n\nexport default Collapse;",
       pe =
-        "import React from 'react';\nimport Collapse from './Collapse';\nconst Demo = () => {\n  return (\n    <Collapse header=\"\u8fd9\u662f\u6807\u9898\">\n      <h1>\u8fd9\u662f\u4e00\u4e2a\u6298\u53e0\u7ec4\u4ef6</h1>\n      <p>\u4f60\u597d\uff0c\u4e16\u754c!</p>\n    </Collapse>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\r\nimport Collapse from './Collapse';\r\nconst Demo = () => {\r\n  return (\r\n    <Collapse>\r\n      <h1>This is a collapse</h1>\r\n      <p>Hello world!</p>\r\n    </Collapse>\r\n  );\r\n};\r\n\r\nexport default Demo;",
       fe =
-        "import React, { useState } from 'react';\nimport ControlledInput from './ControlledInput';\n\nconst Demo = () => {\n  const [value, setValue] = useState('');\n\n  return (\n    <ControlledInput\n      type=\"text\"\n      value={value}\n      onChange={setValue}\n      placeholder=\"Insert some text here...\"\n    ></ControlledInput>\n  );\n};\n\nexport default Demo;",
+        "import styled from '@emotion/styled';\r\nimport React, { useState } from 'react';\r\n\r\nconst CollapseStyle = styled.div`\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  padding: 0;\r\n  color: #000000d9;\r\n  font-size: 14px;\r\n  background-color: #fafafa;\r\n  border: 1px solid #d9d9d9;\r\n  border-bottom: 0;\r\n  border-radius: 2px;\r\n  & .collapse-header {\r\n    line-height: 1.5715;\r\n    position: relative;\r\n    display: flex;\r\n    flex-wrap: nowrap;\r\n    align-items: flex-start;\r\n    padding: 12px 16px;\r\n    color: rgba(0, 0, 0, 0.85);\r\n    cursor: pointer;\r\n    transition: all 0.3s, visibility 0s;\r\n    box-sizing: border-box;\r\n  }\r\n`;\r\nconst CollapseStyleItem = styled.div`\r\n  border-bottom: 1px solid #d9d9d9;\r\n  & .collapse-content {\r\n    color: #000000d9;\r\n    background-color: #fff;\r\n    border-top: 1px solid #d9d9d9;\r\n    transition: all 0.3s ease-in-out;\r\n    padding: 16px;\r\n    &.collapsed {\r\n      display: none;\r\n    }\r\n    &.expanded {\r\n      display: block;\r\n    }\r\n  }\r\n`;\r\n\r\nconst CollapseItem = (props) => {\r\n  const { children, className } = props;\r\n  return (\r\n    <CollapseStyleItem>\r\n      <div className={`${'collapse-content'}${className}`}>{children}</div>\r\n    </CollapseStyleItem>\r\n  );\r\n};\r\n\r\nconst Collapse = (props) => {\r\n  const { collapsed, children, header } = props;\r\n  const [isCollapsed, setIsCollapsed] = useState(collapsed);\r\n\r\n  return (\r\n    <CollapseStyle>\r\n      <div\r\n        className=\"collapse-header\"\r\n        onClick={() => setIsCollapsed(!isCollapsed)}\r\n      >\r\n        {header || (isCollapsed ? 'show' : 'hide') + ' content'}\r\n      </div>\r\n      <CollapseItem className={`${isCollapsed ? ' collapsed' : ' expanded'}`}>\r\n        {children}\r\n      </CollapseItem>\r\n    </CollapseStyle>\r\n  );\r\n};\r\n\r\nexport default Collapse;",
       me =
-        "import styled from '@emotion/styled';\nimport React from 'react';\nimport type { SyntheticEvent } from 'react';\n\nconst StyleInput = styled.input`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: #000000d9;\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  transition: all 0.3s;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n`;\n/** https://github.com/Microsoft/TypeScript/issues/29729 */\n// eslint-disable-next-line @typescript-eslint/ban-types\ntype LiteralUnion<T extends U, U> = T & (U & {});\ninterface ControlledInputProps {\n  type: LiteralUnion<\n    | 'button'\n    | 'checkbox'\n    | 'color'\n    | 'date'\n    | 'datetime-local'\n    | 'email'\n    | 'file'\n    | 'hidden'\n    | 'image'\n    | 'month'\n    | 'number'\n    | 'password'\n    | 'radio'\n    | 'range'\n    | 'reset'\n    | 'search'\n    | 'submit'\n    | 'tel'\n    | 'text'\n    | 'time'\n    | 'url'\n    | 'week',\n    string\n  >;\n  value: string;\n  onChange(v: string): void;\n  placeholder: string;\n}\nconst ControlledInput = (props: Partial<ControlledInputProps>) => {\n  const { value, onChange, ...rest } = props;\n  const onChangeHandler = (e: SyntheticEvent) => {\n    if (onChange) {\n      onChange((e.target as HTMLInputElement).value);\n    }\n  };\n  return (\n    <StyleInput value={value} onChange={onChangeHandler} {...rest}></StyleInput>\n  );\n};\n\nexport default ControlledInput;",
+        "import React from 'react';\nimport Collapse from './Collapse';\nconst Demo = () => {\n  return (\n    <Collapse header=\"\u8fd9\u662f\u6807\u9898\">\n      <h1>\u8fd9\u662f\u4e00\u4e2a\u6298\u53e0\u7ec4\u4ef6</h1>\n      <p>\u4f60\u597d\uff0c\u4e16\u754c!</p>\n    </Collapse>\n  );\n};\n\nexport default Demo;",
       he =
-        "import React, { useState } from 'react';\nimport ControlledInput from './ControlledInput';\n\nconst Demo = () => {\n  const [value, setValue] = useState('');\n\n  return (\n    <ControlledInput\n      type=\"text\"\n      value={value}\n      onChange={setValue}\n      placeholder=\"\u8bf7\u8f93\u5165\u4e00\u4e9b\u63d0\u793a\u4fe1\u606f...\"\n    ></ControlledInput>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\r\nimport Collapse from './Collapse';\r\nconst Demo = () => {\r\n  return (\r\n    <Collapse header=\"\u8fd9\u662f\u6807\u9898\">\r\n      <h1>\u8fd9\u662f\u4e00\u4e2a\u6298\u53e0\u7ec4\u4ef6</h1>\r\n      <p>\u4f60\u597d\uff0c\u4e16\u754c!</p>\r\n    </Collapse>\r\n  );\r\n};\r\n\r\nexport default Demo;",
       ve =
-        "import { Space, Button } from 'antd';\nimport React, { useRef, useState } from 'react';\nimport type { MutableRefObject } from 'react';\nimport CountDown from './CountDown';\nimport type { ImperRef } from './helper';\n\nconst Demo = () => {\n  const countdownRef = useRef() as MutableRefObject<ImperRef>;\n  const [paused, setPaused] = useState(false);\n  const onPaused = () => {\n    setPaused(!paused);\n    countdownRef.current.onPaused(paused);\n  };\n  const onRestart = () => {\n    countdownRef.current.onRestart();\n  };\n  return (\n    <>\n      <CountDown ref={countdownRef} hours={1} minutes={45} />\n      <Space>\n        <Button onClick={onPaused}>{paused ? 'resume' : 'Pause'}</Button>\n        <Button onClick={onRestart}>Restart</Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport ControlledInput from './ControlledInput';\n\nconst Demo = () => {\n  const [value, setValue] = useState('');\n\n  return (\n    <ControlledInput\n      type=\"text\"\n      value={value}\n      onChange={setValue}\n      placeholder=\"Insert some text here...\"\n    ></ControlledInput>\n  );\n};\n\nexport default Demo;",
       ge =
-        "import React, { forwardRef, useState, useCallback } from 'react';\nimport type { MutableRefObject } from 'react';\nimport styled from '@emotion/styled';\nimport type { ImperItem, ImperRef } from './helper';\nimport { useChildrenHandler, useTimeout } from './helper';\n\ninterface CountDownProps {\n  hours: number;\n  minutes: number;\n  seconds: number;\n  overText?: string;\n  pausedText?: string;\n  delimiter?: string;\n}\n\nconst StyleCountdown = styled.div`\n  color: rgba(0, 0, 0.85);\n  margin-bottom: 10px;\n  font-size: 16px;\n`;\n\nconst CountDown = forwardRef(\n  (props: Partial<CountDownProps>, ref: ImperItem['ref']) => {\n    const {\n      hours,\n      minutes,\n      seconds,\n      overText = 'Time is up!',\n      pausedText = 'paused!',\n      delimiter = ':',\n    } = props;\n    const [paused, setPaused] = useState(false);\n    const [over, setOver] = useState(false);\n    const [[h = 0, m = 0, s = 0], setTime] = useState([\n      hours,\n      minutes,\n      seconds,\n    ]);\n\n    const tick = () => {\n      if (paused || over) {\n        return;\n      }\n      let newH = h,\n        newM = m,\n        newS = s;\n      if (h === 0 && m === 0 && s === 0) {\n        setOver(true);\n      }\n\n      if (m === 0 && s === 0) {\n        newH--;\n        newM = 59;\n        newS = 59;\n      }\n\n      if (s === 0) {\n        newM--;\n        newS = 60;\n      }\n      newS--;\n      setTime([newH, newM, newS]);\n    };\n    useTimeout(tick, 1000);\n    useChildrenHandler(ref as MutableRefObject<ImperRef>, {\n      onPaused: useCallback((status: boolean) => {\n        setPaused(!status);\n      }, []),\n      onOver: useCallback(() => {\n        setPaused(false);\n        setOver(true);\n      }, []),\n      onRestart: useCallback(() => {\n        setTime([h, m, s]);\n        setPaused(false);\n        setOver(false);\n      }, []),\n    });\n    const fillZero = (n: number) => n.toString().padStart(2, '0');\n    return (\n      <StyleCountdown>\n        {over\n          ? overText\n          : paused\n          ? pausedText\n          : `${fillZero(h)}${delimiter}${fillZero(m)}${delimiter}${fillZero(\n              s,\n            )}`}\n      </StyleCountdown>\n    );\n  },\n);\n\nexport default CountDown;",
+        "import styled from '@emotion/styled';\nimport React from 'react';\nimport type { SyntheticEvent } from 'react';\n\nconst StyleInput = styled.input`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: #000000d9;\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  transition: all 0.3s;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n`;\n/** https://github.com/Microsoft/TypeScript/issues/29729 */\n// eslint-disable-next-line @typescript-eslint/ban-types\ntype LiteralUnion<T extends U, U> = T & (U & {});\ninterface ControlledInputProps {\n  type: LiteralUnion<\n    | 'button'\n    | 'checkbox'\n    | 'color'\n    | 'date'\n    | 'datetime-local'\n    | 'email'\n    | 'file'\n    | 'hidden'\n    | 'image'\n    | 'month'\n    | 'number'\n    | 'password'\n    | 'radio'\n    | 'range'\n    | 'reset'\n    | 'search'\n    | 'submit'\n    | 'tel'\n    | 'text'\n    | 'time'\n    | 'url'\n    | 'week',\n    string\n  >;\n  value: string;\n  onChange(v: string): void;\n  placeholder: string;\n}\nconst ControlledInput = (props: Partial<ControlledInputProps>) => {\n  const { value, onChange, ...rest } = props;\n  const onChangeHandler = (e: SyntheticEvent) => {\n    if (onChange) {\n      onChange((e.target as HTMLInputElement).value);\n    }\n  };\n  return (\n    <StyleInput value={value} onChange={onChangeHandler} {...rest}></StyleInput>\n  );\n};\n\nexport default ControlledInput;",
       be =
-        "import type { MutableRefObject, DependencyList, Ref } from 'react';\nimport { useImperativeHandle, useEffect, useRef } from 'react';\n\nexport const useChildrenHandler = <T, K extends object>(\n  originRef: MutableRefObject<T>,\n  handler: K,\n  deps?: DependencyList,\n): void =>\n  useImperativeHandle(\n    originRef,\n    () => {\n      return {\n        ...originRef.current,\n        ...handler,\n      };\n    },\n    deps,\n  );\n\nexport type ImperFunc = (...args: any[]) => any;\nexport type ImperRef = Record<string, ImperFunc>;\nexport type ImperItem = {\n  ref: Ref<ImperRef>;\n};\nlet timer: number;\n// see this:https://www.aaron-powell.com/posts/2019-09-23-recursive-settimeout-with-react-hooks/\nexport const useTimeout = (callback, delay = 1000) => {\n  const ref = useRef() as MutableRefObject<() => void>;\n  useEffect(() => {\n    ref.current = callback;\n  });\n  useEffect(() => {\n    const handler = () => {\n      ref.current();\n      timer = setTimeout(handler, delay);\n    };\n    handler();\n    return () => clearTimeout(timer);\n  }, [delay]);\n};",
+        "import React, { useState } from 'react';\nimport ControlledInput from './ControlledInput';\n\nconst Demo = () => {\n  const [value, setValue] = useState('');\n\n  return (\n    <ControlledInput\n      type=\"text\"\n      value={value}\n      onChange={setValue}\n      placeholder=\"\u8bf7\u8f93\u5165\u4e00\u4e9b\u63d0\u793a\u4fe1\u606f...\"\n    ></ControlledInput>\n  );\n};\n\nexport default Demo;",
       ye =
-        "import { Space, Button } from 'antd';\nimport React, { useRef, useState } from 'react';\nimport type { MutableRefObject } from 'react';\nimport CountDown from './CountDown';\nimport type { ImperRef } from './helper';\n\nconst Demo = () => {\n  const countdownRef = useRef() as MutableRefObject<ImperRef>;\n  const [paused, setPaused] = useState(false);\n  const onPaused = () => {\n    setPaused(!paused);\n    countdownRef.current.onPaused(paused);\n  };\n  const onRestart = () => {\n    countdownRef.current.onRestart();\n  };\n  return (\n    <>\n      <CountDown\n        ref={countdownRef}\n        hours={1}\n        minutes={45}\n        overText=\"\u5012\u8ba1\u65f6\u7ed3\u675f\"\n        pausedText=\"\u6682\u505c\u4e2d\"\n      />\n      <Space>\n        <Button onClick={onPaused}>{paused ? '\u7ee7\u7eed' : '\u6682\u505c'}</Button>\n        <Button onClick={onRestart}>\u91cd\u65b0\u5f00\u59cb</Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
+        "import { Space, Button } from 'antd';\nimport React, { useRef, useState } from 'react';\nimport type { MutableRefObject } from 'react';\nimport CountDown from './CountDown';\nimport type { ImperRef } from './helper';\n\nconst Demo = () => {\n  const countdownRef = useRef() as MutableRefObject<ImperRef>;\n  const [paused, setPaused] = useState(false);\n  const onPaused = () => {\n    setPaused(!paused);\n    countdownRef.current.onPaused(paused);\n  };\n  const onRestart = () => {\n    countdownRef.current.onRestart();\n  };\n  return (\n    <>\n      <CountDown ref={countdownRef} hours={1} minutes={45} />\n      <Space>\n        <Button onClick={onPaused}>{paused ? 'resume' : 'Pause'}</Button>\n        <Button onClick={onRestart}>Restart</Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
       xe =
-        "import React from 'react';\nimport FileDrop from './FileDrop';\n\nconst Demo = () => {\n  return <FileDrop onDrop={console.log} />;\n};\nexport default Demo;",
+        "import React, { forwardRef, useState, useCallback } from 'react';\nimport type { MutableRefObject } from 'react';\nimport styled from '@emotion/styled';\nimport type { ImperItem, ImperRef } from './helper';\nimport { useChildrenHandler, useTimeout } from './helper';\n\ninterface CountDownProps {\n  hours: number;\n  minutes: number;\n  seconds: number;\n  overText?: string;\n  pausedText?: string;\n  delimiter?: string;\n}\n\nconst StyleCountdown = styled.div`\n  color: rgba(0, 0, 0.85);\n  margin-bottom: 10px;\n  font-size: 16px;\n`;\n\nconst CountDown = forwardRef(\n  (props: Partial<CountDownProps>, ref: ImperItem['ref']) => {\n    const {\n      hours,\n      minutes,\n      seconds,\n      overText = 'Time is up!',\n      pausedText = 'paused!',\n      delimiter = ':',\n    } = props;\n    const [paused, setPaused] = useState(false);\n    const [over, setOver] = useState(false);\n    const [[h = 0, m = 0, s = 0], setTime] = useState([\n      hours,\n      minutes,\n      seconds,\n    ]);\n\n    const tick = () => {\n      if (paused || over) {\n        return;\n      }\n      let newH = h,\n        newM = m,\n        newS = s;\n      if (h === 0 && m === 0 && s === 0) {\n        setOver(true);\n      }\n\n      if (m === 0 && s === 0) {\n        newH--;\n        newM = 59;\n        newS = 59;\n      }\n\n      if (s === 0) {\n        newM--;\n        newS = 60;\n      }\n      newS--;\n      setTime([newH, newM, newS]);\n    };\n    useTimeout(tick, 1000);\n    useChildrenHandler(ref as MutableRefObject<ImperRef>, {\n      onPaused: useCallback((status: boolean) => {\n        setPaused(!status);\n      }, []),\n      onOver: useCallback(() => {\n        setPaused(false);\n        setOver(true);\n      }, []),\n      onRestart: useCallback(() => {\n        setTime([h, m, s]);\n        setPaused(false);\n        setOver(false);\n      }, []),\n    });\n    const fillZero = (n: number) => n.toString().padStart(2, '0');\n    return (\n      <StyleCountdown>\n        {over\n          ? overText\n          : paused\n          ? pausedText\n          : `${fillZero(h)}${delimiter}${fillZero(m)}${delimiter}${fillZero(\n              s,\n            )}`}\n      </StyleCountdown>\n    );\n  },\n);\n\nexport default CountDown;",
       Ee =
-        "import React, { createRef, useEffect, useState } from 'react';\nimport styled from '@emotion/styled';\nconst DropContainer = styled.div`\n  min-height: 120px;\n  border: 3px solid #d3d3d3;\n  text-align: center;\n  font-size: 24px;\n  padding: 32px;\n  border-radius: 4px;\n  &.drag {\n    border: 3px dashed #1e90ff;\n  }\n  &.ready {\n    border: 3px solid #32cd32;\n  }\n`;\ninterface FileDropProps {\n  onDrop(file?: File): void;\n  emptyText: string;\n}\nconst FileDrop = (props: Partial<FileDropProps>) => {\n  const { onDrop, emptyText } = props;\n  const [drag, setDrag] = useState(false);\n  const [filename, setFilename] = useState('');\n  const dropRef = createRef<HTMLDivElement>();\n  let dragCount = 0;\n  const commonHandler = (e: Event) => {\n    e.preventDefault();\n    e.stopPropagation();\n  };\n  const onDragEnterHandler = (e: Event) => {\n    commonHandler(e);\n    dragCount++;\n    const event = e as DragEvent;\n    if (event.dataTransfer?.items && event.dataTransfer.items.length) {\n      setDrag(true);\n    }\n  };\n  const onDragLeaveHandler = (e: Event) => {\n    commonHandler(e);\n    dragCount--;\n    if (dragCount === 0) {\n      setDrag(false);\n    }\n  };\n  const onDragOverHandler = (e: Event) => {\n    commonHandler(e);\n  };\n  const onDropHandler = (e: Event) => {\n    commonHandler(e);\n    setDrag(false);\n    const event = e as DragEvent;\n    if (event.dataTransfer?.files && event.dataTransfer.files.length) {\n      if (onDrop) {\n        onDrop(event.dataTransfer?.files[0]);\n        setFilename(event.dataTransfer?.files[0].name);\n        event.dataTransfer.clearData();\n        dragCount = 0;\n      }\n    }\n  };\n  const events = [\n    { type: 'dragenter', handlerName: onDragEnterHandler },\n    { type: 'dragleave', handlerName: onDragLeaveHandler },\n    { type: 'dragover', handlerName: onDragOverHandler },\n    { type: 'drop', handlerName: onDropHandler },\n  ];\n  useEffect(() => {\n    const container = dropRef.current;\n    events.forEach((item) =>\n      container?.addEventListener(item.type, item.handlerName),\n    );\n    return () => {\n      events.forEach((item) =>\n        container?.removeEventListener(item.type, item.handlerName),\n      );\n    };\n  }, []);\n\n  return (\n    <DropContainer\n      ref={dropRef}\n      className={drag ? ' drag' : filename ? ' ready' : ''}\n    >\n      {filename && !drag ? filename : emptyText || 'Drop a file here!'}\n    </DropContainer>\n  );\n};\nexport default FileDrop;",
+        "import type { MutableRefObject, DependencyList, Ref } from 'react';\nimport { useImperativeHandle, useEffect, useRef } from 'react';\n\nexport const useChildrenHandler = <T, K extends object>(\n  originRef: MutableRefObject<T>,\n  handler: K,\n  deps?: DependencyList,\n): void =>\n  useImperativeHandle(\n    originRef,\n    () => {\n      return {\n        ...originRef.current,\n        ...handler,\n      };\n    },\n    deps,\n  );\n\nexport type ImperFunc = (...args: any[]) => any;\nexport type ImperRef = Record<string, ImperFunc>;\nexport type ImperItem = {\n  ref: Ref<ImperRef>;\n};\nlet timer: number;\n// see this:https://www.aaron-powell.com/posts/2019-09-23-recursive-settimeout-with-react-hooks/\nexport const useTimeout = (callback, delay = 1000) => {\n  const ref = useRef() as MutableRefObject<() => void>;\n  useEffect(() => {\n    ref.current = callback;\n  });\n  useEffect(() => {\n    const handler = () => {\n      ref.current();\n      timer = setTimeout(handler, delay);\n    };\n    handler();\n    return () => clearTimeout(timer);\n  }, [delay]);\n};",
       we =
-        "import React from 'react';\nimport FileDrop from './FileDrop';\n\nconst Demo = () => {\n  return <FileDrop onDrop={console.log} emptyText=\"\u62d6\u62fd\u6587\u4ef6\u5230\u8fd9\u91cc!\" />;\n};\nexport default Demo;",
+        "import { Space, Button } from 'antd';\nimport React, { useRef, useState } from 'react';\nimport type { MutableRefObject } from 'react';\nimport CountDown from './CountDown';\nimport type { ImperRef } from './helper';\n\nconst Demo = () => {\n  const countdownRef = useRef() as MutableRefObject<ImperRef>;\n  const [paused, setPaused] = useState(false);\n  const onPaused = () => {\n    setPaused(!paused);\n    countdownRef.current.onPaused(paused);\n  };\n  const onRestart = () => {\n    countdownRef.current.onRestart();\n  };\n  return (\n    <>\n      <CountDown\n        ref={countdownRef}\n        hours={1}\n        minutes={45}\n        overText=\"\u5012\u8ba1\u65f6\u7ed3\u675f\"\n        pausedText=\"\u6682\u505c\u4e2d\"\n      />\n      <Space>\n        <Button onClick={onPaused}>{paused ? '\u7ee7\u7eed' : '\u6682\u505c'}</Button>\n        <Button onClick={onRestart}>\u91cd\u65b0\u5f00\u59cb</Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
       ke =
-        "import React from 'react';\nimport LazyLoadingImage from './LazyLoadImage';\nimport styled from '@emotion/styled';\n\nconst LazyStyleLoadingImage = styled(LazyLoadingImage)`\n  max-width: 100%;\n  min-width: 200px;\n`;\nconst Demo = () => {\n  return (\n    <LazyStyleLoadingImage src=\"https://www.eveningwater.com/static/page/CSS/css-code-50-image/comic-girl-02.jpg\" />\n  );\n};\nexport default Demo;",
+        "import React from 'react';\nimport FileDrop from './FileDrop';\n\nconst Demo = () => {\n  return <FileDrop onDrop={console.log} />;\n};\nexport default Demo;",
       Ce =
-        "import React, { useRef, useState, useCallback, useEffect } from 'react';\nexport interface LazyLoadingImageProps {\n  className: string;\n  alt: string;\n  src: string;\n  loadInitially: boolean;\n  observerOptions: Record<string, null | string | unknown>;\n}\nconst LazyLoadingImage = (props: Partial<LazyLoadingImageProps>) => {\n  const {\n    alt,\n    src,\n    className,\n    loadInitially = false,\n    observerOptions = { root: null, rootMargin: '200px 0px' },\n    ...rest\n  } = props;\n  const observerRef = useRef<IntersectionObserver | null>(null);\n  const imgRef = useRef<HTMLImageElement | null>(null);\n  const [isLoaded, setIsLoaded] = useState(false);\n  const observerCallback = useCallback(\n    (entries) => {\n      if (entries[0].isIntersecting) {\n        observerRef.current?.disconnect();\n        setIsLoaded(true);\n      }\n    },\n    [observerRef],\n  );\n  useEffect(() => {\n    if (loadInitially) {\n      return;\n    }\n    if ('loading' in HTMLImageElement.prototype) {\n      setIsLoaded(true);\n      return;\n    }\n    observerRef.current = new IntersectionObserver(\n      observerCallback,\n      observerOptions,\n    );\n    observerRef.current.observe(imgRef.current as HTMLImageElement);\n    return () => {\n      observerRef.current?.disconnect();\n    };\n  }, []);\n\n  return (\n    <img\n      src={isLoaded ? src : ''}\n      alt={alt}\n      ref={imgRef}\n      className={className}\n      loading={loadInitially ? undefined : 'lazy'}\n      {...rest}\n    />\n  );\n};\nexport default LazyLoadingImage;",
+        "import React, { createRef, useEffect, useState } from 'react';\nimport styled from '@emotion/styled';\nconst DropContainer = styled.div`\n  min-height: 120px;\n  border: 3px solid #d3d3d3;\n  text-align: center;\n  font-size: 24px;\n  padding: 32px;\n  border-radius: 4px;\n  &.drag {\n    border: 3px dashed #1e90ff;\n  }\n  &.ready {\n    border: 3px solid #32cd32;\n  }\n`;\ninterface FileDropProps {\n  onDrop(file?: File): void;\n  emptyText: string;\n}\nconst FileDrop = (props: Partial<FileDropProps>) => {\n  const { onDrop, emptyText } = props;\n  const [drag, setDrag] = useState(false);\n  const [filename, setFilename] = useState('');\n  const dropRef = createRef<HTMLDivElement>();\n  let dragCount = 0;\n  const commonHandler = (e: Event) => {\n    e.preventDefault();\n    e.stopPropagation();\n  };\n  const onDragEnterHandler = (e: Event) => {\n    commonHandler(e);\n    dragCount++;\n    const event = e as DragEvent;\n    if (event.dataTransfer?.items && event.dataTransfer.items.length) {\n      setDrag(true);\n    }\n  };\n  const onDragLeaveHandler = (e: Event) => {\n    commonHandler(e);\n    dragCount--;\n    if (dragCount === 0) {\n      setDrag(false);\n    }\n  };\n  const onDragOverHandler = (e: Event) => {\n    commonHandler(e);\n  };\n  const onDropHandler = (e: Event) => {\n    commonHandler(e);\n    setDrag(false);\n    const event = e as DragEvent;\n    if (event.dataTransfer?.files && event.dataTransfer.files.length) {\n      if (onDrop) {\n        onDrop(event.dataTransfer?.files[0]);\n        setFilename(event.dataTransfer?.files[0].name);\n        event.dataTransfer.clearData();\n        dragCount = 0;\n      }\n    }\n  };\n  const events = [\n    { type: 'dragenter', handlerName: onDragEnterHandler },\n    { type: 'dragleave', handlerName: onDragLeaveHandler },\n    { type: 'dragover', handlerName: onDragOverHandler },\n    { type: 'drop', handlerName: onDropHandler },\n  ];\n  useEffect(() => {\n    const container = dropRef.current;\n    events.forEach((item) =>\n      container?.addEventListener(item.type, item.handlerName),\n    );\n    return () => {\n      events.forEach((item) =>\n        container?.removeEventListener(item.type, item.handlerName),\n      );\n    };\n  }, []);\n\n  return (\n    <DropContainer\n      ref={dropRef}\n      className={drag ? ' drag' : filename ? ' ready' : ''}\n    >\n      {filename && !drag ? filename : emptyText || 'Drop a file here!'}\n    </DropContainer>\n  );\n};\nexport default FileDrop;",
       Oe =
-        "import React from 'react';\nimport LazyLoadingImage from './LazyLoadImage';\nimport styled from '@emotion/styled';\n\nconst LazyStyleLoadingImage = styled(LazyLoadingImage)`\n  max-width: 100%;\n  min-width: 200px;\n`;\nconst Demo = () => {\n  return (\n    <LazyStyleLoadingImage src=\"https://www.eveningwater.com/static/page/CSS/css-code-50-image/comic-girl-02.jpg\" />\n  );\n};\nexport default Demo;",
+        "import React from 'react';\nimport FileDrop from './FileDrop';\n\nconst Demo = () => {\n  return <FileDrop onDrop={console.log} emptyText=\"\u62d6\u62fd\u6587\u4ef6\u5230\u8fd9\u91cc!\" />;\n};\nexport default Demo;",
       Se =
-        "import React from 'react';\nimport LimitedTextarea from './LimitedTextarea';\n\nconst Demo = () => {\n  return <LimitedTextarea limit={100}></LimitedTextarea>;\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport LazyLoadingImage from './LazyLoadImage';\nimport styled from '@emotion/styled';\n\nconst LazyStyleLoadingImage = styled(LazyLoadingImage)`\n  max-width: 100%;\n  min-width: 200px;\n`;\nconst Demo = () => {\n  return (\n    <LazyStyleLoadingImage src=\"https://www.eveningwater.com/static/page/CSS/css-code-50-image/comic-girl-02.jpg\" />\n  );\n};\nexport default Demo;",
       je =
-        "import React, { useState, useCallback } from 'react';\nimport type { ChangeEvent } from 'react';\nimport styled from '@emotion/styled';\ninterface LimitedTextareaProps extends Record<string, unknown> {\n  limit: number;\n  rows: number;\n  cols: number;\n  value: string;\n}\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedTextarea = (props: Partial<LimitedTextareaProps>) => {\n  const { limit, rows, cols, value, ...rest } = props;\n\n  const [content, setContent] = useState(value?.slice(0, limit));\n\n  const setFormattedContent = useCallback(\n    (text: string) => {\n      setContent(text.slice(0, limit));\n    },\n    [limit, setContent],\n  );\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e: ChangeEvent) =>\n          setFormattedContent((e.target as HTMLTextAreaElement).value)\n        }\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedTextarea;",
+        "import React, { useRef, useState, useCallback, useEffect } from 'react';\nexport interface LazyLoadingImageProps {\n  className: string;\n  alt: string;\n  src: string;\n  loadInitially: boolean;\n  observerOptions: Record<string, null | string | unknown>;\n}\nconst LazyLoadingImage = (props: Partial<LazyLoadingImageProps>) => {\n  const {\n    alt,\n    src,\n    className,\n    loadInitially = false,\n    observerOptions = { root: null, rootMargin: '200px 0px' },\n    ...rest\n  } = props;\n  const observerRef = useRef<IntersectionObserver | null>(null);\n  const imgRef = useRef<HTMLImageElement | null>(null);\n  const [isLoaded, setIsLoaded] = useState(false);\n  const observerCallback = useCallback(\n    (entries) => {\n      if (entries[0].isIntersecting) {\n        observerRef.current?.disconnect();\n        setIsLoaded(true);\n      }\n    },\n    [observerRef],\n  );\n  useEffect(() => {\n    if (loadInitially) {\n      return;\n    }\n    if ('loading' in HTMLImageElement.prototype) {\n      setIsLoaded(true);\n      return;\n    }\n    observerRef.current = new IntersectionObserver(\n      observerCallback,\n      observerOptions,\n    );\n    observerRef.current.observe(imgRef.current as HTMLImageElement);\n    return () => {\n      observerRef.current?.disconnect();\n    };\n  }, []);\n\n  return (\n    <img\n      src={isLoaded ? src : ''}\n      alt={alt}\n      ref={imgRef}\n      className={className}\n      loading={loadInitially ? undefined : 'lazy'}\n      {...rest}\n    />\n  );\n};\nexport default LazyLoadingImage;",
       Te =
-        "import React from 'react';\nimport LimitedTextarea from './LimitedTextarea';\n\nconst Demo = () => {\n  return <LimitedTextarea limit={120}></LimitedTextarea>;\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport LazyLoadingImage from './LazyLoadImage';\nimport styled from '@emotion/styled';\n\nconst LazyStyleLoadingImage = styled(LazyLoadingImage)`\n  max-width: 100%;\n  min-width: 200px;\n`;\nconst Demo = () => {\n  return (\n    <LazyStyleLoadingImage src=\"https://www.eveningwater.com/static/page/CSS/css-code-50-image/comic-girl-02.jpg\" />\n  );\n};\nexport default Demo;",
       Pe =
-        "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea limit={5} value=\"hello,there!\"></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport LimitedTextarea from './LimitedTextarea';\n\nconst Demo = () => {\n  return <LimitedTextarea limit={100}></LimitedTextarea>;\n};\n\nexport default Demo;",
       Ie =
-        "import React, { useState, useCallback, useEffect } from 'react';\nimport type { ChangeEvent } from 'react';\nimport styled from '@emotion/styled';\ninterface LimitedWordTextareaProps extends Record<string, unknown> {\n  limit: number;\n  rows: number;\n  cols: number;\n  value: string;\n}\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedWordTextarea = (props: Partial<LimitedWordTextareaProps>) => {\n  const { limit = 0, rows, cols, value, ...rest } = props;\n\n  const [{ content, wordCount }, setContent] = useState({\n    content: value,\n    wordCount: 0,\n  });\n\n  const setFormattedContent = useCallback(\n    (text: string) => {\n      let words = text.split(' ').filter(Boolean);\n      setContent(() => {\n        if (words.length > limit) {\n          return {\n            wordCount: limit,\n            content: words.slice(0, limit).join(' '),\n          };\n        }\n        return {\n          wordCount: words.length,\n          content: text,\n        };\n      });\n    },\n    [limit, setContent],\n  );\n  useEffect(() => {\n    setFormattedContent(content || '');\n  }, []);\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e: ChangeEvent) =>\n          setFormattedContent((e.target as HTMLTextAreaElement).value)\n        }\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedWordTextarea;",
+        "import React, { useState, useCallback } from 'react';\nimport type { ChangeEvent } from 'react';\nimport styled from '@emotion/styled';\ninterface LimitedTextareaProps extends Record<string, unknown> {\n  limit: number;\n  rows: number;\n  cols: number;\n  value: string;\n}\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedTextarea = (props: Partial<LimitedTextareaProps>) => {\n  const { limit, rows, cols, value, ...rest } = props;\n\n  const [content, setContent] = useState(value?.slice(0, limit));\n\n  const setFormattedContent = useCallback(\n    (text: string) => {\n      setContent(text.slice(0, limit));\n    },\n    [limit, setContent],\n  );\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e: ChangeEvent) =>\n          setFormattedContent((e.target as HTMLTextAreaElement).value)\n        }\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedTextarea;",
       Re =
-        "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea\n      limit={6}\n      value=\"\u4f60\u597d\u554a,\u8fd9\u91cc\u7684\u4e16\u754c!\"\n    ></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport LimitedTextarea from './LimitedTextarea';\n\nconst Demo = () => {\n  return <LimitedTextarea limit={120}></LimitedTextarea>;\n};\n\nexport default Demo;",
       Ne =
-        'import React, { useState } from \'react\';\nimport { Alert, Space, Spin, Switch } from \'antd\';\nimport Loader from \'./Loader\';\nimport styled from \'@emotion/styled\';\n\nconst Row = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  const [loading, setLoading] = useState(true);\n  const antIcon = <Loader size={24} spin />;\n  return (\n    <Space direction="vertical" style={{ width: \'100%\' }}>\n      <Spin tip="Loading..." indicator={antIcon} spinning={loading}>\n        <Alert\n          message="Alert message title"\n          description="Further details about the context of this alert."\n          type="info"\n        />\n      </Spin>\n      <Row>\n        Loading state\uff1a\n        <Switch checked={loading} onChange={() => setLoading(!loading)} />\n      </Row>\n    </Space>\n  );\n};\nexport default Demo;',
+        "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea limit={5} value=\"hello,there!\"></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
       Ae =
-        'import React, { useState } from \'react\';\nimport { Alert, Space, Spin, Switch } from \'antd\';\nimport Loader from \'./Loader\';\nimport styled from \'@emotion/styled\';\n\nconst Row = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  const [loading, setLoading] = useState(true);\n  const antIcon = <Loader size={24} spin />;\n  return (\n    <Space direction="vertical" style={{ width: \'100%\' }}>\n      <Spin tip="\u52a0\u8f7d\u4e2d..." indicator={antIcon} spinning={loading}>\n        <Alert\n          message="\u63d0\u793a\u6846\u6d88\u606f\u6807\u9898"\n          description="\u6709\u5173\u6b64\u63d0\u793a\u6846\u4e0a\u4e0b\u6587\u7684\u66f4\u591a\u8be6\u7ec6\u4fe1\u606f\u3002"\n          type="info"\n        />\n      </Spin>\n      <Row>\n        \u52a0\u8f7d\u72b6\u6001\uff1a\n        <Switch checked={loading} onChange={() => setLoading(!loading)} />\n      </Row>\n    </Space>\n  );\n};\nexport default Demo;',
+        "import React, { useState, useCallback, useEffect } from 'react';\nimport type { ChangeEvent } from 'react';\nimport styled from '@emotion/styled';\ninterface LimitedWordTextareaProps extends Record<string, unknown> {\n  limit: number;\n  rows: number;\n  cols: number;\n  value: string;\n}\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedWordTextarea = (props: Partial<LimitedWordTextareaProps>) => {\n  const { limit = 0, rows, cols, value, ...rest } = props;\n\n  const [{ content, wordCount }, setContent] = useState({\n    content: value,\n    wordCount: 0,\n  });\n\n  const setFormattedContent = useCallback(\n    (text: string) => {\n      let words = text.split(' ').filter(Boolean);\n      setContent(() => {\n        if (words.length > limit) {\n          return {\n            wordCount: limit,\n            content: words.slice(0, limit).join(' '),\n          };\n        }\n        return {\n          wordCount: words.length,\n          content: text,\n        };\n      });\n    },\n    [limit, setContent],\n  );\n  useEffect(() => {\n    setFormattedContent(content || '');\n  }, []);\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e: ChangeEvent) =>\n          setFormattedContent((e.target as HTMLTextAreaElement).value)\n        }\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedWordTextarea;",
       Le =
-        'import React from \'react\';\nimport Mailto from \'./Mailto\';\n\nconst Demo = () => {\n  return (\n    <Mailto\n      email="854806732@qq.com"\n      subject="hello & welcome"\n      body="hello,world"\n    >\n      Mail me!\n    </Mailto>\n  );\n};\n\nexport default Demo;',
+        "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea\n      limit={6}\n      value=\"\u4f60\u597d\u554a,\u8fd9\u91cc\u7684\u4e16\u754c!\"\n    ></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
       Me =
-        "import styled from '@emotion/styled';\nimport React from 'react';\nimport type { ReactNode } from 'react';\n\nconst Link = styled.a`\n  text-decoration: none;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 18px;\n  transition: color 0.3s ease-in-out;\n  &:hover {\n    color: #2396ef;\n  }\n`;\n\ninterface MailtoProps extends Record<string, unknown> {\n  email: string;\n  subject: string;\n  body: string;\n  children: ReactNode;\n}\n\nconst Mailto = (props: Partial<MailtoProps>) => {\n  const { email, subject = '', body = '', children, ...rest } = props;\n  let params = subject || body ? '?' : '';\n  if (subject) {\n    params += `subject=${encodeURIComponent(subject)}`;\n  }\n  if (body) {\n    params += `body=${encodeURIComponent(body)}`;\n  }\n  return (\n    <Link href={`mailto:${email}${params}`} className=\"mail-link\" {...rest}>\n      {children}\n    </Link>\n  );\n};\n\nexport default Mailto;",
+        'import React, { useState } from \'react\';\nimport { Alert, Space, Spin, Switch } from \'antd\';\nimport Loader from \'./Loader\';\nimport styled from \'@emotion/styled\';\n\nconst Row = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  const [loading, setLoading] = useState(true);\n  const antIcon = <Loader size={24} spin />;\n  return (\n    <Space direction="vertical" style={{ width: \'100%\' }}>\n      <Spin tip="Loading..." indicator={antIcon} spinning={loading}>\n        <Alert\n          message="Alert message title"\n          description="Further details about the context of this alert."\n          type="info"\n        />\n      </Spin>\n      <Row>\n        Loading state\uff1a\n        <Switch checked={loading} onChange={() => setLoading(!loading)} />\n      </Row>\n    </Space>\n  );\n};\nexport default Demo;',
       De =
-        'import React from \'react\';\nimport Mailto from \'./Mailto\';\n\nconst Demo = () => {\n  return (\n    <Mailto email="854806732@qq.com" subject="\u4f60\u597d&\u6b22\u8fce" body="\u4f60\u597d\uff0c\u4e16\u754c">\n      \u7ed9\u6211\u53d1\u90ae\u4ef6\n    </Mailto>\n  );\n};\n\nexport default Demo;',
+        'import React, { useState } from \'react\';\nimport { Alert, Space, Spin, Switch } from \'antd\';\nimport Loader from \'./Loader\';\nimport styled from \'@emotion/styled\';\n\nconst Row = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  const [loading, setLoading] = useState(true);\n  const antIcon = <Loader size={24} spin />;\n  return (\n    <Space direction="vertical" style={{ width: \'100%\' }}>\n      <Spin tip="\u52a0\u8f7d\u4e2d..." indicator={antIcon} spinning={loading}>\n        <Alert\n          message="\u63d0\u793a\u6846\u6d88\u606f\u6807\u9898"\n          description="\u6709\u5173\u6b64\u63d0\u793a\u6846\u4e0a\u4e0b\u6587\u7684\u66f4\u591a\u8be6\u7ec6\u4fe1\u606f\u3002"\n          type="info"\n        />\n      </Spin>\n      <Row>\n        \u52a0\u8f7d\u72b6\u6001\uff1a\n        <Switch checked={loading} onChange={() => setLoading(!loading)} />\n      </Row>\n    </Space>\n  );\n};\nexport default Demo;',
       ze =
-        "import React, { useState } from 'react';\nimport Modal from './Modal';\nimport { Button, Space } from 'antd';\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const onCreate = () => {\n    Modal.confirm({\n      title: 'The modal title',\n      content: (\n        <>\n          <p>The modal content</p>\n          <p>The modal content</p>\n          <p>The modal content</p>\n        </>\n      ),\n      cancelText: 'Cancel',\n      okText: 'Sure',\n    });\n  };\n  return (\n    <Space>\n      <Button onClick={() => setVisible(true)}>clicked me</Button>\n      <Button onClick={onCreate}>clicked me</Button>\n      <Modal\n        visible={visible}\n        onCancel={() => setVisible(false)}\n        title=\"The modal title\"\n        showCancel\n        onOk={() => setVisible(false)}\n        cancelText=\"Cancel\"\n        okText=\"Sure\"\n      >\n        <p>The modal content</p>\n        <p>The modal content</p>\n        <p>The modal content</p>\n      </Modal>\n    </Space>\n  );\n};\n\nexport default Demo;",
+        'import React from \'react\';\nimport Mailto from \'./Mailto\';\n\nconst Demo = () => {\n  return (\n    <Mailto\n      email="854806732@qq.com"\n      subject="hello & welcome"\n      body="hello,world"\n    >\n      Mail me!\n    </Mailto>\n  );\n};\n\nexport default Demo;',
       _e =
-        "import React, { useState, useEffect } from 'react';\nimport type { ReactNode, SyntheticEvent } from 'react';\nimport ReactDOM from 'react-dom';\nimport './Modal.less';\n\nexport interface ModalProps extends Record<string, any> {\n  mask: boolean;\n  footer: ReactNode;\n  title: ReactNode;\n  visible: boolean;\n  showCancel: boolean;\n  maskClosable: boolean;\n  onMask: Function;\n  onCancel: Function;\n  onOk: Function;\n  onClose: Function;\n  content: ReactNode;\n  showClose: boolean;\n  closeMask: boolean;\n  autoClose: boolean;\n  autoCloseTime: number;\n  isRenderHTML: boolean;\n  okText: string;\n  cancelText: string;\n  width: string | number;\n  children: ReactNode;\n  isDestroy: boolean;\n  keyboard: boolean;\n}\n\nconst Modal = (props: Partial<ModalProps>) => {\n  const {\n    mask = true,\n    footer,\n    children,\n    isRenderHTML,\n    title,\n    visible,\n    onCancel,\n    maskClosable = true,\n    onOk,\n    showCancel,\n    showClose = true,\n    onClose,\n    okText,\n    cancelText,\n    width = 520,\n    isDestroy = true,\n    keyboard = true,\n    onMask,\n    ...rest\n  } = props;\n\n  const [modalVisible, setModalVisible] = useState(false);\n\n  const keydownHandler = ({ key }) => {\n    switch (key) {\n      case 'Escape':\n        if (typeof onCancel === 'function' && keyboard) {\n          onCancel();\n        }\n        break;\n      default:\n    }\n  };\n\n  useEffect(() => {\n    if (typeof visible === 'boolean') {\n      setModalVisible(visible);\n    }\n  }, [visible]);\n\n  useEffect(() => {\n    document.addEventListener('keydown', keydownHandler);\n    return () => document.removeEventListener('keydown', keydownHandler);\n  });\n\n  // Set the width\n  const contentStyle: Partial<Record<'width', ModalProps['width']>> = {};\n  if (typeof width === 'number') {\n    contentStyle['width'] = width + 'px';\n  } else if (typeof width === 'string') {\n    contentStyle['width'] = width;\n  }\n\n  return isDestroy && !modalVisible ? null : (\n    <div\n      className=\"modal-container\"\n      {...rest}\n      style={{ display: modalVisible ? 'block' : 'none' }}\n    >\n      <div className=\"modal-wrapper\">\n        {mask ? (\n          <div\n            className=\"modal-mask\"\n            onClick={(e: SyntheticEvent) => {\n              if (maskClosable) {\n                if (typeof onMask === 'function') {\n                  return onMask(e);\n                }\n                if (typeof onCancel === 'function') {\n                  onCancel(e);\n                }\n              }\n            }}\n          />\n        ) : null}\n        <div className=\"modal-box\" style={contentStyle}>\n          <div className=\"modal-content\">\n            {showClose ? (\n              <div\n                className=\"modal-content-close\"\n                onClick={(e: SyntheticEvent) => {\n                  if (typeof onCancel === 'function') {\n                    onCancel(e);\n                  }\n                }}\n              >\n                <svg\n                  className=\"close-icon\"\n                  viewBox=\"0 0 1024 1024\"\n                  version=\"1.1\"\n                  xmlns=\"http://www.w3.org/2000/svg\"\n                  p-id=\"2217\"\n                >\n                  <path\n                    d=\"M546.942134 511.818772l327.456957-326.128977c9.617355-9.577423 9.648071-25.135361 0.070648-34.751692-9.577423-9.617355-25.137409-9.647048-34.750668-0.070648L512.119795 477.137729 184.520518 150.868479c-9.616331-9.577423-25.176316-9.545683-34.751692 0.070648-9.577423 9.616331-9.545683 25.174268 0.070648 34.751692l327.457981 326.127953-327.457981 326.128978c-9.616331 9.577423-9.647048 25.135361-0.070648 34.751692a24.496456 24.496456 0 0 0 17.41117 7.231702 24.500552 24.500552 0 0 0 17.340522-7.162078L512.119795 546.499816l327.599276 326.26925a24.492361 24.492361 0 0 0 17.340522 7.162078 24.5026 24.5026 0 0 0 17.41117-7.231702c9.577423-9.617355 9.545683-25.175292-0.070648-34.751692L546.942134 511.818772z\"\n                    fill=\"#bfbfbf\"\n                    p-id=\"2218\"\n                  ></path>\n                </svg>\n              </div>\n            ) : null}\n            {title ? <div className=\"modal-content-header\">{title}</div> : null}\n            <div className=\"modal-content-body\">\n              {isRenderHTML ? (\n                <div dangerouslySetInnerHTML={{ __html: String(children) }} />\n              ) : (\n                children\n              )}\n            </div>\n            {footer === null ? null : footer ? (\n              footer\n            ) : (\n              <div className=\"modal-content-footer\">\n                {showCancel ? (\n                  <button\n                    type=\"button\"\n                    className=\"modal-content-footer-button modal-content-footer-button-cancel\"\n                    onClick={(e: SyntheticEvent) => {\n                      if (typeof onCancel === 'function') {\n                        onCancel(e);\n                      }\n                    }}\n                  >\n                    {cancelText ? cancelText : '\u53d6\u6d88'}\n                  </button>\n                ) : null}\n                <button\n                  type=\"button\"\n                  className=\"modal-content-footer-button modal-content-footer-button-sure\"\n                  onClick={(e: SyntheticEvent) => {\n                    if (typeof onOk === 'function') {\n                      onOk(e);\n                    } else {\n                      if (typeof onCancel === 'function') {\n                        onCancel(e);\n                      }\n                    }\n                  }}\n                >\n                  {okText ? okText : '\u786e\u5b9a'}\n                </button>\n              </div>\n            )}\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nconst destroyFns: Array<() => void> = [];\nconst closeFns: Array<() => void> = [];\n\ninterface MethodModalProps extends ModalProps {}\nexport type ConfirmConfig = ModalProps | ((config: ModalProps) => ModalProps);\nexport type ReturnType = {\n  destroy: () => void;\n  close: () => void;\n  update: (updateConfig: ModalProps) => void;\n};\nexport type ModalType = (config: ModalProps) => ReturnType;\n\nModal.confirm = (config: Partial<MethodModalProps> | string) => {\n  const div = document.createElement('div');\n  document.body.appendChild(div);\n  const defaultConfig = {\n    visible: true,\n    showCancel: true,\n    onOk: () => destroy(),\n    onCancel: () => destroy(),\n    onMask: () => destroy(),\n  };\n  let currentConfig =\n    typeof config === 'object' && config\n      ? {\n          ...config,\n          ...defaultConfig,\n        }\n      : ({\n          content: config,\n          ...defaultConfig,\n        } as any);\n  function destroy() {\n    const unMountResult = ReactDOM.unmountComponentAtNode(div);\n    if (unMountResult && div.parentElement) {\n      div.parentElement.removeChild(div);\n    }\n    for (let i = 0, l = destroyFns.length; i < l; i++) {\n      const fn = destroyFns[i];\n      if (fn === close) {\n        destroyFns.splice(i, 1);\n        break;\n      }\n    }\n  }\n  function close() {\n    currentConfig = {\n      ...currentConfig,\n      visible: false,\n    };\n    render(currentConfig);\n  }\n  function render(props: MethodModalProps) {\n    setTimeout(() => {\n      ReactDOM.render(<Modal {...props}>{props.content}</Modal>, div);\n    });\n  }\n  function update(updateConfig: ConfirmConfig) {\n    if (typeof updateConfig === 'function') {\n      currentConfig = updateConfig(currentConfig);\n    } else {\n      currentConfig = {\n        ...currentConfig,\n        ...updateConfig,\n      };\n    }\n    render(currentConfig);\n  }\n  render(currentConfig);\n  closeFns.push(close);\n  destroyFns.push(destroy);\n  if (currentConfig.autoClose) {\n    let autoCloseTime = Number(currentConfig.autoCloseTime);\n    autoCloseTime = Number.isNaN(autoCloseTime)\n      ? 1000\n      : Math.min(10000, autoCloseTime);\n    setTimeout(() => {\n      destroy();\n    }, autoCloseTime);\n  }\n  return {\n    destroy,\n    close,\n    update,\n  };\n};\n\nModal.closeAll = () => {\n  closeFns.forEach((close: Function) => {\n    close && close();\n  });\n};\n\nModal.destroyAll = () => {\n  destroyFns.forEach((destroy: Function) => {\n    destroy && destroy();\n  });\n};\n\ntype GlobalModal = typeof Modal;\nexport { GlobalModal };\nexport default Modal;",
+        "import styled from '@emotion/styled';\nimport React from 'react';\nimport type { ReactNode } from 'react';\n\nconst Link = styled.a`\n  text-decoration: none;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 18px;\n  transition: color 0.3s ease-in-out;\n  &:hover {\n    color: #2396ef;\n  }\n`;\n\ninterface MailtoProps extends Record<string, unknown> {\n  email: string;\n  subject: string;\n  body: string;\n  children: ReactNode;\n}\n\nconst Mailto = (props: Partial<MailtoProps>) => {\n  const { email, subject = '', body = '', children, ...rest } = props;\n  let params = subject || body ? '?' : '';\n  if (subject) {\n    params += `subject=${encodeURIComponent(subject)}`;\n  }\n  if (body) {\n    params += `body=${encodeURIComponent(body)}`;\n  }\n  return (\n    <Link href={`mailto:${email}${params}`} className=\"mail-link\" {...rest}>\n      {children}\n    </Link>\n  );\n};\n\nexport default Mailto;",
       Fe =
-        "@black: rgba(0, 0, 0, 1);\n@baseSelector: modal;\n\n.@{baseSelector}-container {\n  .base-fixed {\n    inset: 0;\n    position: fixed;\n  }\n\n  .@{baseSelector}-mask {\n    height: 100%;\n    background-color: fade(@black, 65%);\n    .base-fixed();\n  }\n\n  .@{baseSelector}-wrapper {\n    .base-fixed();\n    overflow: auto;\n    outline: 0;\n    z-index: 1000;\n\n    .@{baseSelector}-box {\n      box-sizing: border-box;\n      padding: 0 0 24px;\n      color: fadeout(@black, 15%);\n      font-size: 14px;\n      font-variant: tabular-nums;\n      line-height: 1.5715;\n      list-style: none;\n      font-feature-settings: 'tnum';\n      pointer-events: none;\n      position: relative;\n      top: 100px;\n      width: auto;\n      max-width: calc(100vw - 32px);\n      margin: 0 auto;\n\n      .@{baseSelector}-content {\n        position: relative;\n        background-color: #fff;\n        background-clip: padding-box;\n        border: 0;\n        border-radius: 2px;\n        box-shadow: 0 3px 6px -4px fade(@black, 5%), 0 6px 16px fade(@black, 7%),\n          0 9px 28px 8px fade(@black, 9%);\n        pointer-events: auto;\n\n        &-header {\n          padding: 16px 24px;\n          color: fade(@black, 90%);\n          background: #fff;\n          border-bottom: 1px solid fade(@black, 6%);\n          border-radius: 2px 2px 0 0;\n          margin: 0;\n          font-weight: 500;\n          font-size: 16px;\n          line-height: 22px;\n          word-wrap: break-word;\n        }\n\n        &-body {\n          padding: 24px;\n          font-size: 14px;\n          line-height: 1.5715;\n          word-wrap: break-word;\n        }\n\n        &-footer {\n          padding: 10px 16px;\n          text-align: right;\n          background: 0 0;\n          border-top: 1px solid fadeout(@black, 94%);\n          border-radius: 0 0 2px 2px;\n\n          &-button {\n            line-height: 1.5715;\n            position: relative;\n            display: inline-block;\n            font-weight: 400;\n            white-space: nowrap;\n            text-align: center;\n            background-image: none;\n            border: 1px solid transparent;\n            box-shadow: 0 2px fadeout(@black, 95%);\n            cursor: pointer;\n            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n            -webkit-user-select: none;\n            -moz-user-select: none;\n            -ms-user-select: none;\n            user-select: none;\n            touch-action: manipulation;\n            height: 32px;\n            padding: 4px 15px;\n            font-size: 14px;\n            letter-spacing: 2px;\n            border-radius: 2px;\n            color: fade(@black, 97%);\n            border-color: #d9d9d9;\n            background: #fff;\n            border-radius: 4px;\n\n            &-cancel {\n              margin-right: 15px;\n\n              &:hover,\n              &:active {\n                border-color: #2499f1;\n                color: #2396ef;\n              }\n            }\n\n            &-sure {\n              background-color: #34a1f5;\n              border-color: #1e9af8;\n              color: #fff;\n\n              &:hover,\n              &:active {\n                background-color: #0f8ff1;\n                border-color: #1794f5;\n              }\n            }\n          }\n        }\n\n        &-close {\n          position: absolute;\n          top: 0;\n          right: 0;\n          z-index: 10;\n          padding: 0;\n          color: fadeout(@black, 75%);\n          font-weight: 700;\n          text-decoration: none;\n          background: 0 0;\n          border: 0;\n          outline: 0;\n          cursor: pointer;\n          width: 54px;\n          height: 54px;\n          font-size: 16px;\n          font-style: normal;\n          line-height: 54px;\n          text-align: center;\n          text-transform: none;\n          text-rendering: auto;\n          transition: color 0.3s;\n\n          & .close-icon {\n            width: 16px;\n            height: 16px;\n          }\n        }\n      }\n    }\n  }\n}",
+        'import React from \'react\';\nimport Mailto from \'./Mailto\';\n\nconst Demo = () => {\n  return (\n    <Mailto email="854806732@qq.com" subject="\u4f60\u597d&\u6b22\u8fce" body="\u4f60\u597d\uff0c\u4e16\u754c">\n      \u7ed9\u6211\u53d1\u90ae\u4ef6\n    </Mailto>\n  );\n};\n\nexport default Demo;',
       Be =
-        "import React, { useState } from 'react';\nimport Modal from './Modal';\nimport { Button, Space } from 'antd';\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const onCreate = () => {\n    Modal.confirm({\n      title: '\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898',\n      content: (\n        <>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        </>\n      ),\n    });\n  };\n  return (\n    <Space>\n      <Button onClick={() => setVisible(true)}>clicked me</Button>\n      <Button onClick={onCreate}>clicked me</Button>\n      <Modal\n        visible={visible}\n        onCancel={() => setVisible(false)}\n        title=\"\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898\"\n        showCancel\n        onOk={() => setVisible(false)}\n      >\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n      </Modal>\n    </Space>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Modal from './Modal';\nimport { Button, Space } from 'antd';\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const onCreate = () => {\n    Modal.confirm({\n      title: 'The modal title',\n      content: (\n        <>\n          <p>The modal content</p>\n          <p>The modal content</p>\n          <p>The modal content</p>\n        </>\n      ),\n      cancelText: 'Cancel',\n      okText: 'Sure',\n    });\n  };\n  return (\n    <Space>\n      <Button onClick={() => setVisible(true)}>clicked me</Button>\n      <Button onClick={onCreate}>clicked me</Button>\n      <Modal\n        visible={visible}\n        onCancel={() => setVisible(false)}\n        title=\"The modal title\"\n        showCancel\n        onOk={() => setVisible(false)}\n        cancelText=\"Cancel\"\n        okText=\"Sure\"\n      >\n        <p>The modal content</p>\n        <p>The modal content</p>\n        <p>The modal content</p>\n      </Modal>\n    </Space>\n  );\n};\n\nexport default Demo;",
       Ue =
-        "import React, { useState } from 'react';\nimport PasswordRevealer from './PasswordRevealer';\nconst Demo = () => {\n  const [value, setValue] = useState('');\n  const onChange = (v: string) => {\n    console.log(v);\n    setValue(v);\n  };\n  return (\n    <PasswordRevealer\n      placeholder=\"Please Input the password\"\n      value={value}\n      onChange={onChange}\n    ></PasswordRevealer>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState, useEffect } from 'react';\nimport type { ReactNode, SyntheticEvent } from 'react';\nimport ReactDOM from 'react-dom';\nimport './Modal.less';\n\nexport interface ModalProps extends Record<string, any> {\n  mask: boolean;\n  footer: ReactNode;\n  title: ReactNode;\n  visible: boolean;\n  showCancel: boolean;\n  maskClosable: boolean;\n  onMask: Function;\n  onCancel: Function;\n  onOk: Function;\n  onClose: Function;\n  content: ReactNode;\n  showClose: boolean;\n  closeMask: boolean;\n  autoClose: boolean;\n  autoCloseTime: number;\n  isRenderHTML: boolean;\n  okText: string;\n  cancelText: string;\n  width: string | number;\n  children: ReactNode;\n  isDestroy: boolean;\n  keyboard: boolean;\n}\n\nconst Modal = (props: Partial<ModalProps>) => {\n  const {\n    mask = true,\n    footer,\n    children,\n    isRenderHTML,\n    title,\n    visible,\n    onCancel,\n    maskClosable = true,\n    onOk,\n    showCancel,\n    showClose = true,\n    onClose,\n    okText,\n    cancelText,\n    width = 520,\n    isDestroy = true,\n    keyboard = true,\n    onMask,\n    ...rest\n  } = props;\n\n  const [modalVisible, setModalVisible] = useState(false);\n\n  const keydownHandler = ({ key }) => {\n    switch (key) {\n      case 'Escape':\n        if (typeof onCancel === 'function' && keyboard) {\n          onCancel();\n        }\n        break;\n      default:\n    }\n  };\n\n  useEffect(() => {\n    if (typeof visible === 'boolean') {\n      setModalVisible(visible);\n    }\n  }, [visible]);\n\n  useEffect(() => {\n    document.addEventListener('keydown', keydownHandler);\n    return () => document.removeEventListener('keydown', keydownHandler);\n  });\n\n  // Set the width\n  const contentStyle: Partial<Record<'width', ModalProps['width']>> = {};\n  if (typeof width === 'number') {\n    contentStyle['width'] = width + 'px';\n  } else if (typeof width === 'string') {\n    contentStyle['width'] = width;\n  }\n\n  return isDestroy && !modalVisible ? null : (\n    <div\n      className=\"modal-container\"\n      {...rest}\n      style={{ display: modalVisible ? 'block' : 'none' }}\n    >\n      <div className=\"modal-wrapper\">\n        {mask ? (\n          <div\n            className=\"modal-mask\"\n            onClick={(e: SyntheticEvent) => {\n              if (maskClosable) {\n                if (typeof onMask === 'function') {\n                  return onMask(e);\n                }\n                if (typeof onCancel === 'function') {\n                  onCancel(e);\n                }\n              }\n            }}\n          />\n        ) : null}\n        <div className=\"modal-box\" style={contentStyle}>\n          <div className=\"modal-content\">\n            {showClose ? (\n              <div\n                className=\"modal-content-close\"\n                onClick={(e: SyntheticEvent) => {\n                  if (typeof onCancel === 'function') {\n                    onCancel(e);\n                  }\n                }}\n              >\n                <svg\n                  className=\"close-icon\"\n                  viewBox=\"0 0 1024 1024\"\n                  version=\"1.1\"\n                  xmlns=\"http://www.w3.org/2000/svg\"\n                  p-id=\"2217\"\n                >\n                  <path\n                    d=\"M546.942134 511.818772l327.456957-326.128977c9.617355-9.577423 9.648071-25.135361 0.070648-34.751692-9.577423-9.617355-25.137409-9.647048-34.750668-0.070648L512.119795 477.137729 184.520518 150.868479c-9.616331-9.577423-25.176316-9.545683-34.751692 0.070648-9.577423 9.616331-9.545683 25.174268 0.070648 34.751692l327.457981 326.127953-327.457981 326.128978c-9.616331 9.577423-9.647048 25.135361-0.070648 34.751692a24.496456 24.496456 0 0 0 17.41117 7.231702 24.500552 24.500552 0 0 0 17.340522-7.162078L512.119795 546.499816l327.599276 326.26925a24.492361 24.492361 0 0 0 17.340522 7.162078 24.5026 24.5026 0 0 0 17.41117-7.231702c9.577423-9.617355 9.545683-25.175292-0.070648-34.751692L546.942134 511.818772z\"\n                    fill=\"#bfbfbf\"\n                    p-id=\"2218\"\n                  ></path>\n                </svg>\n              </div>\n            ) : null}\n            {title ? <div className=\"modal-content-header\">{title}</div> : null}\n            <div className=\"modal-content-body\">\n              {isRenderHTML ? (\n                <div dangerouslySetInnerHTML={{ __html: String(children) }} />\n              ) : (\n                children\n              )}\n            </div>\n            {footer === null ? null : footer ? (\n              footer\n            ) : (\n              <div className=\"modal-content-footer\">\n                {showCancel ? (\n                  <button\n                    type=\"button\"\n                    className=\"modal-content-footer-button modal-content-footer-button-cancel\"\n                    onClick={(e: SyntheticEvent) => {\n                      if (typeof onCancel === 'function') {\n                        onCancel(e);\n                      }\n                    }}\n                  >\n                    {cancelText ? cancelText : '\u53d6\u6d88'}\n                  </button>\n                ) : null}\n                <button\n                  type=\"button\"\n                  className=\"modal-content-footer-button modal-content-footer-button-sure\"\n                  onClick={(e: SyntheticEvent) => {\n                    if (typeof onOk === 'function') {\n                      onOk(e);\n                    } else {\n                      if (typeof onCancel === 'function') {\n                        onCancel(e);\n                      }\n                    }\n                  }}\n                >\n                  {okText ? okText : '\u786e\u5b9a'}\n                </button>\n              </div>\n            )}\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nconst destroyFns: Array<() => void> = [];\nconst closeFns: Array<() => void> = [];\n\ninterface MethodModalProps extends ModalProps {}\nexport type ConfirmConfig = ModalProps | ((config: ModalProps) => ModalProps);\nexport type ReturnType = {\n  destroy: () => void;\n  close: () => void;\n  update: (updateConfig: ModalProps) => void;\n};\nexport type ModalType = (config: ModalProps) => ReturnType;\n\nModal.confirm = (config: Partial<MethodModalProps> | string) => {\n  const div = document.createElement('div');\n  document.body.appendChild(div);\n  const defaultConfig = {\n    visible: true,\n    showCancel: true,\n    onOk: () => destroy(),\n    onCancel: () => destroy(),\n    onMask: () => destroy(),\n  };\n  let currentConfig =\n    typeof config === 'object' && config\n      ? {\n          ...config,\n          ...defaultConfig,\n        }\n      : ({\n          content: config,\n          ...defaultConfig,\n        } as any);\n  function destroy() {\n    const unMountResult = ReactDOM.unmountComponentAtNode(div);\n    if (unMountResult && div.parentElement) {\n      div.parentElement.removeChild(div);\n    }\n    for (let i = 0, l = destroyFns.length; i < l; i++) {\n      const fn = destroyFns[i];\n      if (fn === close) {\n        destroyFns.splice(i, 1);\n        break;\n      }\n    }\n  }\n  function close() {\n    currentConfig = {\n      ...currentConfig,\n      visible: false,\n    };\n    render(currentConfig);\n  }\n  function render(props: MethodModalProps) {\n    setTimeout(() => {\n      ReactDOM.render(<Modal {...props}>{props.content}</Modal>, div);\n    });\n  }\n  function update(updateConfig: ConfirmConfig) {\n    if (typeof updateConfig === 'function') {\n      currentConfig = updateConfig(currentConfig);\n    } else {\n      currentConfig = {\n        ...currentConfig,\n        ...updateConfig,\n      };\n    }\n    render(currentConfig);\n  }\n  render(currentConfig);\n  closeFns.push(close);\n  destroyFns.push(destroy);\n  if (currentConfig.autoClose) {\n    let autoCloseTime = Number(currentConfig.autoCloseTime);\n    autoCloseTime = Number.isNaN(autoCloseTime)\n      ? 1000\n      : Math.min(10000, autoCloseTime);\n    setTimeout(() => {\n      destroy();\n    }, autoCloseTime);\n  }\n  return {\n    destroy,\n    close,\n    update,\n  };\n};\n\nModal.closeAll = () => {\n  closeFns.forEach((close: Function) => {\n    close && close();\n  });\n};\n\nModal.destroyAll = () => {\n  destroyFns.forEach((destroy: Function) => {\n    destroy && destroy();\n  });\n};\n\ntype GlobalModal = typeof Modal;\nexport { GlobalModal };\nexport default Modal;",
       Ve =
-        'import React, { useState } from \'react\';\nimport type { SyntheticEvent } from \'react\';\nimport \'./passwordRevealer.less\';\n\nexport interface PasswordRevealerProps extends Record<string, any> {\n  value: string;\n  onChange(v: string): void;\n  placeholder: string;\n}\n\nconst Eye = () => (\n  <svg\n    viewBox="64 64 896 896"\n    className="ant-password-suffix-icon"\n    data-icon="eye"\n    width="1em"\n    height="1em"\n    fill="currentColor"\n  >\n    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>\n  </svg>\n);\nconst EyeClose = () => (\n  <svg\n    viewBox="64 64 896 896"\n    data-icon="eye-invisible"\n    className="ant-password-suffix-icon"\n    width="1em"\n    height="1em"\n    fill="currentColor"\n  >\n    <path d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"></path>\n    <path d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"></path>\n  </svg>\n);\n\nconst PasswordRevealer = (props: Partial<PasswordRevealerProps>) => {\n  const {\n    value,\n    onChange,\n    placeholder = \'Please Input the password\',\n    ...rest\n  } = props;\n  const [isShown, setIsShown] = useState(false);\n  const [isFocus, setIsFocus] = useState(false);\n\n  const onChangeHandler = (e: SyntheticEvent) => {\n    const v = (e.target as HTMLInputElement).value;\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  return (\n    <span className={`ant-password${isFocus ? \' is-focused\' : \'\'}`} {...rest}>\n      <input\n        type={isShown ? \'text\' : \'password\'}\n        className="ant-password-input"\n        value={value}\n        onChange={onChangeHandler}\n        placeholder={placeholder}\n        onFocus={() => setIsFocus(true)}\n        onBlur={() => setIsFocus(false)}\n      />\n      <span\n        className="ant-password-suffix"\n        onClick={() => setIsShown(!isShown)}\n      >\n        {isShown ? <Eye /> : <EyeClose />}\n      </span>\n    </span>\n  );\n};\n\nexport default PasswordRevealer;',
+        "@black: rgba(0, 0, 0, 1);\n@baseSelector: modal;\n\n.@{baseSelector}-container {\n  .base-fixed {\n    inset: 0;\n    position: fixed;\n  }\n\n  .@{baseSelector}-mask {\n    height: 100%;\n    background-color: fade(@black, 65%);\n    .base-fixed();\n  }\n\n  .@{baseSelector}-wrapper {\n    .base-fixed();\n    overflow: auto;\n    outline: 0;\n    z-index: 1000;\n\n    .@{baseSelector}-box {\n      box-sizing: border-box;\n      padding: 0 0 24px;\n      color: fadeout(@black, 15%);\n      font-size: 14px;\n      font-variant: tabular-nums;\n      line-height: 1.5715;\n      list-style: none;\n      font-feature-settings: 'tnum';\n      pointer-events: none;\n      position: relative;\n      top: 100px;\n      width: auto;\n      max-width: calc(100vw - 32px);\n      margin: 0 auto;\n\n      .@{baseSelector}-content {\n        position: relative;\n        background-color: #fff;\n        background-clip: padding-box;\n        border: 0;\n        border-radius: 2px;\n        box-shadow: 0 3px 6px -4px fade(@black, 5%), 0 6px 16px fade(@black, 7%),\n          0 9px 28px 8px fade(@black, 9%);\n        pointer-events: auto;\n\n        &-header {\n          padding: 16px 24px;\n          color: fade(@black, 90%);\n          background: #fff;\n          border-bottom: 1px solid fade(@black, 6%);\n          border-radius: 2px 2px 0 0;\n          margin: 0;\n          font-weight: 500;\n          font-size: 16px;\n          line-height: 22px;\n          word-wrap: break-word;\n        }\n\n        &-body {\n          padding: 24px;\n          font-size: 14px;\n          line-height: 1.5715;\n          word-wrap: break-word;\n        }\n\n        &-footer {\n          padding: 10px 16px;\n          text-align: right;\n          background: 0 0;\n          border-top: 1px solid fadeout(@black, 94%);\n          border-radius: 0 0 2px 2px;\n\n          &-button {\n            line-height: 1.5715;\n            position: relative;\n            display: inline-block;\n            font-weight: 400;\n            white-space: nowrap;\n            text-align: center;\n            background-image: none;\n            border: 1px solid transparent;\n            box-shadow: 0 2px fadeout(@black, 95%);\n            cursor: pointer;\n            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n            -webkit-user-select: none;\n            -moz-user-select: none;\n            -ms-user-select: none;\n            user-select: none;\n            touch-action: manipulation;\n            height: 32px;\n            padding: 4px 15px;\n            font-size: 14px;\n            letter-spacing: 2px;\n            border-radius: 2px;\n            color: fade(@black, 97%);\n            border-color: #d9d9d9;\n            background: #fff;\n            border-radius: 4px;\n\n            &-cancel {\n              margin-right: 15px;\n\n              &:hover,\n              &:active {\n                border-color: #2499f1;\n                color: #2396ef;\n              }\n            }\n\n            &-sure {\n              background-color: #34a1f5;\n              border-color: #1e9af8;\n              color: #fff;\n\n              &:hover,\n              &:active {\n                background-color: #0f8ff1;\n                border-color: #1794f5;\n              }\n            }\n          }\n        }\n\n        &-close {\n          position: absolute;\n          top: 0;\n          right: 0;\n          z-index: 10;\n          padding: 0;\n          color: fadeout(@black, 75%);\n          font-weight: 700;\n          text-decoration: none;\n          background: 0 0;\n          border: 0;\n          outline: 0;\n          cursor: pointer;\n          width: 54px;\n          height: 54px;\n          font-size: 16px;\n          font-style: normal;\n          line-height: 54px;\n          text-align: center;\n          text-transform: none;\n          text-rendering: auto;\n          transition: color 0.3s;\n\n          & .close-icon {\n            width: 16px;\n            height: 16px;\n          }\n        }\n      }\n    }\n  }\n}",
       He =
-        "@baseSelector: ant-;\n\n.@{baseSelector}password {\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  transition: all 0.3s;\n  display: inline-flex;\n  padding: 4px 11px;\n  &-suffix {\n    margin-left: 4px;\n    display: flex;\n    flex: none;\n    align-items: center;\n    cursor: pointer;\n    &-icon {\n      &:hover {\n        color: rgba(0, 0, 0, 0.6);\n      }\n    }\n  }\n  &-input {\n    box-sizing: border-box;\n    margin: 0;\n    font-variant: tabular-nums;\n    list-style: none;\n    font-feature-settings: 'tnum';\n    position: relative;\n    display: inline-block;\n    width: 100%;\n    min-width: 0;\n    color: rgba(0, 0, 0, 0.85);\n    font-size: 14px;\n    outline: none;\n    line-height: 1.5715;\n    background-color: #fff;\n    background-image: none;\n    border: none;\n    border-radius: 2px;\n    transition: all 0.3s;\n  }\n  &.is-focused {\n    border-color: #40a9ff;\n  }\n}",
+        "import React, { useState } from 'react';\nimport Modal from './Modal';\nimport { Button, Space } from 'antd';\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const onCreate = () => {\n    Modal.confirm({\n      title: '\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898',\n      content: (\n        <>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        </>\n      ),\n    });\n  };\n  return (\n    <Space>\n      <Button onClick={() => setVisible(true)}>clicked me</Button>\n      <Button onClick={onCreate}>clicked me</Button>\n      <Modal\n        visible={visible}\n        onCancel={() => setVisible(false)}\n        title=\"\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898\"\n        showCancel\n        onOk={() => setVisible(false)}\n      >\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n      </Modal>\n    </Space>\n  );\n};\n\nexport default Demo;",
       qe =
-        "import React, { useState } from 'react';\nimport PasswordRevealer from './PasswordRevealer';\nconst Demo = () => {\n  const [value, setValue] = useState('');\n  const onChange = (v: string) => {\n    console.log(v);\n    setValue(v);\n  };\n  return (\n    <PasswordRevealer\n      placeholder=\"\u8bf7\u8f93\u5165\u5bc6\u7801\"\n      value={value}\n      onChange={onChange}\n    ></PasswordRevealer>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport PasswordRevealer from './PasswordRevealer';\nconst Demo = () => {\n  const [value, setValue] = useState('');\n  const onChange = (v: string) => {\n    console.log(v);\n    setValue(v);\n  };\n  return (\n    <PasswordRevealer\n      placeholder=\"Please Input the password\"\n      value={value}\n      onChange={onChange}\n    ></PasswordRevealer>\n  );\n};\n\nexport default Demo;",
       We =
-        'import React from \'react\';\nimport Select from \'./Select\';\nimport type { SelectProps } from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler: SelectProps[\'onChange\'] = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="please select"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="grapefruit" value="Grapefruit"></Option>\n        <Option label="lime" value="lime"></Option>\n        <Option label="coconut" value="coconut" disabled></Option>\n        <Option label="mango" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="please select"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="grapefruit" value="Grapefruit"></Option>\n        <Option label="lime" value="lime"></Option>\n        <Option label="coconut" value="coconut" disabled></Option>\n        <Option label="mango" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
+        'import React, { useState } from \'react\';\nimport type { SyntheticEvent } from \'react\';\nimport \'./passwordRevealer.less\';\n\nexport interface PasswordRevealerProps extends Record<string, any> {\n  value: string;\n  onChange(v: string): void;\n  placeholder: string;\n}\n\nconst Eye = () => (\n  <svg\n    viewBox="64 64 896 896"\n    className="ant-password-suffix-icon"\n    data-icon="eye"\n    width="1em"\n    height="1em"\n    fill="currentColor"\n  >\n    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>\n  </svg>\n);\nconst EyeClose = () => (\n  <svg\n    viewBox="64 64 896 896"\n    data-icon="eye-invisible"\n    className="ant-password-suffix-icon"\n    width="1em"\n    height="1em"\n    fill="currentColor"\n  >\n    <path d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"></path>\n    <path d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"></path>\n  </svg>\n);\n\nconst PasswordRevealer = (props: Partial<PasswordRevealerProps>) => {\n  const {\n    value,\n    onChange,\n    placeholder = \'Please Input the password\',\n    ...rest\n  } = props;\n  const [isShown, setIsShown] = useState(false);\n  const [isFocus, setIsFocus] = useState(false);\n\n  const onChangeHandler = (e: SyntheticEvent) => {\n    const v = (e.target as HTMLInputElement).value;\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  return (\n    <span className={`ant-password${isFocus ? \' is-focused\' : \'\'}`} {...rest}>\n      <input\n        type={isShown ? \'text\' : \'password\'}\n        className="ant-password-input"\n        value={value}\n        onChange={onChangeHandler}\n        placeholder={placeholder}\n        onFocus={() => setIsFocus(true)}\n        onBlur={() => setIsFocus(false)}\n      />\n      <span\n        className="ant-password-suffix"\n        onClick={() => setIsShown(!isShown)}\n      >\n        {isShown ? <Eye /> : <EyeClose />}\n      </span>\n    </span>\n  );\n};\n\nexport default PasswordRevealer;',
       $e =
-        "import React, {\n  useState,\n  useEffect,\n  cloneElement,\n  createRef,\n  forwardRef,\n} from 'react';\nimport type { OptionValueProps } from './Option';\nimport classnames from '../../utils/classnames';\nimport useClickOutside from '../../utils/useClickOutside';\nimport Option from './Option';\nimport './select.less';\n\nexport interface SelectProps extends Record<string, any> {\n  disabled: boolean;\n  defaultValue: string;\n  value: string;\n  onChange(v: Partial<OptionValueProps>): void;\n  placeholder: string;\n  children: JSX.Element[] | JSX.Element;\n  allowClear: boolean;\n  labelProps: string;\n}\nconst ClearIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => {\n    const { onClick, ...rest } = props;\n    return (\n      <svg\n        className=\"ew-select-clear-icon\"\n        viewBox=\"0 0 1024 1024\"\n        version=\"1.1\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n        p-id=\"2381\"\n        ref={ref}\n        onClick={(e) => {\n          if (onClick) {\n            onClick(e);\n          }\n        }}\n        {...rest}\n      >\n        <path\n          d=\"M512 39.384615C250.092308 39.384615 39.384615 250.092308 39.384615 512s210.707692 472.615385 472.615385 472.615385 472.615385-210.707692 472.615385-472.615385S773.907692 39.384615 512 39.384615z m96.492308 488.369231l153.6 153.6c7.876923 7.876923 7.876923 19.692308 0 27.569231l-55.138462 55.138461c-7.876923 7.876923-19.692308 7.876923-27.569231 0L525.784615 610.461538c-7.876923-7.876923-19.692308-7.876923-27.56923 0l-153.6 153.6c-7.876923 7.876923-19.692308 7.876923-27.569231 0L261.907692 708.923077c-7.876923-7.876923-7.876923-19.692308 0-27.569231l153.6-153.6c7.876923-7.876923 7.876923-19.692308 0-27.569231l-155.56923-155.56923c-7.876923-7.876923-7.876923-19.692308 0-27.569231l55.138461-55.138462c7.876923-7.876923 19.692308-7.876923 27.569231 0l155.569231 155.569231c7.876923 7.876923 19.692308 7.876923 27.56923 0l153.6-153.6c7.876923-7.876923 19.692308-7.876923 27.569231 0l55.138462 55.138462c7.876923 7.876923 7.876923 19.692308 0 27.56923l-153.6 153.6c-5.907692 7.876923-5.907692 19.692308 0 27.569231z\"\n          p-id=\"2382\"\n          fill=\"#dbdbdb\"\n          className=\"ew-select-clear-icon-path\"\n        ></path>\n      </svg>\n    );\n  },\n);\nconst ArrowIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => (\n    <svg\n      className=\"ew-select-arrow-icon\"\n      viewBox=\"0 0 1024 1024\"\n      version=\"1.1\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      p-id=\"2216\"\n      ref={ref}\n      {...props}\n    >\n      <path\n        d=\"M512 714.666667c-8.533333 0-17.066667-2.133333-23.466667-8.533334l-341.333333-341.333333c-12.8-12.8-12.8-32 0-44.8 12.8-12.8 32-12.8 44.8 0l320 317.866667 317.866667-320c12.8-12.8 32-12.8 44.8 0 12.8 12.8 12.8 32 0 44.8L533.333333 704c-4.266667 8.533333-12.8 10.666667-21.333333 10.666667z\"\n        p-id=\"2217\"\n      ></path>\n    </svg>\n  ),\n);\nconst Select = (\n  props: Partial<Omit<SelectProps, 'children'>> & Pick<SelectProps, 'children'>,\n) => {\n  const {\n    disabled,\n    defaultValue,\n    value,\n    onChange,\n    placeholder = '\u8bf7\u8f93\u5165',\n    allowClear = true,\n    children,\n    labelProps = 'label',\n    ...rest\n  } = props;\n  const dropdownRef = createRef<HTMLDivElement>();\n  const clearIconRef = createRef<HTMLOrSVGElement>();\n  const [selectValue, setSelectValue] = useState<string | undefined>(\n    defaultValue,\n  );\n  const [option, setOption] = useState<Partial<OptionValueProps>>({});\n  const [visible, setVisible] = useState(false);\n  const [showClear, setShowClear] = useState(false);\n\n  const optionChildren = Array.isArray(children)\n    ? children\n    : [children]?.filter((item) => item?.type?.name === 'Option') || [];\n\n  useEffect(() => {\n    if (typeof value === 'string') {\n      setSelectValue(value);\n    }\n  }, [value]);\n\n  const onChangeHandler = (v: Partial<OptionValueProps>) => {\n    setOption(v);\n    setSelectValue(v.value);\n    if (!disabled) {\n      setVisible(false);\n      setShowClear(false);\n    }\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  const onClearHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setOption({ label: '', value: '' });\n    setSelectValue('');\n  };\n  const selectClassNames = {\n    'ew-select': true,\n    'ew-select-disabled': disabled,\n  };\n  const valueClassNames = {\n    'ew-select-selector': true,\n    'ew-select-selector-placeholder': !selectValue,\n  };\n  useClickOutside(dropdownRef, () => {\n    if (!disabled) {\n      setVisible(false);\n    }\n  });\n  return (\n    <div\n      className={classnames(selectClassNames)}\n      {...rest}\n      ref={dropdownRef}\n      onMouseEnter={() => {\n        if (!disabled) {\n          setShowClear(true);\n        }\n      }}\n      onMouseLeave={() => {\n        if (!disabled) {\n          setShowClear(false);\n        }\n      }}\n    >\n      <div\n        className={classnames(valueClassNames)}\n        placeholder={placeholder}\n        onClick={() => {\n          if (!disabled) {\n            setVisible(!visible);\n          }\n        }}\n      >\n        <span className=\"ew-select-selector-value\">{option[labelProps]}</span>\n      </div>\n      <div className=\"ew-select-arrow\">\n        {allowClear && selectValue && showClear ? (\n          <ClearIcon onClick={onClearHandler} ref={clearIconRef} />\n        ) : (\n          <ArrowIcon\n            onClick={() => {\n              if (!disabled) {\n                setVisible(!visible);\n              }\n            }}\n          />\n        )}\n      </div>\n      <div\n        className=\"ew-select-dropdown\"\n        style={{ display: visible ? 'block' : 'none' }}\n      >\n        {optionChildren.map((item, index) =>\n          cloneElement(item, {\n            onOptionChange: onChangeHandler,\n            defaultValue: selectValue,\n            key: item.key || String(index + 1),\n            active: item.props.value === selectValue,\n          }),\n        )}\n      </div>\n    </div>\n  );\n};\nSelect.Option = Option;\nexport default Select;",
+        "@baseSelector: ant-;\n\n.@{baseSelector}password {\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  transition: all 0.3s;\n  display: inline-flex;\n  padding: 4px 11px;\n  &-suffix {\n    margin-left: 4px;\n    display: flex;\n    flex: none;\n    align-items: center;\n    cursor: pointer;\n    &-icon {\n      &:hover {\n        color: rgba(0, 0, 0, 0.6);\n      }\n    }\n  }\n  &-input {\n    box-sizing: border-box;\n    margin: 0;\n    font-variant: tabular-nums;\n    list-style: none;\n    font-feature-settings: 'tnum';\n    position: relative;\n    display: inline-block;\n    width: 100%;\n    min-width: 0;\n    color: rgba(0, 0, 0, 0.85);\n    font-size: 14px;\n    outline: none;\n    line-height: 1.5715;\n    background-color: #fff;\n    background-image: none;\n    border: none;\n    border-radius: 2px;\n    transition: all 0.3s;\n  }\n  &.is-focused {\n    border-color: #40a9ff;\n  }\n}",
       Ge =
-        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
+        "import React, { useState } from 'react';\nimport PasswordRevealer from './PasswordRevealer';\nconst Demo = () => {\n  const [value, setValue] = useState('');\n  const onChange = (v: string) => {\n    console.log(v);\n    setValue(v);\n  };\n  return (\n    <PasswordRevealer\n      placeholder=\"\u8bf7\u8f93\u5165\u5bc6\u7801\"\n      value={value}\n      onChange={onChange}\n    ></PasswordRevealer>\n  );\n};\n\nexport default Demo;",
       Ke =
-        "import React, { useState, useEffect } from 'react';\nimport type { ReactNode } from 'react';\nimport classnames from '../../utils/classnames';\nexport interface OptionValueProps {\n  label: string;\n  value: string;\n}\nexport interface OptionProps extends Record<string, any>, OptionValueProps {\n  disabled: boolean;\n  children: ReactNode;\n  defaultValue: string;\n  onOptionChange(v: Partial<OptionValueProps>): void;\n  active: boolean;\n}\nconst Option = (props: Partial<OptionProps>) => {\n  const {\n    label,\n    value,\n    disabled,\n    defaultValue,\n    children,\n    onOptionChange,\n    active,\n    ...rest\n  } = props;\n  const [currentValue, setCurrentValue] = useState<string | undefined>(\n    defaultValue,\n  );\n\n  const classNames = {\n    'ew-select-dropdown-option': true,\n    'ew-select-dropdown-option-disabled': disabled,\n    active: active,\n  };\n  const onChangeHandler = (options: Partial<OptionValueProps>) => {\n    if (disabled) {\n      return;\n    }\n\n    setCurrentValue(options.value);\n    if (onOptionChange) {\n      onOptionChange(options);\n    }\n  };\n\n  useEffect(() => {\n    if (currentValue) {\n      if (onOptionChange) {\n        onOptionChange({ label, value });\n      }\n    }\n  }, [currentValue]);\n  return (\n    <div\n      className={classnames(classNames)}\n      data-value={currentValue}\n      {...rest}\n      onClick={() => onChangeHandler({ label, value })}\n    >\n      {children ? children : label ? label : ''}\n    </div>\n  );\n};\nexport default Option;",
+        'import React from \'react\';\nimport Select from \'./Select\';\nimport type { SelectProps } from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler: SelectProps[\'onChange\'] = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="please select"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="grapefruit" value="Grapefruit"></Option>\n        <Option label="lime" value="lime"></Option>\n        <Option label="coconut" value="coconut" disabled></Option>\n        <Option label="mango" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="please select"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="grapefruit" value="Grapefruit"></Option>\n        <Option label="lime" value="lime"></Option>\n        <Option label="coconut" value="coconut" disabled></Option>\n        <Option label="mango" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
       Ye =
-        "@prefix: ew-;\n\n.@{prefix}select {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: rgba(0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  cursor: pointer;\n  border-radius: 4px;\n  min-width: 120px;\n\n  &-disabled {\n    .@{prefix}select-selector {\n      background: #f5f5f5;\n      cursor: not-allowed;\n      color: rgba(0, 0, 0, 0.25);\n    }\n\n    .@{prefix}select-arrow {\n      cursor: not-allowed;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-selector,\n  &:not(.@{prefix}select-disabled):active &-selector {\n    border-color: #2396ef;\n  }\n\n  &-selector {\n    position: relative;\n    background-color: #fff;\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    width: 100%;\n    height: 32px;\n    padding: 0 11px;\n\n    &&-placeholder::after {\n      content: attr(placeholder);\n      display: inline-block;\n      padding-right: 18px;\n      color: rgba(0, 0, 0, 0.35);\n      position: relative;\n      left: -15px;\n    }\n\n    &-value {\n      padding-right: 18px;\n      line-height: 30px;\n      position: relative;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-value {\n    border-color: #2396ef;\n    border-right-width: 1px;\n  }\n\n  &-arrow {\n    display: inline-block;\n    color: inherit;\n    font-style: normal;\n    line-height: 0;\n    text-transform: none;\n    vertical-align: -0.125em;\n    text-rendering: optimizelegibility;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    position: absolute;\n    top: 50%;\n    right: 11px;\n    display: flex;\n    align-items: center;\n    margin-top: -6px;\n    font-size: 12px;\n    line-height: 1;\n    text-align: center;\n\n    &-icon,\n    .@{prefix}select-clear-icon {\n      width: 16px;\n      height: 16px;\n      display: inline-block;\n      color: rgba(0, 0, 0, 0.25);\n    }\n  }\n\n  .@{prefix}select-clear-icon {\n    position: relative;\n    top: -2px;\n  }\n\n  &-dropdown {\n    margin: 0;\n    color: rgba(0, 0, 0.85);\n    font-variant: tabular-nums;\n    line-height: 1.5715;\n    position: absolute;\n    z-index: 1050;\n    box-sizing: border-box;\n    padding: 4px 0;\n    overflow: hidden;\n    font-size: 14px;\n    font-variant: initial;\n    background-color: #fff;\n    border-radius: 2px;\n    outline: none;\n    width: 100%;\n    top: 40px;\n    box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014,\n      0 9px 28px 8px #0000000d;\n\n    &-option {\n      position: relative;\n      display: flex;\n      min-height: 32px;\n      padding: 5px 12px;\n      color: rgba(0, 0, 0.85);\n      font-weight: 400;\n      font-size: 14px;\n      line-height: 22px;\n      cursor: pointer;\n      transition: background 0.3s ease;\n      flex: auto;\n      overflow: hidden;\n      white-space: nowrap;\n      text-overflow: ellipsis;\n\n      &-disabled {\n        color: rgba(0, 0, 0, 0.25);\n        cursor: not-allowed;\n      }\n\n      &:not(:last-of-type) {\n        margin-bottom: 8px;\n      }\n\n      &:not(&-disabled):hover {\n        background-color: #f5f5f5;\n      }\n\n      &:not(&-disabled).active {\n        background-color: #e6f7ff;\n      }\n    }\n  }\n}",
+        "import React, {\n  useState,\n  useEffect,\n  cloneElement,\n  createRef,\n  forwardRef,\n} from 'react';\nimport type { OptionValueProps } from './Option';\nimport classnames from '../../utils/classnames';\nimport useClickOutside from '../../utils/useClickOutside';\nimport Option from './Option';\nimport './select.less';\n\nexport interface SelectProps extends Record<string, any> {\n  disabled: boolean;\n  defaultValue: string;\n  value: string;\n  onChange(v: Partial<OptionValueProps>): void;\n  placeholder: string;\n  children: JSX.Element[] | JSX.Element;\n  allowClear: boolean;\n  labelProps: string;\n}\nconst ClearIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => {\n    const { onClick, ...rest } = props;\n    return (\n      <svg\n        className=\"ew-select-clear-icon\"\n        viewBox=\"0 0 1024 1024\"\n        version=\"1.1\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n        p-id=\"2381\"\n        ref={ref}\n        onClick={(e) => {\n          if (onClick) {\n            onClick(e);\n          }\n        }}\n        {...rest}\n      >\n        <path\n          d=\"M512 39.384615C250.092308 39.384615 39.384615 250.092308 39.384615 512s210.707692 472.615385 472.615385 472.615385 472.615385-210.707692 472.615385-472.615385S773.907692 39.384615 512 39.384615z m96.492308 488.369231l153.6 153.6c7.876923 7.876923 7.876923 19.692308 0 27.569231l-55.138462 55.138461c-7.876923 7.876923-19.692308 7.876923-27.569231 0L525.784615 610.461538c-7.876923-7.876923-19.692308-7.876923-27.56923 0l-153.6 153.6c-7.876923 7.876923-19.692308 7.876923-27.569231 0L261.907692 708.923077c-7.876923-7.876923-7.876923-19.692308 0-27.569231l153.6-153.6c7.876923-7.876923 7.876923-19.692308 0-27.569231l-155.56923-155.56923c-7.876923-7.876923-7.876923-19.692308 0-27.569231l55.138461-55.138462c7.876923-7.876923 19.692308-7.876923 27.569231 0l155.569231 155.569231c7.876923 7.876923 19.692308 7.876923 27.56923 0l153.6-153.6c7.876923-7.876923 19.692308-7.876923 27.569231 0l55.138462 55.138462c7.876923 7.876923 7.876923 19.692308 0 27.56923l-153.6 153.6c-5.907692 7.876923-5.907692 19.692308 0 27.569231z\"\n          p-id=\"2382\"\n          fill=\"#dbdbdb\"\n          className=\"ew-select-clear-icon-path\"\n        ></path>\n      </svg>\n    );\n  },\n);\nconst ArrowIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => (\n    <svg\n      className=\"ew-select-arrow-icon\"\n      viewBox=\"0 0 1024 1024\"\n      version=\"1.1\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      p-id=\"2216\"\n      ref={ref}\n      {...props}\n    >\n      <path\n        d=\"M512 714.666667c-8.533333 0-17.066667-2.133333-23.466667-8.533334l-341.333333-341.333333c-12.8-12.8-12.8-32 0-44.8 12.8-12.8 32-12.8 44.8 0l320 317.866667 317.866667-320c12.8-12.8 32-12.8 44.8 0 12.8 12.8 12.8 32 0 44.8L533.333333 704c-4.266667 8.533333-12.8 10.666667-21.333333 10.666667z\"\n        p-id=\"2217\"\n      ></path>\n    </svg>\n  ),\n);\nconst Select = (\n  props: Partial<Omit<SelectProps, 'children'>> & Pick<SelectProps, 'children'>,\n) => {\n  const {\n    disabled,\n    defaultValue,\n    value,\n    onChange,\n    placeholder = '\u8bf7\u8f93\u5165',\n    allowClear = true,\n    children,\n    labelProps = 'label',\n    ...rest\n  } = props;\n  const dropdownRef = createRef<HTMLDivElement>();\n  const clearIconRef = createRef<HTMLOrSVGElement>();\n  const [selectValue, setSelectValue] = useState<string | undefined>(\n    defaultValue,\n  );\n  const [option, setOption] = useState<Partial<OptionValueProps>>({});\n  const [visible, setVisible] = useState(false);\n  const [showClear, setShowClear] = useState(false);\n\n  const optionChildren = Array.isArray(children)\n    ? children\n    : [children]?.filter((item) => item?.type?.name === 'Option') || [];\n\n  useEffect(() => {\n    if (typeof value === 'string') {\n      setSelectValue(value);\n    }\n  }, [value]);\n\n  const onChangeHandler = (v: Partial<OptionValueProps>) => {\n    setOption(v);\n    setSelectValue(v.value);\n    if (!disabled) {\n      setVisible(false);\n      setShowClear(false);\n    }\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  const onClearHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setOption({ label: '', value: '' });\n    setSelectValue('');\n  };\n  const selectClassNames = {\n    'ew-select': true,\n    'ew-select-disabled': disabled,\n  };\n  const valueClassNames = {\n    'ew-select-selector': true,\n    'ew-select-selector-placeholder': !selectValue,\n  };\n  useClickOutside(dropdownRef, () => {\n    if (!disabled) {\n      setVisible(false);\n    }\n  });\n  return (\n    <div\n      className={classnames(selectClassNames)}\n      {...rest}\n      ref={dropdownRef}\n      onMouseEnter={() => {\n        if (!disabled) {\n          setShowClear(true);\n        }\n      }}\n      onMouseLeave={() => {\n        if (!disabled) {\n          setShowClear(false);\n        }\n      }}\n    >\n      <div\n        className={classnames(valueClassNames)}\n        placeholder={placeholder}\n        onClick={() => {\n          if (!disabled) {\n            setVisible(!visible);\n          }\n        }}\n      >\n        <span className=\"ew-select-selector-value\">{option[labelProps]}</span>\n      </div>\n      <div className=\"ew-select-arrow\">\n        {allowClear && selectValue && showClear ? (\n          <ClearIcon onClick={onClearHandler} ref={clearIconRef} />\n        ) : (\n          <ArrowIcon\n            onClick={() => {\n              if (!disabled) {\n                setVisible(!visible);\n              }\n            }}\n          />\n        )}\n      </div>\n      <div\n        className=\"ew-select-dropdown\"\n        style={{ display: visible ? 'block' : 'none' }}\n      >\n        {optionChildren.map((item, index) =>\n          cloneElement(item, {\n            onOptionChange: onChangeHandler,\n            defaultValue: selectValue,\n            key: item.key || String(index + 1),\n            active: item.props.value === selectValue,\n          }),\n        )}\n      </div>\n    </div>\n  );\n};\nSelect.Option = Option;\nexport default Select;",
       Ze =
-        'import React from \'react\';\nimport Select from \'./Select\';\nimport type { SelectProps } from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler: SelectProps[\'onChange\'] = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
-      Xe =
-        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['name1', 'name2', 'name3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
-      Je =
-        "import { css } from '@emotion/css';\nimport React from 'react';\n\ninterface DataListProps {\n  data: string[];\n  isOrdered: boolean;\n  isBordered: boolean;\n}\nconst SimpleStyleDataList = css`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-size: 14px;\n  line-height: 1.5715;\n  list-style: none;\n  position: relative;\n  &.bordered {\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n  }\n`;\nconst SimpleDataListItem = css`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 24px;\n  color: rgba(0, 0, 0, 0.85);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  &:last-of-type {\n    border-bottom: 0;\n  }\n`;\nconst SimpleDataList = (props: Partial<DataListProps>) => {\n  const { data, isOrdered = false, isBordered = true } = props;\n  const List = data?.map((val, index) => (\n    <li className={SimpleDataListItem} key={`${val}-${index}`}>\n      {val}\n    </li>\n  ));\n  const containerClassName = `${SimpleStyleDataList}${\n    isBordered ? ' bordered' : ''\n  }`;\n  return isOrdered ? (\n    <ol className={containerClassName}>{List}</ol>\n  ) : (\n    <ul className={containerClassName}>{List}</ul>\n  );\n};\n\nexport default SimpleDataList;",
-      Qe =
-        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['\u59d3\u540d1', '\u59d3\u540d2', '\u59d3\u540d3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
-      et =
-        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
-      tt =
-        'import React from \'react\';\nimport \'./simpleDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleDataTable = (props: Partial<SimpleDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {data?.map((item) => (\n          <tr key={item.key} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleDataTable;',
-      nt =
-        '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
-      rt =
-        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
-      at =
-        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
-      ot =
-        'import React from \'react\';\nimport \'./SimpleMappedDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleMappedDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleMappedDataTable = (props: Partial<SimpleMappedDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n\n  let filteredData = data?.map((v) =>\n    Object.keys(v)\n      .filter((k) => columns?.some((col) => col.dataIndex === k))\n      .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n  ) as DataProps[];\n\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {filteredData?.map((item, index) => (\n          <tr key={`${index}_${index}`} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleMappedDataTable;',
-      it =
-        '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
-      lt =
-        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
-      ct =
-        "import React from 'react';\nimport Slider from './Slider';\n\nconst Demo = () => {\n  return <Slider></Slider>;\n};\n\nexport default Demo;",
-      st =
-        "import React from 'react';\nimport './slider.less';\nimport classnames from '../../utils/classnames';\n\nexport interface SliderProps extends Record<string, any> {\n  direction: 'horizontal' | 'vertical';\n  min: number;\n  max: number;\n  step: number;\n  disabled: boolean;\n  value: number;\n}\n\nconst Slider = (props: Partial<SliderProps>) => {\n  const { direction = 'horizontal' } = props;\n\n  const prefixClasses = {\n    'ew-slider': true,\n    [`ew-slider-${direction}`]: direction,\n  };\n\n  return (\n    <div className={classnames(prefixClasses)}>\n      <div className=\"ew-slider-rail\"></div>\n      <div className=\"ew-slider-track\"></div>\n      <div className=\"ew-slider-step\"></div>\n      <div className=\"ew-slider-handle\"></div>\n    </div>\n  );\n};\n\nexport default Slider;",
-      ut =
-        "@prefix: ew-;\n\n.@{prefix}slider {\n  box-sizing: border-box;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  height: 12px;\n  margin: 10px 6px;\n  padding: 4px 0;\n  cursor: pointer;\n\n  &-rail {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background-color: #f5f5f5;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-track {\n    position: absolute;\n    height: 4px;\n    background-color: #2396ef;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-step {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background: 0 0;\n  }\n}",
-      dt =
-        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        Load image\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`Error ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <FetchImage\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
-      pt =
-        "import { useReducer } from 'react';\nexport type StateType = {\n  loading: boolean;\n  value: any;\n  error: any;\n};\nexport type ActionType = Partial<StateType> & { type: string };\nexport type RunType = (args: unknown) => Promise<void>;\nconst useAsync = (handler: (...args: any) => any) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n  const stateReducer = (_: any, action: ActionType) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args: unknown) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
-      ft =
-        "import React from 'react';\nimport Button from '../../../guide/Button/Button';\nimport Loader from '../../../guide/Loader/Loader';\nimport Alert from '../../../guide/Alert/Alert';\nimport styled from '@emotion/styled';\nimport useAsync from './useAsync';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={imgFetch?.loading}\n      >\n        Load image\n      </Button>\n      {imgFetch?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {imgFetch?.error && (\n        <Alert type=\"error\" message={`Error ${imgFetch?.error}`}></Alert>\n      )}\n      {imgFetch?.value && (\n        <FetchImage\n          src={imgFetch?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
-      mt =
-        "import { useReducer } from 'react';\n\nconst useAsync = (handler) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n\n  const stateReducer = (_, action) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
-      ht =
-        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\nconst FetchImage = styled.img({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`\u9519\u8bef ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <FetchImage\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
-      vt =
-        "import React from 'react';\nimport Button from '../../../guide/Button/Button';\nimport Loader from '../../../guide/Loader/Loader';\nimport Alert from '../../../guide/Alert/Alert';\nimport styled from '@emotion/styled';\nimport useAsync from './useAsync';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={imgFetch?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {imgFetch?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {imgFetch?.error && (\n        <Alert type=\"error\" message={`\u9519\u8bef ${imgFetch?.error}`}></Alert>\n      )}\n      {imgFetch?.value && (\n        <FetchImage\n          src={imgFetch?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
-      gt =
-        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      Scroll locked! <br />\n      <Button onClick={onCancel}>Click me to unlock</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
-      bt =
-        "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  // see https://zhuanlan.zhihu.com/p/147173241\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container!).overflow;\n    container!.style.overflow = 'hidden';\n    return () => {\n      container!.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
-      yt =
-        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
-      xt =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click inside this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox\n      onClickInside={() =>\n        Modal.confirm({\n          content: 'click inside',\n          cancelText: 'Cancel',\n          okText: 'Ok',\n        })\n      }\n    ></ClickBox>\n  );\n};\n\nexport default Demo;",
-      Et =
-        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
-      wt =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5185\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox onClickInside={() => Modal.confirm('\u70b9\u51fb\u4e86\u8be5\u533a\u57df\u5185')}></ClickBox>\n  );\n};\n\nexport default Demo;",
-      kt =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click out of this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('click outside')}></ClickBox>;\n};\n\nexport default Demo;",
-      Ct =
         "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
+      Xe =
+        "import React, { useState, useEffect } from 'react';\nimport type { ReactNode } from 'react';\nimport classnames from '../../utils/classnames';\nexport interface OptionValueProps {\n  label: string;\n  value: string;\n}\nexport interface OptionProps extends Record<string, any>, OptionValueProps {\n  disabled: boolean;\n  children: ReactNode;\n  defaultValue: string;\n  onOptionChange(v: Partial<OptionValueProps>): void;\n  active: boolean;\n}\nconst Option = (props: Partial<OptionProps>) => {\n  const {\n    label,\n    value,\n    disabled,\n    defaultValue,\n    children,\n    onOptionChange,\n    active,\n    ...rest\n  } = props;\n  const [currentValue, setCurrentValue] = useState<string | undefined>(\n    defaultValue,\n  );\n\n  const classNames = {\n    'ew-select-dropdown-option': true,\n    'ew-select-dropdown-option-disabled': disabled,\n    active: active,\n  };\n  const onChangeHandler = (options: Partial<OptionValueProps>) => {\n    if (disabled) {\n      return;\n    }\n\n    setCurrentValue(options.value);\n    if (onOptionChange) {\n      onOptionChange(options);\n    }\n  };\n\n  useEffect(() => {\n    if (currentValue) {\n      if (onOptionChange) {\n        onOptionChange({ label, value });\n      }\n    }\n  }, [currentValue]);\n  return (\n    <div\n      className={classnames(classNames)}\n      data-value={currentValue}\n      {...rest}\n      onClick={() => onChangeHandler({ label, value })}\n    >\n      {children ? children : label ? label : ''}\n    </div>\n  );\n};\nexport default Option;",
+      Je =
+        "@prefix: ew-;\n\n.@{prefix}select {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: rgba(0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  cursor: pointer;\n  border-radius: 4px;\n  min-width: 120px;\n\n  &-disabled {\n    .@{prefix}select-selector {\n      background: #f5f5f5;\n      cursor: not-allowed;\n      color: rgba(0, 0, 0, 0.25);\n    }\n\n    .@{prefix}select-arrow {\n      cursor: not-allowed;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-selector,\n  &:not(.@{prefix}select-disabled):active &-selector {\n    border-color: #2396ef;\n  }\n\n  &-selector {\n    position: relative;\n    background-color: #fff;\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    width: 100%;\n    height: 32px;\n    padding: 0 11px;\n\n    &&-placeholder::after {\n      content: attr(placeholder);\n      display: inline-block;\n      padding-right: 18px;\n      color: rgba(0, 0, 0, 0.35);\n      position: relative;\n      left: -15px;\n    }\n\n    &-value {\n      padding-right: 18px;\n      line-height: 30px;\n      position: relative;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-value {\n    border-color: #2396ef;\n    border-right-width: 1px;\n  }\n\n  &-arrow {\n    display: inline-block;\n    color: inherit;\n    font-style: normal;\n    line-height: 0;\n    text-transform: none;\n    vertical-align: -0.125em;\n    text-rendering: optimizelegibility;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    position: absolute;\n    top: 50%;\n    right: 11px;\n    display: flex;\n    align-items: center;\n    margin-top: -6px;\n    font-size: 12px;\n    line-height: 1;\n    text-align: center;\n\n    &-icon,\n    .@{prefix}select-clear-icon {\n      width: 16px;\n      height: 16px;\n      display: inline-block;\n      color: rgba(0, 0, 0, 0.25);\n    }\n  }\n\n  .@{prefix}select-clear-icon {\n    position: relative;\n    top: -2px;\n  }\n\n  &-dropdown {\n    margin: 0;\n    color: rgba(0, 0, 0.85);\n    font-variant: tabular-nums;\n    line-height: 1.5715;\n    position: absolute;\n    z-index: 1050;\n    box-sizing: border-box;\n    padding: 4px 0;\n    overflow: hidden;\n    font-size: 14px;\n    font-variant: initial;\n    background-color: #fff;\n    border-radius: 2px;\n    outline: none;\n    width: 100%;\n    top: 40px;\n    box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014,\n      0 9px 28px 8px #0000000d;\n\n    &-option {\n      position: relative;\n      display: flex;\n      min-height: 32px;\n      padding: 5px 12px;\n      color: rgba(0, 0, 0.85);\n      font-weight: 400;\n      font-size: 14px;\n      line-height: 22px;\n      cursor: pointer;\n      transition: background 0.3s ease;\n      flex: auto;\n      overflow: hidden;\n      white-space: nowrap;\n      text-overflow: ellipsis;\n\n      &-disabled {\n        color: rgba(0, 0, 0, 0.25);\n        cursor: not-allowed;\n      }\n\n      &:not(:last-of-type) {\n        margin-bottom: 8px;\n      }\n\n      &:not(&-disabled):hover {\n        background-color: #f5f5f5;\n      }\n\n      &:not(&-disabled).active {\n        background-color: #e6f7ff;\n      }\n    }\n  }\n}",
+      Qe =
+        'import React from \'react\';\nimport Select from \'./Select\';\nimport type { SelectProps } from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler: SelectProps[\'onChange\'] = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
+      et =
+        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['name1', 'name2', 'name3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
+      tt =
+        "import { css } from '@emotion/css';\nimport React from 'react';\n\ninterface DataListProps {\n  data: string[];\n  isOrdered: boolean;\n  isBordered: boolean;\n}\nconst SimpleStyleDataList = css`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-size: 14px;\n  line-height: 1.5715;\n  list-style: none;\n  position: relative;\n  &.bordered {\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n  }\n`;\nconst SimpleDataListItem = css`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 24px;\n  color: rgba(0, 0, 0, 0.85);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  &:last-of-type {\n    border-bottom: 0;\n  }\n`;\nconst SimpleDataList = (props: Partial<DataListProps>) => {\n  const { data, isOrdered = false, isBordered = true } = props;\n  const List = data?.map((val, index) => (\n    <li className={SimpleDataListItem} key={`${val}-${index}`}>\n      {val}\n    </li>\n  ));\n  const containerClassName = `${SimpleStyleDataList}${\n    isBordered ? ' bordered' : ''\n  }`;\n  return isOrdered ? (\n    <ol className={containerClassName}>{List}</ol>\n  ) : (\n    <ul className={containerClassName}>{List}</ul>\n  );\n};\n\nexport default SimpleDataList;",
+      nt =
+        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['\u59d3\u540d1', '\u59d3\u540d2', '\u59d3\u540d3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
+      rt =
+        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
+      at =
+        'import React from \'react\';\nimport \'./simpleDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleDataTable = (props: Partial<SimpleDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {data?.map((item) => (\n          <tr key={item.key} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleDataTable;',
+      ot =
+        '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
+      it =
+        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
+      lt =
+        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
+      ct =
+        'import React from \'react\';\nimport \'./SimpleMappedDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleMappedDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleMappedDataTable = (props: Partial<SimpleMappedDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n\n  let filteredData = data?.map((v) =>\n    Object.keys(v)\n      .filter((k) => columns?.some((col) => col.dataIndex === k))\n      .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n  ) as DataProps[];\n\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {filteredData?.map((item, index) => (\n          <tr key={`${index}_${index}`} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleMappedDataTable;',
+      st =
+        '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
+      ut =
+        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
+      dt =
+        "import React from 'react';\nimport Slider from './Slider';\n\nconst Demo = () => {\n  return <Slider></Slider>;\n};\n\nexport default Demo;",
+      pt =
+        "import React from 'react';\nimport './slider.less';\nimport classnames from '../../utils/classnames';\n\nexport interface SliderProps extends Record<string, any> {\n  direction: 'horizontal' | 'vertical';\n  min: number;\n  max: number;\n  step: number;\n  disabled: boolean;\n  value: number;\n}\n\nconst Slider = (props: Partial<SliderProps>) => {\n  const { direction = 'horizontal' } = props;\n\n  const prefixClasses = {\n    'ew-slider': true,\n    [`ew-slider-${direction}`]: direction,\n  };\n\n  return (\n    <div className={classnames(prefixClasses)}>\n      <div className=\"ew-slider-rail\"></div>\n      <div className=\"ew-slider-track\"></div>\n      <div className=\"ew-slider-step\"></div>\n      <div className=\"ew-slider-handle\"></div>\n    </div>\n  );\n};\n\nexport default Slider;",
+      ft =
+        "@prefix: ew-;\n\n.@{prefix}slider {\n  box-sizing: border-box;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  height: 12px;\n  margin: 10px 6px;\n  padding: 4px 0;\n  cursor: pointer;\n\n  &-rail {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background-color: #f5f5f5;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-track {\n    position: absolute;\n    height: 4px;\n    background-color: #2396ef;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-step {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background: 0 0;\n  }\n}",
+      mt =
+        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        Load image\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`Error ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <FetchImage\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+      ht =
+        "import { useReducer } from 'react';\nexport type StateType = {\n  loading: boolean;\n  value: any;\n  error: any;\n};\nexport type ActionType = Partial<StateType> & { type: string };\nexport type RunType = (args: unknown) => Promise<void>;\nconst useAsync = (handler: (...args: any) => any) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n  const stateReducer = (_: any, action: ActionType) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args: unknown) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
+      vt =
+        "import React from 'react';\nimport Button from '../../../guide/Button/Button';\nimport Loader from '../../../guide/Loader/Loader';\nimport Alert from '../../../guide/Alert/Alert';\nimport styled from '@emotion/styled';\nimport useAsync from './useAsync';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={imgFetch?.loading}\n      >\n        Load image\n      </Button>\n      {imgFetch?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {imgFetch?.error && (\n        <Alert type=\"error\" message={`Error ${imgFetch?.error}`}></Alert>\n      )}\n      {imgFetch?.value && (\n        <FetchImage\n          src={imgFetch?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+      gt =
+        "import { useReducer } from 'react';\n\nconst useAsync = (handler) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n\n  const stateReducer = (_, action) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
+      bt =
+        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\nconst FetchImage = styled.img({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`\u9519\u8bef ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <FetchImage\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+      yt =
+        "import React from 'react';\nimport Button from '../../../guide/Button/Button';\nimport Loader from '../../../guide/Loader/Loader';\nimport Alert from '../../../guide/Alert/Alert';\nimport styled from '@emotion/styled';\nimport useAsync from './useAsync';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={imgFetch?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {imgFetch?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {imgFetch?.error && (\n        <Alert type=\"error\" message={`\u9519\u8bef ${imgFetch?.error}`}></Alert>\n      )}\n      {imgFetch?.value && (\n        <FetchImage\n          src={imgFetch?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+      xt =
+        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      Scroll locked! <br />\n      <Button onClick={onCancel}>Click me to unlock</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+      Et =
+        "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  // see https://zhuanlan.zhihu.com/p/147173241\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container!).overflow;\n    container!.style.overflow = 'hidden';\n    return () => {\n      container!.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
+      wt =
+        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+      kt =
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click inside this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox\n      onClickInside={() =>\n        Modal.confirm({\n          content: 'click inside',\n          cancelText: 'Cancel',\n          okText: 'Ok',\n        })\n      }\n    ></ClickBox>\n  );\n};\n\nexport default Demo;",
+      Ct =
+        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
       Ot =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5916\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('\u70b9\u51fb\u4e86\u533a\u57df\u4e4b\u5916')}></ClickBox>;\n};\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5185\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox onClickInside={() => Modal.confirm('\u70b9\u51fb\u4e86\u8be5\u533a\u57df\u5185')}></ClickBox>\n  );\n};\n\nexport default Demo;",
       St =
-        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      'Component did mount, get the element:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click out of this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('click outside')}></ClickBox>;\n};\n\nexport default Demo;",
       jt =
-        "import { useEffect } from 'react';\nconst useComponentDidMount = (onMountHandler: Function) => {\n  useEffect(() => {\n    onMountHandler();\n  }, []);\n};\nexport default useComponentDidMount;",
+        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
       Tt =
-        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      '\u7ec4\u4ef6\u786e\u5b9e\u6302\u8f7d\uff0c\u83b7\u53d6\u5143\u7d20:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5916\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('\u70b9\u51fb\u4e86\u533a\u57df\u4e4b\u5916')}></ClickBox>;\n};\n\nexport default Demo;",
       Pt =
-        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('Current value is:' + value + '.');\n  }, [value]);\n  return (\n    <>\n      <p>\n        Value:{value},otherValue: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          Increment value\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          Increment other value\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      'Component did mount, get the element:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
       It =
-        "import { useEffect, DependencyList, useRef } from 'react';\nconst useComponentDidUpdate = (\n  handler: (...args: any[]) => any,\n  deps: DependencyList,\n) => {\n  const mounted = useRef(false);\n  useEffect(() => {\n    if (mounted.current) {\n      handler?.();\n    } else {\n      mounted.current = true;\n    }\n  }, deps);\n};\n\nexport default useComponentDidUpdate;",
+        "import { useEffect } from 'react';\nconst useComponentDidMount = (onMountHandler: Function) => {\n  useEffect(() => {\n    onMountHandler();\n  }, []);\n};\nexport default useComponentDidMount;",
       Rt =
-        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('\u5f53\u524d\u7684\u503c\u662f:' + value + '\u3002');\n  }, [value]);\n  return (\n    <>\n      <p>\n        \u503c\u662f:{value},\u5176\u5b83\u503c\u662f: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          \u589e\u52a0\u503c\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          \u589e\u52a0\u5176\u5b83\u503c\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      '\u7ec4\u4ef6\u786e\u5b9e\u6302\u8f7d\uff0c\u83b7\u53d6\u5143\u7d20:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
       Nt =
-        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('Component will unmount'));\n  return <div>Check the console</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('Current value is:' + value + '.');\n  }, [value]);\n  return (\n    <>\n      <p>\n        Value:{value},otherValue: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          Increment value\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          Increment other value\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
       At =
-        "import { useEffect } from 'react';\n\nconst useComponentWillUnmount = (onUnmountHandler) => {\n  useEffect(() => () => onUnmountHandler?.(), []);\n};\n\nexport default useComponentWillUnmount;",
+        "import { useEffect, DependencyList, useRef } from 'react';\nconst useComponentDidUpdate = (\n  handler: (...args: any[]) => any,\n  deps: DependencyList,\n) => {\n  const mounted = useRef(false);\n  useEffect(() => {\n    if (mounted.current) {\n      handler?.();\n    } else {\n      mounted.current = true;\n    }\n  }, deps);\n};\n\nexport default useComponentDidUpdate;",
       Lt =
-        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d'));\n  return <div>\u68c0\u67e5\u63a7\u5236\u53f0</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('\u5f53\u524d\u7684\u503c\u662f:' + value + '\u3002');\n  }, [value]);\n  return (\n    <>\n      <p>\n        \u503c\u662f:{value},\u5176\u5b83\u503c\u662f: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          \u589e\u52a0\u503c\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          \u589e\u52a0\u5176\u5b83\u503c\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
       Mt =
-        "import React, { SyntheticEvent } from 'react';\nimport useCopyToClipboard from './useCopyToClipboard';\nimport { Space } from 'antd';\nimport Button from '../../guide/Button/Button';\n\nexport interface TextCopyProps {\n  text: string;\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n  const { text = 'Lorem ipsum' } = props;\n  const [copied, copy] = useCopyToClipboard(text);\n  return (\n    <Space>\n      <Button\n        type=\"primary\"\n        ripple\n        onClick={copy as (e: SyntheticEvent) => void}\n      >\n        Click to Copy!\n      </Button>\n      <span>{copied && 'Copied!'}</span>\n    </Space>\n  );\n};\n\nconst Demo = () => <TextCopy text=\"The copy text!\" />;\n\nexport default Demo;",
+        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('Component will unmount'));\n  return <div>Check the console</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
       Dt =
-        "import { useState, useCallback, useEffect } from 'react';\n\nconst useCopyToClipboard = (text: string) => {\n  const copyToClipboard = (str: string) => {\n    const el = document.createElement('textarea');\n    el.value = str;\n    el.setAttribute('readonly', '');\n    el.style.position = 'absolute';\n    el.style.left = '-9999px';\n    document.body.appendChild(el);\n    const selected =\n      document.getSelection()!.rangeCount > 0\n        ? document.getSelection()?.getRangeAt(0)\n        : false;\n    el.select();\n    const success = document.execCommand('copy');\n    document.body.removeChild(el);\n    if (selected) {\n      document.getSelection()?.removeAllRanges();\n      document.getSelection()?.addRange(selected);\n    }\n    return success;\n  };\n\n  const [copied, setCopied] = useState(false);\n\n  const copy = useCallback(() => {\n    if (!copied) {\n      setCopied(copyToClipboard(text));\n    }\n  }, [text]);\n\n  useEffect(() => () => setCopied(false), [text]);\n\n  return [copied, copy];\n};\n\nexport default useCopyToClipboard;",
+        "import { useEffect } from 'react';\n\nconst useComponentWillUnmount = (onUnmountHandler) => {\n  useEffect(() => () => onUnmountHandler?.(), []);\n};\n\nexport default useComponentWillUnmount;",
       zt =
+        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d'));\n  return <div>\u68c0\u67e5\u63a7\u5236\u53f0</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
+      _t =
+        "import React, { SyntheticEvent } from 'react';\nimport useCopyToClipboard from './useCopyToClipboard';\nimport { Space } from 'antd';\nimport Button from '../../guide/Button/Button';\n\nexport interface TextCopyProps {\n  text: string;\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n  const { text = 'Lorem ipsum' } = props;\n  const [copied, copy] = useCopyToClipboard(text);\n  return (\n    <Space>\n      <Button\n        type=\"primary\"\n        ripple\n        onClick={copy as (e: SyntheticEvent) => void}\n      >\n        Click to Copy!\n      </Button>\n      <span>{copied && 'Copied!'}</span>\n    </Space>\n  );\n};\n\nconst Demo = () => <TextCopy text=\"The copy text!\" />;\n\nexport default Demo;",
+      Ft =
+        "import { useState, useCallback, useEffect } from 'react';\n\nconst useCopyToClipboard = (text: string) => {\n  const copyToClipboard = (str: string) => {\n    const el = document.createElement('textarea');\n    el.value = str;\n    el.setAttribute('readonly', '');\n    el.style.position = 'absolute';\n    el.style.left = '-9999px';\n    document.body.appendChild(el);\n    const selected =\n      document.getSelection()!.rangeCount > 0\n        ? document.getSelection()?.getRangeAt(0)\n        : false;\n    el.select();\n    const success = document.execCommand('copy');\n    document.body.removeChild(el);\n    if (selected) {\n      document.getSelection()?.removeAllRanges();\n      document.getSelection()?.addRange(selected);\n    }\n    return success;\n  };\n\n  const [copied, setCopied] = useState(false);\n\n  const copy = useCallback(() => {\n    if (!copied) {\n      setCopied(copyToClipboard(text));\n    }\n  }, [text]);\n\n  useEffect(() => () => setCopied(false), [text]);\n\n  return [copied, copy];\n};\n\nexport default useCopyToClipboard;",
+      Bt =
         "import React, { SyntheticEvent } from 'react';\nimport useCopyToClipboard from './useCopyToClipboard';\nimport { Space } from 'antd';\nimport Button from '../../guide/Button/Button';\n\nexport interface TextCopyProps {\n  text: string;\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n  const { text = 'Lorem ipsum' } = props;\n  const [copied, copy] = useCopyToClipboard(text);\n  return (\n    <Space>\n      <Button\n        type=\"primary\"\n        ripple\n        onClick={copy as (e: SyntheticEvent) => void}\n      >\n        \u70b9\u51fb\u8fd9\u91cc\u590d\u5236!\n      </Button>\n      <span>{copied && '\u5df2\u590d\u5236!'}</span>\n    </Space>\n  );\n};\n\nconst Demo = () => <TextCopy text=\"\u590d\u5236\u7684\u6587\u672c!\" />;\n\nexport default Demo;",
-      _t = {
+      Ut = {
         'loadingbutton-demo': {
           component: n('4ZnB').default,
           previewerProps: {
@@ -30488,11 +30494,27 @@
             identifier: 'collapse-demo',
           },
         },
+        'jsx-demo-7': {
+          component: n('reYD').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: pe },
+              'Collapse.jsx': { import: './Collapse', content: fe },
+            },
+            dependencies: {
+              react: { version: '>=16.8.0' },
+              '@emotion/styled': { version: '11.9.3' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+            },
+            identifier: 'jsx-demo-7',
+          },
+        },
         'collapse-demo.zh-cn': {
           component: n('D9M6').default,
           previewerProps: {
             sources: {
-              _: { tsx: pe },
+              _: { tsx: me },
               'Collapse.tsx': { import: './Collapse', content: de },
             },
             dependencies: {
@@ -30504,14 +30526,30 @@
             identifier: 'collapse-demo.zh-cn',
           },
         },
+        'jsx-demo.zh-cn-7': {
+          component: n('x1CG').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: he },
+              'Collapse.jsx': { import: './Collapse', content: fe },
+            },
+            dependencies: {
+              react: { version: '>=16.8.0' },
+              '@emotion/styled': { version: '11.9.3' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+            },
+            identifier: 'jsx-demo.zh-cn-7',
+          },
+        },
         'controlledinput-demo': {
           component: n('TV3E').default,
           previewerProps: {
             sources: {
-              _: { tsx: fe },
+              _: { tsx: ve },
               'ControlledInput.tsx': {
                 import: './ControlledInput',
-                content: me,
+                content: ge,
               },
             },
             dependencies: {
@@ -30527,10 +30565,10 @@
           component: n('zcSK').default,
           previewerProps: {
             sources: {
-              _: { tsx: he },
+              _: { tsx: be },
               'ControlledInput.tsx': {
                 import: './ControlledInput',
-                content: me,
+                content: ge,
               },
             },
             dependencies: {
@@ -30546,9 +30584,9 @@
           component: n('wgCi').default,
           previewerProps: {
             sources: {
-              _: { tsx: ve },
-              'CountDown.tsx': { import: './CountDown', content: ge },
-              'helper.ts': { import: './helper', content: be },
+              _: { tsx: ye },
+              'CountDown.tsx': { import: './CountDown', content: xe },
+              'helper.ts': { import: './helper', content: Ee },
             },
             dependencies: {
               antd: { version: '4.21.5', css: 'antd/dist/antd.css' },
@@ -30565,9 +30603,9 @@
           component: n('lfEP').default,
           previewerProps: {
             sources: {
-              _: { tsx: ye },
-              'CountDown.tsx': { import: './CountDown', content: ge },
-              'helper.ts': { import: './helper', content: be },
+              _: { tsx: we },
+              'CountDown.tsx': { import: './CountDown', content: xe },
+              'helper.ts': { import: './helper', content: Ee },
             },
             dependencies: {
               antd: { version: '4.21.5', css: 'antd/dist/antd.css' },
@@ -30584,8 +30622,8 @@
           component: n('JwaP').default,
           previewerProps: {
             sources: {
-              _: { tsx: xe },
-              'FileDrop.tsx': { import: './FileDrop', content: Ee },
+              _: { tsx: ke },
+              'FileDrop.tsx': { import: './FileDrop', content: Ce },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -30600,8 +30638,8 @@
           component: n('CMoy').default,
           previewerProps: {
             sources: {
-              _: { tsx: we },
-              'FileDrop.tsx': { import: './FileDrop', content: Ee },
+              _: { tsx: Oe },
+              'FileDrop.tsx': { import: './FileDrop', content: Ce },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -30616,8 +30654,8 @@
           component: n('8+C5').default,
           previewerProps: {
             sources: {
-              _: { tsx: ke },
-              'LazyLoadImage.tsx': { import: './LazyLoadImage', content: Ce },
+              _: { tsx: Se },
+              'LazyLoadImage.tsx': { import: './LazyLoadImage', content: je },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -30632,8 +30670,8 @@
           component: n('sd4G').default,
           previewerProps: {
             sources: {
-              _: { tsx: Oe },
-              'LazyLoadImage.tsx': { import: './LazyLoadImage', content: Ce },
+              _: { tsx: Te },
+              'LazyLoadImage.tsx': { import: './LazyLoadImage', content: je },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -30648,10 +30686,10 @@
           component: n('DCdD').default,
           previewerProps: {
             sources: {
-              _: { tsx: Se },
+              _: { tsx: Pe },
               'LimitedTextarea.tsx': {
                 import: './LimitedTextarea',
-                content: je,
+                content: Ie,
               },
             },
             dependencies: {
@@ -30667,10 +30705,10 @@
           component: n('8coG').default,
           previewerProps: {
             sources: {
-              _: { tsx: Te },
+              _: { tsx: Re },
               'LimitedTextarea.tsx': {
                 import: './LimitedTextarea',
-                content: je,
+                content: Ie,
               },
             },
             dependencies: {
@@ -30686,10 +30724,10 @@
           component: n('KRMY').default,
           previewerProps: {
             sources: {
-              _: { tsx: Pe },
+              _: { tsx: Ne },
               'LimitedWordTextarea.tsx': {
                 import: './LimitedWordTextarea',
-                content: Ie,
+                content: Ae,
               },
             },
             dependencies: {
@@ -30705,10 +30743,10 @@
           component: n('O8zO').default,
           previewerProps: {
             sources: {
-              _: { tsx: Re },
+              _: { tsx: Le },
               'LimitedWordTextarea.tsx': {
                 import: './LimitedWordTextarea',
-                content: Ie,
+                content: Ae,
               },
             },
             dependencies: {
@@ -30724,7 +30762,7 @@
           component: n('yNO/').default,
           previewerProps: {
             sources: {
-              _: { tsx: Ne },
+              _: { tsx: Me },
               'Loader.tsx': { import: '../Loader/Loader', content: F },
             },
             dependencies: {
@@ -30742,7 +30780,7 @@
           component: n('3QZg').default,
           previewerProps: {
             sources: {
-              _: { tsx: Ae },
+              _: { tsx: De },
               'Loader.tsx': { import: '../Loader/Loader', content: F },
             },
             dependencies: {
@@ -30760,8 +30798,8 @@
           component: n('cfId').default,
           previewerProps: {
             sources: {
-              _: { tsx: Le },
-              'Mailto.tsx': { import: './Mailto', content: Me },
+              _: { tsx: ze },
+              'Mailto.tsx': { import: './Mailto', content: _e },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -30776,8 +30814,8 @@
           component: n('LwNu').default,
           previewerProps: {
             sources: {
-              _: { tsx: De },
-              'Mailto.tsx': { import: './Mailto', content: Me },
+              _: { tsx: Fe },
+              'Mailto.tsx': { import: './Mailto', content: _e },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -30792,9 +30830,9 @@
           component: n('aOC5').default,
           previewerProps: {
             sources: {
-              _: { tsx: ze },
-              'Modal.tsx': { import: './Modal', content: _e },
-              'Modal.less': { import: './Modal.less', content: Fe },
+              _: { tsx: Be },
+              'Modal.tsx': { import: './Modal', content: Ue },
+              'Modal.less': { import: './Modal.less', content: Ve },
             },
             dependencies: {
               react: { version: '^16.14.0' },
@@ -30808,9 +30846,9 @@
           component: n('JuAD').default,
           previewerProps: {
             sources: {
-              _: { tsx: Be },
-              'Modal.tsx': { import: './Modal', content: _e },
-              'Modal.less': { import: './Modal.less', content: Fe },
+              _: { tsx: He },
+              'Modal.tsx': { import: './Modal', content: Ue },
+              'Modal.less': { import: './Modal.less', content: Ve },
             },
             dependencies: {
               react: { version: '^16.14.0' },
@@ -30824,14 +30862,14 @@
           component: n('1Hsh').default,
           previewerProps: {
             sources: {
-              _: { tsx: Ue },
+              _: { tsx: qe },
               'PasswordRevealer.tsx': {
                 import: './PasswordRevealer',
-                content: Ve,
+                content: We,
               },
               'passwordRevealer.less': {
                 import: './passwordRevealer.less',
-                content: He,
+                content: $e,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -30842,14 +30880,14 @@
           component: n('pE9f').default,
           previewerProps: {
             sources: {
-              _: { tsx: qe },
+              _: { tsx: Ge },
               'PasswordRevealer.tsx': {
                 import: './PasswordRevealer',
-                content: Ve,
+                content: We,
               },
               'passwordRevealer.less': {
                 import: './passwordRevealer.less',
-                content: He,
+                content: $e,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -30860,18 +30898,18 @@
           component: n('/ukT').default,
           previewerProps: {
             sources: {
-              _: { tsx: We },
-              'Select.tsx': { import: './Select', content: $e },
+              _: { tsx: Ke },
+              'Select.tsx': { import: './Select', content: Ye },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: _,
               },
               'utils/useClickOutside.ts': {
                 import: '../../utils/useClickOutside',
-                content: Ge,
+                content: Ze,
               },
-              'Option.tsx': { import: './Option', content: Ke },
-              'select.less': { import: './select.less', content: Ye },
+              'Option.tsx': { import: './Option', content: Xe },
+              'select.less': { import: './select.less', content: Je },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -30885,18 +30923,18 @@
           component: n('Juw3').default,
           previewerProps: {
             sources: {
-              _: { tsx: Ze },
-              'Select.tsx': { import: './Select', content: $e },
+              _: { tsx: Qe },
+              'Select.tsx': { import: './Select', content: Ye },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: _,
               },
               'utils/useClickOutside.ts': {
                 import: '../../utils/useClickOutside',
-                content: Ge,
+                content: Ze,
               },
-              'Option.tsx': { import: './Option', content: Ke },
-              'select.less': { import: './select.less', content: Ye },
+              'Option.tsx': { import: './Option', content: Xe },
+              'select.less': { import: './select.less', content: Je },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -30910,8 +30948,8 @@
           component: n('kFD3').default,
           previewerProps: {
             sources: {
-              _: { tsx: Xe },
-              'SimpleDataList.tsx': { import: './SimpleDataList', content: Je },
+              _: { tsx: et },
+              'SimpleDataList.tsx': { import: './SimpleDataList', content: tt },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -30925,8 +30963,8 @@
           component: n('9yqU').default,
           previewerProps: {
             sources: {
-              _: { tsx: Qe },
-              'SimpleDataList.tsx': { import: './SimpleDataList', content: Je },
+              _: { tsx: nt },
+              'SimpleDataList.tsx': { import: './SimpleDataList', content: tt },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -30940,14 +30978,14 @@
           component: n('iBx2').default,
           previewerProps: {
             sources: {
-              _: { tsx: et },
+              _: { tsx: rt },
               'SimpleDataTable.tsx': {
                 import: './SimpleDataTable',
-                content: tt,
+                content: at,
               },
               'simpleDataTable.less': {
                 import: './simpleDataTable.less',
-                content: nt,
+                content: ot,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -30958,14 +30996,14 @@
           component: n('LCi9').default,
           previewerProps: {
             sources: {
-              _: { tsx: rt },
+              _: { tsx: it },
               'SimpleDataTable.tsx': {
                 import: './SimpleDataTable',
-                content: tt,
+                content: at,
               },
               'simpleDataTable.less': {
                 import: './simpleDataTable.less',
-                content: nt,
+                content: ot,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -30976,14 +31014,14 @@
           component: n('X23V').default,
           previewerProps: {
             sources: {
-              _: { tsx: at },
+              _: { tsx: lt },
               'SimpleMappedDataTable.tsx': {
                 import: './SimpleMappedDataTable',
-                content: ot,
+                content: ct,
               },
               'SimpleMappedDataTable.less': {
                 import: './SimpleMappedDataTable.less',
-                content: it,
+                content: st,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -30994,14 +31032,14 @@
           component: n('/ncw').default,
           previewerProps: {
             sources: {
-              _: { tsx: lt },
+              _: { tsx: ut },
               'SimpleMappedDataTable.tsx': {
                 import: './SimpleMappedDataTable',
-                content: ot,
+                content: ct,
               },
               'SimpleMappedDataTable.less': {
                 import: './SimpleMappedDataTable.less',
-                content: it,
+                content: st,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -31012,9 +31050,9 @@
           component: n('5VUJ').default,
           previewerProps: {
             sources: {
-              _: { tsx: ct },
-              'Slider.tsx': { import: './Slider', content: st },
-              'slider.less': { import: './slider.less', content: ut },
+              _: { tsx: dt },
+              'Slider.tsx': { import: './Slider', content: pt },
+              'slider.less': { import: './slider.less', content: ft },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: _,
@@ -31028,7 +31066,7 @@
           component: n('sqNe').default,
           previewerProps: {
             sources: {
-              _: { tsx: dt },
+              _: { tsx: mt },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -31042,7 +31080,7 @@
               },
               'guide/Alert/Alert.tsx': { import: './Alert', content: k },
               'alert.less': { import: './alert.less', content: C },
-              'useAsync.ts': { import: './useAsync', content: pt },
+              'useAsync.ts': { import: './useAsync', content: ht },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -31055,64 +31093,6 @@
         },
         'js-demo': {
           component: n('DVnI').default,
-          previewerProps: {
-            sources: {
-              _: { jsx: ft },
-              'guide/Button/Button.tsx': { import: './Button', content: D },
-              'button.less': { import: './button.less', content: z },
-              'utils/classnames.ts': {
-                import: '../../utils/classnames',
-                content: _,
-              },
-              'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
-              'guide/Loader/Loader.tsx': {
-                import: '../Loader/Loader',
-                content: F,
-              },
-              'guide/Alert/Alert.tsx': { import: './Alert', content: k },
-              'alert.less': { import: './alert.less', content: C },
-              'useAsync.js': { import: './useAsync', content: mt },
-            },
-            dependencies: {
-              react: { version: '16.14.0' },
-              '@emotion/styled': { version: '11.9.3' },
-              '@babel/core': { version: '^7.0.0' },
-              '@emotion/react': { version: '^11.0.0-rc.0' },
-            },
-            identifier: 'js-demo',
-          },
-        },
-        'useasync-demo.zh-cn': {
-          component: n('mlG9').default,
-          previewerProps: {
-            sources: {
-              _: { tsx: ht },
-              'guide/Button/Button.tsx': { import: './Button', content: D },
-              'button.less': { import: './button.less', content: z },
-              'utils/classnames.ts': {
-                import: '../../utils/classnames',
-                content: _,
-              },
-              'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
-              'guide/Loader/Loader.tsx': {
-                import: '../Loader/Loader',
-                content: F,
-              },
-              'guide/Alert/Alert.tsx': { import: './Alert', content: k },
-              'alert.less': { import: './alert.less', content: C },
-              'useAsync.ts': { import: './useAsync', content: pt },
-            },
-            dependencies: {
-              react: { version: '16.14.0' },
-              '@emotion/styled': { version: '11.9.3' },
-              '@babel/core': { version: '^7.0.0' },
-              '@emotion/react': { version: '^11.0.0-rc.0' },
-            },
-            identifier: 'useasync-demo.zh-cn',
-          },
-        },
-        'js-demo.zh-cn': {
-          component: n('YSJU').default,
           previewerProps: {
             sources: {
               _: { jsx: vt },
@@ -31129,7 +31109,65 @@
               },
               'guide/Alert/Alert.tsx': { import: './Alert', content: k },
               'alert.less': { import: './alert.less', content: C },
-              'useAsync.js': { import: './useAsync', content: mt },
+              'useAsync.js': { import: './useAsync', content: gt },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              '@emotion/styled': { version: '11.9.3' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+            },
+            identifier: 'js-demo',
+          },
+        },
+        'useasync-demo.zh-cn': {
+          component: n('mlG9').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: bt },
+              'guide/Button/Button.tsx': { import: './Button', content: D },
+              'button.less': { import: './button.less', content: z },
+              'utils/classnames.ts': {
+                import: '../../utils/classnames',
+                content: _,
+              },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
+              'guide/Loader/Loader.tsx': {
+                import: '../Loader/Loader',
+                content: F,
+              },
+              'guide/Alert/Alert.tsx': { import: './Alert', content: k },
+              'alert.less': { import: './alert.less', content: C },
+              'useAsync.ts': { import: './useAsync', content: ht },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              '@emotion/styled': { version: '11.9.3' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+            },
+            identifier: 'useasync-demo.zh-cn',
+          },
+        },
+        'js-demo.zh-cn': {
+          component: n('YSJU').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: yt },
+              'guide/Button/Button.tsx': { import: './Button', content: D },
+              'button.less': { import: './button.less', content: z },
+              'utils/classnames.ts': {
+                import: '../../utils/classnames',
+                content: _,
+              },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
+              'guide/Loader/Loader.tsx': {
+                import: '../Loader/Loader',
+                content: F,
+              },
+              'guide/Alert/Alert.tsx': { import: './Alert', content: k },
+              'alert.less': { import: './alert.less', content: C },
+              'useAsync.js': { import: './useAsync', content: gt },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -31144,9 +31182,9 @@
           component: n('AgAx').default,
           previewerProps: {
             sources: {
-              _: { tsx: gt },
-              'guide/Modal/Modal.tsx': { import: './Modal', content: _e },
-              'Modal.less': { import: './Modal.less', content: Fe },
+              _: { tsx: xt },
+              'guide/Modal/Modal.tsx': { import: './Modal', content: Ue },
+              'Modal.less': { import: './Modal.less', content: Ve },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -31156,7 +31194,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useBodyScrollLock.ts': {
                 import: './useBodyScrollLock',
-                content: bt,
+                content: Et,
               },
             },
             dependencies: {
@@ -31173,9 +31211,9 @@
           component: n('hVMu').default,
           previewerProps: {
             sources: {
-              _: { tsx: yt },
-              'guide/Modal/Modal.tsx': { import: './Modal', content: _e },
-              'Modal.less': { import: './Modal.less', content: Fe },
+              _: { tsx: wt },
+              'guide/Modal/Modal.tsx': { import: './Modal', content: Ue },
+              'Modal.less': { import: './Modal.less', content: Ve },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -31185,7 +31223,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useBodyScrollLock.ts': {
                 import: './useBodyScrollLock',
-                content: bt,
+                content: Et,
               },
             },
             dependencies: {
@@ -31202,10 +31240,10 @@
           component: n('n4d3').default,
           previewerProps: {
             sources: {
-              _: { tsx: xt },
-              'useClickInside.ts': { import: './useClickInside', content: Et },
-              'guide/Modal/Modal.tsx': { import: './Modal', content: _e },
-              'Modal.less': { import: './Modal.less', content: Fe },
+              _: { tsx: kt },
+              'useClickInside.ts': { import: './useClickInside', content: Ct },
+              'guide/Modal/Modal.tsx': { import: './Modal', content: Ue },
+              'Modal.less': { import: './Modal.less', content: Ve },
             },
             dependencies: {
               react: { version: '^16.14.0' },
@@ -31221,10 +31259,10 @@
           component: n('nKlt').default,
           previewerProps: {
             sources: {
-              _: { tsx: wt },
-              'useClickInside.ts': { import: './useClickInside', content: Et },
-              'guide/Modal/Modal.tsx': { import: './Modal', content: _e },
-              'Modal.less': { import: './Modal.less', content: Fe },
+              _: { tsx: Ot },
+              'useClickInside.ts': { import: './useClickInside', content: Ct },
+              'guide/Modal/Modal.tsx': { import: './Modal', content: Ue },
+              'Modal.less': { import: './Modal.less', content: Ve },
             },
             dependencies: {
               react: { version: '^16.14.0' },
@@ -31240,10 +31278,10 @@
           component: n('6srN').default,
           previewerProps: {
             sources: {
-              _: { tsx: kt },
+              _: { tsx: St },
               'useClickOutside.ts': {
                 import: './useClickOutside',
-                content: Ct,
+                content: jt,
               },
             },
             dependencies: {
@@ -31259,10 +31297,10 @@
           component: n('6aGR').default,
           previewerProps: {
             sources: {
-              _: { tsx: Ot },
+              _: { tsx: Tt },
               'useClickOutside.ts': {
                 import: './useClickOutside',
-                content: Ct,
+                content: jt,
               },
             },
             dependencies: {
@@ -31278,10 +31316,10 @@
           component: n('4BP0').default,
           previewerProps: {
             sources: {
-              _: { tsx: St },
+              _: { tsx: Pt },
               'useComponentDidMount.ts': {
                 import: './useComponentDidMount',
-                content: jt,
+                content: It,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -31292,10 +31330,10 @@
           component: n('3Mo/').default,
           previewerProps: {
             sources: {
-              _: { tsx: Tt },
+              _: { tsx: Rt },
               'useComponentDidMount.ts': {
                 import: './useComponentDidMount',
-                content: jt,
+                content: It,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -31306,7 +31344,7 @@
           component: n('+EnM').default,
           previewerProps: {
             sources: {
-              _: { tsx: Pt },
+              _: { tsx: Nt },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -31316,7 +31354,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useComponentDidUpdate.ts': {
                 import: './useComponentDidUpdate',
-                content: It,
+                content: At,
               },
             },
             dependencies: {
@@ -31334,7 +31372,7 @@
           component: n('pc0r').default,
           previewerProps: {
             sources: {
-              _: { tsx: Rt },
+              _: { tsx: Lt },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -31344,7 +31382,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useComponentDidUpdate.ts': {
                 import: './useComponentDidUpdate',
-                content: It,
+                content: At,
               },
             },
             dependencies: {
@@ -31362,10 +31400,10 @@
           component: n('YT/L').default,
           previewerProps: {
             sources: {
-              _: { tsx: Nt },
+              _: { tsx: Mt },
               'useComponentWillUnmount.ts': {
                 import: './useComponentWillUnmount',
-                content: At,
+                content: Dt,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -31376,10 +31414,10 @@
           component: n('s6jP').default,
           previewerProps: {
             sources: {
-              _: { tsx: Lt },
+              _: { tsx: zt },
               'useComponentWillUnmount.ts': {
                 import: './useComponentWillUnmount',
-                content: At,
+                content: Dt,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -31390,10 +31428,10 @@
           component: n('6Hiq').default,
           previewerProps: {
             sources: {
-              _: { tsx: Mt },
+              _: { tsx: _t },
               'useCopyToClipboard.ts': {
                 import: './useCopyToClipboard',
-                content: Dt,
+                content: Ft,
               },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
@@ -31418,10 +31456,10 @@
           component: n('NfPr').default,
           previewerProps: {
             sources: {
-              _: { tsx: zt },
+              _: { tsx: Bt },
               'useCopyToClipboard.ts': {
                 import: './useCopyToClipboard',
-                content: Dt,
+                content: Ft,
               },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
@@ -31443,13 +31481,13 @@
           },
         },
       },
-      Ft = n('Zs1V'),
-      Bt = n('KcUY'),
-      Ut = n.n(Bt);
+      Vt = n('Zs1V'),
+      Ht = n('KcUY'),
+      qt = n.n(Ht);
     t['default'] = (e) =>
       o.a.createElement(
-        Ut.a,
-        Object(r['a'])({}, e, { config: i, demos: _t, apis: Ft }),
+        qt.a,
+        Object(r['a'])({}, e, { config: i, demos: Ut, apis: Vt }),
       );
   },
   'Of+w': function (e, t, n) {
@@ -45659,7 +45697,8 @@
       c = n('dMo/'),
       s = a.a.memo((e) => {
         var t = e.demos,
-          n = t['collapse-demo.zh-cn'].component;
+          n = t['collapse-demo.zh-cn'].component,
+          r = t['jsx-demo.zh-cn-7'].component;
         return a.a.createElement(
           a.a.Fragment,
           null,
@@ -45740,16 +45779,32 @@
                   '\u6839\u636e isCollapsed \u66f4\u65b0 aria-expanded \u5c5e\u6027\u7684\u503c\uff0c\u4f7f\u7ec4\u4ef6\u53ef\u8bbf\u95ee\u3002',
                 ),
               ),
+              a.a.createElement('p', null, 'tsx:'),
               a.a.createElement(l['a'], {
-                code: "import styled from '@emotion/styled';\nimport type { ReactNode } from 'react';\nimport React, { useState } from 'react';\n\nconst CollapseStyle = styled.div`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: #000000d9;\n  font-size: 14px;\n  background-color: #fafafa;\n  border: 1px solid #d9d9d9;\n  border-bottom: 0;\n  border-radius: 2px;\n  & .collapse-header {\n    line-height: 1.5715;\n    position: relative;\n    display: flex;\n    flex-wrap: nowrap;\n    align-items: flex-start;\n    padding: 12px 16px;\n    color: rgba(0, 0, 0, 0.85);\n    cursor: pointer;\n    transition: all 0.3s, visibility 0s;\n    box-sizing: border-box;\n  }\n`;\nconst CollapseStyleItem = styled.div`\n  border-bottom: 1px solid #d9d9d9;\n  & .collapse-content {\n    color: #000000d9;\n    background-color: #fff;\n    border-top: 1px solid #d9d9d9;\n    transition: all 0.3s ease-in-out;\n    padding: 16px;\n    &.collapsed {\n      display: none;\n    }\n    &.expanded {\n      display: block;\n    }\n  }\n`;\n\ninterface CollapseProps {\n  collapsed: boolean;\n  children: ReactNode;\n  header: ReactNode;\n}\n\ntype CollapseItemProps = Omit<Omit<CollapseProps, 'collapsed'>, 'header'> & {\n  className: string;\n};\n\nconst CollapseItem = (props: Partial<CollapseItemProps>) => {\n  const { children, className } = props;\n  return (\n    <CollapseStyleItem>\n      <div className={`${'collapse-content'}${className}`}>{children}</div>\n    </CollapseStyleItem>\n  );\n};\n\nconst Collapse = (props: Partial<CollapseProps>) => {\n  const { collapsed, children, header } = props;\n  const [isCollapsed, setIsCollapsed] = useState(collapsed);\n\n  return (\n    <CollapseStyle>\n      <div\n        className=\"collapse-header\"\n        onClick={() => setIsCollapsed(!isCollapsed)}\n      >\n        {header || (isCollapsed ? '\u663e\u793a' : '\u9690\u85cf') + ' \u5185\u5bb9'}\n      </div>\n      <CollapseItem className={`${isCollapsed ? ' collapsed' : ' expanded'}`}>\n        {children}\n      </CollapseItem>\n    </CollapseStyle>\n  );\n};",
+                code: "import styled from '@emotion/styled';\nimport type { ReactNode } from 'react';\nimport React, { useState } from 'react';\n\nconst CollapseStyle = styled.div`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: #000000d9;\n  font-size: 14px;\n  background-color: #fafafa;\n  border: 1px solid #d9d9d9;\n  border-bottom: 0;\n  border-radius: 2px;\n  & .collapse-header {\n    line-height: 1.5715;\n    position: relative;\n    display: flex;\n    flex-wrap: nowrap;\n    align-items: flex-start;\n    padding: 12px 16px;\n    color: rgba(0, 0, 0, 0.85);\n    cursor: pointer;\n    transition: all 0.3s, visibility 0s;\n    box-sizing: border-box;\n  }\n`;\nconst CollapseStyleItem = styled.div`\n  border-bottom: 1px solid #d9d9d9;\n  & .collapse-content {\n    color: #000000d9;\n    background-color: #fff;\n    border-top: 1px solid #d9d9d9;\n    transition: all 0.3s ease-in-out;\n    padding: 16px;\n    &.collapsed {\n      display: none;\n    }\n    &.expanded {\n      display: block;\n    }\n  }\n`;\n\ninterface CollapseProps {\n  collapsed: boolean;\n  children: ReactNode;\n  header: ReactNode;\n}\n\ntype CollapseItemProps = Omit<Omit<CollapseProps, 'collapsed'>, 'header'> & {\n  className: string;\n};\n\nconst CollapseItem = (props: Partial<CollapseItemProps>) => {\n  const { children, className } = props;\n  return (\n    <CollapseStyleItem>\n      <div className={`${'collapse-content'}${className}`}>{children}</div>\n    </CollapseStyleItem>\n  );\n};\n\nconst Collapse = (props: Partial<CollapseProps>) => {\n  const { collapsed, children, header } = props;\n  const [isCollapsed, setIsCollapsed] = useState(collapsed);\n\n  return (\n    <CollapseStyle>\n      <div\n        className=\"collapse-header\"\n        onClick={() => setIsCollapsed(!isCollapsed)}\n      >\n        {header || (isCollapsed ? 'show' : 'hide') + ' content'}\n      </div>\n      <CollapseItem className={`${isCollapsed ? ' collapsed' : ' expanded'}`}>\n        {children}\n      </CollapseItem>\n    </CollapseStyle>\n  );\n};\n\nexport default Collapse;",
                 lang: 'tsx',
               }),
-              a.a.createElement('p', null, 'demo:'),
+              a.a.createElement('p', null, 'jsx:'),
+              a.a.createElement(l['a'], {
+                code: "import styled from '@emotion/styled';\nimport React, { useState } from 'react';\n\nconst CollapseStyle = styled.div`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: #000000d9;\n  font-size: 14px;\n  background-color: #fafafa;\n  border: 1px solid #d9d9d9;\n  border-bottom: 0;\n  border-radius: 2px;\n  & .collapse-header {\n    line-height: 1.5715;\n    position: relative;\n    display: flex;\n    flex-wrap: nowrap;\n    align-items: flex-start;\n    padding: 12px 16px;\n    color: rgba(0, 0, 0, 0.85);\n    cursor: pointer;\n    transition: all 0.3s, visibility 0s;\n    box-sizing: border-box;\n  }\n`;\nconst CollapseStyleItem = styled.div`\n  border-bottom: 1px solid #d9d9d9;\n  & .collapse-content {\n    color: #000000d9;\n    background-color: #fff;\n    border-top: 1px solid #d9d9d9;\n    transition: all 0.3s ease-in-out;\n    padding: 16px;\n    &.collapsed {\n      display: none;\n    }\n    &.expanded {\n      display: block;\n    }\n  }\n`;\n\nconst CollapseItem = (props) => {\n  const { children, className } = props;\n  return (\n    <CollapseStyleItem>\n      <div className={`${'collapse-content'}${className}`}>{children}</div>\n    </CollapseStyleItem>\n  );\n};\n\nconst Collapse = (props) => {\n  const { collapsed, children, header } = props;\n  const [isCollapsed, setIsCollapsed] = useState(collapsed);\n\n  return (\n    <CollapseStyle>\n      <div\n        className=\"collapse-header\"\n        onClick={() => setIsCollapsed(!isCollapsed)}\n      >\n        {header || (isCollapsed ? 'show' : 'hide') + ' content'}\n      </div>\n      <CollapseItem className={`${isCollapsed ? ' collapsed' : ' expanded'}`}>\n        {children}\n      </CollapseItem>\n    </CollapseStyle>\n  );\n};\n\nexport default Collapse;",
+                lang: 'jsx',
+              }),
+              a.a.createElement('p', null, '\u793a\u4f8b:'),
             ),
             a.a.createElement(
               i['default'],
               t['collapse-demo.zh-cn'].previewerProps,
               a.a.createElement(n, null),
+            ),
+            a.a.createElement(
+              'div',
+              { className: 'markdown' },
+              a.a.createElement('p', null, 'jsx \u793a\u4f8b:'),
+            ),
+            a.a.createElement(
+              i['default'],
+              t['jsx-demo.zh-cn-7'].previewerProps,
+              a.a.createElement(r, null),
             ),
           ),
         );
@@ -47552,6 +47607,65 @@
       return e ? e.slice(0, r(e) + 1).replace(a, '') : e;
     }
     e.exports = o;
+  },
+  jbta: function (e, t, n) {
+    'use strict';
+    var r,
+      a,
+      o = n('tJVT'),
+      i = n('qqnG'),
+      l = n('5SEd'),
+      c = n('q1tI'),
+      s = n.n(c),
+      u = l['a'].div(
+        r ||
+          (r = Object(i['a'])([
+            '\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: #000000d9;\n  font-size: 14px;\n  background-color: #fafafa;\n  border: 1px solid #d9d9d9;\n  border-bottom: 0;\n  border-radius: 2px;\n  & .collapse-header {\n    line-height: 1.5715;\n    position: relative;\n    display: flex;\n    flex-wrap: nowrap;\n    align-items: flex-start;\n    padding: 12px 16px;\n    color: rgba(0, 0, 0, 0.85);\n    cursor: pointer;\n    transition: all 0.3s, visibility 0s;\n    box-sizing: border-box;\n  }\n',
+          ])),
+      ),
+      d = l['a'].div(
+        a ||
+          (a = Object(i['a'])([
+            '\n  border-bottom: 1px solid #d9d9d9;\n  & .collapse-content {\n    color: #000000d9;\n    background-color: #fff;\n    border-top: 1px solid #d9d9d9;\n    transition: all 0.3s ease-in-out;\n    padding: 16px;\n    &.collapsed {\n      display: none;\n    }\n    &.expanded {\n      display: block;\n    }\n  }\n',
+          ])),
+      ),
+      p = (e) => {
+        var t = e.children,
+          n = e.className;
+        return s.a.createElement(
+          d,
+          null,
+          s.a.createElement(
+            'div',
+            { className: 'collapse-content'.concat(n) },
+            t,
+          ),
+        );
+      },
+      f = (e) => {
+        var t = e.collapsed,
+          n = e.children,
+          r = e.header,
+          a = Object(c['useState'])(t),
+          i = Object(o['a'])(a, 2),
+          l = i[0],
+          d = i[1];
+        return s.a.createElement(
+          u,
+          null,
+          s.a.createElement(
+            'div',
+            { className: 'collapse-header', onClick: () => d(!l) },
+            r || (l ? 'show' : 'hide') + ' content',
+          ),
+          s.a.createElement(
+            p,
+            { className: ''.concat(l ? ' collapsed' : ' expanded') },
+            n,
+          ),
+        );
+      };
+    t['a'] = f;
   },
   'k+1r': function (e, t, n) {
     var r = n('QkVE');
@@ -52218,6 +52332,21 @@
       return r;
     });
   },
+  reYD: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n('q1tI'),
+      a = n.n(r),
+      o = n('jbta'),
+      i = () =>
+        a.a.createElement(
+          o['a'],
+          null,
+          a.a.createElement('h1', null, 'This is a collapse'),
+          a.a.createElement('p', null, 'Hello world!'),
+        );
+    t['default'] = i;
+  },
   'rhT+': function (e, t) {
     function n(e) {
       if ('undefined' !== typeof Symbol && Symbol.iterator in Object(e))
@@ -53158,7 +53287,8 @@
       c = n('dMo/'),
       s = a.a.memo((e) => {
         var t = e.demos,
-          n = t['collapse-demo'].component;
+          n = t['collapse-demo'].component,
+          r = t['jsx-demo-7'].component;
         return a.a.createElement(
           a.a.Fragment,
           null,
@@ -53227,9 +53357,15 @@
                   'Update the value of the aria-expanded attribute based on isCollapsed to make the component accessible.',
                 ),
               ),
+              a.a.createElement('p', null, 'tsx:'),
               a.a.createElement(l['a'], {
-                code: "import styled from '@emotion/styled';\nimport type { ReactNode } from 'react';\nimport React, { useState } from 'react';\n\nconst CollapseStyle = styled.div`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: #000000d9;\n  font-size: 14px;\n  background-color: #fafafa;\n  border: 1px solid #d9d9d9;\n  border-bottom: 0;\n  border-radius: 2px;\n  & .collapse-header {\n    line-height: 1.5715;\n    position: relative;\n    display: flex;\n    flex-wrap: nowrap;\n    align-items: flex-start;\n    padding: 12px 16px;\n    color: rgba(0, 0, 0, 0.85);\n    cursor: pointer;\n    transition: all 0.3s, visibility 0s;\n    box-sizing: border-box;\n  }\n`;\nconst CollapseStyleItem = styled.div`\n  border-bottom: 1px solid #d9d9d9;\n  & .collapse-content {\n    color: #000000d9;\n    background-color: #fff;\n    border-top: 1px solid #d9d9d9;\n    transition: all 0.3s ease-in-out;\n    padding: 16px;\n    &.collapsed {\n      display: none;\n    }\n    &.expanded {\n      display: block;\n    }\n  }\n`;\n\ninterface CollapseProps {\n  collapsed: boolean;\n  children: ReactNode;\n  header: ReactNode;\n}\n\ntype CollapseItemProps = Omit<Omit<CollapseProps, 'collapsed'>, 'header'> & {\n  className: string;\n};\n\nconst CollapseItem = (props: Partial<CollapseItemProps>) => {\n  const { children, className } = props;\n  return (\n    <CollapseStyleItem>\n      <div className={`${'collapse-content'}${className}`}>{children}</div>\n    </CollapseStyleItem>\n  );\n};\n\nconst Collapse = (props: Partial<CollapseProps>) => {\n  const { collapsed, children, header } = props;\n  const [isCollapsed, setIsCollapsed] = useState(collapsed);\n\n  return (\n    <CollapseStyle>\n      <div\n        className=\"collapse-header\"\n        onClick={() => setIsCollapsed(!isCollapsed)}\n      >\n        {header || (isCollapsed ? 'show' : 'hide') + ' content'}\n      </div>\n      <CollapseItem className={`${isCollapsed ? ' collapsed' : ' expanded'}`}>\n        {children}\n      </CollapseItem>\n    </CollapseStyle>\n  );\n};\n\nconst Demo = () => {\n  return (\n    <Collapse>\n      <h1>This is a collapse</h1>\n      <p>Hello world!</p>\n    </Collapse>\n  );\n};\n\nexport default Demo;",
+                code: "import styled from '@emotion/styled';\nimport type { ReactNode } from 'react';\nimport React, { useState } from 'react';\n\nconst CollapseStyle = styled.div`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: #000000d9;\n  font-size: 14px;\n  background-color: #fafafa;\n  border: 1px solid #d9d9d9;\n  border-bottom: 0;\n  border-radius: 2px;\n  & .collapse-header {\n    line-height: 1.5715;\n    position: relative;\n    display: flex;\n    flex-wrap: nowrap;\n    align-items: flex-start;\n    padding: 12px 16px;\n    color: rgba(0, 0, 0, 0.85);\n    cursor: pointer;\n    transition: all 0.3s, visibility 0s;\n    box-sizing: border-box;\n  }\n`;\nconst CollapseStyleItem = styled.div`\n  border-bottom: 1px solid #d9d9d9;\n  & .collapse-content {\n    color: #000000d9;\n    background-color: #fff;\n    border-top: 1px solid #d9d9d9;\n    transition: all 0.3s ease-in-out;\n    padding: 16px;\n    &.collapsed {\n      display: none;\n    }\n    &.expanded {\n      display: block;\n    }\n  }\n`;\n\ninterface CollapseProps {\n  collapsed: boolean;\n  children: ReactNode;\n  header: ReactNode;\n}\n\ntype CollapseItemProps = Omit<Omit<CollapseProps, 'collapsed'>, 'header'> & {\n  className: string;\n};\n\nconst CollapseItem = (props: Partial<CollapseItemProps>) => {\n  const { children, className } = props;\n  return (\n    <CollapseStyleItem>\n      <div className={`${'collapse-content'}${className}`}>{children}</div>\n    </CollapseStyleItem>\n  );\n};\n\nconst Collapse = (props: Partial<CollapseProps>) => {\n  const { collapsed, children, header } = props;\n  const [isCollapsed, setIsCollapsed] = useState(collapsed);\n\n  return (\n    <CollapseStyle>\n      <div\n        className=\"collapse-header\"\n        onClick={() => setIsCollapsed(!isCollapsed)}\n      >\n        {header || (isCollapsed ? 'show' : 'hide') + ' content'}\n      </div>\n      <CollapseItem className={`${isCollapsed ? ' collapsed' : ' expanded'}`}>\n        {children}\n      </CollapseItem>\n    </CollapseStyle>\n  );\n};\n\nexport default Collapse;",
                 lang: 'tsx',
+              }),
+              a.a.createElement('p', null, 'jsx:'),
+              a.a.createElement(l['a'], {
+                code: "import styled from '@emotion/styled';\nimport React, { useState } from 'react';\n\nconst CollapseStyle = styled.div`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: #000000d9;\n  font-size: 14px;\n  background-color: #fafafa;\n  border: 1px solid #d9d9d9;\n  border-bottom: 0;\n  border-radius: 2px;\n  & .collapse-header {\n    line-height: 1.5715;\n    position: relative;\n    display: flex;\n    flex-wrap: nowrap;\n    align-items: flex-start;\n    padding: 12px 16px;\n    color: rgba(0, 0, 0, 0.85);\n    cursor: pointer;\n    transition: all 0.3s, visibility 0s;\n    box-sizing: border-box;\n  }\n`;\nconst CollapseStyleItem = styled.div`\n  border-bottom: 1px solid #d9d9d9;\n  & .collapse-content {\n    color: #000000d9;\n    background-color: #fff;\n    border-top: 1px solid #d9d9d9;\n    transition: all 0.3s ease-in-out;\n    padding: 16px;\n    &.collapsed {\n      display: none;\n    }\n    &.expanded {\n      display: block;\n    }\n  }\n`;\n\nconst CollapseItem = (props) => {\n  const { children, className } = props;\n  return (\n    <CollapseStyleItem>\n      <div className={`${'collapse-content'}${className}`}>{children}</div>\n    </CollapseStyleItem>\n  );\n};\n\nconst Collapse = (props) => {\n  const { collapsed, children, header } = props;\n  const [isCollapsed, setIsCollapsed] = useState(collapsed);\n\n  return (\n    <CollapseStyle>\n      <div\n        className=\"collapse-header\"\n        onClick={() => setIsCollapsed(!isCollapsed)}\n      >\n        {header || (isCollapsed ? 'show' : 'hide') + ' content'}\n      </div>\n      <CollapseItem className={`${isCollapsed ? ' collapsed' : ' expanded'}`}>\n        {children}\n      </CollapseItem>\n    </CollapseStyle>\n  );\n};\n\nexport default Collapse;",
+                lang: 'jsx',
               }),
               a.a.createElement('p', null, 'demo:'),
             ),
@@ -53237,6 +53373,16 @@
               i['default'],
               t['collapse-demo'].previewerProps,
               a.a.createElement(n, null),
+            ),
+            a.a.createElement(
+              'div',
+              { className: 'markdown' },
+              a.a.createElement('p', null, 'jsx demo:'),
+            ),
+            a.a.createElement(
+              i['default'],
+              t['jsx-demo-7'].previewerProps,
+              a.a.createElement(r, null),
             ),
           ),
         );
@@ -60048,6 +60194,25 @@
       }
       return !1;
     };
+  },
+  x1CG: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n('q1tI'),
+      a = n.n(r),
+      o = n('jbta'),
+      i = () =>
+        a.a.createElement(
+          o['a'],
+          { header: '\u8fd9\u662f\u6807\u9898' },
+          a.a.createElement(
+            'h1',
+            null,
+            '\u8fd9\u662f\u4e00\u4e2a\u6298\u53e0\u7ec4\u4ef6',
+          ),
+          a.a.createElement('p', null, '\u4f60\u597d\uff0c\u4e16\u754c!'),
+        );
+    t['default'] = i;
   },
   x8cr: function (e, t, n) {},
   xDBR: function (e, t) {
