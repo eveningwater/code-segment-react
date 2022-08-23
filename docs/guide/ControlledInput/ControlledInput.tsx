@@ -64,9 +64,7 @@ interface ControlledInputProps {
 const ControlledInput = (props: Partial<ControlledInputProps>) => {
   const { value, onChange, ...rest } = props;
   const onChangeHandler = (e: SyntheticEvent) => {
-    if (onChange) {
-      onChange((e.target as HTMLInputElement).value);
-    }
+    onChange?.((e.target as HTMLInputElement).value);
   };
   return (
     <StyleInput value={value} onChange={onChangeHandler} {...rest}></StyleInput>
