@@ -7,7 +7,7 @@ Renders a link formatted to call a phone number (tel: link).
 - Use phone to create a `<a>` element with an appropriate href attribute.
 - Render the link with children as its content.
 
-tsx:
+#### Callto.tsx
 
 ```tsx | pure
 import styled from '@emotion/styled';
@@ -39,7 +39,7 @@ const CallTo = (props: Partial<CallToType>) => {
 export default CallTo;
 ```
 
-jsx:
+#### Callto.jsx
 
 ```jsx | pure
 import styled from '@emotion/styled';

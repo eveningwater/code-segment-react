@@ -10,6 +10,8 @@
 - 每当 isRippling 状态变量为假时，使用 useEffect() 挂钩重置坐标。
 - 通过更新坐标状态变量并调用传递的回调来处理 onClick 事件。
 
+#### Button.less
+
 ```less
 @prefix: ew-;
 
@@ -249,7 +251,7 @@
 }
 ```
 
-tsx:
+#### Button.tsx
 
 ```tsx | pure
 import React, { useState, useEffect } from 'react';
@@ -380,7 +382,7 @@ const Button = (props: Partial<ButtonProps>) => {
 export default Button;
 ```
 
-jsx:
+#### Button.jsx
 
 ```jsx | pure
 import React, { useState, useEffect } from 'react';

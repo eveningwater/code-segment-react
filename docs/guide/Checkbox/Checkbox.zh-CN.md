@@ -8,6 +8,8 @@
 - 创建一个切换函数，使用扩展运算符 (...) 和 Array.prototype.splice() 更新数据状态变量，并使用任何选中的选项调用 onChange 回调。
 - 使用 Array.prototype.map() 将数据状态变量映射到单个 `<input type="checkbox">` 元素。 将每一个包装在一个`<label>`中，将 onClick 处理程序绑定到切换函数。
 
+#### Checkbox.less
+
 ```less
 @baseSelector: ant-;
 .@{baseSelector}checkbox-wrapper {
@@ -79,7 +81,7 @@
 }
 ```
 
-tsx:
+#### Checkbox.tsx
 
 ```tsx | pure
 import React, { useState, useEffect, createRef } from 'react';
@@ -131,7 +133,7 @@ const Checkbox = (props: Partial<CheckboxProps>) => {
 export default Checkbox;
 ```
 
-jsx:
+#### Checkbox.jsx
 
 ```jsx | pure
 import React, { useState, useEffect, createRef } from 'react';

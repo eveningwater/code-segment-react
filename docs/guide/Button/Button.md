@@ -10,6 +10,8 @@ Renders a button that animates a ripple effect when clicked.
 - Use a useEffect() hook to reset coords whenever the isRippling state variable is false.
 - Handle the onClick event by updating the coords state variable and calling the passed callback.
 
+#### Button.less
+
 ```less
 @prefix: ew-;
 
@@ -249,7 +251,7 @@ Renders a button that animates a ripple effect when clicked.
 }
 ```
 
-tsx:
+#### Button.tsx
 
 ```tsx | pure
 import React, { useState, useEffect } from 'react';
@@ -380,7 +382,7 @@ const Button = (props: Partial<ButtonProps>) => {
 export default Button;
 ```
 
-jsx:
+#### Button.jsx
 
 ```jsx | pure
 import React, { useState, useEffect } from 'react';

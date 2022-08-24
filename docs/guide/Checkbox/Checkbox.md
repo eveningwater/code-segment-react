@@ -8,6 +8,8 @@ Renders a checkbox that uses a callback function to pass its selected value/valu
 - Create a toggle function that uses the spread operator (...) and Array.prototype.splice() to update the data state variable and call the onChange callback with any checked options.
 - Use Array.prototype.map() to map the data state variable to individual `<input type="checkbox">` elements. Wrap each one in a `<label>`, binding the onClick handler to the toggle function.
 
+#### Checkbox.less
+
 ```less
 @baseSelector: ant-;
 .@{baseSelector}checkbox-wrapper {
@@ -79,7 +81,7 @@ Renders a checkbox that uses a callback function to pass its selected value/valu
 }
 ```
 
-tsx:
+#### Checkbox.tsx:
 
 ```tsx | pure
 import React, { useState, useEffect, createRef } from 'react';
@@ -131,7 +133,7 @@ const Checkbox = (props: Partial<CheckboxProps>) => {
 export default Checkbox;
 ```
 
-jsx:
+#### Checkbox.jsx
 
 ```jsx | pure
 import React, { useState, useEffect, createRef } from 'react';

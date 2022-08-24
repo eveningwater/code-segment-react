@@ -12,7 +12,7 @@ Renders an accordion menu with multiple collapsible content elements.
 - Define `changeItem`, which will be executed when clicking an `AccordionItem`'s `<button>`.
 - `changeItem` executes the passed callback, `onItemClick`, and updates `bindIndex` based on the clicked element.
 
-tsx:
+#### Accordion.tsx
 
 ```tsx | pure
 import { cx, css } from '@emotion/css';
@@ -131,7 +131,7 @@ Accordion.AccordionItem = AccordionItem;
 export default Accordion;
 ```
 
-jsx:
+#### Accordion.jsx
 
 ```jsx | pure
 import { cx, css } from '@emotion/css';

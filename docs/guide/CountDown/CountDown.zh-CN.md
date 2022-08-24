@@ -11,7 +11,7 @@
 - 使用 useEffect() 钩子通过 setTimeout()结合递归 每秒调用一次 tick 方法，并在组件卸载时使用 clearTimeout() 进行清理。
 - 使用 String.prototype.padStart() 将时间数组的每个部分填充为两个字符，以创建计时器的可视化表示。
 
--helper.ts
+- helper.ts
 
 ```ts | pure
 import type { MutableRefObject, DependencyList, Ref } from 'react';
@@ -154,6 +154,122 @@ const CountDown = forwardRef(
 export default CountDown;
 ```
 
-demo:
+- helper.js
+
+```js
+import { useImperativeHandle, useEffect, useRef } from 'react';
+
+export const useChildrenHandler = (originRef, handler, deps?) =>
+  useImperativeHandle(
+    originRef,
+    () => ({
+      ...originRef.current,
+      ...handler,
+    }),
+    deps,
+  );
+let timer;
+// see this:https://www.aaron-powell.com/posts/2019-09-23-recursive-settimeout-with-react-hooks/
+export const useTimeout = (callback, delay = 1000) => {
+  const ref = useRef();
+  useEffect(() => {
+    ref.current = callback;
+  });
+  useEffect(() => {
+    const handler = () => {
+      ref.current();
+      timer = setTimeout(handler, delay);
+    };
+    handler();
+    return () => clearTimeout(timer);
+  }, [delay]);
+};
+```
+
+- CountDown.jsx
+
+```jsx | pure
+import React, { forwardRef, useState, useCallback } from 'react';
+import styled from '@emotion/styled';
+import { useChildrenHandler, useTimeout } from './helper';
+
+const StyleCountdown = styled.div`
+  color: rgba(0, 0, 0.85);
+  margin-bottom: 10px;
+  font-size: 16px;
+`;
+
+const CountDown = forwardRef((props, ref) => {
+  const {
+    hours,
+    minutes,
+    seconds,
+    overText = 'Time is up!',
+    pausedText = 'paused!',
+    delimiter = ':',
+  } = props;
+  const [paused, setPaused] = useState(false);
+  const [over, setOver] = useState(false);
+  const [[h = 0, m = 0, s = 0], setTime] = useState([hours, minutes, seconds]);
+
+  const tick = () => {
+    if (paused || over) {
+      return;
+    }
+    let newH = h,
+      newM = m,
+      newS = s;
+    if (h === 0 && m === 0 && s === 0) {
+      setOver(true);
+    }
+
+    if (m === 0 && s === 0) {
+      newH--;
+      newM = 59;
+      newS = 59;
+    }
+
+    if (s === 0) {
+      newM--;
+      newS = 60;
+    }
+    newS--;
+    setTime([newH, newM, newS]);
+  };
+  useTimeout(tick, 1000);
+  useChildrenHandler(ref, {
+    onPaused: useCallback((status) => {
+      setPaused(!status);
+    }, []),
+    onOver: useCallback(() => {
+      setPaused(false);
+      setOver(true);
+    }, []),
+    onRestart: useCallback(() => {
+      setTime([h, m, s]);
+      setPaused(false);
+      setOver(false);
+    }, []),
+  });
+  const fillZero = (n) => n.toString().padStart(2, '0');
+  return (
+    <StyleCountdown>
+      {over
+        ? overText
+        : paused
+        ? pausedText
+        : `${fillZero(h)}${delimiter}${fillZero(m)}${delimiter}${fillZero(s)}`}
+    </StyleCountdown>
+  );
+});
+
+export default CountDown;
+```
+
+示例:
 
 <code src="./Demo.zh-CN.tsx"></code>
+
+jsx 示例:
+
+<code src="./jsx/Demo.zh-CN.jsx"></code>

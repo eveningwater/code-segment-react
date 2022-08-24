@@ -12,7 +12,7 @@
 - 定义 changeItem，当点击 AccordionItem 的 `<button>` 时执行。
 - changeItem 执行传递的回调 onItemClick，并根据单击的元素更新 bindIndex。
 
-tsx:
+#### Accordion.tsx
 
 ```tsx | pure
 import { cx, css } from '@emotion/css';
@@ -131,7 +131,7 @@ Accordion.AccordionItem = AccordionItem;
 export default Accordion;
 ```
 
-jsx:
+#### Accordion.jsx
 
 ```jsx | pure
 import { cx, css } from '@emotion/css';

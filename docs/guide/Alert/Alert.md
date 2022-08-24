@@ -9,6 +9,8 @@ Renders an alert component with type prop.
 - Use the useEffect() hook to update the value of isShown to true and clear the interval by using timeoutId when the component is unmounted.
 - Define a closeAlert function to set the component as removed from the DOM by displaying a fading out animation and set isShown to false via setTimeout().
 
+#### alert.less
+
 ```less | pure
 @keyframes leave {
   0% {
@@ -90,7 +92,7 @@ Renders an alert component with type prop.
 }
 ```
 
-tsx:
+#### Alert.tsx
 
 ```tsx | pure
 import React, { useState, useEffect } from 'react';
@@ -157,7 +159,7 @@ const Alert = (props: Partial<AlertPropType>) => {
 export default Alert;
 ```
 
-jsx:
+#### Alert.jsx
 
 ```jsx | pure
 import React, { useState, useEffect } from 'react';

@@ -9,7 +9,7 @@
 - 计算每个轮播项目的类名，同时映射它们并相应地应用它。
 - 使用 React.cloneElement() 渲染轮播项目，并将 ...rest 与计算的 className 一起传递。
 
-tsx:
+#### Carousel.tsx
 
 ```tsx | pure
 import React, { useState, useEffect, cloneElement } from 'react';
@@ -72,7 +72,7 @@ Carousel.CarouselItem = CarouselItem;
 export default Carousel;
 ```
 
-jsx:
+#### Carousel.jsx
 
 ```jsx | pure
 import React, { useState, useEffect, cloneElement } from 'react';

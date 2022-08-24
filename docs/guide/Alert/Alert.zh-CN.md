@@ -9,6 +9,8 @@
 - 卸载组件时，使用 useEffect() 钩子将 isShown 的值更新为 true，并使用 timeoutId 清除间隔。
 - 定义一个 closeAlert 函数，通过显示淡出动画将组件设置为从 DOM 中移除，并通过 setTimeout() 将 isShown 设置为 false。
 
+#### alert.less
+
 ```less | pure
 @keyframes leave {
   0% {
@@ -90,7 +92,7 @@
 }
 ```
 
-tsx:
+#### Alert.tsx
 
 ```tsx | pure
 import React, { useState, useEffect } from 'react';
@@ -157,7 +159,7 @@ const Alert = (props: Partial<AlertPropType>) => {
 export default Alert;
 ```
 
-jsx:
+#### Alert.jsx
 
 ```jsx | pure
 import React, { useState, useEffect } from 'react';

@@ -9,7 +9,7 @@ Renders a carousel component.
 - Compute the className for each carousel item while mapping over them and applying it accordingly.
 - Render the carousel items using React.cloneElement() and pass down ...rest along with the computed className.
 
-tsx:
+#### Carousel.tsx
 
 ```tsx | pure
 import React, { useState, useEffect, cloneElement } from 'react';
@@ -72,7 +72,7 @@ Carousel.CarouselItem = CarouselItem;
 export default Carousel;
 ```
 
-jsx:
+#### Carousel.jsx
 
 ```jsx | pure
 import React, { useState, useEffect, cloneElement } from 'react';

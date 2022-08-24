@@ -7,7 +7,7 @@
 - 使用 phone 创建一个具有适当 href 属性的 `<a>` 元素。
 - 呈现带有子项的链接作为其内容。
 
-tsx:
+#### Callto.tsx
 
 ```tsx | pure
 import styled from '@emotion/styled';
@@ -39,7 +39,7 @@ const CallTo = (props: Partial<CallToType>) => {
 export default CallTo;
 ```
 
-jsx:
+#### Callto.jsx
 
 ```jsx | pure
 import styled from '@emotion/styled';

@@ -8,7 +8,7 @@
 - 使用 onChange 事件触发 onChange 回调并将新值发送给父级。
 - 父级必须更新输入字段的 value 属性，以便其值在用户输入时更改。
 
-tsx:
+#### ControlledInput.tsx
 
 ```tsx | pure
 import styled from '@emotion/styled';
@@ -85,7 +85,7 @@ const ControlledInput = (props: Partial<ControlledInputProps>) => {
 };
 ```
 
-jsx:
+#### ControlledInput.jsx
 
 ```jsx | pure
 import styled from '@emotion/styled';

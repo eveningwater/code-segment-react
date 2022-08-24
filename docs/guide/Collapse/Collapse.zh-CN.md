@@ -9,7 +9,7 @@
 - 使用 isCollapsed 确定内容的外观并应用适当的类名。
 - 根据 isCollapsed 更新 aria-expanded 属性的值，使组件可访问。
 
-tsx:
+#### Collapse.tsx
 
 ```tsx | pure
 import styled from '@emotion/styled';
@@ -97,7 +97,7 @@ const Collapse = (props: Partial<CollapseProps>) => {
 export default Collapse;
 ```
 
-jsx:
+#### Collapse.jsx
 
 ```jsx | pure
 import styled from '@emotion/styled';

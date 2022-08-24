@@ -9,7 +9,7 @@ Renders a component with collapsible content.
 - Use isCollapsed to determine the appearance of the content and apply the appropriate className.
 - Update the value of the aria-expanded attribute based on isCollapsed to make the component accessible.
 
-tsx:
+#### Collapse.tsx
 
 ```tsx | pure
 import styled from '@emotion/styled';
@@ -97,7 +97,7 @@ const Collapse = (props: Partial<CollapseProps>) => {
 export default Collapse;
 ```
 
-jsx:
+#### Collapse.jsx
 
 ```jsx | pure
 import styled from '@emotion/styled';

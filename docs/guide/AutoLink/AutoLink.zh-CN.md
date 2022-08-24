@@ -8,6 +8,8 @@
 - 返回呈现为 `<a>` 元素的匹配 URL，如有必要，处理缺少的协议前缀。
 - 将字符串的其余部分呈现为纯文本。
 
+#### AutoLink.tsx
+
 ```tsx | pure
 import React from 'react';
 import styled from '@emotion/styled';
@@ -69,7 +71,7 @@ const AutoLink = (props: Partial<AutoLinkPropType>) => {
 export default AutoLink;
 ```
 
-jsx:
+#### AutoLink.jsx
 
 ```jsx | pure
 import React from 'react';

@@ -8,6 +8,8 @@ Renders a string as plaintext, with URLs converted to appropriate link elements.
 - Return matched URLs rendered as `<a>` elements, dealing with missing protocol prefixes if necessary.
 - Render the rest of the string as plaintext.
 
+#### AutoLink.tsx
+
 ```tsx | pure
 import React from 'react';
 import styled from '@emotion/styled';
@@ -69,7 +71,7 @@ const AutoLink = (props: Partial<AutoLinkPropType>) => {
 export default AutoLink;
 ```
 
-jsx:
+#### AutoLink.jsx
 
 ```jsx | pure
 import React from 'react';

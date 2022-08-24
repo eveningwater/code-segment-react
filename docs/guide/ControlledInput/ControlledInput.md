@@ -8,7 +8,7 @@ Renders a controlled `<input>` element that uses a callback function to inform i
 - Use the onChange event to fire the onValueChange callback and send the new value to the parent.
 - The parent must update the input field's value prop in order for its value to change on user input.
 
-tsx:
+#### ControlledInput.tsx
 
 ```tsx | pure
 import styled from '@emotion/styled';
@@ -85,7 +85,7 @@ const ControlledInput = (props: Partial<ControlledInputProps>) => {
 };
 ```
 
-jsx:
+#### ControlledInput.jsx
 
 ```jsx | pure
 import styled from '@emotion/styled';
