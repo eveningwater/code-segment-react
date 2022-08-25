@@ -10,9 +10,7 @@
 - 定义一个异步运行函数，它将运行提供的回调、处理程序，同时根据需要使用调度更新状态。
 - 返回一个包含状态属性（值、错误和加载）和运行函数的对象。
 
-hooks:
-
-ts:
+#### useAsync.ts
 
 ```ts
 import { useReducer } from 'react';
@@ -58,48 +56,7 @@ const useAsync = (handler: Function) => {
 export default useAsync;
 ```
 
-js:
-
-```js
-import { useReducer } from 'react';
-
-const useAsync = (handler) => {
-  const initialState = {
-    loading: false,
-    error: null,
-    value: null,
-  };
-
-  const stateReducer = (_, action) => {
-    switch (action.type) {
-      case 'start':
-        return { loading: true, error: null, value: null };
-      case 'finish':
-        return { loading: false, error: null, value: action.value };
-      case 'error':
-        return { loading: false, error: action.error, value: null };
-    }
-  };
-
-  const [state, dispatch] = useReducer(stateReducer, initialState);
-
-  const run = async (args) => {
-    try {
-      dispatch({ type: 'start' });
-      const value = await handler(args);
-      dispatch({ type: 'finish', value });
-    } catch (error) {
-      dispatch({ type: 'error', error });
-    }
-  };
-
-  return { ...state, run };
-};
-
-export default useAsync;
-```
-
-示例代码:
+#### 使用示例代码:
 
 ```tsx | pure
 import React from 'react';
@@ -162,7 +119,48 @@ const Demo = () => {
 export default Demo;
 ```
 
-jsx 示例代码:
+#### useAsync.js
+
+```js
+import { useReducer } from 'react';
+
+const useAsync = (handler) => {
+  const initialState = {
+    loading: false,
+    error: null,
+    value: null,
+  };
+
+  const stateReducer = (_, action) => {
+    switch (action.type) {
+      case 'start':
+        return { loading: true, error: null, value: null };
+      case 'finish':
+        return { loading: false, error: null, value: action.value };
+      case 'error':
+        return { loading: false, error: action.error, value: null };
+    }
+  };
+
+  const [state, dispatch] = useReducer(stateReducer, initialState);
+
+  const run = async (args) => {
+    try {
+      dispatch({ type: 'start' });
+      const value = await handler(args);
+      dispatch({ type: 'finish', value });
+    } catch (error) {
+      dispatch({ type: 'error', error });
+    }
+  };
+
+  return { ...state, run };
+};
+
+export default useAsync;
+```
+
+#### js 示例代码
 
 ```jsx | pure
 import React from 'react';
@@ -228,6 +226,6 @@ export default Demo;
 
 <code src="./Demo.zh-CN.tsx"></code>
 
-示例:
+js 示例:
 
 <code src="./js/Demo.zh-CN.jsx"></code>

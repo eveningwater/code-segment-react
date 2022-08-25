@@ -10,9 +10,7 @@ Handles asynchronous calls.
 - Define an asynchronous run function that will run the provided callback, handler, while using dispatch to update state as necessary.
 - Return an object containing the properties of state (value, error and loading) and the run function.
 
-hooks:
-
-ts:
+#### useAsync.ts
 
 ```ts
 import { useReducer } from 'react';
@@ -43,45 +41,6 @@ const useAsync = (handler: Function) => {
   const [state, dispatch] = useReducer(stateReducer, initialState);
 
   const run = async (args: unknown) => {
-    try {
-      dispatch({ type: 'start' });
-      const value = await handler(args);
-      dispatch({ type: 'finish', value });
-    } catch (error) {
-      dispatch({ type: 'error', error });
-    }
-  };
-
-  return { ...state, run };
-};
-
-export default useAsync;
-```
-
-js:
-
-```js | pure
-const useAsync = (handler) => {
-  const initialState = {
-    loading: false,
-    error: null,
-    value: null,
-  };
-
-  const stateReducer = (_, action) => {
-    switch (action.type) {
-      case 'start':
-        return { loading: true, error: null, value: null };
-      case 'finish':
-        return { loading: false, error: null, value: action.value };
-      case 'error':
-        return { loading: false, error: action.error, value: null };
-    }
-  };
-
-  const [state, dispatch] = useReducer(stateReducer, initialState);
-
-  const run = async (args) => {
     try {
       dispatch({ type: 'start' });
       const value = await handler(args);
@@ -162,7 +121,46 @@ const Demo = () => {
 export default Demo;
 ```
 
-jsx:
+#### useAsync.js
+
+```js | pure
+const useAsync = (handler) => {
+  const initialState = {
+    loading: false,
+    error: null,
+    value: null,
+  };
+
+  const stateReducer = (_, action) => {
+    switch (action.type) {
+      case 'start':
+        return { loading: true, error: null, value: null };
+      case 'finish':
+        return { loading: false, error: null, value: action.value };
+      case 'error':
+        return { loading: false, error: action.error, value: null };
+    }
+  };
+
+  const [state, dispatch] = useReducer(stateReducer, initialState);
+
+  const run = async (args) => {
+    try {
+      dispatch({ type: 'start' });
+      const value = await handler(args);
+      dispatch({ type: 'finish', value });
+    } catch (error) {
+      dispatch({ type: 'error', error });
+    }
+  };
+
+  return { ...state, run };
+};
+
+export default useAsync;
+```
+
+#### js Demo
 
 ```jsx | pure
 import React from 'react';
@@ -228,6 +226,6 @@ Demo:
 
 <code src="./Demo.tsx"></code>
 
-jsx Demo:
+js Demo:
 
 <code src="./js/Demo.jsx"></code>

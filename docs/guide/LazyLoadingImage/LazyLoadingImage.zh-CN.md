@@ -10,6 +10,8 @@
 - 使用 useRef() 钩子创建两个 refs。如有必要，一个将持有`<img>` 元素，另一个持有 IntersectionObserver 实例。
 - 最后，使用给定的属性渲染 `<img>` 元素。如有必要，应用 loading='lazy' 使其延迟加载。使用 isLoaded 来确定 src 属性的值。
 
+#### LazyLoadingImage.tsx
+
 ```tsx | pure
 import React, { useRef, useState, useCallback, useEffect } from 'react';
 export interface LazyLoadingImageProps {
@@ -72,6 +74,67 @@ const LazyLoadingImage = (props: Partial<LazyLoadingImageProps>) => {
 export default LazyLoadingImage;
 ```
 
+#### LazyLoadingImage.jsx
+
+```jsx | pure
+import React, { useRef, useState, useCallback, useEffect } from 'react';
+const LazyLoadingImage = (props) => {
+  const {
+    alt,
+    src,
+    className,
+    loadInitially = false,
+    observerOptions = { root: null, rootMargin: '200px 0px' },
+    ...rest
+  } = props;
+  const observerRef = useRef(null);
+  const imgRef = useRef(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const observerCallback = useCallback(
+    (entries) => {
+      if (entries[0].isIntersecting) {
+        observerRef.current?.disconnect();
+        setIsLoaded(true);
+      }
+    },
+    [observerRef],
+  );
+  useEffect(() => {
+    if (loadInitially) {
+      return;
+    }
+    if ('loading' in HTMLImageElement.prototype) {
+      setIsLoaded(true);
+      return;
+    }
+    observerRef.current = new IntersectionObserver(
+      observerCallback,
+      observerOptions,
+    );
+    observerRef.current.observe(imgRef.current);
+    return () => {
+      observerRef.current?.disconnect();
+    };
+  }, []);
+
+  return (
+    <img
+      src={isLoaded ? src : ''}
+      alt={alt}
+      ref={imgRef}
+      className={className}
+      loading={loadInitially ? undefined : 'lazy'}
+      {...rest}
+    />
+  );
+};
+export default LazyLoadingImage;
+```
+
 示例:
 
 <code src="./Demo.zh-CN.tsx"></code>
+
+jsx 示例:
+
+<code src="./jsx/Demo.zh-CN.jsx"></code>
