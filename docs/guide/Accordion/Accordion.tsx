@@ -95,6 +95,9 @@ const Accordion = (props: Partial<AccordionType>) => {
   const items = children?.filter(
     (item) => item?.type?.name === 'AccordionItem',
   );
+  console.log(111, children);
+  console.log(222, items);
+
   return (
     <div className={AccordionContainer}>
       {items?.map(({ props: { index, label, children } }) => (
