@@ -18,6 +18,7 @@ const CarouselItem = (props: Partial<CarouselItemProps>) => {
   const { children } = props;
   return <div className="carousel-item">{children}</div>;
 };
+CarouselItem.displayName = 'CarouselItem';
 
 const Carousel = (props: Partial<CarouselProps>) => {
   const { options, duration, children, defaultKey, ...rest } = props;
@@ -27,7 +28,9 @@ const Carousel = (props: Partial<CarouselProps>) => {
   const items =
     Array.isArray(options) && options.length
       ? options
-      : children?.filter((item) => item?.type?.name === 'CarouselItem') || [];
+      : children?.filter(
+          (item) => item?.type?.displayName === 'CarouselItem',
+        ) || [];
   useEffect(() => {
     timer = setTimeout(() => {
       setActive((active + 1) % items?.length);

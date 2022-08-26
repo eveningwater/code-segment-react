@@ -5,6 +5,7 @@ const CarouselItem = (props) => {
   const { children } = props;
   return <div className="carousel-item">{children}</div>;
 };
+CarouselItem.displayName = 'CarouselItem';
 
 const Carousel = (props) => {
   const { options, duration, children, defaultKey, ...rest } = props;
@@ -14,7 +15,9 @@ const Carousel = (props) => {
   const items =
     Array.isArray(options) && options.length
       ? options
-      : children?.filter((item) => item?.type?.name === 'CarouselItem') || [];
+      : children?.filter(
+          (item) => item?.type?.displayName === 'CarouselItem',
+        ) || [];
   useEffect(() => {
     timer = setTimeout(() => {
       setActive((active + 1) % items?.length);

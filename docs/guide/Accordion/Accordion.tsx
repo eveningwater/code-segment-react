@@ -80,6 +80,8 @@ const AccordionItem = (props: Partial<AccordionItemType>) => {
     </div>
   );
 };
+// 设置一个函数名用作判断，生产环境无法使用function.name
+AccordionItem.displayName = 'AccordionItem';
 
 const Accordion = (props: Partial<AccordionType>) => {
   const { defaultIndex, onItemClick, children } = props;
@@ -93,11 +95,8 @@ const Accordion = (props: Partial<AccordionType>) => {
     }
   };
   const items = children?.filter(
-    (item) => item?.type?.name === 'AccordionItem',
+    (item) => item?.type?.displayName === 'AccordionItem',
   );
-  console.log(111, children);
-  console.log(222, items);
-
   return (
     <div className={AccordionContainer}>
       {items?.map(({ props: { index, label, children } }) => (
