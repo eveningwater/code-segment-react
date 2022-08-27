@@ -154,8 +154,8 @@
       v = Object.assign;
     function g(e, n) {
       return (
-        (((((((n << 2) ^ k(e, 0)) << 2) ^ k(e, 1)) << 2) ^ k(e, 2)) << 2) ^
-        k(e, 3)
+        (((((((n << 2) ^ w(e, 0)) << 2) ^ w(e, 1)) << 2) ^ w(e, 2)) << 2) ^
+        w(e, 3)
       );
     }
     function b(e) {
@@ -170,10 +170,10 @@
     function E(e, n) {
       return e.indexOf(n);
     }
-    function k(e, n) {
+    function w(e, n) {
       return 0 | e.charCodeAt(n);
     }
-    function w(e, n, t) {
+    function k(e, n, t) {
       return e.slice(n, t);
     }
     function C(e) {
@@ -220,19 +220,19 @@
       return P;
     }
     function z() {
-      return (P = R > 0 ? k(A, --R) : 0), I--, 10 === P && ((I = 1), T--), P;
+      return (P = R > 0 ? w(A, --R) : 0), I--, 10 === P && ((I = 1), T--), P;
     }
     function _() {
-      return (P = R < N ? k(A, R++) : 0), I++, 10 === P && ((I = 1), T++), P;
+      return (P = R < N ? w(A, R++) : 0), I++, 10 === P && ((I = 1), T++), P;
     }
     function F() {
-      return k(A, R);
+      return w(A, R);
     }
     function B() {
       return R;
     }
     function U(e, n) {
-      return w(A, e, n);
+      return k(A, e, n);
     }
     function V(e) {
       switch (e) {
@@ -331,11 +331,11 @@
         g = 1,
         b = 1,
         y = 0,
-        k = '',
-        w = o,
+        w = '',
+        k = o,
         O = a,
         j = r,
-        T = k;
+        T = w;
       while (g)
         switch (((m = y), (y = _()))) {
           case 40:
@@ -390,10 +390,10 @@
                 T += ';';
               default:
                 if (
-                  (S((j = Q(T, n, t, s, u, o, l, k, (w = []), (O = []), d)), a),
+                  (S((j = Q(T, n, t, s, u, o, l, w, (k = []), (O = []), d)), a),
                   123 === y)
                 )
-                  if (0 === u) X(T, n, j, j, w, a, d, l, O);
+                  if (0 === u) X(T, n, j, j, k, a, d, l, O);
                   else
                     switch (p) {
                       case 100:
@@ -403,19 +403,19 @@
                           e,
                           j,
                           j,
-                          r && S(Q(e, j, j, 0, 0, o, l, k, o, (w = []), d), O),
+                          r && S(Q(e, j, j, 0, 0, o, l, w, o, (k = []), d), O),
                           o,
                           O,
                           d,
                           l,
-                          r ? w : O,
+                          r ? k : O,
                         );
                         break;
                       default:
                         X(T, j, j, j, [''], O, 0, l, O);
                     }
             }
-            (s = u = f = 0), (v = b = 1), (k = T = ''), (d = i);
+            (s = u = f = 0), (v = b = 1), (w = T = ''), (d = i);
             break;
           case 58:
             (d = 1 + C(T)), (f = m);
@@ -433,7 +433,7 @@
               case 64:
                 45 === F() && (T += W(_())),
                   (p = F()),
-                  (u = d = C((k = T += Z(B())))),
+                  (u = d = C((w = T += Z(B())))),
                   y++;
                 break;
               case 45:
@@ -448,15 +448,15 @@
         v < r;
         ++v
       )
-        for (var E = 0, k = w(e, p + 1, (p = m((g = i[v])))), C = e; E < h; ++E)
-          (C = b(g > 0 ? f[E] + ' ' + k : x(k, /&\f/g, f[E]))) && (c[y++] = C);
+        for (var E = 0, w = k(e, p + 1, (p = m((g = i[v])))), C = e; E < h; ++E)
+          (C = b(g > 0 ? f[E] + ' ' + w : x(w, /&\f/g, f[E]))) && (c[y++] = C);
       return L(e, n, t, 0 === o ? u : l, c, s, d);
     }
     function ee(e, n, t) {
-      return L(e, n, t, s, h(D()), w(e, 2, -2), 0);
+      return L(e, n, t, s, h(D()), k(e, 2, -2), 0);
     }
     function ne(e, n, t, r) {
-      return L(e, n, t, d, w(e, 0, r), w(e, r + 1, -1), r);
+      return L(e, n, t, d, k(e, 0, r), k(e, r + 1, -1), r);
     }
     function te(e, n) {
       switch (g(e, n)) {
@@ -571,9 +571,9 @@
         case 5021:
         case 4765:
           if (C(e) - 1 - n > 6)
-            switch (k(e, n + 1)) {
+            switch (w(e, n + 1)) {
               case 109:
-                if (45 !== k(e, n + 4)) break;
+                if (45 !== w(e, n + 4)) break;
               case 102:
                 return (
                   x(
@@ -583,7 +583,7 @@
                       c +
                       '$2-$3$1' +
                       l +
-                      (108 == k(e, n + 3) ? '$3' : '$2-$3'),
+                      (108 == w(e, n + 3) ? '$3' : '$2-$3'),
                   ) + e
                 );
               case 115:
@@ -593,9 +593,9 @@
             }
           break;
         case 4949:
-          if (115 !== k(e, n + 1)) break;
+          if (115 !== w(e, n + 1)) break;
         case 6444:
-          switch (k(e, C(e) - 3 - (~E(e, '!important') && 10))) {
+          switch (w(e, C(e) - 3 - (~E(e, '!important') && 10))) {
             case 107:
               return x(e, ':', ':' + c) + e;
             case 101:
@@ -605,7 +605,7 @@
                   /(.+:)([^;!]+)(;|!.+)?/,
                   '$1' +
                     c +
-                    (45 === k(e, 14) ? 'inline-' : '') +
+                    (45 === w(e, 14) ? 'inline-' : '') +
                     'box$3$1' +
                     c +
                     '$2$3$1' +
@@ -616,7 +616,7 @@
           }
           break;
         case 5936:
-          switch (k(e, n + 11)) {
+          switch (w(e, n + 11)) {
             case 114:
               return c + e + i + x(e, /[svh]\w+-[tblr]{2}/, 'tb') + e;
             case 108:
@@ -1041,8 +1041,8 @@
       }, {});
     }
     var E = t('0n0R'),
-      k = t('1OyB'),
-      w = t('vuIU'),
+      w = t('1OyB'),
+      k = t('vuIU'),
       C = t('Ji7U'),
       O = t('LK+K'),
       S = (function (e) {
@@ -1051,14 +1051,14 @@
         function t() {
           var e;
           return (
-            Object(k['a'])(this, t),
+            Object(w['a'])(this, t),
             (e = n.apply(this, arguments)),
             (e.state = { error: void 0, info: { componentStack: '' } }),
             e
           );
         }
         return (
-          Object(w['a'])(t, [
+          Object(k['a'])(t, [
             {
               key: 'componentDidCatch',
               value: function (e, n) {
@@ -1171,8 +1171,8 @@
           m = e.onMouseLeave,
           h = e.onClick,
           E = e.afterClose,
-          k = e.showIcon,
-          w = e.closable,
+          w = e.showIcon,
+          k = e.closable,
           C = e.closeText,
           O = e.closeIcon,
           S = void 0 === O ? b['createElement'](u['a'], null) : O,
@@ -1211,9 +1211,9 @@
             var e = I.type;
             return void 0 !== e ? e : c ? 'warning' : 'info';
           },
-          H = !!C || w,
+          H = !!C || k,
           q = V(),
-          W = !(!c || void 0 !== k) || k,
+          W = !(!c || void 0 !== w) || w,
           $ = v()(
             B,
             ''.concat(B, '-').concat(q),
@@ -1479,9 +1479,9 @@
         y = null,
         x = -1,
         E = 5,
-        k = 0;
+        w = 0;
       (i = function () {
-        return n.unstable_now() >= k;
+        return n.unstable_now() >= w;
       }),
         (l = function () {}),
         (n.unstable_forceFrameRate = function (e) {
@@ -1491,12 +1491,12 @@
               )
             : (E = 0 < e ? Math.floor(1e3 / e) : 5);
         });
-      var w = new MessageChannel(),
-        C = w.port2;
-      (w.port1.onmessage = function () {
+      var k = new MessageChannel(),
+        C = k.port2;
+      (k.port1.onmessage = function () {
         if (null !== y) {
           var e = n.unstable_now();
-          k = e + E;
+          w = e + E;
           try {
             y(!0, e) ? C.postMessage(null) : ((b = !1), (y = null));
           } catch (t) {
@@ -2524,16 +2524,16 @@
       );
     }
     function x(e, n) {
-      return O(e) || C(e, n) || k(e, n) || E();
+      return O(e) || C(e, n) || w(e, n) || E();
     }
     function E() {
       throw new TypeError(
         'Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
       );
     }
-    function k(e, n) {
+    function w(e, n) {
       if (e) {
-        if ('string' === typeof e) return w(e, n);
+        if ('string' === typeof e) return k(e, n);
         var t = Object.prototype.toString.call(e).slice(8, -1);
         return (
           'Object' === t && e.constructor && (t = e.constructor.name),
@@ -2541,12 +2541,12 @@
             ? Array.from(e)
             : 'Arguments' === t ||
               /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)
-            ? w(e, n)
+            ? k(e, n)
             : void 0
         );
       }
     }
-    function w(e, n) {
+    function k(e, n) {
       (null == n || n > e.length) && (n = e.length);
       for (var t = 0, r = new Array(n); t < n; t++) r[t] = e[t];
       return r;
@@ -3007,8 +3007,8 @@
           y = p.platform,
           x = Object(r['useState'])(!0),
           E = D(x, 2),
-          k = E[0],
-          w = E[1],
+          w = E[0],
+          k = E[1],
           C = Object(r['useState'])(!1),
           O = D(C, 2),
           S = O[0],
@@ -3046,7 +3046,7 @@
             'data-site-mode': I,
             'data-gapless': String(!!f.gapless),
             onClick: function () {
-              T(!1), k || w(!0);
+              T(!1), w || k(!0);
             },
           },
           o.a.createElement(u, {
@@ -3063,7 +3063,7 @@
               isSideMenu: !1,
             }),
             onMobileMenuClick: function (e) {
-              w(function (e) {
+              k(function (e) {
                 return !e;
               }),
                 e.stopPropagation();
@@ -3071,7 +3071,7 @@
           }),
           o.a.createElement(b, {
             darkPrefix: o.a.createElement(M, { darkSwitch: S, isSideMenu: !0 }),
-            mobileMenuCollapsed: k,
+            mobileMenuCollapsed: w,
             location: l,
           }),
           A &&
@@ -3624,7 +3624,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/index.md',
-                updatedTime: 1657427189059,
+                updatedTime: 1661576900103,
                 hero: {
                   title: 'react-code-segment',
                   desc: '<div class="markdown"><p>Here is a collection of some code snippets, which may be from the Internet or the usual accumulation</p></div>',
@@ -3668,7 +3668,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/index.zh-CN.md',
-                updatedTime: 1658636752417,
+                updatedTime: 1661576908737,
                 hero: {
                   title: 'react\u4ee3\u7801\u6bb5',
                   desc: '<div class="markdown"><p>\u8fd9\u91cc\u662f\u4e00\u4e9b\u4ee3\u7801\u6bb5\u7684\u96c6\u5408\uff0c\u53ef\u80fd\u662f\u6765\u81ea\u7f51\u4e0a\u7684\uff0c\u4e5f\u53ef\u80fd\u662f\u5e73\u65f6\u7684\u79ef\u7d2f.</p></div>',
@@ -4005,7 +4005,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/Carousel/Carousel.md',
-                updatedTime: 1661482776573,
+                updatedTime: 1661483265275,
                 slugs: [
                   { depth: 4, value: 'Carousel.tsx', heading: 'carouseltsx' },
                   { depth: 4, value: 'Carousel.jsx', heading: 'carouseljsx' },
@@ -4023,7 +4023,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/Carousel/Carousel.zh-CN.md',
-                updatedTime: 1661482783783,
+                updatedTime: 1661483265324,
                 slugs: [
                   { depth: 4, value: 'Carousel.tsx', heading: 'carouseltsx' },
                   { depth: 4, value: 'Carousel.jsx', heading: 'carouseljsx' },
@@ -4307,7 +4307,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/LimitedTextarea/LimitedTextarea.md',
-                updatedTime: 1661482953955,
+                updatedTime: 1661483265406,
                 slugs: [
                   {
                     depth: 4,
@@ -4336,7 +4336,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/LimitedTextarea/LimitedTextarea.zh-CN.md',
-                updatedTime: 1661483014293,
+                updatedTime: 1661483265457,
                 slugs: [
                   {
                     depth: 4,
@@ -4367,17 +4367,28 @@
               meta: {
                 filePath:
                   'docs/guide/LimitedWordTextarea/LimitedWordTextarea.md',
-                updatedTime: 1658450924766,
-                slugs: [],
+                updatedTime: 1661576763478,
+                slugs: [
+                  {
+                    depth: 4,
+                    value: 'LimitedWordTextarea.tsx',
+                    heading: 'limitedwordtextareatsx',
+                  },
+                  {
+                    depth: 4,
+                    value: 'LimitedWordTextarea.jsx',
+                    heading: 'limitedwordtextareajsx',
+                  },
+                ],
+                title: 'LimitedWordTextarea.tsx',
                 hasPreviewer: !0,
                 nav: { path: '/guide', title: 'Guide' },
                 group: {
                   path: '/guide/limited-word-textarea',
                   title: 'LimitedWordTextarea',
                 },
-                title: 'LimitedWordTextarea',
               },
-              title: 'LimitedWordTextarea - react-code-segment',
+              title: 'LimitedWordTextarea.tsx - react-code-segment',
             },
             {
               path: '/zh-CN/guide/limited-word-textarea/limited-word-textarea',
@@ -4386,8 +4397,20 @@
               meta: {
                 filePath:
                   'docs/guide/LimitedWordTextarea/LimitedWordTextarea.zh-CN.md',
-                updatedTime: 1658450924830,
-                slugs: [],
+                updatedTime: 1661576805731,
+                slugs: [
+                  {
+                    depth: 4,
+                    value: 'LimitedWordTextarea.tsx',
+                    heading: 'limitedwordtextareatsx',
+                  },
+                  {
+                    depth: 4,
+                    value: 'LimitedWordTextarea.jsx',
+                    heading: 'limitedwordtextareajsx',
+                  },
+                ],
+                title: 'LimitedWordTextarea.tsx',
                 hasPreviewer: !0,
                 locale: 'zh-CN',
                 nav: { path: '/zh-CN/guide', title: 'Guide' },
@@ -4395,9 +4418,8 @@
                   path: '/zh-CN/guide/limited-word-textarea',
                   title: 'LimitedWordTextarea',
                 },
-                title: 'LimitedWordTextarea',
               },
-              title: 'LimitedWordTextarea - react-code-segment',
+              title: 'LimitedWordTextarea.tsx - react-code-segment',
             },
             {
               path: '/guide/loader/loader',
@@ -6098,8 +6120,8 @@
       y = [],
       x = 'ant-scrolling-effect',
       E = new RegExp(''.concat(x), 'g'),
-      k = 0,
-      w = new Map(),
+      w = 0,
+      k = new Map(),
       C = Object(o['a'])(function e(n) {
         var t = this;
         Object(r['a'])(this, e),
@@ -6165,7 +6187,7 @@
                           : n.container)
                       );
                     }).length &&
-                    w.set(
+                    k.set(
                       r,
                       m(
                         {
@@ -6217,12 +6239,12 @@
                     : e.container) || document.body,
                 o = r.className;
               E.test(o) &&
-                (m(w.get(r), { element: r }),
-                w['delete'](r),
+                (m(k.get(r), { element: r }),
+                k['delete'](r),
                 (r.className = r.className.replace(E, '').trim()));
             }
           }),
-          (this.lockTarget = k++),
+          (this.lockTarget = w++),
           (this.options = n);
       }),
       O = 0,
@@ -6584,8 +6606,8 @@
           y = e.loading,
           x = e.icon,
           E = e.size,
-          k = e.onClick,
-          w = Object(a['a'])(e, [
+          w = e.onClick,
+          k = Object(a['a'])(e, [
             'type',
             'block',
             'ripple',
@@ -6635,7 +6657,7 @@
                 t = e.target.getBoundingClientRect();
               j({ x: n.clientX - t.left, y: n.clientY - t.top });
             }
-            k && k(e);
+            w && w(e);
           };
         return l.a.createElement(
           l.a.Fragment,
@@ -6650,7 +6672,7 @@
                     target: g,
                     onClick: L,
                   },
-                  w,
+                  k,
                 ),
                 l.a.createElement(
                   'span',
@@ -6668,7 +6690,7 @@
                     className: Object(c['a'])(P),
                     onClick: L,
                   },
-                  w,
+                  k,
                 ),
                 N && u
                   ? l.a.createElement('span', {
@@ -6734,8 +6756,8 @@
       y = t('Ji7U'),
       x = t('LK+K'),
       E = t('4IlW'),
-      k = t('bT9E'),
-      w = t('YrtM'),
+      w = t('bT9E'),
+      k = t('YrtM'),
       C = ['children', 'locked'],
       O = s['createContext'](null);
     function S(e, n) {
@@ -6753,7 +6775,7 @@
         t = e.locked,
         r = Object(c['a'])(e, C),
         o = s['useContext'](O),
-        a = Object(w['a'])(
+        a = Object(k['a'])(
           function () {
             return S(o, r);
           },
@@ -6881,7 +6903,7 @@
                   t = e.attribute,
                   o = e.elementRef,
                   a = Object(c['a'])(e, q),
-                  i = Object(k['a'])(a, ['eventKey']);
+                  i = Object(w['a'])(a, ['eventKey']);
                 return (
                   Object(h['a'])(
                     !t,
@@ -6918,8 +6940,8 @@
           b = e.onClick,
           y = e.onKeyDown,
           x = e.onFocus,
-          k = Object(c['a'])(e, W),
-          w = U(u),
+          w = Object(c['a'])(e, W),
+          k = U(u),
           C = s['useContext'](O),
           S = C.prefixCls,
           j = C.onItemClick,
@@ -6976,9 +6998,9 @@
               elementRef: q,
               role: null === h ? 'none' : h || 'menuitem',
               tabIndex: p ? null : -1,
-              'data-menu-id': A && w ? null : w,
+              'data-menu-id': A && k ? null : k,
             },
-            k,
+            w,
             ee,
             ie,
             {
@@ -7181,8 +7203,8 @@
         y = h.subMenuCloseDelay,
         x = h.builtinPlacements,
         E = h.triggerSubMenuAction,
-        k = h.forceSubMenuRender,
-        w = h.rootClassName,
+        w = h.forceSubMenuRender,
+        k = h.rootClassName,
         C = h.motion,
         S = h.defaultMotions,
         j = s['useState'](!1),
@@ -7226,7 +7248,7 @@
               ''.concat(n, '-popup'),
               Object(o['a'])({}, ''.concat(n, '-rtl'), g),
               c,
-              w,
+              k,
             ),
             stretch: 'horizontal' === f ? 'minWidth' : null,
             getPopupContainer: v,
@@ -7239,7 +7261,7 @@
             mouseEnterDelay: b,
             mouseLeaveDelay: y,
             onPopupVisibleChange: m,
-            forceRender: k,
+            forceRender: w,
             popupMotion: L,
           },
           r,
@@ -7272,13 +7294,13 @@
         },
         [h],
       );
-      var k = Object(a['a'])({}, fe(c, f, m));
-      o.length > 1 && (k.motionAppear = !1);
-      var w = k.onVisibleChanged;
+      var w = Object(a['a'])({}, fe(c, f, m));
+      o.length > 1 && (w.motionAppear = !1);
+      var k = w.onVisibleChanged;
       return (
-        (k.onVisibleChanged = function (e) {
+        (w.onVisibleChanged = function (e) {
           return (
-            v.current || e || x(!0), null === w || void 0 === w ? void 0 : w(e)
+            v.current || e || x(!0), null === k || void 0 === k ? void 0 : k(e)
           );
         }),
         y
@@ -7288,7 +7310,7 @@
               { mode: c, locked: !v.current },
               s['createElement'](
                 ve['b'],
-                Object(r['a'])({ visible: E }, k, {
+                Object(r['a'])({ visible: E }, w, {
                   forceRender: p,
                   removeOnLeave: !1,
                   leavedClassName: ''.concat(d, '-hidden'),
@@ -7341,8 +7363,8 @@
           y = e.popupClassName,
           x = e.popupOffset,
           E = e.onClick,
-          k = e.onMouseEnter,
-          w = e.onMouseLeave,
+          w = e.onMouseEnter,
+          k = e.onMouseLeave,
           C = e.onTitleClick,
           S = e.onTitleMouseEnter,
           I = e.onTitleMouseLeave,
@@ -7379,23 +7401,23 @@
           ve = me.active,
           xe = Object(c['a'])(me, ye),
           Ee = s['useState'](!1),
-          ke = Object(l['a'])(Ee, 2),
-          we = ke[0],
-          Ce = ke[1],
+          we = Object(l['a'])(Ee, 2),
+          ke = we[0],
+          Ce = we[1],
           Oe = function (e) {
             ae || Ce(e);
           },
           Se = function (e) {
-            Oe(!0), null === k || void 0 === k || k({ key: p, domEvent: e });
+            Oe(!0), null === w || void 0 === w || w({ key: p, domEvent: e });
           },
           je = function (e) {
-            Oe(!1), null === w || void 0 === w || w({ key: p, domEvent: e });
+            Oe(!1), null === k || void 0 === k || k({ key: p, domEvent: e });
           },
           Te = s['useMemo'](
             function () {
-              return ve || ('inline' !== F && (we || ne([W], p)));
+              return ve || ('inline' !== F && (ke || ne([W], p)));
             },
-            [F, ve, W, we, p, ne],
+            [F, ve, W, ke, p, ne],
           ),
           Ie = P(te.length),
           Ne = function (e) {
@@ -7537,8 +7559,8 @@
         s['createElement'](D.Provider, { value: o }, n)
       );
     }
-    var ke = t('qE6j'),
-      we = E['a'].LEFT,
+    var we = t('qE6j'),
+      ke = E['a'].LEFT,
       Ce = E['a'].RIGHT,
       Oe = E['a'].UP,
       Se = E['a'].DOWN,
@@ -7546,7 +7568,7 @@
       Te = E['a'].ESC,
       Ie = E['a'].HOME,
       Ne = E['a'].END,
-      Re = [Oe, Se, we, Ce];
+      Re = [Oe, Se, ke, Ce];
     function Pe(e, n, t, r) {
       var a,
         i,
@@ -7560,7 +7582,7 @@
       var f = ((a = {}), Object(o['a'])(a, Oe, s), Object(o['a'])(a, Se, u), a),
         m =
           ((i = {}),
-          Object(o['a'])(i, we, t ? u : s),
+          Object(o['a'])(i, ke, t ? u : s),
           Object(o['a'])(i, Ce, t ? s : u),
           Object(o['a'])(i, Se, d),
           Object(o['a'])(i, je, d),
@@ -7571,7 +7593,7 @@
           Object(o['a'])(l, Se, u),
           Object(o['a'])(l, je, d),
           Object(o['a'])(l, Te, p),
-          Object(o['a'])(l, we, t ? d : p),
+          Object(o['a'])(l, ke, t ? d : p),
           Object(o['a'])(l, Ce, t ? p : d),
           l),
         v = {
@@ -7616,7 +7638,7 @@
       return null;
     }
     function Me(e, n) {
-      var t = Object(ke['a'])(e, !0);
+      var t = Object(we['a'])(e, !0);
       return t.filter(function (e) {
         return n.has(e);
       });
@@ -7672,10 +7694,10 @@
             var y = v.get(n),
               x = Le(y, h),
               E = g.get(x),
-              k = Pe(e, 1 === i(E, !0).length, t, m);
-            if (!k && m !== Ie && m !== Ne) return;
+              w = Pe(e, 1 === i(E, !0).length, t, m);
+            if (!w && m !== Ie && m !== Ne) return;
             (Re.includes(m) || [Ie, Ne].includes(m)) && s.preventDefault();
-            var w = function (e) {
+            var k = function (e) {
               if (e) {
                 var n = e,
                   t = e.querySelector('a');
@@ -7690,7 +7712,7 @@
                   }));
               }
             };
-            if ([Ie, Ne].includes(m) || k.sibling || !x) {
+            if ([Ie, Ne].includes(m) || w.sibling || !x) {
               var C, O;
               C = x && 'inline' !== e ? Ae(x) : o.current;
               var S = Me(C, h);
@@ -7699,10 +7721,10 @@
                   ? S[0]
                   : m === Ne
                   ? S[S.length - 1]
-                  : De(C, h, x, k.offset)),
-                w(O);
-            } else if (k.inlineTrigger) c(E);
-            else if (k.offset > 0)
+                  : De(C, h, x, w.offset)),
+                k(O);
+            } else if (w.inlineTrigger) c(E);
+            else if (w.offset > 0)
               c(E, !0),
                 f(),
                 (d.current = Object(se['a'])(function () {
@@ -7710,13 +7732,13 @@
                   var e = x.getAttribute('aria-controls'),
                     n = document.getElementById(e),
                     t = De(n, h);
-                  w(t);
+                  k(t);
                 }, 5));
-            else if (k.offset < 0) {
+            else if (w.offset < 0) {
               var j = i(E, !0),
                 T = j[j.length - 2],
                 I = v.get(T);
-              c(T, !1), w(I);
+              c(T, !1), k(I);
             }
           }
           null === u || void 0 === u || u(s);
@@ -7884,8 +7906,8 @@
           y = e.className,
           x = e.tabIndex,
           E = void 0 === x ? 0 : x,
-          k = e.items,
-          w = e.children,
+          w = e.items,
+          k = e.children,
           C = e.direction,
           O = e.id,
           S = e.mode,
@@ -7928,13 +7950,13 @@
           ye = e.onKeyDown,
           xe =
             (e.openAnimation, e.openTransitionName, e._internalRenderMenuItem),
-          ke = e._internalRenderSubMenuItem,
-          we = Object(c['a'])(e, Ge),
+          we = e._internalRenderSubMenuItem,
+          ke = Object(c['a'])(e, Ge),
           Ce = s['useMemo'](
             function () {
-              return te(w, k, Ke);
+              return te(k, w, Ke);
             },
-            [w, k],
+            [k, w],
           ),
           Oe = s['useState'](!1),
           Se = Object(l['a'])(Oe, 2),
@@ -8075,20 +8097,20 @@
                 : [e];
             },
           }),
-          kn = Object(l['a'])(En, 2),
-          wn = kn[0],
-          Cn = kn[1],
+          wn = Object(l['a'])(En, 2),
+          kn = wn[0],
+          Cn = wn[1],
           On = function (e) {
             if (K) {
               var n,
                 t = e.key,
-                r = wn.includes(t);
+                r = kn.includes(t);
               (n = J
                 ? r
-                  ? wn.filter(function (e) {
+                  ? kn.filter(function (e) {
                       return e !== t;
                     })
-                  : [].concat(Object(i['a'])(wn), [t])
+                  : [].concat(Object(i['a'])(kn), [t])
                 : [t]),
                 Cn(n);
               var o = Object(a['a'])(
@@ -8131,10 +8153,10 @@
             function () {
               return {
                 _internalRenderMenuItem: xe,
-                _internalRenderSubMenuItem: ke,
+                _internalRenderSubMenuItem: we,
               };
             },
-            [xe, ke],
+            [xe, we],
           ),
           Pn =
             'horizontal' !== Le || P
@@ -8200,7 +8222,7 @@
                 },
                 onKeyDown: Nn,
               },
-              we,
+              ke,
             ),
           );
         return s['createElement'](
@@ -8223,7 +8245,7 @@
                 activeKey: gn,
                 onActive: yn,
                 onInactive: xn,
-                selectedKeys: wn,
+                selectedKeys: kn,
                 inlineIndent: ae,
                 subMenuOpenDelay: M,
                 subMenuCloseDelay: z,
@@ -8282,7 +8304,7 @@
         r = z(t.eventKey),
         o = ee(n, r),
         a = M();
-      return a ? o : s['createElement'](Qe, Object(k['a'])(t, ['warnKey']), o);
+      return a ? o : s['createElement'](Qe, Object(w['a'])(t, ['warnKey']), o);
     }
     function nn(e) {
       var n = e.className,
@@ -10542,7 +10564,7 @@
         });
         return null;
       },
-      k = function e(n, t) {
+      w = function e(n, t) {
         var o,
           a,
           i = n.__emotion_real === n,
@@ -10564,9 +10586,9 @@
             y.push.apply(y, v);
           else {
             0, y.push(v[0][0]);
-            for (var x = v.length, k = 1; k < x; k++) y.push(v[k], v[0][k]);
+            for (var x = v.length, w = 1; w < x; w++) y.push(v[w], v[0][w]);
           }
-          var w = f(function (e, n, t) {
+          var k = f(function (e, n, t) {
             var o = (h && e.as) || l,
               i = '',
               c = [],
@@ -10581,11 +10603,11 @@
             var b = Object(d['a'])(y.concat(c), n.registered, f);
             (i += n.key + '-' + b.name), void 0 !== a && (i += ' ' + a);
             var x = h && void 0 === s ? g(o) : p,
-              k = {};
-            for (var w in e) (h && 'as' === w) || (x(w) && (k[w] = e[w]));
+              w = {};
+            for (var k in e) (h && 'as' === k) || (x(k) && (w[k] = e[k]));
             return (
-              (k.className = i),
-              (k.ref = t),
+              (w.className = i),
+              (w.ref = t),
               Object(r['createElement'])(
                 r['Fragment'],
                 null,
@@ -10594,12 +10616,12 @@
                   serialized: b,
                   isStringTag: 'string' === typeof o,
                 }),
-                Object(r['createElement'])(o, k),
+                Object(r['createElement'])(o, w),
               )
             );
           });
           return (
-            (w.displayName =
+            (k.displayName =
               void 0 !== o
                 ? o
                 : 'Styled(' +
@@ -10607,27 +10629,27 @@
                     ? l
                     : l.displayName || l.name || 'Component') +
                   ')'),
-            (w.defaultProps = n.defaultProps),
-            (w.__emotion_real = w),
-            (w.__emotion_base = l),
-            (w.__emotion_styles = y),
-            (w.__emotion_forwardProp = s),
-            Object.defineProperty(w, 'toString', {
+            (k.defaultProps = n.defaultProps),
+            (k.__emotion_real = k),
+            (k.__emotion_base = l),
+            (k.__emotion_styles = y),
+            (k.__emotion_forwardProp = s),
+            Object.defineProperty(k, 'toString', {
               value: function () {
                 return '.' + a;
               },
             }),
-            (w.withComponent = function (n, r) {
+            (k.withComponent = function (n, r) {
               return e(
                 n,
-                Object(c['a'])({}, t, r, { shouldForwardProp: b(w, r, !0) }),
+                Object(c['a'])({}, t, r, { shouldForwardProp: b(k, r, !0) }),
               ).apply(void 0, y);
             }),
-            w
+            k
           );
         };
       },
-      w = k,
+      k = w,
       C = [
         'a',
         'abbr',
@@ -10764,7 +10786,7 @@
         'text',
         'tspan',
       ],
-      O = w.bind();
+      O = k.bind();
     C.forEach(function (e) {
       O[e] = O(e);
     });
@@ -11027,8 +11049,8 @@
       y = t('xrYK'),
       x = t('iSVu'),
       E = t('ImZN'),
-      k = t('HH4o'),
-      w = t('SEBh'),
+      w = t('HH4o'),
+      k = t('SEBh'),
       C = t('LPSS').set,
       O = t('tXUg'),
       S = t('zfnd'),
@@ -11080,7 +11102,7 @@
       }),
       te =
         ne ||
-        !k(function (e) {
+        !w(function (e) {
           F.all(e)['catch'](function () {});
         }),
       re = function (e) {
@@ -11222,7 +11244,7 @@
       (r.prototype = f(F.prototype, {
         then: function (e, n) {
           var t = _(this),
-            r = q(w(this, F));
+            r = q(k(this, F));
           return (
             (r.ok = 'function' != typeof e || e),
             (r.fail = 'function' == typeof n && n),
@@ -11357,8 +11379,8 @@
       y = t('rePB'),
       x = t('TSYQ'),
       E = t.n(x),
-      k = t('ODXe'),
-      w = t('dm2S'),
+      w = t('ODXe'),
+      k = t('dm2S'),
       C = t('2/Rp'),
       O = t('zvFY');
     function S(e) {
@@ -11368,8 +11390,8 @@
       T = function (e) {
         var n = u['useRef'](!1),
           t = u['useRef'](),
-          r = Object(w['a'])(!1),
-          o = Object(k['a'])(r, 2),
+          r = Object(k['a'])(!1),
+          o = Object(w['a'])(r, 2),
           a = o[0],
           i = o[1];
         u['useEffect'](function () {
@@ -11528,7 +11550,7 @@
         g = e.closeIcon,
         b = e.focusTriggerAfterClose,
         x = void 0 === b || b,
-        k = F(e, [
+        w = F(e, [
           'prefixCls',
           'footer',
           'visible',
@@ -11538,7 +11560,7 @@
           'closeIcon',
           'focusTriggerAfterClose',
         ]),
-        w = o('modal', s),
+        k = o('modal', s),
         S = o(),
         T = u['createElement'](
           D['a'],
@@ -11547,17 +11569,17 @@
         ),
         I = u['createElement'](
           'span',
-          { className: ''.concat(w, '-close-x') },
+          { className: ''.concat(k, '-close-x') },
           g ||
             u['createElement'](R['a'], {
-              className: ''.concat(w, '-close-icon'),
+              className: ''.concat(k, '-close-icon'),
             }),
         ),
         L = E()(
           m,
           ((n = {}),
-          Object(y['a'])(n, ''.concat(w, '-centered'), !!h),
-          Object(y['a'])(n, ''.concat(w, '-wrap-rtl'), 'rtl' === a),
+          Object(y['a'])(n, ''.concat(k, '-centered'), !!h),
+          Object(y['a'])(n, ''.concat(k, '-wrap-rtl'), 'rtl' === a),
           n),
         );
       return u['createElement'](
@@ -11565,9 +11587,9 @@
         { status: !0, override: !0 },
         u['createElement'](
           P['a'],
-          Object(p['a'])({}, k, {
+          Object(p['a'])({}, w, {
             getContainer: void 0 === v ? r : v,
-            prefixCls: w,
+            prefixCls: k,
             wrapClassName: L,
             footer: void 0 === d ? T : d,
             visible: f,
@@ -11606,8 +11628,8 @@
           v = e.cancelButtonProps,
           g = e.direction,
           x = e.prefixCls,
-          k = e.wrapClassName,
-          w = e.rootPrefixCls,
+          w = e.wrapClassName,
+          k = e.rootPrefixCls,
           C = e.iconPrefixCls,
           O = e.bodyStyle,
           S = e.closable,
@@ -11638,13 +11660,13 @@
                 close: o,
                 autoFocus: 'cancel' === B,
                 buttonProps: v,
-                prefixCls: ''.concat(w, '-btn'),
+                prefixCls: ''.concat(k, '-btn'),
               },
               h,
             );
         return u['createElement'](
           b['a'],
-          { prefixCls: w, iconPrefixCls: C, direction: g },
+          { prefixCls: k, iconPrefixCls: C, direction: g },
           u['createElement'](
             V,
             {
@@ -11652,7 +11674,7 @@
               className: U,
               wrapClassName: E()(
                 Object(y['a'])({}, ''.concat(L, '-centered'), !!e.centered),
-                k,
+                w,
               ),
               onCancel: function () {
                 return o({ triggerCancel: !0 });
@@ -11660,9 +11682,9 @@
               visible: l,
               title: '',
               footer: '',
-              transitionName: Object(N['a'])(w, 'zoom', e.transitionName),
+              transitionName: Object(N['a'])(k, 'zoom', e.transitionName),
               maskTransitionName: Object(N['a'])(
-                w,
+                k,
                 'fade',
                 e.maskTransitionName,
               ),
@@ -11714,7 +11736,7 @@
                     close: o,
                     autoFocus: 'ok' === B,
                     buttonProps: m,
-                    prefixCls: ''.concat(w, '-btn'),
+                    prefixCls: ''.concat(k, '-btn'),
                   },
                   f,
                 ),
@@ -11868,7 +11890,7 @@
     var re = t('KQm4');
     function oe() {
       var e = u['useState']([]),
-        n = Object(k['a'])(e, 2),
+        n = Object(w['a'])(e, 2),
         t = n[0],
         r = n[1],
         o = u['useCallback'](function (e) {
@@ -11892,11 +11914,11 @@
         var t = e.afterClose,
           r = e.config,
           o = u['useState'](!0),
-          a = Object(k['a'])(o, 2),
+          a = Object(w['a'])(o, 2),
           i = a[0],
           l = a[1],
           c = u['useState'](r),
-          s = Object(k['a'])(c, 2),
+          s = Object(w['a'])(c, 2),
           d = s[0],
           f = s[1],
           m = u['useContext'](A['b']),
@@ -11948,7 +11970,7 @@
       se = u['memo'](
         u['forwardRef'](function (e, n) {
           var t = oe(),
-            r = Object(k['a'])(t, 2),
+            r = Object(w['a'])(t, 2),
             o = r[0],
             a = r[1];
           return (
@@ -11966,7 +11988,7 @@
     function ue() {
       var e = u['useRef'](null),
         n = u['useState']([]),
-        t = Object(k['a'])(n, 2),
+        t = Object(w['a'])(n, 2),
         r = t[0],
         o = t[1];
       u['useEffect'](
@@ -12296,9 +12318,9 @@
       y = i.Uint8ClampedArray,
       x = y && y.prototype,
       E = g && f(g),
-      k = b && f(b),
-      w = Object.prototype,
-      C = w.isPrototypeOf,
+      w = b && f(b),
+      k = Object.prototype,
+      C = k.isPrototypeOf,
       O = h('toStringTag'),
       S = v('TYPED_ARRAY_TAG'),
       j = o && !!m && 'Opera' !== s(i.opera),
@@ -12343,7 +12365,7 @@
               var o = i[r];
               o && c(o.prototype, e) && delete o.prototype[e];
             }
-          (k[e] && !t) || d(k, e, t ? n : (j && b[e]) || n);
+          (w[e] && !t) || d(w, e, t ? n : (j && b[e]) || n);
         }
       },
       M = function (e, n, t) {
@@ -12368,11 +12390,11 @@
       j)
     )
       for (r in I) i[r] && m(i[r], E);
-    if ((!j || !k || k === w) && ((k = E.prototype), j))
-      for (r in I) i[r] && m(i[r].prototype, k);
-    if ((j && f(x) !== k && m(x, k), a && !c(k, O)))
+    if ((!j || !w || w === k) && ((w = E.prototype), j))
+      for (r in I) i[r] && m(i[r].prototype, w);
+    if ((j && f(x) !== w && m(x, w), a && !c(w, O)))
       for (r in ((T = !0),
-      p(k, O, {
+      p(w, O, {
         get: function () {
           return l(this) ? this[S] : void 0;
         },
@@ -12389,7 +12411,7 @@
       isView: N,
       isTypedArray: R,
       TypedArray: E,
-      TypedArrayPrototype: k,
+      TypedArrayPrototype: w,
     };
   },
   '6Hiq': function (e, n, t) {
@@ -12661,11 +12683,11 @@
     function E(e) {
       return e ? (Array.isArray(e) ? e : [e]) : [];
     }
-    var k =
+    var w =
         '\n.anticon {\n  display: inline-block;\n  color: inherit;\n  font-style: normal;\n  line-height: 0;\n  text-align: center;\n  text-transform: none;\n  vertical-align: -0.125em;\n  text-rendering: optimizeLegibility;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.anticon > * {\n  line-height: 1;\n}\n\n.anticon svg {\n  display: inline-block;\n}\n\n.anticon::before {\n  display: none;\n}\n\n.anticon .anticon-icon {\n  display: block;\n}\n\n.anticon[tabindex] {\n  cursor: pointer;\n}\n\n.anticon-spin::before,\n.anticon-spin {\n  display: inline-block;\n  -webkit-animation: loadingCircle 1s infinite linear;\n  animation: loadingCircle 1s infinite linear;\n}\n\n@-webkit-keyframes loadingCircle {\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes loadingCircle {\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n',
-      w = function () {
+      k = function () {
         var e =
-            arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : k,
+            arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : w,
           n = Object(l['useContext'])(d['a']),
           t = n.csp;
         Object(l['useEffect'])(function () {
@@ -12702,7 +12724,7 @@
         u = O;
       if (
         (l && (u = { primaryColor: l, secondaryColor: c || x(l) }),
-        w(),
+        k(),
         v(g(n), 'icon should be icon definiton, but got '.concat(n)),
         !g(n))
       )
@@ -12773,7 +12795,7 @@
         b = l['useContext'](d['a']),
         y = b.prefixCls,
         x = void 0 === y ? 'anticon' : y,
-        k = u()(
+        w = u()(
           x,
           ((t = {}),
           Object(a['a'])(t, ''.concat(x, '-').concat(s.name), !!s.name),
@@ -12781,8 +12803,8 @@
           t),
           c,
         ),
-        w = m;
-      void 0 === w && h && (w = -1);
+        k = m;
+      void 0 === k && h && (k = -1);
       var C = f
           ? {
               msTransform: 'rotate('.concat(f, 'deg)'),
@@ -12798,7 +12820,7 @@
         Object(r['a'])(
           Object(r['a'])({ role: 'img', 'aria-label': s.name }, g),
           {},
-          { ref: n, tabIndex: w, onClick: h, className: k },
+          { ref: n, tabIndex: k, onClick: h, className: w },
         ),
         l['createElement'](I, {
           icon: s,
@@ -12947,7 +12969,7 @@
         [p],
       );
       var E = o['useRef'](),
-        k = a(function (e, n) {
+        w = a(function (e, n) {
           b(function (n) {
             var t = Object(r['a'])(n, 3),
               o = t[0],
@@ -12959,7 +12981,7 @@
             return [c, i.INNER, s];
           }, n);
         }),
-        w = a(f);
+        k = a(f);
       return (
         Object(l['a'])(
           function () {
@@ -12967,11 +12989,11 @@
               n = e[0],
               t = e[1],
               o = e[2];
-            n !== o && t === i.INNER && (w(n, o), (E.current = o));
+            n !== o && t === i.INNER && (k(n, o), (E.current = o));
           },
           [g],
         ),
-        [x, k]
+        [x, w]
       );
     }
   },
@@ -13857,8 +13879,8 @@
       return void 0 === e || null === e ? [] : Array.isArray(e) ? e : [e];
     }
     var E = t('x+uP'),
-      k = t('HaE+'),
-      w = t('KpVd'),
+      w = t('HaE+'),
+      k = t('KpVd'),
       C = "'${name}' is not a valid ${type}",
       O = {
         default: "Validation error on field '${name}'",
@@ -14077,7 +14099,7 @@
           )
         : e;
     }
-    var G = w['a'];
+    var G = k['a'];
     function K(e, n) {
       return e.replace(/\$\{\w+\}/g, function (e) {
         var t = e.slice(2, -1);
@@ -14090,7 +14112,7 @@
     }
     function J() {
       return (
-        (J = Object(k['a'])(
+        (J = Object(w['a'])(
           Object(E['a'])().mark(function e(n, t, o, a, s) {
             var u, d, p, f, m, h, v, g, b;
             return Object(E['a'])().wrap(
@@ -14254,7 +14276,7 @@
       if (!0 === o)
         i = new Promise(
           (function () {
-            var e = Object(k['a'])(
+            var e = Object(w['a'])(
               Object(E['a'])().mark(function e(t, o) {
                 var i, l, u;
                 return Object(E['a'])().wrap(function (e) {
@@ -14313,7 +14335,7 @@
     }
     function ee() {
       return (
-        (ee = Object(k['a'])(
+        (ee = Object(w['a'])(
           Object(E['a'])().mark(function e(n) {
             return Object(E['a'])().wrap(function (e) {
               while (1)
@@ -14342,7 +14364,7 @@
     }
     function te() {
       return (
-        (te = Object(k['a'])(
+        (te = Object(w['a'])(
           Object(E['a'])().mark(function e(n) {
             var t;
             return Object(E['a'])().wrap(function (e) {
@@ -14664,9 +14686,9 @@
                 function (e) {
                   return Object(i['a'])({}, s, e);
                 },
-              k = e[t],
-              w = Object(l['a'])(Object(l['a'])({}, e), E(y));
-            w[t] = function () {
+              w = e[t],
+              k = Object(l['a'])(Object(l['a'])({}, e), E(y));
+            k[t] = function () {
               var e;
               (o.touched = !0), (o.dirty = !0), o.triggerMetaEvent();
               for (
@@ -14678,13 +14700,13 @@
               (e = a ? a.apply(void 0, t) : W.apply(void 0, [s].concat(t))),
                 c && (e = c(e, y, h(!0))),
                 b({ type: 'updateValue', namePath: f, value: e }),
-                k && k.apply(void 0, t);
+                w && w.apply(void 0, t);
             };
             var C = x(p || []);
             return (
               C.forEach(function (e) {
-                var n = w[e];
-                w[e] = function () {
+                var n = k[e];
+                k[e] = function () {
                   n && n.apply(void 0, arguments);
                   var t = o.props.rules;
                   t &&
@@ -14692,7 +14714,7 @@
                     b({ type: 'validateField', namePath: f, triggerName: e });
                 };
               }),
-              w
+              k
             );
           }),
           e.fieldContext)
@@ -15710,8 +15732,8 @@
         }
       return [n.current];
     }
-    var ke = Ee,
-      we = r['createContext']({
+    var we = Ee,
+      ke = r['createContext']({
         triggerFormChange: function () {},
         triggerFormFinish: function () {},
         registerForm: function () {},
@@ -15722,10 +15744,10 @@
           t = e.onFormChange,
           o = e.onFormFinish,
           a = e.children,
-          c = r['useContext'](we),
+          c = r['useContext'](ke),
           s = r['useRef']({});
         return r['createElement'](
-          we.Provider,
+          ke.Provider,
           {
             value: Object(l['a'])(
               Object(l['a'])({}, c),
@@ -15762,7 +15784,7 @@
           a,
         );
       },
-      Oe = we,
+      Oe = ke,
       Se = [
         'name',
         'initialValues',
@@ -15793,10 +15815,10 @@
           b = e.onValuesChange,
           x = e.onFieldsChange,
           E = e.onFinish,
-          k = e.onFinishFailed,
-          w = Object(a['a'])(e, Se),
+          w = e.onFinishFailed,
+          k = Object(a['a'])(e, Se),
           C = r['useContext'](Oe),
-          O = ke(s),
+          O = we(s),
           S = Object(fe['a'])(O, 1),
           j = S[0],
           T = j.getInternalHooks(v),
@@ -15839,7 +15861,7 @@
             onFinish: function (e) {
               C.triggerFormFinish(t, e), E && E(e);
             },
-            onFinishFailed: k,
+            onFinishFailed: w,
           }),
           A(u);
         var M,
@@ -15878,7 +15900,7 @@
           ? U
           : r['createElement'](
               f,
-              Object(o['a'])({}, w, {
+              Object(o['a'])({}, k, {
                 onSubmit: function (e) {
                   e.preventDefault(), e.stopPropagation(), j.submit();
                 },
@@ -15886,7 +15908,7 @@
                   var n;
                   e.preventDefault(),
                     j.resetFields(),
-                    null === (n = w.onReset) || void 0 === n || n.call(w, e);
+                    null === (n = k.onReset) || void 0 === n || n.call(k, e);
                 },
               }),
               U,
@@ -15947,7 +15969,7 @@
     (Ae.FormProvider = Ce),
       (Ae.Field = ce),
       (Ae.List = pe),
-      (Ae.useForm = ke),
+      (Ae.useForm = we),
       (Ae.useWatch = Re);
   },
   '8GlL': function (e, n, t) {
@@ -16067,8 +16089,8 @@
     }
     var x = y('animationend'),
       E = y('transitionend'),
-      k = !(!x || !E),
-      w = x || 'animationend',
+      w = !(!x || !E),
+      k = x || 'animationend',
       C = E || 'transitionend';
     function O(e, n) {
       if (!e) return null;
@@ -16175,14 +16197,14 @@
           t.current(e);
         }, []);
         function o(e) {
-          e && (e.removeEventListener(C, r), e.removeEventListener(w, r));
+          e && (e.removeEventListener(C, r), e.removeEventListener(k, r));
         }
         function a(e) {
           n.current && n.current !== e && o(n.current),
             e &&
               e !== n.current &&
               (e.addEventListener(C, r),
-              e.addEventListener(w, r),
+              e.addEventListener(k, r),
               (n.current = e));
         }
         return (
@@ -16209,8 +16231,8 @@
         y = i.onAppearStart,
         x = i.onEnterStart,
         E = i.onLeaveStart,
-        k = i.onAppearActive,
-        w = i.onEnterActive,
+        w = i.onAppearActive,
+        k = i.onEnterActive,
         C = i.onLeaveActive,
         O = i.onAppearEnd,
         N = i.onEnterEnd,
@@ -16261,7 +16283,7 @@
                   (e = {}),
                   Object(r['a'])(e, R, v),
                   Object(r['a'])(e, P, y),
-                  Object(r['a'])(e, A, k),
+                  Object(r['a'])(e, A, w),
                   e
                 );
               case T:
@@ -16269,7 +16291,7 @@
                   (n = {}),
                   Object(r['a'])(n, R, g),
                   Object(r['a'])(n, P, x),
-                  Object(r['a'])(n, A, w),
+                  Object(r['a'])(n, A, k),
                   n
                 );
               case I:
@@ -16392,7 +16414,7 @@
           y = t(e),
           x = Object(l['useRef'])(),
           E = Object(l['useRef'])();
-        function k() {
+        function w() {
           try {
             return x.current instanceof HTMLElement
               ? x.current
@@ -16401,8 +16423,8 @@
             return null;
           }
         }
-        var w = $(y, u, k, e),
-          C = Object(a['a'])(w, 4),
+        var k = $(y, u, w, e),
+          C = Object(a['a'])(k, 4),
           j = C[0],
           T = C[1],
           I = C[2],
@@ -16470,7 +16492,7 @@
       });
       return (u.displayName = 'CSSMotion'), u;
     }
-    var ee = Q(k),
+    var ee = Q(w),
       ne = t('wx14'),
       te = t('Ff2n'),
       re = 'add',
@@ -16691,7 +16713,7 @@
         })(l['Component']);
       return (t.defaultProps = { component: 'div' }), t;
     }
-    var me = fe(k);
+    var me = fe(w);
     n['b'] = ee;
   },
   '8YOa': function (e, n, t) {
@@ -16877,9 +16899,9 @@
         y = e.style,
         x = e.children,
         E = e.display,
-        k = e.order,
-        w = e.component,
-        C = void 0 === w ? 'div' : w,
+        w = e.order,
+        k = e.component,
+        C = void 0 === k ? 'div' : k,
         O = Object(i['a'])(e, p),
         S = m && !E;
       function j(e) {
@@ -16897,7 +16919,7 @@
           opacity: S ? 0 : 1,
           height: S ? 0 : f,
           overflowY: S ? 'hidden' : f,
-          order: m ? k : f,
+          order: m ? w : f,
           pointerEvents: S ? 'none' : f,
           position: S ? 'absolute' : f,
         });
@@ -16961,8 +16983,8 @@
     }
     var x = ['component'],
       E = ['className'],
-      k = ['className'],
-      w = function (e, n) {
+      w = ['className'],
+      k = function (e, n) {
         var t = l['useContext'](j);
         if (!t) {
           var o = e.component,
@@ -16973,7 +16995,7 @@
         var u = t.className,
           d = Object(i['a'])(t, E),
           p = e.className,
-          f = Object(i['a'])(e, k);
+          f = Object(i['a'])(e, w);
         return l['createElement'](
           j.Provider,
           { value: null },
@@ -16983,7 +17005,7 @@
           ),
         );
       },
-      C = l['forwardRef'](w);
+      C = l['forwardRef'](k);
     C.displayName = 'RawItem';
     var O = C,
       S = [
@@ -17021,8 +17043,8 @@
         b = e.itemWidth,
         x = void 0 === b ? 10 : b,
         E = e.ssr,
-        k = e.style,
-        w = e.className,
+        w = e.style,
+        k = e.className,
         C = e.maxCount,
         O = e.renderRest,
         R = e.renderRawRest,
@@ -17075,28 +17097,28 @@
         ye = ge[1],
         xe = ''.concat(c, '-item'),
         Ee = Math.max(J, ne),
-        ke = C === T,
-        we = f.length && ke,
+        we = C === T,
+        ke = f.length && we,
         Ce = C === I,
-        Oe = we || ('number' === typeof C && f.length > C),
+        Oe = ke || ('number' === typeof C && f.length > C),
         Se = Object(l['useMemo'])(
           function () {
             var e = f;
             return (
-              we
+              ke
                 ? (e =
                     null === V && F ? f : f.slice(0, Math.min(f.length, q / x)))
                 : 'number' === typeof C && (e = f.slice(0, C)),
               e
             );
           },
-          [f, x, V, C, we],
+          [f, x, V, C, ke],
         ),
         je = Object(l['useMemo'])(
           function () {
-            return we ? f.slice(he + 1) : f.slice(Se.length);
+            return ke ? f.slice(he + 1) : f.slice(Se.length);
           },
-          [f, Se, we, he],
+          [f, Se, ke, he],
         ),
         Te = Object(l['useCallback'])(
           function (e, n) {
@@ -17171,9 +17193,9 @@
       );
       var De = be && !!je.length,
         ze = {};
-      null !== se && we && (ze = { position: 'absolute', left: se, top: 0 });
+      null !== se && ke && (ze = { position: 'absolute', left: se, top: 0 });
       var _e,
-        Fe = { prefixCls: xe, responsive: we, component: M, invalidate: Ce },
+        Fe = { prefixCls: xe, responsive: ke, component: M, invalidate: Ce },
         Be = h
           ? function (e, n) {
               var t = Te(e, n);
@@ -17234,15 +17256,15 @@
       }
       var He = l['createElement'](
         L,
-        Object(r['a'])({ className: s()(!Ce && c, w), style: k, ref: n }, z),
+        Object(r['a'])({ className: s()(!Ce && c, k), style: w, ref: n }, z),
         Se.map(Be),
         Oe ? _e : null,
         P &&
           l['createElement'](
             v,
             Object(r['a'])({}, Fe, {
-              responsive: ke,
-              responsiveDisabled: !we,
+              responsive: we,
+              responsiveDisabled: !ke,
               order: he,
               className: ''.concat(xe, '-suffix'),
               registerSize: Le,
@@ -17253,10 +17275,10 @@
           ),
       );
       return (
-        ke &&
+        we &&
           (He = l['createElement'](
             u['a'],
-            { onResize: Re, disabled: !we },
+            { onResize: Re, disabled: !ke },
             He,
           )),
         He
@@ -17762,12 +17784,12 @@
         grey: '#666666',
       },
       E = {},
-      k = {};
+      w = {};
     Object.keys(x).forEach(function (e) {
       (E[e] = y(x[e])),
         (E[e].primary = E[e][5]),
-        (k[e] = y(x[e], { theme: 'dark', backgroundColor: '#141414' })),
-        (k[e].primary = k[e][5]);
+        (w[e] = y(x[e], { theme: 'dark', backgroundColor: '#141414' })),
+        (w[e].primary = w[e][5]);
     });
     E.red,
       E.volcano,
@@ -19611,25 +19633,25 @@
               if (0 === x) return [];
               if (0 === p.length) return null === u(y, p) ? [p] : [];
               var E = 0,
-                k = 0,
-                w = [];
-              while (k < p.length) {
-                y.lastIndex = v ? k : 0;
+                w = 0,
+                k = [];
+              while (w < p.length) {
+                y.lastIndex = v ? w : 0;
                 var C,
-                  O = u(y, v ? p : p.slice(k));
+                  O = u(y, v ? p : p.slice(w));
                 if (
                   null === O ||
-                  (C = m(s(y.lastIndex + (v ? 0 : k)), p.length)) === E
+                  (C = m(s(y.lastIndex + (v ? 0 : w)), p.length)) === E
                 )
-                  k = c(p, k, g);
+                  w = c(p, w, g);
                 else {
-                  if ((w.push(p.slice(E, k)), w.length === x)) return w;
+                  if ((k.push(p.slice(E, w)), k.length === x)) return k;
                   for (var S = 1; S <= O.length - 1; S++)
-                    if ((w.push(O[S]), w.length === x)) return w;
-                  k = E = C;
+                    if ((k.push(O[S]), k.length === x)) return k;
+                  w = E = C;
                 }
               }
-              return w.push(p.slice(E)), w;
+              return k.push(p.slice(E)), k;
             },
           ]
         );
@@ -19914,6 +19936,15 @@
                 o.a.createElement('span', { className: 'icon icon-link' }),
               ),
               'Welcome to the website',
+            ),
+            o.a.createElement(
+              'p',
+              null,
+              o.a.createElement(
+                a['Link'],
+                { to: 'https://eveningwater.github.io/code-segment/#/' },
+                'code-segment',
+              ),
             ),
           ),
         );
@@ -20691,48 +20722,48 @@
                   h.pattern = RegExp(h.pattern.source, x + 'g');
                 }
                 for (
-                  var E = h.pattern || h, k = l.next, w = u;
-                  k !== n.tail;
-                  w += k.value.length, k = k.next
+                  var E = h.pattern || h, w = l.next, k = u;
+                  w !== n.tail;
+                  k += w.value.length, w = w.next
                 ) {
-                  if (d && w >= d.reach) break;
-                  var C = k.value;
+                  if (d && k >= d.reach) break;
+                  var C = w.value;
                   if (n.length > e.length) return;
                   if (!(C instanceof o)) {
                     var O,
                       S = 1;
                     if (b) {
-                      if (((O = a(E, w, e, g)), !O || O.index >= e.length))
+                      if (((O = a(E, k, e, g)), !O || O.index >= e.length))
                         break;
                       var j = O.index,
                         T = O.index + O[0].length,
-                        I = w;
-                      I += k.value.length;
-                      while (j >= I) (k = k.next), (I += k.value.length);
+                        I = k;
+                      I += w.value.length;
+                      while (j >= I) (w = w.next), (I += w.value.length);
                       if (
-                        ((I -= k.value.length), (w = I), k.value instanceof o)
+                        ((I -= w.value.length), (k = I), w.value instanceof o)
                       )
                         continue;
                       for (
-                        var N = k;
+                        var N = w;
                         N !== n.tail && (I < T || 'string' === typeof N.value);
                         N = N.next
                       )
                         S++, (I += N.value.length);
-                      S--, (C = e.slice(w, I)), (O.index -= w);
+                      S--, (C = e.slice(k, I)), (O.index -= k);
                     } else if (((O = a(E, 0, C, g)), !O)) continue;
                     j = O.index;
                     var R = O[0],
                       P = C.slice(0, j),
                       A = C.slice(j + R.length),
-                      L = w + C.length;
+                      L = k + C.length;
                     d && L > d.reach && (d.reach = L);
-                    var M = k.prev;
-                    P && ((M = c(n, M, P)), (w += P.length)), s(n, M, S);
+                    var M = w.prev;
+                    P && ((M = c(n, M, P)), (k += P.length)), s(n, M, S);
                     var D = new o(p, v ? r.tokenize(R, v) : R, y, R);
-                    if (((k = c(n, M, D)), A && c(n, k, A), S > 1)) {
+                    if (((w = c(n, M, D)), A && c(n, w, A), S > 1)) {
                       var z = { cause: p + ',' + m, reach: L };
-                      i(e, n, t, k.prev, w, z),
+                      i(e, n, t, w.prev, k, z),
                         d && z.reach > d.reach && (d.reach = z.reach);
                     }
                   }
@@ -23502,9 +23533,9 @@
       x = y,
       E = t('dEAq');
     t('qHiR'), t('foS9');
-    function k() {
+    function w() {
       return (
-        (k =
+        (w =
           Object.assign ||
           function (e) {
             for (var n = 1; n < arguments.length; n++) {
@@ -23514,10 +23545,10 @@
             }
             return e;
           }),
-        k.apply(this, arguments)
+        w.apply(this, arguments)
       );
     }
-    function w(e, n) {
+    function k(e, n) {
       return T(e) || j(e, n) || O(e, n) || C();
     }
     function C() {
@@ -23582,7 +23613,7 @@
         r = e.showCopy,
         a = void 0 === r || r,
         i = Object(E['useCopy'])(),
-        l = w(i, 2),
+        l = k(i, 2),
         c = l[0],
         s = l[1];
       return o.a.createElement(
@@ -23590,7 +23621,7 @@
         { className: '__dumi-default-code-block' },
         o.a.createElement(
           x,
-          k({}, u, { code: n, language: I[t] || t, theme: void 0 }),
+          w({}, u, { code: n, language: I[t] || t, theme: void 0 }),
           function (e) {
             var t = e.className,
               r = e.style,
@@ -23676,9 +23707,9 @@
       y = '[object Symbol]',
       x = '[object ArrayBuffer]',
       E = '[object DataView]',
-      k = r ? r.prototype : void 0,
-      w = k ? k.valueOf : void 0;
-    function C(e, n, t, r, k, C, O) {
+      w = r ? r.prototype : void 0,
+      k = w ? w.valueOf : void 0;
+    function C(e, n, t, r, w, C, O) {
       switch (t) {
         case E:
           if (e.byteLength != n.byteLength || e.byteOffset != n.byteOffset)
@@ -23703,10 +23734,10 @@
           var T = O.get(e);
           if (T) return T == n;
           (r |= u), O.set(e, n);
-          var I = i(S(e), S(n), r, k, C, O);
+          var I = i(S(e), S(n), r, w, C, O);
           return O['delete'](e), I;
         case y:
-          if (w) return w.call(e) == w.call(n);
+          if (k) return k.call(e) == k.call(n);
       }
       return !1;
     }
@@ -24290,7 +24321,8 @@
       c = t('dMo/'),
       s = o.a.memo((e) => {
         var n = e.demos,
-          t = n['limitedwordtextarea-demo'].component;
+          t = n['limitedwordtextarea-demo'].component,
+          r = n['jsx-demo-13'].component;
         return o.a.createElement(
           o.a.Fragment,
           null,
@@ -24368,9 +24400,41 @@
                   ' to call setFormattedContent with the value of event.target.value.',
                 ),
               ),
+              o.a.createElement(
+                'h4',
+                { id: 'limitedwordtextareatsx' },
+                o.a.createElement(
+                  a['AnchorLink'],
+                  {
+                    to: '#limitedwordtextareatsx',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  o.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'LimitedWordTextarea.tsx',
+              ),
               o.a.createElement(l['a'], {
                 code: "import React, { useState, useCallback, useEffect } from 'react';\nimport type { ChangeEvent } from 'react';\nimport styled from '@emotion/styled';\ninterface LimitedWordTextareaProps extends Record<string, unknown> {\n  limit: number;\n  rows: number;\n  cols: number;\n  value: string;\n}\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedWordTextarea = (props: Partial<LimitedWordTextareaProps>) => {\n  const { limit = 0, rows, cols, value, ...rest } = props;\n\n  const [{ content, wordCount }, setContent] = useState({\n    content: value,\n    wordCount: 0,\n  });\n\n  const setFormattedContent = useCallback(\n    (text: string) => {\n      let words = text.split(' ').filter(Boolean);\n      setContent(() => {\n        if (words.length > limit) {\n          return {\n            wordCount: limit,\n            content: words.slice(0, limit).join(' '),\n          };\n        }\n        return {\n          wordCount: words.length,\n          content: text,\n        };\n      });\n    },\n    [limit, setContent],\n  );\n  useEffect(() => {\n    setFormattedContent(content || '');\n  }, []);\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e: ChangeEvent) =>\n          setFormattedContent((e.target as HTMLTextAreaElement).value)\n        }\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedWordTextarea;",
                 lang: 'tsx',
+              }),
+              o.a.createElement(
+                'h4',
+                { id: 'limitedwordtextareajsx' },
+                o.a.createElement(
+                  a['AnchorLink'],
+                  {
+                    to: '#limitedwordtextareajsx',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  o.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'LimitedWordTextarea.jsx',
+              ),
+              o.a.createElement(l['a'], {
+                code: "import React, { useState, useCallback, useEffect } from 'react';\nimport styled from '@emotion/styled';\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedWordTextarea = (props) => {\n  const { limit = 0, rows, cols, value, ...rest } = props;\n\n  const [{ content, wordCount }, setContent] = useState({\n    content: value,\n    wordCount: 0,\n  });\n\n  const setFormattedContent = useCallback(\n    (text) => {\n      let words = text.split(' ').filter(Boolean);\n      setContent(() => {\n        if (words.length > limit) {\n          return {\n            wordCount: limit,\n            content: words.slice(0, limit).join(' '),\n          };\n        }\n        return {\n          wordCount: words.length,\n          content: text,\n        };\n      });\n    },\n    [limit, setContent],\n  );\n  useEffect(() => {\n    setFormattedContent(content || '');\n  }, []);\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={e =>\n          setFormattedContent(e.target.value)\n        }\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedWordTextarea;",
+                lang: 'jsx',
               }),
               o.a.createElement('p', null, 'Demo:'),
             ),
@@ -24378,6 +24442,16 @@
               i['default'],
               n['limitedwordtextarea-demo'].previewerProps,
               o.a.createElement(t, null),
+            ),
+            o.a.createElement(
+              'div',
+              { className: 'markdown' },
+              o.a.createElement('p', null, 'jsx Demo:'),
+            ),
+            o.a.createElement(
+              i['default'],
+              n['jsx-demo-13'].previewerProps,
+              o.a.createElement(r, null),
             ),
           ),
         );
@@ -25361,7 +25435,7 @@
               a.dataTransfer.clearData(),
               (v = 0));
           },
-          k = [
+          w = [
             { type: 'dragenter', handlerName: b },
             { type: 'dragleave', handlerName: y },
             { type: 'dragover', handlerName: x },
@@ -25371,13 +25445,13 @@
           Object(i['useEffect'])(() => {
             var e = h.current;
             return (
-              k.forEach((n) =>
+              w.forEach((n) =>
                 null === e || void 0 === e
                   ? void 0
                   : e.addEventListener(n.type, n.handlerName),
               ),
               () => {
-                k.forEach((n) =>
+                w.forEach((n) =>
                   null === e || void 0 === e
                     ? void 0
                     : e.removeEventListener(n.type, n.handlerName),
@@ -25767,7 +25841,7 @@
           l
         );
       },
-      k = function (e, n, t) {
+      w = function (e, n, t) {
         var r = function () {
             for (var n = arguments.length, r = new Array(n), o = 0; o < n; o++)
               r[o] = arguments[o];
@@ -25789,7 +25863,7 @@
           l
         );
       },
-      w = function e(n) {
+      k = function e(n) {
         var t,
           r,
           o = s(n);
@@ -25817,11 +25891,11 @@
           l = e.apis,
           c = e.demos,
           s = n.pathname.replace(t.path.replace(/^\/$/, '//'), ''),
-          u = w(e.routes) || [],
+          u = k(e.routes) || [],
           d = y(u, n.pathname),
           p = x(i.locales, s),
           f = E(i, p, n.pathname),
-          m = k(p, i.locales, t);
+          m = w(p, i.locales, t);
         return o['default'].createElement(
           a['default'].Provider,
           {
@@ -26211,10 +26285,10 @@
           d
         );
       }
-      function k(e) {
+      function w(e) {
         return !(!e || void 0 === e.message);
       }
-      function w(e, n) {
+      function k(e, n) {
         for (var t = e, r = 0; r < n.length; r++) {
           if (void 0 == t) return t;
           t = t[n[r]];
@@ -26225,8 +26299,8 @@
         return function (t) {
           var r;
           return (
-            (r = e.fullFields ? w(n, e.fullFields) : n[t.field || e.fullField]),
-            k(t)
+            (r = e.fullFields ? k(n, e.fullFields) : n[t.field || e.fullField]),
+            w(t)
               ? ((t.field = t.field || e.fullField), (t.fieldValue = r), t)
               : {
                   message: 'function' === typeof t ? t() : t,
@@ -26991,8 +27065,8 @@
       y = l.URL,
       x = g.URLSearchParams,
       E = g.getState,
-      k = b.set,
-      w = b.getterFor('URL'),
+      w = b.set,
+      k = b.getterFor('URL'),
       C = Math.floor,
       O = Math.pow,
       S = 'Invalid authority',
@@ -27230,8 +27304,8 @@
       ye = {},
       xe = {},
       Ee = {},
-      ke = {},
       we = {},
+      ke = {},
       Ce = {},
       Oe = {},
       Se = {},
@@ -27328,7 +27402,7 @@
                 s = he;
                 break;
               }
-              s = we;
+              s = ke;
               continue;
             case de:
               if (((e.scheme = o.scheme), i == r))
@@ -27355,7 +27429,7 @@
                     (e.port = o.port),
                     (e.path = o.path.slice()),
                     e.path.pop(),
-                    (s = we);
+                    (s = ke);
                   continue;
                 }
                 (e.username = o.username),
@@ -27375,7 +27449,7 @@
                     (e.password = o.password),
                     (e.host = o.host),
                     (e.port = o.port),
-                    (s = we);
+                    (s = ke);
                   continue;
                 }
                 s = he;
@@ -27430,7 +27504,7 @@
                   if (X(e) && '' == p) return T;
                   if (t && '' == p && (Q(e) || null !== e.port)) return;
                   if (((c = U(e, p)), c)) return c;
-                  if (((p = ''), (s = ke), t)) return;
+                  if (((p = ''), (s = we), t)) return;
                   continue;
                 }
                 '[' == i ? (h = !0) : ']' == i && (h = !1), (p += i);
@@ -27456,7 +27530,7 @@
                     (e.port = X(e) && x === J[e.scheme] ? null : x), (p = '');
                   }
                   if (t) return;
-                  s = ke;
+                  s = we;
                   continue;
                 }
                 return I;
@@ -27467,7 +27541,7 @@
               if (((e.scheme = 'file'), '/' == i || '\\' == i)) s = xe;
               else {
                 if (!o || 'file' != o.scheme) {
-                  s = we;
+                  s = ke;
                   continue;
                 }
                 if (i == r)
@@ -27483,7 +27557,7 @@
                   if ('#' != i) {
                     te(a.slice(u).join('')) ||
                       ((e.host = o.host), (e.path = o.path.slice()), re(e)),
-                      (s = we);
+                      (s = ke);
                     continue;
                   }
                   (e.host = o.host),
@@ -27505,33 +27579,33 @@
                 (ne(o.path[0], !0)
                   ? e.path.push(o.path[0])
                   : (e.host = o.host)),
-                (s = we);
+                (s = ke);
               continue;
             case Ee:
               if (i == r || '/' == i || '\\' == i || '?' == i || '#' == i) {
-                if (!t && ne(p)) s = we;
+                if (!t && ne(p)) s = ke;
                 else if ('' == p) {
                   if (((e.host = ''), t)) return;
-                  s = ke;
+                  s = we;
                 } else {
                   if (((c = U(e, p)), c)) return c;
                   if (('localhost' == e.host && (e.host = ''), t)) return;
-                  (p = ''), (s = ke);
+                  (p = ''), (s = we);
                 }
                 continue;
               }
               p += i;
               break;
-            case ke:
+            case we:
               if (X(e)) {
-                if (((s = we), '/' != i && '\\' != i)) continue;
+                if (((s = ke), '/' != i && '\\' != i)) continue;
               } else if (t || '?' != i)
                 if (t || '#' != i) {
-                  if (i != r && ((s = we), '/' != i)) continue;
+                  if (i != r && ((s = ke), '/' != i)) continue;
                 } else (e.fragment = ''), (s = Se);
               else (e.query = ''), (s = Oe);
               break;
-            case we:
+            case ke:
               if (
                 i == r ||
                 '/' == i ||
@@ -27586,9 +27660,9 @@
           r = u(this, Te, 'URL'),
           o = arguments.length > 1 ? arguments[1] : void 0,
           i = String(e),
-          l = k(r, { type: 'URL' });
+          l = w(r, { type: 'URL' });
         if (void 0 !== o)
-          if (o instanceof Te) n = w(o);
+          if (o instanceof Te) n = k(o);
           else if (((t = je((n = {}), String(o))), t)) throw TypeError(t);
         if (((t = je(l, i, null, n)), t)) throw TypeError(t);
         var c = (l.searchParams = new x()),
@@ -27613,7 +27687,7 @@
       },
       Ie = Te.prototype,
       Ne = function () {
-        var e = w(this),
+        var e = k(this),
           n = e.scheme,
           t = e.username,
           r = e.password,
@@ -27637,7 +27711,7 @@
         );
       },
       Re = function () {
-        var e = w(this),
+        var e = k(this),
           n = e.scheme,
           t = e.port;
         if ('blob' == n)
@@ -27651,42 +27725,42 @@
           : 'null';
       },
       Pe = function () {
-        return w(this).scheme + ':';
+        return k(this).scheme + ':';
       },
       Ae = function () {
-        return w(this).username;
+        return k(this).username;
       },
       Le = function () {
-        return w(this).password;
+        return k(this).password;
       },
       Me = function () {
-        var e = w(this),
+        var e = k(this),
           n = e.host,
           t = e.port;
         return null === n ? '' : null === t ? W(n) : W(n) + ':' + t;
       },
       De = function () {
-        var e = w(this).host;
+        var e = k(this).host;
         return null === e ? '' : W(e);
       },
       ze = function () {
-        var e = w(this).port;
+        var e = k(this).port;
         return null === e ? '' : String(e);
       },
       _e = function () {
-        var e = w(this),
+        var e = k(this),
           n = e.path;
         return e.cannotBeABaseURL ? n[0] : n.length ? '/' + n.join('/') : '';
       },
       Fe = function () {
-        var e = w(this).query;
+        var e = k(this).query;
         return e ? '?' + e : '';
       },
       Be = function () {
-        return w(this).searchParams;
+        return k(this).searchParams;
       },
       Ue = function () {
-        var e = w(this).fragment;
+        var e = k(this).fragment;
         return e ? '#' + e : '';
       },
       Ve = function (e, n) {
@@ -27696,7 +27770,7 @@
       (a &&
         c(Ie, {
           href: Ve(Ne, function (e) {
-            var n = w(this),
+            var n = k(this),
               t = String(e),
               r = je(n, t);
             if (r) throw TypeError(r);
@@ -27704,11 +27778,11 @@
           }),
           origin: Ve(Re),
           protocol: Ve(Pe, function (e) {
-            var n = w(this);
+            var n = k(this);
             je(n, String(e) + ':', ie);
           }),
           username: Ve(Ae, function (e) {
-            var n = w(this),
+            var n = k(this),
               t = f(String(e));
             if (!ee(n)) {
               n.username = '';
@@ -27716,7 +27790,7 @@
             }
           }),
           password: Ve(Le, function (e) {
-            var n = w(this),
+            var n = k(this),
               t = f(String(e));
             if (!ee(n)) {
               n.password = '';
@@ -27724,24 +27798,24 @@
             }
           }),
           host: Ve(Me, function (e) {
-            var n = w(this);
+            var n = k(this);
             n.cannotBeABaseURL || je(n, String(e), ve);
           }),
           hostname: Ve(De, function (e) {
-            var n = w(this);
+            var n = k(this);
             n.cannotBeABaseURL || je(n, String(e), ge);
           }),
           port: Ve(ze, function (e) {
-            var n = w(this);
+            var n = k(this);
             ee(n) ||
               ((e = String(e)), '' == e ? (n.port = null) : je(n, e, be));
           }),
           pathname: Ve(_e, function (e) {
-            var n = w(this);
-            n.cannotBeABaseURL || ((n.path = []), je(n, e + '', ke));
+            var n = k(this);
+            n.cannotBeABaseURL || ((n.path = []), je(n, e + '', we));
           }),
           search: Ve(Fe, function (e) {
-            var n = w(this);
+            var n = k(this);
             (e = String(e)),
               '' == e
                 ? (n.query = null)
@@ -27752,7 +27826,7 @@
           }),
           searchParams: Ve(Be),
           hash: Ve(Ue, function (e) {
-            var n = w(this);
+            var n = k(this);
             (e = String(e)),
               '' != e
                 ? ('#' == e.charAt(0) && (e = e.slice(1)),
@@ -28094,19 +28168,19 @@
       y = 0,
       x = {},
       E = 'onreadystatechange',
-      k = function (e) {
+      w = function (e) {
         if (x.hasOwnProperty(e)) {
           var n = x[e];
           delete x[e], n();
         }
       },
-      w = function (e) {
+      k = function (e) {
         return function () {
-          k(e);
+          w(e);
         };
       },
       C = function (e) {
-        k(e.data);
+        w(e.data);
       },
       O = function (e) {
         i.postMessage(e + '', f.protocol + '//' + f.host);
@@ -28129,11 +28203,11 @@
       }),
       'process' == c(v)
         ? (r = function (e) {
-            v.nextTick(w(e));
+            v.nextTick(k(e));
           })
         : b && b.now
         ? (r = function (e) {
-            b.now(w(e));
+            b.now(k(e));
           })
         : g && !p
         ? ((o = new g()),
@@ -28149,11 +28223,11 @@
             E in d('script')
               ? function (e) {
                   u.appendChild(d('script'))[E] = function () {
-                    u.removeChild(this), k(e);
+                    u.removeChild(this), w(e);
                   };
                 }
               : function (e) {
-                  setTimeout(w(e), 0);
+                  setTimeout(k(e), 0);
                 })
         : ((r = O), i.addEventListener('message', C, !1))),
       (e.exports = { set: m, clear: h });
@@ -28252,7 +28326,7 @@
         return i['a'];
       }),
       t.d(n, 'NavLink', function () {
-        return w;
+        return k;
       }),
       t.d(n, 'Prompt', function () {
         return i['b'];
@@ -28380,7 +28454,7 @@
         return e;
       },
       E = s.a.forwardRef;
-    function k() {
+    function w() {
       for (var e = arguments.length, n = new Array(e), t = 0; t < e; t++)
         n[t] = arguments[t];
       return n
@@ -28390,7 +28464,7 @@
         .join(' ');
     }
     'undefined' === typeof E && (E = x);
-    var w = E(function (e, n) {
+    var k = E(function (e, n) {
         var t = e['aria-current'],
           r = void 0 === t ? 'page' : t,
           o = e.activeClassName,
@@ -28401,7 +28475,7 @@
           v = e.isActive,
           g = e.location,
           b = e.sensitive,
-          w = e.strict,
+          k = e.strict,
           C = e.style,
           O = e.to,
           S = e.innerRef,
@@ -28430,11 +28504,11 @@
                   path: T,
                   exact: h,
                   sensitive: b,
-                  strict: w,
+                  strict: k,
                 })
               : null,
             N = !!(v ? v(I, t) : I),
-            R = N ? k(c, a) : c,
+            R = N ? w(c, a) : c,
             P = N ? Object(u['a'])({}, C, {}, l) : C,
             A = Object(u['a'])(
               {
@@ -29876,7 +29950,7 @@
                 'LimitedTextarea.jsx',
               ),
               o.a.createElement(l['a'], {
-                code: "import React, { useState, useCallback } from 'react';\nimport styled from '@emotion/styled';\n\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedTextarea = (props) => {\n  const { limit, rows, cols, value, ...rest } = props;\n\n  const [content, setContent] = useState(value?.slice(0, limit));\n\n  const setFormattedContent = useCallback(\n    (text) => {\n      setContent(text.slice(0, limit));\n    },\n    [limit, setContent],\n  );\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={e =>\n          setFormattedContent(e.target.value)\n        }\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedTextarea;",
+                code: "import React, { useState, useCallback } from 'react';\nimport styled from '@emotion/styled';\n\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedTextarea = (props) => {\n  const { limit, rows, cols, value, ...rest } = props;\n\n  const [content, setContent] = useState(value?.slice(0, limit));\n\n  const setFormattedContent = useCallback(\n    (text) => {\n      setContent(text.slice(0, limit));\n    },\n    [limit, setContent],\n  );\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e) => setFormattedContent(e.target.value)}\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedTextarea;",
                 lang: 'jsx',
               }),
               o.a.createElement('p', null, '\u793a\u4f8b:'),
@@ -30030,8 +30104,8 @@
             y = void 0 === b || b,
             x = (e.onClose, e.okText),
             E = e.cancelText,
-            k = e.width,
-            w = void 0 === k ? 520 : k,
+            w = e.width,
+            k = void 0 === w ? 520 : w,
             C = e.isDestroy,
             O = void 0 === C || C,
             S = e.keyboard,
@@ -30081,9 +30155,9 @@
             );
           var M = {};
           return (
-            'number' === typeof w
-              ? (M['width'] = w + 'px')
-              : 'string' === typeof w && (M['width'] = w),
+            'number' === typeof k
+              ? (M['width'] = k + 'px')
+              : 'string' === typeof k && (M['width'] = k),
             O && !P
               ? null
               : c.a.createElement(
@@ -30274,6 +30348,83 @@
           }
         : o;
     e.exports = c;
+  },
+  MyQ3: function (e, n, t) {
+    'use strict';
+    var r,
+      o,
+      a = t('0Owb'),
+      i = t('tJVT'),
+      l = t('PpiC'),
+      c = t('qqnG'),
+      s = t('q1tI'),
+      u = t.n(s),
+      d = t('5SEd'),
+      p = d['a'].textarea(
+        r ||
+          (r = Object(c['a'])([
+            "\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n",
+          ])),
+      ),
+      f = d['a'].span(
+        o ||
+          (o = Object(c['a'])([
+            '\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n',
+          ])),
+      ),
+      m = (e) => {
+        var n = e.limit,
+          t = void 0 === n ? 0 : n,
+          r = e.rows,
+          o = e.cols,
+          c = e.value,
+          d = Object(l['a'])(e, ['limit', 'rows', 'cols', 'value']),
+          m = Object(s['useState'])({ content: c, wordCount: 0 }),
+          h = Object(i['a'])(m, 2),
+          v = h[0],
+          g = v.content,
+          b = (v.wordCount, h[1]),
+          y = Object(s['useCallback'])(
+            (e) => {
+              var n = e.split(' ').filter(Boolean);
+              b(() =>
+                n.length > t
+                  ? { wordCount: t, content: n.slice(0, t).join(' ') }
+                  : { wordCount: n.length, content: e },
+              );
+            },
+            [t, b],
+          );
+        return (
+          Object(s['useEffect'])(() => {
+            y(g || '');
+          }, []),
+          u.a.createElement(
+            f,
+            {
+              'data-count': ''
+                .concat(
+                  (null === g || void 0 === g ? void 0 : g.length) || 0,
+                  ' / ',
+                )
+                .concat(t),
+            },
+            u.a.createElement(
+              p,
+              Object(a['a'])(
+                {
+                  rows: r,
+                  cols: o,
+                  value: g,
+                  onChange: (e) => y(e.target.value),
+                },
+                d,
+              ),
+            ),
+          )
+        );
+      };
+    n['a'] = m;
   },
   'N+g0': function (e, n, t) {
     var r = t('g6v/'),
@@ -30846,9 +30997,9 @@
         'import React from \'react\';\nimport Accordion from \'./Accordion\';\nconst { AccordionItem } = Accordion;\nconst Demo = () => {\n  return (\n    <Accordion defaultIndex="1" onItemClick={console.log}>\n      <AccordionItem label="\u6807\u98981" index="1">\n        \u9879\u76ee1\n      </AccordionItem>\n      <AccordionItem label="\u6807\u98982" index="2">\n        \u9879\u76ee2\n      </AccordionItem>\n    </Accordion>\n  );\n};\n\nexport default Demo;',
       E =
         'import React from \'react\';\nimport Accordion from \'./Accordion\';\nconst { AccordionItem } = Accordion;\nconst Demo = () => {\n  return (\n    <Accordion defaultIndex="1" onItemClick={console.log}>\n      <AccordionItem label="\u6807\u98981" index="1">\n        \u9879\u76ee1\n      </AccordionItem>\n      <AccordionItem label="\u6807\u98982" index="2">\n        \u9879\u76ee2\n      </AccordionItem>\n    </Accordion>\n  );\n};\n\nexport default Demo;',
-      k =
-        'import React from \'react\';\nimport { Space } from \'antd\';\nimport \'antd/dist/antd.less\';\nimport styled from \'@emotion/styled\';\nimport Alert from \'./Alert\';\nconst SpaceBlock = styled(Space)`\n  width: 100%;\n`;\nconst Demo = () => {\n  return (\n    <SpaceBlock direction="vertical">\n      <Alert type="info" message="This is info" block />\n      <Alert type="success" message="This is success" showClose />\n      <Alert type="warning" message="This is warning" />\n      <Alert type="error" message="This is error" />\n    </SpaceBlock>\n  );\n};\n\nexport default Demo;',
       w =
+        'import React from \'react\';\nimport { Space } from \'antd\';\nimport \'antd/dist/antd.less\';\nimport styled from \'@emotion/styled\';\nimport Alert from \'./Alert\';\nconst SpaceBlock = styled(Space)`\n  width: 100%;\n`;\nconst Demo = () => {\n  return (\n    <SpaceBlock direction="vertical">\n      <Alert type="info" message="This is info" block />\n      <Alert type="success" message="This is success" showClose />\n      <Alert type="warning" message="This is warning" />\n      <Alert type="error" message="This is error" />\n    </SpaceBlock>\n  );\n};\n\nexport default Demo;',
+      k =
         "import React, { useState, useEffect } from 'react';\nimport './alert.less';\n\ninterface AlertPropType {\n  isDefaultShown: boolean;\n  timeout: number;\n  type: string;\n  message: string;\n  showClose: boolean;\n  block: boolean;\n}\n\nconst Alert = (props: Partial<AlertPropType>) => {\n  const {\n    isDefaultShown,\n    timeout = 250,\n    type,\n    message,\n    showClose,\n    block,\n  } = props;\n  const [isShown, setIsShown] = useState(isDefaultShown);\n  const [isLeaving, setIsLeaving] = useState(false);\n\n  let timer: number | null = null;\n  useEffect(() => {\n    setIsShown(true);\n    return () => {\n      if (timer) {\n        clearTimeout(timer);\n      }\n    };\n  }, [timeout, timer, isDefaultShown]);\n\n  const closeAlert = () => {\n    setIsLeaving(true);\n    timer = setTimeout(() => {\n      setIsLeaving(false);\n      setIsShown(false);\n    }, timeout);\n  };\n\n  return isShown ? (\n    <div\n      className={`alert ${'alert-' + type}${isLeaving ? ' leaving' : ''}${\n        block ? ' alert-block' : ''\n      }`}\n      role=\"alert\"\n    >\n      <button\n        className=\"alert-close\"\n        onClick={closeAlert}\n        style={{ display: showClose ? 'block' : 'none' }}\n      >\n        &times;\n      </button>\n      {message}\n    </div>\n  ) : null;\n};\n\nexport default Alert;",
       C =
         '@keyframes leave {\r\n  0% {\r\n    opacity: 1;\r\n  }\r\n\r\n  100% {\r\n    opacity: 0;\r\n  }\r\n}\r\n\r\n@baseSelector: alert;\r\n@infoBgColor: #e6f7ff;\r\n@infoBorderColor: #91d5ff;\r\n@warningBgColor: #fffbe6;\r\n@warningBorderColor: #ffe58f;\r\n@errorBgColor: #fff2f0;\r\n@errorBorderColor: #ffccc7;\r\n@successBgColor: #f6ffed;\r\n@successBorderColor: #b7eb8f;\r\n@color: rgba(0, 0, 0, 0.85);\r\n@closeActiveColor: fadeout(@color, 25%);\r\n.@{baseSelector} {\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  color: @color;\r\n  font-size: 14px;\r\n  line-height: 1.5715;\r\n  list-style: none;\r\n  position: relative;\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 8px 15px;\r\n  word-wrap: break-word;\r\n  border-radius: 2px;\r\n  border: 1px solid transparent;\r\n  &.@{baseSelector}-block {\r\n    width: percentage(1);\r\n  }\r\n  &.@{baseSelector}-info {\r\n    background-color: @infoBgColor;\r\n    border-color: @infoBorderColor;\r\n  }\r\n\r\n  &.@{baseSelector}-warning {\r\n    background-color: @warningBgColor;\r\n    border-color: @warningBorderColor;\r\n  }\r\n\r\n  &.@{baseSelector}-error {\r\n    background-color: @errorBgColor;\r\n    border-color: @errorBorderColor;\r\n  }\r\n\r\n  &.@{baseSelector}-success {\r\n    background-color: @successBgColor;\r\n    border-color: @successBorderColor;\r\n  }\r\n\r\n  .@{baseSelector}-close {\r\n    margin-left: 8px;\r\n    padding: 0;\r\n    overflow: hidden;\r\n    font-size: 16px;\r\n    line-height: 12px;\r\n    background-color: transparent;\r\n    border: none;\r\n    outline: none;\r\n    cursor: pointer;\r\n    margin: 0;\r\n    color: @color;\r\n    position: absolute;\r\n    right: 10px;\r\n    top: 10px;\r\n    &:hover {\r\n      color: @closeActiveColor;\r\n    }\r\n  }\r\n}',
@@ -30905,13 +31056,13 @@
       Z =
         "import React from 'react';\nimport Carousel from './Carousel';\n\nconst Demo = () => {\n  return (\n    <Carousel\n      options={['carousel item 1', 'carousel item 2', 'carousel item 3']}\n    />\n  );\n};\n\nexport default Demo;",
       J =
-        "import React, { useState, useEffect, cloneElement } from 'react';\nimport type { ReactNode } from 'react';\nimport './Carousel.less';\n\ninterface CarouselItemProps {\n  children: ReactNode;\n  className: string | Record<string, string | number>;\n}\n\ninterface CarouselProps {\n  options: ReactNode[];\n  duration: number;\n  children: JSX.Element[];\n  defaultKey: string;\n}\n\nconst CarouselItem = (props: Partial<CarouselItemProps>) => {\n  const { children } = props;\n  return <div className=\"carousel-item\">{children}</div>;\n};\nCarouselItem.displayName = 'CarouselItem';\n\nconst Carousel = (props: Partial<CarouselProps>) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer: number | undefined;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter((item) => item?.type?.displayName === 'CarouselItem') || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className=\"carousel\">\n      <div\n        className=\"carousel-slide\"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(<CarouselItem key={item}>{item}</CarouselItem>, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nCarousel.CarouselItem = CarouselItem;\n\nexport default Carousel;",
+        "import React, { useState, useEffect, cloneElement } from 'react';\nimport type { ReactNode } from 'react';\nimport './Carousel.less';\n\ninterface CarouselItemProps {\n  children: ReactNode;\n  className: string | Record<string, string | number>;\n}\n\ninterface CarouselProps {\n  options: ReactNode[];\n  duration: number;\n  children: JSX.Element[];\n  defaultKey: string;\n}\n\nconst CarouselItem = (props: Partial<CarouselItemProps>) => {\n  const { children } = props;\n  return <div className=\"carousel-item\">{children}</div>;\n};\nCarouselItem.displayName = 'CarouselItem';\n\nconst Carousel = (props: Partial<CarouselProps>) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer: number | undefined;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter(\n          (item) => item?.type?.displayName === 'CarouselItem',\n        ) || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className=\"carousel\">\n      <div\n        className=\"carousel-slide\"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(<CarouselItem key={item}>{item}</CarouselItem>, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nCarousel.CarouselItem = CarouselItem;\n\nexport default Carousel;",
       X =
         ".carousel {\n  position: relative;\n  height: 100px;\n  width: 200px;\n  overflow: hidden;\n  border: 1px solid #dedede;\n  background-color: fadeout(#880cee, 25%);\n  border-radius: 8px;\n  .carousel-slide {\n    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 0.75);\n    height: 100%;\n    &::after {\n      clear: both;\n      content: '';\n      display: table;\n    }\n    .carousel-item {\n      width: 200px;\n      height: 100%;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      font-size: 18px;\n      color: fade(rgba(255, 255, 255, 1), 85%);\n      float: left;\n      letter-spacing: 2px;\n    }\n  }\n}",
       Q =
         "import React from 'react';\nimport Carousel from './Carousel';\n\nconst Demo = () => {\n  return (\n    <Carousel\n      options={['carousel item 1', 'carousel item 2', 'carousel item 3']}\n    />\n  );\n};\n\nexport default Demo;",
       ee =
-        "import React, { useState, useEffect, cloneElement } from 'react';\nimport '../Carousel.less';\n\nconst CarouselItem = (props) => {\n  const { children } = props;\n  return <div className=\"carousel-item\">{children}</div>;\n};\nCarouselItem.displayName = 'CarouselItem';\n\nconst Carousel = (props) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter((item) => item?.type?.displayName === 'CarouselItem') || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className=\"carousel\">\n      <div\n        className=\"carousel-slide\"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(<CarouselItem key={item}>{item}</CarouselItem>, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nCarousel.CarouselItem = CarouselItem;\n\nexport default Carousel;",
+        "import React, { useState, useEffect, cloneElement } from 'react';\nimport '../Carousel.less';\n\nconst CarouselItem = (props) => {\n  const { children } = props;\n  return <div className=\"carousel-item\">{children}</div>;\n};\nCarouselItem.displayName = 'CarouselItem';\n\nconst Carousel = (props) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter(\n          (item) => item?.type?.displayName === 'CarouselItem',\n        ) || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className=\"carousel\">\n      <div\n        className=\"carousel-slide\"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(<CarouselItem key={item}>{item}</CarouselItem>, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nCarousel.CarouselItem = CarouselItem;\n\nexport default Carousel;",
       ne =
         'import React from \'react\';\nimport Carousel from \'./Carousel\';\n\nconst { CarouselItem } = Carousel;\n\nconst Demo = () => {\n  return (\n    <Carousel defaultKey="2">\n      <CarouselItem key="1">\u8f6e\u64ad\u56fe1</CarouselItem>\n      <CarouselItem key="2">\u8f6e\u64ad\u56fe 2</CarouselItem>\n      <CarouselItem key="3">\u8f6e\u64ad\u56fe 3</CarouselItem>\n    </Carousel>\n  );\n};\n\nexport default Demo;',
       te =
@@ -30954,9 +31105,9 @@
         "import React, { useState } from 'react';\nimport ControlledInput from './ControlledInput';\n\nconst Demo = () => {\n  const [value, setValue] = useState('');\n\n  return (\n    <ControlledInput\n      type=\"text\"\n      value={value}\n      onChange={setValue}\n      placeholder=\"\u8bf7\u8f93\u5165\u4e00\u4e9b\u63d0\u793a\u4fe1\u606f...\"\n    ></ControlledInput>\n  );\n};\n\nexport default Demo;",
       Ee =
         "import React, { useState } from 'react';\nimport ControlledInput from './ControlledInput';\n\nconst Demo = () => {\n  const [value, setValue] = useState('');\n\n  return (\n    <ControlledInput\n      type=\"text\"\n      value={value}\n      onChange={setValue}\n      placeholder=\"\u8bf7\u8f93\u5165\u4e00\u4e9b\u63d0\u793a\u4fe1\u606f...\"\n    ></ControlledInput>\n  );\n};\n\nexport default Demo;",
-      ke =
-        "import { Space, Button } from 'antd';\nimport React, { useRef, useState } from 'react';\nimport type { MutableRefObject } from 'react';\nimport CountDown from './CountDown';\nimport type { ImperRef } from './helper';\n\nconst Demo = () => {\n  const countdownRef = useRef() as MutableRefObject<ImperRef>;\n  const [paused, setPaused] = useState(false);\n  const onPaused = () => {\n    setPaused(!paused);\n    countdownRef.current.onPaused(paused);\n  };\n  const onRestart = () => {\n    countdownRef.current.onRestart();\n  };\n  return (\n    <>\n      <CountDown ref={countdownRef} hours={1} minutes={45} />\n      <Space>\n        <Button onClick={onPaused}>{paused ? 'resume' : 'Pause'}</Button>\n        <Button onClick={onRestart}>Restart</Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
       we =
+        "import { Space, Button } from 'antd';\nimport React, { useRef, useState } from 'react';\nimport type { MutableRefObject } from 'react';\nimport CountDown from './CountDown';\nimport type { ImperRef } from './helper';\n\nconst Demo = () => {\n  const countdownRef = useRef() as MutableRefObject<ImperRef>;\n  const [paused, setPaused] = useState(false);\n  const onPaused = () => {\n    setPaused(!paused);\n    countdownRef.current.onPaused(paused);\n  };\n  const onRestart = () => {\n    countdownRef.current.onRestart();\n  };\n  return (\n    <>\n      <CountDown ref={countdownRef} hours={1} minutes={45} />\n      <Space>\n        <Button onClick={onPaused}>{paused ? 'resume' : 'Pause'}</Button>\n        <Button onClick={onRestart}>Restart</Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
+      ke =
         "import React, { forwardRef, useState, useCallback } from 'react';\nimport type { MutableRefObject } from 'react';\nimport styled from '@emotion/styled';\nimport type { ImperItem, ImperRef } from './helper';\nimport { useChildrenHandler, useTimeout } from './helper';\n\ninterface CountDownProps {\n  hours: number;\n  minutes: number;\n  seconds: number;\n  overText?: string;\n  pausedText?: string;\n  delimiter?: string;\n}\n\nconst StyleCountdown = styled.div`\n  color: rgba(0, 0, 0.85);\n  margin-bottom: 10px;\n  font-size: 16px;\n`;\n\nconst CountDown = forwardRef(\n  (props: Partial<CountDownProps>, ref: ImperItem['ref']) => {\n    const {\n      hours,\n      minutes,\n      seconds,\n      overText = 'Time is up!',\n      pausedText = 'paused!',\n      delimiter = ':',\n    } = props;\n    const [paused, setPaused] = useState(false);\n    const [over, setOver] = useState(false);\n    const [[h = 0, m = 0, s = 0], setTime] = useState([\n      hours,\n      minutes,\n      seconds,\n    ]);\n\n    const tick = () => {\n      if (paused || over) {\n        return;\n      }\n      let newH = h,\n        newM = m,\n        newS = s;\n      if (h === 0 && m === 0 && s === 0) {\n        setOver(true);\n      }\n\n      if (m === 0 && s === 0) {\n        newH--;\n        newM = 59;\n        newS = 59;\n      }\n\n      if (s === 0) {\n        newM--;\n        newS = 60;\n      }\n      newS--;\n      setTime([newH, newM, newS]);\n    };\n    useTimeout(tick, 1000);\n    useChildrenHandler(ref as MutableRefObject<ImperRef>, {\n      onPaused: useCallback((status: boolean) => {\n        setPaused(!status);\n      }, []),\n      onOver: useCallback(() => {\n        setPaused(false);\n        setOver(true);\n      }, []),\n      onRestart: useCallback(() => {\n        setTime([h, m, s]);\n        setPaused(false);\n        setOver(false);\n      }, []),\n    });\n    const fillZero = (n: number) => n.toString().padStart(2, '0');\n    return (\n      <StyleCountdown>\n        {over\n          ? overText\n          : paused\n          ? pausedText\n          : `${fillZero(h)}${delimiter}${fillZero(m)}${delimiter}${fillZero(\n              s,\n            )}`}\n      </StyleCountdown>\n    );\n  },\n);\n\nexport default CountDown;",
       Ce =
         "import type { MutableRefObject, DependencyList, Ref } from 'react';\nimport { useImperativeHandle, useEffect, useRef } from 'react';\n\nexport const useChildrenHandler = <T, K extends object>(\n  originRef: MutableRefObject<T>,\n  handler: K,\n  deps?: DependencyList,\n): void =>\n  useImperativeHandle(\n    originRef,\n    () => {\n      return {\n        ...originRef.current,\n        ...handler,\n      };\n    },\n    deps,\n  );\n\nexport type ImperFunc = (...args: any[]) => any;\nexport type ImperRef = Record<string, ImperFunc>;\nexport type ImperItem = {\n  ref: Ref<ImperRef>;\n};\nlet timer: number;\n// see this:https://www.aaron-powell.com/posts/2019-09-23-recursive-settimeout-with-react-hooks/\nexport const useTimeout = (callback, delay = 1000) => {\n  const ref = useRef() as MutableRefObject<() => void>;\n  useEffect(() => {\n    ref.current = callback;\n  });\n  useEffect(() => {\n    const handler = () => {\n      ref.current();\n      timer = setTimeout(handler, delay);\n    };\n    handler();\n    return () => clearTimeout(timer);\n  }, [delay]);\n};",
@@ -30999,152 +31150,158 @@
       He =
         "import React, { useState, useCallback } from 'react';\nimport type { ChangeEvent } from 'react';\nimport styled from '@emotion/styled';\ninterface LimitedTextareaProps extends Record<string, unknown> {\n  limit: number;\n  rows: number;\n  cols: number;\n  value: string;\n}\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedTextarea = (props: Partial<LimitedTextareaProps>) => {\n  const { limit, rows, cols, value, ...rest } = props;\n\n  const [content, setContent] = useState(value?.slice(0, limit));\n\n  const setFormattedContent = useCallback(\n    (text: string) => {\n      setContent(text.slice(0, limit));\n    },\n    [limit, setContent],\n  );\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e: ChangeEvent) =>\n          setFormattedContent((e.target as HTMLTextAreaElement).value)\n        }\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedTextarea;",
       qe =
-        "import React from 'react';\r\nimport LimitedTextarea from './LimitedTextarea';\r\n\r\nconst Demo = () => {\r\n  return <LimitedTextarea limit={100}></LimitedTextarea>;\r\n};\r\n\r\nexport default Demo;",
+        "import React from 'react';\nimport LimitedTextarea from './LimitedTextarea';\n\nconst Demo = () => {\n  return <LimitedTextarea limit={100}></LimitedTextarea>;\n};\n\nexport default Demo;",
       We =
-        "import React, { useState, useCallback } from 'react';\r\nimport styled from '@emotion/styled';\r\n\r\nconst LimitedStyleTextarea = styled.textarea`\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  font-variant: tabular-nums;\r\n  list-style: none;\r\n  font-feature-settings: 'tnum';\r\n  position: relative;\r\n  display: inline-block;\r\n  width: 100%;\r\n  min-width: 0;\r\n  padding: 4px 11px;\r\n  color: rgba(0, 0, 0, 0.85);\r\n  font-size: 14px;\r\n  line-height: 1.5715;\r\n  background-color: #fff;\r\n  background-image: none;\r\n  border: 1px solid #d9d9d9;\r\n  border-radius: 2px;\r\n  max-width: 100%;\r\n  height: auto;\r\n  min-height: 32px;\r\n  line-height: 1.5715;\r\n  vertical-align: bottom;\r\n  transition: all 0.3s, height 0s;\r\n  border-radius: 4px;\r\n  &:focus {\r\n    border-color: #40a9ff;\r\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\r\n    border-right-width: 1px;\r\n    outline: 0;\r\n  }\r\n  &:hover {\r\n    border-right-width: 1px;\r\n    border-color: #40a9ff;\r\n  }\r\n`;\r\n\r\nconst ShowCountTextarea = styled.span`\r\n  &::after {\r\n    content: attr(data-count);\r\n    float: right;\r\n    white-space: nowrap;\r\n    color: rgba(0, 0, 0, 0.73);\r\n  }\r\n`;\r\n\r\nconst LimitedTextarea = (props) => {\r\n  const { limit, rows, cols, value, ...rest } = props;\r\n\r\n  const [content, setContent] = useState(value?.slice(0, limit));\r\n\r\n  const setFormattedContent = useCallback(\r\n    (text) => {\r\n      setContent(text.slice(0, limit));\r\n    },\r\n    [limit, setContent],\r\n  );\r\n  return (\r\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\r\n      <LimitedStyleTextarea\r\n        rows={rows}\r\n        cols={cols}\r\n        value={content}\r\n        onChange={e =>\r\n          setFormattedContent(e.target.value)\r\n        }\r\n        {...rest}\r\n      ></LimitedStyleTextarea>\r\n    </ShowCountTextarea>\r\n  );\r\n};\r\n\r\nexport default LimitedTextarea;",
+        "import React, { useState, useCallback } from 'react';\nimport styled from '@emotion/styled';\n\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedTextarea = (props) => {\n  const { limit, rows, cols, value, ...rest } = props;\n\n  const [content, setContent] = useState(value?.slice(0, limit));\n\n  const setFormattedContent = useCallback(\n    (text) => {\n      setContent(text.slice(0, limit));\n    },\n    [limit, setContent],\n  );\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e) => setFormattedContent(e.target.value)}\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedTextarea;",
       $e =
         "import React from 'react';\nimport LimitedTextarea from './LimitedTextarea';\n\nconst Demo = () => {\n  return <LimitedTextarea limit={120}></LimitedTextarea>;\n};\n\nexport default Demo;",
       Ge =
-        "import React from 'react';\r\nimport LimitedTextarea from './LimitedTextarea';\r\n\r\nconst Demo = () => {\r\n  return <LimitedTextarea limit={120}></LimitedTextarea>;\r\n};\r\n\r\nexport default Demo;",
+        "import React from 'react';\nimport LimitedTextarea from './LimitedTextarea';\n\nconst Demo = () => {\n  return <LimitedTextarea limit={120}></LimitedTextarea>;\n};\n\nexport default Demo;",
       Ke =
         "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea limit={5} value=\"hello,there!\"></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
       Ye =
         "import React, { useState, useCallback, useEffect } from 'react';\nimport type { ChangeEvent } from 'react';\nimport styled from '@emotion/styled';\ninterface LimitedWordTextareaProps extends Record<string, unknown> {\n  limit: number;\n  rows: number;\n  cols: number;\n  value: string;\n}\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedWordTextarea = (props: Partial<LimitedWordTextareaProps>) => {\n  const { limit = 0, rows, cols, value, ...rest } = props;\n\n  const [{ content, wordCount }, setContent] = useState({\n    content: value,\n    wordCount: 0,\n  });\n\n  const setFormattedContent = useCallback(\n    (text: string) => {\n      let words = text.split(' ').filter(Boolean);\n      setContent(() => {\n        if (words.length > limit) {\n          return {\n            wordCount: limit,\n            content: words.slice(0, limit).join(' '),\n          };\n        }\n        return {\n          wordCount: words.length,\n          content: text,\n        };\n      });\n    },\n    [limit, setContent],\n  );\n  useEffect(() => {\n    setFormattedContent(content || '');\n  }, []);\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e: ChangeEvent) =>\n          setFormattedContent((e.target as HTMLTextAreaElement).value)\n        }\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedWordTextarea;",
       Ze =
-        "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea\n      limit={6}\n      value=\"\u4f60\u597d\u554a,\u8fd9\u91cc\u7684\u4e16\u754c!\"\n    ></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\r\nimport LimitedWordTextarea from './LimitedWordTextarea';\r\n\r\nconst Demo = () => {\r\n  return (\r\n    <LimitedWordTextarea limit={5} value=\"hello,there!\"></LimitedWordTextarea>\r\n  );\r\n};\r\n\r\nexport default Demo;",
       Je =
-        'import React, { useState } from \'react\';\nimport { Alert, Space, Spin, Switch } from \'antd\';\nimport Loader from \'./Loader\';\nimport styled from \'@emotion/styled\';\n\nconst Row = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  const [loading, setLoading] = useState(true);\n  const antIcon = <Loader size={24} spin />;\n  return (\n    <Space direction="vertical" style={{ width: \'100%\' }}>\n      <Spin tip="Loading..." indicator={antIcon} spinning={loading}>\n        <Alert\n          message="Alert message title"\n          description="Further details about the context of this alert."\n          type="info"\n        />\n      </Spin>\n      <Row>\n        Loading state\uff1a\n        <Switch checked={loading} onChange={() => setLoading(!loading)} />\n      </Row>\n    </Space>\n  );\n};\nexport default Demo;',
+        "import React, { useState, useCallback, useEffect } from 'react';\r\nimport styled from '@emotion/styled';\r\nconst LimitedStyleTextarea = styled.textarea`\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  font-variant: tabular-nums;\r\n  list-style: none;\r\n  font-feature-settings: 'tnum';\r\n  position: relative;\r\n  display: inline-block;\r\n  width: 100%;\r\n  min-width: 0;\r\n  padding: 4px 11px;\r\n  color: rgba(0, 0, 0, 0.85);\r\n  font-size: 14px;\r\n  line-height: 1.5715;\r\n  background-color: #fff;\r\n  background-image: none;\r\n  border: 1px solid #d9d9d9;\r\n  border-radius: 2px;\r\n  max-width: 100%;\r\n  height: auto;\r\n  min-height: 32px;\r\n  line-height: 1.5715;\r\n  vertical-align: bottom;\r\n  transition: all 0.3s, height 0s;\r\n  border-radius: 4px;\r\n  &:focus {\r\n    border-color: #40a9ff;\r\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\r\n    border-right-width: 1px;\r\n    outline: 0;\r\n  }\r\n  &:hover {\r\n    border-right-width: 1px;\r\n    border-color: #40a9ff;\r\n  }\r\n`;\r\n\r\nconst ShowCountTextarea = styled.span`\r\n  &::after {\r\n    content: attr(data-count);\r\n    float: right;\r\n    white-space: nowrap;\r\n    color: rgba(0, 0, 0, 0.73);\r\n  }\r\n`;\r\n\r\nconst LimitedWordTextarea = (props) => {\r\n  const { limit = 0, rows, cols, value, ...rest } = props;\r\n\r\n  const [{ content, wordCount }, setContent] = useState({\r\n    content: value,\r\n    wordCount: 0,\r\n  });\r\n\r\n  const setFormattedContent = useCallback(\r\n    (text) => {\r\n      let words = text.split(' ').filter(Boolean);\r\n      setContent(() => {\r\n        if (words.length > limit) {\r\n          return {\r\n            wordCount: limit,\r\n            content: words.slice(0, limit).join(' '),\r\n          };\r\n        }\r\n        return {\r\n          wordCount: words.length,\r\n          content: text,\r\n        };\r\n      });\r\n    },\r\n    [limit, setContent],\r\n  );\r\n  useEffect(() => {\r\n    setFormattedContent(content || '');\r\n  }, []);\r\n  return (\r\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\r\n      <LimitedStyleTextarea\r\n        rows={rows}\r\n        cols={cols}\r\n        value={content}\r\n        onChange={e =>\r\n          setFormattedContent(e.target.value)\r\n        }\r\n        {...rest}\r\n      ></LimitedStyleTextarea>\r\n    </ShowCountTextarea>\r\n  );\r\n};\r\n\r\nexport default LimitedWordTextarea;",
       Xe =
-        'import React, { useState } from \'react\';\nimport { Alert, Space, Spin, Switch } from \'antd\';\nimport Loader from \'./Loader\';\nimport styled from \'@emotion/styled\';\n\nconst Row = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  const [loading, setLoading] = useState(true);\n  const antIcon = <Loader size={24} spin />;\n  return (\n    <Space direction="vertical" style={{ width: \'100%\' }}>\n      <Spin tip="\u52a0\u8f7d\u4e2d..." indicator={antIcon} spinning={loading}>\n        <Alert\n          message="\u63d0\u793a\u6846\u6d88\u606f\u6807\u9898"\n          description="\u6709\u5173\u6b64\u63d0\u793a\u6846\u4e0a\u4e0b\u6587\u7684\u66f4\u591a\u8be6\u7ec6\u4fe1\u606f\u3002"\n          type="info"\n        />\n      </Spin>\n      <Row>\n        \u52a0\u8f7d\u72b6\u6001\uff1a\n        <Switch checked={loading} onChange={() => setLoading(!loading)} />\n      </Row>\n    </Space>\n  );\n};\nexport default Demo;',
+        "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea\n      limit={6}\n      value=\"\u4f60\u597d\u554a,\u8fd9\u91cc\u7684\u4e16\u754c!\"\n    ></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
       Qe =
-        'import React from \'react\';\nimport Mailto from \'./Mailto\';\n\nconst Demo = () => {\n  return (\n    <Mailto\n      email="854806732@qq.com"\n      subject="hello & welcome"\n      body="hello,world"\n    >\n      Mail me!\n    </Mailto>\n  );\n};\n\nexport default Demo;',
+        "import React from 'react';\r\nimport LimitedWordTextarea from './LimitedWordTextarea';\r\n\r\nconst Demo = () => {\r\n  return (\r\n    <LimitedWordTextarea\r\n      limit={6}\r\n      value=\"\u4f60\u597d\u554a,\u8fd9\u91cc\u7684\u4e16\u754c!\"\r\n    ></LimitedWordTextarea>\r\n  );\r\n};\r\n\r\nexport default Demo;",
       en =
-        "import styled from '@emotion/styled';\nimport React from 'react';\nimport type { ReactNode } from 'react';\n\nconst Link = styled.a`\n  text-decoration: none;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 18px;\n  transition: color 0.3s ease-in-out;\n  &:hover {\n    color: #2396ef;\n  }\n`;\n\ninterface MailtoProps extends Record<string, unknown> {\n  email: string;\n  subject: string;\n  body: string;\n  children: ReactNode;\n}\n\nconst Mailto = (props: Partial<MailtoProps>) => {\n  const { email, subject = '', body = '', children, ...rest } = props;\n  let params = subject || body ? '?' : '';\n  if (subject) {\n    params += `subject=${encodeURIComponent(subject)}`;\n  }\n  if (body) {\n    params += `body=${encodeURIComponent(body)}`;\n  }\n  return (\n    <Link href={`mailto:${email}${params}`} className=\"mail-link\" {...rest}>\n      {children}\n    </Link>\n  );\n};\n\nexport default Mailto;",
+        'import React, { useState } from \'react\';\nimport { Alert, Space, Spin, Switch } from \'antd\';\nimport Loader from \'./Loader\';\nimport styled from \'@emotion/styled\';\n\nconst Row = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  const [loading, setLoading] = useState(true);\n  const antIcon = <Loader size={24} spin />;\n  return (\n    <Space direction="vertical" style={{ width: \'100%\' }}>\n      <Spin tip="Loading..." indicator={antIcon} spinning={loading}>\n        <Alert\n          message="Alert message title"\n          description="Further details about the context of this alert."\n          type="info"\n        />\n      </Spin>\n      <Row>\n        Loading state\uff1a\n        <Switch checked={loading} onChange={() => setLoading(!loading)} />\n      </Row>\n    </Space>\n  );\n};\nexport default Demo;',
       nn =
-        'import React from \'react\';\nimport Mailto from \'./Mailto\';\n\nconst Demo = () => {\n  return (\n    <Mailto email="854806732@qq.com" subject="\u4f60\u597d&\u6b22\u8fce" body="\u4f60\u597d\uff0c\u4e16\u754c">\n      \u7ed9\u6211\u53d1\u90ae\u4ef6\n    </Mailto>\n  );\n};\n\nexport default Demo;',
+        'import React, { useState } from \'react\';\nimport { Alert, Space, Spin, Switch } from \'antd\';\nimport Loader from \'./Loader\';\nimport styled from \'@emotion/styled\';\n\nconst Row = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  const [loading, setLoading] = useState(true);\n  const antIcon = <Loader size={24} spin />;\n  return (\n    <Space direction="vertical" style={{ width: \'100%\' }}>\n      <Spin tip="\u52a0\u8f7d\u4e2d..." indicator={antIcon} spinning={loading}>\n        <Alert\n          message="\u63d0\u793a\u6846\u6d88\u606f\u6807\u9898"\n          description="\u6709\u5173\u6b64\u63d0\u793a\u6846\u4e0a\u4e0b\u6587\u7684\u66f4\u591a\u8be6\u7ec6\u4fe1\u606f\u3002"\n          type="info"\n        />\n      </Spin>\n      <Row>\n        \u52a0\u8f7d\u72b6\u6001\uff1a\n        <Switch checked={loading} onChange={() => setLoading(!loading)} />\n      </Row>\n    </Space>\n  );\n};\nexport default Demo;',
       tn =
-        "import React, { useState } from 'react';\nimport Modal from './Modal';\nimport { Button, Space } from 'antd';\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const onCreate = () => {\n    Modal.confirm({\n      title: 'The modal title',\n      content: (\n        <>\n          <p>The modal content</p>\n          <p>The modal content</p>\n          <p>The modal content</p>\n        </>\n      ),\n      cancelText: 'Cancel',\n      okText: 'Sure',\n    });\n  };\n  return (\n    <Space>\n      <Button onClick={() => setVisible(true)}>clicked me</Button>\n      <Button onClick={onCreate}>clicked me</Button>\n      <Modal\n        visible={visible}\n        onCancel={() => setVisible(false)}\n        title=\"The modal title\"\n        showCancel\n        onOk={() => setVisible(false)}\n        cancelText=\"Cancel\"\n        okText=\"Sure\"\n      >\n        <p>The modal content</p>\n        <p>The modal content</p>\n        <p>The modal content</p>\n      </Modal>\n    </Space>\n  );\n};\n\nexport default Demo;",
+        'import React from \'react\';\nimport Mailto from \'./Mailto\';\n\nconst Demo = () => {\n  return (\n    <Mailto\n      email="854806732@qq.com"\n      subject="hello & welcome"\n      body="hello,world"\n    >\n      Mail me!\n    </Mailto>\n  );\n};\n\nexport default Demo;',
       rn =
-        "import React, { useState, useEffect } from 'react';\nimport type { ReactNode, SyntheticEvent } from 'react';\nimport ReactDOM from 'react-dom';\nimport './Modal.less';\n\nexport interface ModalProps extends Record<string, any> {\n  mask: boolean;\n  footer: ReactNode;\n  title: ReactNode;\n  visible: boolean;\n  showCancel: boolean;\n  maskClosable: boolean;\n  onMask: Function;\n  onCancel: Function;\n  onOk: Function;\n  onClose: Function;\n  content: ReactNode;\n  showClose: boolean;\n  closeMask: boolean;\n  autoClose: boolean;\n  autoCloseTime: number;\n  isRenderHTML: boolean;\n  okText: string;\n  cancelText: string;\n  width: string | number;\n  children: ReactNode;\n  isDestroy: boolean;\n  keyboard: boolean;\n}\n\nconst Modal = (props: Partial<ModalProps>) => {\n  const {\n    mask = true,\n    footer,\n    children,\n    isRenderHTML,\n    title,\n    visible,\n    onCancel,\n    maskClosable = true,\n    onOk,\n    showCancel,\n    showClose = true,\n    onClose,\n    okText,\n    cancelText,\n    width = 520,\n    isDestroy = true,\n    keyboard = true,\n    onMask,\n    ...rest\n  } = props;\n\n  const [modalVisible, setModalVisible] = useState(false);\n\n  const keydownHandler = ({ key }) => {\n    switch (key) {\n      case 'Escape':\n        if (typeof onCancel === 'function' && keyboard) {\n          onCancel();\n        }\n        break;\n      default:\n    }\n  };\n\n  useEffect(() => {\n    if (typeof visible === 'boolean') {\n      setModalVisible(visible);\n    }\n  }, [visible]);\n\n  useEffect(() => {\n    document.addEventListener('keydown', keydownHandler);\n    return () => document.removeEventListener('keydown', keydownHandler);\n  });\n\n  // Set the width\n  const contentStyle: Partial<Record<'width', ModalProps['width']>> = {};\n  if (typeof width === 'number') {\n    contentStyle['width'] = width + 'px';\n  } else if (typeof width === 'string') {\n    contentStyle['width'] = width;\n  }\n\n  return isDestroy && !modalVisible ? null : (\n    <div\n      className=\"modal-container\"\n      {...rest}\n      style={{ display: modalVisible ? 'block' : 'none' }}\n    >\n      <div className=\"modal-wrapper\">\n        {mask ? (\n          <div\n            className=\"modal-mask\"\n            onClick={(e: SyntheticEvent) => {\n              if (maskClosable) {\n                if (typeof onMask === 'function') {\n                  return onMask(e);\n                }\n                if (typeof onCancel === 'function') {\n                  onCancel(e);\n                }\n              }\n            }}\n          />\n        ) : null}\n        <div className=\"modal-box\" style={contentStyle}>\n          <div className=\"modal-content\">\n            {showClose ? (\n              <div\n                className=\"modal-content-close\"\n                onClick={(e: SyntheticEvent) => {\n                  if (typeof onCancel === 'function') {\n                    onCancel(e);\n                  }\n                }}\n              >\n                <svg\n                  className=\"close-icon\"\n                  viewBox=\"0 0 1024 1024\"\n                  version=\"1.1\"\n                  xmlns=\"http://www.w3.org/2000/svg\"\n                  p-id=\"2217\"\n                >\n                  <path\n                    d=\"M546.942134 511.818772l327.456957-326.128977c9.617355-9.577423 9.648071-25.135361 0.070648-34.751692-9.577423-9.617355-25.137409-9.647048-34.750668-0.070648L512.119795 477.137729 184.520518 150.868479c-9.616331-9.577423-25.176316-9.545683-34.751692 0.070648-9.577423 9.616331-9.545683 25.174268 0.070648 34.751692l327.457981 326.127953-327.457981 326.128978c-9.616331 9.577423-9.647048 25.135361-0.070648 34.751692a24.496456 24.496456 0 0 0 17.41117 7.231702 24.500552 24.500552 0 0 0 17.340522-7.162078L512.119795 546.499816l327.599276 326.26925a24.492361 24.492361 0 0 0 17.340522 7.162078 24.5026 24.5026 0 0 0 17.41117-7.231702c9.577423-9.617355 9.545683-25.175292-0.070648-34.751692L546.942134 511.818772z\"\n                    fill=\"#bfbfbf\"\n                    p-id=\"2218\"\n                  ></path>\n                </svg>\n              </div>\n            ) : null}\n            {title ? <div className=\"modal-content-header\">{title}</div> : null}\n            <div className=\"modal-content-body\">\n              {isRenderHTML ? (\n                <div dangerouslySetInnerHTML={{ __html: String(children) }} />\n              ) : (\n                children\n              )}\n            </div>\n            {footer === null ? null : footer ? (\n              footer\n            ) : (\n              <div className=\"modal-content-footer\">\n                {showCancel ? (\n                  <button\n                    type=\"button\"\n                    className=\"modal-content-footer-button modal-content-footer-button-cancel\"\n                    onClick={(e: SyntheticEvent) => {\n                      if (typeof onCancel === 'function') {\n                        onCancel(e);\n                      }\n                    }}\n                  >\n                    {cancelText ? cancelText : '\u53d6\u6d88'}\n                  </button>\n                ) : null}\n                <button\n                  type=\"button\"\n                  className=\"modal-content-footer-button modal-content-footer-button-sure\"\n                  onClick={(e: SyntheticEvent) => {\n                    if (typeof onOk === 'function') {\n                      onOk(e);\n                    } else {\n                      if (typeof onCancel === 'function') {\n                        onCancel(e);\n                      }\n                    }\n                  }}\n                >\n                  {okText ? okText : '\u786e\u5b9a'}\n                </button>\n              </div>\n            )}\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nconst destroyFns: Array<() => void> = [];\nconst closeFns: Array<() => void> = [];\n\ninterface MethodModalProps extends ModalProps {}\nexport type ConfirmConfig = ModalProps | ((config: ModalProps) => ModalProps);\nexport type ReturnType = {\n  destroy: () => void;\n  close: () => void;\n  update: (updateConfig: ModalProps) => void;\n};\nexport type ModalType = (config: ModalProps) => ReturnType;\n\nModal.confirm = (config: Partial<MethodModalProps> | string) => {\n  const div = document.createElement('div');\n  document.body.appendChild(div);\n  const defaultConfig = {\n    visible: true,\n    showCancel: true,\n    onOk: () => destroy(),\n    onCancel: () => destroy(),\n    onMask: () => destroy(),\n  };\n  let currentConfig =\n    typeof config === 'object' && config\n      ? {\n          ...config,\n          ...defaultConfig,\n        }\n      : ({\n          content: config,\n          ...defaultConfig,\n        } as any);\n  function destroy() {\n    const unMountResult = ReactDOM.unmountComponentAtNode(div);\n    if (unMountResult && div.parentElement) {\n      div.parentElement.removeChild(div);\n    }\n    for (let i = 0, l = destroyFns.length; i < l; i++) {\n      const fn = destroyFns[i];\n      if (fn === close) {\n        destroyFns.splice(i, 1);\n        break;\n      }\n    }\n  }\n  function close() {\n    currentConfig = {\n      ...currentConfig,\n      visible: false,\n    };\n    render(currentConfig);\n  }\n  function render(props: MethodModalProps) {\n    setTimeout(() => {\n      ReactDOM.render(<Modal {...props}>{props.content}</Modal>, div);\n    });\n  }\n  function update(updateConfig: ConfirmConfig) {\n    if (typeof updateConfig === 'function') {\n      currentConfig = updateConfig(currentConfig);\n    } else {\n      currentConfig = {\n        ...currentConfig,\n        ...updateConfig,\n      };\n    }\n    render(currentConfig);\n  }\n  render(currentConfig);\n  closeFns.push(close);\n  destroyFns.push(destroy);\n  if (currentConfig.autoClose) {\n    let autoCloseTime = Number(currentConfig.autoCloseTime);\n    autoCloseTime = Number.isNaN(autoCloseTime)\n      ? 1000\n      : Math.min(10000, autoCloseTime);\n    setTimeout(() => {\n      destroy();\n    }, autoCloseTime);\n  }\n  return {\n    destroy,\n    close,\n    update,\n  };\n};\n\nModal.closeAll = () => {\n  closeFns.forEach((close: Function) => {\n    close && close();\n  });\n};\n\nModal.destroyAll = () => {\n  destroyFns.forEach((destroy: Function) => {\n    destroy && destroy();\n  });\n};\n\ntype GlobalModal = typeof Modal;\nexport { GlobalModal };\nexport default Modal;",
+        "import styled from '@emotion/styled';\nimport React from 'react';\nimport type { ReactNode } from 'react';\n\nconst Link = styled.a`\n  text-decoration: none;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 18px;\n  transition: color 0.3s ease-in-out;\n  &:hover {\n    color: #2396ef;\n  }\n`;\n\ninterface MailtoProps extends Record<string, unknown> {\n  email: string;\n  subject: string;\n  body: string;\n  children: ReactNode;\n}\n\nconst Mailto = (props: Partial<MailtoProps>) => {\n  const { email, subject = '', body = '', children, ...rest } = props;\n  let params = subject || body ? '?' : '';\n  if (subject) {\n    params += `subject=${encodeURIComponent(subject)}`;\n  }\n  if (body) {\n    params += `body=${encodeURIComponent(body)}`;\n  }\n  return (\n    <Link href={`mailto:${email}${params}`} className=\"mail-link\" {...rest}>\n      {children}\n    </Link>\n  );\n};\n\nexport default Mailto;",
       on =
-        "@black: rgba(0, 0, 0, 1);\n@baseSelector: modal;\n\n.@{baseSelector}-container {\n  .base-fixed {\n    inset: 0;\n    position: fixed;\n  }\n\n  .@{baseSelector}-mask {\n    height: 100%;\n    background-color: fade(@black, 65%);\n    .base-fixed();\n  }\n\n  .@{baseSelector}-wrapper {\n    .base-fixed();\n    overflow: auto;\n    outline: 0;\n    z-index: 1000;\n\n    .@{baseSelector}-box {\n      box-sizing: border-box;\n      padding: 0 0 24px;\n      color: fadeout(@black, 15%);\n      font-size: 14px;\n      font-variant: tabular-nums;\n      line-height: 1.5715;\n      list-style: none;\n      font-feature-settings: 'tnum';\n      pointer-events: none;\n      position: relative;\n      top: 100px;\n      width: auto;\n      max-width: calc(100vw - 32px);\n      margin: 0 auto;\n\n      .@{baseSelector}-content {\n        position: relative;\n        background-color: #fff;\n        background-clip: padding-box;\n        border: 0;\n        border-radius: 2px;\n        box-shadow: 0 3px 6px -4px fade(@black, 5%), 0 6px 16px fade(@black, 7%),\n          0 9px 28px 8px fade(@black, 9%);\n        pointer-events: auto;\n\n        &-header {\n          padding: 16px 24px;\n          color: fade(@black, 90%);\n          background: #fff;\n          border-bottom: 1px solid fade(@black, 6%);\n          border-radius: 2px 2px 0 0;\n          margin: 0;\n          font-weight: 500;\n          font-size: 16px;\n          line-height: 22px;\n          word-wrap: break-word;\n        }\n\n        &-body {\n          padding: 24px;\n          font-size: 14px;\n          line-height: 1.5715;\n          word-wrap: break-word;\n        }\n\n        &-footer {\n          padding: 10px 16px;\n          text-align: right;\n          background: 0 0;\n          border-top: 1px solid fadeout(@black, 94%);\n          border-radius: 0 0 2px 2px;\n\n          &-button {\n            line-height: 1.5715;\n            position: relative;\n            display: inline-block;\n            font-weight: 400;\n            white-space: nowrap;\n            text-align: center;\n            background-image: none;\n            border: 1px solid transparent;\n            box-shadow: 0 2px fadeout(@black, 95%);\n            cursor: pointer;\n            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n            -webkit-user-select: none;\n            -moz-user-select: none;\n            -ms-user-select: none;\n            user-select: none;\n            touch-action: manipulation;\n            height: 32px;\n            padding: 4px 15px;\n            font-size: 14px;\n            letter-spacing: 2px;\n            border-radius: 2px;\n            color: fade(@black, 97%);\n            border-color: #d9d9d9;\n            background: #fff;\n            border-radius: 4px;\n\n            &-cancel {\n              margin-right: 15px;\n\n              &:hover,\n              &:active {\n                border-color: #2499f1;\n                color: #2396ef;\n              }\n            }\n\n            &-sure {\n              background-color: #34a1f5;\n              border-color: #1e9af8;\n              color: #fff;\n\n              &:hover,\n              &:active {\n                background-color: #0f8ff1;\n                border-color: #1794f5;\n              }\n            }\n          }\n        }\n\n        &-close {\n          position: absolute;\n          top: 0;\n          right: 0;\n          z-index: 10;\n          padding: 0;\n          color: fadeout(@black, 75%);\n          font-weight: 700;\n          text-decoration: none;\n          background: 0 0;\n          border: 0;\n          outline: 0;\n          cursor: pointer;\n          width: 54px;\n          height: 54px;\n          font-size: 16px;\n          font-style: normal;\n          line-height: 54px;\n          text-align: center;\n          text-transform: none;\n          text-rendering: auto;\n          transition: color 0.3s;\n\n          & .close-icon {\n            width: 16px;\n            height: 16px;\n          }\n        }\n      }\n    }\n  }\n}",
+        'import React from \'react\';\nimport Mailto from \'./Mailto\';\n\nconst Demo = () => {\n  return (\n    <Mailto email="854806732@qq.com" subject="\u4f60\u597d&\u6b22\u8fce" body="\u4f60\u597d\uff0c\u4e16\u754c">\n      \u7ed9\u6211\u53d1\u90ae\u4ef6\n    </Mailto>\n  );\n};\n\nexport default Demo;',
       an =
         "import React, { useState } from 'react';\nimport Modal from './Modal';\nimport { Button, Space } from 'antd';\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const onCreate = () => {\n    Modal.confirm({\n      title: 'The modal title',\n      content: (\n        <>\n          <p>The modal content</p>\n          <p>The modal content</p>\n          <p>The modal content</p>\n        </>\n      ),\n      cancelText: 'Cancel',\n      okText: 'Sure',\n    });\n  };\n  return (\n    <Space>\n      <Button onClick={() => setVisible(true)}>clicked me</Button>\n      <Button onClick={onCreate}>clicked me</Button>\n      <Modal\n        visible={visible}\n        onCancel={() => setVisible(false)}\n        title=\"The modal title\"\n        showCancel\n        onOk={() => setVisible(false)}\n        cancelText=\"Cancel\"\n        okText=\"Sure\"\n      >\n        <p>The modal content</p>\n        <p>The modal content</p>\n        <p>The modal content</p>\n      </Modal>\n    </Space>\n  );\n};\n\nexport default Demo;",
       ln =
-        "import React, { useState, useEffect } from 'react';\nimport ReactDOM from 'react-dom';\nimport '../Modal.less';\n\nconst Modal = (props) => {\n  const {\n    mask = true,\n    footer,\n    children,\n    isRenderHTML,\n    title,\n    visible,\n    onCancel,\n    maskClosable = true,\n    onOk,\n    showCancel,\n    showClose = true,\n    onClose,\n    okText,\n    cancelText,\n    width = 520,\n    isDestroy = true,\n    keyboard = true,\n    onMask,\n    ...rest\n  } = props;\n\n  const [modalVisible, setModalVisible] = useState(false);\n\n  const keydownHandler = ({ key }) => {\n    switch (key) {\n      case 'Escape':\n        if (typeof onCancel === 'function' && keyboard) {\n          onCancel();\n        }\n        break;\n      default:\n    }\n  };\n\n  useEffect(() => {\n    if (typeof visible === 'boolean') {\n      setModalVisible(visible);\n    }\n  }, [visible]);\n\n  useEffect(() => {\n    document.addEventListener('keydown', keydownHandler);\n    return () => document.removeEventListener('keydown', keydownHandler);\n  });\n\n  // Set the width\n  const contentStyle = {};\n  if (typeof width === 'number') {\n    contentStyle['width'] = width + 'px';\n  } else if (typeof width === 'string') {\n    contentStyle['width'] = width;\n  }\n\n  return isDestroy && !modalVisible ? null : (\n    <div\n      className=\"modal-container\"\n      {...rest}\n      style={{ display: modalVisible ? 'block' : 'none' }}\n    >\n      <div className=\"modal-wrapper\">\n        {mask ? (\n          <div\n            className=\"modal-mask\"\n            onClick={(e) => {\n              if (maskClosable) {\n                if (typeof onMask === 'function') {\n                  return onMask(e);\n                }\n                if (typeof onCancel === 'function') {\n                  onCancel(e);\n                }\n              }\n            }}\n          />\n        ) : null}\n        <div className=\"modal-box\" style={contentStyle}>\n          <div className=\"modal-content\">\n            {showClose ? (\n              <div\n                className=\"modal-content-close\"\n                onClick={(e) => {\n                  if (typeof onCancel === 'function') {\n                    onCancel(e);\n                  }\n                }}\n              >\n                <svg\n                  className=\"close-icon\"\n                  viewBox=\"0 0 1024 1024\"\n                  version=\"1.1\"\n                  xmlns=\"http://www.w3.org/2000/svg\"\n                  p-id=\"2217\"\n                >\n                  <path\n                    d=\"M546.942134 511.818772l327.456957-326.128977c9.617355-9.577423 9.648071-25.135361 0.070648-34.751692-9.577423-9.617355-25.137409-9.647048-34.750668-0.070648L512.119795 477.137729 184.520518 150.868479c-9.616331-9.577423-25.176316-9.545683-34.751692 0.070648-9.577423 9.616331-9.545683 25.174268 0.070648 34.751692l327.457981 326.127953-327.457981 326.128978c-9.616331 9.577423-9.647048 25.135361-0.070648 34.751692a24.496456 24.496456 0 0 0 17.41117 7.231702 24.500552 24.500552 0 0 0 17.340522-7.162078L512.119795 546.499816l327.599276 326.26925a24.492361 24.492361 0 0 0 17.340522 7.162078 24.5026 24.5026 0 0 0 17.41117-7.231702c9.577423-9.617355 9.545683-25.175292-0.070648-34.751692L546.942134 511.818772z\"\n                    fill=\"#bfbfbf\"\n                    p-id=\"2218\"\n                  ></path>\n                </svg>\n              </div>\n            ) : null}\n            {title ? <div className=\"modal-content-header\">{title}</div> : null}\n            <div className=\"modal-content-body\">\n              {isRenderHTML ? (\n                <div dangerouslySetInnerHTML={{ __html: String(children) }} />\n              ) : (\n                children\n              )}\n            </div>\n            {footer === null ? null : footer ? (\n              footer\n            ) : (\n              <div className=\"modal-content-footer\">\n                {showCancel ? (\n                  <button\n                    type=\"button\"\n                    className=\"modal-content-footer-button modal-content-footer-button-cancel\"\n                    onClick={(e) => {\n                      if (typeof onCancel === 'function') {\n                        onCancel(e);\n                      }\n                    }}\n                  >\n                    {cancelText ? cancelText : '\u53d6\u6d88'}\n                  </button>\n                ) : null}\n                <button\n                  type=\"button\"\n                  className=\"modal-content-footer-button modal-content-footer-button-sure\"\n                  onClick={(e) => {\n                    if (typeof onOk === 'function') {\n                      onOk(e);\n                    } else {\n                      if (typeof onCancel === 'function') {\n                        onCancel(e);\n                      }\n                    }\n                  }}\n                >\n                  {okText ? okText : '\u786e\u5b9a'}\n                </button>\n              </div>\n            )}\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nconst destroyFns = [];\nconst closeFns = [];\n\nModal.confirm = (config) => {\n  const div = document.createElement('div');\n  document.body.appendChild(div);\n  const defaultConfig = {\n    visible: true,\n    showCancel: true,\n    onOk: () => destroy(),\n    onCancel: () => destroy(),\n    onMask: () => destroy(),\n  };\n  let currentConfig =\n    typeof config === 'object' && config\n      ? {\n          ...config,\n          ...defaultConfig,\n        }\n      : {\n          content: config,\n          ...defaultConfig,\n        };\n  function destroy() {\n    const unMountResult = ReactDOM.unmountComponentAtNode(div);\n    if (unMountResult && div.parentElement) {\n      div.parentElement.removeChild(div);\n    }\n    for (let i = 0, l = destroyFns.length; i < l; i++) {\n      const fn = destroyFns[i];\n      if (fn === close) {\n        destroyFns.splice(i, 1);\n        break;\n      }\n    }\n  }\n  function close() {\n    currentConfig = {\n      ...currentConfig,\n      visible: false,\n    };\n    render(currentConfig);\n  }\n  function render(props) {\n    setTimeout(() => {\n      ReactDOM.render(<Modal {...props}>{props.content}</Modal>, div);\n    });\n  }\n  function update(updateConfig) {\n    if (typeof updateConfig === 'function') {\n      currentConfig = updateConfig(currentConfig);\n    } else {\n      currentConfig = {\n        ...currentConfig,\n        ...updateConfig,\n      };\n    }\n    render(currentConfig);\n  }\n  render(currentConfig);\n  closeFns.push(close);\n  destroyFns.push(destroy);\n  if (currentConfig.autoClose) {\n    let autoCloseTime = Number(currentConfig.autoCloseTime);\n    autoCloseTime = Number.isNaN(autoCloseTime)\n      ? 1000\n      : Math.min(10000, autoCloseTime);\n    setTimeout(() => {\n      destroy();\n    }, autoCloseTime);\n  }\n  return {\n    destroy,\n    close,\n    update,\n  };\n};\n\nModal.closeAll = () => {\n  closeFns.forEach((close) => {\n    close && close();\n  });\n};\n\nModal.destroyAll = () => {\n  destroyFns.forEach((destroy) => {\n    destroy && destroy();\n  });\n};\n\nexport default Modal;",
+        "import React, { useState, useEffect } from 'react';\nimport type { ReactNode, SyntheticEvent } from 'react';\nimport ReactDOM from 'react-dom';\nimport './Modal.less';\n\nexport interface ModalProps extends Record<string, any> {\n  mask: boolean;\n  footer: ReactNode;\n  title: ReactNode;\n  visible: boolean;\n  showCancel: boolean;\n  maskClosable: boolean;\n  onMask: Function;\n  onCancel: Function;\n  onOk: Function;\n  onClose: Function;\n  content: ReactNode;\n  showClose: boolean;\n  closeMask: boolean;\n  autoClose: boolean;\n  autoCloseTime: number;\n  isRenderHTML: boolean;\n  okText: string;\n  cancelText: string;\n  width: string | number;\n  children: ReactNode;\n  isDestroy: boolean;\n  keyboard: boolean;\n}\n\nconst Modal = (props: Partial<ModalProps>) => {\n  const {\n    mask = true,\n    footer,\n    children,\n    isRenderHTML,\n    title,\n    visible,\n    onCancel,\n    maskClosable = true,\n    onOk,\n    showCancel,\n    showClose = true,\n    onClose,\n    okText,\n    cancelText,\n    width = 520,\n    isDestroy = true,\n    keyboard = true,\n    onMask,\n    ...rest\n  } = props;\n\n  const [modalVisible, setModalVisible] = useState(false);\n\n  const keydownHandler = ({ key }) => {\n    switch (key) {\n      case 'Escape':\n        if (typeof onCancel === 'function' && keyboard) {\n          onCancel();\n        }\n        break;\n      default:\n    }\n  };\n\n  useEffect(() => {\n    if (typeof visible === 'boolean') {\n      setModalVisible(visible);\n    }\n  }, [visible]);\n\n  useEffect(() => {\n    document.addEventListener('keydown', keydownHandler);\n    return () => document.removeEventListener('keydown', keydownHandler);\n  });\n\n  // Set the width\n  const contentStyle: Partial<Record<'width', ModalProps['width']>> = {};\n  if (typeof width === 'number') {\n    contentStyle['width'] = width + 'px';\n  } else if (typeof width === 'string') {\n    contentStyle['width'] = width;\n  }\n\n  return isDestroy && !modalVisible ? null : (\n    <div\n      className=\"modal-container\"\n      {...rest}\n      style={{ display: modalVisible ? 'block' : 'none' }}\n    >\n      <div className=\"modal-wrapper\">\n        {mask ? (\n          <div\n            className=\"modal-mask\"\n            onClick={(e: SyntheticEvent) => {\n              if (maskClosable) {\n                if (typeof onMask === 'function') {\n                  return onMask(e);\n                }\n                if (typeof onCancel === 'function') {\n                  onCancel(e);\n                }\n              }\n            }}\n          />\n        ) : null}\n        <div className=\"modal-box\" style={contentStyle}>\n          <div className=\"modal-content\">\n            {showClose ? (\n              <div\n                className=\"modal-content-close\"\n                onClick={(e: SyntheticEvent) => {\n                  if (typeof onCancel === 'function') {\n                    onCancel(e);\n                  }\n                }}\n              >\n                <svg\n                  className=\"close-icon\"\n                  viewBox=\"0 0 1024 1024\"\n                  version=\"1.1\"\n                  xmlns=\"http://www.w3.org/2000/svg\"\n                  p-id=\"2217\"\n                >\n                  <path\n                    d=\"M546.942134 511.818772l327.456957-326.128977c9.617355-9.577423 9.648071-25.135361 0.070648-34.751692-9.577423-9.617355-25.137409-9.647048-34.750668-0.070648L512.119795 477.137729 184.520518 150.868479c-9.616331-9.577423-25.176316-9.545683-34.751692 0.070648-9.577423 9.616331-9.545683 25.174268 0.070648 34.751692l327.457981 326.127953-327.457981 326.128978c-9.616331 9.577423-9.647048 25.135361-0.070648 34.751692a24.496456 24.496456 0 0 0 17.41117 7.231702 24.500552 24.500552 0 0 0 17.340522-7.162078L512.119795 546.499816l327.599276 326.26925a24.492361 24.492361 0 0 0 17.340522 7.162078 24.5026 24.5026 0 0 0 17.41117-7.231702c9.577423-9.617355 9.545683-25.175292-0.070648-34.751692L546.942134 511.818772z\"\n                    fill=\"#bfbfbf\"\n                    p-id=\"2218\"\n                  ></path>\n                </svg>\n              </div>\n            ) : null}\n            {title ? <div className=\"modal-content-header\">{title}</div> : null}\n            <div className=\"modal-content-body\">\n              {isRenderHTML ? (\n                <div dangerouslySetInnerHTML={{ __html: String(children) }} />\n              ) : (\n                children\n              )}\n            </div>\n            {footer === null ? null : footer ? (\n              footer\n            ) : (\n              <div className=\"modal-content-footer\">\n                {showCancel ? (\n                  <button\n                    type=\"button\"\n                    className=\"modal-content-footer-button modal-content-footer-button-cancel\"\n                    onClick={(e: SyntheticEvent) => {\n                      if (typeof onCancel === 'function') {\n                        onCancel(e);\n                      }\n                    }}\n                  >\n                    {cancelText ? cancelText : '\u53d6\u6d88'}\n                  </button>\n                ) : null}\n                <button\n                  type=\"button\"\n                  className=\"modal-content-footer-button modal-content-footer-button-sure\"\n                  onClick={(e: SyntheticEvent) => {\n                    if (typeof onOk === 'function') {\n                      onOk(e);\n                    } else {\n                      if (typeof onCancel === 'function') {\n                        onCancel(e);\n                      }\n                    }\n                  }}\n                >\n                  {okText ? okText : '\u786e\u5b9a'}\n                </button>\n              </div>\n            )}\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nconst destroyFns: Array<() => void> = [];\nconst closeFns: Array<() => void> = [];\n\ninterface MethodModalProps extends ModalProps {}\nexport type ConfirmConfig = ModalProps | ((config: ModalProps) => ModalProps);\nexport type ReturnType = {\n  destroy: () => void;\n  close: () => void;\n  update: (updateConfig: ModalProps) => void;\n};\nexport type ModalType = (config: ModalProps) => ReturnType;\n\nModal.confirm = (config: Partial<MethodModalProps> | string) => {\n  const div = document.createElement('div');\n  document.body.appendChild(div);\n  const defaultConfig = {\n    visible: true,\n    showCancel: true,\n    onOk: () => destroy(),\n    onCancel: () => destroy(),\n    onMask: () => destroy(),\n  };\n  let currentConfig =\n    typeof config === 'object' && config\n      ? {\n          ...config,\n          ...defaultConfig,\n        }\n      : ({\n          content: config,\n          ...defaultConfig,\n        } as any);\n  function destroy() {\n    const unMountResult = ReactDOM.unmountComponentAtNode(div);\n    if (unMountResult && div.parentElement) {\n      div.parentElement.removeChild(div);\n    }\n    for (let i = 0, l = destroyFns.length; i < l; i++) {\n      const fn = destroyFns[i];\n      if (fn === close) {\n        destroyFns.splice(i, 1);\n        break;\n      }\n    }\n  }\n  function close() {\n    currentConfig = {\n      ...currentConfig,\n      visible: false,\n    };\n    render(currentConfig);\n  }\n  function render(props: MethodModalProps) {\n    setTimeout(() => {\n      ReactDOM.render(<Modal {...props}>{props.content}</Modal>, div);\n    });\n  }\n  function update(updateConfig: ConfirmConfig) {\n    if (typeof updateConfig === 'function') {\n      currentConfig = updateConfig(currentConfig);\n    } else {\n      currentConfig = {\n        ...currentConfig,\n        ...updateConfig,\n      };\n    }\n    render(currentConfig);\n  }\n  render(currentConfig);\n  closeFns.push(close);\n  destroyFns.push(destroy);\n  if (currentConfig.autoClose) {\n    let autoCloseTime = Number(currentConfig.autoCloseTime);\n    autoCloseTime = Number.isNaN(autoCloseTime)\n      ? 1000\n      : Math.min(10000, autoCloseTime);\n    setTimeout(() => {\n      destroy();\n    }, autoCloseTime);\n  }\n  return {\n    destroy,\n    close,\n    update,\n  };\n};\n\nModal.closeAll = () => {\n  closeFns.forEach((close: Function) => {\n    close && close();\n  });\n};\n\nModal.destroyAll = () => {\n  destroyFns.forEach((destroy: Function) => {\n    destroy && destroy();\n  });\n};\n\ntype GlobalModal = typeof Modal;\nexport { GlobalModal };\nexport default Modal;",
       cn =
-        "import React, { useState } from 'react';\nimport Modal from './Modal';\nimport { Button, Space } from 'antd';\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const onCreate = () => {\n    Modal.confirm({\n      title: '\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898',\n      content: (\n        <>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        </>\n      ),\n    });\n  };\n  return (\n    <Space>\n      <Button onClick={() => setVisible(true)}>clicked me</Button>\n      <Button onClick={onCreate}>clicked me</Button>\n      <Modal\n        visible={visible}\n        onCancel={() => setVisible(false)}\n        title=\"\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898\"\n        showCancel\n        onOk={() => setVisible(false)}\n      >\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n      </Modal>\n    </Space>\n  );\n};\n\nexport default Demo;",
+        "@black: rgba(0, 0, 0, 1);\n@baseSelector: modal;\n\n.@{baseSelector}-container {\n  .base-fixed {\n    inset: 0;\n    position: fixed;\n  }\n\n  .@{baseSelector}-mask {\n    height: 100%;\n    background-color: fade(@black, 65%);\n    .base-fixed();\n  }\n\n  .@{baseSelector}-wrapper {\n    .base-fixed();\n    overflow: auto;\n    outline: 0;\n    z-index: 1000;\n\n    .@{baseSelector}-box {\n      box-sizing: border-box;\n      padding: 0 0 24px;\n      color: fadeout(@black, 15%);\n      font-size: 14px;\n      font-variant: tabular-nums;\n      line-height: 1.5715;\n      list-style: none;\n      font-feature-settings: 'tnum';\n      pointer-events: none;\n      position: relative;\n      top: 100px;\n      width: auto;\n      max-width: calc(100vw - 32px);\n      margin: 0 auto;\n\n      .@{baseSelector}-content {\n        position: relative;\n        background-color: #fff;\n        background-clip: padding-box;\n        border: 0;\n        border-radius: 2px;\n        box-shadow: 0 3px 6px -4px fade(@black, 5%), 0 6px 16px fade(@black, 7%),\n          0 9px 28px 8px fade(@black, 9%);\n        pointer-events: auto;\n\n        &-header {\n          padding: 16px 24px;\n          color: fade(@black, 90%);\n          background: #fff;\n          border-bottom: 1px solid fade(@black, 6%);\n          border-radius: 2px 2px 0 0;\n          margin: 0;\n          font-weight: 500;\n          font-size: 16px;\n          line-height: 22px;\n          word-wrap: break-word;\n        }\n\n        &-body {\n          padding: 24px;\n          font-size: 14px;\n          line-height: 1.5715;\n          word-wrap: break-word;\n        }\n\n        &-footer {\n          padding: 10px 16px;\n          text-align: right;\n          background: 0 0;\n          border-top: 1px solid fadeout(@black, 94%);\n          border-radius: 0 0 2px 2px;\n\n          &-button {\n            line-height: 1.5715;\n            position: relative;\n            display: inline-block;\n            font-weight: 400;\n            white-space: nowrap;\n            text-align: center;\n            background-image: none;\n            border: 1px solid transparent;\n            box-shadow: 0 2px fadeout(@black, 95%);\n            cursor: pointer;\n            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n            -webkit-user-select: none;\n            -moz-user-select: none;\n            -ms-user-select: none;\n            user-select: none;\n            touch-action: manipulation;\n            height: 32px;\n            padding: 4px 15px;\n            font-size: 14px;\n            letter-spacing: 2px;\n            border-radius: 2px;\n            color: fade(@black, 97%);\n            border-color: #d9d9d9;\n            background: #fff;\n            border-radius: 4px;\n\n            &-cancel {\n              margin-right: 15px;\n\n              &:hover,\n              &:active {\n                border-color: #2499f1;\n                color: #2396ef;\n              }\n            }\n\n            &-sure {\n              background-color: #34a1f5;\n              border-color: #1e9af8;\n              color: #fff;\n\n              &:hover,\n              &:active {\n                background-color: #0f8ff1;\n                border-color: #1794f5;\n              }\n            }\n          }\n        }\n\n        &-close {\n          position: absolute;\n          top: 0;\n          right: 0;\n          z-index: 10;\n          padding: 0;\n          color: fadeout(@black, 75%);\n          font-weight: 700;\n          text-decoration: none;\n          background: 0 0;\n          border: 0;\n          outline: 0;\n          cursor: pointer;\n          width: 54px;\n          height: 54px;\n          font-size: 16px;\n          font-style: normal;\n          line-height: 54px;\n          text-align: center;\n          text-transform: none;\n          text-rendering: auto;\n          transition: color 0.3s;\n\n          & .close-icon {\n            width: 16px;\n            height: 16px;\n          }\n        }\n      }\n    }\n  }\n}",
       sn =
-        "import React, { useState } from 'react';\nimport Modal from './Modal';\nimport { Button, Space } from 'antd';\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const onCreate = () => {\n    Modal.confirm({\n      title: '\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898',\n      content: (\n        <>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        </>\n      ),\n    });\n  };\n  return (\n    <Space>\n      <Button onClick={() => setVisible(true)}>clicked me</Button>\n      <Button onClick={onCreate}>clicked me</Button>\n      <Modal\n        visible={visible}\n        onCancel={() => setVisible(false)}\n        title=\"\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898\"\n        showCancel\n        onOk={() => setVisible(false)}\n      >\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n      </Modal>\n    </Space>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Modal from './Modal';\nimport { Button, Space } from 'antd';\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const onCreate = () => {\n    Modal.confirm({\n      title: 'The modal title',\n      content: (\n        <>\n          <p>The modal content</p>\n          <p>The modal content</p>\n          <p>The modal content</p>\n        </>\n      ),\n      cancelText: 'Cancel',\n      okText: 'Sure',\n    });\n  };\n  return (\n    <Space>\n      <Button onClick={() => setVisible(true)}>clicked me</Button>\n      <Button onClick={onCreate}>clicked me</Button>\n      <Modal\n        visible={visible}\n        onCancel={() => setVisible(false)}\n        title=\"The modal title\"\n        showCancel\n        onOk={() => setVisible(false)}\n        cancelText=\"Cancel\"\n        okText=\"Sure\"\n      >\n        <p>The modal content</p>\n        <p>The modal content</p>\n        <p>The modal content</p>\n      </Modal>\n    </Space>\n  );\n};\n\nexport default Demo;",
       un =
-        "import React, { useState } from 'react';\nimport PasswordRevealer from './PasswordRevealer';\nconst Demo = () => {\n  const [value, setValue] = useState('');\n  const onChange = (v: string) => {\n    console.log(v);\n    setValue(v);\n  };\n  return (\n    <PasswordRevealer\n      placeholder=\"Please Input the password\"\n      value={value}\n      onChange={onChange}\n    ></PasswordRevealer>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState, useEffect } from 'react';\nimport ReactDOM from 'react-dom';\nimport '../Modal.less';\n\nconst Modal = (props) => {\n  const {\n    mask = true,\n    footer,\n    children,\n    isRenderHTML,\n    title,\n    visible,\n    onCancel,\n    maskClosable = true,\n    onOk,\n    showCancel,\n    showClose = true,\n    onClose,\n    okText,\n    cancelText,\n    width = 520,\n    isDestroy = true,\n    keyboard = true,\n    onMask,\n    ...rest\n  } = props;\n\n  const [modalVisible, setModalVisible] = useState(false);\n\n  const keydownHandler = ({ key }) => {\n    switch (key) {\n      case 'Escape':\n        if (typeof onCancel === 'function' && keyboard) {\n          onCancel();\n        }\n        break;\n      default:\n    }\n  };\n\n  useEffect(() => {\n    if (typeof visible === 'boolean') {\n      setModalVisible(visible);\n    }\n  }, [visible]);\n\n  useEffect(() => {\n    document.addEventListener('keydown', keydownHandler);\n    return () => document.removeEventListener('keydown', keydownHandler);\n  });\n\n  // Set the width\n  const contentStyle = {};\n  if (typeof width === 'number') {\n    contentStyle['width'] = width + 'px';\n  } else if (typeof width === 'string') {\n    contentStyle['width'] = width;\n  }\n\n  return isDestroy && !modalVisible ? null : (\n    <div\n      className=\"modal-container\"\n      {...rest}\n      style={{ display: modalVisible ? 'block' : 'none' }}\n    >\n      <div className=\"modal-wrapper\">\n        {mask ? (\n          <div\n            className=\"modal-mask\"\n            onClick={(e) => {\n              if (maskClosable) {\n                if (typeof onMask === 'function') {\n                  return onMask(e);\n                }\n                if (typeof onCancel === 'function') {\n                  onCancel(e);\n                }\n              }\n            }}\n          />\n        ) : null}\n        <div className=\"modal-box\" style={contentStyle}>\n          <div className=\"modal-content\">\n            {showClose ? (\n              <div\n                className=\"modal-content-close\"\n                onClick={(e) => {\n                  if (typeof onCancel === 'function') {\n                    onCancel(e);\n                  }\n                }}\n              >\n                <svg\n                  className=\"close-icon\"\n                  viewBox=\"0 0 1024 1024\"\n                  version=\"1.1\"\n                  xmlns=\"http://www.w3.org/2000/svg\"\n                  p-id=\"2217\"\n                >\n                  <path\n                    d=\"M546.942134 511.818772l327.456957-326.128977c9.617355-9.577423 9.648071-25.135361 0.070648-34.751692-9.577423-9.617355-25.137409-9.647048-34.750668-0.070648L512.119795 477.137729 184.520518 150.868479c-9.616331-9.577423-25.176316-9.545683-34.751692 0.070648-9.577423 9.616331-9.545683 25.174268 0.070648 34.751692l327.457981 326.127953-327.457981 326.128978c-9.616331 9.577423-9.647048 25.135361-0.070648 34.751692a24.496456 24.496456 0 0 0 17.41117 7.231702 24.500552 24.500552 0 0 0 17.340522-7.162078L512.119795 546.499816l327.599276 326.26925a24.492361 24.492361 0 0 0 17.340522 7.162078 24.5026 24.5026 0 0 0 17.41117-7.231702c9.577423-9.617355 9.545683-25.175292-0.070648-34.751692L546.942134 511.818772z\"\n                    fill=\"#bfbfbf\"\n                    p-id=\"2218\"\n                  ></path>\n                </svg>\n              </div>\n            ) : null}\n            {title ? <div className=\"modal-content-header\">{title}</div> : null}\n            <div className=\"modal-content-body\">\n              {isRenderHTML ? (\n                <div dangerouslySetInnerHTML={{ __html: String(children) }} />\n              ) : (\n                children\n              )}\n            </div>\n            {footer === null ? null : footer ? (\n              footer\n            ) : (\n              <div className=\"modal-content-footer\">\n                {showCancel ? (\n                  <button\n                    type=\"button\"\n                    className=\"modal-content-footer-button modal-content-footer-button-cancel\"\n                    onClick={(e) => {\n                      if (typeof onCancel === 'function') {\n                        onCancel(e);\n                      }\n                    }}\n                  >\n                    {cancelText ? cancelText : '\u53d6\u6d88'}\n                  </button>\n                ) : null}\n                <button\n                  type=\"button\"\n                  className=\"modal-content-footer-button modal-content-footer-button-sure\"\n                  onClick={(e) => {\n                    if (typeof onOk === 'function') {\n                      onOk(e);\n                    } else {\n                      if (typeof onCancel === 'function') {\n                        onCancel(e);\n                      }\n                    }\n                  }}\n                >\n                  {okText ? okText : '\u786e\u5b9a'}\n                </button>\n              </div>\n            )}\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nconst destroyFns = [];\nconst closeFns = [];\n\nModal.confirm = (config) => {\n  const div = document.createElement('div');\n  document.body.appendChild(div);\n  const defaultConfig = {\n    visible: true,\n    showCancel: true,\n    onOk: () => destroy(),\n    onCancel: () => destroy(),\n    onMask: () => destroy(),\n  };\n  let currentConfig =\n    typeof config === 'object' && config\n      ? {\n          ...config,\n          ...defaultConfig,\n        }\n      : {\n          content: config,\n          ...defaultConfig,\n        };\n  function destroy() {\n    const unMountResult = ReactDOM.unmountComponentAtNode(div);\n    if (unMountResult && div.parentElement) {\n      div.parentElement.removeChild(div);\n    }\n    for (let i = 0, l = destroyFns.length; i < l; i++) {\n      const fn = destroyFns[i];\n      if (fn === close) {\n        destroyFns.splice(i, 1);\n        break;\n      }\n    }\n  }\n  function close() {\n    currentConfig = {\n      ...currentConfig,\n      visible: false,\n    };\n    render(currentConfig);\n  }\n  function render(props) {\n    setTimeout(() => {\n      ReactDOM.render(<Modal {...props}>{props.content}</Modal>, div);\n    });\n  }\n  function update(updateConfig) {\n    if (typeof updateConfig === 'function') {\n      currentConfig = updateConfig(currentConfig);\n    } else {\n      currentConfig = {\n        ...currentConfig,\n        ...updateConfig,\n      };\n    }\n    render(currentConfig);\n  }\n  render(currentConfig);\n  closeFns.push(close);\n  destroyFns.push(destroy);\n  if (currentConfig.autoClose) {\n    let autoCloseTime = Number(currentConfig.autoCloseTime);\n    autoCloseTime = Number.isNaN(autoCloseTime)\n      ? 1000\n      : Math.min(10000, autoCloseTime);\n    setTimeout(() => {\n      destroy();\n    }, autoCloseTime);\n  }\n  return {\n    destroy,\n    close,\n    update,\n  };\n};\n\nModal.closeAll = () => {\n  closeFns.forEach((close) => {\n    close && close();\n  });\n};\n\nModal.destroyAll = () => {\n  destroyFns.forEach((destroy) => {\n    destroy && destroy();\n  });\n};\n\nexport default Modal;",
       dn =
-        'import React, { useState } from \'react\';\nimport type { SyntheticEvent } from \'react\';\nimport \'./passwordRevealer.less\';\n\nexport interface PasswordRevealerProps extends Record<string, any> {\n  value: string;\n  onChange(v: string): void;\n  placeholder: string;\n}\n\nconst Eye = () => (\n  <svg\n    viewBox="64 64 896 896"\n    className="ant-password-suffix-icon"\n    data-icon="eye"\n    width="1em"\n    height="1em"\n    fill="currentColor"\n  >\n    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>\n  </svg>\n);\nconst EyeClose = () => (\n  <svg\n    viewBox="64 64 896 896"\n    data-icon="eye-invisible"\n    className="ant-password-suffix-icon"\n    width="1em"\n    height="1em"\n    fill="currentColor"\n  >\n    <path d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"></path>\n    <path d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"></path>\n  </svg>\n);\n\nconst PasswordRevealer = (props: Partial<PasswordRevealerProps>) => {\n  const {\n    value,\n    onChange,\n    placeholder = \'Please Input the password\',\n    ...rest\n  } = props;\n  const [isShown, setIsShown] = useState(false);\n  const [isFocus, setIsFocus] = useState(false);\n\n  const onChangeHandler = (e: SyntheticEvent) => {\n    const v = (e.target as HTMLInputElement).value;\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  return (\n    <span className={`ant-password${isFocus ? \' is-focused\' : \'\'}`} {...rest}>\n      <input\n        type={isShown ? \'text\' : \'password\'}\n        className="ant-password-input"\n        value={value}\n        onChange={onChangeHandler}\n        placeholder={placeholder}\n        onFocus={() => setIsFocus(true)}\n        onBlur={() => setIsFocus(false)}\n      />\n      <span\n        className="ant-password-suffix"\n        onClick={() => setIsShown(!isShown)}\n      >\n        {isShown ? <Eye /> : <EyeClose />}\n      </span>\n    </span>\n  );\n};\n\nexport default PasswordRevealer;',
+        "import React, { useState } from 'react';\nimport Modal from './Modal';\nimport { Button, Space } from 'antd';\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const onCreate = () => {\n    Modal.confirm({\n      title: '\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898',\n      content: (\n        <>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        </>\n      ),\n    });\n  };\n  return (\n    <Space>\n      <Button onClick={() => setVisible(true)}>clicked me</Button>\n      <Button onClick={onCreate}>clicked me</Button>\n      <Modal\n        visible={visible}\n        onCancel={() => setVisible(false)}\n        title=\"\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898\"\n        showCancel\n        onOk={() => setVisible(false)}\n      >\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n      </Modal>\n    </Space>\n  );\n};\n\nexport default Demo;",
       pn =
-        "@baseSelector: ant-;\n\n.@{baseSelector}password {\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  transition: all 0.3s;\n  display: inline-flex;\n  padding: 4px 11px;\n  &-suffix {\n    margin-left: 4px;\n    display: flex;\n    flex: none;\n    align-items: center;\n    cursor: pointer;\n    &-icon {\n      &:hover {\n        color: rgba(0, 0, 0, 0.6);\n      }\n    }\n  }\n  &-input {\n    box-sizing: border-box;\n    margin: 0;\n    font-variant: tabular-nums;\n    list-style: none;\n    font-feature-settings: 'tnum';\n    position: relative;\n    display: inline-block;\n    width: 100%;\n    min-width: 0;\n    color: rgba(0, 0, 0, 0.85);\n    font-size: 14px;\n    outline: none;\n    line-height: 1.5715;\n    background-color: #fff;\n    background-image: none;\n    border: none;\n    border-radius: 2px;\n    transition: all 0.3s;\n  }\n  &.is-focused {\n    border-color: #40a9ff;\n  }\n}",
+        "import React, { useState } from 'react';\nimport Modal from './Modal';\nimport { Button, Space } from 'antd';\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const onCreate = () => {\n    Modal.confirm({\n      title: '\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898',\n      content: (\n        <>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n          <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        </>\n      ),\n    });\n  };\n  return (\n    <Space>\n      <Button onClick={() => setVisible(true)}>clicked me</Button>\n      <Button onClick={onCreate}>clicked me</Button>\n      <Modal\n        visible={visible}\n        onCancel={() => setVisible(false)}\n        title=\"\u8fd9\u662f\u5f39\u6846\u7684\u6807\u9898\"\n        showCancel\n        onOk={() => setVisible(false)}\n      >\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n        <p>\u8fd9\u662f\u5f39\u6846\u7684\u5185\u5bb9</p>\n      </Modal>\n    </Space>\n  );\n};\n\nexport default Demo;",
       fn =
-        "import React, { useState } from 'react';\nimport PasswordRevealer from './PasswordRevealer';\nconst Demo = () => {\n  const [value, setValue] = useState('');\n  const onChange = (v: string) => {\n    console.log(v);\n    setValue(v);\n  };\n  return (\n    <PasswordRevealer\n      placeholder=\"\u8bf7\u8f93\u5165\u5bc6\u7801\"\n      value={value}\n      onChange={onChange}\n    ></PasswordRevealer>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport PasswordRevealer from './PasswordRevealer';\nconst Demo = () => {\n  const [value, setValue] = useState('');\n  const onChange = (v: string) => {\n    console.log(v);\n    setValue(v);\n  };\n  return (\n    <PasswordRevealer\n      placeholder=\"Please Input the password\"\n      value={value}\n      onChange={onChange}\n    ></PasswordRevealer>\n  );\n};\n\nexport default Demo;",
       mn =
-        'import React from \'react\';\nimport Select from \'./Select\';\nimport type { SelectProps } from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler: SelectProps[\'onChange\'] = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="please select"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="grapefruit" value="Grapefruit"></Option>\n        <Option label="lime" value="lime"></Option>\n        <Option label="coconut" value="coconut" disabled></Option>\n        <Option label="mango" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="please select"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="grapefruit" value="Grapefruit"></Option>\n        <Option label="lime" value="lime"></Option>\n        <Option label="coconut" value="coconut" disabled></Option>\n        <Option label="mango" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
+        'import React, { useState } from \'react\';\nimport type { SyntheticEvent } from \'react\';\nimport \'./passwordRevealer.less\';\n\nexport interface PasswordRevealerProps extends Record<string, any> {\n  value: string;\n  onChange(v: string): void;\n  placeholder: string;\n}\n\nconst Eye = () => (\n  <svg\n    viewBox="64 64 896 896"\n    className="ant-password-suffix-icon"\n    data-icon="eye"\n    width="1em"\n    height="1em"\n    fill="currentColor"\n  >\n    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>\n  </svg>\n);\nconst EyeClose = () => (\n  <svg\n    viewBox="64 64 896 896"\n    data-icon="eye-invisible"\n    className="ant-password-suffix-icon"\n    width="1em"\n    height="1em"\n    fill="currentColor"\n  >\n    <path d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"></path>\n    <path d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"></path>\n  </svg>\n);\n\nconst PasswordRevealer = (props: Partial<PasswordRevealerProps>) => {\n  const {\n    value,\n    onChange,\n    placeholder = \'Please Input the password\',\n    ...rest\n  } = props;\n  const [isShown, setIsShown] = useState(false);\n  const [isFocus, setIsFocus] = useState(false);\n\n  const onChangeHandler = (e: SyntheticEvent) => {\n    const v = (e.target as HTMLInputElement).value;\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  return (\n    <span className={`ant-password${isFocus ? \' is-focused\' : \'\'}`} {...rest}>\n      <input\n        type={isShown ? \'text\' : \'password\'}\n        className="ant-password-input"\n        value={value}\n        onChange={onChangeHandler}\n        placeholder={placeholder}\n        onFocus={() => setIsFocus(true)}\n        onBlur={() => setIsFocus(false)}\n      />\n      <span\n        className="ant-password-suffix"\n        onClick={() => setIsShown(!isShown)}\n      >\n        {isShown ? <Eye /> : <EyeClose />}\n      </span>\n    </span>\n  );\n};\n\nexport default PasswordRevealer;',
       hn =
-        "import React, {\n  useState,\n  useEffect,\n  cloneElement,\n  createRef,\n  forwardRef,\n} from 'react';\nimport type { OptionValueProps } from './Option';\nimport classnames from '../../utils/classnames';\nimport useClickOutside from '../../utils/useClickOutside';\nimport Option from './Option';\nimport './select.less';\n\nexport interface SelectProps extends Record<string, any> {\n  disabled: boolean;\n  defaultValue: string;\n  value: string;\n  onChange(v: Partial<OptionValueProps>): void;\n  placeholder: string;\n  children: JSX.Element[] | JSX.Element;\n  allowClear: boolean;\n  labelProps: string;\n}\nconst ClearIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => {\n    const { onClick, ...rest } = props;\n    return (\n      <svg\n        className=\"ew-select-clear-icon\"\n        viewBox=\"0 0 1024 1024\"\n        version=\"1.1\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n        p-id=\"2381\"\n        ref={ref}\n        onClick={(e) => {\n          if (onClick) {\n            onClick(e);\n          }\n        }}\n        {...rest}\n      >\n        <path\n          d=\"M512 39.384615C250.092308 39.384615 39.384615 250.092308 39.384615 512s210.707692 472.615385 472.615385 472.615385 472.615385-210.707692 472.615385-472.615385S773.907692 39.384615 512 39.384615z m96.492308 488.369231l153.6 153.6c7.876923 7.876923 7.876923 19.692308 0 27.569231l-55.138462 55.138461c-7.876923 7.876923-19.692308 7.876923-27.569231 0L525.784615 610.461538c-7.876923-7.876923-19.692308-7.876923-27.56923 0l-153.6 153.6c-7.876923 7.876923-19.692308 7.876923-27.569231 0L261.907692 708.923077c-7.876923-7.876923-7.876923-19.692308 0-27.569231l153.6-153.6c7.876923-7.876923 7.876923-19.692308 0-27.569231l-155.56923-155.56923c-7.876923-7.876923-7.876923-19.692308 0-27.569231l55.138461-55.138462c7.876923-7.876923 19.692308-7.876923 27.569231 0l155.569231 155.569231c7.876923 7.876923 19.692308 7.876923 27.56923 0l153.6-153.6c7.876923-7.876923 19.692308-7.876923 27.569231 0l55.138462 55.138462c7.876923 7.876923 7.876923 19.692308 0 27.56923l-153.6 153.6c-5.907692 7.876923-5.907692 19.692308 0 27.569231z\"\n          p-id=\"2382\"\n          fill=\"#dbdbdb\"\n          className=\"ew-select-clear-icon-path\"\n        ></path>\n      </svg>\n    );\n  },\n);\nconst ArrowIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => (\n    <svg\n      className=\"ew-select-arrow-icon\"\n      viewBox=\"0 0 1024 1024\"\n      version=\"1.1\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      p-id=\"2216\"\n      ref={ref}\n      {...props}\n    >\n      <path\n        d=\"M512 714.666667c-8.533333 0-17.066667-2.133333-23.466667-8.533334l-341.333333-341.333333c-12.8-12.8-12.8-32 0-44.8 12.8-12.8 32-12.8 44.8 0l320 317.866667 317.866667-320c12.8-12.8 32-12.8 44.8 0 12.8 12.8 12.8 32 0 44.8L533.333333 704c-4.266667 8.533333-12.8 10.666667-21.333333 10.666667z\"\n        p-id=\"2217\"\n      ></path>\n    </svg>\n  ),\n);\nconst Select = (\n  props: Partial<Omit<SelectProps, 'children'>> & Pick<SelectProps, 'children'>,\n) => {\n  const {\n    disabled,\n    defaultValue,\n    value,\n    onChange,\n    placeholder = '\u8bf7\u8f93\u5165',\n    allowClear = true,\n    children,\n    labelProps = 'label',\n    ...rest\n  } = props;\n  const dropdownRef = createRef<HTMLDivElement>();\n  const clearIconRef = createRef<HTMLOrSVGElement>();\n  const [selectValue, setSelectValue] = useState<string | undefined>(\n    defaultValue,\n  );\n  const [option, setOption] = useState<Partial<OptionValueProps>>({});\n  const [visible, setVisible] = useState(false);\n  const [showClear, setShowClear] = useState(false);\n\n  const optionChildren = Array.isArray(children)\n    ? children\n    : [children]?.filter((item) => item?.type?.name === 'Option') || [];\n\n  useEffect(() => {\n    if (typeof value === 'string') {\n      setSelectValue(value);\n    }\n  }, [value]);\n\n  const onChangeHandler = (v: Partial<OptionValueProps>) => {\n    setOption(v);\n    setSelectValue(v.value);\n    if (!disabled) {\n      setVisible(false);\n      setShowClear(false);\n    }\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  const onClearHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setOption({ label: '', value: '' });\n    setSelectValue('');\n  };\n  const selectClassNames = {\n    'ew-select': true,\n    'ew-select-disabled': disabled,\n  };\n  const valueClassNames = {\n    'ew-select-selector': true,\n    'ew-select-selector-placeholder': !selectValue,\n  };\n  useClickOutside(dropdownRef, () => {\n    if (!disabled) {\n      setVisible(false);\n    }\n  });\n  return (\n    <div\n      className={classnames(selectClassNames)}\n      {...rest}\n      ref={dropdownRef}\n      onMouseEnter={() => {\n        if (!disabled) {\n          setShowClear(true);\n        }\n      }}\n      onMouseLeave={() => {\n        if (!disabled) {\n          setShowClear(false);\n        }\n      }}\n    >\n      <div\n        className={classnames(valueClassNames)}\n        placeholder={placeholder}\n        onClick={() => {\n          if (!disabled) {\n            setVisible(!visible);\n          }\n        }}\n      >\n        <span className=\"ew-select-selector-value\">{option[labelProps]}</span>\n      </div>\n      <div className=\"ew-select-arrow\">\n        {allowClear && selectValue && showClear ? (\n          <ClearIcon onClick={onClearHandler} ref={clearIconRef} />\n        ) : (\n          <ArrowIcon\n            onClick={() => {\n              if (!disabled) {\n                setVisible(!visible);\n              }\n            }}\n          />\n        )}\n      </div>\n      <div\n        className=\"ew-select-dropdown\"\n        style={{ display: visible ? 'block' : 'none' }}\n      >\n        {optionChildren.map((item, index) =>\n          cloneElement(item, {\n            onOptionChange: onChangeHandler,\n            defaultValue: selectValue,\n            key: item.key || String(index + 1),\n            active: item.props.value === selectValue,\n          }),\n        )}\n      </div>\n    </div>\n  );\n};\nSelect.Option = Option;\nexport default Select;",
+        "@baseSelector: ant-;\n\n.@{baseSelector}password {\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  transition: all 0.3s;\n  display: inline-flex;\n  padding: 4px 11px;\n  &-suffix {\n    margin-left: 4px;\n    display: flex;\n    flex: none;\n    align-items: center;\n    cursor: pointer;\n    &-icon {\n      &:hover {\n        color: rgba(0, 0, 0, 0.6);\n      }\n    }\n  }\n  &-input {\n    box-sizing: border-box;\n    margin: 0;\n    font-variant: tabular-nums;\n    list-style: none;\n    font-feature-settings: 'tnum';\n    position: relative;\n    display: inline-block;\n    width: 100%;\n    min-width: 0;\n    color: rgba(0, 0, 0, 0.85);\n    font-size: 14px;\n    outline: none;\n    line-height: 1.5715;\n    background-color: #fff;\n    background-image: none;\n    border: none;\n    border-radius: 2px;\n    transition: all 0.3s;\n  }\n  &.is-focused {\n    border-color: #40a9ff;\n  }\n}",
       vn =
-        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
+        "import React, { useState } from 'react';\nimport PasswordRevealer from './PasswordRevealer';\nconst Demo = () => {\n  const [value, setValue] = useState('');\n  const onChange = (v: string) => {\n    console.log(v);\n    setValue(v);\n  };\n  return (\n    <PasswordRevealer\n      placeholder=\"\u8bf7\u8f93\u5165\u5bc6\u7801\"\n      value={value}\n      onChange={onChange}\n    ></PasswordRevealer>\n  );\n};\n\nexport default Demo;",
       gn =
-        "import React, { useState, useEffect } from 'react';\nimport type { ReactNode } from 'react';\nimport classnames from '../../utils/classnames';\nexport interface OptionValueProps {\n  label: string;\n  value: string;\n}\nexport interface OptionProps extends Record<string, any>, OptionValueProps {\n  disabled: boolean;\n  children: ReactNode;\n  defaultValue: string;\n  onOptionChange(v: Partial<OptionValueProps>): void;\n  active: boolean;\n}\nconst Option = (props: Partial<OptionProps>) => {\n  const {\n    label,\n    value,\n    disabled,\n    defaultValue,\n    children,\n    onOptionChange,\n    active,\n    ...rest\n  } = props;\n  const [currentValue, setCurrentValue] = useState<string | undefined>(\n    defaultValue,\n  );\n\n  const classNames = {\n    'ew-select-dropdown-option': true,\n    'ew-select-dropdown-option-disabled': disabled,\n    active: active,\n  };\n  const onChangeHandler = (options: Partial<OptionValueProps>) => {\n    if (disabled) {\n      return;\n    }\n\n    setCurrentValue(options.value);\n    if (onOptionChange) {\n      onOptionChange(options);\n    }\n  };\n\n  useEffect(() => {\n    if (currentValue) {\n      if (onOptionChange) {\n        onOptionChange({ label, value });\n      }\n    }\n  }, [currentValue]);\n  return (\n    <div\n      className={classnames(classNames)}\n      data-value={currentValue}\n      {...rest}\n      onClick={() => onChangeHandler({ label, value })}\n    >\n      {children ? children : label ? label : ''}\n    </div>\n  );\n};\nexport default Option;",
+        'import React from \'react\';\nimport Select from \'./Select\';\nimport type { SelectProps } from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler: SelectProps[\'onChange\'] = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="please select"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="grapefruit" value="Grapefruit"></Option>\n        <Option label="lime" value="lime"></Option>\n        <Option label="coconut" value="coconut" disabled></Option>\n        <Option label="mango" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="please select"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="grapefruit" value="Grapefruit"></Option>\n        <Option label="lime" value="lime"></Option>\n        <Option label="coconut" value="coconut" disabled></Option>\n        <Option label="mango" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
       bn =
-        "@prefix: ew-;\n\n.@{prefix}select {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: rgba(0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  cursor: pointer;\n  border-radius: 4px;\n  min-width: 120px;\n\n  &-disabled {\n    .@{prefix}select-selector {\n      background: #f5f5f5;\n      cursor: not-allowed;\n      color: rgba(0, 0, 0, 0.25);\n    }\n\n    .@{prefix}select-arrow {\n      cursor: not-allowed;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-selector,\n  &:not(.@{prefix}select-disabled):active &-selector {\n    border-color: #2396ef;\n  }\n\n  &-selector {\n    position: relative;\n    background-color: #fff;\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    width: 100%;\n    height: 32px;\n    padding: 0 11px;\n\n    &&-placeholder::after {\n      content: attr(placeholder);\n      display: inline-block;\n      padding-right: 18px;\n      color: rgba(0, 0, 0, 0.35);\n      position: relative;\n      left: -15px;\n    }\n\n    &-value {\n      padding-right: 18px;\n      line-height: 30px;\n      position: relative;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-value {\n    border-color: #2396ef;\n    border-right-width: 1px;\n  }\n\n  &-arrow {\n    display: inline-block;\n    color: inherit;\n    font-style: normal;\n    line-height: 0;\n    text-transform: none;\n    vertical-align: -0.125em;\n    text-rendering: optimizelegibility;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    position: absolute;\n    top: 50%;\n    right: 11px;\n    display: flex;\n    align-items: center;\n    margin-top: -6px;\n    font-size: 12px;\n    line-height: 1;\n    text-align: center;\n\n    &-icon,\n    .@{prefix}select-clear-icon {\n      width: 16px;\n      height: 16px;\n      display: inline-block;\n      color: rgba(0, 0, 0, 0.25);\n    }\n  }\n\n  .@{prefix}select-clear-icon {\n    position: relative;\n    top: -2px;\n  }\n\n  &-dropdown {\n    margin: 0;\n    color: rgba(0, 0, 0.85);\n    font-variant: tabular-nums;\n    line-height: 1.5715;\n    position: absolute;\n    z-index: 1050;\n    box-sizing: border-box;\n    padding: 4px 0;\n    overflow: hidden;\n    font-size: 14px;\n    font-variant: initial;\n    background-color: #fff;\n    border-radius: 2px;\n    outline: none;\n    width: 100%;\n    top: 40px;\n    box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014,\n      0 9px 28px 8px #0000000d;\n\n    &-option {\n      position: relative;\n      display: flex;\n      min-height: 32px;\n      padding: 5px 12px;\n      color: rgba(0, 0, 0.85);\n      font-weight: 400;\n      font-size: 14px;\n      line-height: 22px;\n      cursor: pointer;\n      transition: background 0.3s ease;\n      flex: auto;\n      overflow: hidden;\n      white-space: nowrap;\n      text-overflow: ellipsis;\n\n      &-disabled {\n        color: rgba(0, 0, 0, 0.25);\n        cursor: not-allowed;\n      }\n\n      &:not(:last-of-type) {\n        margin-bottom: 8px;\n      }\n\n      &:not(&-disabled):hover {\n        background-color: #f5f5f5;\n      }\n\n      &:not(&-disabled).active {\n        background-color: #e6f7ff;\n      }\n    }\n  }\n}",
+        "import React, {\n  useState,\n  useEffect,\n  cloneElement,\n  createRef,\n  forwardRef,\n} from 'react';\nimport type { OptionValueProps } from './Option';\nimport classnames from '../../utils/classnames';\nimport useClickOutside from '../../utils/useClickOutside';\nimport Option from './Option';\nimport './select.less';\n\nexport interface SelectProps extends Record<string, any> {\n  disabled: boolean;\n  defaultValue: string;\n  value: string;\n  onChange(v: Partial<OptionValueProps>): void;\n  placeholder: string;\n  children: JSX.Element[] | JSX.Element;\n  allowClear: boolean;\n  labelProps: string;\n}\nconst ClearIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => {\n    const { onClick, ...rest } = props;\n    return (\n      <svg\n        className=\"ew-select-clear-icon\"\n        viewBox=\"0 0 1024 1024\"\n        version=\"1.1\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n        p-id=\"2381\"\n        ref={ref}\n        onClick={(e) => {\n          if (onClick) {\n            onClick(e);\n          }\n        }}\n        {...rest}\n      >\n        <path\n          d=\"M512 39.384615C250.092308 39.384615 39.384615 250.092308 39.384615 512s210.707692 472.615385 472.615385 472.615385 472.615385-210.707692 472.615385-472.615385S773.907692 39.384615 512 39.384615z m96.492308 488.369231l153.6 153.6c7.876923 7.876923 7.876923 19.692308 0 27.569231l-55.138462 55.138461c-7.876923 7.876923-19.692308 7.876923-27.569231 0L525.784615 610.461538c-7.876923-7.876923-19.692308-7.876923-27.56923 0l-153.6 153.6c-7.876923 7.876923-19.692308 7.876923-27.569231 0L261.907692 708.923077c-7.876923-7.876923-7.876923-19.692308 0-27.569231l153.6-153.6c7.876923-7.876923 7.876923-19.692308 0-27.569231l-155.56923-155.56923c-7.876923-7.876923-7.876923-19.692308 0-27.569231l55.138461-55.138462c7.876923-7.876923 19.692308-7.876923 27.569231 0l155.569231 155.569231c7.876923 7.876923 19.692308 7.876923 27.56923 0l153.6-153.6c7.876923-7.876923 19.692308-7.876923 27.569231 0l55.138462 55.138462c7.876923 7.876923 7.876923 19.692308 0 27.56923l-153.6 153.6c-5.907692 7.876923-5.907692 19.692308 0 27.569231z\"\n          p-id=\"2382\"\n          fill=\"#dbdbdb\"\n          className=\"ew-select-clear-icon-path\"\n        ></path>\n      </svg>\n    );\n  },\n);\nconst ArrowIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => (\n    <svg\n      className=\"ew-select-arrow-icon\"\n      viewBox=\"0 0 1024 1024\"\n      version=\"1.1\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      p-id=\"2216\"\n      ref={ref}\n      {...props}\n    >\n      <path\n        d=\"M512 714.666667c-8.533333 0-17.066667-2.133333-23.466667-8.533334l-341.333333-341.333333c-12.8-12.8-12.8-32 0-44.8 12.8-12.8 32-12.8 44.8 0l320 317.866667 317.866667-320c12.8-12.8 32-12.8 44.8 0 12.8 12.8 12.8 32 0 44.8L533.333333 704c-4.266667 8.533333-12.8 10.666667-21.333333 10.666667z\"\n        p-id=\"2217\"\n      ></path>\n    </svg>\n  ),\n);\nconst Select = (\n  props: Partial<Omit<SelectProps, 'children'>> & Pick<SelectProps, 'children'>,\n) => {\n  const {\n    disabled,\n    defaultValue,\n    value,\n    onChange,\n    placeholder = '\u8bf7\u8f93\u5165',\n    allowClear = true,\n    children,\n    labelProps = 'label',\n    ...rest\n  } = props;\n  const dropdownRef = createRef<HTMLDivElement>();\n  const clearIconRef = createRef<HTMLOrSVGElement>();\n  const [selectValue, setSelectValue] = useState<string | undefined>(\n    defaultValue,\n  );\n  const [option, setOption] = useState<Partial<OptionValueProps>>({});\n  const [visible, setVisible] = useState(false);\n  const [showClear, setShowClear] = useState(false);\n\n  const optionChildren = Array.isArray(children)\n    ? children\n    : [children]?.filter((item) => item?.type?.name === 'Option') || [];\n\n  useEffect(() => {\n    if (typeof value === 'string') {\n      setSelectValue(value);\n    }\n  }, [value]);\n\n  const onChangeHandler = (v: Partial<OptionValueProps>) => {\n    setOption(v);\n    setSelectValue(v.value);\n    if (!disabled) {\n      setVisible(false);\n      setShowClear(false);\n    }\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  const onClearHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setOption({ label: '', value: '' });\n    setSelectValue('');\n  };\n  const selectClassNames = {\n    'ew-select': true,\n    'ew-select-disabled': disabled,\n  };\n  const valueClassNames = {\n    'ew-select-selector': true,\n    'ew-select-selector-placeholder': !selectValue,\n  };\n  useClickOutside(dropdownRef, () => {\n    if (!disabled) {\n      setVisible(false);\n    }\n  });\n  return (\n    <div\n      className={classnames(selectClassNames)}\n      {...rest}\n      ref={dropdownRef}\n      onMouseEnter={() => {\n        if (!disabled) {\n          setShowClear(true);\n        }\n      }}\n      onMouseLeave={() => {\n        if (!disabled) {\n          setShowClear(false);\n        }\n      }}\n    >\n      <div\n        className={classnames(valueClassNames)}\n        placeholder={placeholder}\n        onClick={() => {\n          if (!disabled) {\n            setVisible(!visible);\n          }\n        }}\n      >\n        <span className=\"ew-select-selector-value\">{option[labelProps]}</span>\n      </div>\n      <div className=\"ew-select-arrow\">\n        {allowClear && selectValue && showClear ? (\n          <ClearIcon onClick={onClearHandler} ref={clearIconRef} />\n        ) : (\n          <ArrowIcon\n            onClick={() => {\n              if (!disabled) {\n                setVisible(!visible);\n              }\n            }}\n          />\n        )}\n      </div>\n      <div\n        className=\"ew-select-dropdown\"\n        style={{ display: visible ? 'block' : 'none' }}\n      >\n        {optionChildren.map((item, index) =>\n          cloneElement(item, {\n            onOptionChange: onChangeHandler,\n            defaultValue: selectValue,\n            key: item.key || String(index + 1),\n            active: item.props.value === selectValue,\n          }),\n        )}\n      </div>\n    </div>\n  );\n};\nSelect.Option = Option;\nexport default Select;",
       yn =
-        'import React from \'react\';\nimport Select from \'./Select\';\nimport type { SelectProps } from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler: SelectProps[\'onChange\'] = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
-      xn =
-        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['name1', 'name2', 'name3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
-      En =
-        "import { css } from '@emotion/css';\nimport React from 'react';\n\ninterface DataListProps {\n  data: string[];\n  isOrdered: boolean;\n  isBordered: boolean;\n}\nconst SimpleStyleDataList = css`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-size: 14px;\n  line-height: 1.5715;\n  list-style: none;\n  position: relative;\n  &.bordered {\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n  }\n`;\nconst SimpleDataListItem = css`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 24px;\n  color: rgba(0, 0, 0, 0.85);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  &:last-of-type {\n    border-bottom: 0;\n  }\n`;\nconst SimpleDataList = (props: Partial<DataListProps>) => {\n  const { data, isOrdered = false, isBordered = true } = props;\n  const List = data?.map((val, index) => (\n    <li className={SimpleDataListItem} key={`${val}-${index}`}>\n      {val}\n    </li>\n  ));\n  const containerClassName = `${SimpleStyleDataList}${\n    isBordered ? ' bordered' : ''\n  }`;\n  return isOrdered ? (\n    <ol className={containerClassName}>{List}</ol>\n  ) : (\n    <ul className={containerClassName}>{List}</ul>\n  );\n};\n\nexport default SimpleDataList;",
-      kn =
-        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['\u59d3\u540d1', '\u59d3\u540d2', '\u59d3\u540d3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
-      wn =
-        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
-      Cn =
-        'import React from \'react\';\nimport \'./simpleDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleDataTable = (props: Partial<SimpleDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {data?.map((item) => (\n          <tr key={item.key} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleDataTable;',
-      On =
-        '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
-      Sn =
-        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
-      jn =
-        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
-      Tn =
-        'import React from \'react\';\nimport \'./SimpleMappedDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleMappedDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleMappedDataTable = (props: Partial<SimpleMappedDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n\n  let filteredData = data?.map((v) =>\n    Object.keys(v)\n      .filter((k) => columns?.some((col) => col.dataIndex === k))\n      .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n  ) as DataProps[];\n\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {filteredData?.map((item, index) => (\n          <tr key={`${index}_${index}`} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleMappedDataTable;',
-      In =
-        '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
-      Nn =
-        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
-      Rn =
-        "import React from 'react';\nimport Slider from './Slider';\n\nconst Demo = () => {\n  return <Slider></Slider>;\n};\n\nexport default Demo;",
-      Pn =
-        "import React from 'react';\nimport './slider.less';\nimport classnames from '../../utils/classnames';\n\nexport interface SliderProps extends Record<string, any> {\n  direction: 'horizontal' | 'vertical';\n  min: number;\n  max: number;\n  step: number;\n  disabled: boolean;\n  value: number;\n}\n\nconst Slider = (props: Partial<SliderProps>) => {\n  const { direction = 'horizontal' } = props;\n\n  const prefixClasses = {\n    'ew-slider': true,\n    [`ew-slider-${direction}`]: direction,\n  };\n\n  return (\n    <div className={classnames(prefixClasses)}>\n      <div className=\"ew-slider-rail\"></div>\n      <div className=\"ew-slider-track\"></div>\n      <div className=\"ew-slider-step\"></div>\n      <div className=\"ew-slider-handle\"></div>\n    </div>\n  );\n};\n\nexport default Slider;",
-      An =
-        "@prefix: ew-;\n\n.@{prefix}slider {\n  box-sizing: border-box;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  height: 12px;\n  margin: 10px 6px;\n  padding: 4px 0;\n  cursor: pointer;\n\n  &-rail {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background-color: #f5f5f5;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-track {\n    position: absolute;\n    height: 4px;\n    background-color: #2396ef;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-step {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background: 0 0;\n  }\n}",
-      Ln =
-        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        Load image\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`Error ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <FetchImage\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
-      Mn =
-        "import { useReducer } from 'react';\nexport type StateType = {\n  loading: boolean;\n  value: any;\n  error: any;\n};\nexport type ActionType = Partial<StateType> & { type: string };\nexport type RunType = (args: unknown) => Promise<void>;\nconst useAsync = (handler: (...args: any) => any) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n  const stateReducer = (_: any, action: ActionType) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args: unknown) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
-      Dn =
-        "import React from 'react';\nimport Button from '../../../guide/Button/Button';\nimport Loader from '../../../guide/Loader/Loader';\nimport Alert from '../../../guide/Alert/Alert';\nimport styled from '@emotion/styled';\nimport useAsync from './useAsync';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={imgFetch?.loading}\n      >\n        Load image\n      </Button>\n      {imgFetch?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {imgFetch?.error && (\n        <Alert type=\"error\" message={`Error ${imgFetch?.error}`}></Alert>\n      )}\n      {imgFetch?.value && (\n        <FetchImage\n          src={imgFetch?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
-      zn =
-        "import { useReducer } from 'react';\n\nconst useAsync = (handler) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n\n  const stateReducer = (_, action) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
-      _n =
-        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\nconst FetchImage = styled.img({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`\u9519\u8bef ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <FetchImage\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
-      Fn =
-        "import React from 'react';\nimport Button from '../../../guide/Button/Button';\nimport Loader from '../../../guide/Loader/Loader';\nimport Alert from '../../../guide/Alert/Alert';\nimport styled from '@emotion/styled';\nimport useAsync from './useAsync';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={imgFetch?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {imgFetch?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {imgFetch?.error && (\n        <Alert type=\"error\" message={`\u9519\u8bef ${imgFetch?.error}`}></Alert>\n      )}\n      {imgFetch?.value && (\n        <FetchImage\n          src={imgFetch?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
-      Bn =
-        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      Scroll locked! <br />\n      <Button onClick={onCancel}>Click me to unlock</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
-      Un =
-        "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  // see https://zhuanlan.zhihu.com/p/147173241\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container!).overflow;\n    container!.style.overflow = 'hidden';\n    return () => {\n      container!.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
-      Vn =
-        "import React, { useState } from 'react';\nimport Modal from '../../../guide/Modal/jsx/Modal';\nimport Button from '../../../guide/Button/jsx/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nconst ScrollModal = (props) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      Scroll locked! <br />\n      <Button onClick={onCancel}>Click me to unlock</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
-      Hn =
-        "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  // see https://zhuanlan.zhihu.com/p/147173241\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container).overflow;\n    container.style.overflow = 'hidden';\n    return () => {\n      container.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
-      qn =
-        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
-      Wn =
-        "import React, { useState } from 'react';\nimport Modal from '../../../guide/Modal/jsx/Modal';\nimport Button from '../../../guide/Button/jsx/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nconst ScrollModal = (props) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
-      $n =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click inside this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox\n      onClickInside={() =>\n        Modal.confirm({\n          content: 'click inside',\n          cancelText: 'Cancel',\n          okText: 'Ok',\n        })\n      }\n    ></ClickBox>\n  );\n};\n\nexport default Demo;",
-      Gn =
-        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
-      Kn =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5185\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox onClickInside={() => Modal.confirm('\u70b9\u51fb\u4e86\u8be5\u533a\u57df\u5185')}></ClickBox>\n  );\n};\n\nexport default Demo;",
-      Yn =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click out of this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('click outside')}></ClickBox>;\n};\n\nexport default Demo;",
-      Zn =
         "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
+      xn =
+        "import React, { useState, useEffect } from 'react';\nimport type { ReactNode } from 'react';\nimport classnames from '../../utils/classnames';\nexport interface OptionValueProps {\n  label: string;\n  value: string;\n}\nexport interface OptionProps extends Record<string, any>, OptionValueProps {\n  disabled: boolean;\n  children: ReactNode;\n  defaultValue: string;\n  onOptionChange(v: Partial<OptionValueProps>): void;\n  active: boolean;\n}\nconst Option = (props: Partial<OptionProps>) => {\n  const {\n    label,\n    value,\n    disabled,\n    defaultValue,\n    children,\n    onOptionChange,\n    active,\n    ...rest\n  } = props;\n  const [currentValue, setCurrentValue] = useState<string | undefined>(\n    defaultValue,\n  );\n\n  const classNames = {\n    'ew-select-dropdown-option': true,\n    'ew-select-dropdown-option-disabled': disabled,\n    active: active,\n  };\n  const onChangeHandler = (options: Partial<OptionValueProps>) => {\n    if (disabled) {\n      return;\n    }\n\n    setCurrentValue(options.value);\n    if (onOptionChange) {\n      onOptionChange(options);\n    }\n  };\n\n  useEffect(() => {\n    if (currentValue) {\n      if (onOptionChange) {\n        onOptionChange({ label, value });\n      }\n    }\n  }, [currentValue]);\n  return (\n    <div\n      className={classnames(classNames)}\n      data-value={currentValue}\n      {...rest}\n      onClick={() => onChangeHandler({ label, value })}\n    >\n      {children ? children : label ? label : ''}\n    </div>\n  );\n};\nexport default Option;",
+      En =
+        "@prefix: ew-;\n\n.@{prefix}select {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: rgba(0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  cursor: pointer;\n  border-radius: 4px;\n  min-width: 120px;\n\n  &-disabled {\n    .@{prefix}select-selector {\n      background: #f5f5f5;\n      cursor: not-allowed;\n      color: rgba(0, 0, 0, 0.25);\n    }\n\n    .@{prefix}select-arrow {\n      cursor: not-allowed;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-selector,\n  &:not(.@{prefix}select-disabled):active &-selector {\n    border-color: #2396ef;\n  }\n\n  &-selector {\n    position: relative;\n    background-color: #fff;\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    width: 100%;\n    height: 32px;\n    padding: 0 11px;\n\n    &&-placeholder::after {\n      content: attr(placeholder);\n      display: inline-block;\n      padding-right: 18px;\n      color: rgba(0, 0, 0, 0.35);\n      position: relative;\n      left: -15px;\n    }\n\n    &-value {\n      padding-right: 18px;\n      line-height: 30px;\n      position: relative;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-value {\n    border-color: #2396ef;\n    border-right-width: 1px;\n  }\n\n  &-arrow {\n    display: inline-block;\n    color: inherit;\n    font-style: normal;\n    line-height: 0;\n    text-transform: none;\n    vertical-align: -0.125em;\n    text-rendering: optimizelegibility;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    position: absolute;\n    top: 50%;\n    right: 11px;\n    display: flex;\n    align-items: center;\n    margin-top: -6px;\n    font-size: 12px;\n    line-height: 1;\n    text-align: center;\n\n    &-icon,\n    .@{prefix}select-clear-icon {\n      width: 16px;\n      height: 16px;\n      display: inline-block;\n      color: rgba(0, 0, 0, 0.25);\n    }\n  }\n\n  .@{prefix}select-clear-icon {\n    position: relative;\n    top: -2px;\n  }\n\n  &-dropdown {\n    margin: 0;\n    color: rgba(0, 0, 0.85);\n    font-variant: tabular-nums;\n    line-height: 1.5715;\n    position: absolute;\n    z-index: 1050;\n    box-sizing: border-box;\n    padding: 4px 0;\n    overflow: hidden;\n    font-size: 14px;\n    font-variant: initial;\n    background-color: #fff;\n    border-radius: 2px;\n    outline: none;\n    width: 100%;\n    top: 40px;\n    box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014,\n      0 9px 28px 8px #0000000d;\n\n    &-option {\n      position: relative;\n      display: flex;\n      min-height: 32px;\n      padding: 5px 12px;\n      color: rgba(0, 0, 0.85);\n      font-weight: 400;\n      font-size: 14px;\n      line-height: 22px;\n      cursor: pointer;\n      transition: background 0.3s ease;\n      flex: auto;\n      overflow: hidden;\n      white-space: nowrap;\n      text-overflow: ellipsis;\n\n      &-disabled {\n        color: rgba(0, 0, 0, 0.25);\n        cursor: not-allowed;\n      }\n\n      &:not(:last-of-type) {\n        margin-bottom: 8px;\n      }\n\n      &:not(&-disabled):hover {\n        background-color: #f5f5f5;\n      }\n\n      &:not(&-disabled).active {\n        background-color: #e6f7ff;\n      }\n    }\n  }\n}",
+      wn =
+        'import React from \'react\';\nimport Select from \'./Select\';\nimport type { SelectProps } from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler: SelectProps[\'onChange\'] = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
+      kn =
+        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['name1', 'name2', 'name3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
+      Cn =
+        "import { css } from '@emotion/css';\nimport React from 'react';\n\ninterface DataListProps {\n  data: string[];\n  isOrdered: boolean;\n  isBordered: boolean;\n}\nconst SimpleStyleDataList = css`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-size: 14px;\n  line-height: 1.5715;\n  list-style: none;\n  position: relative;\n  &.bordered {\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n  }\n`;\nconst SimpleDataListItem = css`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 24px;\n  color: rgba(0, 0, 0, 0.85);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  &:last-of-type {\n    border-bottom: 0;\n  }\n`;\nconst SimpleDataList = (props: Partial<DataListProps>) => {\n  const { data, isOrdered = false, isBordered = true } = props;\n  const List = data?.map((val, index) => (\n    <li className={SimpleDataListItem} key={`${val}-${index}`}>\n      {val}\n    </li>\n  ));\n  const containerClassName = `${SimpleStyleDataList}${\n    isBordered ? ' bordered' : ''\n  }`;\n  return isOrdered ? (\n    <ol className={containerClassName}>{List}</ol>\n  ) : (\n    <ul className={containerClassName}>{List}</ul>\n  );\n};\n\nexport default SimpleDataList;",
+      On =
+        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['\u59d3\u540d1', '\u59d3\u540d2', '\u59d3\u540d3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
+      Sn =
+        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
+      jn =
+        'import React from \'react\';\nimport \'./simpleDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleDataTable = (props: Partial<SimpleDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {data?.map((item) => (\n          <tr key={item.key} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleDataTable;',
+      Tn =
+        '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
+      In =
+        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
+      Nn =
+        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
+      Rn =
+        'import React from \'react\';\nimport \'./SimpleMappedDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleMappedDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleMappedDataTable = (props: Partial<SimpleMappedDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n\n  let filteredData = data?.map((v) =>\n    Object.keys(v)\n      .filter((k) => columns?.some((col) => col.dataIndex === k))\n      .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n  ) as DataProps[];\n\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {filteredData?.map((item, index) => (\n          <tr key={`${index}_${index}`} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleMappedDataTable;',
+      Pn =
+        '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
+      An =
+        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
+      Ln =
+        "import React from 'react';\nimport Slider from './Slider';\n\nconst Demo = () => {\n  return <Slider></Slider>;\n};\n\nexport default Demo;",
+      Mn =
+        "import React from 'react';\nimport './slider.less';\nimport classnames from '../../utils/classnames';\n\nexport interface SliderProps extends Record<string, any> {\n  direction: 'horizontal' | 'vertical';\n  min: number;\n  max: number;\n  step: number;\n  disabled: boolean;\n  value: number;\n}\n\nconst Slider = (props: Partial<SliderProps>) => {\n  const { direction = 'horizontal' } = props;\n\n  const prefixClasses = {\n    'ew-slider': true,\n    [`ew-slider-${direction}`]: direction,\n  };\n\n  return (\n    <div className={classnames(prefixClasses)}>\n      <div className=\"ew-slider-rail\"></div>\n      <div className=\"ew-slider-track\"></div>\n      <div className=\"ew-slider-step\"></div>\n      <div className=\"ew-slider-handle\"></div>\n    </div>\n  );\n};\n\nexport default Slider;",
+      Dn =
+        "@prefix: ew-;\n\n.@{prefix}slider {\n  box-sizing: border-box;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  height: 12px;\n  margin: 10px 6px;\n  padding: 4px 0;\n  cursor: pointer;\n\n  &-rail {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background-color: #f5f5f5;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-track {\n    position: absolute;\n    height: 4px;\n    background-color: #2396ef;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-step {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background: 0 0;\n  }\n}",
+      zn =
+        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        Load image\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`Error ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <FetchImage\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+      _n =
+        "import { useReducer } from 'react';\nexport type StateType = {\n  loading: boolean;\n  value: any;\n  error: any;\n};\nexport type ActionType = Partial<StateType> & { type: string };\nexport type RunType = (args: unknown) => Promise<void>;\nconst useAsync = (handler: (...args: any) => any) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n  const stateReducer = (_: any, action: ActionType) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args: unknown) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
+      Fn =
+        "import React from 'react';\nimport Button from '../../../guide/Button/Button';\nimport Loader from '../../../guide/Loader/Loader';\nimport Alert from '../../../guide/Alert/Alert';\nimport styled from '@emotion/styled';\nimport useAsync from './useAsync';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={imgFetch?.loading}\n      >\n        Load image\n      </Button>\n      {imgFetch?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {imgFetch?.error && (\n        <Alert type=\"error\" message={`Error ${imgFetch?.error}`}></Alert>\n      )}\n      {imgFetch?.value && (\n        <FetchImage\n          src={imgFetch?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+      Bn =
+        "import { useReducer } from 'react';\n\nconst useAsync = (handler) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n\n  const stateReducer = (_, action) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
+      Un =
+        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\nconst FetchImage = styled.img({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`\u9519\u8bef ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <FetchImage\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+      Vn =
+        "import React from 'react';\nimport Button from '../../../guide/Button/Button';\nimport Loader from '../../../guide/Loader/Loader';\nimport Alert from '../../../guide/Alert/Alert';\nimport styled from '@emotion/styled';\nimport useAsync from './useAsync';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={imgFetch?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {imgFetch?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {imgFetch?.error && (\n        <Alert type=\"error\" message={`\u9519\u8bef ${imgFetch?.error}`}></Alert>\n      )}\n      {imgFetch?.value && (\n        <FetchImage\n          src={imgFetch?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+      Hn =
+        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      Scroll locked! <br />\n      <Button onClick={onCancel}>Click me to unlock</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+      qn =
+        "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  // see https://zhuanlan.zhihu.com/p/147173241\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container!).overflow;\n    container!.style.overflow = 'hidden';\n    return () => {\n      container!.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
+      Wn =
+        "import React, { useState } from 'react';\nimport Modal from '../../../guide/Modal/jsx/Modal';\nimport Button from '../../../guide/Button/jsx/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nconst ScrollModal = (props) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      Scroll locked! <br />\n      <Button onClick={onCancel}>Click me to unlock</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+      $n =
+        "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  // see https://zhuanlan.zhihu.com/p/147173241\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container).overflow;\n    container.style.overflow = 'hidden';\n    return () => {\n      container.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
+      Gn =
+        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+      Kn =
+        "import React, { useState } from 'react';\nimport Modal from '../../../guide/Modal/jsx/Modal';\nimport Button from '../../../guide/Button/jsx/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nconst ScrollModal = (props) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+      Yn =
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click inside this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox\n      onClickInside={() =>\n        Modal.confirm({\n          content: 'click inside',\n          cancelText: 'Cancel',\n          okText: 'Ok',\n        })\n      }\n    ></ClickBox>\n  );\n};\n\nexport default Demo;",
+      Zn =
+        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
       Jn =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5916\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('\u70b9\u51fb\u4e86\u533a\u57df\u4e4b\u5916')}></ClickBox>;\n};\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5185\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox onClickInside={() => Modal.confirm('\u70b9\u51fb\u4e86\u8be5\u533a\u57df\u5185')}></ClickBox>\n  );\n};\n\nexport default Demo;",
       Xn =
-        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      'Component did mount, get the element:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click out of this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('click outside')}></ClickBox>;\n};\n\nexport default Demo;",
       Qn =
-        "import { useEffect } from 'react';\nconst useComponentDidMount = (onMountHandler: Function) => {\n  useEffect(() => {\n    onMountHandler();\n  }, []);\n};\nexport default useComponentDidMount;",
+        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
       et =
-        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      '\u7ec4\u4ef6\u786e\u5b9e\u6302\u8f7d\uff0c\u83b7\u53d6\u5143\u7d20:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5916\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('\u70b9\u51fb\u4e86\u533a\u57df\u4e4b\u5916')}></ClickBox>;\n};\n\nexport default Demo;",
       nt =
-        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('Current value is:' + value + '.');\n  }, [value]);\n  return (\n    <>\n      <p>\n        Value:{value},otherValue: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          Increment value\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          Increment other value\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      'Component did mount, get the element:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
       tt =
-        "import { useEffect, DependencyList, useRef } from 'react';\nconst useComponentDidUpdate = (\n  handler: (...args: any[]) => any,\n  deps: DependencyList,\n) => {\n  const mounted = useRef(false);\n  useEffect(() => {\n    if (mounted.current) {\n      handler?.();\n    } else {\n      mounted.current = true;\n    }\n  }, deps);\n};\n\nexport default useComponentDidUpdate;",
+        "import { useEffect } from 'react';\nconst useComponentDidMount = (onMountHandler: Function) => {\n  useEffect(() => {\n    onMountHandler();\n  }, []);\n};\nexport default useComponentDidMount;",
       rt =
-        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('\u5f53\u524d\u7684\u503c\u662f:' + value + '\u3002');\n  }, [value]);\n  return (\n    <>\n      <p>\n        \u503c\u662f:{value},\u5176\u5b83\u503c\u662f: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          \u589e\u52a0\u503c\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          \u589e\u52a0\u5176\u5b83\u503c\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      '\u7ec4\u4ef6\u786e\u5b9e\u6302\u8f7d\uff0c\u83b7\u53d6\u5143\u7d20:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
       ot =
-        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('Component will unmount'));\n  return <div>Check the console</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('Current value is:' + value + '.');\n  }, [value]);\n  return (\n    <>\n      <p>\n        Value:{value},otherValue: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          Increment value\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          Increment other value\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
       at =
-        "import { useEffect } from 'react';\n\nconst useComponentWillUnmount = (onUnmountHandler) => {\n  useEffect(() => () => onUnmountHandler?.(), []);\n};\n\nexport default useComponentWillUnmount;",
+        "import { useEffect, DependencyList, useRef } from 'react';\nconst useComponentDidUpdate = (\n  handler: (...args: any[]) => any,\n  deps: DependencyList,\n) => {\n  const mounted = useRef(false);\n  useEffect(() => {\n    if (mounted.current) {\n      handler?.();\n    } else {\n      mounted.current = true;\n    }\n  }, deps);\n};\n\nexport default useComponentDidUpdate;",
       it =
-        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d'));\n  return <div>\u68c0\u67e5\u63a7\u5236\u53f0</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('\u5f53\u524d\u7684\u503c\u662f:' + value + '\u3002');\n  }, [value]);\n  return (\n    <>\n      <p>\n        \u503c\u662f:{value},\u5176\u5b83\u503c\u662f: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          \u589e\u52a0\u503c\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          \u589e\u52a0\u5176\u5b83\u503c\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
       lt =
-        "import React, { SyntheticEvent } from 'react';\nimport useCopyToClipboard from './useCopyToClipboard';\nimport { Space } from 'antd';\nimport Button from '../../guide/Button/Button';\n\nexport interface TextCopyProps {\n  text: string;\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n  const { text = 'Lorem ipsum' } = props;\n  const [copied, copy] = useCopyToClipboard(text);\n  return (\n    <Space>\n      <Button\n        type=\"primary\"\n        ripple\n        onClick={copy as (e: SyntheticEvent) => void}\n      >\n        Click to Copy!\n      </Button>\n      <span>{copied && 'Copied!'}</span>\n    </Space>\n  );\n};\n\nconst Demo = () => <TextCopy text=\"The copy text!\" />;\n\nexport default Demo;",
+        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('Component will unmount'));\n  return <div>Check the console</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
       ct =
-        "import { useState, useCallback, useEffect } from 'react';\n\nconst useCopyToClipboard = (text: string) => {\n  const copyToClipboard = (str: string) => {\n    const el = document.createElement('textarea');\n    el.value = str;\n    el.setAttribute('readonly', '');\n    el.style.position = 'absolute';\n    el.style.left = '-9999px';\n    document.body.appendChild(el);\n    const selected =\n      document.getSelection()!.rangeCount > 0\n        ? document.getSelection()?.getRangeAt(0)\n        : false;\n    el.select();\n    const success = document.execCommand('copy');\n    document.body.removeChild(el);\n    if (selected) {\n      document.getSelection()?.removeAllRanges();\n      document.getSelection()?.addRange(selected);\n    }\n    return success;\n  };\n\n  const [copied, setCopied] = useState(false);\n\n  const copy = useCallback(() => {\n    if (!copied) {\n      setCopied(copyToClipboard(text));\n    }\n  }, [text]);\n\n  useEffect(() => () => setCopied(false), [text]);\n\n  return [copied, copy];\n};\n\nexport default useCopyToClipboard;",
+        "import { useEffect } from 'react';\n\nconst useComponentWillUnmount = (onUnmountHandler) => {\n  useEffect(() => () => onUnmountHandler?.(), []);\n};\n\nexport default useComponentWillUnmount;",
       st =
+        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d'));\n  return <div>\u68c0\u67e5\u63a7\u5236\u53f0</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
+      ut =
+        "import React, { SyntheticEvent } from 'react';\nimport useCopyToClipboard from './useCopyToClipboard';\nimport { Space } from 'antd';\nimport Button from '../../guide/Button/Button';\n\nexport interface TextCopyProps {\n  text: string;\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n  const { text = 'Lorem ipsum' } = props;\n  const [copied, copy] = useCopyToClipboard(text);\n  return (\n    <Space>\n      <Button\n        type=\"primary\"\n        ripple\n        onClick={copy as (e: SyntheticEvent) => void}\n      >\n        Click to Copy!\n      </Button>\n      <span>{copied && 'Copied!'}</span>\n    </Space>\n  );\n};\n\nconst Demo = () => <TextCopy text=\"The copy text!\" />;\n\nexport default Demo;",
+      dt =
+        "import { useState, useCallback, useEffect } from 'react';\n\nconst useCopyToClipboard = (text: string) => {\n  const copyToClipboard = (str: string) => {\n    const el = document.createElement('textarea');\n    el.value = str;\n    el.setAttribute('readonly', '');\n    el.style.position = 'absolute';\n    el.style.left = '-9999px';\n    document.body.appendChild(el);\n    const selected =\n      document.getSelection()!.rangeCount > 0\n        ? document.getSelection()?.getRangeAt(0)\n        : false;\n    el.select();\n    const success = document.execCommand('copy');\n    document.body.removeChild(el);\n    if (selected) {\n      document.getSelection()?.removeAllRanges();\n      document.getSelection()?.addRange(selected);\n    }\n    return success;\n  };\n\n  const [copied, setCopied] = useState(false);\n\n  const copy = useCallback(() => {\n    if (!copied) {\n      setCopied(copyToClipboard(text));\n    }\n  }, [text]);\n\n  useEffect(() => () => setCopied(false), [text]);\n\n  return [copied, copy];\n};\n\nexport default useCopyToClipboard;",
+      pt =
         "import React, { SyntheticEvent } from 'react';\nimport useCopyToClipboard from './useCopyToClipboard';\nimport { Space } from 'antd';\nimport Button from '../../guide/Button/Button';\n\nexport interface TextCopyProps {\n  text: string;\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n  const { text = 'Lorem ipsum' } = props;\n  const [copied, copy] = useCopyToClipboard(text);\n  return (\n    <Space>\n      <Button\n        type=\"primary\"\n        ripple\n        onClick={copy as (e: SyntheticEvent) => void}\n      >\n        \u70b9\u51fb\u8fd9\u91cc\u590d\u5236!\n      </Button>\n      <span>{copied && '\u5df2\u590d\u5236!'}</span>\n    </Space>\n  );\n};\n\nconst Demo = () => <TextCopy text=\"\u590d\u5236\u7684\u6587\u672c!\" />;\n\nexport default Demo;",
-      ut = {
+      ft = {
         'loadingbutton-demo': {
           component: t('4ZnB').default,
           previewerProps: {
@@ -31305,8 +31462,8 @@
           component: t('qAvn').default,
           previewerProps: {
             sources: {
-              _: { tsx: k },
-              'Alert.tsx': { import: './Alert', content: w },
+              _: { tsx: w },
+              'Alert.tsx': { import: './Alert', content: k },
               'alert.less': { import: './alert.less', content: C },
             },
             dependencies: {
@@ -31344,7 +31501,7 @@
           previewerProps: {
             sources: {
               _: { tsx: j },
-              'Alert.tsx': { import: './Alert', content: w },
+              'Alert.tsx': { import: './Alert', content: k },
               'alert.less': { import: './alert.less', content: C },
             },
             dependencies: {
@@ -31857,8 +32014,8 @@
           component: t('wgCi').default,
           previewerProps: {
             sources: {
-              _: { tsx: ke },
-              'CountDown.tsx': { import: './CountDown', content: we },
+              _: { tsx: we },
+              'CountDown.tsx': { import: './CountDown', content: ke },
               'helper.ts': { import: './helper', content: Ce },
             },
             dependencies: {
@@ -31896,7 +32053,7 @@
           previewerProps: {
             sources: {
               _: { tsx: Te },
-              'CountDown.tsx': { import: './CountDown', content: we },
+              'CountDown.tsx': { import: './CountDown', content: ke },
               'helper.ts': { import: './helper', content: Ce },
             },
             dependencies: {
@@ -32152,11 +32309,30 @@
             identifier: 'limitedwordtextarea-demo',
           },
         },
+        'jsx-demo-13': {
+          component: t('Vj4t').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: Ze },
+              'LimitedWordTextarea.jsx': {
+                import: './LimitedWordTextarea',
+                content: Je,
+              },
+            },
+            dependencies: {
+              react: { version: '>=16.8.0' },
+              '@emotion/styled': { version: '11.9.3' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+            },
+            identifier: 'jsx-demo-13',
+          },
+        },
         'limitedwordtextarea-demo.zh-cn': {
           component: t('O8zO').default,
           previewerProps: {
             sources: {
-              _: { tsx: Ze },
+              _: { tsx: Xe },
               'LimitedWordTextarea.tsx': {
                 import: './LimitedWordTextarea',
                 content: Ye,
@@ -32171,11 +32347,30 @@
             identifier: 'limitedwordtextarea-demo.zh-cn',
           },
         },
+        'jsx-demo.zh-cn-13': {
+          component: t('gg/U').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: Qe },
+              'LimitedWordTextarea.jsx': {
+                import: './LimitedWordTextarea',
+                content: Je,
+              },
+            },
+            dependencies: {
+              react: { version: '>=16.8.0' },
+              '@emotion/styled': { version: '11.9.3' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+            },
+            identifier: 'jsx-demo.zh-cn-13',
+          },
+        },
         'loader-demo': {
           component: t('yNO/').default,
           previewerProps: {
             sources: {
-              _: { tsx: Je },
+              _: { tsx: en },
               'Loader.tsx': { import: '../Loader/Loader', content: F },
             },
             dependencies: {
@@ -32193,7 +32388,7 @@
           component: t('3QZg').default,
           previewerProps: {
             sources: {
-              _: { tsx: Xe },
+              _: { tsx: nn },
               'Loader.tsx': { import: '../Loader/Loader', content: F },
             },
             dependencies: {
@@ -32211,8 +32406,8 @@
           component: t('cfId').default,
           previewerProps: {
             sources: {
-              _: { tsx: Qe },
-              'Mailto.tsx': { import: './Mailto', content: en },
+              _: { tsx: tn },
+              'Mailto.tsx': { import: './Mailto', content: rn },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -32227,8 +32422,8 @@
           component: t('LwNu').default,
           previewerProps: {
             sources: {
-              _: { tsx: nn },
-              'Mailto.tsx': { import: './Mailto', content: en },
+              _: { tsx: on },
+              'Mailto.tsx': { import: './Mailto', content: rn },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -32243,9 +32438,9 @@
           component: t('aOC5').default,
           previewerProps: {
             sources: {
-              _: { tsx: tn },
-              'Modal.tsx': { import: './Modal', content: rn },
-              'Modal.less': { import: './Modal.less', content: on },
+              _: { tsx: an },
+              'Modal.tsx': { import: './Modal', content: ln },
+              'Modal.less': { import: './Modal.less', content: cn },
             },
             dependencies: {
               react: { version: '^16.14.0' },
@@ -32255,29 +32450,29 @@
             identifier: 'modal-demo',
           },
         },
-        'jsx-demo-13': {
+        'jsx-demo-14': {
           component: t('FWJz').default,
           previewerProps: {
             sources: {
-              _: { jsx: an },
-              'Modal.jsx': { import: './Modal', content: ln },
-              'Modal.less': { import: './Modal.less', content: on },
+              _: { jsx: sn },
+              'Modal.jsx': { import: './Modal', content: un },
+              'Modal.less': { import: './Modal.less', content: cn },
             },
             dependencies: {
               react: { version: '^16.14.0' },
               antd: { version: '4.21.5', css: 'antd/dist/antd.css' },
               'react-dom': { version: '16.14.0' },
             },
-            identifier: 'jsx-demo-13',
+            identifier: 'jsx-demo-14',
           },
         },
         'modal-demo.zh-cn': {
           component: t('JuAD').default,
           previewerProps: {
             sources: {
-              _: { tsx: cn },
-              'Modal.tsx': { import: './Modal', content: rn },
-              'Modal.less': { import: './Modal.less', content: on },
+              _: { tsx: dn },
+              'Modal.tsx': { import: './Modal', content: ln },
+              'Modal.less': { import: './Modal.less', content: cn },
             },
             dependencies: {
               react: { version: '^16.14.0' },
@@ -32287,34 +32482,34 @@
             identifier: 'modal-demo.zh-cn',
           },
         },
-        'jsx-demo.zh-cn-13': {
+        'jsx-demo.zh-cn-14': {
           component: t('+78P').default,
           previewerProps: {
             sources: {
-              _: { jsx: sn },
-              'Modal.jsx': { import: './Modal', content: ln },
-              'Modal.less': { import: './Modal.less', content: on },
+              _: { jsx: pn },
+              'Modal.jsx': { import: './Modal', content: un },
+              'Modal.less': { import: './Modal.less', content: cn },
             },
             dependencies: {
               react: { version: '^16.14.0' },
               antd: { version: '4.21.5', css: 'antd/dist/antd.css' },
               'react-dom': { version: '16.14.0' },
             },
-            identifier: 'jsx-demo.zh-cn-13',
+            identifier: 'jsx-demo.zh-cn-14',
           },
         },
         'passwordrevealer-demo': {
           component: t('1Hsh').default,
           previewerProps: {
             sources: {
-              _: { tsx: un },
+              _: { tsx: fn },
               'PasswordRevealer.tsx': {
                 import: './PasswordRevealer',
-                content: dn,
+                content: mn,
               },
               'passwordRevealer.less': {
                 import: './passwordRevealer.less',
-                content: pn,
+                content: hn,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -32325,14 +32520,14 @@
           component: t('pE9f').default,
           previewerProps: {
             sources: {
-              _: { tsx: fn },
+              _: { tsx: vn },
               'PasswordRevealer.tsx': {
                 import: './PasswordRevealer',
-                content: dn,
+                content: mn,
               },
               'passwordRevealer.less': {
                 import: './passwordRevealer.less',
-                content: pn,
+                content: hn,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -32343,18 +32538,18 @@
           component: t('/ukT').default,
           previewerProps: {
             sources: {
-              _: { tsx: mn },
-              'Select.tsx': { import: './Select', content: hn },
+              _: { tsx: gn },
+              'Select.tsx': { import: './Select', content: bn },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: _,
               },
               'utils/useClickOutside.ts': {
                 import: '../../utils/useClickOutside',
-                content: vn,
+                content: yn,
               },
-              'Option.tsx': { import: './Option', content: gn },
-              'select.less': { import: './select.less', content: bn },
+              'Option.tsx': { import: './Option', content: xn },
+              'select.less': { import: './select.less', content: En },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -32368,18 +32563,18 @@
           component: t('Juw3').default,
           previewerProps: {
             sources: {
-              _: { tsx: yn },
-              'Select.tsx': { import: './Select', content: hn },
+              _: { tsx: wn },
+              'Select.tsx': { import: './Select', content: bn },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: _,
               },
               'utils/useClickOutside.ts': {
                 import: '../../utils/useClickOutside',
-                content: vn,
+                content: yn,
               },
-              'Option.tsx': { import: './Option', content: gn },
-              'select.less': { import: './select.less', content: bn },
+              'Option.tsx': { import: './Option', content: xn },
+              'select.less': { import: './select.less', content: En },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -32393,8 +32588,8 @@
           component: t('kFD3').default,
           previewerProps: {
             sources: {
-              _: { tsx: xn },
-              'SimpleDataList.tsx': { import: './SimpleDataList', content: En },
+              _: { tsx: kn },
+              'SimpleDataList.tsx': { import: './SimpleDataList', content: Cn },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -32408,8 +32603,8 @@
           component: t('9yqU').default,
           previewerProps: {
             sources: {
-              _: { tsx: kn },
-              'SimpleDataList.tsx': { import: './SimpleDataList', content: En },
+              _: { tsx: On },
+              'SimpleDataList.tsx': { import: './SimpleDataList', content: Cn },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -32423,14 +32618,14 @@
           component: t('iBx2').default,
           previewerProps: {
             sources: {
-              _: { tsx: wn },
+              _: { tsx: Sn },
               'SimpleDataTable.tsx': {
                 import: './SimpleDataTable',
-                content: Cn,
+                content: jn,
               },
               'simpleDataTable.less': {
                 import: './simpleDataTable.less',
-                content: On,
+                content: Tn,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -32441,14 +32636,14 @@
           component: t('LCi9').default,
           previewerProps: {
             sources: {
-              _: { tsx: Sn },
+              _: { tsx: In },
               'SimpleDataTable.tsx': {
                 import: './SimpleDataTable',
-                content: Cn,
+                content: jn,
               },
               'simpleDataTable.less': {
                 import: './simpleDataTable.less',
-                content: On,
+                content: Tn,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -32459,14 +32654,14 @@
           component: t('X23V').default,
           previewerProps: {
             sources: {
-              _: { tsx: jn },
+              _: { tsx: Nn },
               'SimpleMappedDataTable.tsx': {
                 import: './SimpleMappedDataTable',
-                content: Tn,
+                content: Rn,
               },
               'SimpleMappedDataTable.less': {
                 import: './SimpleMappedDataTable.less',
-                content: In,
+                content: Pn,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -32477,14 +32672,14 @@
           component: t('/ncw').default,
           previewerProps: {
             sources: {
-              _: { tsx: Nn },
+              _: { tsx: An },
               'SimpleMappedDataTable.tsx': {
                 import: './SimpleMappedDataTable',
-                content: Tn,
+                content: Rn,
               },
               'SimpleMappedDataTable.less': {
                 import: './SimpleMappedDataTable.less',
-                content: In,
+                content: Pn,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -32495,9 +32690,9 @@
           component: t('5VUJ').default,
           previewerProps: {
             sources: {
-              _: { tsx: Rn },
-              'Slider.tsx': { import: './Slider', content: Pn },
-              'slider.less': { import: './slider.less', content: An },
+              _: { tsx: Ln },
+              'Slider.tsx': { import: './Slider', content: Mn },
+              'slider.less': { import: './slider.less', content: Dn },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: _,
@@ -32511,7 +32706,7 @@
           component: t('sqNe').default,
           previewerProps: {
             sources: {
-              _: { tsx: Ln },
+              _: { tsx: zn },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -32523,9 +32718,9 @@
                 import: '../Loader/Loader',
                 content: F,
               },
-              'guide/Alert/Alert.tsx': { import: './Alert', content: w },
+              'guide/Alert/Alert.tsx': { import: './Alert', content: k },
               'alert.less': { import: './alert.less', content: C },
-              'useAsync.ts': { import: './useAsync', content: Mn },
+              'useAsync.ts': { import: './useAsync', content: _n },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -32540,7 +32735,7 @@
           component: t('DVnI').default,
           previewerProps: {
             sources: {
-              _: { jsx: Dn },
+              _: { jsx: Fn },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -32552,9 +32747,9 @@
                 import: '../Loader/Loader',
                 content: F,
               },
-              'guide/Alert/Alert.tsx': { import: './Alert', content: w },
+              'guide/Alert/Alert.tsx': { import: './Alert', content: k },
               'alert.less': { import: './alert.less', content: C },
-              'useAsync.js': { import: './useAsync', content: zn },
+              'useAsync.js': { import: './useAsync', content: Bn },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -32569,7 +32764,7 @@
           component: t('mlG9').default,
           previewerProps: {
             sources: {
-              _: { tsx: _n },
+              _: { tsx: Un },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -32581,9 +32776,9 @@
                 import: '../Loader/Loader',
                 content: F,
               },
-              'guide/Alert/Alert.tsx': { import: './Alert', content: w },
+              'guide/Alert/Alert.tsx': { import: './Alert', content: k },
               'alert.less': { import: './alert.less', content: C },
-              'useAsync.ts': { import: './useAsync', content: Mn },
+              'useAsync.ts': { import: './useAsync', content: _n },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -32598,7 +32793,7 @@
           component: t('YSJU').default,
           previewerProps: {
             sources: {
-              _: { jsx: Fn },
+              _: { jsx: Vn },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -32610,9 +32805,9 @@
                 import: '../Loader/Loader',
                 content: F,
               },
-              'guide/Alert/Alert.tsx': { import: './Alert', content: w },
+              'guide/Alert/Alert.tsx': { import: './Alert', content: k },
               'alert.less': { import: './alert.less', content: C },
-              'useAsync.js': { import: './useAsync', content: zn },
+              'useAsync.js': { import: './useAsync', content: Bn },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -32627,9 +32822,9 @@
           component: t('AgAx').default,
           previewerProps: {
             sources: {
-              _: { tsx: Bn },
-              'guide/Modal/Modal.tsx': { import: './Modal', content: rn },
-              'Modal.less': { import: './Modal.less', content: on },
+              _: { tsx: Hn },
+              'guide/Modal/Modal.tsx': { import: './Modal', content: ln },
+              'Modal.less': { import: './Modal.less', content: cn },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -32639,7 +32834,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useBodyScrollLock.ts': {
                 import: './useBodyScrollLock',
-                content: Un,
+                content: qn,
               },
             },
             dependencies: {
@@ -32656,9 +32851,9 @@
           component: t('JWXv').default,
           previewerProps: {
             sources: {
-              _: { jsx: Vn },
-              'guide/Modal/jsx/Modal.jsx': { import: './Modal', content: ln },
-              'Modal.less': { import: './Modal.less', content: on },
+              _: { jsx: Wn },
+              'guide/Modal/jsx/Modal.jsx': { import: './Modal', content: un },
+              'Modal.less': { import: './Modal.less', content: cn },
               'guide/Button/jsx/Button.jsx': { import: './Button', content: U },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -32668,7 +32863,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useBodyScrollLock.js': {
                 import: './useBodyScrollLock',
-                content: Hn,
+                content: $n,
               },
             },
             dependencies: {
@@ -32685,9 +32880,9 @@
           component: t('hVMu').default,
           previewerProps: {
             sources: {
-              _: { tsx: qn },
-              'guide/Modal/Modal.tsx': { import: './Modal', content: rn },
-              'Modal.less': { import: './Modal.less', content: on },
+              _: { tsx: Gn },
+              'guide/Modal/Modal.tsx': { import: './Modal', content: ln },
+              'Modal.less': { import: './Modal.less', content: cn },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -32697,7 +32892,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useBodyScrollLock.ts': {
                 import: './useBodyScrollLock',
-                content: Un,
+                content: qn,
               },
             },
             dependencies: {
@@ -32714,9 +32909,9 @@
           component: t('K/OV').default,
           previewerProps: {
             sources: {
-              _: { jsx: Wn },
-              'guide/Modal/jsx/Modal.jsx': { import: './Modal', content: ln },
-              'Modal.less': { import: './Modal.less', content: on },
+              _: { jsx: Kn },
+              'guide/Modal/jsx/Modal.jsx': { import: './Modal', content: un },
+              'Modal.less': { import: './Modal.less', content: cn },
               'guide/Button/jsx/Button.jsx': { import: './Button', content: U },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -32726,7 +32921,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useBodyScrollLock.js': {
                 import: './useBodyScrollLock',
-                content: Hn,
+                content: $n,
               },
             },
             dependencies: {
@@ -32743,10 +32938,10 @@
           component: t('n4d3').default,
           previewerProps: {
             sources: {
-              _: { tsx: $n },
-              'useClickInside.ts': { import: './useClickInside', content: Gn },
-              'guide/Modal/Modal.tsx': { import: './Modal', content: rn },
-              'Modal.less': { import: './Modal.less', content: on },
+              _: { tsx: Yn },
+              'useClickInside.ts': { import: './useClickInside', content: Zn },
+              'guide/Modal/Modal.tsx': { import: './Modal', content: ln },
+              'Modal.less': { import: './Modal.less', content: cn },
             },
             dependencies: {
               react: { version: '^16.14.0' },
@@ -32762,10 +32957,10 @@
           component: t('nKlt').default,
           previewerProps: {
             sources: {
-              _: { tsx: Kn },
-              'useClickInside.ts': { import: './useClickInside', content: Gn },
-              'guide/Modal/Modal.tsx': { import: './Modal', content: rn },
-              'Modal.less': { import: './Modal.less', content: on },
+              _: { tsx: Jn },
+              'useClickInside.ts': { import: './useClickInside', content: Zn },
+              'guide/Modal/Modal.tsx': { import: './Modal', content: ln },
+              'Modal.less': { import: './Modal.less', content: cn },
             },
             dependencies: {
               react: { version: '^16.14.0' },
@@ -32781,10 +32976,10 @@
           component: t('6srN').default,
           previewerProps: {
             sources: {
-              _: { tsx: Yn },
+              _: { tsx: Xn },
               'useClickOutside.ts': {
                 import: './useClickOutside',
-                content: Zn,
+                content: Qn,
               },
             },
             dependencies: {
@@ -32800,10 +32995,10 @@
           component: t('6aGR').default,
           previewerProps: {
             sources: {
-              _: { tsx: Jn },
+              _: { tsx: et },
               'useClickOutside.ts': {
                 import: './useClickOutside',
-                content: Zn,
+                content: Qn,
               },
             },
             dependencies: {
@@ -32819,10 +33014,10 @@
           component: t('4BP0').default,
           previewerProps: {
             sources: {
-              _: { tsx: Xn },
+              _: { tsx: nt },
               'useComponentDidMount.ts': {
                 import: './useComponentDidMount',
-                content: Qn,
+                content: tt,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -32833,10 +33028,10 @@
           component: t('3Mo/').default,
           previewerProps: {
             sources: {
-              _: { tsx: et },
+              _: { tsx: rt },
               'useComponentDidMount.ts': {
                 import: './useComponentDidMount',
-                content: Qn,
+                content: tt,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -32847,7 +33042,7 @@
           component: t('+EnM').default,
           previewerProps: {
             sources: {
-              _: { tsx: nt },
+              _: { tsx: ot },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -32857,7 +33052,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useComponentDidUpdate.ts': {
                 import: './useComponentDidUpdate',
-                content: tt,
+                content: at,
               },
             },
             dependencies: {
@@ -32875,7 +33070,7 @@
           component: t('pc0r').default,
           previewerProps: {
             sources: {
-              _: { tsx: rt },
+              _: { tsx: it },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -32885,7 +33080,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useComponentDidUpdate.ts': {
                 import: './useComponentDidUpdate',
-                content: tt,
+                content: at,
               },
             },
             dependencies: {
@@ -32903,10 +33098,10 @@
           component: t('YT/L').default,
           previewerProps: {
             sources: {
-              _: { tsx: ot },
+              _: { tsx: lt },
               'useComponentWillUnmount.ts': {
                 import: './useComponentWillUnmount',
-                content: at,
+                content: ct,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -32917,10 +33112,10 @@
           component: t('s6jP').default,
           previewerProps: {
             sources: {
-              _: { tsx: it },
+              _: { tsx: st },
               'useComponentWillUnmount.ts': {
                 import: './useComponentWillUnmount',
-                content: at,
+                content: ct,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -32931,10 +33126,10 @@
           component: t('6Hiq').default,
           previewerProps: {
             sources: {
-              _: { tsx: lt },
+              _: { tsx: ut },
               'useCopyToClipboard.ts': {
                 import: './useCopyToClipboard',
-                content: ct,
+                content: dt,
               },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
@@ -32959,10 +33154,10 @@
           component: t('NfPr').default,
           previewerProps: {
             sources: {
-              _: { tsx: st },
+              _: { tsx: pt },
               'useCopyToClipboard.ts': {
                 import: './useCopyToClipboard',
-                content: ct,
+                content: dt,
               },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
@@ -32984,13 +33179,13 @@
           },
         },
       },
-      dt = t('Zs1V'),
-      pt = t('KcUY'),
-      ft = t.n(pt);
+      mt = t('Zs1V'),
+      ht = t('KcUY'),
+      vt = t.n(ht);
     n['default'] = (e) =>
       a.a.createElement(
-        ft.a,
-        Object(r['a'])({}, e, { config: i, demos: ut, apis: dt }),
+        vt.a,
+        Object(r['a'])({}, e, { config: i, demos: ft, apis: mt }),
       );
   },
   'Of+w': function (e, n, t) {
@@ -33182,7 +33377,7 @@
       s = o.a.memo((e) => {
         var n = e.demos,
           t = n['modal-demo.zh-cn'].component,
-          r = n['jsx-demo.zh-cn-13'].component;
+          r = n['jsx-demo.zh-cn-14'].component;
         return o.a.createElement(
           o.a.Fragment,
           null,
@@ -33320,7 +33515,7 @@
             ),
             o.a.createElement(
               i['default'],
-              n['jsx-demo.zh-cn-13'].previewerProps,
+              n['jsx-demo.zh-cn-14'].previewerProps,
               o.a.createElement(r, null),
             ),
           ),
@@ -33460,7 +33655,8 @@
       c = t('dMo/'),
       s = o.a.memo((e) => {
         var n = e.demos,
-          t = n['limitedwordtextarea-demo.zh-cn'].component;
+          t = n['limitedwordtextarea-demo.zh-cn'].component,
+          r = n['jsx-demo.zh-cn-13'].component;
         return o.a.createElement(
           o.a.Fragment,
           null,
@@ -33546,9 +33742,41 @@
                   '\u7684 onChange \u4e8b\u4ef6\uff0c\u4ee5 event.target.value \u7684\u503c\u8c03\u7528 setFormattedContent\u3002',
                 ),
               ),
+              o.a.createElement(
+                'h4',
+                { id: 'limitedwordtextareatsx' },
+                o.a.createElement(
+                  a['AnchorLink'],
+                  {
+                    to: '#limitedwordtextareatsx',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  o.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'LimitedWordTextarea.tsx',
+              ),
               o.a.createElement(l['a'], {
                 code: "import React, { useState, useCallback, useEffect } from 'react';\nimport type { ChangeEvent } from 'react';\nimport styled from '@emotion/styled';\ninterface LimitedWordTextareaProps extends Record<string, unknown> {\n  limit: number;\n  rows: number;\n  cols: number;\n  value: string;\n}\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedWordTextarea = (props: Partial<LimitedWordTextareaProps>) => {\n  const { limit = 0, rows, cols, value, ...rest } = props;\n\n  const [{ content, wordCount }, setContent] = useState({\n    content: value,\n    wordCount: 0,\n  });\n\n  const setFormattedContent = useCallback(\n    (text: string) => {\n      let words = text.split(' ').filter(Boolean);\n      setContent(() => {\n        if (words.length > limit) {\n          return {\n            wordCount: limit,\n            content: words.slice(0, limit).join(' '),\n          };\n        }\n        return {\n          wordCount: words.length,\n          content: text,\n        };\n      });\n    },\n    [limit, setContent],\n  );\n  useEffect(() => {\n    setFormattedContent(content || '');\n  }, []);\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e: ChangeEvent) =>\n          setFormattedContent((e.target as HTMLTextAreaElement).value)\n        }\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedWordTextarea;",
                 lang: 'tsx',
+              }),
+              o.a.createElement(
+                'h4',
+                { id: 'limitedwordtextareajsx' },
+                o.a.createElement(
+                  a['AnchorLink'],
+                  {
+                    to: '#limitedwordtextareajsx',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  o.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'LimitedWordTextarea.jsx',
+              ),
+              o.a.createElement(l['a'], {
+                code: "import React, { useState, useCallback, useEffect } from 'react';\nimport styled from '@emotion/styled';\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedWordTextarea = (props) => {\n  const { limit = 0, rows, cols, value, ...rest } = props;\n\n  const [{ content, wordCount }, setContent] = useState({\n    content: value,\n    wordCount: 0,\n  });\n\n  const setFormattedContent = useCallback(\n    (text) => {\n      let words = text.split(' ').filter(Boolean);\n      setContent(() => {\n        if (words.length > limit) {\n          return {\n            wordCount: limit,\n            content: words.slice(0, limit).join(' '),\n          };\n        }\n        return {\n          wordCount: words.length,\n          content: text,\n        };\n      });\n    },\n    [limit, setContent],\n  );\n  useEffect(() => {\n    setFormattedContent(content || '');\n  }, []);\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={e =>\n          setFormattedContent(e.target.value)\n        }\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedWordTextarea;",
+                lang: 'jsx',
               }),
               o.a.createElement('p', null, '\u793a\u4f8b:'),
             ),
@@ -33556,6 +33784,16 @@
               i['default'],
               n['limitedwordtextarea-demo.zh-cn'].previewerProps,
               o.a.createElement(t, null),
+            ),
+            o.a.createElement(
+              'div',
+              { className: 'markdown' },
+              o.a.createElement('p', null, 'jsx \u793a\u4f8b:'),
+            ),
+            o.a.createElement(
+              i['default'],
+              n['jsx-demo.zh-cn-13'].previewerProps,
+              o.a.createElement(r, null),
             ),
           ),
         );
@@ -33872,6 +34110,15 @@
                 o.a.createElement('span', { className: 'icon icon-link' }),
               ),
               '\u6b22\u8fce\u6765\u5230\u672c\u7f51\u7ad9',
+            ),
+            o.a.createElement(
+              'p',
+              null,
+              o.a.createElement(
+                a['Link'],
+                { to: 'https://eveningwater.github.io/code-segment/#/' },
+                '\u4ee3\u7801\u6bb5',
+              ),
             ),
           ),
         );
@@ -34375,7 +34622,7 @@
           y = e.onClick,
           x = e.onChange,
           E = e.onKeyDown,
-          k = Object(s['a'])(e, [
+          w = Object(s['a'])(e, [
             'prefixCls',
             'className',
             'checked',
@@ -34388,8 +34635,8 @@
             'onChange',
             'onKeyDown',
           ]),
-          w = Object(d['a'])(!1, { value: f, defaultValue: m }),
-          C = Object(c['a'])(w, 2),
+          k = Object(d['a'])(!1, { value: f, defaultValue: m }),
+          C = Object(c['a'])(k, 2),
           O = C[0],
           S = C[1];
         function j(e, n) {
@@ -34416,7 +34663,7 @@
         );
         return u['createElement'](
           'button',
-          Object.assign({}, k, {
+          Object.assign({}, w, {
             type: 'button',
             role: 'switch',
             'aria-checked': O,
@@ -34465,12 +34712,12 @@
           f = void 0 === p ? '' : p,
           x = y(e, ['prefixCls', 'size', 'disabled', 'loading', 'className']),
           E = u['useContext'](h['b']),
-          k = E.getPrefixCls,
-          w = E.direction,
+          w = E.getPrefixCls,
+          k = E.direction,
           C = u['useContext'](g['b']),
           O = u['useContext'](v['b']),
           S = s || O || d,
-          j = k('switch', i),
+          j = w('switch', i),
           T = u['createElement'](
             'div',
             { className: ''.concat(j, '-handle') },
@@ -34483,7 +34730,7 @@
             ((t = {}),
             Object(o['a'])(t, ''.concat(j, '-small'), 'small' === (c || C)),
             Object(o['a'])(t, ''.concat(j, '-loading'), d),
-            Object(o['a'])(t, ''.concat(j, '-rtl'), 'rtl' === w),
+            Object(o['a'])(t, ''.concat(j, '-rtl'), 'rtl' === k),
             t),
             f,
           );
@@ -34890,14 +35137,14 @@
       y = b.prototype,
       x = /a/g,
       E = /a/g,
-      k = new b(x) !== x,
-      w = d.UNSUPPORTED_Y,
+      w = new b(x) !== x,
+      k = d.UNSUPPORTED_Y,
       C =
         r &&
         a(
           'RegExp',
-          !k ||
-            w ||
+          !w ||
+            k ||
             f(function () {
               return (E[g] = !1), b(x) != x || b(E) == E || '/a/i' != b(x, 'i');
             }),
@@ -34909,14 +35156,14 @@
             o = s(e),
             a = void 0 === n;
           if (!r && o && e.constructor === O && a) return e;
-          k
+          w
             ? o && !a && (e = e.source)
             : e instanceof O && (a && (n = u.call(e)), (e = e.source)),
-            w &&
+            k &&
               ((t = !!n && n.indexOf('y') > -1),
               t && (n = n.replace(/y/g, '')));
-          var l = i(k ? new b(e, n) : b(e, n), r ? this : y, O);
-          return w && t && m(l, { sticky: t }), l;
+          var l = i(w ? new b(e, n) : b(e, n), r ? this : y, O);
+          return k && t && m(l, { sticky: t }), l;
         },
         S = function (e) {
           e in O ||
@@ -35097,7 +35344,7 @@
       return x;
     }),
       t.d(n, 'b', function () {
-        return k;
+        return w;
       }),
       t.d(n, 'c', function () {
         return T;
@@ -35252,7 +35499,7 @@
         n
       );
     })(a.a.Component);
-    function k(e) {
+    function w(e) {
       var n = e.message,
         t = e.when,
         r = void 0 === t || t;
@@ -35273,13 +35520,13 @@
         });
       });
     }
-    var w = {},
+    var k = {},
       C = 1e4,
       O = 0;
     function S(e) {
-      if (w[e]) return w[e];
+      if (k[e]) return k[e];
       var n = d.a.compile(e);
-      return O < C && ((w[e] = n), O++), n;
+      return O < C && ((k[e] = n), O++), n;
     }
     function j(e, n) {
       return (
@@ -35993,26 +36240,26 @@
             var E = c.unicode;
             c.lastIndex = 0;
           }
-          var k = [];
+          var w = [];
           while (1) {
-            var w = u(c, f);
-            if (null === w) break;
-            if ((k.push(w), !h)) break;
-            var C = String(w[0]);
+            var k = u(c, f);
+            if (null === k) break;
+            if ((w.push(k), !h)) break;
+            var C = String(k[0]);
             '' === C && (c.lastIndex = s(f, i(c.lastIndex), E));
           }
-          for (var O = '', S = 0, j = 0; j < k.length; j++) {
-            w = k[j];
+          for (var O = '', S = 0, j = 0; j < w.length; j++) {
+            k = w[j];
             for (
-              var T = String(w[0]),
-                I = d(p(l(w.index), f.length), 0),
+              var T = String(k[0]),
+                I = d(p(l(k.index), f.length), 0),
                 N = [],
                 R = 1;
-              R < w.length;
+              R < k.length;
               R++
             )
-              N.push(v(w[R]));
-            var P = w.groups;
+              N.push(v(k[R]));
+            var P = k.groups;
             if (m) {
               var A = [T].concat(N, I, f);
               void 0 !== P && A.push(P);
@@ -36416,7 +36663,7 @@
                 'Carousel.tsx',
               ),
               o.a.createElement(l['a'], {
-                code: "import React, { useState, useEffect, cloneElement } from 'react';\nimport type { ReactNode } from 'react';\nimport './Carousel.less';\n\ninterface CarouselItemProps {\n  children: ReactNode;\n  className: string | Record<string, string | number>;\n}\n\ninterface CarouselProps {\n  options: ReactNode[];\n  duration: number;\n  children: JSX.Element[];\n  defaultKey: string;\n}\n\nconst CarouselItem = (props: Partial<CarouselItemProps>) => {\n  const { children } = props;\n  return <div className=\"carousel-item\">{children}</div>;\n};\nCarouselItem.displayName = 'CarouselItem';\n\nconst Carousel = (props: Partial<CarouselProps>) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer: number | undefined;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter((item) => item?.type?.displayName === 'CarouselItem') || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className=\"carousel\">\n      <div\n        className=\"carousel-slide\"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(<CarouselItem key={item}>{item}</CarouselItem>, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nCarousel.CarouselItem = CarouselItem;\n\nexport default Carousel;",
+                code: "import React, { useState, useEffect, cloneElement } from 'react';\nimport type { ReactNode } from 'react';\nimport './Carousel.less';\n\ninterface CarouselItemProps {\n  children: ReactNode;\n  className: string | Record<string, string | number>;\n}\n\ninterface CarouselProps {\n  options: ReactNode[];\n  duration: number;\n  children: JSX.Element[];\n  defaultKey: string;\n}\n\nconst CarouselItem = (props: Partial<CarouselItemProps>) => {\n  const { children } = props;\n  return <div className=\"carousel-item\">{children}</div>;\n};\nCarouselItem.displayName = 'CarouselItem';\n\nconst Carousel = (props: Partial<CarouselProps>) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer: number | undefined;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter(\n          (item) => item?.type?.displayName === 'CarouselItem',\n        ) || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className=\"carousel\">\n      <div\n        className=\"carousel-slide\"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(<CarouselItem key={item}>{item}</CarouselItem>, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nCarousel.CarouselItem = CarouselItem;\n\nexport default Carousel;",
                 lang: 'tsx',
               }),
               o.a.createElement(
@@ -36430,7 +36677,7 @@
                 'Carousel.jsx',
               ),
               o.a.createElement(l['a'], {
-                code: "import React, { useState, useEffect, cloneElement } from 'react';\nimport '../Carousel.less';\n\nconst CarouselItem = (props) => {\n  const { children } = props;\n  return <div className=\"carousel-item\">{children}</div>;\n};\nCarouselItem.displayName = 'CarouselItem';\n\nconst Carousel = (props) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter((item) => item?.type?.displayName === 'CarouselItem') || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className=\"carousel\">\n      <div\n        className=\"carousel-slide\"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(<CarouselItem key={item}>{item}</CarouselItem>, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nCarousel.CarouselItem = CarouselItem;\n\nexport default Carousel;",
+                code: "import React, { useState, useEffect, cloneElement } from 'react';\nimport '../Carousel.less';\n\nconst CarouselItem = (props) => {\n  const { children } = props;\n  return <div className=\"carousel-item\">{children}</div>;\n};\nCarouselItem.displayName = 'CarouselItem';\n\nconst Carousel = (props) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter(\n          (item) => item?.type?.displayName === 'CarouselItem',\n        ) || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className=\"carousel\">\n      <div\n        className=\"carousel-slide\"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(<CarouselItem key={item}>{item}</CarouselItem>, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nCarousel.CarouselItem = CarouselItem;\n\nexport default Carousel;",
                 lang: 'jsx',
               }),
               o.a.createElement('p', null, '\u793a\u4f8b:'),
@@ -36585,14 +36832,14 @@
         x = y && y(y(I([])));
       x && x !== t && r.call(x, a) && (b = x);
       var E = (g.prototype = h.prototype = Object.create(b));
-      function k(e) {
+      function w(e) {
         ['next', 'throw', 'return'].forEach(function (n) {
           e[n] = function (e) {
             return this._invoke(n, e);
           };
         });
       }
-      function w(e, n) {
+      function k(e, n) {
         function t(o, a, i, l) {
           var c = s(e[o], e, a);
           if ('throw' !== c.type) {
@@ -36757,21 +37004,21 @@
         (e.awrap = function (e) {
           return { __await: e };
         }),
-        k(w.prototype),
-        (w.prototype[i] = function () {
+        w(k.prototype),
+        (k.prototype[i] = function () {
           return this;
         }),
-        (e.AsyncIterator = w),
+        (e.AsyncIterator = k),
         (e.async = function (n, t, r, o, a) {
           void 0 === a && (a = Promise);
-          var i = new w(c(n, t, r, o), a);
+          var i = new k(c(n, t, r, o), a);
           return e.isGeneratorFunction(t)
             ? i
             : i.next().then(function (e) {
                 return e.done ? e.value : i.next();
               });
         }),
-        k(E),
+        w(E),
         (E[l] = 'Generator'),
         (E[a] = function () {
           return this;
@@ -36935,6 +37182,15 @@
       return this.__data__.has(e);
     }
     e.exports = t;
+  },
+  Vj4t: function (e, n, t) {
+    'use strict';
+    t.r(n);
+    var r = t('q1tI'),
+      o = t.n(r),
+      a = t('MyQ3'),
+      i = () => o.a.createElement(a['a'], { limit: 5, value: 'hello,there!' });
+    n['default'] = i;
   },
   Vnov: function (e, n, t) {
     'use strict';
@@ -37341,7 +37597,7 @@
     function E(e, n) {
       return !!e && !!n && !isNaN(Number(n));
     }
-    var k = (function (e) {
+    var w = (function (e) {
       Object(l['a'])(t, e);
       var n = Object(c['a'])(t);
       function t(e) {
@@ -37396,7 +37652,7 @@
                 'indicator',
                 'prefixCls',
               ]),
-              k = m['createElement'](
+              w = m['createElement'](
                 'div',
                 Object(r['a'])({}, E, {
                   style: h,
@@ -37414,7 +37670,7 @@
                   : null,
               );
             if (i.isNestedPattern()) {
-              var w = u()(
+              var k = u()(
                 ''.concat(l, '-container'),
                 Object(o['a'])({}, ''.concat(l, '-blur'), g),
               );
@@ -37423,15 +37679,15 @@
                 Object(r['a'])({}, E, {
                   className: u()(''.concat(l, '-nested-loading'), p),
                 }),
-                g && m['createElement']('div', { key: 'loading' }, k),
+                g && m['createElement']('div', { key: 'loading' }, w),
                 m['createElement'](
                   'div',
-                  { className: w, key: 'container' },
+                  { className: k, key: 'container' },
                   i.props.children,
                 ),
               );
             }
-            return k;
+            return w;
           });
         var l = e.spinning,
           c = e.delay,
@@ -37488,19 +37744,19 @@
         t
       );
     })(m['Component']);
-    k.defaultProps = { spinning: !0, size: 'default', wrapperClassName: '' };
-    var w = function (e) {
+    w.defaultProps = { spinning: !0, size: 'default', wrapperClassName: '' };
+    var k = function (e) {
       var n = e.prefixCls,
         t = m['useContext'](h['b']),
         o = t.getPrefixCls,
         a = o('spin', n),
         i = Object(r['a'])(Object(r['a'])({}, e), { spinPrefixCls: a });
-      return m['createElement'](k, Object(r['a'])({}, i));
+      return m['createElement'](w, Object(r['a'])({}, i));
     };
-    (w.setDefaultIndicator = function (e) {
+    (k.setDefaultIndicator = function (e) {
       y = e;
     }),
-      (n['a'] = w);
+      (n['a'] = k);
   },
   WFqU: function (e, n, t) {
     (function (n) {
@@ -37701,14 +37957,14 @@
           h = s;
         for (t = 0; t < e.length; t++) (l = e[t]), l < 128 && n.push(g(l));
         var E = n.length,
-          k = E;
+          w = E;
         E && n.push(d);
-        while (k < c) {
-          var w = r;
-          for (t = 0; t < e.length; t++) (l = e[t]), l >= p && l < w && (w = l);
-          var C = k + 1;
-          if (w - p > v((r - f) / C)) throw RangeError(m);
-          for (f += (w - p) * C, p = w, t = 0; t < e.length; t++) {
+        while (w < c) {
+          var k = r;
+          for (t = 0; t < e.length; t++) (l = e[t]), l >= p && l < k && (k = l);
+          var C = w + 1;
+          if (k - p > v((r - f) / C)) throw RangeError(m);
+          for (f += (k - p) * C, p = k, t = 0; t < e.length; t++) {
             if (((l = e[t]), l < p && ++f > r)) throw RangeError(m);
             if (l == p) {
               for (var O = f, S = o; ; S += o) {
@@ -37718,7 +37974,7 @@
                   I = o - j;
                 n.push(g(y(j + (T % I)))), (O = v(T / I));
               }
-              n.push(g(y(O))), (h = x(f, C, k == E)), (f = 0), ++k;
+              n.push(g(y(O))), (h = x(f, C, w == E)), (f = 0), ++w;
             }
           }
           ++f, ++p;
@@ -38019,7 +38275,7 @@
                 'Carousel.tsx',
               ),
               o.a.createElement(l['a'], {
-                code: "import React, { useState, useEffect, cloneElement } from 'react';\nimport type { ReactNode } from 'react';\nimport './Carousel.less';\n\ninterface CarouselItemProps {\n  children: ReactNode;\n  className: string | Record<string, string | number>;\n}\n\ninterface CarouselProps {\n  options: ReactNode[];\n  duration: number;\n  children: JSX.Element[];\n  defaultKey: string;\n}\n\nconst CarouselItem = (props: Partial<CarouselItemProps>) => {\n  const { children } = props;\n  return <div className=\"carousel-item\">{children}</div>;\n};\nCarouselItem.displayName = 'CarouselItem';\n\nconst Carousel = (props: Partial<CarouselProps>) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer: number | undefined;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter((item) => item?.type?.displayName === 'CarouselItem') || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className=\"carousel\">\n      <div\n        className=\"carousel-slide\"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(<CarouselItem key={item}>{item}</CarouselItem>, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nCarousel.CarouselItem = CarouselItem;\n\nexport default Carousel;",
+                code: "import React, { useState, useEffect, cloneElement } from 'react';\nimport type { ReactNode } from 'react';\nimport './Carousel.less';\n\ninterface CarouselItemProps {\n  children: ReactNode;\n  className: string | Record<string, string | number>;\n}\n\ninterface CarouselProps {\n  options: ReactNode[];\n  duration: number;\n  children: JSX.Element[];\n  defaultKey: string;\n}\n\nconst CarouselItem = (props: Partial<CarouselItemProps>) => {\n  const { children } = props;\n  return <div className=\"carousel-item\">{children}</div>;\n};\nCarouselItem.displayName = 'CarouselItem';\n\nconst Carousel = (props: Partial<CarouselProps>) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer: number | undefined;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter(\n          (item) => item?.type?.displayName === 'CarouselItem',\n        ) || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className=\"carousel\">\n      <div\n        className=\"carousel-slide\"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(<CarouselItem key={item}>{item}</CarouselItem>, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nCarousel.CarouselItem = CarouselItem;\n\nexport default Carousel;",
                 lang: 'tsx',
               }),
               o.a.createElement(
@@ -38033,7 +38289,7 @@
                 'Carousel.jsx',
               ),
               o.a.createElement(l['a'], {
-                code: "import React, { useState, useEffect, cloneElement } from 'react';\nimport '../Carousel.less';\n\nconst CarouselItem = (props) => {\n  const { children } = props;\n  return <div className=\"carousel-item\">{children}</div>;\n};\nCarouselItem.displayName = 'CarouselItem';\n\nconst Carousel = (props) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter((item) => item?.type?.displayName === 'CarouselItem') || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className=\"carousel\">\n      <div\n        className=\"carousel-slide\"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(<CarouselItem key={item}>{item}</CarouselItem>, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nCarousel.CarouselItem = CarouselItem;\n\nexport default Carousel;",
+                code: "import React, { useState, useEffect, cloneElement } from 'react';\nimport '../Carousel.less';\n\nconst CarouselItem = (props) => {\n  const { children } = props;\n  return <div className=\"carousel-item\">{children}</div>;\n};\nCarouselItem.displayName = 'CarouselItem';\n\nconst Carousel = (props) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter(\n          (item) => item?.type?.displayName === 'CarouselItem',\n        ) || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className=\"carousel\">\n      <div\n        className=\"carousel-slide\"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(<CarouselItem key={item}>{item}</CarouselItem>, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nCarousel.CarouselItem = CarouselItem;\n\nexport default Carousel;",
                 lang: 'jsx',
               }),
               o.a.createElement('p', null, 'demo:'),
@@ -38583,13 +38839,13 @@
       }
       for (var b = 0, y = Object.keys(a); b < y.length; b++) {
         var E = y[b],
-          k = a[E];
-        if ('object' === typeof k && null !== k)
-          for (var w = 0, C = Object.keys(k); w < C.length; w++) {
-            var O = C[w];
-            k[O] = x(k[O], n);
+          w = a[E];
+        if ('object' === typeof w && null !== w)
+          for (var k = 0, C = Object.keys(w); k < C.length; k++) {
+            var O = C[k];
+            w[O] = x(w[O], n);
           }
-        else a[E] = x(k, n);
+        else a[E] = x(w, n);
       }
       return !1 === n.sort
         ? a
@@ -38842,7 +39098,7 @@
         return E;
       }),
       t.d(n, 'f', function () {
-        return k;
+        return w;
       }),
       t.d(n, 'e', function () {
         return x;
@@ -38992,7 +39248,7 @@
         a
       );
     }
-    function k(e, n) {
+    function w(e, n) {
       return (
         e.pathname === n.pathname &&
         e.search === n.search &&
@@ -39001,7 +39257,7 @@
         u(e.state, n.state)
       );
     }
-    function w() {
+    function k() {
       var e = null;
       function n(n) {
         return (
@@ -39115,8 +39371,8 @@
       function v() {
         return Math.random().toString(36).substr(2, d);
       }
-      var y = w();
-      function k(e) {
+      var y = k();
+      function w(e) {
         Object(r['a'])(Z, e),
           (Z.length = n.length),
           y.notifyListeners(Z.location, Z.action);
@@ -39129,11 +39385,11 @@
       }
       var L = !1;
       function M(e) {
-        if (L) (L = !1), k();
+        if (L) (L = !1), w();
         else {
           var n = 'POP';
           y.confirmTransitionTo(e, n, s, function (t) {
-            t ? k({ action: n, location: e }) : D(e);
+            t ? w({ action: n, location: e }) : D(e);
           });
         }
       }
@@ -39165,7 +39421,7 @@
               else {
                 var s = _.indexOf(Z.location.key),
                   u = _.slice(0, s + 1);
-                u.push(a.key), (_ = u), k({ action: o, location: a });
+                u.push(a.key), (_ = u), w({ action: o, location: a });
               }
             else window.location.href = r;
           }
@@ -39184,7 +39440,7 @@
                 window.location.replace(r);
               else {
                 var s = _.indexOf(Z.location.key);
-                -1 !== s && (_[s] = a.key), k({ action: o, location: a });
+                -1 !== s && (_[s] = a.key), w({ action: o, location: a });
               }
             else window.location.replace(r);
           }
@@ -39288,14 +39544,14 @@
         var e = d(z());
         return c && (e = g(e, c)), E(e);
       }
-      var h = w();
+      var h = k();
       function v(e) {
         Object(r['a'])(X, e),
           (X.length = n.length),
           h.notifyListeners(X.location, X.action);
       }
       var y = !1,
-        k = null;
+        w = null;
       function S(e, n) {
         return (
           e.pathname === n.pathname &&
@@ -39311,8 +39567,8 @@
           var t = p(),
             r = X.location;
           if (!y && S(r, t)) return;
-          if (k === x(t)) return;
-          (k = null), I(t);
+          if (w === x(t)) return;
+          (w = null), I(t);
         }
       }
       function I(e) {
@@ -39355,7 +39611,7 @@
               o = u(c + n),
               a = z() !== o;
             if (a) {
-              (k = n), _(o);
+              (w = n), _(o);
               var i = B.lastIndexOf(x(X.location)),
                 l = B.slice(0, i + 1);
               l.push(n), (B = l), v({ action: t, location: r });
@@ -39371,7 +39627,7 @@
             var n = x(r),
               o = u(c + n),
               a = z() !== o;
-            a && ((k = n), F(o));
+            a && ((w = n), F(o));
             var i = B.indexOf(x(X.location));
             -1 !== i && (B[i] = n), v({ action: t, location: r });
           }
@@ -39441,7 +39697,7 @@
         l = void 0 === i ? 0 : i,
         c = n.keyLength,
         s = void 0 === c ? 6 : c,
-        u = w();
+        u = k();
       function d(e) {
         Object(r['a'])(j, e),
           (j.length = j.entries.length),
@@ -39486,7 +39742,7 @@
       function y() {
         b(-1);
       }
-      function k() {
+      function w() {
         b(1);
       }
       function C(e) {
@@ -39510,7 +39766,7 @@
         replace: g,
         go: b,
         goBack: y,
-        goForward: k,
+        goForward: w,
         canGo: C,
         block: O,
         listen: S,
@@ -39614,13 +39870,13 @@
       y = t('1E5z'),
       x = t('afO8'),
       E = x.get,
-      k = x.set,
-      w = 'ArrayBuffer',
+      w = x.set,
+      k = 'ArrayBuffer',
       C = 'DataView',
       O = 'prototype',
       S = 'Wrong length',
       j = 'Wrong index',
-      T = r[w],
+      T = r[k],
       I = T,
       N = r[C],
       R = N && N[O],
@@ -39682,7 +39938,7 @@
           new T(-1);
         }) ||
         c(function () {
-          return new T(), new T(1.5), new T(NaN), T.name != w;
+          return new T(), new T(1.5), new T(NaN), T.name != k;
         })
       ) {
         I = function (e) {
@@ -39712,9 +39968,9 @@
           );
     } else
       (I = function (e) {
-        s(this, I, w);
+        s(this, I, k);
         var n = p(e);
-        k(this, { bytes: b.call(new Array(n), 0), byteLength: n }),
+        w(this, { bytes: b.call(new Array(n), 0), byteLength: n }),
           o || (this.byteLength = n);
       }),
         (N = function (e, n, t) {
@@ -39723,7 +39979,7 @@
             a = u(n);
           if (a < 0 || a > r) throw A('Wrong offset');
           if (((t = void 0 === t ? r - a : d(t)), a + t > r)) throw A(S);
-          k(this, { buffer: e, byteLength: t, byteOffset: a }),
+          w(this, { buffer: e, byteLength: t, byteOffset: a }),
             o ||
               ((this.buffer = e), (this.byteLength = t), (this.byteOffset = a));
         }),
@@ -39795,7 +40051,7 @@
             q(this, 8, e, U, n, arguments.length > 2 ? arguments[2] : void 0);
           },
         });
-    y(I, w), y(N, C), (e.exports = { ArrayBuffer: I, DataView: N });
+    y(I, k), y(N, C), (e.exports = { ArrayBuffer: I, DataView: N });
   },
   YlG9: function (e, n, t) {
     'use strict';
@@ -40672,7 +40928,7 @@
       return [i.current, s];
     }
     var E = t('4IlW');
-    function k(e, n) {
+    function w(e, n) {
       var t,
         o = e.prefixCls,
         a = e.id,
@@ -40689,8 +40945,8 @@
         b = e.onClick,
         y = e.onRemove,
         x = e.onFocus,
-        k = e.style,
-        w = ''.concat(o, '-tab');
+        w = e.style,
+        k = ''.concat(o, '-tab');
       r['useEffect'](function () {
         return y;
       }, []);
@@ -40709,14 +40965,14 @@
           key: s,
           ref: n,
           className: p()(
-            w,
+            k,
             ((t = {}),
-            Object(i['a'])(t, ''.concat(w, '-with-remove'), C),
-            Object(i['a'])(t, ''.concat(w, '-active'), l),
-            Object(i['a'])(t, ''.concat(w, '-disabled'), d),
+            Object(i['a'])(t, ''.concat(k, '-with-remove'), C),
+            Object(i['a'])(t, ''.concat(k, '-active'), l),
+            Object(i['a'])(t, ''.concat(k, '-disabled'), d),
             t),
           ),
-          style: k,
+          style: w,
           onClick: O,
         },
         r['createElement'](
@@ -40725,7 +40981,7 @@
             role: 'tab',
             'aria-selected': l,
             id: a && ''.concat(a, '-tab-').concat(s),
-            className: ''.concat(w, '-btn'),
+            className: ''.concat(k, '-btn'),
             'aria-controls': a && ''.concat(a, '-panel-').concat(s),
             'aria-disabled': d,
             tabIndex: d ? null : 0,
@@ -40747,7 +41003,7 @@
               type: 'button',
               'aria-label': v || 'remove',
               tabIndex: 0,
-              className: ''.concat(w, '-remove'),
+              className: ''.concat(k, '-remove'),
               onClick: function (e) {
                 e.stopPropagation(), S(e);
               },
@@ -40757,7 +41013,7 @@
       );
       return h ? h(j) : j;
     }
-    var w = r['forwardRef'](k),
+    var k = r['forwardRef'](w),
       C = { width: 0, height: 0, left: 0, top: 0 };
     function O(e, n, t) {
       return Object(r['useMemo'])(
@@ -40998,8 +41254,8 @@
         y = e.getPopupContainer,
         x = e.showAction,
         E = e.hideAction,
-        k = e.overlayClassName,
-        w = e.overlayStyle,
+        w = e.overlayClassName,
+        k = e.overlayStyle,
         C = e.visible,
         O = e.trigger,
         S = void 0 === O ? ['hover'] : O,
@@ -41075,10 +41331,10 @@
               prefixCls: c,
               ref: D,
               popupClassName: p()(
-                k,
+                w,
                 Object(i['a'])({}, ''.concat(c, '-show-arrow'), o),
               ),
-              popupStyle: w,
+              popupStyle: k,
               action: S,
               showAction: x,
               hideAction: G || [],
@@ -41141,9 +41397,9 @@
         b = e.rtl,
         y = e.removeAriaLabel,
         x = e.onTabClick,
-        k = e.popupClassName,
-        w = Object(r['useState'])(!1),
-        C = Object(l['a'])(w, 2),
+        w = e.popupClassName,
+        k = Object(r['useState'])(!1),
+        C = Object(l['a'])(k, 2),
         O = C[0],
         S = C[1],
         j = Object(r['useState'])(null),
@@ -41272,7 +41528,7 @@
                 visible: O,
                 transitionName: f,
                 onVisibleChange: S,
-                overlayClassName: p()(V, k),
+                overlayClassName: p()(V, w),
                 mouseEnterDelay: 0.1,
                 mouseLeaveDelay: 0.1,
               },
@@ -41336,7 +41592,7 @@
           r = n.screenY;
         i({ x: t, y: r }), window.clearInterval(x.current);
       }
-      function k(e) {
+      function w(e) {
         if (a) {
           e.preventDefault();
           var t = e.touches[0],
@@ -41350,7 +41606,7 @@
           d(s), h(s - u), y({ x: l, y: c });
         }
       }
-      function w() {
+      function k() {
         if (a && (i(null), y(null), b)) {
           var e = b.x / m,
             t = b.y / m,
@@ -41383,8 +41639,8 @@
       var S = Object(r['useRef'])(null);
       (S.current = {
         onTouchStart: E,
-        onTouchMove: k,
-        onTouchEnd: w,
+        onTouchMove: w,
+        onTouchEnd: k,
         onWheel: O,
       }),
         r['useEffect'](function () {
@@ -41468,7 +41724,7 @@
         m = e.id,
         h = e.animated,
         E = e.activeKey,
-        k = e.rtl,
+        w = e.rtl,
         C = e.extra,
         S = e.editable,
         T = e.locale,
@@ -41516,8 +41772,8 @@
         ye = ge[1],
         xe = Object(r['useState'])(0),
         Ee = Object(l['a'])(xe, 2),
-        ke = Ee[0],
-        we = Ee[1],
+        we = Ee[0],
+        ke = Ee[1],
         Ce = Object(r['useState'])(0),
         Oe = Object(l['a'])(Ce, 2),
         Se = Oe[0],
@@ -41534,7 +41790,7 @@
         return e < Le ? Le : e > Me ? Me : e;
       }
       V
-        ? k
+        ? w
           ? ((Le = 0), (Me = Math.max(0, ie - me)))
           : ((Le = Math.min(0, me - ie)), (Me = 0))
         : ((Le = Math.min(0, be - ue)), (Me = 0));
@@ -41555,7 +41811,7 @@
           n = Pe.get(e) || { width: 0, height: 0, left: 0, right: 0, top: 0 };
         if (V) {
           var t = K;
-          k
+          w
             ? n.right < K
               ? (t = n.right)
               : n.right + n.width > K + me && (t = n.right + n.width - me)
@@ -41606,7 +41862,7 @@
           Pe,
           { width: me, height: be, left: K, top: te },
           { width: ie, height: ue },
-          { width: ke, height: Se },
+          { width: we, height: Se },
           Object(u['a'])(Object(u['a'])({}, e), {}, { tabs: s }),
         ),
         $e = Object(l['a'])(We, 2),
@@ -41614,11 +41870,11 @@
         Ke = $e[1],
         Ye = {};
       'top' === I || 'bottom' === I
-        ? (Ye[k ? 'marginRight' : 'marginLeft'] = N)
+        ? (Ye[w ? 'marginRight' : 'marginLeft'] = N)
         : (Ye.marginTop = N);
       var Ze = s.map(function (e, n) {
           var t = e.key;
-          return r['createElement'](w, {
+          return r['createElement'](k, {
             id: m,
             prefixCls: c,
             key: t,
@@ -41641,7 +41897,7 @@
               qe(t),
                 Ve(),
                 L.current &&
-                  (k || (L.current.scrollLeft = 0), (L.current.scrollTop = 0));
+                  (w || (L.current.scrollLeft = 0), (L.current.scrollTop = 0));
             },
           });
         }),
@@ -41668,7 +41924,7 @@
               (null === (r = z.current) || void 0 === r
                 ? void 0
                 : r.offsetHeight) || 0;
-          he(i), ye(l), we(c), je(u);
+          he(i), ye(l), ke(c), je(u);
           var d =
               ((null === (o = M.current) || void 0 === o
                 ? void 0
@@ -41715,7 +41971,7 @@
           return (
             an &&
               (V
-                ? (k ? (e.right = an.right) : (e.left = an.left),
+                ? (w ? (e.right = an.right) : (e.left = an.left),
                   (e.width = an.width))
                 : ((e.top = an.top), (e.height = an.height))),
             cn(),
@@ -41725,7 +41981,7 @@
             cn
           );
         },
-        [an, V, k],
+        [an, V, w],
       ),
         Object(r['useEffect'])(
           function () {
@@ -41738,7 +41994,7 @@
             Je();
           },
           [
-            k,
+            w,
             N,
             E,
             s
@@ -41756,7 +42012,7 @@
         mn = ''.concat(c, '-nav-wrap');
       return (
         V
-          ? k
+          ? w
             ? ((un = K > 0), (sn = K + me < ie))
             : ((sn = K < 0), (un = -K + me < ie))
           : ((dn = te < 0), (pn = -te + be < ue)),
@@ -41997,9 +42253,9 @@
         y = e.direction,
         x = e.activeKey,
         E = e.defaultActiveKey,
-        k = e.editable,
-        w = e.animated,
-        C = void 0 === w ? { inkBar: !0, tabPane: !1 } : w,
+        w = e.editable,
+        k = e.animated,
+        C = void 0 === k ? { inkBar: !0, tabPane: !1 } : k,
         O = e.tabPosition,
         S = void 0 === O ? 'top' : O,
         j = e.tabBarGutter,
@@ -42097,7 +42353,7 @@
           Object(u['a'])({}, fe),
           {},
           {
-            editable: k,
+            editable: w,
             locale: N,
             moreIcon: R,
             moreTransitionName: P,
@@ -42126,7 +42382,7 @@
                   ''.concat(v, '-').concat(ue),
                   ((t = {}),
                   Object(i['a'])(t, ''.concat(v, '-mobile'), q),
-                  Object(i['a'])(t, ''.concat(v, '-editable'), k),
+                  Object(i['a'])(t, ''.concat(v, '-editable'), w),
                   Object(i['a'])(t, ''.concat(v, '-rtl'), U),
                   t),
                   g,
@@ -42156,7 +42412,7 @@
       ve = t('M/Q6');
     t('RZMt');
     function ge(e, n) {
-      return ke(e) || Ee(e, n) || ye(e, n) || be();
+      return we(e) || Ee(e, n) || ye(e, n) || be();
     }
     function be() {
       throw new TypeError(
@@ -42210,10 +42466,10 @@
         return a;
       }
     }
-    function ke(e) {
+    function we(e) {
       if (Array.isArray(e)) return e;
     }
-    function we(e, n) {
+    function ke(e, n) {
       var t,
         r = null === (t = e.match(/\.(\w+)$/)) || void 0 === t ? void 0 : t[1];
       return r || (r = n.tsx ? 'tsx' : 'jsx'), r;
@@ -42257,15 +42513,15 @@
         y = g[1],
         x = Object(me['useCopy'])(),
         E = ge(x, 2),
-        k = E[0],
-        w = E[1],
+        w = E[0],
+        k = E[1],
         C = Object(r['useState'])(function () {
           return s.sources._ ? '_' : Object.keys(s.sources)[0];
         }),
         O = ge(C, 2),
         S = O[0],
         j = O[1],
-        T = Object(r['useState'])(we(S, s.sources[S])),
+        T = Object(r['useState'])(ke(S, s.sources[S])),
         I = ge(T, 2),
         N = I[0],
         R = I[1],
@@ -42291,7 +42547,7 @@
               }
             : $;
       function K(e) {
-        j(e), R(we(e, s.sources[e]));
+        j(e), R(ke(e, s.sources[e]));
       }
       return (
         Object(r['useEffect'])(
@@ -42440,9 +42696,9 @@
                   title: 'Copy source code',
                   className: '__dumi-default-icon',
                   role: 'copy',
-                  'data-status': w,
+                  'data-status': k,
                   onClick: function () {
-                    return k(B);
+                    return w(B);
                   },
                 }),
                 'tsx' === N &&
@@ -42487,7 +42743,7 @@
                   },
                   Object.keys(s.sources).map(function (e) {
                     return o.a.createElement(oe, {
-                      tab: '_' === e ? 'index.'.concat(we(e, s.sources[e])) : e,
+                      tab: '_' === e ? 'index.'.concat(ke(e, s.sources[e])) : e,
                       key: e,
                     });
                   }),
@@ -43153,7 +43409,7 @@
       return b;
     }),
       t.d(n, 'b', function () {
-        return k;
+        return w;
       });
     var r,
       o = t('x+uP'),
@@ -43217,12 +43473,12 @@
     function E(e) {
       p(e);
     }
-    function k(e) {
-      return w.apply(this, arguments);
+    function w(e) {
+      return k.apply(this, arguments);
     }
-    function w() {
+    function k() {
       return (
-        (w = Object(a['a'])(
+        (k = Object(a['a'])(
           Object(o['a'])().mark(function e(n) {
             return Object(o['a'])().wrap(function (e) {
               while (1)
@@ -43242,7 +43498,7 @@
             }, e);
           }),
         )),
-        w.apply(this, arguments)
+        k.apply(this, arguments)
       );
     }
   },
@@ -43285,7 +43541,7 @@
         y = b && b.prototype,
         x = b,
         E = {},
-        k = function (e) {
+        w = function (e) {
           var n = y[e];
           i(
             y,
@@ -43326,10 +43582,10 @@
       )
         (x = t.getConstructor(n, e, h, g)), (l.REQUIRED = !0);
       else if (a(e, !0)) {
-        var w = new x(),
-          C = w[g](v ? {} : -0, 1) != w,
+        var k = new x(),
+          C = k[g](v ? {} : -0, 1) != k,
           O = d(function () {
-            w.has(1);
+            k.has(1);
           }),
           S = p(function (e) {
             new b(e);
@@ -43350,8 +43606,8 @@
           })),
           (x.prototype = y),
           (y.constructor = x)),
-          (O || j) && (k('delete'), k('has'), h && k('get')),
-          (j || C) && k(g),
+          (O || j) && (w('delete'), w('has'), h && w('get')),
+          (j || C) && w(g),
           v && y.clear && delete y.clear;
       }
       return (
@@ -43640,7 +43896,7 @@
     function E(e) {
       return e.offsetTop + (e.offsetParent ? E(e.offsetParent) : 0);
     }
-    var k = function e(n) {
+    var w = function e(n) {
       var t,
         r =
           (null === (t = n.to.match(/(#[^&?]*)/)) || void 0 === t
@@ -43697,14 +43953,14 @@
         )
       );
     };
-    k.scrollToAnchor = function (e) {
+    w.scrollToAnchor = function (e) {
       window.requestAnimationFrame(function () {
         var n = document.getElementById(decodeURIComponent(e));
         n && window.scrollTo(0, E(n) - 100);
       });
     };
-    var w = k;
-    n['default'] = w;
+    var k = w;
+    n['default'] = k;
   },
   bYXl: function (e, n, t) {
     'use strict';
@@ -44173,10 +44429,10 @@
       function E(e) {
         return e === f(e).document.documentElement;
       }
-      function k(e) {
+      function w(e) {
         return r ? (x(e) ? b(e) : y(e)) : m;
       }
-      function w(e) {
+      function k(e) {
         var n = e.x,
           t = e.y,
           r = e.width,
@@ -44209,7 +44465,7 @@
           }
           return (
             (e.prototype.isActive = function () {
-              var e = k(this.target);
+              var e = w(this.target);
               return (
                 (this.contentRect_ = e),
                 e.width !== this.broadcastWidth ||
@@ -44229,7 +44485,7 @@
         })(),
         S = (function () {
           function e(e, n) {
-            var t = w(n);
+            var t = k(n);
             p(this, { target: e, contentRect: t });
           }
           return e;
@@ -45134,8 +45390,8 @@
       y = '[object ArrayBuffer]',
       x = '[object DataView]',
       E = '[object Float32Array]',
-      k = '[object Float64Array]',
-      w = '[object Int8Array]',
+      w = '[object Float64Array]',
+      k = '[object Int8Array]',
       C = '[object Int16Array]',
       O = '[object Int32Array]',
       S = '[object Uint8Array]',
@@ -45146,7 +45402,7 @@
     function R(e) {
       return a(e) && o(e.length) && !!N[r(e)];
     }
-    (N[E] = N[k] = N[w] = N[C] = N[O] = N[S] = N[j] = N[T] = N[I] = !0),
+    (N[E] = N[w] = N[k] = N[C] = N[O] = N[S] = N[j] = N[T] = N[I] = !0),
       (N[i] =
         N[l] =
         N[y] =
@@ -45420,7 +45676,7 @@
         );
       },
       E = x,
-      k = function (e, n) {
+      w = function (e, n) {
         var t = e.overlayClassName,
           r = e.trigger,
           o = void 0 === r ? ['hover'] : r,
@@ -45433,8 +45689,8 @@
           g = void 0 === p ? 'rc-tooltip' : p,
           b = e.children,
           x = e.onVisibleChange,
-          k = e.afterVisibleChange,
-          w = e.transitionName,
+          w = e.afterVisibleChange,
+          k = e.transitionName,
           C = e.animation,
           O = e.motion,
           S = e.placement,
@@ -45513,8 +45769,8 @@
               popupAlign: I,
               getPopupContainer: A,
               onPopupVisibleChange: x,
-              afterPopupVisibleChange: k,
-              popupTransitionName: w,
+              afterPopupVisibleChange: w,
+              popupTransitionName: k,
               popupAnimation: C,
               popupMotion: O,
               defaultPopupVisible: P,
@@ -45529,8 +45785,8 @@
           b,
         );
       },
-      w = Object(i['forwardRef'])(k),
-      C = w,
+      k = Object(i['forwardRef'])(w),
+      C = k,
       O = t('6cGi'),
       S = t('H84U'),
       j = t('CWQg'),
@@ -45722,15 +45978,15 @@
           return 0 === n ? n : t || n || '';
         },
         E = e.getPopupContainer,
-        k = D(e, ['getPopupContainer']),
-        w = e.prefixCls,
+        w = D(e, ['getPopupContainer']),
+        k = e.prefixCls,
         j = e.openClassName,
         T = e.getTooltipContainer,
         N = e.overlayClassName,
         R = e.color,
         P = e.overlayInnerStyle,
         A = e.children,
-        z = a('tooltip', w),
+        z = a('tooltip', k),
         B = a(),
         U = m;
       !('visible' in e) && v() && (U = !1);
@@ -45756,7 +46012,7 @@
           (V = { '--antd-arrow-background-color': R })),
         i['createElement'](
           C,
-          Object(u['a'])({}, k, {
+          Object(u['a'])({}, w, {
             prefixCls: z,
             overlayClassName: $,
             getTooltipContainer: E || T || o,
@@ -46005,8 +46261,8 @@
       y = t('fHMY'),
       x = t('0rvr'),
       E = t('JBy8').f,
-      k = t('oHi+'),
-      w = t('tycR').forEach,
+      w = t('oHi+'),
+      k = t('tycR').forEach,
       C = t('JiZb'),
       O = t('m/L8'),
       S = t('Bs8V'),
@@ -46125,7 +46381,7 @@
                             : new h(n)
                           : V(n)
                           ? W(v, n)
-                          : k.call(v, n)
+                          : w.call(v, n)
                         : new h(f(n));
                     })(),
                     e,
@@ -46134,7 +46390,7 @@
                 );
               })),
               x && x(v, F),
-              w(E(h), function (e) {
+              k(E(h), function (e) {
                 e in v || d(v, e, h[e]);
               }),
               (v.prototype = g))
@@ -46146,7 +46402,7 @@
                   u = 0,
                   d = 0;
                 if (b(n)) {
-                  if (!G(n)) return V(n) ? W(v, n) : k.call(v, n);
+                  if (!G(n)) return V(n) ? W(v, n) : w.call(v, n);
                   (o = n), (d = m(t, a));
                   var h = n.byteLength;
                   if (void 0 === r) {
@@ -46519,22 +46775,22 @@
       var y = c(e),
         x = c(n),
         E = y ? f : l(e),
-        k = x ? f : l(n);
-      (E = E == p ? m : E), (k = k == p ? m : k);
-      var w = E == m,
-        C = k == m,
-        O = E == k;
+        w = x ? f : l(n);
+      (E = E == p ? m : E), (w = w == p ? m : w);
+      var k = E == m,
+        C = w == m,
+        O = E == w;
       if (O && s(e)) {
         if (!s(n)) return !1;
-        (y = !0), (w = !1);
+        (y = !0), (k = !1);
       }
-      if (O && !w)
+      if (O && !k)
         return (
           b || (b = new r()),
           y || u(e) ? o(e, n, t, h, g, b) : a(e, n, E, t, h, g, b)
         );
       if (!(t & d)) {
-        var S = w && v.call(e, '__wrapped__'),
+        var S = k && v.call(e, '__wrapped__'),
           j = C && v.call(n, '__wrapped__');
         if (S || j) {
           var T = S ? e.value() : e,
@@ -47068,9 +47324,9 @@
       x = function () {
         return this;
       };
-    e.exports = function (e, n, t, u, f, E, k) {
+    e.exports = function (e, n, t, u, f, E, w) {
       o(t, n, u);
-      var w,
+      var k,
         C,
         O,
         S = function (e) {
@@ -47102,13 +47358,13 @@
         P = ('Array' == n && I.entries) || N;
       if (
         (P &&
-          ((w = a(P.call(new e()))),
+          ((k = a(P.call(new e()))),
           m !== Object.prototype &&
-            w.next &&
+            k.next &&
             (d ||
-              a(w) === m ||
-              (i ? i(w, m) : 'function' != typeof w[v] && c(w, v, x)),
-            l(w, j, !0, !0),
+              a(k) === m ||
+              (i ? i(k, m) : 'function' != typeof k[v] && c(k, v, x)),
+            l(k, j, !0, !0),
             d && (p[j] = x))),
         f == b &&
           N &&
@@ -47117,11 +47373,11 @@
           (R = function () {
             return N.call(this);
           })),
-        (d && !k) || I[v] === R || c(I, v, R),
+        (d && !w) || I[v] === R || c(I, v, R),
         (p[n] = R),
         f)
       )
-        if (((C = { values: S(b), keys: E ? R : S(g), entries: S(y) }), k))
+        if (((C = { values: S(b), keys: E ? R : S(g), entries: S(y) }), w))
           for (O in C) (h || T || !(O in I)) && s(I, O, C[O]);
         else r({ target: n, proto: !0, forced: h || T }, C);
       return C;
@@ -47456,10 +47712,10 @@
       );
     })(d['Component']);
     E.contextType = p['b'];
-    var k = Object(d['forwardRef'])(function (e, n) {
+    var w = Object(d['forwardRef'])(function (e, n) {
       return d['createElement'](E, Object(r['a'])({ ref: n }, e));
     });
-    n['a'] = k;
+    n['a'] = w;
   },
   g1lB: function (e, n, t) {
     'use strict';
@@ -47811,6 +48067,19 @@
       return n;
     };
   },
+  'gg/U': function (e, n, t) {
+    'use strict';
+    t.r(n);
+    var r = t('q1tI'),
+      o = t.n(r),
+      a = t('MyQ3'),
+      i = () =>
+        o.a.createElement(a['a'], {
+          limit: 6,
+          value: '\u4f60\u597d\u554a,\u8fd9\u91cc\u7684\u4e16\u754c!',
+        });
+    n['default'] = i;
+  },
   gg6r: function (e, n, t) {
     'use strict';
     var r = t('I+eb'),
@@ -47975,7 +48244,7 @@
           return (o = a = void 0), (u = n), (l = e.apply(r, t)), l;
         }
         function b(e) {
-          return (u = e), (c = setTimeout(k, n)), d ? m(e) : l;
+          return (u = e), (c = setTimeout(w, n)), d ? m(e) : l;
         }
         function y(e) {
           var t = e - s,
@@ -47988,10 +48257,10 @@
             r = e - u;
           return void 0 === s || t >= n || t < 0 || (p && r >= i);
         }
-        function k() {
+        function w() {
           var e = g();
           if (E(e)) return C(e);
-          c = setTimeout(k, y(e));
+          c = setTimeout(w, y(e));
         }
         function C(e) {
           return (c = void 0), f && o ? m(e) : ((o = a = void 0), l);
@@ -48007,16 +48276,16 @@
             t = E(e);
           if (((o = arguments), (a = this), (s = e), t)) {
             if (void 0 === c) return b(s);
-            if (p) return (c = setTimeout(k, n)), m(s);
+            if (p) return (c = setTimeout(w, n)), m(s);
           }
-          return void 0 === c && (c = setTimeout(k, n)), l;
+          return void 0 === c && (c = setTimeout(w, n)), l;
         }
         return (
-          (n = w(n) || 0),
+          (n = k(n) || 0),
           x(r) &&
             ((d = !!r.leading),
             (p = 'maxWait' in r),
-            (i = p ? h(w(r.maxWait) || 0, n) : i),
+            (i = p ? h(k(r.maxWait) || 0, n) : i),
             (f = 'trailing' in r ? !!r.trailing : f)),
           (j.cancel = O),
           (j.flush = S),
@@ -48041,12 +48310,12 @@
       function E(e) {
         return !!e && 'object' == typeof e;
       }
-      function k(e) {
+      function w(e) {
         return 'symbol' == typeof e || (E(e) && m.call(e) == o);
       }
-      function w(e) {
+      function k(e) {
         if ('number' == typeof e) return e;
-        if (k(e)) return r;
+        if (w(e)) return r;
         if (x(e)) {
           var n = 'function' == typeof e.valueOf ? e.valueOf() : e;
           e = x(n) ? n + '' : n;
@@ -48468,7 +48737,7 @@
         o = r.defaultView || r.parentWindow;
       return (t.left += x(o)), (t.top += x(o, !0)), t;
     }
-    var k = a['memo'](
+    var w = a['memo'](
         function (e) {
           var n = e.children;
           return n;
@@ -48478,7 +48747,7 @@
           return !t;
         },
       ),
-      w = { width: 0, height: 0, overflow: 'hidden', outline: 'none' },
+      k = { width: 0, height: 0, overflow: 'hidden', outline: 'none' },
       C = i.a.forwardRef(function (e, n) {
         var t = e.prefixCls,
           o = e.className,
@@ -48581,14 +48850,14 @@
           i.a.createElement('div', {
             tabIndex: 0,
             ref: I,
-            style: w,
+            style: k,
             'aria-hidden': 'true',
           }),
-          i.a.createElement(k, { shouldUpdate: O || S }, y ? y(M) : M),
+          i.a.createElement(w, { shouldUpdate: O || S }, y ? y(M) : M),
           i.a.createElement('div', {
             tabIndex: 0,
             ref: N,
-            style: w,
+            style: k,
             'aria-hidden': 'true',
           }),
         );
@@ -48608,16 +48877,16 @@
           b = e.mousePosition,
           y = Object(a['useRef'])(),
           x = a['useState'](),
-          k = Object(o['a'])(x, 2),
-          w = k[0],
-          C = k[1],
+          w = Object(o['a'])(x, 2),
+          k = w[0],
+          C = w[1],
           S = {};
         function j() {
           var e = E(y.current);
           C(b ? ''.concat(b.x - e.left, 'px ').concat(b.y - e.top, 'px') : '');
         }
         return (
-          w && (S.transformOrigin = w),
+          k && (S.transformOrigin = k),
           a['createElement'](
             g['b'],
             {
@@ -48665,8 +48934,8 @@
         g = e.focusTriggerAfterClose,
         x = void 0 === g || g,
         E = e.scrollLocker,
-        k = e.wrapStyle,
-        w = e.wrapClassName,
+        w = e.wrapStyle,
+        k = e.wrapClassName,
         C = e.wrapProps,
         O = e.onClose,
         S = e.afterClose,
@@ -48770,11 +49039,11 @@
               {
                 tabIndex: -1,
                 onKeyDown: te,
-                className: u()(''.concat(t, '-wrap'), w),
+                className: u()(''.concat(t, '-wrap'), k),
                 ref: V,
                 onClick: ne,
                 style: Object(c['a'])(
-                  Object(c['a'])({ zIndex: i }, k),
+                  Object(c['a'])({ zIndex: i }, w),
                   {},
                   { display: $ ? null : 'none' },
                 ),
@@ -49160,9 +49429,9 @@
           y = b[0],
           x = b[1],
           E = Object(l['useState'])(!1),
-          k = Object(a['a'])(E, 2),
-          w = k[0],
-          C = k[1],
+          w = Object(a['a'])(E, 2),
+          k = w[0],
+          C = w[1],
           O = Object(l['useState'])([t, r, o]),
           S = Object(a['a'])(O, 2),
           j = Object(a['a'])(S[0], 3),
@@ -49174,7 +49443,7 @@
           A = void 0 === P ? 0 : P,
           L = S[1],
           M = () => {
-            if (!y && !w) {
+            if (!y && !k) {
               var e = I,
                 n = R,
                 t = A;
@@ -49201,7 +49470,7 @@
         return c.a.createElement(
           f,
           null,
-          w
+          k
             ? s
             : y
             ? m
@@ -50251,9 +50520,9 @@
           y = b[0],
           x = b[1],
           E = Object(l['useState'])(!1),
-          k = Object(a['a'])(E, 2),
-          w = k[0],
-          C = k[1],
+          w = Object(a['a'])(E, 2),
+          k = w[0],
+          C = w[1],
           O = Object(l['useState'])([t, r, o]),
           S = Object(a['a'])(O, 2),
           j = Object(a['a'])(S[0], 3),
@@ -50265,7 +50534,7 @@
           A = void 0 === P ? 0 : P,
           L = S[1],
           M = () => {
-            if (!y && !w) {
+            if (!y && !k) {
               var e = I,
                 n = R,
                 t = A;
@@ -50292,7 +50561,7 @@
         return c.a.createElement(
           f,
           null,
-          w
+          k
             ? s
             : y
             ? m
@@ -50608,8 +50877,8 @@
           y = e.loading,
           x = e.icon,
           E = e.size,
-          k = e.onClick,
-          w = Object(a['a'])(e, [
+          w = e.onClick,
+          k = Object(a['a'])(e, [
             'type',
             'block',
             'ripple',
@@ -50659,7 +50928,7 @@
                 t = e.target.getBoundingClientRect();
               j({ x: n.clientX - t.left, y: n.clientY - t.top });
             }
-            k && k(e);
+            w && w(e);
           };
         return l.a.createElement(
           l.a.Fragment,
@@ -50674,7 +50943,7 @@
                     target: g,
                     onClick: L,
                   },
-                  w,
+                  k,
                 ),
                 l.a.createElement(
                   'span',
@@ -50692,7 +50961,7 @@
                     className: Object(c['a'])(P),
                     onClick: L,
                   },
-                  w,
+                  k,
                 ),
                 N && u
                   ? l.a.createElement('span', {
@@ -50929,7 +51198,7 @@
           y = e.children,
           x = e.labelProps,
           E = void 0 === x ? 'label' : x,
-          k = Object(a['a'])(e, [
+          w = Object(a['a'])(e, [
             'disabled',
             'defaultValue',
             'value',
@@ -50939,7 +51208,7 @@
             'children',
             'labelProps',
           ]),
-          w = Object(i['createRef'])(),
+          k = Object(i['createRef'])(),
           C = Object(i['createRef'])(),
           O = Object(i['useState'])(s),
           S = Object(r['a'])(O, 2),
@@ -50988,13 +51257,13 @@
             'ew-select-selector-placeholder': !j,
           };
         return (
-          u(w, () => {
+          u(k, () => {
             t || D(!1);
           }),
           l.a.createElement(
             'div',
-            Object(o['a'])({ className: Object(c['a'])(q) }, k, {
-              ref: w,
+            Object(o['a'])({ className: Object(c['a'])(q) }, w, {
+              ref: k,
               onMouseEnter: () => {
                 t || B(!0);
               },
@@ -51096,8 +51365,8 @@
             y = void 0 === b || b,
             x = (e.onClose, e.okText),
             E = e.cancelText,
-            k = e.width,
-            w = void 0 === k ? 520 : k,
+            w = e.width,
+            k = void 0 === w ? 520 : w,
             C = e.isDestroy,
             O = void 0 === C || C,
             S = e.keyboard,
@@ -51147,9 +51416,9 @@
             );
           var M = {};
           return (
-            'number' === typeof w
-              ? (M['width'] = w + 'px')
-              : 'string' === typeof w && (M['width'] = w),
+            'number' === typeof k
+              ? (M['width'] = k + 'px')
+              : 'string' === typeof k && (M['width'] = k),
             O && !P
               ? null
               : c.a.createElement(
@@ -51356,8 +51625,8 @@
       y = t('mh/w'),
       x = t('NaFW'),
       E = t('tiKp'),
-      k = o('fetch'),
-      w = o('Headers'),
+      w = o('fetch'),
+      k = o('Headers'),
       C = E('iterator'),
       O = 'URLSearchParams',
       S = O + 'Iterator',
@@ -51605,8 +51874,8 @@
       c(H, O),
       r({ global: !0, forced: !a }, { URLSearchParams: H }),
       a ||
-        'function' != typeof k ||
         'function' != typeof w ||
+        'function' != typeof k ||
         r(
           { global: !0, enumerable: !0, forced: !0 },
           {
@@ -51621,7 +51890,7 @@
                   v(n) &&
                     ((t = n.body),
                     m(t) === O &&
-                      ((r = n.headers ? new w(n.headers) : new w()),
+                      ((r = n.headers ? new k(n.headers) : new k()),
                       r.has('content-type') ||
                         r.set(
                           'content-type',
@@ -51629,7 +51898,7 @@
                         ),
                       (n = g(n, { body: b(0, String(t)), headers: b(0, r) })))),
                   o.push(n)),
-                k.apply(this, o)
+                w.apply(this, o)
               );
             },
           },
@@ -52493,8 +52762,8 @@
       y = m('matchAll'),
       x = 'RegExp String',
       E = x + ' Iterator',
-      k = g.set,
-      w = g.getterFor(E),
+      w = g.set,
+      k = g.getterFor(E),
       C = RegExp.prototype,
       O = C.exec,
       S = ''.matchAll,
@@ -52515,7 +52784,7 @@
       },
       I = o(
         function (e, n, t, r) {
-          k(this, {
+          w(this, {
             type: E,
             regexp: e,
             string: n,
@@ -52526,7 +52795,7 @@
         },
         x,
         function () {
-          var e = w(this);
+          var e = k(this);
           if (e.done) return { value: void 0, done: !0 };
           var n = e.regexp,
             t = e.string,
@@ -52871,8 +53140,8 @@
       y = t('fHMY'),
       x = t('33Wh'),
       E = t('JBy8'),
-      k = t('BX/b'),
-      w = t('dBg+'),
+      w = t('BX/b'),
+      k = t('dBg+'),
       C = t('Bs8V'),
       O = t('m/L8'),
       S = t('0eef'),
@@ -52899,7 +53168,7 @@
       G = a('JSON', 'stringify'),
       K = C.f,
       Y = O.f,
-      Z = k.f,
+      Z = w.f,
       J = S.f,
       X = I('symbols'),
       Q = I('op-symbols'),
@@ -53032,8 +53301,8 @@
         (S.f = de),
         (O.f = ce),
         (C.f = pe),
-        (E.f = k.f = fe),
-        (w.f = me),
+        (E.f = w.f = fe),
+        (k.f = me),
         (L.f = function (e) {
           return ie(A(e), e);
         }),
@@ -53088,12 +53357,12 @@
           target: 'Object',
           stat: !0,
           forced: u(function () {
-            w.f(1);
+            k.f(1);
           }),
         },
         {
           getOwnPropertySymbols: function (e) {
-            return w.f(h(e));
+            return k.f(h(e));
           },
         },
       ),
@@ -53176,7 +53445,7 @@
       s = o.a.memo((e) => {
         var n = e.demos,
           t = n['modal-demo'].component,
-          r = n['jsx-demo-13'].component;
+          r = n['jsx-demo-14'].component;
         return o.a.createElement(
           o.a.Fragment,
           null,
@@ -53306,7 +53575,7 @@
             ),
             o.a.createElement(
               i['default'],
-              n['jsx-demo-13'].previewerProps,
+              n['jsx-demo-14'].previewerProps,
               o.a.createElement(r, null),
             ),
           ),
@@ -53401,7 +53670,7 @@
               a.dataTransfer.clearData(),
               (v = 0));
           },
-          k = [
+          w = [
             { type: 'dragenter', handlerName: b },
             { type: 'dragleave', handlerName: y },
             { type: 'dragover', handlerName: x },
@@ -53411,13 +53680,13 @@
           Object(i['useEffect'])(() => {
             var e = h.current;
             return (
-              k.forEach((n) =>
+              w.forEach((n) =>
                 null === e || void 0 === e
                   ? void 0
                   : e.addEventListener(n.type, n.handlerName),
               ),
               () => {
-                k.forEach((n) =>
+                w.forEach((n) =>
                   null === e || void 0 === e
                     ? void 0
                     : e.removeEventListener(n.type, n.handlerName),
@@ -53509,7 +53778,7 @@
       E = function (e) {
         return null == e ? void 0 : i(e);
       },
-      k = function (e) {
+      w = function (e) {
         var n = e.cleanup;
         if (n) {
           e.cleanup = void 0;
@@ -53520,7 +53789,7 @@
           }
         }
       },
-      w = function (e) {
+      k = function (e) {
         return void 0 === e.observer;
       },
       C = function (e, n) {
@@ -53544,7 +53813,7 @@
         } catch (u) {
           h(u);
         }
-        if (!w(r)) {
+        if (!k(r)) {
           var a = (r.subscriptionObserver = new S(this));
           try {
             var c = n(a),
@@ -53559,7 +53828,7 @@
           } catch (u) {
             return void a.error(u);
           }
-          w(r) && k(r);
+          k(r) && w(r);
         }
       };
     (O.prototype = p(
@@ -53567,7 +53836,7 @@
       {
         unsubscribe: function () {
           var e = y(this);
-          w(e) || (C(this, e), k(e));
+          k(e) || (C(this, e), w(e));
         },
       },
     )),
@@ -53575,7 +53844,7 @@
         u(O.prototype, 'closed', {
           configurable: !0,
           get: function () {
-            return w(y(this));
+            return k(y(this));
           },
         });
     var S = function (e) {
@@ -53586,7 +53855,7 @@
       {
         next: function (e) {
           var n = y(y(this).subscription);
-          if (!w(n)) {
+          if (!k(n)) {
             var t = n.observer;
             try {
               var r = E(t.next);
@@ -53599,7 +53868,7 @@
         error: function (e) {
           var n = y(this).subscription,
             t = y(n);
-          if (!w(t)) {
+          if (!k(t)) {
             var r = t.observer;
             C(n, t);
             try {
@@ -53608,13 +53877,13 @@
             } catch (a) {
               h(a);
             }
-            k(t);
+            w(t);
           }
         },
         complete: function () {
           var e = y(this).subscription,
             n = y(e);
-          if (!w(n)) {
+          if (!k(n)) {
             var t = n.observer;
             C(e, n);
             try {
@@ -53623,7 +53892,7 @@
             } catch (o) {
               h(o);
             }
-            k(n);
+            w(n);
           }
         },
       },
@@ -53632,7 +53901,7 @@
         u(S.prototype, 'closed', {
           configurable: !0,
           get: function () {
-            return w(y(y(this).subscription));
+            return k(y(y(this).subscription));
           },
         });
     var j = function (e) {
@@ -53853,7 +54122,7 @@
       y = r ? Symbol['for']('react.fundamental') : 60117,
       x = r ? Symbol['for']('react.responder') : 60118,
       E = r ? Symbol['for']('react.scope') : 60119;
-    function k(e) {
+    function w(e) {
       if ('object' === typeof e && null !== e) {
         var n = e.$$typeof;
         switch (n) {
@@ -53883,8 +54152,8 @@
         }
       }
     }
-    function w(e) {
-      return k(e) === p;
+    function k(e) {
+      return w(e) === p;
     }
     (n.AsyncMode = d),
       (n.ConcurrentMode = p),
@@ -53900,41 +54169,41 @@
       (n.StrictMode = l),
       (n.Suspense = m),
       (n.isAsyncMode = function (e) {
-        return w(e) || k(e) === d;
+        return k(e) || w(e) === d;
       }),
-      (n.isConcurrentMode = w),
+      (n.isConcurrentMode = k),
       (n.isContextConsumer = function (e) {
-        return k(e) === u;
+        return w(e) === u;
       }),
       (n.isContextProvider = function (e) {
-        return k(e) === s;
+        return w(e) === s;
       }),
       (n.isElement = function (e) {
         return 'object' === typeof e && null !== e && e.$$typeof === o;
       }),
       (n.isForwardRef = function (e) {
-        return k(e) === f;
+        return w(e) === f;
       }),
       (n.isFragment = function (e) {
-        return k(e) === i;
+        return w(e) === i;
       }),
       (n.isLazy = function (e) {
-        return k(e) === g;
+        return w(e) === g;
       }),
       (n.isMemo = function (e) {
-        return k(e) === v;
+        return w(e) === v;
       }),
       (n.isPortal = function (e) {
-        return k(e) === a;
+        return w(e) === a;
       }),
       (n.isProfiler = function (e) {
-        return k(e) === c;
+        return w(e) === c;
       }),
       (n.isStrictMode = function (e) {
-        return k(e) === l;
+        return w(e) === l;
       }),
       (n.isSuspense = function (e) {
-        return k(e) === m;
+        return w(e) === m;
       }),
       (n.isValidElementType = function (e) {
         return (
@@ -53959,7 +54228,7 @@
               e.$$typeof === b))
         );
       }),
-      (n.typeOf = k);
+      (n.typeOf = w);
   },
   qY7S: function (e, n, t) {
     'use strict';
@@ -54914,7 +55183,7 @@
                 'LimitedTextarea.jsx',
               ),
               o.a.createElement(l['a'], {
-                code: "import React, { useState, useCallback } from 'react';\nimport styled from '@emotion/styled';\n\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedTextarea = (props) => {\n  const { limit, rows, cols, value, ...rest } = props;\n\n  const [content, setContent] = useState(value?.slice(0, limit));\n\n  const setFormattedContent = useCallback(\n    (text) => {\n      setContent(text.slice(0, limit));\n    },\n    [limit, setContent],\n  );\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={e =>\n          setFormattedContent(e.target.value)\n        }\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedTextarea;",
+                code: "import React, { useState, useCallback } from 'react';\nimport styled from '@emotion/styled';\n\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedTextarea = (props) => {\n  const { limit, rows, cols, value, ...rest } = props;\n\n  const [content, setContent] = useState(value?.slice(0, limit));\n\n  const setFormattedContent = useCallback(\n    (text) => {\n      setContent(text.slice(0, limit));\n    },\n    [limit, setContent],\n  );\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e) => setFormattedContent(e.target.value)}\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedTextarea;",
                 lang: 'jsx',
               }),
               o.a.createElement('p', null, 'Demo:'),
@@ -55060,7 +55329,7 @@
         return (s = u = void 0), (h = n), (p = e.apply(r, t)), p;
       }
       function x(e) {
-        return (h = e), (f = setTimeout(w, n)), v ? y(e) : p;
+        return (h = e), (f = setTimeout(k, n)), v ? y(e) : p;
       }
       function E(e) {
         var t = e - m,
@@ -55068,15 +55337,15 @@
           o = n - t;
         return g ? c(o, d - r) : o;
       }
-      function k(e) {
+      function w(e) {
         var t = e - m,
           r = e - h;
         return void 0 === m || t >= n || t < 0 || (g && r >= d);
       }
-      function w() {
+      function k() {
         var e = o();
-        if (k(e)) return C(e);
-        f = setTimeout(w, E(e));
+        if (w(e)) return C(e);
+        f = setTimeout(k, E(e));
       }
       function C(e) {
         return (f = void 0), b && s ? y(e) : ((s = u = void 0), p);
@@ -55089,12 +55358,12 @@
       }
       function j() {
         var e = o(),
-          t = k(e);
+          t = w(e);
         if (((s = arguments), (u = this), (m = e), t)) {
           if (void 0 === f) return x(m);
-          if (g) return clearTimeout(f), (f = setTimeout(w, n)), y(m);
+          if (g) return clearTimeout(f), (f = setTimeout(k, n)), y(m);
         }
-        return void 0 === f && (f = setTimeout(w, n)), p;
+        return void 0 === f && (f = setTimeout(k, n)), p;
       }
       return (
         (n = a(n) || 0),
@@ -55183,21 +55452,21 @@
         h = u[m];
         var x = e[h],
           E = n[h];
-        if (a) var k = s ? a(E, x, h, n, e, c) : a(x, E, h, e, n, c);
-        if (!(void 0 === k ? x === E || l(x, E, t, a, c) : k)) {
+        if (a) var w = s ? a(E, x, h, n, e, c) : a(x, E, h, e, n, c);
+        if (!(void 0 === w ? x === E || l(x, E, t, a, c) : w)) {
           b = !1;
           break;
         }
         y || (y = 'constructor' == h);
       }
       if (b && !y) {
-        var w = e.constructor,
+        var k = e.constructor,
           C = n.constructor;
-        w == C ||
+        k == C ||
           !('constructor' in e) ||
           !('constructor' in n) ||
-          ('function' == typeof w &&
-            w instanceof w &&
+          ('function' == typeof k &&
+            k instanceof k &&
             'function' == typeof C &&
             C instanceof C) ||
           (b = !1);
@@ -55585,7 +55854,7 @@
         );
       return o['createElement'](x.Provider, { value: l }, n);
     }
-    function k(e) {
+    function w(e) {
       var n = e.children,
         t = e.disabled,
         r = o['useRef'](null),
@@ -55662,15 +55931,15 @@
         )
       );
     }
-    var w = 'rc-observer-key';
+    var k = 'rc-observer-key';
     function C(e) {
       var n = e.children,
         t = 'function' === typeof n ? [n] : Object(a['a'])(n);
       return t.map(function (n, t) {
         var a =
           (null === n || void 0 === n ? void 0 : n.key) ||
-          ''.concat(w, '-').concat(t);
-        return o['createElement'](k, Object(r['a'])({}, e, { key: a }), n);
+          ''.concat(k, '-').concat(t);
+        return o['createElement'](w, Object(r['a'])({}, e, { key: a }), n);
       });
     }
     C.Collection = E;
@@ -56945,15 +57214,15 @@
               y = a(f),
               x = o(y),
               E = r(m, h, 3),
-              k = i(x.length),
-              w = 0,
+              w = i(x.length),
+              k = 0,
               C = v || l,
-              O = n ? C(f, k) : t ? C(f, 0) : void 0;
-            k > w;
-            w++
+              O = n ? C(f, w) : t ? C(f, 0) : void 0;
+            w > k;
+            k++
           )
-            if ((p || w in x) && ((g = x[w]), (b = E(g, w, y)), e))
-              if (n) O[w] = b;
+            if ((p || k in x) && ((g = x[k]), (b = E(g, k, y)), e))
+              if (n) O[k] = b;
               else if (b)
                 switch (e) {
                   case 3:
@@ -56961,7 +57230,7 @@
                   case 5:
                     return g;
                   case 6:
-                    return w;
+                    return k;
                   case 2:
                     c.call(O, g);
                 }
@@ -57309,17 +57578,17 @@
       y = t('QC+M'),
       x = t('TSYQ'),
       E = t.n(x);
-    function k(e, n, t) {
+    function w(e, n, t) {
       return t ? e[0] === n[0] : e[0] === n[0] && e[1] === n[1];
     }
-    function w(e, n, t) {
+    function k(e, n, t) {
       var o = e[n] || {};
       return Object(r['a'])(Object(r['a'])({}, o), t);
     }
     function C(e, n, t, r) {
       for (var o = t.points, a = Object.keys(e), i = 0; i < a.length; i += 1) {
         var l = a[i];
-        if (k(e[l].points, o, r)) return ''.concat(n, '-placement-').concat(l);
+        if (w(e[l].points, o, r)) return ''.concat(n, '-placement-').concat(l);
       }
       return '';
     }
@@ -57681,8 +57950,8 @@
     }
     'undefined' !== typeof window && (Y = window.getComputedStyle ? ie : fe);
     var Ee = ['margin', 'border', 'padding'],
-      ke = -1,
-      we = 2,
+      we = -1,
+      ke = 2,
       Ce = 1,
       Oe = 0;
     function Se(e, n, t) {
@@ -57734,17 +58003,17 @@
         (l = Y(e, n)),
         (null === l || void 0 === l || Number(l) < 0) && (l = e.style[n] || 0),
         (l = parseFloat(l) || 0)),
-        void 0 === r && (r = i ? Ce : ke);
+        void 0 === r && (r = i ? Ce : we);
       var c = void 0 !== a || i,
         s = a || l;
-      return r === ke
+      return r === we
         ? c
           ? s - je(e, ['border', 'padding'], o)
           : l
         : c
         ? r === Ce
           ? s
-          : s + (r === we ? -je(e, ['border'], o) : je(e, ['margin'], o))
+          : s + (r === ke ? -je(e, ['border'], o) : je(e, ['margin'], o))
         : l + je(e, Ee.slice(r), o);
     }
     ye(['Width', 'Height'], function (e) {
@@ -57792,7 +58061,7 @@
       var t = 'width' === e ? ['Left', 'Right'] : ['Top', 'Bottom'];
       Te[e] = function (n, r) {
         var o = r;
-        if (void 0 === o) return n && Re(n, e, ke);
+        if (void 0 === o) return n && Re(n, e, we);
         if (n) {
           var a = xe(n);
           return a && (o += je(n, ['padding', 'border'], t)), X(n, e, o);
@@ -58047,9 +58316,9 @@
         if (l.adjustY && qe(m, f, p)) {
           var x = Ge(o, /[tb]/gi, { t: 'b', b: 't' }),
             E = Ke(a, 1),
-            k = Ke(i, 1),
-            w = Ve(f, n, x, E, k);
-          $e(w, f, p) || ((u = 1), (o = x), (a = E), (i = k));
+            w = Ke(i, 1),
+            k = Ve(f, n, x, E, w);
+          $e(k, f, p) || ((u = 1), (o = x), (a = E), (i = w));
         }
         u && ((m = Ve(f, n, o, a, i)), Ae.mix(h, m));
         var C = He(m, f, p),
@@ -58247,14 +58516,14 @@
           y = v[0],
           x = v[1],
           E = d.a.useRef({ cancel: function () {} }),
-          k = d.a.useRef({ cancel: function () {} });
+          w = d.a.useRef({ cancel: function () {} });
         d.a.useEffect(function () {
           var e = sn(o),
             n = un(o);
-          p.current !== k.current.element &&
-            (k.current.cancel(),
-            (k.current.element = p.current),
-            (k.current.cancel = ln(p.current, y))),
+          p.current !== w.current.element &&
+            (w.current.cancel(),
+            (w.current.element = p.current),
+            (w.current.cancel = ln(p.current, y))),
             (u.current.element === e &&
               on(u.current.point, n) &&
               tn()(u.current.align, a)) ||
@@ -58270,21 +58539,21 @@
             },
             [r],
           );
-        var w = d.a.useRef(null);
+        var k = d.a.useRef(null);
         return (
           d.a.useEffect(
             function () {
               l
-                ? w.current || (w.current = Object(b['a'])(window, 'resize', y))
-                : w.current && (w.current.remove(), (w.current = null));
+                ? k.current || (k.current = Object(b['a'])(window, 'resize', y))
+                : k.current && (k.current.remove(), (k.current = null));
             },
             [l],
           ),
           d.a.useEffect(function () {
             return function () {
               E.current.cancel(),
-                k.current.cancel(),
-                w.current && w.current.remove(),
+                w.current.cancel(),
+                k.current && k.current.remove(),
                 x();
             };
           }, []),
@@ -58410,7 +58679,7 @@
         );
         return [i, a];
       },
-      kn = u['forwardRef'](function (e, n) {
+      wn = u['forwardRef'](function (e, n) {
         var t = e.visible,
           a = e.prefixCls,
           i = e.className,
@@ -58427,8 +58696,8 @@
           b = e.onAlign,
           y = e.onMouseEnter,
           x = e.onMouseLeave,
-          k = e.onMouseDown,
-          w = e.onTouchStart,
+          w = e.onMouseDown,
+          k = e.onTouchStart,
           C = e.onClick,
           S = Object(u['useRef'])(),
           j = Object(u['useRef'])(),
@@ -58567,8 +58836,8 @@
                     className: l,
                     onMouseEnter: y,
                     onMouseLeave: x,
-                    onMouseDownCapture: k,
-                    onTouchStartCapture: w,
+                    onMouseDownCapture: w,
+                    onTouchStartCapture: k,
                     onClick: C,
                     style: Object(r['a'])(Object(r['a'])({}, o), Q),
                   },
@@ -58579,8 +58848,8 @@
           )
         );
       });
-    kn.displayName = 'PopupInner';
-    var wn = kn,
+    wn.displayName = 'PopupInner';
+    var kn = wn,
       Cn = u['forwardRef'](function (e, n) {
         var t = e.prefixCls,
           a = e.visible,
@@ -58658,7 +58927,7 @@
         );
         var g = m
           ? u['createElement'](On, Object(o['a'])({}, v, { mobile: a, ref: n }))
-          : u['createElement'](wn, Object(o['a'])({}, v, { ref: n }));
+          : u['createElement'](kn, Object(o['a'])({}, v, { ref: n }));
         return u['createElement']('div', null, u['createElement'](N, v), g);
       });
     jn.displayName = 'Popup';
@@ -58846,10 +59115,10 @@
                 y = e.alignPoint,
                 x = e.mobile,
                 E = e.forceRender,
-                k = e.onPopupClick,
-                w = n.state,
-                C = w.popupVisible,
-                O = w.point,
+                w = e.onPopupClick,
+                k = n.state,
+                C = k.popupVisible,
+                O = k.point,
                 S = n.getPopupAlign(),
                 j = {};
               return (
@@ -58888,7 +59157,7 @@
                       motion: l,
                       mobile: x,
                       forceRender: E,
-                      onClick: k,
+                      onClick: w,
                     },
                   ),
                   'function' === typeof g ? g() : g,
@@ -59027,7 +59296,7 @@
                     n = e.popupPlacement,
                     t = e.popupAlign,
                     r = e.builtinPlacements;
-                  return n && r ? w(r, n, t) : t;
+                  return n && r ? k(r, n, t) : t;
                 },
               },
               {
@@ -59555,16 +59824,16 @@
             x = t[7];
           l && (r.push(l), (l = ''));
           var E = null != h && null != m && m !== h,
-            k = '+' === y || '*' === y,
-            w = '?' === y || '*' === y,
+            w = '+' === y || '*' === y,
+            k = '?' === y || '*' === y,
             C = t[2] || c,
             O = g || b;
           r.push({
             name: v || a++,
             prefix: h || '',
             delimiter: C,
-            optional: w,
-            repeat: k,
+            optional: k,
+            repeat: w,
             partial: E,
             asterisk: !!x,
             pattern: O ? d(O) : x ? '.*' : '[^' + u(C) + ']+?',
@@ -59813,7 +60082,7 @@
         (this.updater = t || b);
     }
     function E() {}
-    function k(e, n, t) {
+    function w(e, n, t) {
       (this.props = e),
         (this.context = n),
         (this.refs = y),
@@ -59829,8 +60098,8 @@
         this.updater.enqueueForceUpdate(this, e, 'forceUpdate');
       }),
       (E.prototype = x.prototype);
-    var w = (k.prototype = new E());
-    (w.constructor = k), r(w, x.prototype), (w.isPureReactComponent = !0);
+    var k = (w.prototype = new E());
+    (k.constructor = w), r(k, x.prototype), (k.isPureReactComponent = !0);
     var C = { current: null },
       O = Object.prototype.hasOwnProperty,
       S = { key: !0, ref: !0, __self: !0, __source: !0 };
@@ -60043,7 +60312,7 @@
       (n.Component = x),
       (n.Fragment = l),
       (n.Profiler = s),
-      (n.PureComponent = k),
+      (n.PureComponent = w),
       (n.StrictMode = c),
       (n.Suspense = f),
       (n.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = H),
@@ -60404,8 +60673,8 @@
     y.defaultProps = { locale: {} };
     var x = t('YMnH'),
       E = t('ZvpZ'),
-      k = t('rePB'),
-      w = t('jO45'),
+      w = t('rePB'),
+      k = t('jO45'),
       C = t('jN4g'),
       O = t('IMoZ'),
       S = t('zueq'),
@@ -60508,7 +60777,7 @@
                         className: I()(
                           p,
                           o,
-                          Object(k['a'])({}, ''.concat(p, '-closable'), a),
+                          Object(w['a'])({}, ''.concat(p, '-closable'), a),
                         ),
                         style: c,
                         onMouseEnter: this.clearCloseTimer,
@@ -60928,7 +61197,7 @@
     }
     var ce = {
         info: S['a'],
-        success: w['a'],
+        success: k['a'],
         error: C['a'],
         warning: O['a'],
         loading: j['a'],
@@ -60941,8 +61210,8 @@
         i = I()(
           ''.concat(n, '-custom-content'),
           ((r = {}),
-          Object(k['a'])(r, ''.concat(n, '-').concat(e.type), e.type),
-          Object(k['a'])(r, ''.concat(n, '-rtl'), !0 === oe),
+          Object(w['a'])(r, ''.concat(n, '-').concat(e.type), e.type),
+          Object(w['a'])(r, ''.concat(n, '-rtl'), !0 === oe),
           r),
         );
       return {
@@ -61079,8 +61348,8 @@
       };
       return t;
     }
-    var ke,
-      we,
+    var we,
+      ke,
       Ce,
       Oe = {},
       Se = 4.5,
@@ -61102,8 +61371,8 @@
         void 0 !== t ? (Ne = t) : e.rtl && (Ne = 'topLeft'),
         void 0 !== r && (Te = r),
         void 0 !== o && (je = o),
-        void 0 !== a && (ke = a),
-        void 0 !== i && (we = i),
+        void 0 !== a && (we = a),
+        void 0 !== i && (ke = i),
         void 0 !== e.rtl && (Re = e.rtl),
         void 0 !== e.maxCount && (Ce = e.maxCount);
     }
@@ -61151,7 +61420,7 @@
         o = e.top,
         a = e.bottom,
         i = e.getContainer,
-        l = void 0 === i ? ke : i,
+        l = void 0 === i ? we : i,
         c = e.prefixCls,
         s = cn(),
         u = s.getPrefixCls,
@@ -61171,7 +61440,7 @@
       else {
         var v = I()(
           ''.concat(p, '-').concat(r),
-          Object(k['a'])({}, ''.concat(p, '-rtl'), !0 === Re),
+          Object(w['a'])({}, ''.concat(p, '-rtl'), !0 === Re),
         );
         Oe[m] = new Promise(function (e) {
           G.newInstance(
@@ -61213,7 +61482,7 @@
         f = e.style,
         m = e.className,
         h = e.closeIcon,
-        v = void 0 === h ? we : h,
+        v = void 0 === h ? ke : h,
         g = void 0 === r ? Se : r,
         b = null;
       o
@@ -61275,7 +61544,7 @@
         onClick: d,
         key: p,
         style: f || {},
-        className: I()(m, Object(k['a'])({}, ''.concat(n, '-').concat(a), !!a)),
+        className: I()(m, Object(w['a'])({}, ''.concat(n, '-').concat(a), !!a)),
       };
     }
     function ze(e) {
@@ -61776,19 +62045,19 @@
           v = e.virtual,
           g = e.dropdownMatchSelectWidth,
           x = e.legacyLocale,
-          k = e.parentContext,
-          w = e.iconPrefixCls,
+          w = e.parentContext,
+          k = e.iconPrefixCls,
           C = e.componentDisabled,
           O = l['useCallback'](
             function (n, t) {
               var r = e.prefixCls;
               if (t) return t;
-              var o = r || k.getPrefixCls('');
+              var o = r || w.getPrefixCls('');
               return n ? ''.concat(o, '-').concat(n) : o;
             },
-            [k.getPrefixCls, e.prefixCls],
+            [w.getPrefixCls, e.prefixCls],
           ),
-          S = Object(r['a'])(Object(r['a'])({}, k), {
+          S = Object(r['a'])(Object(r['a'])({}, w), {
             csp: s,
             autoInsertSpaceInButton: u,
             locale: p || x,
@@ -61820,9 +62089,9 @@
           ),
           T = l['useMemo'](
             function () {
-              return { prefixCls: w, csp: s };
+              return { prefixCls: k, csp: s };
             },
-            [w, s],
+            [k, s],
           ),
           I = c,
           N = {};
@@ -61842,7 +62111,7 @@
           Object.keys(N).length > 0 &&
             (I = l['createElement'](a['b'], { validateMessages: N }, c)),
           p && (I = l['createElement'](y, { locale: p, _ANT_MARK__: b }, I)),
-          (w || s) &&
+          (k || s) &&
             (I = l['createElement'](o['a'].Provider, { value: T }, I)),
           f && (I = l['createElement'](en['a'], { size: f }, I)),
           void 0 !== C && (I = l['createElement'](Qe['a'], { disabled: C }, I)),
@@ -62360,7 +62629,7 @@
               for (t.method = o, t.arg = a; ; ) {
                 var i = t.delegate;
                 if (i) {
-                  var l = k(i, t);
+                  var l = w(i, t);
                   if (l) {
                     if (l === p) continue;
                     return l;
@@ -62451,7 +62720,7 @@
           return (a = a ? a.then(r, r) : r());
         };
       }
-      function k(e, n) {
+      function w(e, n) {
         var t = e.iterator[n.method];
         if (void 0 === t) {
           if (((n.delegate = null), 'throw' === n.method)) {
@@ -62459,7 +62728,7 @@
               e.iterator['return'] &&
               ((n.method = 'return'),
               (n.arg = void 0),
-              k(e, n),
+              w(e, n),
               'throw' === n.method)
             )
               return p;
@@ -62487,7 +62756,7 @@
             (n.delegate = null),
             p);
       }
-      function w(e) {
+      function k(e) {
         var n = { tryLoc: e[0] };
         1 in e && (n.catchLoc = e[1]),
           2 in e && ((n.finallyLoc = e[2]), (n.afterLoc = e[3])),
@@ -62499,7 +62768,7 @@
       }
       function O(e) {
         (this.tryEntries = [{ tryLoc: 'root' }]),
-          e.forEach(w, this),
+          e.forEach(k, this),
           this.reset(!0);
       }
       function S(e) {
@@ -63586,9 +63855,9 @@
           var n = x[e],
             t = y.indexOf(e);
           if (!(-1 < t)) throw Error(i(96, e));
-          if (!w[t]) {
+          if (!k[t]) {
             if (!n.extractEvents) throw Error(i(97, e));
-            for (var r in ((w[t] = n), (t = n.eventTypes), t)) {
+            for (var r in ((k[t] = n), (t = n.eventTypes), t)) {
               var o = void 0,
                 a = t[r],
                 l = n,
@@ -63597,22 +63866,22 @@
               C[c] = a;
               var s = a.phasedRegistrationNames;
               if (s) {
-                for (o in s) s.hasOwnProperty(o) && k(s[o], l, c);
+                for (o in s) s.hasOwnProperty(o) && w(s[o], l, c);
                 o = !0;
               } else
                 a.registrationName
-                  ? (k(a.registrationName, l, c), (o = !0))
+                  ? (w(a.registrationName, l, c), (o = !0))
                   : (o = !1);
               if (!o) throw Error(i(98, r, e));
             }
           }
         }
     }
-    function k(e, n, t) {
+    function w(e, n, t) {
       if (O[e]) throw Error(i(100, e));
       (O[e] = n), (S[e] = n.eventTypes[t].dependencies);
     }
-    var w = [],
+    var k = [],
       C = {},
       O = {},
       S = {};
@@ -63918,7 +64187,7 @@
         }
       return null;
     }
-    function ke(e) {
+    function we(e) {
       var n = '';
       do {
         e: switch (e.tag) {
@@ -63952,7 +64221,7 @@
       } while (e);
       return n;
     }
-    function we(e) {
+    function ke(e) {
       switch (typeof e) {
         case 'boolean':
         case 'number':
@@ -64036,7 +64305,7 @@
     function Ie(e, n) {
       var t = null == n.defaultValue ? '' : n.defaultValue,
         r = null != n.checked ? n.checked : n.defaultChecked;
-      (t = we(null != n.value ? n.value : t)),
+      (t = ke(null != n.value ? n.value : t)),
         (e._wrapperState = {
           initialChecked: r,
           initialValue: t,
@@ -64051,7 +64320,7 @@
     }
     function Re(e, n) {
       Ne(e, n);
-      var t = we(n.value),
+      var t = ke(n.value),
         r = n.type;
       if (null != t)
         'number' === r
@@ -64061,7 +64330,7 @@
         return void e.removeAttribute('value');
       n.hasOwnProperty('value')
         ? Ae(e, n.type, t)
-        : n.hasOwnProperty('defaultValue') && Ae(e, n.type, we(n.defaultValue)),
+        : n.hasOwnProperty('defaultValue') && Ae(e, n.type, ke(n.defaultValue)),
         null == n.checked &&
           null != n.defaultChecked &&
           (e.defaultChecked = !!n.defaultChecked);
@@ -64116,7 +64385,7 @@
             e[t].selected !== o && (e[t].selected = o),
             o && r && (e[t].defaultSelected = !0);
       } else {
-        for (t = '' + we(t), n = null, o = 0; o < e.length; o++) {
+        for (t = '' + ke(t), n = null, o = 0; o < e.length; o++) {
           if (e[o].value === t)
             return (
               (e[o].selected = !0), void (r && (e[o].defaultSelected = !0))
@@ -64147,11 +64416,11 @@
         }
         null == n && (n = ''), (t = n);
       }
-      e._wrapperState = { initialValue: we(t) };
+      e._wrapperState = { initialValue: ke(t) };
     }
     function Fe(e, n) {
-      var t = we(n.value),
-        r = we(n.defaultValue);
+      var t = ke(n.value),
+        r = ke(n.defaultValue);
       null != t &&
         ((t = '' + t),
         t !== e.value && (e.value = t),
@@ -64469,14 +64738,14 @@
         var a = e.nativeEvent,
           i = e.eventSystemFlags;
         0 === t && (i |= 64);
-        for (var l = null, c = 0; c < w.length; c++) {
-          var s = w[c];
+        for (var l = null, c = 0; c < k.length; c++) {
+          var s = k[c];
           s && (s = s.extractEvents(r, n, a, o, i)) && (l = dn(l, s));
         }
         hn(l);
       }
     }
-    function kn(e, n, t) {
+    function wn(e, n, t) {
       if (!t.has(e)) {
         switch (e) {
           case 'scroll':
@@ -64503,7 +64772,7 @@
         t.set(e, null);
       }
     }
-    var wn,
+    var kn,
       Cn,
       On,
       Sn = !1,
@@ -64525,10 +64794,10 @@
     function Dn(e, n) {
       var t = on(n);
       Ln.forEach(function (e) {
-        kn(e, n, t);
+        wn(e, n, t);
       }),
         Mn.forEach(function (e) {
-          kn(e, n, t);
+          wn(e, n, t);
         });
     }
     function zn(e, n, t, r, o) {
@@ -64630,7 +64899,7 @@
       for (Sn = !1; 0 < jn.length; ) {
         var e = jn[0];
         if (null !== e.blockedOn) {
-          (e = Vt(e.blockedOn)), null !== e && wn(e);
+          (e = Vt(e.blockedOn)), null !== e && kn(e);
           break;
         }
         var n = ct(
@@ -64974,7 +65243,7 @@
       e = 9 === e.nodeType || 11 === e.nodeType ? e : e.ownerDocument;
       var t = on(e);
       n = S[n];
-      for (var r = 0; r < n.length; r++) kn(n[r], e, t);
+      for (var r = 0; r < n.length; r++) wn(n[r], e, t);
     }
     function bt() {}
     function yt(e) {
@@ -65015,20 +65284,20 @@
         r = xt(r);
       }
     }
-    function kt(e, n) {
+    function wt(e, n) {
       return (
         !(!e || !n) &&
         (e === n ||
           ((!e || 3 !== e.nodeType) &&
             (n && 3 === n.nodeType
-              ? kt(e, n.parentNode)
+              ? wt(e, n.parentNode)
               : 'contains' in e
               ? e.contains(n)
               : !!e.compareDocumentPosition &&
                 !!(16 & e.compareDocumentPosition(n)))))
       );
     }
-    function wt() {
+    function kt() {
       for (var e = window, n = yt(); n instanceof e.HTMLIFrameElement; ) {
         try {
           var t = 'string' === typeof n.contentWindow.location.href;
@@ -65410,7 +65679,7 @@
           return null;
       }
     }
-    function kr(e, n) {
+    function wr(e, n) {
       if (xr)
         return 'compositionend' === e || (!dr && br(e, n))
           ? ((e = nr()), (er = Qt = Xt = null), (xr = !1), e)
@@ -65433,7 +65702,7 @@
           return null;
       }
     }
-    var wr = {
+    var kr = {
         eventTypes: vr,
         extractEvents: function (e, n, t, r) {
           var o;
@@ -65472,7 +65741,7 @@
                 Jt(a),
                 (o = a))
               : (o = null),
-            (e = fr ? Er(e, t) : kr(e, t))
+            (e = fr ? Er(e, t) : wr(e, t))
               ? ((n = sr.getPooled(vr.beforeInput, n, t, r)),
                 (n.data = e),
                 Jt(n))
@@ -66001,7 +66270,7 @@
         elapsedTime: null,
         pseudoElement: null,
       }),
-      ko = Yr.extend({
+      wo = Yr.extend({
         deltaX: function (e) {
           return 'deltaX' in e
             ? e.deltaX
@@ -66021,7 +66290,7 @@
         deltaZ: null,
         deltaMode: null,
       }),
-      wo = {
+      ko = {
         eventTypes: Gn,
         extractEvents: function (e, n, t, r) {
           var o = Kn.get(e);
@@ -66077,7 +66346,7 @@
               e = Ur;
               break;
             case 'wheel':
-              e = ko;
+              e = wo;
               break;
             case 'copy':
             case 'cut':
@@ -66112,11 +66381,11 @@
       (v = Co),
       (g = Ht),
       j({
-        SimpleEventPlugin: wo,
+        SimpleEventPlugin: ko,
         EnterLeaveEventPlugin: Xr,
         ChangeEventPlugin: Br,
         SelectEventPlugin: uo,
-        BeforeInputEventPlugin: wr,
+        BeforeInputEventPlugin: kr,
       });
     var Oo = [],
       So = -1;
@@ -66327,7 +66596,7 @@
           null !== e.firstContext &&
           (e.expirationTime >= n && (Ki = !0), (e.firstContext = null));
     }
-    function ka(e, n) {
+    function wa(e, n) {
       if (ga !== e && !1 !== n && 0 !== n)
         if (
           (('number' === typeof n && 1073741823 !== n) ||
@@ -66345,7 +66614,7 @@
         } else va = va.next = n;
       return e._currentValue;
     }
-    var wa = !1;
+    var ka = !1;
     function Ca(e) {
       e.updateQueue = {
         baseState: e.memoizedState,
@@ -66396,7 +66665,7 @@
     }
     function Ia(e, n, t, r) {
       var a = e.updateQueue;
-      wa = !1;
+      ka = !1;
       var i = a.baseQueue,
         l = a.shared.pending;
       if (null !== l) {
@@ -66465,7 +66734,7 @@
                     s = o({}, s, l);
                     break e;
                   case 2:
-                    wa = !0;
+                    ka = !0;
                 }
               }
               null !== m.callback &&
@@ -66519,9 +66788,9 @@
       },
       enqueueSetState: function (e, n, t) {
         e = e._reactInternalFiber;
-        var r = kc(),
+        var r = wc(),
           o = Ra.suspense;
-        (r = wc(r, e, o)),
+        (r = kc(r, e, o)),
           (o = Sa(r, o)),
           (o.payload = n),
           void 0 !== t && null !== t && (o.callback = t),
@@ -66530,9 +66799,9 @@
       },
       enqueueReplaceState: function (e, n, t) {
         e = e._reactInternalFiber;
-        var r = kc(),
+        var r = wc(),
           o = Ra.suspense;
-        (r = wc(r, e, o)),
+        (r = kc(r, e, o)),
           (o = Sa(r, o)),
           (o.tag = 1),
           (o.payload = n),
@@ -66542,9 +66811,9 @@
       },
       enqueueForceUpdate: function (e, n) {
         e = e._reactInternalFiber;
-        var t = kc(),
+        var t = wc(),
           r = Ra.suspense;
-        (t = wc(t, e, r)),
+        (t = kc(t, e, r)),
           (r = Sa(t, r)),
           (r.tag = 2),
           void 0 !== n && null !== n && (r.callback = n),
@@ -66569,7 +66838,7 @@
         a = n.contextType;
       return (
         'object' === typeof a && null !== a
-          ? (a = ka(a))
+          ? (a = wa(a))
           : ((o = Lo(n) ? Po : No.current),
             (r = n.contextTypes),
             (a = (r = null !== r && void 0 !== r) ? Ao(e, o) : Io)),
@@ -66599,7 +66868,7 @@
       (o.props = t), (o.state = e.memoizedState), (o.refs = Pa), Ca(e);
       var a = n.contextType;
       'object' === typeof a && null !== a
-        ? (o.context = ka(a))
+        ? (o.context = wa(a))
         : ((a = Lo(n) ? Po : No.current), (o.context = Ao(e, a))),
         Ia(e, t, o, r),
         (o.state = e.memoizedState),
@@ -67240,7 +67509,7 @@
       (ii.effectTag |= e),
         (o.memoizedState = yi(1 | n, t, void 0, void 0 === r ? null : r));
     }
-    function ki(e, n, t, r) {
+    function wi(e, n, t, r) {
       var o = mi();
       r = void 0 === r ? null : r;
       var a = void 0;
@@ -67251,14 +67520,14 @@
       }
       (ii.effectTag |= e), (o.memoizedState = yi(1 | n, t, a, r));
     }
-    function wi(e, n) {
+    function ki(e, n) {
       return Ei(516, 4, e, n);
     }
     function Ci(e, n) {
-      return ki(516, 4, e, n);
+      return wi(516, 4, e, n);
     }
     function Oi(e, n) {
-      return ki(4, 2, e, n);
+      return wi(4, 2, e, n);
     }
     function Si(e, n) {
       return 'function' === typeof n
@@ -67278,7 +67547,7 @@
     function ji(e, n, t) {
       return (
         (t = null !== t && void 0 !== t ? t.concat([e]) : null),
-        ki(4, 2, Si.bind(null, n, e), t)
+        wi(4, 2, Si.bind(null, n, e), t)
       );
     }
     function Ti() {}
@@ -67317,9 +67586,9 @@
         });
     }
     function Ai(e, n, t) {
-      var r = kc(),
+      var r = wc(),
         o = Ra.suspense;
-      (r = wc(r, e, o)),
+      (r = kc(r, e, o)),
         (o = {
           expirationTime: r,
           suspenseConfig: o,
@@ -67351,7 +67620,7 @@
       }
     }
     var Li = {
-        readContext: ka,
+        readContext: wa,
         useCallback: ui,
         useContext: ui,
         useEffect: ui,
@@ -67367,10 +67636,10 @@
         useTransition: ui,
       },
       Mi = {
-        readContext: ka,
+        readContext: wa,
         useCallback: Ii,
-        useContext: ka,
-        useEffect: wi,
+        useContext: wa,
+        useEffect: ki,
         useImperativeHandle: function (e, n, t) {
           return (
             (t = null !== t && void 0 !== t ? t.concat([e]) : null),
@@ -67417,7 +67686,7 @@
             r = t[0],
             o = t[1];
           return (
-            wi(
+            ki(
               function () {
                 var t = oi.suspense;
                 oi.suspense = void 0 === n ? null : n;
@@ -67439,9 +67708,9 @@
         },
       },
       Di = {
-        readContext: ka,
+        readContext: wa,
         useCallback: Ni,
-        useContext: ka,
+        useContext: wa,
         useEffect: Ci,
         useImperativeHandle: ji,
         useLayoutEffect: Oi,
@@ -67480,9 +67749,9 @@
         },
       },
       zi = {
-        readContext: ka,
+        readContext: wa,
         useCallback: Ni,
-        useContext: ka,
+        useContext: wa,
         useEffect: Ci,
         useImperativeHandle: ji,
         useLayoutEffect: Oi,
@@ -67710,7 +67979,7 @@
         var c = i.context,
           s = t.contextType;
         'object' === typeof s && null !== s
-          ? (s = ka(s))
+          ? (s = wa(s))
           : ((s = Lo(t) ? Po : No.current), (s = Ao(n, s)));
         var u = t.getDerivedStateFromProps,
           d =
@@ -67720,15 +67989,15 @@
           ('function' !== typeof i.UNSAFE_componentWillReceiveProps &&
             'function' !== typeof i.componentWillReceiveProps) ||
           ((l !== r || c !== s) && za(n, i, r, s)),
-          (wa = !1);
+          (ka = !1);
         var p = n.memoizedState;
         (i.state = p),
           Ia(n, r, i, o),
           (c = n.memoizedState),
-          l !== r || p !== c || Ro.current || wa
+          l !== r || p !== c || Ro.current || ka
             ? ('function' === typeof u &&
                 (Aa(n, t, u, r), (c = n.memoizedState)),
-              (l = wa || Ma(n, t, l, r, p, c, s))
+              (l = ka || Ma(n, t, l, r, p, c, s))
                 ? (d ||
                     ('function' !== typeof i.UNSAFE_componentWillMount &&
                       'function' !== typeof i.componentWillMount) ||
@@ -67756,7 +68025,7 @@
           (c = i.context),
           (s = t.contextType),
           'object' === typeof s && null !== s
-            ? (s = ka(s))
+            ? (s = wa(s))
             : ((s = Lo(t) ? Po : No.current), (s = Ao(n, s))),
           (u = t.getDerivedStateFromProps),
           (d =
@@ -67765,15 +68034,15 @@
             ('function' !== typeof i.UNSAFE_componentWillReceiveProps &&
               'function' !== typeof i.componentWillReceiveProps) ||
             ((l !== r || c !== s) && za(n, i, r, s)),
-          (wa = !1),
+          (ka = !1),
           (c = n.memoizedState),
           (i.state = c),
           Ia(n, r, i, o),
           (p = n.memoizedState),
-          l !== r || c !== p || Ro.current || wa
+          l !== r || c !== p || Ro.current || ka
             ? ('function' === typeof u &&
                 (Aa(n, t, u, r), (p = n.memoizedState)),
-              (u = wa || Ma(n, t, l, r, c, p, s))
+              (u = ka || Ma(n, t, l, r, c, p, s))
                 ? (d ||
                     ('function' !== typeof i.UNSAFE_componentWillUpdate &&
                       'function' !== typeof i.componentWillUpdate) ||
@@ -68256,7 +68525,7 @@
                   Se(e), Be(e);
                   break;
                 case 'option':
-                  null != r.value && e.setAttribute('value', '' + we(r.value));
+                  null != r.value && e.setAttribute('value', '' + ke(r.value));
                   break;
                 case 'select':
                   (e.multiple = !!r.multiple),
@@ -68459,7 +68728,7 @@
       }
     }
     function gl(e, n) {
-      return { value: e, source: n, stack: ke(n) };
+      return { value: e, source: n, stack: we(n) };
     }
     (ol = function (e, n) {
       for (var t = n.child; null !== t; ) {
@@ -68561,7 +68830,7 @@
     function yl(e, n) {
       var t = n.source,
         r = n.stack;
-      null === r && null !== t && (r = ke(t)),
+      null === r && null !== t && (r = we(t)),
         null !== t && Ee(t.type),
         (n = n.value),
         null !== e && 1 === e.tag && Ee(e.type);
@@ -68593,7 +68862,7 @@
           }
         else n.current = null;
     }
-    function kl(e, n) {
+    function wl(e, n) {
       switch (n.tag) {
         case 0:
         case 11:
@@ -68621,7 +68890,7 @@
       }
       throw Error(i(163));
     }
-    function wl(e, n) {
+    function kl(e, n) {
       if (
         ((n = n.updateQueue),
         (n = null !== n ? n.lastEffect : null),
@@ -68923,7 +69192,7 @@
         case 14:
         case 15:
         case 22:
-          return void wl(3, n);
+          return void kl(3, n);
         case 1:
           return;
         case 5:
@@ -69128,14 +69397,14 @@
       yc = 0,
       xc = null,
       Ec = 0;
-    function kc() {
+    function wc() {
       return (Xl & (ql | Wl)) !== Vl
         ? 1073741821 - ((oa() / 10) | 0)
         : 0 !== Ec
         ? Ec
         : (Ec = 1073741821 - ((oa() / 10) | 0));
     }
-    function wc(e, n, t) {
+    function kc(e, n, t) {
       if (((n = n.mode), 0 === (2 & n))) return 1073741823;
       var r = aa();
       if (0 === (4 & n)) return 99 === r ? 1073741823 : 1073741822;
@@ -69228,7 +69497,7 @@
             (e.callbackExpirationTime = 0),
             (e.callbackPriority = 90));
         else {
-          var r = kc();
+          var r = wc();
           if (
             (1073741823 === n
               ? (r = 99)
@@ -69255,7 +69524,7 @@
       }
     }
     function Tc(e, n) {
-      if (((Ec = 0), n)) return (n = kc()), ms(e, n), jc(e), null;
+      if (((Ec = 0), n)) return (n = wc()), ms(e, n), jc(e), null;
       var t = Sc(e);
       if (0 !== t) {
         if (((n = e.callbackNode), (Xl & (ql | Wl)) !== Vl))
@@ -69576,7 +69845,7 @@
               l = Error(
                 (Ee(i.type) || 'A React component') +
                   ' suspended while rendering, but no fallback UI was specified.\n\nAdd a <Suspense fallback=...> component higher in the tree to provide a loading indicator or placeholder to display.' +
-                  ke(i),
+                  we(i),
               );
             }
             tc !== Jl && (tc = Kl), (l = gl(l, i)), (d = a);
@@ -69590,17 +69859,17 @@
                 case 1:
                   c = l;
                   var E = d.type,
-                    k = d.stateNode;
+                    w = d.stateNode;
                   if (
                     0 === (64 & d.effectTag) &&
                     ('function' === typeof E.getDerivedStateFromError ||
-                      (null !== k &&
-                        'function' === typeof k.componentDidCatch &&
-                        (null === mc || !mc.has(k))))
+                      (null !== w &&
+                        'function' === typeof w.componentDidCatch &&
+                        (null === mc || !mc.has(w))))
                   ) {
                     (d.effectTag |= 4096), (d.expirationTime = n);
-                    var w = zl(d, c, n);
-                    Ta(d, w);
+                    var k = zl(d, c, n);
+                    Ta(d, k);
                     break e;
                   }
               }
@@ -69724,7 +69993,7 @@
       ) {
         var a = Xl;
         (Xl |= Wl), (Ul.current = null), (It = tt);
-        var l = wt();
+        var l = kt();
         if (Ct(l)) {
           if ('selectionStart' in l)
             var c = { start: l.selectionStart, end: l.selectionEnd };
@@ -69801,9 +70070,9 @@
               if ((16 & x && $e(dc.stateNode, ''), 128 & x)) {
                 var E = dc.alternate;
                 if (null !== E) {
-                  var k = E.ref;
-                  null !== k &&
-                    ('function' === typeof k ? k(null) : (k.current = null));
+                  var w = E.ref;
+                  null !== w &&
+                    ('function' === typeof w ? w(null) : (w.current = null));
                 }
               }
               switch (1038 & x) {
@@ -69833,66 +70102,66 @@
           }
         } while (null !== dc);
         if (
-          ((k = Nt),
-          (E = wt()),
-          (x = k.focusedElem),
-          (c = k.selectionRange),
+          ((w = Nt),
+          (E = kt()),
+          (x = w.focusedElem),
+          (c = w.selectionRange),
           E !== x &&
             x &&
             x.ownerDocument &&
-            kt(x.ownerDocument.documentElement, x))
+            wt(x.ownerDocument.documentElement, x))
         ) {
           null !== c &&
             Ct(x) &&
             ((E = c.start),
-            (k = c.end),
-            void 0 === k && (k = E),
+            (w = c.end),
+            void 0 === w && (w = E),
             'selectionStart' in x
               ? ((x.selectionStart = E),
-                (x.selectionEnd = Math.min(k, x.value.length)))
-              : ((k =
+                (x.selectionEnd = Math.min(w, x.value.length)))
+              : ((w =
                   ((E = x.ownerDocument || document) && E.defaultView) ||
                   window),
-                k.getSelection &&
-                  ((k = k.getSelection()),
+                w.getSelection &&
+                  ((w = w.getSelection()),
                   (u = x.textContent.length),
                   (l = Math.min(c.start, u)),
                   (c = void 0 === c.end ? l : Math.min(c.end, u)),
-                  !k.extend && l > c && ((u = c), (c = l), (l = u)),
+                  !w.extend && l > c && ((u = c), (c = l), (l = u)),
                   (u = Et(x, l)),
                   (d = Et(x, c)),
                   u &&
                     d &&
-                    (1 !== k.rangeCount ||
-                      k.anchorNode !== u.node ||
-                      k.anchorOffset !== u.offset ||
-                      k.focusNode !== d.node ||
-                      k.focusOffset !== d.offset) &&
+                    (1 !== w.rangeCount ||
+                      w.anchorNode !== u.node ||
+                      w.anchorOffset !== u.offset ||
+                      w.focusNode !== d.node ||
+                      w.focusOffset !== d.offset) &&
                     ((E = E.createRange()),
                     E.setStart(u.node, u.offset),
-                    k.removeAllRanges(),
+                    w.removeAllRanges(),
                     l > c
-                      ? (k.addRange(E), k.extend(d.node, d.offset))
-                      : (E.setEnd(d.node, d.offset), k.addRange(E)))))),
+                      ? (w.addRange(E), w.extend(d.node, d.offset))
+                      : (E.setEnd(d.node, d.offset), w.addRange(E)))))),
             (E = []);
-          for (k = x; (k = k.parentNode); )
-            1 === k.nodeType &&
-              E.push({ element: k, left: k.scrollLeft, top: k.scrollTop });
+          for (w = x; (w = w.parentNode); )
+            1 === w.nodeType &&
+              E.push({ element: w, left: w.scrollLeft, top: w.scrollTop });
           for (
             'function' === typeof x.focus && x.focus(), x = 0;
             x < E.length;
             x++
           )
-            (k = E[x]),
-              (k.element.scrollLeft = k.left),
-              (k.element.scrollTop = k.top);
+            (w = E[x]),
+              (w.element.scrollLeft = w.left),
+              (w.element.scrollTop = w.top);
         }
         (tt = !!It), (Nt = It = null), (e.current = t), (dc = o);
         do {
           try {
             for (x = e; null !== dc; ) {
-              var w = dc.effectTag;
-              if ((36 & w && Ol(x, dc.alternate, dc), 128 & w)) {
+              var k = dc.effectTag;
+              if ((36 & k && Ol(x, dc.alternate, dc), 128 & k)) {
                 E = void 0;
                 var C = dc.ref;
                 if (null !== C) {
@@ -69934,7 +70203,7 @@
     function Wc() {
       for (; null !== dc; ) {
         var e = dc.effectTag;
-        0 !== (256 & e) && kl(dc.alternate, dc),
+        0 !== (256 & e) && wl(dc.alternate, dc),
           0 === (512 & e) ||
             hc ||
             ((hc = !0),
@@ -69964,7 +70233,7 @@
               case 11:
               case 15:
               case 22:
-                wl(5, t), Cl(5, t);
+                kl(5, t), Cl(5, t);
             }
         } catch (r) {
           if (null === e) throw Error(i(330));
@@ -70022,7 +70291,7 @@
       var t = e.stateNode;
       null !== t && t.delete(n),
         (n = 0),
-        0 === n && ((n = kc()), (n = wc(n, e, null))),
+        0 === n && ((n = wc()), (n = kc(n, e, null))),
         (e = Oc(e, n)),
         null !== e && jc(e);
     }
@@ -70307,7 +70576,7 @@
             (a = n.pendingProps),
             (r = a.children),
             Ea(n, t),
-            (o = ka(o, a.unstable_observedBits)),
+            (o = wa(o, a.unstable_observedBits)),
             (r = r(o)),
             (n.effectTag |= 1),
             Yi(e, n, r, t),
@@ -70578,9 +70847,9 @@
     }
     function hs(e, n, t, r) {
       var o = n.current,
-        a = kc(),
+        a = wc(),
         l = Ra.suspense;
-      a = wc(a, o, l);
+      a = kc(a, o, l);
       e: if (t) {
         t = t._reactInternalFiber;
         n: {
@@ -70674,7 +70943,7 @@
         for (var t; (t = e.lastChild); ) e.removeChild(t);
       return new ys(e, 0, n ? { hydrate: !0 } : void 0);
     }
-    function ks(e, n, t, r, o) {
+    function ws(e, n, t, r, o) {
       var a = t._reactRootContainer;
       if (a) {
         var i = a._internalRoot;
@@ -70704,7 +70973,7 @@
       }
       return vs(i);
     }
-    function ws(e, n, t) {
+    function ks(e, n, t) {
       var r =
         3 < arguments.length && void 0 !== arguments[3] ? arguments[3] : null;
       return {
@@ -70719,7 +70988,7 @@
       var t =
         2 < arguments.length && void 0 !== arguments[2] ? arguments[2] : null;
       if (!xs(n)) throw Error(i(200));
-      return ws(e, n, null, t);
+      return ks(e, n, null, t);
     }
     (ys.prototype.render = function (e) {
       hs(e, this._internalRoot, null, null);
@@ -70731,9 +71000,9 @@
           n[Bt] = null;
         });
       }),
-      (wn = function (e) {
+      (kn = function (e) {
         if (13 === e.tag) {
-          var n = pa(kc(), 150, 100);
+          var n = pa(wc(), 150, 100);
           Cc(e, n), bs(e, n);
         }
       }),
@@ -70742,8 +71011,8 @@
       }),
       (On = function (e) {
         if (13 === e.tag) {
-          var n = kc();
-          (n = wc(n, e, null)), Cc(e, n), bs(e, n);
+          var n = wc();
+          (n = kc(n, e, null)), Cc(e, n), bs(e, n);
         }
       }),
       (I = function (e, n, t) {
@@ -70868,18 +71137,18 @@
       }),
       (n.hydrate = function (e, n, t) {
         if (!xs(n)) throw Error(i(200));
-        return ks(null, e, n, !0, t);
+        return ws(null, e, n, !0, t);
       }),
       (n.render = function (e, n, t) {
         if (!xs(n)) throw Error(i(200));
-        return ks(null, e, n, !1, t);
+        return ws(null, e, n, !1, t);
       }),
       (n.unmountComponentAtNode = function (e) {
         if (!xs(e)) throw Error(i(40));
         return (
           !!e._reactRootContainer &&
           (Pc(function () {
-            ks(null, null, e, !1, function () {
+            ws(null, null, e, !1, function () {
               (e._reactRootContainer = null), (e[Bt] = null);
             });
           }),
@@ -70897,7 +71166,7 @@
       (n.unstable_renderSubtreeIntoContainer = function (e, n, t, r) {
         if (!xs(t)) throw Error(i(200));
         if (null == e || void 0 === e._reactInternalFiber) throw Error(i(38));
-        return ks(e, n, t, !1, r);
+        return ws(e, n, t, !1, r);
       }),
       (n.version = '16.14.0');
   },
@@ -71356,9 +71625,9 @@
             : b,
         x = e.align,
         E = e.className,
-        k = e.children,
-        w = e.direction,
-        C = void 0 === w ? 'horizontal' : w,
+        w = e.children,
+        k = e.direction,
+        C = void 0 === k ? 'horizontal' : k,
         O = e.prefixCls,
         S = e.split,
         j = e.style,
@@ -71387,7 +71656,7 @@
         A = Object(a['a'])(P, 2),
         L = A[0],
         M = A[1],
-        D = Object(c['a'])(k, { keepEmpty: !0 }),
+        D = Object(c['a'])(w, { keepEmpty: !0 }),
         z = void 0 === x && 'horizontal' === C ? 'center' : x,
         _ = i('space', O),
         F = l()(
@@ -71592,7 +71861,7 @@
       return o;
     }
     function b(e, n) {
-      return y(e) || x(e, n) || E(e, n) || w();
+      return y(e) || x(e, n) || E(e, n) || k();
     }
     function y(e) {
       if (Array.isArray(e)) return e;
@@ -71626,7 +71895,7 @@
     }
     function E(e, n) {
       if (e) {
-        if ('string' === typeof e) return k(e, n);
+        if ('string' === typeof e) return w(e, n);
         var t = Object.prototype.toString.call(e).slice(8, -1);
         return (
           'Object' === t && e.constructor && (t = e.constructor.name),
@@ -71634,17 +71903,17 @@
             ? Array.from(e)
             : 'Arguments' === t ||
               /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)
-            ? k(e, n)
+            ? w(e, n)
             : void 0
         );
       }
     }
-    function k(e, n) {
+    function w(e, n) {
       (null == n || n > e.length) && (n = e.length);
       for (var t = 0, r = new Array(n); t < n; t++) r[t] = e[t];
       return r;
     }
-    function w() {
+    function k() {
       throw new TypeError(
         'Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
       );
@@ -72312,8 +72581,8 @@
         );
       },
       E = x,
-      k = t('ye1Q'),
-      w = t('8XRh'),
+      w = t('ye1Q'),
+      k = t('8XRh'),
       C = function () {
         return { width: 0, opacity: 0, transform: 'scale(0)' };
       },
@@ -72329,10 +72598,10 @@
           ? d.a.createElement(
               'span',
               { className: ''.concat(n, '-loading-icon') },
-              d.a.createElement(k['a'], null),
+              d.a.createElement(w['a'], null),
             )
           : d.a.createElement(
-              w['b'],
+              k['b'],
               {
                 visible: o,
                 motionName: ''.concat(n, '-loading-icon-motion'),
@@ -72354,7 +72623,7 @@
                     style: o,
                     ref: t,
                   },
-                  d.a.createElement(k['a'], { className: r }),
+                  d.a.createElement(w['a'], { className: r }),
                 );
               },
             );
@@ -72438,8 +72707,8 @@
           b = e.danger,
           x = e.shape,
           E = void 0 === x ? 'default' : x,
-          k = e.size,
-          w = e.disabled,
+          w = e.size,
+          k = e.disabled,
           C = e.className,
           O = e.children,
           S = e.icon,
@@ -72466,7 +72735,7 @@
           ]),
           F = u['useContext'](m['b']),
           B = u['useContext'](f['b']),
-          U = w || B,
+          U = k || B,
           V = u['useContext'](y),
           H = u['useState'](!!l),
           q = Object(a['a'])(H, 2),
@@ -72518,7 +72787,7 @@
           ie = X('btn', d),
           le = !1 !== Q,
           ce = { large: 'lg', small: 'sm', middle: void 0 },
-          se = V || k || F,
+          se = V || w || F,
           ue = (se && ce[se]) || '',
           de = W ? 'loading' : S,
           pe = Object(s['a'])(_, ['navigate']),

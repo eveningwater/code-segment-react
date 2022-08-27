@@ -21,3 +21,5 @@ footer: Open-source MIT Licensed | Copyright © 2020<br />Powered by [dumi](http
 ![logo](../static/logo.svg)
 
 ## 欢迎来到本网站
+
+[代码段](https://eveningwater.github.io/code-segment/#/)
