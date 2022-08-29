@@ -8,6 +8,8 @@
 - 使用 encodeURIcomponent 将主题和正文安全地编码到链接 URL 中。
 - 呈现带有子项的链接作为其内容。
 
+#### Mailto.tsx
+
 ```tsx | pure
 import styled from '@emotion/styled';
 import React from 'react';
@@ -49,6 +51,45 @@ const Mailto = (props: Partial<MailtoProps>) => {
 export default Mailto;
 ```
 
+#### Mailto.jsx
+
+```jsx | pure
+import styled from '@emotion/styled';
+import React from 'react';
+
+const Link = styled.a`
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+  &:hover {
+    color: #2396ef;
+  }
+`;
+
+const Mailto = (props) => {
+  const { email, subject = '', body = '', children, ...rest } = props;
+  let params = subject || body ? '?' : '';
+  if (subject) {
+    params += `subject=${encodeURIComponent(subject)}`;
+  }
+  if (body) {
+    params += `body=${encodeURIComponent(body)}`;
+  }
+  return (
+    <Link href={`mailto:${email}${params}`} className="mail-link" {...rest}>
+      {children}
+    </Link>
+  );
+};
+
+export default Mailto;
+```
+
 示例:
 
 <code src="./Demo.zh-CN.tsx"></code>
+
+jsx 示例:
+
+<code src="./jsx/Demo.zh-CN.jsx"></code>
