@@ -21,6 +21,17 @@ export default defineConfig({
           : '/common.css',
     },
   ],
+  scripts: [
+    {
+      src: 'https://unpkg.com/vconsole@latest/dist/vconsole.min.js',
+    },
+    {
+      src:
+        process.env.NODE_ENV === 'production'
+          ? '/code-segment-react/debug.js'
+          : '/debug.js',
+    },
+  ],
   menus: menus,
   navs: {
     'en-US': [
