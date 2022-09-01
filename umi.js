@@ -474,16 +474,16 @@
       var n = e.style.display;
       (e.style.display = 'none'), e.offsetHeight, (e.style.display = n);
     }
-    function J(e, n, t) {
+    function X(e, n, t) {
       var r = t;
       if ('object' !== D(n))
         return 'undefined' !== typeof r
           ? ('number' === typeof r && (r = ''.concat(r, 'px')),
             void (e.style[n] = r))
           : Y(e, n);
-      for (var a in n) n.hasOwnProperty(a) && J(e, a, n[a]);
+      for (var a in n) n.hasOwnProperty(a) && X(e, a, n[a]);
     }
-    function X(e) {
+    function J(e) {
       var n,
         t,
         r,
@@ -515,7 +515,7 @@
       return ee(e, !0);
     }
     function re(e) {
-      var n = X(e),
+      var n = J(e),
         t = e.ownerDocument,
         r = t.defaultView || t.parentWindow;
       return (n.left += ne(r)), (n.top += te(r)), n;
@@ -577,7 +577,7 @@
         : void 0;
     }
     function ve(e, n, t) {
-      'static' === J(e, 'position') && (e.style.position = 'relative');
+      'static' === X(e, 'position') && (e.style.position = 'relative');
       var r = -999,
         a = -999,
         o = me('left', t),
@@ -600,7 +600,7 @@
             v = u[f] - d[f];
           p[m] = m === f ? h + v : h - v;
         }
-      J(e, p), Z(e), ('left' in n || 'top' in n) && H(e, s);
+      X(e, p), Z(e), ('left' in n || 'top' in n) && H(e, s);
       var g = {};
       for (var b in n)
         if (n.hasOwnProperty(b)) {
@@ -608,7 +608,7 @@
             x = n[b] - u[b];
           g[y] = b === y ? p[y] + x : p[y] - x;
         }
-      J(e, g);
+      X(e, g);
     }
     function ge(e, n) {
       var t = re(e),
@@ -755,7 +755,7 @@
         if (void 0 === a) return n && Pe(n, e, we);
         if (n) {
           var o = xe(n);
-          return o && (a += je(n, ['padding', 'border'], t)), J(n, e, a);
+          return o && (a += je(n, ['padding', 'border'], t)), X(n, e, a);
         }
       };
     });
@@ -772,7 +772,7 @@
       },
       isWindow: ae,
       each: ye,
-      css: J,
+      css: X,
       clone: function (e) {
         var n,
           t = {};
@@ -1044,7 +1044,7 @@
         { points: a, offset: o, targetOffset: i, overflow: s }
       );
     }
-    function Je(e, n) {
+    function Xe(e, n) {
       var t = _e(e, n),
         r = Be(e);
       return (
@@ -1055,10 +1055,10 @@
         r.top >= t.bottom
       );
     }
-    function Xe(e, n, t) {
+    function Je(e, n, t) {
       var r = t.target || n,
         a = Be(r),
-        o = !Je(r, t.overflow && t.overflow.alwaysByViewport);
+        o = !Xe(r, t.overflow && t.overflow.alwaysByViewport);
       return Ze(e, a, t, o);
     }
     function en(e, n, t) {
@@ -1077,7 +1077,7 @@
         f = [t.points[0], 'cc'];
       return Ze(e, d, M(M({}, t), {}, { points: f }), p);
     }
-    (Xe.__getOffsetParent = Me), (Xe.__getVisibleRectForElement = _e);
+    (Je.__getOffsetParent = Me), (Je.__getVisibleRectForElement = _e);
     var nn = t('bTgL'),
       tn = t.n(nn),
       rn = t('AIFA');
@@ -1194,7 +1194,7 @@
                 d = s.activeElement;
               return (
                 l && Object(L['a'])(l)
-                  ? (o = Xe(i, l, r))
+                  ? (o = Je(i, l, r))
                   : c && (o = en(i, c, r)),
                 on(d, i),
                 a && o && a(i, o),
@@ -1446,7 +1446,7 @@
             [G],
           );
         var Z = Object(r['a'])({}, I(e));
-        function J() {
+        function X() {
           return new Promise(function (e) {
             W.current = e;
           });
@@ -1471,7 +1471,7 @@
               },
             };
           });
-        var X = Object(r['a'])(
+        var J = Object(r['a'])(
             Object(r['a'])({}, D),
             {},
             {
@@ -1499,8 +1499,8 @@
               { visible: t, ref: j, leavedClassName: ''.concat(o, '-hidden') },
               Z,
               {
-                onAppearPrepare: J,
-                onEnterPrepare: J,
+                onAppearPrepare: X,
+                onEnterPrepare: X,
                 removeOnLeave: p,
                 forceRender: f,
               },
@@ -1530,7 +1530,7 @@
                     onMouseDownCapture: w,
                     onTouchStartCapture: k,
                     onClick: C,
-                    style: Object(r['a'])(Object(r['a'])({}, a), X),
+                    style: Object(r['a'])(Object(r['a'])({}, a), J),
                   },
                   ne,
                 ),
@@ -4907,7 +4907,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/SimpleDataList/SimpleDataList.zh-CN.md',
-                updatedTime: 1661929938835,
+                updatedTime: 1661930226410,
                 slugs: [
                   {
                     depth: 4,
@@ -4937,17 +4937,33 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/SimpleDataTable/SimpleDataTable.md',
-                updatedTime: 1658709651994,
-                slugs: [],
+                updatedTime: 1661998212587,
+                slugs: [
+                  {
+                    depth: 4,
+                    value: 'simpleDataTable.less',
+                    heading: 'simpledatatableless',
+                  },
+                  {
+                    depth: 4,
+                    value: 'SimpleDataTable.tsx',
+                    heading: 'simpledatatabletsx',
+                  },
+                  {
+                    depth: 4,
+                    value: 'SimpleDataTable.jsx',
+                    heading: 'simpledatatablejsx',
+                  },
+                ],
+                title: 'simpleDataTable.less',
                 hasPreviewer: !0,
                 nav: { path: '/guide', title: 'Guide' },
                 group: {
                   path: '/guide/simple-data-table',
                   title: 'SimpleDataTable',
                 },
-                title: 'SimpleDataTable',
               },
-              title: 'SimpleDataTable - react-code-segment',
+              title: 'simpleDataTable.less - react-code-segment',
             },
             {
               path: '/zh-CN/guide/simple-data-table/simple-data-table',
@@ -4955,8 +4971,25 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/SimpleDataTable/SimpleDataTable.zh-CN.md',
-                updatedTime: 1658709685682,
-                slugs: [],
+                updatedTime: 1661998263262,
+                slugs: [
+                  {
+                    depth: 4,
+                    value: 'simpleDataTable.less',
+                    heading: 'simpledatatableless',
+                  },
+                  {
+                    depth: 4,
+                    value: 'SimpleDataTable.tsx',
+                    heading: 'simpledatatabletsx',
+                  },
+                  {
+                    depth: 4,
+                    value: 'SimpleDataTable.jsx',
+                    heading: 'simpledatatablejsx',
+                  },
+                ],
+                title: 'simpleDataTable.less',
                 hasPreviewer: !0,
                 locale: 'zh-CN',
                 nav: { path: '/zh-CN/guide', title: 'Guide' },
@@ -4964,9 +4997,8 @@
                   path: '/zh-CN/guide/simple-data-table',
                   title: 'SimpleDataTable',
                 },
-                title: 'SimpleDataTable',
               },
-              title: 'SimpleDataTable - react-code-segment',
+              title: 'simpleDataTable.less - react-code-segment',
             },
             {
               path: '/guide/simple-mapped-data-table/simple-mapped-data-table',
@@ -12625,9 +12657,9 @@
       }
       var f = k();
       function v(e) {
-        Object(o['a'])(J, e),
-          (J.length = n.length),
-          f.notifyListeners(J.location, J.action);
+        Object(o['a'])(X, e),
+          (X.length = n.length),
+          f.notifyListeners(X.location, X.action);
       }
       var g = !1,
         x = null;
@@ -12644,7 +12676,7 @@
         if (e !== n) F(n);
         else {
           var t = p(),
-            r = J.location;
+            r = X.location;
           if (!g && S(r, t)) return;
           if (x === E(t)) return;
           (x = null), I(t);
@@ -12660,7 +12692,7 @@
         }
       }
       function N(e) {
-        var n = J.location,
+        var n = X.location,
           t = B.lastIndexOf(E(n));
         -1 === t && (t = 0);
         var r = B.lastIndexOf(E(e));
@@ -12683,7 +12715,7 @@
       }
       function H(e, n) {
         var t = 'PUSH',
-          r = w(e, void 0, void 0, J.location);
+          r = w(e, void 0, void 0, X.location);
         f.confirmTransitionTo(r, t, a, function (e) {
           if (e) {
             var n = E(r),
@@ -12691,7 +12723,7 @@
               o = z() !== a;
             if (o) {
               (x = n), _(a);
-              var i = B.lastIndexOf(E(J.location)),
+              var i = B.lastIndexOf(E(X.location)),
                 l = B.slice(0, i + 1);
               l.push(n), (B = l), v({ action: t, location: r });
             } else v();
@@ -12700,14 +12732,14 @@
       }
       function V(e, n) {
         var t = 'REPLACE',
-          r = w(e, void 0, void 0, J.location);
+          r = w(e, void 0, void 0, X.location);
         f.confirmTransitionTo(r, t, a, function (e) {
           if (e) {
             var n = E(r),
               a = u(c + n),
               o = z() !== a;
             o && ((x = n), F(a));
-            var i = B.indexOf(E(J.location));
+            var i = B.indexOf(E(X.location));
             -1 !== i && (B[i] = n), v({ action: t, location: r });
           }
         });
@@ -12748,7 +12780,7 @@
           }
         );
       }
-      var J = {
+      var X = {
         length: n.length,
         action: 'POP',
         location: L,
@@ -12761,7 +12793,7 @@
         block: Q,
         listen: Z,
       };
-      return J;
+      return X;
     }
     function U(e, n, t) {
       return Math.min(Math.max(e, n), t);
@@ -12930,11 +12962,11 @@
         });
       };
     }
-    function J(e, n) {
+    function X(e, n) {
       if (!(e instanceof n))
         throw new TypeError('Cannot call a class as a function');
     }
-    function X(e, n) {
+    function J(e, n) {
       for (var t = 0; t < n.length; t++) {
         var r = n[t];
         (r.enumerable = r.enumerable || !1),
@@ -12944,7 +12976,7 @@
       }
     }
     function ee(e, n, t) {
-      return n && X(e.prototype, n), t && X(e, t), e;
+      return n && J(e.prototype, n), t && J(e, t), e;
     }
     function ne(e, n, t) {
       return (
@@ -13187,7 +13219,7 @@
     }
     var be = (function () {
       function e(n, t) {
-        J(this, e),
+        X(this, e),
           (this._loadFn = n),
           (this._opts = t),
           (this._callbacks = new Set()),
@@ -13363,7 +13395,7 @@
     })(Ce || (Ce = {}));
     var Te = (function () {
       function e(n) {
-        J(this, e),
+        X(this, e),
           (this.validKeys = void 0),
           (this.hooks = {}),
           (this.validKeys =
@@ -14533,8 +14565,8 @@
       Y = 'rejectionhandled',
       Q = 0,
       Z = 1,
-      J = 2,
-      X = 1,
+      X = 2,
+      J = 1,
       ee = 2,
       ne = P(M, function () {
         var e = x(F) !== String(F);
@@ -14582,7 +14614,7 @@
                 m = u.domain;
               try {
                 d
-                  ? (o || (n.rejection === ee && ce(e, n), (n.rejection = X)),
+                  ? (o || (n.rejection === ee && ce(e, n), (n.rejection = J)),
                     !0 === d
                       ? (l = a)
                       : (m && m.enter(), (l = d(a)), m && (m.exit(), (s = !0))),
@@ -14625,14 +14657,14 @@
             ((t = I(function () {
               $ ? H.emit('unhandledRejection', r, e) : oe(K, e, r);
             })),
-            (n.rejection = $ || le(n) ? ee : X),
+            (n.rejection = $ || le(n) ? ee : J),
             t.error)
           )
             throw t.value;
         });
       },
       le = function (e) {
-        return e.rejection !== X && !e.parent;
+        return e.rejection !== J && !e.parent;
       },
       ce = function (e, n) {
         C.call(s, function () {
@@ -14649,7 +14681,7 @@
           ((n.done = !0),
           r && (n = r),
           (n.value = t),
-          (n.state = J),
+          (n.state = X),
           ae(e, n, !0));
       },
       de = function (e, n, t, r) {
@@ -15300,7 +15332,7 @@
       }
       return a(t), W.push(o), { destroy: o, update: i };
     }
-    function J(e) {
+    function X(e) {
       return Object(f['a'])(
         Object(f['a'])(
           { icon: u['createElement'](v['a'], null), okCancel: !1 },
@@ -15309,7 +15341,7 @@
         { type: 'warning' },
       );
     }
-    function X(e) {
+    function J(e) {
       return Object(f['a'])(
         Object(f['a'])(
           { icon: u['createElement'](g['a'], null), okCancel: !1 },
@@ -15517,22 +15549,22 @@
         }, []),
         i = u['useMemo'](function () {
           return {
-            info: o(X),
+            info: o(J),
             success: o(ee),
             error: o(ne),
-            warning: o(J),
+            warning: o(X),
             confirm: o(te),
           };
         }, []);
       return [i, u['createElement'](se, { ref: e })];
     }
     function de(e) {
-      return Z(J(e));
+      return Z(X(e));
     }
     var pe = V;
     (pe.useModal = ue),
       (pe.info = function (e) {
-        return Z(X(e));
+        return Z(J(e));
       }),
       (pe.success = function (e) {
         return Z(ee(e));
@@ -18803,9 +18835,9 @@
         Y = K[0],
         Q = K[1],
         Z = Object(M['a'])(null),
-        J = Object(o['a'])(Z, 2),
-        X = J[0],
-        ee = J[1],
+        X = Object(o['a'])(Z, 2),
+        J = X[0],
+        ee = X[1],
         ne = Object(l['useRef'])(!1),
         te = Object(l['useRef'])(null);
       function re() {
@@ -18927,7 +18959,7 @@
         },
         [B, Y],
       );
-      var ve = X;
+      var ve = J;
       return (
         se[P] && fe === R && (ve = Object(a['a'])({ transition: 'none' }, ve)),
         [Y, fe, ve, null !== B && void 0 !== B ? B : n]
@@ -18955,8 +18987,8 @@
           t
         );
       })(l['Component']),
-      J = Z;
-    function X(e) {
+      X = Z;
+    function J(e) {
       var n = e;
       function t(e) {
         return !(!e.motionName || !n);
@@ -19049,11 +19081,11 @@
             B = F.ref;
           B || (A = l['cloneElement'](A, { ref: M }));
         }
-        return l['createElement'](J, { ref: E }, A);
+        return l['createElement'](X, { ref: E }, A);
       });
       return (u.displayName = 'CSSMotion'), u;
     }
-    var ee = X(w),
+    var ee = J(w),
       ne = t('2Uyp'),
       te = t('buC1'),
       re = 'add',
@@ -20472,7 +20504,7 @@
         Z.apply(this, arguments)
       );
     }
-    function J(e, n, t, r, a, o) {
+    function X(e, n, t, r, a, o) {
       var i,
         c = e.join('.'),
         s = t
@@ -20572,7 +20604,7 @@
             return { errors: n, rule: e };
           });
         });
-        i = (a ? ne(u) : X(u)).then(function (e) {
+        i = (a ? ne(u) : J(u)).then(function (e) {
           return Promise.reject(e);
         });
       }
@@ -20583,7 +20615,7 @@
         i
       );
     }
-    function X(e) {
+    function J(e) {
       return ee.apply(this, arguments);
     }
     function ee() {
@@ -20813,7 +20845,7 @@
                     var t = x(n);
                     return t.includes(d);
                   }));
-                var f = J(n, t, p, e, l, s);
+                var f = X(n, t, p, e, l, s);
                 return (
                   f['catch'](function (e) {
                     return e;
@@ -24246,7 +24278,7 @@
           );
         }, []);
     }
-    function J() {
+    function X() {
       var e = Object(r['useRef'])(new Map());
       function n(n) {
         return (
@@ -24259,7 +24291,7 @@
       }
       return [n, t];
     }
-    function X(e, n) {
+    function J(e, n) {
       var t = r['useRef'](e),
         a = r['useState']({}),
         o = Object(l['a'])(a, 2),
@@ -24315,18 +24347,18 @@
         M = Object(r['useRef'])(),
         D = Object(r['useRef'])(),
         z = Object(r['useRef'])(),
-        _ = J(),
+        _ = X(),
         F = Object(l['a'])(_, 2),
         B = F[0],
         U = F[1],
         H = 'top' === I || 'bottom' === I,
-        q = X(0, function (e, n) {
+        q = J(0, function (e, n) {
           H && L && L({ direction: e > n ? 'left' : 'right' });
         }),
         W = Object(l['a'])(q, 2),
         K = W[0],
         Y = W[1],
-        Q = X(0, function (e, n) {
+        Q = J(0, function (e, n) {
           !H && L && L({ direction: e > n ? 'top' : 'bottom' });
         }),
         ne = Object(l['a'])(Q, 2),
@@ -24531,9 +24563,9 @@
               );
             });
         }),
-        Je = s.slice(0, We),
-        Xe = s.slice(Ke + 1),
-        en = [].concat(Object(v['a'])(Je), Object(v['a'])(Xe)),
+        Xe = s.slice(0, We),
+        Je = s.slice(Ke + 1),
+        en = [].concat(Object(v['a'])(Xe), Object(v['a'])(Je)),
         nn = Object(r['useState'])(),
         tn = Object(l['a'])(nn, 2),
         rn = tn[0],
@@ -24879,14 +24911,14 @@
         Y = Object(l['a'])(K, 2),
         Q = Y[0],
         Z = Y[1],
-        J = Object(r['useState'])(function () {
+        X = Object(r['useState'])(function () {
           return U.findIndex(function (e) {
             return e.key === Q;
           });
         }),
-        X = Object(l['a'])(J, 2),
-        ee = X[0],
-        ne = X[1];
+        J = Object(l['a'])(X, 2),
+        ee = J[0],
+        ne = J[1];
       Object(r['useEffect'])(
         function () {
           var e,
@@ -28071,7 +28103,7 @@
           if (']' != n.charAt(n.length - 1)) return T;
           if (((t = V(n.slice(1, -1))), !t)) return T;
           e.host = t;
-        } else if (J(e)) {
+        } else if (X(e)) {
           if (((n = h(n)), z.test(n))) return T;
           if (((t = H(n)), null === t)) return T;
           e.host = t;
@@ -28226,10 +28258,10 @@
         return t > 32 && t < 127 && !d(n, e) ? e : encodeURIComponent(e);
       },
       Z = { ftp: 21, file: null, http: 80, https: 443, ws: 80, wss: 443 },
-      J = function (e) {
+      X = function (e) {
         return d(Z, e.scheme);
       },
-      X = function (e) {
+      J = function (e) {
         return '' != e.username || '' != e.password;
       },
       ee = function (e) {
@@ -28335,23 +28367,23 @@
                 }
                 if (
                   t &&
-                  (J(e) != d(Z, p) ||
-                    ('file' == p && (X(e) || null !== e.port)) ||
+                  (X(e) != d(Z, p) ||
+                    ('file' == p && (J(e) || null !== e.port)) ||
                     ('file' == e.scheme && !e.host))
                 )
                   return;
                 if (((e.scheme = p), t))
                   return void (
-                    J(e) &&
+                    X(e) &&
                     Z[e.scheme] == e.port &&
                     (e.port = null)
                   );
                 (p = ''),
                   'file' == e.scheme
                     ? (s = ye)
-                    : J(e) && a && a.scheme == e.scheme
+                    : X(e) && a && a.scheme == e.scheme
                     ? (s = se)
-                    : J(e)
+                    : X(e)
                     ? (s = fe)
                     : '/' == o[u + 1]
                     ? ((s = ue), u++)
@@ -28393,7 +28425,7 @@
                   (e.port = a.port),
                   (e.path = a.path.slice()),
                   (e.query = a.query);
-              else if ('/' == i || ('\\' == i && J(e))) s = pe;
+              else if ('/' == i || ('\\' == i && X(e))) s = pe;
               else if ('?' == i)
                 (e.username = a.username),
                   (e.password = a.password),
@@ -28424,7 +28456,7 @@
               }
               break;
             case pe:
-              if (!J(e) || ('/' != i && '\\' != i)) {
+              if (!X(e) || ('/' != i && '\\' != i)) {
                 if ('/' != i) {
                   (e.username = a.username),
                     (e.password = a.password),
@@ -28462,7 +28494,7 @@
                 '/' == i ||
                 '?' == i ||
                 '#' == i ||
-                ('\\' == i && J(e))
+                ('\\' == i && X(e))
               ) {
                 if (m && '' == p) return S;
                 (u -= f(p).length + 1), (p = ''), (s = ve);
@@ -28480,10 +28512,10 @@
                   '/' == i ||
                   '?' == i ||
                   '#' == i ||
-                  ('\\' == i && J(e))
+                  ('\\' == i && X(e))
                 ) {
-                  if (J(e) && '' == p) return T;
-                  if (t && '' == p && (X(e) || null !== e.port)) return;
+                  if (X(e) && '' == p) return T;
+                  if (t && '' == p && (J(e) || null !== e.port)) return;
                   if (((c = U(e, p)), c)) return c;
                   if (((p = ''), (s = we), t)) return;
                   continue;
@@ -28502,13 +28534,13 @@
                   '/' == i ||
                   '?' == i ||
                   '#' == i ||
-                  ('\\' == i && J(e)) ||
+                  ('\\' == i && X(e)) ||
                   t
                 ) {
                   if ('' != p) {
                     var x = parseInt(p, 10);
                     if (x > 65535) return I;
-                    (e.port = J(e) && x === Z[e.scheme] ? null : x), (p = '');
+                    (e.port = X(e) && x === Z[e.scheme] ? null : x), (p = '');
                   }
                   if (t) return;
                   s = we;
@@ -28578,7 +28610,7 @@
               p += i;
               break;
             case we:
-              if (J(e)) {
+              if (X(e)) {
                 if (((s = ke), '/' != i && '\\' != i)) continue;
               } else if (t || '?' != i)
                 if (t || '#' != i) {
@@ -28590,15 +28622,15 @@
               if (
                 i == r ||
                 '/' == i ||
-                ('\\' == i && J(e)) ||
+                ('\\' == i && X(e)) ||
                 (!t && ('?' == i || '#' == i))
               ) {
                 if (
                   (oe(p)
                     ? (re(e),
-                      '/' == i || ('\\' == i && J(e)) || e.path.push(''))
+                      '/' == i || ('\\' == i && X(e)) || e.path.push(''))
                     : ae(p)
-                    ? '/' == i || ('\\' == i && J(e)) || e.path.push('')
+                    ? '/' == i || ('\\' == i && X(e)) || e.path.push('')
                     : ('file' == e.scheme &&
                         !e.path.length &&
                         ne(p) &&
@@ -28623,7 +28655,7 @@
             case Oe:
               t || '#' != i
                 ? i != r &&
-                  ("'" == i && J(e)
+                  ("'" == i && X(e)
                     ? (e.query += '%27')
                     : (e.query += '#' == i ? '%23' : Q(i, $)))
                 : ((e.fragment = ''), (s = Se));
@@ -28681,7 +28713,7 @@
         return (
           null !== a
             ? ((s += '//'),
-              X(e) && (s += t + (r ? ':' + r : '') + '@'),
+              J(e) && (s += t + (r ? ':' + r : '') + '@'),
               (s += G(a)),
               null !== o && (s += ':' + o))
             : 'file' == n && (s += '//'),
@@ -28701,7 +28733,7 @@
           } catch (r) {
             return 'null';
           }
-        return 'file' != n && J(e)
+        return 'file' != n && X(e)
           ? n + '://' + G(e.host) + (null !== t ? ':' + t : '')
           : 'null';
       },
@@ -32299,9 +32331,9 @@
         "import React from 'react';\nimport Carousel from './Carousel';\n\nconst Demo = () => {\n  return (\n    <Carousel\n      options={['carousel item 1', 'carousel item 2', 'carousel item 3']}\n    />\n  );\n};\n\nexport default Demo;",
       Z =
         "import React, { useState, useEffect, cloneElement } from 'react';\nimport type { ReactNode } from 'react';\nimport './Carousel.less';\n\ninterface CarouselItemProps {\n  children: ReactNode;\n  className: string | Record<string, string | number>;\n}\n\ninterface CarouselProps {\n  options: ReactNode[];\n  duration: number;\n  children: JSX.Element[];\n  defaultKey: string;\n}\n\nconst CarouselItem = (props: Partial<CarouselItemProps>) => {\n  const { children } = props;\n  return <div className=\"carousel-item\">{children}</div>;\n};\nCarouselItem.displayName = 'CarouselItem';\n\nconst Carousel = (props: Partial<CarouselProps>) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer: number | undefined;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter(\n          (item) => item?.type?.displayName === 'CarouselItem',\n        ) || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className=\"carousel\">\n      <div\n        className=\"carousel-slide\"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(<CarouselItem key={item}>{item}</CarouselItem>, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nCarousel.CarouselItem = CarouselItem;\n\nexport default Carousel;",
-      J =
-        ".carousel {\n  position: relative;\n  height: 100px;\n  width: 200px;\n  overflow: hidden;\n  border: 1px solid #dedede;\n  background-color: fadeout(#880cee, 25%);\n  border-radius: 8px;\n  .carousel-slide {\n    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 0.75);\n    height: 100%;\n    &::after {\n      clear: both;\n      content: '';\n      display: table;\n    }\n    .carousel-item {\n      width: 200px;\n      height: 100%;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      font-size: 18px;\n      color: fade(rgba(255, 255, 255, 1), 85%);\n      float: left;\n      letter-spacing: 2px;\n    }\n  }\n}",
       X =
+        ".carousel {\n  position: relative;\n  height: 100px;\n  width: 200px;\n  overflow: hidden;\n  border: 1px solid #dedede;\n  background-color: fadeout(#880cee, 25%);\n  border-radius: 8px;\n  .carousel-slide {\n    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 0.75);\n    height: 100%;\n    &::after {\n      clear: both;\n      content: '';\n      display: table;\n    }\n    .carousel-item {\n      width: 200px;\n      height: 100%;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      font-size: 18px;\n      color: fade(rgba(255, 255, 255, 1), 85%);\n      float: left;\n      letter-spacing: 2px;\n    }\n  }\n}",
+      J =
         "import React from 'react';\nimport Carousel from './Carousel';\n\nconst Demo = () => {\n  return (\n    <Carousel\n      options={['carousel item 1', 'carousel item 2', 'carousel item 3']}\n    />\n  );\n};\n\nexport default Demo;",
       ee =
         "import React, { useState, useEffect, cloneElement } from 'react';\nimport '../Carousel.less';\n\nconst CarouselItem = (props) => {\n  const { children } = props;\n  return <div className=\"carousel-item\">{children}</div>;\n};\nCarouselItem.displayName = 'CarouselItem';\n\nconst Carousel = (props) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter(\n          (item) => item?.type?.displayName === 'CarouselItem',\n        ) || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className=\"carousel\">\n      <div\n        className=\"carousel-slide\"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(<CarouselItem key={item}>{item}</CarouselItem>, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nCarousel.CarouselItem = CarouselItem;\n\nexport default Carousel;",
@@ -32407,9 +32439,9 @@
         "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea limit={5} value=\"hello,there!\"></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
       Ze =
         "import React, { useState, useCallback, useEffect } from 'react';\nimport styled from '@emotion/styled';\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedWordTextarea = (props) => {\n  const { limit = 0, rows, cols, value, ...rest } = props;\n\n  const [{ content, wordCount }, setContent] = useState({\n    content: value,\n    wordCount: 0,\n  });\n\n  const setFormattedContent = useCallback(\n    (text) => {\n      let words = text.split(' ').filter(Boolean);\n      setContent(() => {\n        if (words.length > limit) {\n          return {\n            wordCount: limit,\n            content: words.slice(0, limit).join(' '),\n          };\n        }\n        return {\n          wordCount: words.length,\n          content: text,\n        };\n      });\n    },\n    [limit, setContent],\n  );\n  useEffect(() => {\n    setFormattedContent(content || '');\n  }, []);\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e) => setFormattedContent(e.target.value)}\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedWordTextarea;",
-      Je =
-        "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea\n      limit={6}\n      value=\"\u4f60\u597d\u554a,\u8fd9\u91cc\u7684\u4e16\u754c!\"\n    ></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
       Xe =
+        "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea\n      limit={6}\n      value=\"\u4f60\u597d\u554a,\u8fd9\u91cc\u7684\u4e16\u754c!\"\n    ></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
+      Je =
         "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea\n      limit={6}\n      value=\"\u4f60\u597d\u554a,\u8fd9\u91cc\u7684\u4e16\u754c!\"\n    ></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
       en =
         'import React, { useState } from \'react\';\nimport { Alert, Space, Spin, Switch } from \'antd\';\nimport Loader from \'./Loader\';\nimport styled from \'@emotion/styled\';\n\nconst Row = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  const [loading, setLoading] = useState(true);\n  const antIcon = <Loader size={24} spin />;\n  return (\n    <Space direction="vertical" style={{ width: \'100%\' }}>\n      <Spin tip="Loading..." indicator={antIcon} spinning={loading}>\n        <Alert\n          message="Alert message title"\n          description="Further details about the context of this alert."\n          type="info"\n        />\n      </Spin>\n      <Row>\n        Loading state\uff1a\n        <Switch checked={loading} onChange={() => setLoading(!loading)} />\n      </Row>\n    </Space>\n  );\n};\nexport default Demo;',
@@ -32478,13 +32510,13 @@
       Ln =
         "import { css } from '@emotion/css';\nimport React from 'react';\n\ninterface DataListProps {\n  data: string[];\n  isOrdered: boolean;\n  isBordered: boolean;\n}\nconst SimpleStyleDataList = css`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-size: 14px;\n  line-height: 1.5715;\n  list-style: none;\n  position: relative;\n  &.bordered {\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n  }\n`;\nconst SimpleDataListItem = css`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 24px;\n  color: rgba(0, 0, 0, 0.85);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  &:last-of-type {\n    border-bottom: 0;\n  }\n`;\nconst SimpleDataList = (props: Partial<DataListProps>) => {\n  const { data, isOrdered = false, isBordered = true } = props;\n  const List = data?.map((val, index) => (\n    <li className={SimpleDataListItem} key={`${val}-${index}`}>\n      {val}\n    </li>\n  ));\n  const containerClassName = `${SimpleStyleDataList}${\n    isBordered ? ' bordered' : ''\n  }`;\n  return isOrdered ? (\n    <ol className={containerClassName}>{List}</ol>\n  ) : (\n    <ul className={containerClassName}>{List}</ul>\n  );\n};\n\nexport default SimpleDataList;",
       An =
-        "import React from 'react';\r\nimport SimpleDataList from './SimpleDataList';\r\nconst Demo = () => {\r\n  const names = ['name1', 'name2', 'name3'];\r\n  return <SimpleDataList data={names}></SimpleDataList>;\r\n};\r\nexport default Demo;",
+        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['name1', 'name2', 'name3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
       Mn =
-        "import { css } from '@emotion/css';\r\nimport React from 'react';\r\nconst SimpleStyleDataList = css`\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  padding: 0;\r\n  font-size: 14px;\r\n  line-height: 1.5715;\r\n  list-style: none;\r\n  position: relative;\r\n  &.bordered {\r\n    border: 1px solid #d9d9d9;\r\n    border-radius: 2px;\r\n  }\r\n`;\r\nconst SimpleDataListItem = css`\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  padding: 12px 24px;\r\n  color: rgba(0, 0, 0, 0.85);\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\r\n  &:last-of-type {\r\n    border-bottom: 0;\r\n  }\r\n`;\r\nconst SimpleDataList = (props) => {\r\n  const { data, isOrdered = false, isBordered = true } = props;\r\n  const List = data?.map((val, index) => (\r\n    <li className={SimpleDataListItem} key={`${val}-${index}`}>\r\n      {val}\r\n    </li>\r\n  ));\r\n  const containerClassName = `${SimpleStyleDataList}${\r\n    isBordered ? ' bordered' : ''\r\n  }`;\r\n  return isOrdered ? (\r\n    <ol className={containerClassName}>{List}</ol>\r\n  ) : (\r\n    <ul className={containerClassName}>{List}</ul>\r\n  );\r\n};\r\n\r\nexport default SimpleDataList;",
+        "import { css } from '@emotion/css';\nimport React from 'react';\nconst SimpleStyleDataList = css`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-size: 14px;\n  line-height: 1.5715;\n  list-style: none;\n  position: relative;\n  &.bordered {\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n  }\n`;\nconst SimpleDataListItem = css`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 24px;\n  color: rgba(0, 0, 0, 0.85);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  &:last-of-type {\n    border-bottom: 0;\n  }\n`;\nconst SimpleDataList = (props) => {\n  const { data, isOrdered = false, isBordered = true } = props;\n  const List = data?.map((val, index) => (\n    <li className={SimpleDataListItem} key={`${val}-${index}`}>\n      {val}\n    </li>\n  ));\n  const containerClassName = `${SimpleStyleDataList}${\n    isBordered ? ' bordered' : ''\n  }`;\n  return isOrdered ? (\n    <ol className={containerClassName}>{List}</ol>\n  ) : (\n    <ul className={containerClassName}>{List}</ul>\n  );\n};\n\nexport default SimpleDataList;",
       Dn =
         "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['\u59d3\u540d1', '\u59d3\u540d2', '\u59d3\u540d3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
       zn =
-        "import React from 'react';\r\nimport SimpleDataList from './SimpleDataList';\r\nconst Demo = () => {\r\n  const names = ['\u59d3\u540d1', '\u59d3\u540d2', '\u59d3\u540d3'];\r\n  return <SimpleDataList data={names}></SimpleDataList>;\r\n};\r\nexport default Demo;",
+        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['\u59d3\u540d1', '\u59d3\u540d2', '\u59d3\u540d3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
       _n =
         "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
       Fn =
@@ -32492,82 +32524,88 @@
       Bn =
         '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
       Un =
-        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
+        "import React from 'react';\r\nimport SimpleDataTable from './SimpleDataTable';\r\n\r\nconst Demo = () => {\r\n  const data = [\r\n    {\r\n      key: '1',\r\n      name: 'Tiger Hu',\r\n      age: 32,\r\n      address: 'No. 1, Hudi Park, Xihu District',\r\n    },\r\n    {\r\n      key: '2',\r\n      name: 'Hu Yanzu',\r\n      age: 42,\r\n      address: 'No. 1, Hudi Park, Xihu District',\r\n    },\r\n    {\r\n      key: '3',\r\n      name: 'Hu Yanzu',\r\n      age: 42,\r\n      address: 'No. 1, Hudi Park, Xihu District',\r\n    },\r\n    {\r\n      key: '4',\r\n      name: 'Hu Yanzu',\r\n      age: 42,\r\n      address: 'No. 1, Hudi Park, Xihu District',\r\n    },\r\n  ];\r\n  const columns = [\r\n    {\r\n      key: 'name',\r\n      dataIndex: 'name',\r\n      title: 'name',\r\n    },\r\n    {\r\n      key: 'age',\r\n      dataIndex: 'age',\r\n      title: 'age',\r\n    },\r\n    {\r\n      key: 'address',\r\n      dataIndex: 'address',\r\n      title: 'address',\r\n    },\r\n  ];\r\n  return <SimpleDataTable data={data} columns={columns} isBordered />;\r\n};\r\nexport default Demo;",
       Hn =
-        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
+        'import React from \'react\';\r\nimport \'../simpleDataTable.less\';\r\n\r\nconst SimpleDataTable = (props) => {\r\n  const { columns, data, isBordered } = props;\r\n  return (\r\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\r\n      <thead className="sim-table-header">\r\n        <tr>\r\n          {columns?.map((column) => (\r\n            <th className="sim-table-cell" key={column.key}>\r\n              {column.title}\r\n            </th>\r\n          ))}\r\n        </tr>\r\n      </thead>\r\n      <tbody className="sim-table-body">\r\n        {data?.map((item) => (\r\n          <tr key={item.key} className="sim-table-row">\r\n            {columns?.map((col) => (\r\n              <td className="sim-table-cell" key={col.key}>\r\n                {item[col.dataIndex]}\r\n              </td>\r\n            ))}\r\n          </tr>\r\n        ))}\r\n      </tbody>\r\n    </table>\r\n  );\r\n};\r\n\r\nexport default SimpleDataTable;',
       Vn =
-        'import React from \'react\';\nimport \'./SimpleMappedDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleMappedDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleMappedDataTable = (props: Partial<SimpleMappedDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n\n  let filteredData = data?.map((v) =>\n    Object.keys(v)\n      .filter((k) => columns?.some((col) => col.dataIndex === k))\n      .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n  ) as DataProps[];\n\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {filteredData?.map((item, index) => (\n          <tr key={`${index}_${index}`} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleMappedDataTable;',
+        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
       qn =
-        '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
+        "import React from 'react';\r\nimport SimpleDataTable from './SimpleDataTable';\r\n\r\nconst Demo = () => {\r\n  const data = [\r\n    {\r\n      key: '1',\r\n      name: '\u80e1\u5f66\u658c',\r\n      age: 32,\r\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\r\n    },\r\n    {\r\n      key: '2',\r\n      name: '\u80e1\u5f66\u7956',\r\n      age: 42,\r\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\r\n    },\r\n    {\r\n      key: '3',\r\n      name: '\u80e1\u5f66\u7956',\r\n      age: 42,\r\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\r\n    },\r\n    {\r\n      key: '4',\r\n      name: '\u80e1\u5f66\u7956',\r\n      age: 42,\r\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\r\n    },\r\n  ];\r\n  const columns = [\r\n    {\r\n      key: 'name',\r\n      dataIndex: 'name',\r\n      title: '\u59d3\u540d',\r\n    },\r\n    {\r\n      key: 'age',\r\n      dataIndex: 'age',\r\n      title: '\u5e74\u9f84',\r\n    },\r\n    {\r\n      key: 'address',\r\n      dataIndex: 'address',\r\n      title: '\u5730\u5740',\r\n    },\r\n  ];\r\n  return <SimpleDataTable data={data} columns={columns} />;\r\n};\r\nexport default Demo;",
       Gn =
-        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
+        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
       $n =
-        "import React from 'react';\nimport Slider from './Slider';\n\nconst Demo = () => {\n  return <Slider></Slider>;\n};\n\nexport default Demo;",
+        'import React from \'react\';\nimport \'./SimpleMappedDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleMappedDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleMappedDataTable = (props: Partial<SimpleMappedDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n\n  let filteredData = data?.map((v) =>\n    Object.keys(v)\n      .filter((k) => columns?.some((col) => col.dataIndex === k))\n      .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n  ) as DataProps[];\n\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {filteredData?.map((item, index) => (\n          <tr key={`${index}_${index}`} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleMappedDataTable;',
       Wn =
-        "import React from 'react';\nimport './slider.less';\nimport classnames from '../../utils/classnames';\n\nexport interface SliderProps extends Record<string, any> {\n  direction: 'horizontal' | 'vertical';\n  min: number;\n  max: number;\n  step: number;\n  disabled: boolean;\n  value: number;\n}\n\nconst Slider = (props: Partial<SliderProps>) => {\n  const { direction = 'horizontal' } = props;\n\n  const prefixClasses = {\n    'ew-slider': true,\n    [`ew-slider-${direction}`]: direction,\n  };\n\n  return (\n    <div className={classnames(prefixClasses)}>\n      <div className=\"ew-slider-rail\"></div>\n      <div className=\"ew-slider-track\"></div>\n      <div className=\"ew-slider-step\"></div>\n      <div className=\"ew-slider-handle\"></div>\n    </div>\n  );\n};\n\nexport default Slider;",
+        '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
       Kn =
-        "@prefix: ew-;\n\n.@{prefix}slider {\n  box-sizing: border-box;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  height: 12px;\n  margin: 10px 6px;\n  padding: 4px 0;\n  cursor: pointer;\n\n  &-rail {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background-color: #f5f5f5;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-track {\n    position: absolute;\n    height: 4px;\n    background-color: #2396ef;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-step {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background: 0 0;\n  }\n}",
+        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
       Yn =
-        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        Load image\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`Error ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <FetchImage\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport Slider from './Slider';\n\nconst Demo = () => {\n  return <Slider></Slider>;\n};\n\nexport default Demo;",
       Qn =
-        "import { useReducer } from 'react';\nexport type StateType = {\n  loading: boolean;\n  value: any;\n  error: any;\n};\nexport type ActionType = Partial<StateType> & { type: string };\nexport type RunType = (args: unknown) => Promise<void>;\nconst useAsync = (handler: (...args: any) => any) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n  const stateReducer = (_: any, action: ActionType) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args: unknown) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
+        "import React from 'react';\nimport './slider.less';\nimport classnames from '../../utils/classnames';\n\nexport interface SliderProps extends Record<string, any> {\n  direction: 'horizontal' | 'vertical';\n  min: number;\n  max: number;\n  step: number;\n  disabled: boolean;\n  value: number;\n}\n\nconst Slider = (props: Partial<SliderProps>) => {\n  const { direction = 'horizontal' } = props;\n\n  const prefixClasses = {\n    'ew-slider': true,\n    [`ew-slider-${direction}`]: direction,\n  };\n\n  return (\n    <div className={classnames(prefixClasses)}>\n      <div className=\"ew-slider-rail\"></div>\n      <div className=\"ew-slider-track\"></div>\n      <div className=\"ew-slider-step\"></div>\n      <div className=\"ew-slider-handle\"></div>\n    </div>\n  );\n};\n\nexport default Slider;",
       Zn =
-        "import React from 'react';\nimport Button from '../../../guide/Button/Button';\nimport Loader from '../../../guide/Loader/Loader';\nimport Alert from '../../../guide/Alert/Alert';\nimport styled from '@emotion/styled';\nimport useAsync from './useAsync';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={imgFetch?.loading}\n      >\n        Load image\n      </Button>\n      {imgFetch?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {imgFetch?.error && (\n        <Alert type=\"error\" message={`Error ${imgFetch?.error}`}></Alert>\n      )}\n      {imgFetch?.value && (\n        <FetchImage\n          src={imgFetch?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
-      Jn =
-        "import { useReducer } from 'react';\n\nconst useAsync = (handler) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n\n  const stateReducer = (_, action) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
+        "@prefix: ew-;\n\n.@{prefix}slider {\n  box-sizing: border-box;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  height: 12px;\n  margin: 10px 6px;\n  padding: 4px 0;\n  cursor: pointer;\n\n  &-rail {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background-color: #f5f5f5;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-track {\n    position: absolute;\n    height: 4px;\n    background-color: #2396ef;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-step {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background: 0 0;\n  }\n}",
       Xn =
-        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\nconst FetchImage = styled.img({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`\u9519\u8bef ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <FetchImage\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        Load image\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`Error ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <FetchImage\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+      Jn =
+        "import { useReducer } from 'react';\nexport type StateType = {\n  loading: boolean;\n  value: any;\n  error: any;\n};\nexport type ActionType = Partial<StateType> & { type: string };\nexport type RunType = (args: unknown) => Promise<void>;\nconst useAsync = (handler: (...args: any) => any) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n  const stateReducer = (_: any, action: ActionType) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args: unknown) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
       et =
-        "import React from 'react';\nimport Button from '../../../guide/Button/Button';\nimport Loader from '../../../guide/Loader/Loader';\nimport Alert from '../../../guide/Alert/Alert';\nimport styled from '@emotion/styled';\nimport useAsync from './useAsync';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={imgFetch?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {imgFetch?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {imgFetch?.error && (\n        <Alert type=\"error\" message={`\u9519\u8bef ${imgFetch?.error}`}></Alert>\n      )}\n      {imgFetch?.value && (\n        <FetchImage\n          src={imgFetch?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport Button from '../../../guide/Button/Button';\nimport Loader from '../../../guide/Loader/Loader';\nimport Alert from '../../../guide/Alert/Alert';\nimport styled from '@emotion/styled';\nimport useAsync from './useAsync';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={imgFetch?.loading}\n      >\n        Load image\n      </Button>\n      {imgFetch?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {imgFetch?.error && (\n        <Alert type=\"error\" message={`Error ${imgFetch?.error}`}></Alert>\n      )}\n      {imgFetch?.value && (\n        <FetchImage\n          src={imgFetch?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
       nt =
-        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      Scroll locked! <br />\n      <Button onClick={onCancel}>Click me to unlock</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+        "import { useReducer } from 'react';\n\nconst useAsync = (handler) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n\n  const stateReducer = (_, action) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
       tt =
-        "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  // see https://zhuanlan.zhihu.com/p/147173241\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container!).overflow;\n    container!.style.overflow = 'hidden';\n    return () => {\n      container!.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
+        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\nconst FetchImage = styled.img({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`\u9519\u8bef ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <FetchImage\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
       rt =
-        "import React, { useState } from 'react';\nimport Modal from '../../../guide/Modal/jsx/Modal';\nimport Button from '../../../guide/Button/jsx/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nconst ScrollModal = (props) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      Scroll locked! <br />\n      <Button onClick={onCancel}>Click me to unlock</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport Button from '../../../guide/Button/Button';\nimport Loader from '../../../guide/Loader/Loader';\nimport Alert from '../../../guide/Alert/Alert';\nimport styled from '@emotion/styled';\nimport useAsync from './useAsync';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={imgFetch?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {imgFetch?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {imgFetch?.error && (\n        <Alert type=\"error\" message={`\u9519\u8bef ${imgFetch?.error}`}></Alert>\n      )}\n      {imgFetch?.value && (\n        <FetchImage\n          src={imgFetch?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
       at =
-        "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  // see https://zhuanlan.zhihu.com/p/147173241\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container).overflow;\n    container.style.overflow = 'hidden';\n    return () => {\n      container.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
+        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      Scroll locked! <br />\n      <Button onClick={onCancel}>Click me to unlock</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
       ot =
-        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+        "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  // see https://zhuanlan.zhihu.com/p/147173241\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container!).overflow;\n    container!.style.overflow = 'hidden';\n    return () => {\n      container!.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
       it =
-        "import React, { useState } from 'react';\nimport Modal from '../../../guide/Modal/jsx/Modal';\nimport Button from '../../../guide/Button/jsx/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nconst ScrollModal = (props) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Modal from '../../../guide/Modal/jsx/Modal';\nimport Button from '../../../guide/Button/jsx/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nconst ScrollModal = (props) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      Scroll locked! <br />\n      <Button onClick={onCancel}>Click me to unlock</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
       lt =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click inside this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox\n      onClickInside={() =>\n        Modal.confirm({\n          content: 'click inside',\n          cancelText: 'Cancel',\n          okText: 'Ok',\n        })\n      }\n    ></ClickBox>\n  );\n};\n\nexport default Demo;",
+        "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  // see https://zhuanlan.zhihu.com/p/147173241\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container).overflow;\n    container.style.overflow = 'hidden';\n    return () => {\n      container.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
       ct =
-        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
+        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
       st =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5185\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox onClickInside={() => Modal.confirm('\u70b9\u51fb\u4e86\u8be5\u533a\u57df\u5185')}></ClickBox>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Modal from '../../../guide/Modal/jsx/Modal';\nimport Button from '../../../guide/Button/jsx/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nconst ScrollModal = (props) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
       ut =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click out of this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('click outside')}></ClickBox>;\n};\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click inside this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox\n      onClickInside={() =>\n        Modal.confirm({\n          content: 'click inside',\n          cancelText: 'Cancel',\n          okText: 'Ok',\n        })\n      }\n    ></ClickBox>\n  );\n};\n\nexport default Demo;",
       dt =
-        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
+        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
       pt =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5916\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('\u70b9\u51fb\u4e86\u533a\u57df\u4e4b\u5916')}></ClickBox>;\n};\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5185\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox onClickInside={() => Modal.confirm('\u70b9\u51fb\u4e86\u8be5\u533a\u57df\u5185')}></ClickBox>\n  );\n};\n\nexport default Demo;",
       ft =
-        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      'Component did mount, get the element:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click out of this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('click outside')}></ClickBox>;\n};\n\nexport default Demo;",
       mt =
-        "import { useEffect } from 'react';\nconst useComponentDidMount = (onMountHandler: Function) => {\n  useEffect(() => {\n    onMountHandler();\n  }, []);\n};\nexport default useComponentDidMount;",
+        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
       ht =
-        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      '\u7ec4\u4ef6\u786e\u5b9e\u6302\u8f7d\uff0c\u83b7\u53d6\u5143\u7d20:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5916\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('\u70b9\u51fb\u4e86\u533a\u57df\u4e4b\u5916')}></ClickBox>;\n};\n\nexport default Demo;",
       vt =
-        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('Current value is:' + value + '.');\n  }, [value]);\n  return (\n    <>\n      <p>\n        Value:{value},otherValue: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          Increment value\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          Increment other value\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      'Component did mount, get the element:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
       gt =
-        "import { useEffect, DependencyList, useRef } from 'react';\nconst useComponentDidUpdate = (\n  handler: (...args: any[]) => any,\n  deps: DependencyList,\n) => {\n  const mounted = useRef(false);\n  useEffect(() => {\n    if (mounted.current) {\n      handler?.();\n    } else {\n      mounted.current = true;\n    }\n  }, deps);\n};\n\nexport default useComponentDidUpdate;",
+        "import { useEffect } from 'react';\nconst useComponentDidMount = (onMountHandler: Function) => {\n  useEffect(() => {\n    onMountHandler();\n  }, []);\n};\nexport default useComponentDidMount;",
       bt =
-        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('\u5f53\u524d\u7684\u503c\u662f:' + value + '\u3002');\n  }, [value]);\n  return (\n    <>\n      <p>\n        \u503c\u662f:{value},\u5176\u5b83\u503c\u662f: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          \u589e\u52a0\u503c\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          \u589e\u52a0\u5176\u5b83\u503c\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      '\u7ec4\u4ef6\u786e\u5b9e\u6302\u8f7d\uff0c\u83b7\u53d6\u5143\u7d20:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
       yt =
-        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('Component will unmount'));\n  return <div>Check the console</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('Current value is:' + value + '.');\n  }, [value]);\n  return (\n    <>\n      <p>\n        Value:{value},otherValue: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          Increment value\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          Increment other value\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
       xt =
-        "import { useEffect } from 'react';\n\nconst useComponentWillUnmount = (onUnmountHandler) => {\n  useEffect(() => () => onUnmountHandler?.(), []);\n};\n\nexport default useComponentWillUnmount;",
+        "import { useEffect, DependencyList, useRef } from 'react';\nconst useComponentDidUpdate = (\n  handler: (...args: any[]) => any,\n  deps: DependencyList,\n) => {\n  const mounted = useRef(false);\n  useEffect(() => {\n    if (mounted.current) {\n      handler?.();\n    } else {\n      mounted.current = true;\n    }\n  }, deps);\n};\n\nexport default useComponentDidUpdate;",
       Et =
-        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d'));\n  return <div>\u68c0\u67e5\u63a7\u5236\u53f0</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('\u5f53\u524d\u7684\u503c\u662f:' + value + '\u3002');\n  }, [value]);\n  return (\n    <>\n      <p>\n        \u503c\u662f:{value},\u5176\u5b83\u503c\u662f: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          \u589e\u52a0\u503c\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          \u589e\u52a0\u5176\u5b83\u503c\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
       wt =
-        "import React, { SyntheticEvent } from 'react';\nimport useCopyToClipboard from './useCopyToClipboard';\nimport { Space } from 'antd';\nimport Button from '../../guide/Button/Button';\n\nexport interface TextCopyProps {\n  text: string;\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n  const { text = 'Lorem ipsum' } = props;\n  const [copied, copy] = useCopyToClipboard(text);\n  return (\n    <Space>\n      <Button\n        type=\"primary\"\n        ripple\n        onClick={copy as (e: SyntheticEvent) => void}\n      >\n        Click to Copy!\n      </Button>\n      <span>{copied && 'Copied!'}</span>\n    </Space>\n  );\n};\n\nconst Demo = () => <TextCopy text=\"The copy text!\" />;\n\nexport default Demo;",
+        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('Component will unmount'));\n  return <div>Check the console</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
       kt =
-        "import { useState, useCallback, useEffect } from 'react';\n\nconst useCopyToClipboard = (text: string) => {\n  const copyToClipboard = (str: string) => {\n    const el = document.createElement('textarea');\n    el.value = str;\n    el.setAttribute('readonly', '');\n    el.style.position = 'absolute';\n    el.style.left = '-9999px';\n    document.body.appendChild(el);\n    const selected =\n      document.getSelection()!.rangeCount > 0\n        ? document.getSelection()?.getRangeAt(0)\n        : false;\n    el.select();\n    const success = document.execCommand('copy');\n    document.body.removeChild(el);\n    if (selected) {\n      document.getSelection()?.removeAllRanges();\n      document.getSelection()?.addRange(selected);\n    }\n    return success;\n  };\n\n  const [copied, setCopied] = useState(false);\n\n  const copy = useCallback(() => {\n    if (!copied) {\n      setCopied(copyToClipboard(text));\n    }\n  }, [text]);\n\n  useEffect(() => () => setCopied(false), [text]);\n\n  return [copied, copy];\n};\n\nexport default useCopyToClipboard;",
+        "import { useEffect } from 'react';\n\nconst useComponentWillUnmount = (onUnmountHandler) => {\n  useEffect(() => () => onUnmountHandler?.(), []);\n};\n\nexport default useComponentWillUnmount;",
       Ct =
+        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d'));\n  return <div>\u68c0\u67e5\u63a7\u5236\u53f0</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
+      Ot =
+        "import React, { SyntheticEvent } from 'react';\nimport useCopyToClipboard from './useCopyToClipboard';\nimport { Space } from 'antd';\nimport Button from '../../guide/Button/Button';\n\nexport interface TextCopyProps {\n  text: string;\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n  const { text = 'Lorem ipsum' } = props;\n  const [copied, copy] = useCopyToClipboard(text);\n  return (\n    <Space>\n      <Button\n        type=\"primary\"\n        ripple\n        onClick={copy as (e: SyntheticEvent) => void}\n      >\n        Click to Copy!\n      </Button>\n      <span>{copied && 'Copied!'}</span>\n    </Space>\n  );\n};\n\nconst Demo = () => <TextCopy text=\"The copy text!\" />;\n\nexport default Demo;",
+      St =
+        "import { useState, useCallback, useEffect } from 'react';\n\nconst useCopyToClipboard = (text: string) => {\n  const copyToClipboard = (str: string) => {\n    const el = document.createElement('textarea');\n    el.value = str;\n    el.setAttribute('readonly', '');\n    el.style.position = 'absolute';\n    el.style.left = '-9999px';\n    document.body.appendChild(el);\n    const selected =\n      document.getSelection()!.rangeCount > 0\n        ? document.getSelection()?.getRangeAt(0)\n        : false;\n    el.select();\n    const success = document.execCommand('copy');\n    document.body.removeChild(el);\n    if (selected) {\n      document.getSelection()?.removeAllRanges();\n      document.getSelection()?.addRange(selected);\n    }\n    return success;\n  };\n\n  const [copied, setCopied] = useState(false);\n\n  const copy = useCallback(() => {\n    if (!copied) {\n      setCopied(copyToClipboard(text));\n    }\n  }, [text]);\n\n  useEffect(() => () => setCopied(false), [text]);\n\n  return [copied, copy];\n};\n\nexport default useCopyToClipboard;",
+      jt =
         "import React, { SyntheticEvent } from 'react';\nimport useCopyToClipboard from './useCopyToClipboard';\nimport { Space } from 'antd';\nimport Button from '../../guide/Button/Button';\n\nexport interface TextCopyProps {\n  text: string;\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n  const { text = 'Lorem ipsum' } = props;\n  const [copied, copy] = useCopyToClipboard(text);\n  return (\n    <Space>\n      <Button\n        type=\"primary\"\n        ripple\n        onClick={copy as (e: SyntheticEvent) => void}\n      >\n        \u70b9\u51fb\u8fd9\u91cc\u590d\u5236!\n      </Button>\n      <span>{copied && '\u5df2\u590d\u5236!'}</span>\n    </Space>\n  );\n};\n\nconst Demo = () => <TextCopy text=\"\u590d\u5236\u7684\u6587\u672c!\" />;\n\nexport default Demo;",
-      Ot = {
+      Tt = {
         'loadingbutton-demo': {
           component: t('4ZnB').default,
           previewerProps: {
@@ -33030,7 +33068,7 @@
             sources: {
               _: { tsx: Q },
               'Carousel.tsx': { import: './Carousel', content: Z },
-              'Carousel.less': { import: './Carousel.less', content: J },
+              'Carousel.less': { import: './Carousel.less', content: X },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'carousel-demo',
@@ -33040,9 +33078,9 @@
           component: t('WVr0').default,
           previewerProps: {
             sources: {
-              _: { jsx: X },
+              _: { jsx: J },
               'Carousel.jsx': { import: './Carousel', content: ee },
-              'Carousel.less': { import: './Carousel.less', content: J },
+              'Carousel.less': { import: './Carousel.less', content: X },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'jsx-demo-5',
@@ -33054,7 +33092,7 @@
             sources: {
               _: { tsx: ne },
               'Carousel.tsx': { import: './Carousel', content: Z },
-              'Carousel.less': { import: './Carousel.less', content: J },
+              'Carousel.less': { import: './Carousel.less', content: X },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'carousel-demo.zh-cn',
@@ -33066,7 +33104,7 @@
             sources: {
               _: { jsx: te },
               'Carousel.jsx': { import: './Carousel', content: ee },
-              'Carousel.less': { import: './Carousel.less', content: J },
+              'Carousel.less': { import: './Carousel.less', content: X },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'jsx-demo.zh-cn-5',
@@ -33598,7 +33636,7 @@
           component: t('O8zO').default,
           previewerProps: {
             sources: {
-              _: { tsx: Je },
+              _: { tsx: Xe },
               'LimitedWordTextarea.tsx': {
                 import: './LimitedWordTextarea',
                 content: Ye,
@@ -33617,7 +33655,7 @@
           component: t('gg/U').default,
           previewerProps: {
             sources: {
-              _: { jsx: Xe },
+              _: { jsx: Je },
               'LimitedWordTextarea.jsx': {
                 import: './LimitedWordTextarea',
                 content: Ze,
@@ -34032,11 +34070,29 @@
             identifier: 'simpledatatable-demo',
           },
         },
+        'jsx-demo-19': {
+          component: t('Vi0Y').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: Un },
+              'SimpleDataTable.jsx': {
+                import: './SimpleDataTable',
+                content: Hn,
+              },
+              'simpleDataTable.less': {
+                import: './simpleDataTable.less',
+                content: Bn,
+              },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'jsx-demo-19',
+          },
+        },
         'simpledatatable-demo.zh-cn': {
           component: t('LCi9').default,
           previewerProps: {
             sources: {
-              _: { tsx: Un },
+              _: { tsx: Vn },
               'SimpleDataTable.tsx': {
                 import: './SimpleDataTable',
                 content: Fn,
@@ -34050,18 +34106,36 @@
             identifier: 'simpledatatable-demo.zh-cn',
           },
         },
+        'jsx-demo.zh-cn-19': {
+          component: t('aRW3').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: qn },
+              'SimpleDataTable.jsx': {
+                import: './SimpleDataTable',
+                content: Hn,
+              },
+              'simpleDataTable.less': {
+                import: './simpleDataTable.less',
+                content: Bn,
+              },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'jsx-demo.zh-cn-19',
+          },
+        },
         'simplemappeddatatable-demo': {
           component: t('X23V').default,
           previewerProps: {
             sources: {
-              _: { tsx: Hn },
+              _: { tsx: Gn },
               'SimpleMappedDataTable.tsx': {
                 import: './SimpleMappedDataTable',
-                content: Vn,
+                content: $n,
               },
               'SimpleMappedDataTable.less': {
                 import: './SimpleMappedDataTable.less',
-                content: qn,
+                content: Wn,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -34072,14 +34146,14 @@
           component: t('/ncw').default,
           previewerProps: {
             sources: {
-              _: { tsx: Gn },
+              _: { tsx: Kn },
               'SimpleMappedDataTable.tsx': {
                 import: './SimpleMappedDataTable',
-                content: Vn,
+                content: $n,
               },
               'SimpleMappedDataTable.less': {
                 import: './SimpleMappedDataTable.less',
-                content: qn,
+                content: Wn,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -34090,9 +34164,9 @@
           component: t('5VUJ').default,
           previewerProps: {
             sources: {
-              _: { tsx: $n },
-              'Slider.tsx': { import: './Slider', content: Wn },
-              'slider.less': { import: './slider.less', content: Kn },
+              _: { tsx: Yn },
+              'Slider.tsx': { import: './Slider', content: Qn },
+              'slider.less': { import: './slider.less', content: Zn },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: _,
@@ -34104,64 +34178,6 @@
         },
         'useasync-demo': {
           component: t('sqNe').default,
-          previewerProps: {
-            sources: {
-              _: { tsx: Yn },
-              'guide/Button/Button.tsx': { import: './Button', content: D },
-              'button.less': { import: './button.less', content: z },
-              'utils/classnames.ts': {
-                import: '../../utils/classnames',
-                content: _,
-              },
-              'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
-              'guide/Loader/Loader.tsx': {
-                import: '../Loader/Loader',
-                content: F,
-              },
-              'guide/Alert/Alert.tsx': { import: './Alert', content: k },
-              'alert.less': { import: './alert.less', content: C },
-              'useAsync.ts': { import: './useAsync', content: Qn },
-            },
-            dependencies: {
-              react: { version: '16.14.0' },
-              '@emotion/styled': { version: '11.10.0' },
-              '@babel/core': { version: '^7.0.0' },
-              '@emotion/react': { version: '^11.0.0-rc.0' },
-            },
-            identifier: 'useasync-demo',
-          },
-        },
-        'js-demo': {
-          component: t('DVnI').default,
-          previewerProps: {
-            sources: {
-              _: { jsx: Zn },
-              'guide/Button/Button.tsx': { import: './Button', content: D },
-              'button.less': { import: './button.less', content: z },
-              'utils/classnames.ts': {
-                import: '../../utils/classnames',
-                content: _,
-              },
-              'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
-              'guide/Loader/Loader.tsx': {
-                import: '../Loader/Loader',
-                content: F,
-              },
-              'guide/Alert/Alert.tsx': { import: './Alert', content: k },
-              'alert.less': { import: './alert.less', content: C },
-              'useAsync.js': { import: './useAsync', content: Jn },
-            },
-            dependencies: {
-              react: { version: '16.14.0' },
-              '@emotion/styled': { version: '11.10.0' },
-              '@babel/core': { version: '^7.0.0' },
-              '@emotion/react': { version: '^11.0.0-rc.0' },
-            },
-            identifier: 'js-demo',
-          },
-        },
-        'useasync-demo.zh-cn': {
-          component: t('mlG9').default,
           previewerProps: {
             sources: {
               _: { tsx: Xn },
@@ -34178,7 +34194,7 @@
               },
               'guide/Alert/Alert.tsx': { import: './Alert', content: k },
               'alert.less': { import: './alert.less', content: C },
-              'useAsync.ts': { import: './useAsync', content: Qn },
+              'useAsync.ts': { import: './useAsync', content: Jn },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -34186,11 +34202,11 @@
               '@babel/core': { version: '^7.0.0' },
               '@emotion/react': { version: '^11.0.0-rc.0' },
             },
-            identifier: 'useasync-demo.zh-cn',
+            identifier: 'useasync-demo',
           },
         },
-        'js-demo.zh-cn': {
-          component: t('YSJU').default,
+        'js-demo': {
+          component: t('DVnI').default,
           previewerProps: {
             sources: {
               _: { jsx: et },
@@ -34207,7 +34223,65 @@
               },
               'guide/Alert/Alert.tsx': { import: './Alert', content: k },
               'alert.less': { import: './alert.less', content: C },
-              'useAsync.js': { import: './useAsync', content: Jn },
+              'useAsync.js': { import: './useAsync', content: nt },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              '@emotion/styled': { version: '11.10.0' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+            },
+            identifier: 'js-demo',
+          },
+        },
+        'useasync-demo.zh-cn': {
+          component: t('mlG9').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: tt },
+              'guide/Button/Button.tsx': { import: './Button', content: D },
+              'button.less': { import: './button.less', content: z },
+              'utils/classnames.ts': {
+                import: '../../utils/classnames',
+                content: _,
+              },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
+              'guide/Loader/Loader.tsx': {
+                import: '../Loader/Loader',
+                content: F,
+              },
+              'guide/Alert/Alert.tsx': { import: './Alert', content: k },
+              'alert.less': { import: './alert.less', content: C },
+              'useAsync.ts': { import: './useAsync', content: Jn },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              '@emotion/styled': { version: '11.10.0' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+            },
+            identifier: 'useasync-demo.zh-cn',
+          },
+        },
+        'js-demo.zh-cn': {
+          component: t('YSJU').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: rt },
+              'guide/Button/Button.tsx': { import: './Button', content: D },
+              'button.less': { import: './button.less', content: z },
+              'utils/classnames.ts': {
+                import: '../../utils/classnames',
+                content: _,
+              },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
+              'guide/Loader/Loader.tsx': {
+                import: '../Loader/Loader',
+                content: F,
+              },
+              'guide/Alert/Alert.tsx': { import: './Alert', content: k },
+              'alert.less': { import: './alert.less', content: C },
+              'useAsync.js': { import: './useAsync', content: nt },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -34222,7 +34296,7 @@
           component: t('AgAx').default,
           previewerProps: {
             sources: {
-              _: { tsx: nt },
+              _: { tsx: at },
               'guide/Modal/Modal.tsx': { import: './Modal', content: fn },
               'Modal.less': { import: './Modal.less', content: mn },
               'guide/Button/Button.tsx': { import: './Button', content: D },
@@ -34234,7 +34308,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useBodyScrollLock.ts': {
                 import: './useBodyScrollLock',
-                content: tt,
+                content: ot,
               },
             },
             dependencies: {
@@ -34251,7 +34325,7 @@
           component: t('JWXv').default,
           previewerProps: {
             sources: {
-              _: { jsx: rt },
+              _: { jsx: it },
               'guide/Modal/jsx/Modal.jsx': { import: './Modal', content: vn },
               'Modal.less': { import: './Modal.less', content: mn },
               'guide/Button/jsx/Button.jsx': { import: './Button', content: U },
@@ -34263,7 +34337,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useBodyScrollLock.js': {
                 import: './useBodyScrollLock',
-                content: at,
+                content: lt,
               },
             },
             dependencies: {
@@ -34280,7 +34354,7 @@
           component: t('hVMu').default,
           previewerProps: {
             sources: {
-              _: { tsx: ot },
+              _: { tsx: ct },
               'guide/Modal/Modal.tsx': { import: './Modal', content: fn },
               'Modal.less': { import: './Modal.less', content: mn },
               'guide/Button/Button.tsx': { import: './Button', content: D },
@@ -34292,7 +34366,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useBodyScrollLock.ts': {
                 import: './useBodyScrollLock',
-                content: tt,
+                content: ot,
               },
             },
             dependencies: {
@@ -34309,7 +34383,7 @@
           component: t('K/OV').default,
           previewerProps: {
             sources: {
-              _: { jsx: it },
+              _: { jsx: st },
               'guide/Modal/jsx/Modal.jsx': { import: './Modal', content: vn },
               'Modal.less': { import: './Modal.less', content: mn },
               'guide/Button/jsx/Button.jsx': { import: './Button', content: U },
@@ -34321,7 +34395,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useBodyScrollLock.js': {
                 import: './useBodyScrollLock',
-                content: at,
+                content: lt,
               },
             },
             dependencies: {
@@ -34338,8 +34412,8 @@
           component: t('n4d3').default,
           previewerProps: {
             sources: {
-              _: { tsx: lt },
-              'useClickInside.ts': { import: './useClickInside', content: ct },
+              _: { tsx: ut },
+              'useClickInside.ts': { import: './useClickInside', content: dt },
               'guide/Modal/Modal.tsx': { import: './Modal', content: fn },
               'Modal.less': { import: './Modal.less', content: mn },
             },
@@ -34357,8 +34431,8 @@
           component: t('nKlt').default,
           previewerProps: {
             sources: {
-              _: { tsx: st },
-              'useClickInside.ts': { import: './useClickInside', content: ct },
+              _: { tsx: pt },
+              'useClickInside.ts': { import: './useClickInside', content: dt },
               'guide/Modal/Modal.tsx': { import: './Modal', content: fn },
               'Modal.less': { import: './Modal.less', content: mn },
             },
@@ -34376,10 +34450,10 @@
           component: t('6srN').default,
           previewerProps: {
             sources: {
-              _: { tsx: ut },
+              _: { tsx: ft },
               'useClickOutside.ts': {
                 import: './useClickOutside',
-                content: dt,
+                content: mt,
               },
             },
             dependencies: {
@@ -34395,10 +34469,10 @@
           component: t('6aGR').default,
           previewerProps: {
             sources: {
-              _: { tsx: pt },
+              _: { tsx: ht },
               'useClickOutside.ts': {
                 import: './useClickOutside',
-                content: dt,
+                content: mt,
               },
             },
             dependencies: {
@@ -34414,10 +34488,10 @@
           component: t('4BP0').default,
           previewerProps: {
             sources: {
-              _: { tsx: ft },
+              _: { tsx: vt },
               'useComponentDidMount.ts': {
                 import: './useComponentDidMount',
-                content: mt,
+                content: gt,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -34428,10 +34502,10 @@
           component: t('3Mo/').default,
           previewerProps: {
             sources: {
-              _: { tsx: ht },
+              _: { tsx: bt },
               'useComponentDidMount.ts': {
                 import: './useComponentDidMount',
-                content: mt,
+                content: gt,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -34442,7 +34516,7 @@
           component: t('+EnM').default,
           previewerProps: {
             sources: {
-              _: { tsx: vt },
+              _: { tsx: yt },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -34452,7 +34526,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useComponentDidUpdate.ts': {
                 import: './useComponentDidUpdate',
-                content: gt,
+                content: xt,
               },
             },
             dependencies: {
@@ -34470,7 +34544,7 @@
           component: t('pc0r').default,
           previewerProps: {
             sources: {
-              _: { tsx: bt },
+              _: { tsx: Et },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -34480,7 +34554,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useComponentDidUpdate.ts': {
                 import: './useComponentDidUpdate',
-                content: gt,
+                content: xt,
               },
             },
             dependencies: {
@@ -34498,10 +34572,10 @@
           component: t('YT/L').default,
           previewerProps: {
             sources: {
-              _: { tsx: yt },
+              _: { tsx: wt },
               'useComponentWillUnmount.ts': {
                 import: './useComponentWillUnmount',
-                content: xt,
+                content: kt,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -34512,10 +34586,10 @@
           component: t('s6jP').default,
           previewerProps: {
             sources: {
-              _: { tsx: Et },
+              _: { tsx: Ct },
               'useComponentWillUnmount.ts': {
                 import: './useComponentWillUnmount',
-                content: xt,
+                content: kt,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -34526,10 +34600,10 @@
           component: t('6Hiq').default,
           previewerProps: {
             sources: {
-              _: { tsx: wt },
+              _: { tsx: Ot },
               'useCopyToClipboard.ts': {
                 import: './useCopyToClipboard',
-                content: kt,
+                content: St,
               },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
@@ -34554,10 +34628,10 @@
           component: t('NfPr').default,
           previewerProps: {
             sources: {
-              _: { tsx: Ct },
+              _: { tsx: jt },
               'useCopyToClipboard.ts': {
                 import: './useCopyToClipboard',
-                content: kt,
+                content: St,
               },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
@@ -34579,13 +34653,13 @@
           },
         },
       },
-      St = t('Zs1V'),
-      jt = t('BI2/'),
-      Tt = t.n(jt);
+      It = t('Zs1V'),
+      Nt = t('BI2/'),
+      Pt = t.n(Nt);
     n['default'] = (e) =>
       o.a.createElement(
-        Tt.a,
-        Object(r['a'])({}, e, { config: i, demos: Ot, apis: St }),
+        Pt.a,
+        Object(r['a'])({}, e, { config: i, demos: Tt, apis: It }),
       );
   },
   Odut: function (e, n, t) {
@@ -35322,15 +35396,15 @@
           Y = K[0],
           Q = K[1],
           Z = u['useContext'](p['b']),
-          J = Z.getPrefixCls,
-          X = Z.autoInsertSpaceInButton,
+          X = Z.getPrefixCls,
+          J = Z.autoInsertSpaceInButton,
           ee = Z.direction,
           ne = n || u['createRef'](),
           te = function () {
             return 1 === u['Children'].count(O) && !S && !R(v);
           },
           re = function () {
-            if (ne && ne.current && !1 !== X) {
+            if (ne && ne.current && !1 !== J) {
               var e = ne.current.textContent;
               te() && N(e) ? Y || Q(!0) : Y && Q(!1);
             }
@@ -35360,8 +35434,8 @@
             var t = e.onClick;
             G || U ? n.preventDefault() : null === t || void 0 === t || t(n);
           },
-          ie = J('btn', d),
-          le = !1 !== X,
+          ie = X('btn', d),
+          le = !1 !== J,
           ce = { large: 'lg', small: 'sm', middle: void 0 },
           se = H || w || F,
           ue = (se && ce[se]) || '',
@@ -39534,6 +39608,52 @@
       Function('r', 'regeneratorRuntime = r')(r);
     }
   },
+  Vi0Y: function (e, n, t) {
+    'use strict';
+    t.r(n);
+    var r = t('q1tI'),
+      a = t.n(r),
+      o = t('c+q9'),
+      i = () => {
+        var e = [
+            {
+              key: '1',
+              name: 'Tiger Hu',
+              age: 32,
+              address: 'No. 1, Hudi Park, Xihu District',
+            },
+            {
+              key: '2',
+              name: 'Hu Yanzu',
+              age: 42,
+              address: 'No. 1, Hudi Park, Xihu District',
+            },
+            {
+              key: '3',
+              name: 'Hu Yanzu',
+              age: 42,
+              address: 'No. 1, Hudi Park, Xihu District',
+            },
+            {
+              key: '4',
+              name: 'Hu Yanzu',
+              age: 42,
+              address: 'No. 1, Hudi Park, Xihu District',
+            },
+          ],
+          n = [
+            { key: 'name', dataIndex: 'name', title: 'name' },
+            { key: 'age', dataIndex: 'age', title: 'age' },
+            { key: 'address', dataIndex: 'address', title: 'address' },
+          ];
+        return a.a.createElement(o['a'], {
+          data: e,
+          columns: n,
+          isBordered: !0,
+        });
+      };
+    n['default'] = i;
+  },
   Vj4t: function (e, n, t) {
     'use strict';
     t.r(n);
@@ -42617,9 +42737,9 @@
       }
       var h = k();
       function v(e) {
-        Object(r['a'])(J, e),
-          (J.length = n.length),
-          h.notifyListeners(J.location, J.action);
+        Object(r['a'])(X, e),
+          (X.length = n.length),
+          h.notifyListeners(X.location, X.action);
       }
       var y = !1,
         w = null;
@@ -42636,7 +42756,7 @@
         if (e !== n) F(n);
         else {
           var t = p(),
-            r = J.location;
+            r = X.location;
           if (!y && S(r, t)) return;
           if (w === x(t)) return;
           (w = null), I(t);
@@ -42652,7 +42772,7 @@
         }
       }
       function N(e) {
-        var n = J.location,
+        var n = X.location,
           t = B.lastIndexOf(x(n));
         -1 === t && (t = 0);
         var r = B.lastIndexOf(x(e));
@@ -42675,7 +42795,7 @@
       }
       function H(e, n) {
         var t = 'PUSH',
-          r = E(e, void 0, void 0, J.location);
+          r = E(e, void 0, void 0, X.location);
         h.confirmTransitionTo(r, t, o, function (e) {
           if (e) {
             var n = x(r),
@@ -42683,7 +42803,7 @@
               o = z() !== a;
             if (o) {
               (w = n), _(a);
-              var i = B.lastIndexOf(x(J.location)),
+              var i = B.lastIndexOf(x(X.location)),
                 l = B.slice(0, i + 1);
               l.push(n), (B = l), v({ action: t, location: r });
             } else v();
@@ -42692,14 +42812,14 @@
       }
       function V(e, n) {
         var t = 'REPLACE',
-          r = E(e, void 0, void 0, J.location);
+          r = E(e, void 0, void 0, X.location);
         h.confirmTransitionTo(r, t, o, function (e) {
           if (e) {
             var n = x(r),
               a = u(c + n),
               o = z() !== a;
             o && ((w = n), F(a));
-            var i = B.indexOf(x(J.location));
+            var i = B.indexOf(x(X.location));
             -1 !== i && (B[i] = n), v({ action: t, location: r });
           }
         });
@@ -42740,7 +42860,7 @@
           }
         );
       }
-      var J = {
+      var X = {
         length: n.length,
         action: 'POP',
         location: L,
@@ -42753,7 +42873,7 @@
         block: Q,
         listen: Z,
       };
-      return J;
+      return X;
     }
     function U(e, n, t) {
       return Math.min(Math.max(e, n), t);
@@ -43667,9 +43787,9 @@
         Y = _(0),
         Q = Object(o['a'])(Y, 2),
         Z = Q[0],
-        J = Q[1],
-        X = _(0),
-        ee = Object(o['a'])(X, 2),
+        X = Q[1],
+        J = _(0),
+        ee = Object(o['a'])(J, 2),
         ne = ee[0],
         te = ee[1],
         re = _(0),
@@ -43755,7 +43875,7 @@
         });
       }
       function Le(e, n) {
-        te(n), J(ne);
+        te(n), X(ne);
       }
       function Ae(e, n) {
         ie(n);
@@ -44310,6 +44430,48 @@
         );
       };
     n['default'] = s;
+  },
+  aRW3: function (e, n, t) {
+    'use strict';
+    t.r(n);
+    var r = t('q1tI'),
+      a = t.n(r),
+      o = t('c+q9'),
+      i = () => {
+        var e = [
+            {
+              key: '1',
+              name: '\u80e1\u5f66\u658c',
+              age: 32,
+              address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',
+            },
+            {
+              key: '2',
+              name: '\u80e1\u5f66\u7956',
+              age: 42,
+              address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',
+            },
+            {
+              key: '3',
+              name: '\u80e1\u5f66\u7956',
+              age: 42,
+              address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',
+            },
+            {
+              key: '4',
+              name: '\u80e1\u5f66\u7956',
+              age: 42,
+              address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',
+            },
+          ],
+          n = [
+            { key: 'name', dataIndex: 'name', title: '\u59d3\u540d' },
+            { key: 'age', dataIndex: 'age', title: '\u5e74\u9f84' },
+            { key: 'address', dataIndex: 'address', title: '\u5730\u5740' },
+          ];
+        return a.a.createElement(o['a'], { data: e, columns: n });
+      };
+    n['default'] = i;
   },
   aUwe: function (e, n, t) {
     'use strict';
@@ -45452,6 +45614,61 @@
     })(Function.prototype, 'toString', function () {
       return ('function' == typeof this && s(this).source) || l(this);
     });
+  },
+  'c+q9': function (e, n, t) {
+    'use strict';
+    var r = t('q1tI'),
+      a = t.n(r),
+      o =
+        (t('BY48'),
+        (e) => {
+          var n = e.columns,
+            t = e.data,
+            r = e.isBordered;
+          return a.a.createElement(
+            'table',
+            { className: 'sim-table'.concat(r ? ' is-bordered' : '') },
+            a.a.createElement(
+              'thead',
+              { className: 'sim-table-header' },
+              a.a.createElement(
+                'tr',
+                null,
+                null === n || void 0 === n
+                  ? void 0
+                  : n.map((e) =>
+                      a.a.createElement(
+                        'th',
+                        { className: 'sim-table-cell', key: e.key },
+                        e.title,
+                      ),
+                    ),
+              ),
+            ),
+            a.a.createElement(
+              'tbody',
+              { className: 'sim-table-body' },
+              null === t || void 0 === t
+                ? void 0
+                : t.map((e) =>
+                    a.a.createElement(
+                      'tr',
+                      { key: e.key, className: 'sim-table-row' },
+                      null === n || void 0 === n
+                        ? void 0
+                        : n.map((n) =>
+                            a.a.createElement(
+                              'td',
+                              { className: 'sim-table-cell', key: n.key },
+                              e[n.dataIndex],
+                            ),
+                          ),
+                    ),
+                  ),
+            ),
+          );
+        });
+    n['a'] = o;
   },
   c0Mj: function (e, n) {
     var t = Object.prototype,
@@ -48411,9 +48628,9 @@
       return U(e, P);
     }
     function Z(e) {
-      return q(J('', null, null, null, [''], (e = V(e)), 0, [0], e));
+      return q(X('', null, null, null, [''], (e = V(e)), 0, [0], e));
     }
-    function J(e, n, t, r, a, o, i, l, c) {
+    function X(e, n, t, r, a, o, i, l, c) {
       var s = 0,
         u = 0,
         d = i,
@@ -48483,20 +48700,20 @@
                 T += ';';
               default:
                 if (
-                  (S((j = X(T, n, t, s, u, a, l, w, (k = []), (O = []), d)), o),
+                  (S((j = J(T, n, t, s, u, a, l, w, (k = []), (O = []), d)), o),
                   123 === y)
                 )
-                  if (0 === u) J(T, n, j, j, k, o, d, l, O);
+                  if (0 === u) X(T, n, j, j, k, o, d, l, O);
                   else
                     switch (p) {
                       case 100:
                       case 109:
                       case 115:
-                        J(
+                        X(
                           e,
                           j,
                           j,
-                          r && S(X(e, j, j, 0, 0, a, l, w, a, (k = []), d), O),
+                          r && S(J(e, j, j, 0, 0, a, l, w, a, (k = []), d), O),
                           a,
                           O,
                           d,
@@ -48505,7 +48722,7 @@
                         );
                         break;
                       default:
-                        J(T, j, j, j, [''], O, 0, l, O);
+                        X(T, j, j, j, [''], O, 0, l, O);
                     }
             }
             (s = u = f = 0), (v = b = 1), (w = T = ''), (d = i);
@@ -48535,7 +48752,7 @@
         }
       return o;
     }
-    function X(e, n, t, r, a, o, i, l, c, s, d) {
+    function J(e, n, t, r, a, o, i, l, c, s, d) {
       for (
         var p = a - 1, f = 0 === a ? o : [''], h = O(f), v = 0, g = 0, y = 0;
         v < r;
@@ -49314,7 +49531,8 @@
       c = t('SQsl'),
       s = a.a.memo((e) => {
         var n = e.demos,
-          t = n['simpledatatable-demo'].component;
+          t = n['simpledatatable-demo'].component,
+          r = n['jsx-demo-19'].component;
         return a.a.createElement(
           a.a.Fragment,
           null,
@@ -49375,9 +49593,59 @@
                   ' element with an appropriate key.',
                 ),
               ),
+              a.a.createElement(
+                'h4',
+                { id: 'simpledatatableless' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#simpledatatableless',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'simpleDataTable.less',
+              ),
+              a.a.createElement(l['a'], {
+                code: '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
+                lang: 'less',
+              }),
+              a.a.createElement(
+                'h4',
+                { id: 'simpledatatabletsx' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#simpledatatabletsx',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'SimpleDataTable.tsx',
+              ),
               a.a.createElement(l['a'], {
                 code: 'import React from \'react\';\nimport \'./simpleDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleDataTable = (props: Partial<SimpleDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {data?.map((item) => (\n          <tr key={item.key} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleDataTable;',
                 lang: 'tsx',
+              }),
+              a.a.createElement(
+                'h4',
+                { id: 'simpledatatablejsx' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#simpledatatablejsx',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'SimpleDataTable.jsx',
+              ),
+              a.a.createElement(l['a'], {
+                code: 'import React from \'react\';\nimport \'../simpleDataTable.less\';\n\nconst SimpleDataTable = (props) => {\n  const { columns, data, isBordered } = props;\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {data?.map((item) => (\n          <tr key={item.key} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleDataTable;',
+                lang: 'jsx',
               }),
               a.a.createElement('p', null, 'Demo:'),
             ),
@@ -49385,6 +49653,16 @@
               i['default'],
               n['simpledatatable-demo'].previewerProps,
               a.a.createElement(t, null),
+            ),
+            a.a.createElement(
+              'div',
+              { className: 'markdown' },
+              a.a.createElement('p', null, 'jsx Demo:'),
+            ),
+            a.a.createElement(
+              i['default'],
+              n['jsx-demo-19'].previewerProps,
+              a.a.createElement(r, null),
             ),
           ),
         );
@@ -52597,9 +52875,9 @@
             };
           },
           Z = f || A,
-          J = T(u, K, v, g),
-          X = J.active,
-          ee = Object(c['a'])(J, $),
+          X = T(u, K, v, g),
+          J = X.active,
+          ee = Object(c['a'])(X, $),
           ne = M.includes(u),
           te = R(Y.length),
           re = function (e) {
@@ -52641,7 +52919,7 @@
               className: d()(
                 B,
                 ((n = {}),
-                Object(a['a'])(n, ''.concat(B, '-active'), X),
+                Object(a['a'])(n, ''.concat(B, '-active'), J),
                 Object(a['a'])(n, ''.concat(B, '-selected'), ne),
                 Object(a['a'])(n, ''.concat(B, '-disabled'), K),
                 n),
@@ -52686,10 +52964,10 @@
     }
     var Q = Y,
       Z = t('erl9'),
-      J = t('tmk9'),
-      X = ['label', 'children', 'key', 'type'];
+      X = t('tmk9'),
+      J = ['label', 'children', 'key', 'type'];
     function ee(e, n) {
-      return Object(J['a'])(e).map(function (e, t) {
+      return Object(X['a'])(e).map(function (e, t) {
         if (s['isValidElement'](e)) {
           var r,
             a,
@@ -52721,7 +52999,7 @@
               a = e.children,
               o = e.key,
               i = e.type,
-              l = Object(c['a'])(e, X),
+              l = Object(c['a'])(e, J),
               u = null !== o && void 0 !== o ? o : 'tmp-'.concat(n);
             return a || 'group' === i
               ? 'group' === i
@@ -53014,8 +53292,8 @@
           Y = M.onItemClick,
           Q = M.onOpenChange,
           Z = M.onActive,
-          J = s['useContext'](V),
-          X = J._internalRenderSubMenuItem,
+          X = s['useContext'](V),
+          J = X._internalRenderSubMenuItem,
           ee = s['useContext'](_),
           ne = ee.isSubPathKey,
           te = z(),
@@ -53147,8 +53425,8 @@
           !q && s['createElement'](ge, { id: Ae, open: pe, keyPath: te }, h),
         );
         return (
-          X &&
-            (_e = X(_e, e, {
+          J &&
+            (_e = J(_e, e, {
               selected: fe,
               active: Te,
               open: pe,
@@ -53559,8 +53837,8 @@
           K = void 0 === W || W,
           Y = e.multiple,
           Z = void 0 !== Y && Y,
-          J = e.defaultSelectedKeys,
-          X = e.selectedKeys,
+          X = e.defaultSelectedKeys,
+          J = e.selectedKeys,
           ee = e.onSelect,
           ne = e.onDeselect,
           ae = e.inlineIndent,
@@ -53624,10 +53902,10 @@
           Ze = function (e) {
             Qe(e), null === be || void 0 === be || be(e);
           },
-          Je = s['useState'](Ye),
-          Xe = Object(l['a'])(Je, 2),
-          en = Xe[0],
-          nn = Xe[1],
+          Xe = s['useState'](Ye),
+          Je = Object(l['a'])(Xe, 2),
+          en = Je[0],
+          nn = Je[1],
           tn = 'inline' === Ae,
           rn = s['useRef'](!1);
         s['useEffect'](
@@ -53726,8 +54004,8 @@
             },
           };
         });
-        var En = Object(m['a'])(J || [], {
-            value: X,
+        var En = Object(m['a'])(X || [], {
+            value: J,
             postState: function (e) {
               return Array.isArray(e)
                 ? e
@@ -53909,8 +54187,8 @@
       }),
       Qe = Ye,
       Ze = ['className', 'title', 'eventKey', 'children'],
-      Je = ['children'],
-      Xe = function (e) {
+      Xe = ['children'],
+      Je = function (e) {
         var n = e.className,
           t = e.title,
           a = (e.eventKey, e.children),
@@ -53939,11 +54217,11 @@
       };
     function en(e) {
       var n = e.children,
-        t = Object(c['a'])(e, Je),
+        t = Object(c['a'])(e, Xe),
         r = z(t.eventKey),
         a = ee(n, r),
         o = M();
-      return o ? a : s['createElement'](Xe, Object(w['a'])(t, ['warnKey']), a);
+      return o ? a : s['createElement'](Je, Object(w['a'])(t, ['warnKey']), a);
     }
     function nn(e) {
       var n = e.className,
@@ -56656,8 +56934,8 @@
       Y = O.f,
       Q = w.f,
       Z = S.f,
-      J = I('symbols'),
-      X = I('op-symbols'),
+      X = I('symbols'),
+      J = I('op-symbols'),
       ee = I('string-to-symbol-registry'),
       ne = I('symbol-to-string-registry'),
       te = I('wks'),
@@ -56683,7 +56961,7 @@
             }
           : Y,
       ie = function (e, n) {
-        var t = (J[e] = y($[U]));
+        var t = (X[e] = y($[U]));
         return (
           V(t, { type: B, tag: e, description: n }), l || (t.description = n), t
         );
@@ -56696,11 +56974,11 @@
             return Object(e) instanceof $;
           },
       ce = function (e, n, t) {
-        e === G && ce(X, n, t), m(e);
+        e === G && ce(J, n, t), m(e);
         var r = g(n, !0);
         return (
           m(t),
-          d(J, r)
+          d(X, r)
             ? (t.enumerable
                 ? (d(e, F) && e[F][r] && (e[F][r] = !1),
                   (t = y(t, { enumerable: b(0, !1) })))
@@ -56727,17 +57005,17 @@
         var n = g(e, !0),
           t = Z.call(this, n);
         return (
-          !(this === G && d(J, n) && !d(X, n)) &&
-          (!(t || !d(this, n) || !d(J, n) || (d(this, F) && this[F][n])) || t)
+          !(this === G && d(X, n) && !d(J, n)) &&
+          (!(t || !d(this, n) || !d(X, n) || (d(this, F) && this[F][n])) || t)
         );
       },
       pe = function (e, n) {
         var t = v(e),
           r = g(n, !0);
-        if (t !== G || !d(J, r) || d(X, r)) {
+        if (t !== G || !d(X, r) || d(J, r)) {
           var a = K(t, r);
           return (
-            !a || !d(J, r) || (d(t, F) && t[F][r]) || (a.enumerable = !0), a
+            !a || !d(X, r) || (d(t, F) && t[F][r]) || (a.enumerable = !0), a
           );
         }
       },
@@ -56746,18 +57024,18 @@
           t = [];
         return (
           _(n, function (e) {
-            d(J, e) || d(P, e) || t.push(e);
+            d(X, e) || d(P, e) || t.push(e);
           }),
           t
         );
       },
       me = function (e) {
         var n = e === G,
-          t = Q(n ? X : v(e)),
+          t = Q(n ? J : v(e)),
           r = [];
         return (
           _(t, function (e) {
-            !d(J, e) || (n && !d(G, e)) || r.push(J[e]);
+            !d(X, e) || (n && !d(G, e)) || r.push(X[e]);
           }),
           r
         );
@@ -56772,7 +57050,7 @@
                 : void 0,
             n = R(e),
             t = function (e) {
-              this === G && t.call(X, e),
+              this === G && t.call(J, e),
                 d(this, F) && d(this[F], n) && (this[F][n] = !1),
                 oe(this, n, b(1, e));
             };
@@ -58836,7 +59114,7 @@
             i = Array.isArray(n) ? 'array' : typeof n;
           z.required(e, n, r, o, a, i), t(o);
         },
-        J = function (e, n, t, r, a) {
+        X = function (e, n, t, r, a) {
           var o = e.type,
             i = [],
             l = e.required || (!e.required && r.hasOwnProperty(e.field));
@@ -58846,7 +59124,7 @@
           }
           t(i);
         },
-        X = function (e, n, t, r, a) {
+        J = function (e, n, t, r, a) {
           var o = [],
             i = e.required || (!e.required && r.hasOwnProperty(e.field));
           if (i) {
@@ -58868,11 +59146,11 @@
           enum: K,
           pattern: Y,
           date: Q,
-          url: J,
-          hex: J,
-          email: J,
+          url: X,
+          hex: X,
+          email: X,
           required: Z,
-          any: X,
+          any: J,
         };
       function ne() {
         return {
@@ -62215,8 +62493,8 @@
     }
     var Q,
       Z,
-      J,
-      X = 3,
+      X,
+      J = 3,
       ee = 1,
       ne = '',
       te = 'move-up',
@@ -62227,12 +62505,12 @@
     }
     function ie(e) {
       void 0 !== e.top && ((Q = e.top), (G = null)),
-        void 0 !== e.duration && (X = e.duration),
+        void 0 !== e.duration && (J = e.duration),
         void 0 !== e.prefixCls && (ne = e.prefixCls),
         void 0 !== e.getContainer && ((Z = e.getContainer), (G = null)),
         void 0 !== e.transitionName &&
           ((te = e.transitionName), (G = null), (re = !0)),
-        void 0 !== e.maxCount && ((J = e.maxCount), (G = null)),
+        void 0 !== e.maxCount && ((X = e.maxCount), (G = null)),
         void 0 !== e.rtl && (ae = e.rtl);
     }
     function le(e, n) {
@@ -62253,7 +62531,7 @@
           transitionName: re ? te : ''.concat(s, '-').concat(te),
           style: { top: Q },
           getContainer: Z || r,
-          maxCount: J,
+          maxCount: X,
         };
         W.newInstance(d, function (e) {
           G
@@ -62283,7 +62561,7 @@
       se = Object.keys(ce);
     function ue(e, n, t) {
       var r,
-        a = void 0 !== e.duration ? e.duration : X,
+        a = void 0 !== e.duration ? e.duration : J,
         o = ce[e.type],
         i = I()(
           ''.concat(n, '-custom-content'),
@@ -63068,8 +63346,8 @@
       Object($e['a'])() && Object(We['a'])(t, ''.concat(Ke, '-dynamic-theme'));
     }
     var Ze,
-      Je,
-      Xe = t('wo7N'),
+      Xe,
+      Je = t('wo7N'),
       en = t('plZ8'),
       nn = [
         'getTargetContainer',
@@ -63086,13 +63364,13 @@
       return Ze || tn;
     }
     function on() {
-      return Je || rn;
+      return Xe || rn;
     }
     var ln = function (e) {
         var n = e.prefixCls,
           t = e.iconPrefixCls,
           r = e.theme;
-        void 0 !== n && (Ze = n), void 0 !== t && (Je = t), r && Qe(an(), r);
+        void 0 !== n && (Ze = n), void 0 !== t && (Xe = t), r && Qe(an(), r);
       },
       cn = function () {
         return {
@@ -63192,7 +63470,7 @@
           (k || s) &&
             (I = l['createElement'](a['a'].Provider, { value: T }, I)),
           f && (I = l['createElement'](en['a'], { size: f }, I)),
-          void 0 !== C && (I = l['createElement'](Xe['a'], { disabled: C }, I)),
+          void 0 !== C && (I = l['createElement'](Je['a'], { disabled: C }, I)),
           l['createElement'](K['b'].Provider, { value: j }, I)
         );
       },
@@ -66129,12 +66407,12 @@
         null === O || void 0 === O || O(e);
       }
       var Z = Object(o['useRef'])(!1),
-        J = Object(o['useRef'])(),
-        X = function () {
-          clearTimeout(J.current), (Z.current = !0);
+        X = Object(o['useRef'])(),
+        J = function () {
+          clearTimeout(X.current), (Z.current = !0);
         },
         ee = function () {
-          J.current = setTimeout(function () {
+          X.current = setTimeout(function () {
             Z.current = !1;
           });
         },
@@ -66157,7 +66435,7 @@
         ),
         Object(o['useEffect'])(function () {
           return function () {
-            clearTimeout(J.current);
+            clearTimeout(X.current);
           };
         }, []),
         Object(o['useEffect'])(
@@ -66202,7 +66480,7 @@
             o['createElement'](
               j,
               Object(r['a'])({}, e, {
-                onMouseDown: X,
+                onMouseDown: J,
                 onMouseUp: ee,
                 ref: V,
                 closable: P,
@@ -66332,7 +66610,8 @@
       c = t('SQsl'),
       s = a.a.memo((e) => {
         var n = e.demos,
-          t = n['simpledatatable-demo.zh-cn'].component;
+          t = n['simpledatatable-demo.zh-cn'].component,
+          r = n['jsx-demo.zh-cn-19'].component;
         return a.a.createElement(
           a.a.Fragment,
           null,
@@ -66405,16 +66684,76 @@
                   ' \u5143\u7d20\u3002',
                 ),
               ),
+              a.a.createElement(
+                'h4',
+                { id: 'simpledatatableless' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#simpledatatableless',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'simpleDataTable.less',
+              ),
+              a.a.createElement(l['a'], {
+                code: '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
+                lang: 'less',
+              }),
+              a.a.createElement(
+                'h4',
+                { id: 'simpledatatabletsx' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#simpledatatabletsx',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'SimpleDataTable.tsx',
+              ),
               a.a.createElement(l['a'], {
                 code: 'import React from \'react\';\nimport \'./simpleDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleDataTable = (props: Partial<SimpleDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {data?.map((item) => (\n          <tr key={item.key} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleDataTable;',
                 lang: 'tsx',
               }),
-              a.a.createElement('p', null, 'Demo:'),
+              a.a.createElement(
+                'h4',
+                { id: 'simpledatatablejsx' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#simpledatatablejsx',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'SimpleDataTable.jsx',
+              ),
+              a.a.createElement(l['a'], {
+                code: 'import React from \'react\';\nimport \'../simpleDataTable.less\';\n\nconst SimpleDataTable = (props) => {\n  const { columns, data, isBordered } = props;\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {data?.map((item) => (\n          <tr key={item.key} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleDataTable;',
+                lang: 'jsx',
+              }),
+              a.a.createElement('p', null, '\u793a\u4f8b:'),
             ),
             a.a.createElement(
               i['default'],
               n['simpledatatable-demo.zh-cn'].previewerProps,
               a.a.createElement(t, null),
+            ),
+            a.a.createElement(
+              'div',
+              { className: 'markdown' },
+              a.a.createElement('p', null, 'jsx \u793a\u4f8b:'),
+            ),
+            a.a.createElement(
+              i['default'],
+              n['jsx-demo.zh-cn-19'].previewerProps,
+              a.a.createElement(r, null),
             ),
           ),
         );
@@ -68149,24 +68488,24 @@
       ['rowSpan', 'start'].forEach(function (e) {
         Z[e] = new Q(e, 5, !1, e.toLowerCase(), null, !1);
       });
-    var J = /[\-:]([a-z])/g;
-    function X(e) {
+    var X = /[\-:]([a-z])/g;
+    function J(e) {
       return e[1].toUpperCase();
     }
     'accent-height alignment-baseline arabic-form baseline-shift cap-height clip-path clip-rule color-interpolation color-interpolation-filters color-profile color-rendering dominant-baseline enable-background fill-opacity fill-rule flood-color flood-opacity font-family font-size font-size-adjust font-stretch font-style font-variant font-weight glyph-name glyph-orientation-horizontal glyph-orientation-vertical horiz-adv-x horiz-origin-x image-rendering letter-spacing lighting-color marker-end marker-mid marker-start overline-position overline-thickness paint-order panose-1 pointer-events rendering-intent shape-rendering stop-color stop-opacity strikethrough-position strikethrough-thickness stroke-dasharray stroke-dashoffset stroke-linecap stroke-linejoin stroke-miterlimit stroke-opacity stroke-width text-anchor text-decoration text-rendering underline-position underline-thickness unicode-bidi unicode-range units-per-em v-alphabetic v-hanging v-ideographic v-mathematical vector-effect vert-adv-y vert-origin-x vert-origin-y word-spacing writing-mode xmlns:xlink x-height'
       .split(' ')
       .forEach(function (e) {
-        var n = e.replace(J, X);
+        var n = e.replace(X, J);
         Z[n] = new Q(n, 1, !1, e, null, !1);
       }),
       'xlink:actuate xlink:arcrole xlink:role xlink:show xlink:title xlink:type'
         .split(' ')
         .forEach(function (e) {
-          var n = e.replace(J, X);
+          var n = e.replace(X, J);
           Z[n] = new Q(n, 1, !1, e, 'http://www.w3.org/1999/xlink', !1);
         }),
       ['xml:base', 'xml:lang', 'xml:space'].forEach(function (e) {
-        var n = e.replace(J, X);
+        var n = e.replace(X, J);
         Z[n] = new Q(n, 1, !1, e, 'http://www.w3.org/XML/1998/namespace', !1);
       }),
       ['tabIndex', 'crossOrigin'].forEach(function (e) {
@@ -68624,8 +68963,8 @@
         delete Ke.animationiteration.animation,
         delete Ke.animationstart.animation),
       'TransitionEvent' in window || delete Ke.transitionend.transition);
-    var Je = Ze('animationend'),
-      Xe = Ze('animationiteration'),
+    var Xe = Ze('animationend'),
+      Je = Ze('animationiteration'),
       en = Ze('animationstart'),
       nn = Ze('transitionend'),
       tn =
@@ -69059,9 +69398,9 @@
       Qn = [
         'abort',
         'abort',
-        Je,
-        'animationEnd',
         Xe,
+        'animationEnd',
+        Je,
         'animationIteration',
         en,
         'animationStart',
@@ -69137,15 +69476,15 @@
       ),
       Zn(Qn, 2);
     for (
-      var Jn =
+      var Xn =
           'change selectionchange textInput compositionstart compositionend compositionupdate'.split(
             ' ',
           ),
-        Xn = 0;
-      Xn < Jn.length;
-      Xn++
+        Jn = 0;
+      Jn < Xn.length;
+      Jn++
     )
-      Yn.set(Jn[Xn], 0);
+      Yn.set(Xn[Jn], 0);
     var et = o.unstable_UserBlockingPriority,
       nt = o.unstable_runWithPriority,
       tt = !0;
@@ -69584,16 +69923,16 @@
     function Zt(e) {
       pn(e, Kt);
     }
-    var Jt = null,
-      Xt = null,
+    var Xt = null,
+      Jt = null,
       er = null;
     function nr() {
       if (er) return er;
       var e,
         n,
-        t = Xt,
+        t = Jt,
         r = t.length,
-        a = 'value' in Jt ? Jt.value : Jt.textContent,
+        a = 'value' in Xt ? Xt.value : Xt.textContent,
         o = a.length;
       for (e = 0; e < r && t[e] === a[e]; e++);
       var i = r - e;
@@ -69787,7 +70126,7 @@
     function wr(e, n) {
       if (xr)
         return 'compositionend' === e || (!dr && br(e, n))
-          ? ((e = nr()), (er = Xt = Jt = null), (xr = !1), e)
+          ? ((e = nr()), (er = Jt = Xt = null), (xr = !1), e)
           : null;
       switch (e) {
         case 'paste':
@@ -69838,8 +70177,8 @@
                   'ko' !== t.locale &&
                   (xr || o !== vr.compositionStart
                     ? o === vr.compositionEnd && xr && (a = nr())
-                    : ((Jt = r),
-                      (Xt = 'value' in Jt ? Jt.value : Jt.textContent),
+                    : ((Xt = r),
+                      (Jt = 'value' in Xt ? Xt.value : Xt.textContent),
                       (xr = !0))),
                 (o = cr.getPooled(o, n, t, r)),
                 a ? (o.data = a) : ((a = yr(t)), null !== a && (o.data = a)),
@@ -70058,7 +70397,7 @@
           dependencies: ['pointerout', 'pointerover'],
         },
       },
-      Jr = {
+      Xr = {
         eventTypes: Zr,
         extractEvents: function (e, n, t, r, a) {
           var o = 'mouseover' === e || 'pointerover' === e,
@@ -70138,10 +70477,10 @@
           return 0 === (64 & a) ? [s] : [s, t];
         },
       };
-    function Xr(e, n) {
+    function Jr(e, n) {
       return (e === n && (0 !== e || 1 / e === 1 / n)) || (e !== e && n !== n);
     }
-    var ea = 'function' === typeof Object.is ? Object.is : Xr,
+    var ea = 'function' === typeof Object.is ? Object.is : Jr,
       na = Object.prototype.hasOwnProperty;
     function ta(e, n) {
       if (ea(e, n)) return !0;
@@ -70439,8 +70778,8 @@
             case 'touchstart':
               e = ya;
               break;
-            case Je:
             case Xe:
+            case Je:
             case en:
               e = da;
               break;
@@ -70487,7 +70826,7 @@
       (g = Vt),
       j({
         SimpleEventPlugin: wa,
-        EnterLeaveEventPlugin: Jr,
+        EnterLeaveEventPlugin: Xr,
         ChangeEventPlugin: Br,
         SelectEventPlugin: ua,
         BeforeInputEventPlugin: kr,
@@ -70575,8 +70914,8 @@
       Ya = o.unstable_IdlePriority,
       Qa = {},
       Za = o.unstable_shouldYield,
-      Ja = void 0 !== Ha ? Ha : function () {},
-      Xa = null,
+      Xa = void 0 !== Ha ? Ha : function () {},
+      Ja = null,
       eo = null,
       no = !1,
       to = Va(),
@@ -70625,7 +70964,7 @@
       return (e = oo(e)), Ba(e, n, t);
     }
     function co(e) {
-      return null === Xa ? ((Xa = [e]), (eo = Ba(Ga, uo))) : Xa.push(e), Qa;
+      return null === Ja ? ((Ja = [e]), (eo = Ba(Ga, uo))) : Ja.push(e), Qa;
     }
     function so() {
       if (null !== eo) {
@@ -70635,11 +70974,11 @@
       uo();
     }
     function uo() {
-      if (!no && null !== Xa) {
+      if (!no && null !== Ja) {
         no = !0;
         var e = 0;
         try {
-          var n = Xa;
+          var n = Ja;
           io(99, function () {
             for (; e < n.length; e++) {
               var t = n[e];
@@ -70648,9 +70987,9 @@
               } while (null !== t);
             }
           }),
-            (Xa = null);
+            (Ja = null);
         } catch (t) {
-          throw (null !== Xa && (Xa = Xa.slice(e + 1)), Ba(Ga, so), t);
+          throw (null !== Ja && (Ja = Ja.slice(e + 1)), Ba(Ga, so), t);
         } finally {
           no = !1;
         }
@@ -71379,13 +71718,13 @@
     function Zo() {
       Sa($o), Sa(Wo), Sa(Ko);
     }
-    function Jo(e) {
+    function Xo(e) {
       Yo(Ko.current);
       var n = Yo($o.current),
         t = Ve(n, e.type);
       n !== t && (ja(Wo, e), ja($o, t));
     }
-    function Xo(e) {
+    function Jo(e) {
       Wo.current === e && (Sa($o), Sa(Wo));
     }
     var ei = { current: 0 };
@@ -72022,7 +72361,7 @@
             (e.ref = n.ref),
             (e.return = n),
             (n.child = e))
-          : ((n.tag = 15), (n.type = i), Ji(e, n, i, r, a, o));
+          : ((n.tag = 15), (n.type = i), Xi(e, n, i, r, a, o));
       }
       return (
         (i = e.child),
@@ -72039,7 +72378,7 @@
             (n.child = e))
       );
     }
-    function Ji(e, n, t, r, a, o) {
+    function Xi(e, n, t, r, a, o) {
       return null !== e &&
         ta(e.memoizedProps, r) &&
         e.ref === n.ref &&
@@ -72047,7 +72386,7 @@
         ? ((n.expirationTime = e.expirationTime), fl(e, n, o))
         : el(e, n, t, r, o);
     }
-    function Xi(e, n) {
+    function Ji(e, n) {
       var t = n.ref;
       ((null === e && null !== t) || (null !== e && e.ref !== t)) &&
         (n.effectTag |= 128);
@@ -72181,7 +72520,7 @@
       return tl(e, n, t, r, o, a);
     }
     function tl(e, n, t, r, a, o) {
-      Xi(e, n);
+      Ji(e, n);
       var i = 0 !== (64 & n.effectTag);
       if (!r && !i) return a && _a(n, t, !1), fl(e, n, o);
       (r = n.stateNode), (Wi.current = n);
@@ -72463,7 +72802,7 @@
             null
           );
         case 5:
-          Xo(n), (t = Yo(Ko.current));
+          Jo(n), (t = Yo(Ko.current));
           var o = n.type;
           if (null !== e && null != n.stateNode)
             il(e, n, o, r, t), e.ref !== n.ref && (n.effectTag |= 128);
@@ -72697,7 +73036,7 @@
                   0 !== (1 & ei.current)
                     ? tc === $l && (tc = Yl)
                     : ((tc !== $l && tc !== Yl) || (tc = Ql),
-                      0 !== lc && null !== Xl && (ps(Xl, nc), fs(Xl, lc)))),
+                      0 !== lc && null !== Jl && (ps(Jl, nc), fs(Jl, lc)))),
                 (t || r) && (n.effectTag |= 4),
                 null)
           );
@@ -72815,7 +73154,7 @@
             throw Error(i(285));
           return (e.effectTag = (-4097 & n) | 64), e;
         case 5:
-          return Xo(e), null;
+          return Jo(e), null;
         case 13:
           return (
             Sa(ei),
@@ -73095,7 +73434,7 @@
       throw Error(i(163));
     }
     function Sl(e, n, t) {
-      switch (('function' === typeof Xc && Xc(n), n.tag)) {
+      switch (('function' === typeof Jc && Jc(n), n.tag)) {
         case 0:
         case 11:
         case 14:
@@ -73478,8 +73817,8 @@
       Yl = 3,
       Ql = 4,
       Zl = 5,
-      Jl = Hl,
-      Xl = null,
+      Xl = Hl,
+      Jl = null,
       ec = null,
       nc = 0,
       tc = $l,
@@ -73503,7 +73842,7 @@
       xc = null,
       Ec = 0;
     function wc() {
-      return (Jl & (ql | Gl)) !== Hl
+      return (Xl & (ql | Gl)) !== Hl
         ? 1073741821 - ((ro() / 10) | 0)
         : 0 !== Ec
         ? Ec
@@ -73513,7 +73852,7 @@
       if (((n = n.mode), 0 === (2 & n))) return 1073741823;
       var r = ao();
       if (0 === (4 & n)) return 99 === r ? 1073741823 : 1073741822;
-      if ((Jl & ql) !== Hl) return nc;
+      if ((Xl & ql) !== Hl) return nc;
       if (null !== t) e = po(e, 0 | t.timeoutMs || 5e3, 250);
       else
         switch (r) {
@@ -73533,18 +73872,18 @@
           default:
             throw Error(i(326));
         }
-      return null !== Xl && e === nc && --e, e;
+      return null !== Jl && e === nc && --e, e;
     }
     function Cc(e, n) {
       if (50 < yc) throw ((yc = 0), (xc = null), Error(i(185)));
       if (((e = Oc(e, n)), null !== e)) {
         var t = ao();
         1073741823 === n
-          ? (Jl & Vl) !== Hl && (Jl & (ql | Gl)) === Hl
+          ? (Xl & Vl) !== Hl && (Xl & (ql | Gl)) === Hl
             ? Ic(e)
-            : (jc(e), Jl === Hl && so())
+            : (jc(e), Xl === Hl && so())
           : jc(e),
-          (4 & Jl) === Hl ||
+          (4 & Xl) === Hl ||
             (98 !== t && 99 !== t) ||
             (null === bc
               ? (bc = new Map([[e, n]]))
@@ -73574,7 +73913,7 @@
           r = r.return;
         }
       return (
-        null !== a && (Xl === a && (zc(n), tc === Ql && ps(a, nc)), fs(a, n)), a
+        null !== a && (Jl === a && (zc(n), tc === Ql && ps(a, nc)), fs(a, n)), a
       );
     }
     function Sc(e) {
@@ -73632,11 +73971,11 @@
       if (((Ec = 0), n)) return (n = wc()), ms(e, n), jc(e), null;
       var t = Sc(e);
       if (0 !== t) {
-        if (((n = e.callbackNode), (Jl & (ql | Gl)) !== Hl))
+        if (((n = e.callbackNode), (Xl & (ql | Gl)) !== Hl))
           throw Error(i(327));
-        if (($c(), (e === Xl && t === nc) || Lc(e, t), null !== ec)) {
-          var r = Jl;
-          Jl |= ql;
+        if (($c(), (e === Jl && t === nc) || Lc(e, t), null !== ec)) {
+          var r = Xl;
+          Xl |= ql;
           var a = Mc();
           do {
             try {
@@ -73646,14 +73985,14 @@
               Ac(e, c);
             }
           } while (1);
-          if ((bo(), (Jl = r), (Bl.current = a), tc === Wl))
+          if ((bo(), (Xl = r), (Bl.current = a), tc === Wl))
             throw ((n = rc), Lc(e, t), ps(e, t), jc(e), n);
           if (null === ec)
             switch (
               ((a = e.finishedWork = e.current.alternate),
               (e.finishedExpirationTime = t),
               (r = tc),
-              (Xl = null),
+              (Jl = null),
               r)
             ) {
               case $l:
@@ -73764,11 +74103,11 @@
     }
     function Ic(e) {
       var n = e.lastExpiredTime;
-      if (((n = 0 !== n ? n : 1073741823), (Jl & (ql | Gl)) !== Hl))
+      if (((n = 0 !== n ? n : 1073741823), (Xl & (ql | Gl)) !== Hl))
         throw Error(i(327));
-      if (($c(), (e === Xl && n === nc) || Lc(e, n), null !== ec)) {
-        var t = Jl;
-        Jl |= ql;
+      if (($c(), (e === Jl && n === nc) || Lc(e, n), null !== ec)) {
+        var t = Xl;
+        Xl |= ql;
         var r = Mc();
         do {
           try {
@@ -73778,12 +74117,12 @@
             Ac(e, a);
           }
         } while (1);
-        if ((bo(), (Jl = t), (Bl.current = r), tc === Wl))
+        if ((bo(), (Xl = t), (Bl.current = r), tc === Wl))
           throw ((t = rc), Lc(e, n), ps(e, n), jc(e), t);
         if (null !== ec) throw Error(i(261));
         (e.finishedWork = e.current.alternate),
           (e.finishedExpirationTime = n),
-          (Xl = null),
+          (Jl = null),
           Vc(e),
           jc(e);
       }
@@ -73800,21 +74139,21 @@
       }
     }
     function Pc(e, n) {
-      var t = Jl;
-      Jl |= 1;
+      var t = Xl;
+      Xl |= 1;
       try {
         return e(n);
       } finally {
-        (Jl = t), Jl === Hl && so();
+        (Xl = t), Xl === Hl && so();
       }
     }
     function Rc(e, n) {
-      var t = Jl;
-      (Jl &= -2), (Jl |= Vl);
+      var t = Xl;
+      (Xl &= -2), (Xl |= Vl);
       try {
         return e(n);
       } finally {
-        (Jl = t), Jl === Hl && so();
+        (Xl = t), Xl === Hl && so();
       }
     }
     function Lc(e, n) {
@@ -73832,7 +74171,7 @@
               Zo(), Sa(Na), Sa(Ia);
               break;
             case 5:
-              Xo(r);
+              Jo(r);
               break;
             case 4:
               Zo();
@@ -73848,7 +74187,7 @@
           }
           t = t.return;
         }
-      (Xl = e),
+      (Jl = e),
         (ec = os(e.current, null)),
         (nc = n),
         (tc = $l),
@@ -74063,7 +74402,7 @@
       do {
         $c();
       } while (null !== vc);
-      if ((Jl & (ql | Gl)) !== Hl) throw Error(i(327));
+      if ((Xl & (ql | Gl)) !== Hl) throw Error(i(327));
       var t = e.finishedWork,
         r = e.finishedExpirationTime;
       if (null === t) return null;
@@ -74088,7 +74427,7 @@
           : r <= e.firstSuspendedTime && (e.firstSuspendedTime = r - 1),
         r <= e.lastPingedTime && (e.lastPingedTime = 0),
         r <= e.lastExpiredTime && (e.lastExpiredTime = 0),
-        e === Xl && ((ec = Xl = null), (nc = 0)),
+        e === Jl && ((ec = Jl = null), (nc = 0)),
         1 < t.effectTag
           ? null !== t.lastEffect
             ? ((t.lastEffect.nextEffect = t), (a = t.firstEffect))
@@ -74096,8 +74435,8 @@
           : (a = t.firstEffect),
         null !== a)
       ) {
-        var o = Jl;
-        (Jl |= Gl), (Ul.current = null), (It = tt);
+        var o = Xl;
+        (Xl |= Gl), (Ul.current = null), (It = tt);
         var l = kt();
         if (Ct(l)) {
           if ('selectionStart' in l)
@@ -74288,7 +74627,7 @@
             Yc(dc, S), (dc = dc.nextEffect);
           }
         } while (null !== dc);
-        (dc = null), Ja(), (Jl = o);
+        (dc = null), Xa(), (Xl = o);
       } else e.current = t;
       if (hc) (hc = !1), (vc = e), (gc = n);
       else
@@ -74298,12 +74637,12 @@
         ((n = e.firstPendingTime),
         0 === n && (mc = null),
         1073741823 === n ? (e === xc ? yc++ : ((yc = 0), (xc = e))) : (yc = 0),
-        'function' === typeof Jc && Jc(t.stateNode, r),
+        'function' === typeof Xc && Xc(t.stateNode, r),
         jc(e),
         pc)
       )
         throw ((pc = !1), (e = fc), (fc = null), e);
-      return (Jl & Vl) !== Hl || so(), null;
+      return (Xl & Vl) !== Hl || so(), null;
     }
     function Gc() {
       for (; null !== dc; ) {
@@ -74327,9 +74666,9 @@
     function Wc() {
       if (null === vc) return !1;
       var e = vc;
-      if (((vc = null), (Jl & (ql | Gl)) !== Hl)) throw Error(i(331));
-      var n = Jl;
-      for (Jl |= Gl, e = e.current.firstEffect; null !== e; ) {
+      if (((vc = null), (Xl & (ql | Gl)) !== Hl)) throw Error(i(331));
+      var n = Xl;
+      for (Xl |= Gl, e = e.current.firstEffect; null !== e; ) {
         try {
           var t = e;
           if (0 !== (512 & t.effectTag))
@@ -74346,7 +74685,7 @@
         }
         (t = e.nextEffect), (e.nextEffect = null), (e = t);
       }
-      return (Jl = n), so(), !0;
+      return (Xl = n), so(), !0;
     }
     function Kc(e, n, t) {
       (n = gl(t, n)),
@@ -74384,7 +74723,7 @@
     function Qc(e, n, t) {
       var r = e.pingCache;
       null !== r && r.delete(n),
-        Xl === e && nc === t
+        Jl === e && nc === t
           ? tc === Ql || (tc === Yl && 1073741823 === ac && ro() - sc < uc)
             ? Lc(e, nc)
             : (cc = !0)
@@ -74412,7 +74751,7 @@
                 rl(n), $i();
                 break;
               case 5:
-                if ((Jo(n), 4 & n.mode && 1 !== t && a.hidden))
+                if ((Xo(n), 4 & n.mode && 1 !== t && a.hidden))
                   return (n.expirationTime = n.childExpirationTime = 1), null;
                 break;
               case 1:
@@ -74575,7 +74914,7 @@
           return n;
         case 5:
           return (
-            Jo(n),
+            Xo(n),
             null === e && Vi(n),
             (r = n.type),
             (a = n.pendingProps),
@@ -74584,7 +74923,7 @@
             Rt(r, a)
               ? (l = null)
               : null !== o && Rt(r, o) && (n.effectTag |= 16),
-            Xi(e, n),
+            Ji(e, n),
             4 & n.mode && 1 !== t && a.hidden
               ? ((n.expirationTime = n.childExpirationTime = 1), (n = null))
               : (Yi(e, n, l, t), (n = n.child)),
@@ -74695,7 +75034,7 @@
             Zi(e, n, a, o, r, t)
           );
         case 15:
-          return Ji(e, n, n.type, n.pendingProps, r, t);
+          return Xi(e, n, n.type, n.pendingProps, r, t);
         case 17:
           return (
             (r = n.type),
@@ -74715,15 +75054,15 @@
       }
       throw Error(i(156, n.tag));
     };
-    var Jc = null,
-      Xc = null;
+    var Xc = null,
+      Jc = null;
     function es(e) {
       if ('undefined' === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__) return !1;
       var n = __REACT_DEVTOOLS_GLOBAL_HOOK__;
       if (n.isDisabled || !n.supportsFiber) return !0;
       try {
         var t = n.inject(e);
-        (Jc = function (e) {
+        (Xc = function (e) {
           try {
             n.onCommitFiberRoot(
               t,
@@ -74733,7 +75072,7 @@
             );
           } catch (r) {}
         }),
-          (Xc = function (e) {
+          (Jc = function (e) {
             try {
               n.onCommitFiberUnmount(t, e);
             } catch (r) {}
@@ -75151,24 +75490,24 @@
       }),
       (M = Pc),
       (D = function (e, n, t, r, a) {
-        var o = Jl;
-        Jl |= 4;
+        var o = Xl;
+        Xl |= 4;
         try {
           return io(98, e.bind(null, n, t, r, a));
         } finally {
-          (Jl = o), Jl === Hl && so();
+          (Xl = o), Xl === Hl && so();
         }
       }),
       (z = function () {
-        (Jl & (1 | ql | Gl)) === Hl && (Nc(), $c());
+        (Xl & (1 | ql | Gl)) === Hl && (Nc(), $c());
       }),
       (_ = function (e, n) {
-        var t = Jl;
-        Jl |= 2;
+        var t = Xl;
+        Xl |= 2;
         try {
           return e(n);
         } finally {
-          (Jl = t), Jl === Hl && so();
+          (Xl = t), Xl === Hl && so();
         }
       });
     var Os = {
@@ -75231,13 +75570,13 @@
         return (e = un(n)), (e = null === e ? null : e.stateNode), e;
       }),
       (n.flushSync = function (e, n) {
-        if ((Jl & (ql | Gl)) !== Hl) throw Error(i(187));
-        var t = Jl;
-        Jl |= 1;
+        if ((Xl & (ql | Gl)) !== Hl) throw Error(i(187));
+        var t = Xl;
+        Xl |= 1;
         try {
           return io(99, e.bind(null, n));
         } finally {
-          (Jl = t), so();
+          (Xl = t), so();
         }
       }),
       (n.hydrate = function (e, n, t) {
