@@ -5007,17 +5007,33 @@
               meta: {
                 filePath:
                   'docs/guide/SimpleMappedDataTable/SimpleMappedDataTable.md',
-                updatedTime: 1658710281527,
-                slugs: [],
+                updatedTime: 1662114540946,
+                slugs: [
+                  {
+                    depth: 4,
+                    value: 'SimpleMappedDataTable.less',
+                    heading: 'simplemappeddatatableless',
+                  },
+                  {
+                    depth: 4,
+                    value: 'SimpleMappedDataTable.tsx',
+                    heading: 'simplemappeddatatabletsx',
+                  },
+                  {
+                    depth: 4,
+                    value: 'SimpleMappedDataTable.jsx',
+                    heading: 'simplemappeddatatablejsx',
+                  },
+                ],
+                title: 'SimpleMappedDataTable.less',
                 hasPreviewer: !0,
                 nav: { path: '/guide', title: 'Guide' },
                 group: {
                   path: '/guide/simple-mapped-data-table',
                   title: 'SimpleMappedDataTable',
                 },
-                title: 'SimpleMappedDataTable',
               },
-              title: 'SimpleMappedDataTable - react-code-segment',
+              title: 'SimpleMappedDataTable.less - react-code-segment',
             },
             {
               path: '/zh-CN/guide/simple-mapped-data-table/simple-mapped-data-table',
@@ -5026,8 +5042,25 @@
               meta: {
                 filePath:
                   'docs/guide/SimpleMappedDataTable/SimpleMappedDataTable.zh-CN.md',
-                updatedTime: 1658710281575,
-                slugs: [],
+                updatedTime: 1662114589010,
+                slugs: [
+                  {
+                    depth: 4,
+                    value: 'SimpleMappedDataTable.less',
+                    heading: 'simplemappeddatatableless',
+                  },
+                  {
+                    depth: 4,
+                    value: 'SimpleMappedDataTable.tsx',
+                    heading: 'simplemappeddatatabletsx',
+                  },
+                  {
+                    depth: 4,
+                    value: 'SimpleMappedDataTable.jsx',
+                    heading: 'simplemappeddatatablejsx',
+                  },
+                ],
+                title: 'SimpleMappedDataTable.less',
                 hasPreviewer: !0,
                 locale: 'zh-CN',
                 nav: { path: '/zh-CN/guide', title: 'Guide' },
@@ -5035,9 +5068,8 @@
                   path: '/zh-CN/guide/simple-mapped-data-table',
                   title: 'SimpleMappedDataTable',
                 },
-                title: 'SimpleMappedDataTable',
               },
-              title: 'SimpleMappedDataTable - react-code-segment',
+              title: 'SimpleMappedDataTable.less - react-code-segment',
             },
             {
               path: '/guide/slider/slider',
@@ -14489,6 +14521,76 @@
         }
       : s;
   },
+  '5gxV': function (e, n, t) {
+    'use strict';
+    var r = t('q1tI'),
+      a = t.n(r),
+      o =
+        (t('wDXN'),
+        (e) => {
+          var n = e.columns,
+            t = e.data,
+            r = e.isBordered,
+            o =
+              null === t || void 0 === t
+                ? void 0
+                : t.map((e) =>
+                    Object.keys(e)
+                      .filter((e) =>
+                        null === n || void 0 === n
+                          ? void 0
+                          : n.some((n) => n.dataIndex === e),
+                      )
+                      .reduce((n, t) => ((n[t] = e[t]), n), {}),
+                  );
+          return a.a.createElement(
+            'table',
+            { className: 'sim-table'.concat(r ? ' is-bordered' : '') },
+            a.a.createElement(
+              'thead',
+              { className: 'sim-table-header' },
+              a.a.createElement(
+                'tr',
+                null,
+                null === n || void 0 === n
+                  ? void 0
+                  : n.map((e) =>
+                      a.a.createElement(
+                        'th',
+                        { className: 'sim-table-cell', key: e.key },
+                        e.title,
+                      ),
+                    ),
+              ),
+            ),
+            a.a.createElement(
+              'tbody',
+              { className: 'sim-table-body' },
+              null === o || void 0 === o
+                ? void 0
+                : o.map((e, t) =>
+                    a.a.createElement(
+                      'tr',
+                      {
+                        key: ''.concat(t, '_').concat(t),
+                        className: 'sim-table-row',
+                      },
+                      null === n || void 0 === n
+                        ? void 0
+                        : n.map((n) =>
+                            a.a.createElement(
+                              'td',
+                              { className: 'sim-table-cell', key: n.key },
+                              e[n.dataIndex],
+                            ),
+                          ),
+                    ),
+                  ),
+            ),
+          );
+        });
+    n['a'] = o;
+  },
   '5mdu': function (e, n) {
     e.exports = function (e) {
       try {
@@ -17062,6 +17164,52 @@
       i = () => {
         var e = ['\u59d3\u540d1', '\u59d3\u540d2', '\u59d3\u540d3'];
         return a.a.createElement(o['a'], { data: e });
+      };
+    n['default'] = i;
+  },
+  '9zP4': function (e, n, t) {
+    'use strict';
+    t.r(n);
+    var r = t('q1tI'),
+      a = t.n(r),
+      o = t('5gxV'),
+      i = () => {
+        var e = [
+            {
+              key: '1',
+              name: 'Tiger Hu',
+              age: 32,
+              address: 'No. 1, Hudi Park, Xihu District',
+            },
+            {
+              key: '2',
+              name: 'Hu Yanzu',
+              age: 42,
+              address: 'No. 1, Hudi Park, Xihu District',
+            },
+            {
+              key: '3',
+              name: 'Hu Yanzu',
+              age: 42,
+              address: 'No. 1, Hudi Park, Xihu District',
+            },
+            {
+              key: '4',
+              name: 'Hu Yanzu',
+              age: 42,
+              address: 'No. 1, Hudi Park, Xihu District',
+            },
+          ],
+          n = [
+            { key: 'name', dataIndex: 'name', title: 'name' },
+            { key: 'age', dataIndex: 'age', title: 'age' },
+            { key: 'address', dataIndex: 'address', title: 'address' },
+          ];
+        return a.a.createElement(o['a'], {
+          data: e,
+          columns: n,
+          isBordered: !0,
+        });
       };
     n['default'] = i;
   },
@@ -29054,7 +29202,8 @@
       c = t('SQsl'),
       s = a.a.memo((e) => {
         var n = e.demos,
-          t = n['simplemappeddatatable-demo.zh-cn'].component;
+          t = n['simplemappeddatatable-demo.zh-cn'].component,
+          r = n['jsx-demo.zh-cn-20'].component;
         return a.a.createElement(
           a.a.Fragment,
           null,
@@ -29150,16 +29299,76 @@
                   '\u6ce8\u610f\uff1a\u6b64\u7ec4\u4ef6\u4e0d\u9002\u7528\u4e8e\u5d4c\u5957\u5bf9\u8c61\uff0c\u5982\u679c\u5728\u5217\u4e2d\u6307\u5b9a\u7684\u4efb\u4f55\u5c5e\u6027\u4e2d\u5b58\u5728\u5d4c\u5957\u5bf9\u8c61\uff0c\u5219\u8be5\u7ec4\u4ef6\u5c06\u4e2d\u65ad\u3002',
                 ),
               ),
+              a.a.createElement(
+                'h4',
+                { id: 'simplemappeddatatableless' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#simplemappeddatatableless',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'SimpleMappedDataTable.less',
+              ),
+              a.a.createElement(l['a'], {
+                code: '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
+                lang: 'less',
+              }),
+              a.a.createElement(
+                'h4',
+                { id: 'simplemappeddatatabletsx' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#simplemappeddatatabletsx',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'SimpleMappedDataTable.tsx',
+              ),
               a.a.createElement(l['a'], {
                 code: 'import React from \'react\';\nimport \'./SimpleMappedDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleMappedDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleMappedDataTable = (props: Partial<SimpleMappedDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n\n  let filteredData = data?.map((v) =>\n    Object.keys(v)\n      .filter((k) => columns?.some((col) => col.dataIndex === k))\n      .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n  ) as DataProps[];\n\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {filteredData?.map((item, index) => (\n          <tr key={`${index}_${index}`} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleMappedDataTable;',
                 lang: 'tsx',
               }),
-              a.a.createElement('p', null, 'Demo:'),
+              a.a.createElement(
+                'h4',
+                { id: 'simplemappeddatatablejsx' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#simplemappeddatatablejsx',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'SimpleMappedDataTable.jsx',
+              ),
+              a.a.createElement(l['a'], {
+                code: 'import React from \'react\';\nimport \'../SimpleMappedDataTable.less\';\nconst SimpleMappedDataTable = (props) => {\n    const { columns, data, isBordered } = props;\n\n    let filteredData = data?.map((v) =>\n        Object.keys(v)\n            .filter((k) => columns?.some((col) => col.dataIndex === k))\n            .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n    );\n\n    return (\n        <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n            <thead className="sim-table-header">\n                <tr>\n                    {columns?.map((column) => (\n                        <th className="sim-table-cell" key={column.key}>\n                            {column.title}\n                        </th>\n                    ))}\n                </tr>\n            </thead>\n            <tbody className="sim-table-body">\n                {filteredData?.map((item, index) => (\n                    <tr key={`${index}_${index}`} className="sim-table-row">\n                        {columns?.map((col) => (\n                            <td className="sim-table-cell" key={col.key}>\n                                {item[col.dataIndex]}\n                            </td>\n                        ))}\n                    </tr>\n                ))}\n            </tbody>\n        </table>\n    );\n};\n\nexport default SimpleMappedDataTable;',
+                lang: 'jsx',
+              }),
+              a.a.createElement('p', null, '\u793a\u4f8b:'),
             ),
             a.a.createElement(
               i['default'],
               n['simplemappeddatatable-demo.zh-cn'].previewerProps,
               a.a.createElement(t, null),
+            ),
+            a.a.createElement(
+              'div',
+              { className: 'markdown' },
+              a.a.createElement('p', null, 'jsx \u793a\u4f8b:'),
+            ),
+            a.a.createElement(
+              i['default'],
+              n['jsx-demo.zh-cn-20'].previewerProps,
+              a.a.createElement(r, null),
             ),
           ),
         );
@@ -32524,13 +32733,13 @@
       Bn =
         '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
       Un =
-        "import React from 'react';\r\nimport SimpleDataTable from './SimpleDataTable';\r\n\r\nconst Demo = () => {\r\n  const data = [\r\n    {\r\n      key: '1',\r\n      name: 'Tiger Hu',\r\n      age: 32,\r\n      address: 'No. 1, Hudi Park, Xihu District',\r\n    },\r\n    {\r\n      key: '2',\r\n      name: 'Hu Yanzu',\r\n      age: 42,\r\n      address: 'No. 1, Hudi Park, Xihu District',\r\n    },\r\n    {\r\n      key: '3',\r\n      name: 'Hu Yanzu',\r\n      age: 42,\r\n      address: 'No. 1, Hudi Park, Xihu District',\r\n    },\r\n    {\r\n      key: '4',\r\n      name: 'Hu Yanzu',\r\n      age: 42,\r\n      address: 'No. 1, Hudi Park, Xihu District',\r\n    },\r\n  ];\r\n  const columns = [\r\n    {\r\n      key: 'name',\r\n      dataIndex: 'name',\r\n      title: 'name',\r\n    },\r\n    {\r\n      key: 'age',\r\n      dataIndex: 'age',\r\n      title: 'age',\r\n    },\r\n    {\r\n      key: 'address',\r\n      dataIndex: 'address',\r\n      title: 'address',\r\n    },\r\n  ];\r\n  return <SimpleDataTable data={data} columns={columns} isBordered />;\r\n};\r\nexport default Demo;",
+        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
       Hn =
-        'import React from \'react\';\r\nimport \'../simpleDataTable.less\';\r\n\r\nconst SimpleDataTable = (props) => {\r\n  const { columns, data, isBordered } = props;\r\n  return (\r\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\r\n      <thead className="sim-table-header">\r\n        <tr>\r\n          {columns?.map((column) => (\r\n            <th className="sim-table-cell" key={column.key}>\r\n              {column.title}\r\n            </th>\r\n          ))}\r\n        </tr>\r\n      </thead>\r\n      <tbody className="sim-table-body">\r\n        {data?.map((item) => (\r\n          <tr key={item.key} className="sim-table-row">\r\n            {columns?.map((col) => (\r\n              <td className="sim-table-cell" key={col.key}>\r\n                {item[col.dataIndex]}\r\n              </td>\r\n            ))}\r\n          </tr>\r\n        ))}\r\n      </tbody>\r\n    </table>\r\n  );\r\n};\r\n\r\nexport default SimpleDataTable;',
+        'import React from \'react\';\nimport \'../simpleDataTable.less\';\n\nconst SimpleDataTable = (props) => {\n  const { columns, data, isBordered } = props;\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {data?.map((item) => (\n          <tr key={item.key} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleDataTable;',
       Vn =
         "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
       qn =
-        "import React from 'react';\r\nimport SimpleDataTable from './SimpleDataTable';\r\n\r\nconst Demo = () => {\r\n  const data = [\r\n    {\r\n      key: '1',\r\n      name: '\u80e1\u5f66\u658c',\r\n      age: 32,\r\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\r\n    },\r\n    {\r\n      key: '2',\r\n      name: '\u80e1\u5f66\u7956',\r\n      age: 42,\r\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\r\n    },\r\n    {\r\n      key: '3',\r\n      name: '\u80e1\u5f66\u7956',\r\n      age: 42,\r\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\r\n    },\r\n    {\r\n      key: '4',\r\n      name: '\u80e1\u5f66\u7956',\r\n      age: 42,\r\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\r\n    },\r\n  ];\r\n  const columns = [\r\n    {\r\n      key: 'name',\r\n      dataIndex: 'name',\r\n      title: '\u59d3\u540d',\r\n    },\r\n    {\r\n      key: 'age',\r\n      dataIndex: 'age',\r\n      title: '\u5e74\u9f84',\r\n    },\r\n    {\r\n      key: 'address',\r\n      dataIndex: 'address',\r\n      title: '\u5730\u5740',\r\n    },\r\n  ];\r\n  return <SimpleDataTable data={data} columns={columns} />;\r\n};\r\nexport default Demo;",
+        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
       Gn =
         "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
       $n =
@@ -32538,74 +32747,80 @@
       Wn =
         '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
       Kn =
-        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
+        "import React from 'react';\r\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\r\n\r\nconst Demo = () => {\r\n  const data = [\r\n    {\r\n      key: '1',\r\n      name: 'Tiger Hu',\r\n      age: 32,\r\n      address: 'No. 1, Hudi Park, Xihu District',\r\n    },\r\n    {\r\n      key: '2',\r\n      name: 'Hu Yanzu',\r\n      age: 42,\r\n      address: 'No. 1, Hudi Park, Xihu District',\r\n    },\r\n    {\r\n      key: '3',\r\n      name: 'Hu Yanzu',\r\n      age: 42,\r\n      address: 'No. 1, Hudi Park, Xihu District',\r\n    },\r\n    {\r\n      key: '4',\r\n      name: 'Hu Yanzu',\r\n      age: 42,\r\n      address: 'No. 1, Hudi Park, Xihu District',\r\n    },\r\n  ];\r\n  const columns = [\r\n    {\r\n      key: 'name',\r\n      dataIndex: 'name',\r\n      title: 'name',\r\n    },\r\n    {\r\n      key: 'age',\r\n      dataIndex: 'age',\r\n      title: 'age',\r\n    },\r\n    {\r\n      key: 'address',\r\n      dataIndex: 'address',\r\n      title: 'address',\r\n    },\r\n  ];\r\n  return <SimpleMappedDataTable data={data} columns={columns} isBordered />;\r\n};\r\nexport default Demo;",
       Yn =
-        "import React from 'react';\nimport Slider from './Slider';\n\nconst Demo = () => {\n  return <Slider></Slider>;\n};\n\nexport default Demo;",
+        'import React from \'react\';\r\nimport \'../SimpleMappedDataTable.less\';\r\nconst SimpleMappedDataTable = (props) => {\r\n    const { columns, data, isBordered } = props;\r\n\r\n    let filteredData = data?.map((v) =>\r\n        Object.keys(v)\r\n            .filter((k) => columns?.some((col) => col.dataIndex === k))\r\n            .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\r\n    );\r\n\r\n    return (\r\n        <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\r\n            <thead className="sim-table-header">\r\n                <tr>\r\n                    {columns?.map((column) => (\r\n                        <th className="sim-table-cell" key={column.key}>\r\n                            {column.title}\r\n                        </th>\r\n                    ))}\r\n                </tr>\r\n            </thead>\r\n            <tbody className="sim-table-body">\r\n                {filteredData?.map((item, index) => (\r\n                    <tr key={`${index}_${index}`} className="sim-table-row">\r\n                        {columns?.map((col) => (\r\n                            <td className="sim-table-cell" key={col.key}>\r\n                                {item[col.dataIndex]}\r\n                            </td>\r\n                        ))}\r\n                    </tr>\r\n                ))}\r\n            </tbody>\r\n        </table>\r\n    );\r\n};\r\n\r\nexport default SimpleMappedDataTable;',
       Qn =
-        "import React from 'react';\nimport './slider.less';\nimport classnames from '../../utils/classnames';\n\nexport interface SliderProps extends Record<string, any> {\n  direction: 'horizontal' | 'vertical';\n  min: number;\n  max: number;\n  step: number;\n  disabled: boolean;\n  value: number;\n}\n\nconst Slider = (props: Partial<SliderProps>) => {\n  const { direction = 'horizontal' } = props;\n\n  const prefixClasses = {\n    'ew-slider': true,\n    [`ew-slider-${direction}`]: direction,\n  };\n\n  return (\n    <div className={classnames(prefixClasses)}>\n      <div className=\"ew-slider-rail\"></div>\n      <div className=\"ew-slider-track\"></div>\n      <div className=\"ew-slider-step\"></div>\n      <div className=\"ew-slider-handle\"></div>\n    </div>\n  );\n};\n\nexport default Slider;",
+        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
       Zn =
-        "@prefix: ew-;\n\n.@{prefix}slider {\n  box-sizing: border-box;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  height: 12px;\n  margin: 10px 6px;\n  padding: 4px 0;\n  cursor: pointer;\n\n  &-rail {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background-color: #f5f5f5;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-track {\n    position: absolute;\n    height: 4px;\n    background-color: #2396ef;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-step {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background: 0 0;\n  }\n}",
+        "import React from 'react';\r\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\r\n\r\nconst Demo = () => {\r\n  const data = [\r\n    {\r\n      key: '1',\r\n      name: '\u80e1\u5f66\u658c',\r\n      age: 32,\r\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\r\n    },\r\n    {\r\n      key: '2',\r\n      name: '\u80e1\u5f66\u7956',\r\n      age: 42,\r\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\r\n    },\r\n    {\r\n      key: '3',\r\n      name: '\u80e1\u5f66\u7956',\r\n      age: 42,\r\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\r\n    },\r\n    {\r\n      key: '4',\r\n      name: '\u80e1\u5f66\u7956',\r\n      age: 42,\r\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\r\n    },\r\n  ];\r\n  const columns = [\r\n    {\r\n      key: 'name',\r\n      dataIndex: 'name',\r\n      title: '\u59d3\u540d',\r\n    },\r\n    {\r\n      key: 'age',\r\n      dataIndex: 'age',\r\n      title: '\u5e74\u9f84',\r\n    },\r\n    {\r\n      key: 'address',\r\n      dataIndex: 'address',\r\n      title: '\u5730\u5740',\r\n    },\r\n  ];\r\n  return <SimpleMappedDataTable data={data} columns={columns} />;\r\n};\r\nexport default Demo;",
       Xn =
-        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        Load image\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`Error ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <FetchImage\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport Slider from './Slider';\n\nconst Demo = () => {\n  return <Slider></Slider>;\n};\n\nexport default Demo;",
       Jn =
-        "import { useReducer } from 'react';\nexport type StateType = {\n  loading: boolean;\n  value: any;\n  error: any;\n};\nexport type ActionType = Partial<StateType> & { type: string };\nexport type RunType = (args: unknown) => Promise<void>;\nconst useAsync = (handler: (...args: any) => any) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n  const stateReducer = (_: any, action: ActionType) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args: unknown) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
+        "import React from 'react';\nimport './slider.less';\nimport classnames from '../../utils/classnames';\n\nexport interface SliderProps extends Record<string, any> {\n  direction: 'horizontal' | 'vertical';\n  min: number;\n  max: number;\n  step: number;\n  disabled: boolean;\n  value: number;\n}\n\nconst Slider = (props: Partial<SliderProps>) => {\n  const { direction = 'horizontal' } = props;\n\n  const prefixClasses = {\n    'ew-slider': true,\n    [`ew-slider-${direction}`]: direction,\n  };\n\n  return (\n    <div className={classnames(prefixClasses)}>\n      <div className=\"ew-slider-rail\"></div>\n      <div className=\"ew-slider-track\"></div>\n      <div className=\"ew-slider-step\"></div>\n      <div className=\"ew-slider-handle\"></div>\n    </div>\n  );\n};\n\nexport default Slider;",
       et =
-        "import React from 'react';\nimport Button from '../../../guide/Button/Button';\nimport Loader from '../../../guide/Loader/Loader';\nimport Alert from '../../../guide/Alert/Alert';\nimport styled from '@emotion/styled';\nimport useAsync from './useAsync';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={imgFetch?.loading}\n      >\n        Load image\n      </Button>\n      {imgFetch?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {imgFetch?.error && (\n        <Alert type=\"error\" message={`Error ${imgFetch?.error}`}></Alert>\n      )}\n      {imgFetch?.value && (\n        <FetchImage\n          src={imgFetch?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+        "@prefix: ew-;\n\n.@{prefix}slider {\n  box-sizing: border-box;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  height: 12px;\n  margin: 10px 6px;\n  padding: 4px 0;\n  cursor: pointer;\n\n  &-rail {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background-color: #f5f5f5;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-track {\n    position: absolute;\n    height: 4px;\n    background-color: #2396ef;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-step {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background: 0 0;\n  }\n}",
       nt =
-        "import { useReducer } from 'react';\n\nconst useAsync = (handler) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n\n  const stateReducer = (_, action) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
+        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        Load image\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`Error ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <FetchImage\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
       tt =
-        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\nconst FetchImage = styled.img({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`\u9519\u8bef ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <FetchImage\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+        "import { useReducer } from 'react';\nexport type StateType = {\n  loading: boolean;\n  value: any;\n  error: any;\n};\nexport type ActionType = Partial<StateType> & { type: string };\nexport type RunType = (args: unknown) => Promise<void>;\nconst useAsync = (handler: (...args: any) => any) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n  const stateReducer = (_: any, action: ActionType) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args: unknown) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
       rt =
-        "import React from 'react';\nimport Button from '../../../guide/Button/Button';\nimport Loader from '../../../guide/Loader/Loader';\nimport Alert from '../../../guide/Alert/Alert';\nimport styled from '@emotion/styled';\nimport useAsync from './useAsync';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={imgFetch?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {imgFetch?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {imgFetch?.error && (\n        <Alert type=\"error\" message={`\u9519\u8bef ${imgFetch?.error}`}></Alert>\n      )}\n      {imgFetch?.value && (\n        <FetchImage\n          src={imgFetch?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport Button from '../../../guide/Button/Button';\nimport Loader from '../../../guide/Loader/Loader';\nimport Alert from '../../../guide/Alert/Alert';\nimport styled from '@emotion/styled';\nimport useAsync from './useAsync';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={imgFetch?.loading}\n      >\n        Load image\n      </Button>\n      {imgFetch?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {imgFetch?.error && (\n        <Alert type=\"error\" message={`Error ${imgFetch?.error}`}></Alert>\n      )}\n      {imgFetch?.value && (\n        <FetchImage\n          src={imgFetch?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
       at =
-        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      Scroll locked! <br />\n      <Button onClick={onCancel}>Click me to unlock</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+        "import { useReducer } from 'react';\n\nconst useAsync = (handler) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n\n  const stateReducer = (_, action) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
       ot =
-        "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  // see https://zhuanlan.zhihu.com/p/147173241\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container!).overflow;\n    container!.style.overflow = 'hidden';\n    return () => {\n      container!.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
+        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\nconst FetchImage = styled.img({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`\u9519\u8bef ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <FetchImage\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
       it =
-        "import React, { useState } from 'react';\nimport Modal from '../../../guide/Modal/jsx/Modal';\nimport Button from '../../../guide/Button/jsx/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nconst ScrollModal = (props) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      Scroll locked! <br />\n      <Button onClick={onCancel}>Click me to unlock</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport Button from '../../../guide/Button/Button';\nimport Loader from '../../../guide/Loader/Loader';\nimport Alert from '../../../guide/Alert/Alert';\nimport styled from '@emotion/styled';\nimport useAsync from './useAsync';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={imgFetch?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {imgFetch?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {imgFetch?.error && (\n        <Alert type=\"error\" message={`\u9519\u8bef ${imgFetch?.error}`}></Alert>\n      )}\n      {imgFetch?.value && (\n        <FetchImage\n          src={imgFetch?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
       lt =
-        "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  // see https://zhuanlan.zhihu.com/p/147173241\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container).overflow;\n    container.style.overflow = 'hidden';\n    return () => {\n      container.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
+        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      Scroll locked! <br />\n      <Button onClick={onCancel}>Click me to unlock</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
       ct =
-        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+        "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  // see https://zhuanlan.zhihu.com/p/147173241\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container!).overflow;\n    container!.style.overflow = 'hidden';\n    return () => {\n      container!.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
       st =
-        "import React, { useState } from 'react';\nimport Modal from '../../../guide/Modal/jsx/Modal';\nimport Button from '../../../guide/Button/jsx/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nconst ScrollModal = (props) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Modal from '../../../guide/Modal/jsx/Modal';\nimport Button from '../../../guide/Button/jsx/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nconst ScrollModal = (props) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      Scroll locked! <br />\n      <Button onClick={onCancel}>Click me to unlock</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
       ut =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click inside this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox\n      onClickInside={() =>\n        Modal.confirm({\n          content: 'click inside',\n          cancelText: 'Cancel',\n          okText: 'Ok',\n        })\n      }\n    ></ClickBox>\n  );\n};\n\nexport default Demo;",
+        "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  // see https://zhuanlan.zhihu.com/p/147173241\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container).overflow;\n    container.style.overflow = 'hidden';\n    return () => {\n      container.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
       dt =
-        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
+        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
       pt =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5185\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox onClickInside={() => Modal.confirm('\u70b9\u51fb\u4e86\u8be5\u533a\u57df\u5185')}></ClickBox>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Modal from '../../../guide/Modal/jsx/Modal';\nimport Button from '../../../guide/Button/jsx/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nconst ScrollModal = (props) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
       ft =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click out of this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('click outside')}></ClickBox>;\n};\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click inside this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox\n      onClickInside={() =>\n        Modal.confirm({\n          content: 'click inside',\n          cancelText: 'Cancel',\n          okText: 'Ok',\n        })\n      }\n    ></ClickBox>\n  );\n};\n\nexport default Demo;",
       mt =
-        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
+        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
       ht =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5916\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('\u70b9\u51fb\u4e86\u533a\u57df\u4e4b\u5916')}></ClickBox>;\n};\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5185\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox onClickInside={() => Modal.confirm('\u70b9\u51fb\u4e86\u8be5\u533a\u57df\u5185')}></ClickBox>\n  );\n};\n\nexport default Demo;",
       vt =
-        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      'Component did mount, get the element:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click out of this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('click outside')}></ClickBox>;\n};\n\nexport default Demo;",
       gt =
-        "import { useEffect } from 'react';\nconst useComponentDidMount = (onMountHandler: Function) => {\n  useEffect(() => {\n    onMountHandler();\n  }, []);\n};\nexport default useComponentDidMount;",
+        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
       bt =
-        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      '\u7ec4\u4ef6\u786e\u5b9e\u6302\u8f7d\uff0c\u83b7\u53d6\u5143\u7d20:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5916\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('\u70b9\u51fb\u4e86\u533a\u57df\u4e4b\u5916')}></ClickBox>;\n};\n\nexport default Demo;",
       yt =
-        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('Current value is:' + value + '.');\n  }, [value]);\n  return (\n    <>\n      <p>\n        Value:{value},otherValue: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          Increment value\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          Increment other value\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      'Component did mount, get the element:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
       xt =
-        "import { useEffect, DependencyList, useRef } from 'react';\nconst useComponentDidUpdate = (\n  handler: (...args: any[]) => any,\n  deps: DependencyList,\n) => {\n  const mounted = useRef(false);\n  useEffect(() => {\n    if (mounted.current) {\n      handler?.();\n    } else {\n      mounted.current = true;\n    }\n  }, deps);\n};\n\nexport default useComponentDidUpdate;",
+        "import { useEffect } from 'react';\nconst useComponentDidMount = (onMountHandler: Function) => {\n  useEffect(() => {\n    onMountHandler();\n  }, []);\n};\nexport default useComponentDidMount;",
       Et =
-        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('\u5f53\u524d\u7684\u503c\u662f:' + value + '\u3002');\n  }, [value]);\n  return (\n    <>\n      <p>\n        \u503c\u662f:{value},\u5176\u5b83\u503c\u662f: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          \u589e\u52a0\u503c\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          \u589e\u52a0\u5176\u5b83\u503c\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      '\u7ec4\u4ef6\u786e\u5b9e\u6302\u8f7d\uff0c\u83b7\u53d6\u5143\u7d20:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
       wt =
-        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('Component will unmount'));\n  return <div>Check the console</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('Current value is:' + value + '.');\n  }, [value]);\n  return (\n    <>\n      <p>\n        Value:{value},otherValue: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          Increment value\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          Increment other value\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
       kt =
-        "import { useEffect } from 'react';\n\nconst useComponentWillUnmount = (onUnmountHandler) => {\n  useEffect(() => () => onUnmountHandler?.(), []);\n};\n\nexport default useComponentWillUnmount;",
+        "import { useEffect, DependencyList, useRef } from 'react';\nconst useComponentDidUpdate = (\n  handler: (...args: any[]) => any,\n  deps: DependencyList,\n) => {\n  const mounted = useRef(false);\n  useEffect(() => {\n    if (mounted.current) {\n      handler?.();\n    } else {\n      mounted.current = true;\n    }\n  }, deps);\n};\n\nexport default useComponentDidUpdate;",
       Ct =
-        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d'));\n  return <div>\u68c0\u67e5\u63a7\u5236\u53f0</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('\u5f53\u524d\u7684\u503c\u662f:' + value + '\u3002');\n  }, [value]);\n  return (\n    <>\n      <p>\n        \u503c\u662f:{value},\u5176\u5b83\u503c\u662f: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          \u589e\u52a0\u503c\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          \u589e\u52a0\u5176\u5b83\u503c\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
       Ot =
-        "import React, { SyntheticEvent } from 'react';\nimport useCopyToClipboard from './useCopyToClipboard';\nimport { Space } from 'antd';\nimport Button from '../../guide/Button/Button';\n\nexport interface TextCopyProps {\n  text: string;\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n  const { text = 'Lorem ipsum' } = props;\n  const [copied, copy] = useCopyToClipboard(text);\n  return (\n    <Space>\n      <Button\n        type=\"primary\"\n        ripple\n        onClick={copy as (e: SyntheticEvent) => void}\n      >\n        Click to Copy!\n      </Button>\n      <span>{copied && 'Copied!'}</span>\n    </Space>\n  );\n};\n\nconst Demo = () => <TextCopy text=\"The copy text!\" />;\n\nexport default Demo;",
+        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('Component will unmount'));\n  return <div>Check the console</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
       St =
-        "import { useState, useCallback, useEffect } from 'react';\n\nconst useCopyToClipboard = (text: string) => {\n  const copyToClipboard = (str: string) => {\n    const el = document.createElement('textarea');\n    el.value = str;\n    el.setAttribute('readonly', '');\n    el.style.position = 'absolute';\n    el.style.left = '-9999px';\n    document.body.appendChild(el);\n    const selected =\n      document.getSelection()!.rangeCount > 0\n        ? document.getSelection()?.getRangeAt(0)\n        : false;\n    el.select();\n    const success = document.execCommand('copy');\n    document.body.removeChild(el);\n    if (selected) {\n      document.getSelection()?.removeAllRanges();\n      document.getSelection()?.addRange(selected);\n    }\n    return success;\n  };\n\n  const [copied, setCopied] = useState(false);\n\n  const copy = useCallback(() => {\n    if (!copied) {\n      setCopied(copyToClipboard(text));\n    }\n  }, [text]);\n\n  useEffect(() => () => setCopied(false), [text]);\n\n  return [copied, copy];\n};\n\nexport default useCopyToClipboard;",
+        "import { useEffect } from 'react';\n\nconst useComponentWillUnmount = (onUnmountHandler) => {\n  useEffect(() => () => onUnmountHandler?.(), []);\n};\n\nexport default useComponentWillUnmount;",
       jt =
+        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d'));\n  return <div>\u68c0\u67e5\u63a7\u5236\u53f0</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
+      Tt =
+        "import React, { SyntheticEvent } from 'react';\nimport useCopyToClipboard from './useCopyToClipboard';\nimport { Space } from 'antd';\nimport Button from '../../guide/Button/Button';\n\nexport interface TextCopyProps {\n  text: string;\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n  const { text = 'Lorem ipsum' } = props;\n  const [copied, copy] = useCopyToClipboard(text);\n  return (\n    <Space>\n      <Button\n        type=\"primary\"\n        ripple\n        onClick={copy as (e: SyntheticEvent) => void}\n      >\n        Click to Copy!\n      </Button>\n      <span>{copied && 'Copied!'}</span>\n    </Space>\n  );\n};\n\nconst Demo = () => <TextCopy text=\"The copy text!\" />;\n\nexport default Demo;",
+      It =
+        "import { useState, useCallback, useEffect } from 'react';\n\nconst useCopyToClipboard = (text: string) => {\n  const copyToClipboard = (str: string) => {\n    const el = document.createElement('textarea');\n    el.value = str;\n    el.setAttribute('readonly', '');\n    el.style.position = 'absolute';\n    el.style.left = '-9999px';\n    document.body.appendChild(el);\n    const selected =\n      document.getSelection()!.rangeCount > 0\n        ? document.getSelection()?.getRangeAt(0)\n        : false;\n    el.select();\n    const success = document.execCommand('copy');\n    document.body.removeChild(el);\n    if (selected) {\n      document.getSelection()?.removeAllRanges();\n      document.getSelection()?.addRange(selected);\n    }\n    return success;\n  };\n\n  const [copied, setCopied] = useState(false);\n\n  const copy = useCallback(() => {\n    if (!copied) {\n      setCopied(copyToClipboard(text));\n    }\n  }, [text]);\n\n  useEffect(() => () => setCopied(false), [text]);\n\n  return [copied, copy];\n};\n\nexport default useCopyToClipboard;",
+      Nt =
         "import React, { SyntheticEvent } from 'react';\nimport useCopyToClipboard from './useCopyToClipboard';\nimport { Space } from 'antd';\nimport Button from '../../guide/Button/Button';\n\nexport interface TextCopyProps {\n  text: string;\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n  const { text = 'Lorem ipsum' } = props;\n  const [copied, copy] = useCopyToClipboard(text);\n  return (\n    <Space>\n      <Button\n        type=\"primary\"\n        ripple\n        onClick={copy as (e: SyntheticEvent) => void}\n      >\n        \u70b9\u51fb\u8fd9\u91cc\u590d\u5236!\n      </Button>\n      <span>{copied && '\u5df2\u590d\u5236!'}</span>\n    </Space>\n  );\n};\n\nconst Demo = () => <TextCopy text=\"\u590d\u5236\u7684\u6587\u672c!\" />;\n\nexport default Demo;",
-      Tt = {
+      Pt = {
         'loadingbutton-demo': {
           component: t('4ZnB').default,
           previewerProps: {
@@ -34142,11 +34357,29 @@
             identifier: 'simplemappeddatatable-demo',
           },
         },
+        'jsx-demo-20': {
+          component: t('9zP4').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: Kn },
+              'SimpleMappedDataTable.jsx': {
+                import: './SimpleMappedDataTable',
+                content: Yn,
+              },
+              'SimpleMappedDataTable.less': {
+                import: './SimpleMappedDataTable.less',
+                content: Wn,
+              },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'jsx-demo-20',
+          },
+        },
         'simplemappeddatatable-demo.zh-cn': {
           component: t('/ncw').default,
           previewerProps: {
             sources: {
-              _: { tsx: Kn },
+              _: { tsx: Qn },
               'SimpleMappedDataTable.tsx': {
                 import: './SimpleMappedDataTable',
                 content: $n,
@@ -34160,13 +34393,31 @@
             identifier: 'simplemappeddatatable-demo.zh-cn',
           },
         },
+        'jsx-demo.zh-cn-20': {
+          component: t('q8KE').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: Zn },
+              'SimpleMappedDataTable.jsx': {
+                import: './SimpleMappedDataTable',
+                content: Yn,
+              },
+              'SimpleMappedDataTable.less': {
+                import: './SimpleMappedDataTable.less',
+                content: Wn,
+              },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'jsx-demo.zh-cn-20',
+          },
+        },
         'slider-demo': {
           component: t('5VUJ').default,
           previewerProps: {
             sources: {
-              _: { tsx: Yn },
-              'Slider.tsx': { import: './Slider', content: Qn },
-              'slider.less': { import: './slider.less', content: Zn },
+              _: { tsx: Xn },
+              'Slider.tsx': { import: './Slider', content: Jn },
+              'slider.less': { import: './slider.less', content: et },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: _,
@@ -34180,7 +34431,7 @@
           component: t('sqNe').default,
           previewerProps: {
             sources: {
-              _: { tsx: Xn },
+              _: { tsx: nt },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -34194,7 +34445,7 @@
               },
               'guide/Alert/Alert.tsx': { import: './Alert', content: k },
               'alert.less': { import: './alert.less', content: C },
-              'useAsync.ts': { import: './useAsync', content: Jn },
+              'useAsync.ts': { import: './useAsync', content: tt },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -34207,64 +34458,6 @@
         },
         'js-demo': {
           component: t('DVnI').default,
-          previewerProps: {
-            sources: {
-              _: { jsx: et },
-              'guide/Button/Button.tsx': { import: './Button', content: D },
-              'button.less': { import: './button.less', content: z },
-              'utils/classnames.ts': {
-                import: '../../utils/classnames',
-                content: _,
-              },
-              'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
-              'guide/Loader/Loader.tsx': {
-                import: '../Loader/Loader',
-                content: F,
-              },
-              'guide/Alert/Alert.tsx': { import: './Alert', content: k },
-              'alert.less': { import: './alert.less', content: C },
-              'useAsync.js': { import: './useAsync', content: nt },
-            },
-            dependencies: {
-              react: { version: '16.14.0' },
-              '@emotion/styled': { version: '11.10.0' },
-              '@babel/core': { version: '^7.0.0' },
-              '@emotion/react': { version: '^11.0.0-rc.0' },
-            },
-            identifier: 'js-demo',
-          },
-        },
-        'useasync-demo.zh-cn': {
-          component: t('mlG9').default,
-          previewerProps: {
-            sources: {
-              _: { tsx: tt },
-              'guide/Button/Button.tsx': { import: './Button', content: D },
-              'button.less': { import: './button.less', content: z },
-              'utils/classnames.ts': {
-                import: '../../utils/classnames',
-                content: _,
-              },
-              'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
-              'guide/Loader/Loader.tsx': {
-                import: '../Loader/Loader',
-                content: F,
-              },
-              'guide/Alert/Alert.tsx': { import: './Alert', content: k },
-              'alert.less': { import: './alert.less', content: C },
-              'useAsync.ts': { import: './useAsync', content: Jn },
-            },
-            dependencies: {
-              react: { version: '16.14.0' },
-              '@emotion/styled': { version: '11.10.0' },
-              '@babel/core': { version: '^7.0.0' },
-              '@emotion/react': { version: '^11.0.0-rc.0' },
-            },
-            identifier: 'useasync-demo.zh-cn',
-          },
-        },
-        'js-demo.zh-cn': {
-          component: t('YSJU').default,
           previewerProps: {
             sources: {
               _: { jsx: rt },
@@ -34281,7 +34474,65 @@
               },
               'guide/Alert/Alert.tsx': { import: './Alert', content: k },
               'alert.less': { import: './alert.less', content: C },
-              'useAsync.js': { import: './useAsync', content: nt },
+              'useAsync.js': { import: './useAsync', content: at },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              '@emotion/styled': { version: '11.10.0' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+            },
+            identifier: 'js-demo',
+          },
+        },
+        'useasync-demo.zh-cn': {
+          component: t('mlG9').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: ot },
+              'guide/Button/Button.tsx': { import: './Button', content: D },
+              'button.less': { import: './button.less', content: z },
+              'utils/classnames.ts': {
+                import: '../../utils/classnames',
+                content: _,
+              },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
+              'guide/Loader/Loader.tsx': {
+                import: '../Loader/Loader',
+                content: F,
+              },
+              'guide/Alert/Alert.tsx': { import: './Alert', content: k },
+              'alert.less': { import: './alert.less', content: C },
+              'useAsync.ts': { import: './useAsync', content: tt },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              '@emotion/styled': { version: '11.10.0' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+            },
+            identifier: 'useasync-demo.zh-cn',
+          },
+        },
+        'js-demo.zh-cn': {
+          component: t('YSJU').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: it },
+              'guide/Button/Button.tsx': { import: './Button', content: D },
+              'button.less': { import: './button.less', content: z },
+              'utils/classnames.ts': {
+                import: '../../utils/classnames',
+                content: _,
+              },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
+              'guide/Loader/Loader.tsx': {
+                import: '../Loader/Loader',
+                content: F,
+              },
+              'guide/Alert/Alert.tsx': { import: './Alert', content: k },
+              'alert.less': { import: './alert.less', content: C },
+              'useAsync.js': { import: './useAsync', content: at },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -34296,7 +34547,7 @@
           component: t('AgAx').default,
           previewerProps: {
             sources: {
-              _: { tsx: at },
+              _: { tsx: lt },
               'guide/Modal/Modal.tsx': { import: './Modal', content: fn },
               'Modal.less': { import: './Modal.less', content: mn },
               'guide/Button/Button.tsx': { import: './Button', content: D },
@@ -34308,7 +34559,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useBodyScrollLock.ts': {
                 import: './useBodyScrollLock',
-                content: ot,
+                content: ct,
               },
             },
             dependencies: {
@@ -34325,7 +34576,7 @@
           component: t('JWXv').default,
           previewerProps: {
             sources: {
-              _: { jsx: it },
+              _: { jsx: st },
               'guide/Modal/jsx/Modal.jsx': { import: './Modal', content: vn },
               'Modal.less': { import: './Modal.less', content: mn },
               'guide/Button/jsx/Button.jsx': { import: './Button', content: U },
@@ -34337,7 +34588,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useBodyScrollLock.js': {
                 import: './useBodyScrollLock',
-                content: lt,
+                content: ut,
               },
             },
             dependencies: {
@@ -34354,7 +34605,7 @@
           component: t('hVMu').default,
           previewerProps: {
             sources: {
-              _: { tsx: ct },
+              _: { tsx: dt },
               'guide/Modal/Modal.tsx': { import: './Modal', content: fn },
               'Modal.less': { import: './Modal.less', content: mn },
               'guide/Button/Button.tsx': { import: './Button', content: D },
@@ -34366,7 +34617,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useBodyScrollLock.ts': {
                 import: './useBodyScrollLock',
-                content: ot,
+                content: ct,
               },
             },
             dependencies: {
@@ -34383,7 +34634,7 @@
           component: t('K/OV').default,
           previewerProps: {
             sources: {
-              _: { jsx: st },
+              _: { jsx: pt },
               'guide/Modal/jsx/Modal.jsx': { import: './Modal', content: vn },
               'Modal.less': { import: './Modal.less', content: mn },
               'guide/Button/jsx/Button.jsx': { import: './Button', content: U },
@@ -34395,7 +34646,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useBodyScrollLock.js': {
                 import: './useBodyScrollLock',
-                content: lt,
+                content: ut,
               },
             },
             dependencies: {
@@ -34412,8 +34663,8 @@
           component: t('n4d3').default,
           previewerProps: {
             sources: {
-              _: { tsx: ut },
-              'useClickInside.ts': { import: './useClickInside', content: dt },
+              _: { tsx: ft },
+              'useClickInside.ts': { import: './useClickInside', content: mt },
               'guide/Modal/Modal.tsx': { import: './Modal', content: fn },
               'Modal.less': { import: './Modal.less', content: mn },
             },
@@ -34431,8 +34682,8 @@
           component: t('nKlt').default,
           previewerProps: {
             sources: {
-              _: { tsx: pt },
-              'useClickInside.ts': { import: './useClickInside', content: dt },
+              _: { tsx: ht },
+              'useClickInside.ts': { import: './useClickInside', content: mt },
               'guide/Modal/Modal.tsx': { import: './Modal', content: fn },
               'Modal.less': { import: './Modal.less', content: mn },
             },
@@ -34450,10 +34701,10 @@
           component: t('6srN').default,
           previewerProps: {
             sources: {
-              _: { tsx: ft },
+              _: { tsx: vt },
               'useClickOutside.ts': {
                 import: './useClickOutside',
-                content: mt,
+                content: gt,
               },
             },
             dependencies: {
@@ -34469,10 +34720,10 @@
           component: t('6aGR').default,
           previewerProps: {
             sources: {
-              _: { tsx: ht },
+              _: { tsx: bt },
               'useClickOutside.ts': {
                 import: './useClickOutside',
-                content: mt,
+                content: gt,
               },
             },
             dependencies: {
@@ -34488,10 +34739,10 @@
           component: t('4BP0').default,
           previewerProps: {
             sources: {
-              _: { tsx: vt },
+              _: { tsx: yt },
               'useComponentDidMount.ts': {
                 import: './useComponentDidMount',
-                content: gt,
+                content: xt,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -34502,10 +34753,10 @@
           component: t('3Mo/').default,
           previewerProps: {
             sources: {
-              _: { tsx: bt },
+              _: { tsx: Et },
               'useComponentDidMount.ts': {
                 import: './useComponentDidMount',
-                content: gt,
+                content: xt,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -34516,7 +34767,7 @@
           component: t('+EnM').default,
           previewerProps: {
             sources: {
-              _: { tsx: yt },
+              _: { tsx: wt },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -34526,7 +34777,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useComponentDidUpdate.ts': {
                 import: './useComponentDidUpdate',
-                content: xt,
+                content: kt,
               },
             },
             dependencies: {
@@ -34544,7 +34795,7 @@
           component: t('pc0r').default,
           previewerProps: {
             sources: {
-              _: { tsx: Et },
+              _: { tsx: Ct },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -34554,7 +34805,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useComponentDidUpdate.ts': {
                 import: './useComponentDidUpdate',
-                content: xt,
+                content: kt,
               },
             },
             dependencies: {
@@ -34572,10 +34823,10 @@
           component: t('YT/L').default,
           previewerProps: {
             sources: {
-              _: { tsx: wt },
+              _: { tsx: Ot },
               'useComponentWillUnmount.ts': {
                 import: './useComponentWillUnmount',
-                content: kt,
+                content: St,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -34586,10 +34837,10 @@
           component: t('s6jP').default,
           previewerProps: {
             sources: {
-              _: { tsx: Ct },
+              _: { tsx: jt },
               'useComponentWillUnmount.ts': {
                 import: './useComponentWillUnmount',
-                content: kt,
+                content: St,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -34600,10 +34851,10 @@
           component: t('6Hiq').default,
           previewerProps: {
             sources: {
-              _: { tsx: Ot },
+              _: { tsx: Tt },
               'useCopyToClipboard.ts': {
                 import: './useCopyToClipboard',
-                content: St,
+                content: It,
               },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
@@ -34628,10 +34879,10 @@
           component: t('NfPr').default,
           previewerProps: {
             sources: {
-              _: { tsx: jt },
+              _: { tsx: Nt },
               'useCopyToClipboard.ts': {
                 import: './useCopyToClipboard',
-                content: St,
+                content: It,
               },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
@@ -34653,13 +34904,13 @@
           },
         },
       },
-      It = t('Zs1V'),
-      Nt = t('BI2/'),
-      Pt = t.n(Nt);
+      Rt = t('Zs1V'),
+      Lt = t('BI2/'),
+      At = t.n(Lt);
     n['default'] = (e) =>
       o.a.createElement(
-        Pt.a,
-        Object(r['a'])({}, e, { config: i, demos: Tt, apis: It }),
+        At.a,
+        Object(r['a'])({}, e, { config: i, demos: Pt, apis: Rt }),
       );
   },
   Odut: function (e, n, t) {
@@ -44776,7 +45027,8 @@
       c = t('SQsl'),
       s = a.a.memo((e) => {
         var n = e.demos,
-          t = n['simplemappeddatatable-demo'].component;
+          t = n['simplemappeddatatable-demo'].component,
+          r = n['jsx-demo-20'].component;
         return a.a.createElement(
           a.a.Fragment,
           null,
@@ -44856,9 +45108,59 @@
                   'Note: This component does not work with nested objects and will break if there are nested objects inside any of the properties specified in columns.',
                 ),
               ),
+              a.a.createElement(
+                'h4',
+                { id: 'simplemappeddatatableless' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#simplemappeddatatableless',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'SimpleMappedDataTable.less',
+              ),
+              a.a.createElement(l['a'], {
+                code: '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
+                lang: 'less',
+              }),
+              a.a.createElement(
+                'h4',
+                { id: 'simplemappeddatatabletsx' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#simplemappeddatatabletsx',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'SimpleMappedDataTable.tsx',
+              ),
               a.a.createElement(l['a'], {
                 code: 'import React from \'react\';\nimport \'./SimpleMappedDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleMappedDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleMappedDataTable = (props: Partial<SimpleMappedDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n\n  let filteredData = data?.map((v) =>\n    Object.keys(v)\n      .filter((k) => columns?.some((col) => col.dataIndex === k))\n      .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n  ) as DataProps[];\n\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {filteredData?.map((item, index) => (\n          <tr key={`${index}_${index}`} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleMappedDataTable;',
                 lang: 'tsx',
+              }),
+              a.a.createElement(
+                'h4',
+                { id: 'simplemappeddatatablejsx' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#simplemappeddatatablejsx',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'SimpleMappedDataTable.jsx',
+              ),
+              a.a.createElement(l['a'], {
+                code: 'import React from \'react\';\nimport \'../SimpleMappedDataTable.less\';\nconst SimpleMappedDataTable = (props) => {\n    const { columns, data, isBordered } = props;\n\n    let filteredData = data?.map((v) =>\n        Object.keys(v)\n            .filter((k) => columns?.some((col) => col.dataIndex === k))\n            .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n    );\n\n    return (\n        <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n            <thead className="sim-table-header">\n                <tr>\n                    {columns?.map((column) => (\n                        <th className="sim-table-cell" key={column.key}>\n                            {column.title}\n                        </th>\n                    ))}\n                </tr>\n            </thead>\n            <tbody className="sim-table-body">\n                {filteredData?.map((item, index) => (\n                    <tr key={`${index}_${index}`} className="sim-table-row">\n                        {columns?.map((col) => (\n                            <td className="sim-table-cell" key={col.key}>\n                                {item[col.dataIndex]}\n                            </td>\n                        ))}\n                    </tr>\n                ))}\n            </tbody>\n        </table>\n    );\n};\n\nexport default SimpleMappedDataTable;',
+                lang: 'jsx',
               }),
               a.a.createElement('p', null, 'Demo:'),
             ),
@@ -44866,6 +45168,16 @@
               i['default'],
               n['simplemappeddatatable-demo'].previewerProps,
               a.a.createElement(t, null),
+            ),
+            a.a.createElement(
+              'div',
+              { className: 'markdown' },
+              a.a.createElement('p', null, 'jsx Demo:'),
+            ),
+            a.a.createElement(
+              i['default'],
+              n['jsx-demo-20'].previewerProps,
+              a.a.createElement(r, null),
             ),
           ),
         );
@@ -58073,6 +58385,48 @@
   q1tI: function (e, n, t) {
     'use strict';
     e.exports = t('viRO');
+  },
+  q8KE: function (e, n, t) {
+    'use strict';
+    t.r(n);
+    var r = t('q1tI'),
+      a = t.n(r),
+      o = t('5gxV'),
+      i = () => {
+        var e = [
+            {
+              key: '1',
+              name: '\u80e1\u5f66\u658c',
+              age: 32,
+              address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',
+            },
+            {
+              key: '2',
+              name: '\u80e1\u5f66\u7956',
+              age: 42,
+              address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',
+            },
+            {
+              key: '3',
+              name: '\u80e1\u5f66\u7956',
+              age: 42,
+              address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',
+            },
+            {
+              key: '4',
+              name: '\u80e1\u5f66\u7956',
+              age: 42,
+              address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',
+            },
+          ],
+          n = [
+            { key: 'name', dataIndex: 'name', title: '\u59d3\u540d' },
+            { key: 'age', dataIndex: 'age', title: '\u5e74\u9f84' },
+            { key: 'address', dataIndex: 'address', title: '\u5730\u5740' },
+          ];
+        return a.a.createElement(o['a'], { data: e, columns: n });
+      };
+    n['default'] = i;
   },
   qAvn: function (e, n, t) {
     'use strict';

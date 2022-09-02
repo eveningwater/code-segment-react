@@ -10,6 +10,41 @@
 - 使用 Array.prototype.map() 将 filtersData 数组中的每个对象呈现为一个 `<tr>` 元素，其中包含对象中每个键的 `<td>`。
 - 注意：此组件不适用于嵌套对象，如果在列中指定的任何属性中存在嵌套对象，则该组件将中断。
 
+#### SimpleMappedDataTable.less
+
+```less
+@prefix: sim-;
+
+.@{prefix}table {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 5px;
+  &.is-bordered {
+    border: 1px solid #dedede;
+  }
+
+  &-cell {
+    font-size: 16px;
+    padding: 6px 12px;
+    position: relative;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.85);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  &-header > tr > th {
+    background-color: #fafafa;
+  }
+  &-row {
+    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    &:hover {
+      background-color: #f2f3f4;
+    }
+  }
+}
+```
+
+#### SimpleMappedDataTable.tsx
+
 ```tsx | pure
 import React from 'react';
 import './SimpleMappedDataTable.less';
@@ -63,6 +98,53 @@ const SimpleMappedDataTable = (props: Partial<SimpleMappedDataTableProps>) => {
 export default SimpleMappedDataTable;
 ```
 
-Demo:
+#### SimpleMappedDataTable.jsx
+
+```jsx | pure
+import React from 'react';
+import '../SimpleMappedDataTable.less';
+const SimpleMappedDataTable = (props) => {
+  const { columns, data, isBordered } = props;
+
+  let filteredData = data?.map((v) =>
+    Object.keys(v)
+      .filter((k) => columns?.some((col) => col.dataIndex === k))
+      .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),
+  );
+
+  return (
+    <table className={`sim-table${isBordered ? ' is-bordered' : ''}`}>
+      <thead className="sim-table-header">
+        <tr>
+          {columns?.map((column) => (
+            <th className="sim-table-cell" key={column.key}>
+              {column.title}
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody className="sim-table-body">
+        {filteredData?.map((item, index) => (
+          <tr key={`${index}_${index}`} className="sim-table-row">
+            {columns?.map((col) => (
+              <td className="sim-table-cell" key={col.key}>
+                {item[col.dataIndex]}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+
+export default SimpleMappedDataTable;
+```
+
+示例:
 
 <code src="./Demo.zh-CN.tsx"></code>
+
+jsx 示例:
+
+<code src="./jsx/Demo.zh-CN.jsx"></code>
