@@ -1,18 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import type { ReactNode } from 'react';
-import classnames from '../../utils/classnames';
-export interface OptionValueProps {
-  label: string;
-  value: string;
-}
-export interface OptionProps extends Record<string, any>, OptionValueProps {
-  disabled: boolean;
-  children: ReactNode;
-  defaultValue: string;
-  onOptionChange(v: Partial<OptionValueProps>): void;
-  active: boolean;
-}
-const Option = (props: Partial<OptionProps>) => {
+import classnames from '../../../utils/classnames';
+
+const Option = (props) => {
   const {
     label,
     value,
@@ -23,16 +12,14 @@ const Option = (props: Partial<OptionProps>) => {
     active,
     ...rest
   } = props;
-  const [currentValue, setCurrentValue] = useState<string | undefined>(
-    defaultValue,
-  );
+  const [currentValue, setCurrentValue] = useState(defaultValue);
 
   const classNames = {
     'ew-select-dropdown-option': true,
     'ew-select-dropdown-option-disabled': disabled,
     active: active,
   };
-  const onChangeHandler = (options: Partial<OptionValueProps>) => {
+  const onChangeHandler = (options) => {
     if (disabled) {
       return;
     }

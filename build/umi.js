@@ -470,18 +470,18 @@
     }
     var Y,
       Q = /[\-+]?(?:\d*\.|)\d+(?:[eE][\-+]?\d+|)/.source;
-    function Z(e) {
+    function X(e) {
       var n = e.style.display;
       (e.style.display = 'none'), e.offsetHeight, (e.style.display = n);
     }
-    function X(e, n, t) {
+    function Z(e, n, t) {
       var r = t;
       if ('object' !== D(n))
         return 'undefined' !== typeof r
           ? ('number' === typeof r && (r = ''.concat(r, 'px')),
             void (e.style[n] = r))
           : Y(e, n);
-      for (var a in n) n.hasOwnProperty(a) && X(e, a, n[a]);
+      for (var a in n) n.hasOwnProperty(a) && Z(e, a, n[a]);
     }
     function J(e) {
       var n,
@@ -577,7 +577,7 @@
         : void 0;
     }
     function ve(e, n, t) {
-      'static' === X(e, 'position') && (e.style.position = 'relative');
+      'static' === Z(e, 'position') && (e.style.position = 'relative');
       var r = -999,
         a = -999,
         o = me('left', t),
@@ -590,7 +590,7 @@
       ('left' in n || 'top' in n) && ((s = q(e) || ''), H(e, 'none')),
         'left' in n && ((e.style[l] = ''), (e.style[o] = ''.concat(r, 'px'))),
         'top' in n && ((e.style[c] = ''), (e.style[i] = ''.concat(a, 'px'))),
-        Z(e);
+        X(e);
       var d = re(e),
         p = {};
       for (var f in n)
@@ -600,7 +600,7 @@
             v = u[f] - d[f];
           p[m] = m === f ? h + v : h - v;
         }
-      X(e, p), Z(e), ('left' in n || 'top' in n) && H(e, s);
+      Z(e, p), X(e), ('left' in n || 'top' in n) && H(e, s);
       var g = {};
       for (var b in n)
         if (n.hasOwnProperty(b)) {
@@ -608,7 +608,7 @@
             x = n[b] - u[b];
           g[y] = b === y ? p[y] + x : p[y] - x;
         }
-      X(e, g);
+      Z(e, g);
     }
     function ge(e, n) {
       var t = re(e),
@@ -755,7 +755,7 @@
         if (void 0 === a) return n && Pe(n, e, we);
         if (n) {
           var o = xe(n);
-          return o && (a += je(n, ['padding', 'border'], t)), X(n, e, a);
+          return o && (a += je(n, ['padding', 'border'], t)), Z(n, e, a);
         }
       };
     });
@@ -772,7 +772,7 @@
       },
       isWindow: ae,
       each: ye,
-      css: X,
+      css: Z,
       clone: function (e) {
         var n,
           t = {};
@@ -981,7 +981,7 @@
     function Qe(e, n) {
       (e[0] = Ye(e[0], n.width)), (e[1] = Ye(e[1], n.height));
     }
-    function Ze(e, n, t, r) {
+    function Xe(e, n, t, r) {
       var a = t.points,
         o = t.offset || [0, 0],
         i = t.targetOffset || [0, 0],
@@ -1044,7 +1044,7 @@
         { points: a, offset: o, targetOffset: i, overflow: s }
       );
     }
-    function Xe(e, n) {
+    function Ze(e, n) {
       var t = _e(e, n),
         r = Be(e);
       return (
@@ -1058,8 +1058,8 @@
     function Je(e, n, t) {
       var r = t.target || n,
         a = Be(r),
-        o = !Xe(r, t.overflow && t.overflow.alwaysByViewport);
-      return Ze(e, a, t, o);
+        o = !Ze(r, t.overflow && t.overflow.alwaysByViewport);
+      return Xe(e, a, t, o);
     }
     function en(e, n, t) {
       var r,
@@ -1075,7 +1075,7 @@
       var d = { left: r, top: a, width: 0, height: 0 },
         p = r >= 0 && r <= l + s && a >= 0 && a <= c + u,
         f = [t.points[0], 'cc'];
-      return Ze(e, d, M(M({}, t), {}, { points: f }), p);
+      return Xe(e, d, M(M({}, t), {}, { points: f }), p);
     }
     (Je.__getOffsetParent = Me), (Je.__getVisibleRectForElement = _e);
     var nn = t('bTgL'),
@@ -1445,23 +1445,23 @@
             },
             [G],
           );
-        var Z = Object(r['a'])({}, I(e));
-        function X() {
+        var X = Object(r['a'])({}, I(e));
+        function Z() {
           return new Promise(function (e) {
             W.current = e;
           });
         }
         ['onAppearEnd', 'onEnterEnd', 'onLeaveEnd'].forEach(function (e) {
-          var n = Z[e];
-          Z[e] = function (e, t) {
+          var n = X[e];
+          X[e] = function (e, t) {
             return H(), null === n || void 0 === n ? void 0 : n(e, t);
           };
         }),
           u['useEffect'](
             function () {
-              Z.motionName || 'motion' !== U || H();
+              X.motionName || 'motion' !== U || H();
             },
-            [Z.motionName, U],
+            [X.motionName, U],
           ),
           u['useImperativeHandle'](n, function () {
             return {
@@ -1497,10 +1497,10 @@
             T['b'],
             Object(a['a'])(
               { visible: t, ref: j, leavedClassName: ''.concat(o, '-hidden') },
-              Z,
+              X,
               {
-                onAppearPrepare: X,
-                onEnterPrepare: X,
+                onAppearPrepare: Z,
+                onEnterPrepare: Z,
                 removeOnLeave: p,
                 forceRender: f,
               },
@@ -4847,14 +4847,25 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/Select/Select.md',
-                updatedTime: 1659314926804,
-                slugs: [],
+                updatedTime: 1662196447781,
+                slugs: [
+                  {
+                    depth: 4,
+                    value: 'useClickOutside.ts',
+                    heading: 'useclickoutsidets',
+                  },
+                  { depth: 4, value: 'select.less', heading: 'selectless' },
+                  { depth: 4, value: 'Option.tsx', heading: 'optiontsx' },
+                  { depth: 4, value: 'Option.JSX', heading: 'optionjsx' },
+                  { depth: 4, value: 'Select.tsx', heading: 'selecttsx' },
+                  { depth: 4, value: 'Select.jsx', heading: 'selectjsx' },
+                ],
+                title: 'useClickOutside.ts',
                 hasPreviewer: !0,
                 nav: { path: '/guide', title: 'Guide' },
                 group: { path: '/guide/select', title: 'Select' },
-                title: 'Select',
               },
-              title: 'Select - react-code-segment',
+              title: 'useClickOutside.ts - react-code-segment',
             },
             {
               path: '/zh-CN/guide/select/select',
@@ -4862,15 +4873,25 @@
               exact: !0,
               meta: {
                 filePath: 'docs/guide/Select/Select.zh-CN.md',
-                updatedTime: 1659314926931,
-                slugs: [],
+                updatedTime: 1662197807144,
+                slugs: [
+                  {
+                    depth: 4,
+                    value: 'useClickOutside.ts',
+                    heading: 'useclickoutsidets',
+                  },
+                  { depth: 4, value: 'select.less', heading: 'selectless' },
+                  { depth: 4, value: 'Option.tsx', heading: 'optiontsx' },
+                  { depth: 4, value: 'Select.tsx', heading: 'selecttsx' },
+                  { depth: 4, value: 'Select.jsx', heading: 'selectjsx' },
+                ],
+                title: 'useClickOutside.ts',
                 hasPreviewer: !0,
                 locale: 'zh-CN',
                 nav: { path: '/zh-CN/guide', title: 'Guide' },
                 group: { path: '/zh-CN/guide/select', title: 'Select' },
-                title: 'Select',
               },
-              title: 'Select - react-code-segment',
+              title: 'useClickOutside.ts - react-code-segment',
             },
             {
               path: '/guide/simple-data-list/simple-data-list',
@@ -5007,7 +5028,7 @@
               meta: {
                 filePath:
                   'docs/guide/SimpleMappedDataTable/SimpleMappedDataTable.md',
-                updatedTime: 1662114540946,
+                updatedTime: 1662115664972,
                 slugs: [
                   {
                     depth: 4,
@@ -5042,7 +5063,7 @@
               meta: {
                 filePath:
                   'docs/guide/SimpleMappedDataTable/SimpleMappedDataTable.zh-CN.md',
-                updatedTime: 1662114589010,
+                updatedTime: 1662115665073,
                 slugs: [
                   {
                     depth: 4,
@@ -12689,9 +12710,9 @@
       }
       var f = k();
       function v(e) {
-        Object(o['a'])(X, e),
-          (X.length = n.length),
-          f.notifyListeners(X.location, X.action);
+        Object(o['a'])(Z, e),
+          (Z.length = n.length),
+          f.notifyListeners(Z.location, Z.action);
       }
       var g = !1,
         x = null;
@@ -12708,7 +12729,7 @@
         if (e !== n) F(n);
         else {
           var t = p(),
-            r = X.location;
+            r = Z.location;
           if (!g && S(r, t)) return;
           if (x === E(t)) return;
           (x = null), I(t);
@@ -12724,7 +12745,7 @@
         }
       }
       function N(e) {
-        var n = X.location,
+        var n = Z.location,
           t = B.lastIndexOf(E(n));
         -1 === t && (t = 0);
         var r = B.lastIndexOf(E(e));
@@ -12747,7 +12768,7 @@
       }
       function H(e, n) {
         var t = 'PUSH',
-          r = w(e, void 0, void 0, X.location);
+          r = w(e, void 0, void 0, Z.location);
         f.confirmTransitionTo(r, t, a, function (e) {
           if (e) {
             var n = E(r),
@@ -12755,7 +12776,7 @@
               o = z() !== a;
             if (o) {
               (x = n), _(a);
-              var i = B.lastIndexOf(E(X.location)),
+              var i = B.lastIndexOf(E(Z.location)),
                 l = B.slice(0, i + 1);
               l.push(n), (B = l), v({ action: t, location: r });
             } else v();
@@ -12764,14 +12785,14 @@
       }
       function V(e, n) {
         var t = 'REPLACE',
-          r = w(e, void 0, void 0, X.location);
+          r = w(e, void 0, void 0, Z.location);
         f.confirmTransitionTo(r, t, a, function (e) {
           if (e) {
             var n = E(r),
               a = u(c + n),
               o = z() !== a;
             o && ((x = n), F(a));
-            var i = B.indexOf(E(X.location));
+            var i = B.indexOf(E(Z.location));
             -1 !== i && (B[i] = n), v({ action: t, location: r });
           }
         });
@@ -12803,7 +12824,7 @@
           }
         );
       }
-      function Z(e) {
+      function X(e) {
         var n = f.appendListener(e);
         return (
           K(1),
@@ -12812,7 +12833,7 @@
           }
         );
       }
-      var X = {
+      var Z = {
         length: n.length,
         action: 'POP',
         location: L,
@@ -12823,9 +12844,9 @@
         goBack: G,
         goForward: $,
         block: Q,
-        listen: Z,
+        listen: X,
       };
-      return X;
+      return Z;
     }
     function U(e, n, t) {
       return Math.min(Math.max(e, n), t);
@@ -12978,7 +12999,7 @@
       }
       l.done ? n(c) : Promise.resolve(c).then(r, a);
     }
-    function Z(e) {
+    function X(e) {
       return function () {
         var n = this,
           t = arguments;
@@ -12994,7 +13015,7 @@
         });
       };
     }
-    function X(e, n) {
+    function Z(e, n) {
       if (!(e instanceof n))
         throw new TypeError('Cannot call a class as a function');
     }
@@ -13251,7 +13272,7 @@
     }
     var be = (function () {
       function e(n, t) {
-        X(this, e),
+        Z(this, e),
           (this._loadFn = n),
           (this._opts = t),
           (this._callbacks = new Set()),
@@ -13427,7 +13448,7 @@
     })(Ce || (Ce = {}));
     var Te = (function () {
       function e(n) {
-        X(this, e),
+        Z(this, e),
           (this.validKeys = void 0),
           (this.hooks = {}),
           (this.validKeys =
@@ -13510,7 +13531,7 @@
                   return i
                     ? l.reduce(
                         (function () {
-                          var e = Z(
+                          var e = X(
                             a.a.mark(function e(t, r) {
                               var i;
                               return a.a.wrap(function (e) {
@@ -14666,8 +14687,8 @@
       K = 'unhandledrejection',
       Y = 'rejectionhandled',
       Q = 0,
-      Z = 1,
-      X = 2,
+      X = 1,
+      Z = 2,
       J = 1,
       ee = 2,
       ne = P(M, function () {
@@ -14703,7 +14724,7 @@
           var r = n.reactions;
           O(function () {
             var a = n.value,
-              o = n.state == Z,
+              o = n.state == X,
               i = 0;
             while (r.length > i) {
               var l,
@@ -14783,7 +14804,7 @@
           ((n.done = !0),
           r && (n = r),
           (n.value = t),
-          (n.state = X),
+          (n.state = Z),
           ae(e, n, !0));
       },
       de = function (e, n, t, r) {
@@ -14801,7 +14822,7 @@
                     ue(e, r, o, n);
                   }
                 })
-              : ((n.value = t), (n.state = Z), ae(e, n, !1));
+              : ((n.value = t), (n.state = X), ae(e, n, !1));
           } catch (o) {
             ue(e, { done: !1 }, o, n);
           }
@@ -15358,7 +15379,7 @@
     function Q() {
       return Y;
     }
-    function Z(e) {
+    function X(e) {
       var n = document.createDocumentFragment(),
         t = Object(f['a'])(Object(f['a'])({}, e), { close: o, visible: !0 });
       function r() {
@@ -15434,7 +15455,7 @@
       }
       return a(t), W.push(o), { destroy: o, update: i };
     }
-    function X(e) {
+    function Z(e) {
       return Object(f['a'])(
         Object(f['a'])(
           { icon: u['createElement'](v['a'], null), okCancel: !1 },
@@ -15654,30 +15675,30 @@
             info: o(J),
             success: o(ee),
             error: o(ne),
-            warning: o(X),
+            warning: o(Z),
             confirm: o(te),
           };
         }, []);
       return [i, u['createElement'](se, { ref: e })];
     }
     function de(e) {
-      return Z(X(e));
+      return X(Z(e));
     }
     var pe = V;
     (pe.useModal = ue),
       (pe.info = function (e) {
-        return Z(J(e));
+        return X(J(e));
       }),
       (pe.success = function (e) {
-        return Z(ee(e));
+        return X(ee(e));
       }),
       (pe.error = function (e) {
-        return Z(ne(e));
+        return X(ne(e));
       }),
       (pe.warning = de),
       (pe.warn = de),
       (pe.confirm = function (e) {
-        return Z(te(e));
+        return X(te(e));
       }),
       (pe.destroyAll = function () {
         while (W.length) {
@@ -18982,10 +19003,10 @@
         K = Object(o['a'])(W, 2),
         Y = K[0],
         Q = K[1],
-        Z = Object(M['a'])(null),
-        X = Object(o['a'])(Z, 2),
-        J = X[0],
-        ee = X[1],
+        X = Object(M['a'])(null),
+        Z = Object(o['a'])(X, 2),
+        J = Z[0],
+        ee = Z[1],
         ne = Object(l['useRef'])(!1),
         te = Object(l['useRef'])(null);
       function re() {
@@ -19117,7 +19138,7 @@
       K = t('MaoE'),
       Y = t('4JHP'),
       Q = t('83fw'),
-      Z = (function (e) {
+      X = (function (e) {
         Object(Y['a'])(t, e);
         var n = Object(Q['a'])(t);
         function t() {
@@ -19135,7 +19156,7 @@
           t
         );
       })(l['Component']),
-      X = Z;
+      Z = X;
     function J(e) {
       var n = e;
       function t(e) {
@@ -19229,7 +19250,7 @@
             B = F.ref;
           B || (A = l['cloneElement'](A, { ref: M }));
         }
-        return l['createElement'](X, { ref: E }, A);
+        return l['createElement'](Z, { ref: E }, A);
       });
       return (u.displayName = 'CSSMotion'), u;
     }
@@ -20541,11 +20562,11 @@
     }
     var Y = 'CODE_LOGIC_ERROR';
     function Q(e, n, t, r, a) {
-      return Z.apply(this, arguments);
+      return X.apply(this, arguments);
     }
-    function Z() {
+    function X() {
       return (
-        (Z = Object(w['a'])(
+        (X = Object(w['a'])(
           Object(E['a'])().mark(function e(n, t, a, o, s) {
             var u, d, p, f, m, h, v, g, b;
             return Object(E['a'])().wrap(
@@ -20649,10 +20670,10 @@
             );
           }),
         )),
-        Z.apply(this, arguments)
+        X.apply(this, arguments)
       );
     }
-    function X(e, n, t, r, a, o) {
+    function Z(e, n, t, r, a, o) {
       var i,
         c = e.join('.'),
         s = t
@@ -20993,7 +21014,7 @@
                     var t = x(n);
                     return t.includes(d);
                   }));
-                var f = X(n, t, p, e, l, s);
+                var f = Z(n, t, p, e, l, s);
                 return (
                   f['catch'](function (e) {
                     return e;
@@ -24326,7 +24347,7 @@
       K = 0.01,
       Y = 20,
       Q = Math.pow(0.995, Y);
-    function Z(e, n) {
+    function X(e, n) {
       var t = Object(r['useState'])(),
         a = Object(l['a'])(t, 2),
         o = a[0],
@@ -24426,7 +24447,7 @@
           );
         }, []);
     }
-    function X() {
+    function Z() {
       var e = Object(r['useRef'])(new Map());
       function n(n) {
         return (
@@ -24495,7 +24516,7 @@
         M = Object(r['useRef'])(),
         D = Object(r['useRef'])(),
         z = Object(r['useRef'])(),
-        _ = X(),
+        _ = Z(),
         F = Object(l['a'])(_, 2),
         B = F[0],
         U = F[1],
@@ -24587,7 +24608,7 @@
             re(De(r));
         }
       }
-      Z(A, function (e, n) {
+      X(A, function (e, n) {
         function t(e, n) {
           e(function (e) {
             var t = De(e + n);
@@ -24659,7 +24680,7 @@
             },
           });
         }),
-        Ze = y(function () {
+        Xe = y(function () {
           var e,
             n,
             t,
@@ -24711,9 +24732,9 @@
               );
             });
         }),
-        Xe = s.slice(0, We),
+        Ze = s.slice(0, We),
         Je = s.slice(Ke + 1),
-        en = [].concat(Object(v['a'])(Xe), Object(v['a'])(Je)),
+        en = [].concat(Object(v['a'])(Ze), Object(v['a'])(Je)),
         nn = Object(r['useState'])(),
         tn = Object(l['a'])(nn, 2),
         rn = tn[0],
@@ -24749,7 +24770,7 @@
         ),
         Object(r['useEffect'])(
           function () {
-            Ze();
+            Xe();
           },
           [
             w,
@@ -24788,7 +24809,7 @@
           r['createElement'](ee, { position: 'left', extra: C, prefixCls: c }),
           r['createElement'](
             b['a'],
-            { onResize: Ze },
+            { onResize: Xe },
             r['createElement'](
               'div',
               {
@@ -24805,7 +24826,7 @@
               },
               r['createElement'](
                 b['a'],
-                { onResize: Ze },
+                { onResize: Xe },
                 r['createElement'](
                   'div',
                   {
@@ -25058,13 +25079,13 @@
         ),
         Y = Object(l['a'])(K, 2),
         Q = Y[0],
-        Z = Y[1],
-        X = Object(r['useState'])(function () {
+        X = Y[1],
+        Z = Object(r['useState'])(function () {
           return U.findIndex(function (e) {
             return e.key === Q;
           });
         }),
-        J = Object(l['a'])(X, 2),
+        J = Object(l['a'])(Z, 2),
         ee = J[0],
         ne = J[1];
       Object(r['useEffect'])(
@@ -25075,7 +25096,7 @@
             });
           -1 === n &&
             ((n = Math.max(0, Math.min(ee, U.length - 1))),
-            Z(null === (e = U[n]) || void 0 === e ? void 0 : e.key));
+            X(null === (e = U[n]) || void 0 === e ? void 0 : e.key));
           ne(n);
         },
         [
@@ -25094,7 +25115,7 @@
       function pe(e, n) {
         null === D || void 0 === D || D(e, n);
         var t = e !== Q;
-        Z(e), t && (null === M || void 0 === M || M(e));
+        X(e), t && (null === M || void 0 === M || M(e));
       }
       G && !['left', 'right'].includes(S) && (de = 'top'),
         Object(r['useEffect'])(function () {
@@ -28251,7 +28272,7 @@
           if (']' != n.charAt(n.length - 1)) return T;
           if (((t = V(n.slice(1, -1))), !t)) return T;
           e.host = t;
-        } else if (X(e)) {
+        } else if (Z(e)) {
           if (((n = h(n)), z.test(n))) return T;
           if (((t = H(n)), null === t)) return T;
           e.host = t;
@@ -28405,9 +28426,9 @@
         var t = m(e, 0);
         return t > 32 && t < 127 && !d(n, e) ? e : encodeURIComponent(e);
       },
-      Z = { ftp: 21, file: null, http: 80, https: 443, ws: 80, wss: 443 },
-      X = function (e) {
-        return d(Z, e.scheme);
+      X = { ftp: 21, file: null, http: 80, https: 443, ws: 80, wss: 443 },
+      Z = function (e) {
+        return d(X, e.scheme);
       },
       J = function (e) {
         return '' != e.username || '' != e.password;
@@ -28515,23 +28536,23 @@
                 }
                 if (
                   t &&
-                  (X(e) != d(Z, p) ||
+                  (Z(e) != d(X, p) ||
                     ('file' == p && (J(e) || null !== e.port)) ||
                     ('file' == e.scheme && !e.host))
                 )
                   return;
                 if (((e.scheme = p), t))
                   return void (
-                    X(e) &&
-                    Z[e.scheme] == e.port &&
+                    Z(e) &&
+                    X[e.scheme] == e.port &&
                     (e.port = null)
                   );
                 (p = ''),
                   'file' == e.scheme
                     ? (s = ye)
-                    : X(e) && a && a.scheme == e.scheme
+                    : Z(e) && a && a.scheme == e.scheme
                     ? (s = se)
-                    : X(e)
+                    : Z(e)
                     ? (s = fe)
                     : '/' == o[u + 1]
                     ? ((s = ue), u++)
@@ -28573,7 +28594,7 @@
                   (e.port = a.port),
                   (e.path = a.path.slice()),
                   (e.query = a.query);
-              else if ('/' == i || ('\\' == i && X(e))) s = pe;
+              else if ('/' == i || ('\\' == i && Z(e))) s = pe;
               else if ('?' == i)
                 (e.username = a.username),
                   (e.password = a.password),
@@ -28604,7 +28625,7 @@
               }
               break;
             case pe:
-              if (!X(e) || ('/' != i && '\\' != i)) {
+              if (!Z(e) || ('/' != i && '\\' != i)) {
                 if ('/' != i) {
                   (e.username = a.username),
                     (e.password = a.password),
@@ -28642,7 +28663,7 @@
                 '/' == i ||
                 '?' == i ||
                 '#' == i ||
-                ('\\' == i && X(e))
+                ('\\' == i && Z(e))
               ) {
                 if (m && '' == p) return S;
                 (u -= f(p).length + 1), (p = ''), (s = ve);
@@ -28660,9 +28681,9 @@
                   '/' == i ||
                   '?' == i ||
                   '#' == i ||
-                  ('\\' == i && X(e))
+                  ('\\' == i && Z(e))
                 ) {
-                  if (X(e) && '' == p) return T;
+                  if (Z(e) && '' == p) return T;
                   if (t && '' == p && (J(e) || null !== e.port)) return;
                   if (((c = U(e, p)), c)) return c;
                   if (((p = ''), (s = we), t)) return;
@@ -28682,13 +28703,13 @@
                   '/' == i ||
                   '?' == i ||
                   '#' == i ||
-                  ('\\' == i && X(e)) ||
+                  ('\\' == i && Z(e)) ||
                   t
                 ) {
                   if ('' != p) {
                     var x = parseInt(p, 10);
                     if (x > 65535) return I;
-                    (e.port = X(e) && x === Z[e.scheme] ? null : x), (p = '');
+                    (e.port = Z(e) && x === X[e.scheme] ? null : x), (p = '');
                   }
                   if (t) return;
                   s = we;
@@ -28758,7 +28779,7 @@
               p += i;
               break;
             case we:
-              if (X(e)) {
+              if (Z(e)) {
                 if (((s = ke), '/' != i && '\\' != i)) continue;
               } else if (t || '?' != i)
                 if (t || '#' != i) {
@@ -28770,15 +28791,15 @@
               if (
                 i == r ||
                 '/' == i ||
-                ('\\' == i && X(e)) ||
+                ('\\' == i && Z(e)) ||
                 (!t && ('?' == i || '#' == i))
               ) {
                 if (
                   (oe(p)
                     ? (re(e),
-                      '/' == i || ('\\' == i && X(e)) || e.path.push(''))
+                      '/' == i || ('\\' == i && Z(e)) || e.path.push(''))
                     : ae(p)
-                    ? '/' == i || ('\\' == i && X(e)) || e.path.push('')
+                    ? '/' == i || ('\\' == i && Z(e)) || e.path.push('')
                     : ('file' == e.scheme &&
                         !e.path.length &&
                         ne(p) &&
@@ -28803,7 +28824,7 @@
             case Oe:
               t || '#' != i
                 ? i != r &&
-                  ("'" == i && X(e)
+                  ("'" == i && Z(e)
                     ? (e.query += '%27')
                     : (e.query += '#' == i ? '%23' : Q(i, $)))
                 : ((e.fragment = ''), (s = Se));
@@ -28881,7 +28902,7 @@
           } catch (r) {
             return 'null';
           }
-        return 'file' != n && X(e)
+        return 'file' != n && Z(e)
           ? n + '://' + G(e.host) + (null !== t ? ':' + t : '')
           : 'null';
       },
@@ -29203,7 +29224,7 @@
       s = a.a.memo((e) => {
         var n = e.demos,
           t = n['simplemappeddatatable-demo.zh-cn'].component,
-          r = n['jsx-demo.zh-cn-20'].component;
+          r = n['jsx-demo.zh-cn-21'].component;
         return a.a.createElement(
           a.a.Fragment,
           null,
@@ -29350,7 +29371,7 @@
                 'SimpleMappedDataTable.jsx',
               ),
               a.a.createElement(l['a'], {
-                code: 'import React from \'react\';\nimport \'../SimpleMappedDataTable.less\';\nconst SimpleMappedDataTable = (props) => {\n    const { columns, data, isBordered } = props;\n\n    let filteredData = data?.map((v) =>\n        Object.keys(v)\n            .filter((k) => columns?.some((col) => col.dataIndex === k))\n            .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n    );\n\n    return (\n        <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n            <thead className="sim-table-header">\n                <tr>\n                    {columns?.map((column) => (\n                        <th className="sim-table-cell" key={column.key}>\n                            {column.title}\n                        </th>\n                    ))}\n                </tr>\n            </thead>\n            <tbody className="sim-table-body">\n                {filteredData?.map((item, index) => (\n                    <tr key={`${index}_${index}`} className="sim-table-row">\n                        {columns?.map((col) => (\n                            <td className="sim-table-cell" key={col.key}>\n                                {item[col.dataIndex]}\n                            </td>\n                        ))}\n                    </tr>\n                ))}\n            </tbody>\n        </table>\n    );\n};\n\nexport default SimpleMappedDataTable;',
+                code: 'import React from \'react\';\nimport \'../SimpleMappedDataTable.less\';\nconst SimpleMappedDataTable = (props) => {\n  const { columns, data, isBordered } = props;\n\n  let filteredData = data?.map((v) =>\n    Object.keys(v)\n      .filter((k) => columns?.some((col) => col.dataIndex === k))\n      .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n  );\n\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {filteredData?.map((item, index) => (\n          <tr key={`${index}_${index}`} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleMappedDataTable;',
                 lang: 'jsx',
               }),
               a.a.createElement('p', null, '\u793a\u4f8b:'),
@@ -29367,7 +29388,7 @@
             ),
             a.a.createElement(
               i['default'],
-              n['jsx-demo.zh-cn-20'].previewerProps,
+              n['jsx-demo.zh-cn-21'].previewerProps,
               a.a.createElement(r, null),
             ),
           ),
@@ -32538,9 +32559,9 @@
         "import React from 'react';\nimport CallTo from './Callto';\n\nconst Demo = () => {\n  return <CallTo phone=\"18283984473\">\u5915\u6c34</CallTo>;\n};\n\nexport default Demo;",
       Q =
         "import React from 'react';\nimport Carousel from './Carousel';\n\nconst Demo = () => {\n  return (\n    <Carousel\n      options={['carousel item 1', 'carousel item 2', 'carousel item 3']}\n    />\n  );\n};\n\nexport default Demo;",
-      Z =
-        "import React, { useState, useEffect, cloneElement } from 'react';\nimport type { ReactNode } from 'react';\nimport './Carousel.less';\n\ninterface CarouselItemProps {\n  children: ReactNode;\n  className: string | Record<string, string | number>;\n}\n\ninterface CarouselProps {\n  options: ReactNode[];\n  duration: number;\n  children: JSX.Element[];\n  defaultKey: string;\n}\n\nconst CarouselItem = (props: Partial<CarouselItemProps>) => {\n  const { children } = props;\n  return <div className=\"carousel-item\">{children}</div>;\n};\nCarouselItem.displayName = 'CarouselItem';\n\nconst Carousel = (props: Partial<CarouselProps>) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer: number | undefined;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter(\n          (item) => item?.type?.displayName === 'CarouselItem',\n        ) || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className=\"carousel\">\n      <div\n        className=\"carousel-slide\"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(<CarouselItem key={item}>{item}</CarouselItem>, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nCarousel.CarouselItem = CarouselItem;\n\nexport default Carousel;",
       X =
+        "import React, { useState, useEffect, cloneElement } from 'react';\nimport type { ReactNode } from 'react';\nimport './Carousel.less';\n\ninterface CarouselItemProps {\n  children: ReactNode;\n  className: string | Record<string, string | number>;\n}\n\ninterface CarouselProps {\n  options: ReactNode[];\n  duration: number;\n  children: JSX.Element[];\n  defaultKey: string;\n}\n\nconst CarouselItem = (props: Partial<CarouselItemProps>) => {\n  const { children } = props;\n  return <div className=\"carousel-item\">{children}</div>;\n};\nCarouselItem.displayName = 'CarouselItem';\n\nconst Carousel = (props: Partial<CarouselProps>) => {\n  const { options, duration, children, defaultKey, ...rest } = props;\n  const [active, setActive] = useState(Number(defaultKey || 1) - 1);\n  let timer: number | undefined;\n  const width = window.innerWidth;\n  const items =\n    Array.isArray(options) && options.length\n      ? options\n      : children?.filter(\n          (item) => item?.type?.displayName === 'CarouselItem',\n        ) || [];\n  useEffect(() => {\n    timer = setTimeout(() => {\n      setActive((active + 1) % items?.length);\n    }, duration || 2000);\n    return () => clearTimeout(timer);\n  });\n  return (\n    <div className=\"carousel\">\n      <div\n        className=\"carousel-slide\"\n        style={{\n          width: items.length * width,\n          transform: `translate3d(-${active * 200}px, 0px, 0px)`,\n        }}\n      >\n        {items?.map((item) => {\n          return cloneElement(<CarouselItem key={item}>{item}</CarouselItem>, {\n            ...rest,\n          });\n        })}\n      </div>\n    </div>\n  );\n};\n\nCarousel.CarouselItem = CarouselItem;\n\nexport default Carousel;",
+      Z =
         ".carousel {\n  position: relative;\n  height: 100px;\n  width: 200px;\n  overflow: hidden;\n  border: 1px solid #dedede;\n  background-color: fadeout(#880cee, 25%);\n  border-radius: 8px;\n  .carousel-slide {\n    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 0.75);\n    height: 100%;\n    &::after {\n      clear: both;\n      content: '';\n      display: table;\n    }\n    .carousel-item {\n      width: 200px;\n      height: 100%;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      font-size: 18px;\n      color: fade(rgba(255, 255, 255, 1), 85%);\n      float: left;\n      letter-spacing: 2px;\n    }\n  }\n}",
       J =
         "import React from 'react';\nimport Carousel from './Carousel';\n\nconst Demo = () => {\n  return (\n    <Carousel\n      options={['carousel item 1', 'carousel item 2', 'carousel item 3']}\n    />\n  );\n};\n\nexport default Demo;",
@@ -32646,9 +32667,9 @@
         "import React, { useState, useCallback, useEffect } from 'react';\nimport type { ChangeEvent } from 'react';\nimport styled from '@emotion/styled';\ninterface LimitedWordTextareaProps extends Record<string, unknown> {\n  limit: number;\n  rows: number;\n  cols: number;\n  value: string;\n}\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedWordTextarea = (props: Partial<LimitedWordTextareaProps>) => {\n  const { limit = 0, rows, cols, value, ...rest } = props;\n\n  const [{ content, wordCount }, setContent] = useState({\n    content: value,\n    wordCount: 0,\n  });\n\n  const setFormattedContent = useCallback(\n    (text: string) => {\n      let words = text.split(' ').filter(Boolean);\n      setContent(() => {\n        if (words.length > limit) {\n          return {\n            wordCount: limit,\n            content: words.slice(0, limit).join(' '),\n          };\n        }\n        return {\n          wordCount: words.length,\n          content: text,\n        };\n      });\n    },\n    [limit, setContent],\n  );\n  useEffect(() => {\n    setFormattedContent(content || '');\n  }, []);\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e: ChangeEvent) =>\n          setFormattedContent((e.target as HTMLTextAreaElement).value)\n        }\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedWordTextarea;",
       Qe =
         "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea limit={5} value=\"hello,there!\"></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
-      Ze =
-        "import React, { useState, useCallback, useEffect } from 'react';\nimport styled from '@emotion/styled';\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedWordTextarea = (props) => {\n  const { limit = 0, rows, cols, value, ...rest } = props;\n\n  const [{ content, wordCount }, setContent] = useState({\n    content: value,\n    wordCount: 0,\n  });\n\n  const setFormattedContent = useCallback(\n    (text) => {\n      let words = text.split(' ').filter(Boolean);\n      setContent(() => {\n        if (words.length > limit) {\n          return {\n            wordCount: limit,\n            content: words.slice(0, limit).join(' '),\n          };\n        }\n        return {\n          wordCount: words.length,\n          content: text,\n        };\n      });\n    },\n    [limit, setContent],\n  );\n  useEffect(() => {\n    setFormattedContent(content || '');\n  }, []);\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e) => setFormattedContent(e.target.value)}\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedWordTextarea;",
       Xe =
+        "import React, { useState, useCallback, useEffect } from 'react';\nimport styled from '@emotion/styled';\nconst LimitedStyleTextarea = styled.textarea`\n  box-sizing: border-box;\n  margin: 0;\n  font-variant: tabular-nums;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  min-width: 0;\n  padding: 4px 11px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  line-height: 1.5715;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #d9d9d9;\n  border-radius: 2px;\n  max-width: 100%;\n  height: auto;\n  min-height: 32px;\n  line-height: 1.5715;\n  vertical-align: bottom;\n  transition: all 0.3s, height 0s;\n  border-radius: 4px;\n  &:focus {\n    border-color: #40a9ff;\n    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n    border-right-width: 1px;\n    outline: 0;\n  }\n  &:hover {\n    border-right-width: 1px;\n    border-color: #40a9ff;\n  }\n`;\n\nconst ShowCountTextarea = styled.span`\n  &::after {\n    content: attr(data-count);\n    float: right;\n    white-space: nowrap;\n    color: rgba(0, 0, 0, 0.73);\n  }\n`;\n\nconst LimitedWordTextarea = (props) => {\n  const { limit = 0, rows, cols, value, ...rest } = props;\n\n  const [{ content, wordCount }, setContent] = useState({\n    content: value,\n    wordCount: 0,\n  });\n\n  const setFormattedContent = useCallback(\n    (text) => {\n      let words = text.split(' ').filter(Boolean);\n      setContent(() => {\n        if (words.length > limit) {\n          return {\n            wordCount: limit,\n            content: words.slice(0, limit).join(' '),\n          };\n        }\n        return {\n          wordCount: words.length,\n          content: text,\n        };\n      });\n    },\n    [limit, setContent],\n  );\n  useEffect(() => {\n    setFormattedContent(content || '');\n  }, []);\n  return (\n    <ShowCountTextarea data-count={`${content?.length || 0} / ${limit}`}>\n      <LimitedStyleTextarea\n        rows={rows}\n        cols={cols}\n        value={content}\n        onChange={(e) => setFormattedContent(e.target.value)}\n        {...rest}\n      ></LimitedStyleTextarea>\n    </ShowCountTextarea>\n  );\n};\n\nexport default LimitedWordTextarea;",
+      Ze =
         "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea\n      limit={6}\n      value=\"\u4f60\u597d\u554a,\u8fd9\u91cc\u7684\u4e16\u754c!\"\n    ></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
       Je =
         "import React from 'react';\nimport LimitedWordTextarea from './LimitedWordTextarea';\n\nconst Demo = () => {\n  return (\n    <LimitedWordTextarea\n      limit={6}\n      value=\"\u4f60\u597d\u554a,\u8fd9\u91cc\u7684\u4e16\u754c!\"\n    ></LimitedWordTextarea>\n  );\n};\n\nexport default Demo;",
@@ -32705,122 +32726,130 @@
       Sn =
         'import React from \'react\';\nimport Select from \'./Select\';\nimport type { SelectProps } from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler: SelectProps[\'onChange\'] = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="please select"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="grapefruit" value="Grapefruit"></Option>\n        <Option label="lime" value="lime"></Option>\n        <Option label="coconut" value="coconut" disabled></Option>\n        <Option label="mango" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="please select"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="grapefruit" value="Grapefruit"></Option>\n        <Option label="lime" value="lime"></Option>\n        <Option label="coconut" value="coconut" disabled></Option>\n        <Option label="mango" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
       jn =
-        "import React, {\n  useState,\n  useEffect,\n  cloneElement,\n  createRef,\n  forwardRef,\n} from 'react';\nimport type { OptionValueProps } from './Option';\nimport classnames from '../../utils/classnames';\nimport useClickOutside from '../../utils/useClickOutside';\nimport Option from './Option';\nimport './select.less';\n\nexport interface SelectProps extends Record<string, any> {\n  disabled: boolean;\n  defaultValue: string;\n  value: string;\n  onChange(v: Partial<OptionValueProps>): void;\n  placeholder: string;\n  children: JSX.Element[] | JSX.Element;\n  allowClear: boolean;\n  labelProps: string;\n}\nconst ClearIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => {\n    const { onClick, ...rest } = props;\n    return (\n      <svg\n        className=\"ew-select-clear-icon\"\n        viewBox=\"0 0 1024 1024\"\n        version=\"1.1\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n        p-id=\"2381\"\n        ref={ref}\n        onClick={(e) => {\n          if (onClick) {\n            onClick(e);\n          }\n        }}\n        {...rest}\n      >\n        <path\n          d=\"M512 39.384615C250.092308 39.384615 39.384615 250.092308 39.384615 512s210.707692 472.615385 472.615385 472.615385 472.615385-210.707692 472.615385-472.615385S773.907692 39.384615 512 39.384615z m96.492308 488.369231l153.6 153.6c7.876923 7.876923 7.876923 19.692308 0 27.569231l-55.138462 55.138461c-7.876923 7.876923-19.692308 7.876923-27.569231 0L525.784615 610.461538c-7.876923-7.876923-19.692308-7.876923-27.56923 0l-153.6 153.6c-7.876923 7.876923-19.692308 7.876923-27.569231 0L261.907692 708.923077c-7.876923-7.876923-7.876923-19.692308 0-27.569231l153.6-153.6c7.876923-7.876923 7.876923-19.692308 0-27.569231l-155.56923-155.56923c-7.876923-7.876923-7.876923-19.692308 0-27.569231l55.138461-55.138462c7.876923-7.876923 19.692308-7.876923 27.569231 0l155.569231 155.569231c7.876923 7.876923 19.692308 7.876923 27.56923 0l153.6-153.6c7.876923-7.876923 19.692308-7.876923 27.569231 0l55.138462 55.138462c7.876923 7.876923 7.876923 19.692308 0 27.56923l-153.6 153.6c-5.907692 7.876923-5.907692 19.692308 0 27.569231z\"\n          p-id=\"2382\"\n          fill=\"#dbdbdb\"\n          className=\"ew-select-clear-icon-path\"\n        ></path>\n      </svg>\n    );\n  },\n);\nconst ArrowIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => (\n    <svg\n      className=\"ew-select-arrow-icon\"\n      viewBox=\"0 0 1024 1024\"\n      version=\"1.1\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      p-id=\"2216\"\n      ref={ref}\n      {...props}\n    >\n      <path\n        d=\"M512 714.666667c-8.533333 0-17.066667-2.133333-23.466667-8.533334l-341.333333-341.333333c-12.8-12.8-12.8-32 0-44.8 12.8-12.8 32-12.8 44.8 0l320 317.866667 317.866667-320c12.8-12.8 32-12.8 44.8 0 12.8 12.8 12.8 32 0 44.8L533.333333 704c-4.266667 8.533333-12.8 10.666667-21.333333 10.666667z\"\n        p-id=\"2217\"\n      ></path>\n    </svg>\n  ),\n);\nconst Select = (\n  props: Partial<Omit<SelectProps, 'children'>> & Pick<SelectProps, 'children'>,\n) => {\n  const {\n    disabled,\n    defaultValue,\n    value,\n    onChange,\n    placeholder = '\u8bf7\u8f93\u5165',\n    allowClear = true,\n    children,\n    labelProps = 'label',\n    ...rest\n  } = props;\n  const dropdownRef = createRef<HTMLDivElement>();\n  const clearIconRef = createRef<HTMLOrSVGElement>();\n  const [selectValue, setSelectValue] = useState<string | undefined>(\n    defaultValue,\n  );\n  const [option, setOption] = useState<Partial<OptionValueProps>>({});\n  const [visible, setVisible] = useState(false);\n  const [showClear, setShowClear] = useState(false);\n\n  const optionChildren = Array.isArray(children)\n    ? children\n    : [children]?.filter((item) => item?.type?.name === 'Option') || [];\n\n  useEffect(() => {\n    if (typeof value === 'string') {\n      setSelectValue(value);\n    }\n  }, [value]);\n\n  const onChangeHandler = (v: Partial<OptionValueProps>) => {\n    setOption(v);\n    setSelectValue(v.value);\n    if (!disabled) {\n      setVisible(false);\n      setShowClear(false);\n    }\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  const onClearHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setOption({ label: '', value: '' });\n    setSelectValue('');\n  };\n  const selectClassNames = {\n    'ew-select': true,\n    'ew-select-disabled': disabled,\n  };\n  const valueClassNames = {\n    'ew-select-selector': true,\n    'ew-select-selector-placeholder': !selectValue,\n  };\n  useClickOutside(dropdownRef, () => {\n    if (!disabled) {\n      setVisible(false);\n    }\n  });\n  return (\n    <div\n      className={classnames(selectClassNames)}\n      {...rest}\n      ref={dropdownRef}\n      onMouseEnter={() => {\n        if (!disabled) {\n          setShowClear(true);\n        }\n      }}\n      onMouseLeave={() => {\n        if (!disabled) {\n          setShowClear(false);\n        }\n      }}\n    >\n      <div\n        className={classnames(valueClassNames)}\n        placeholder={placeholder}\n        onClick={() => {\n          if (!disabled) {\n            setVisible(!visible);\n          }\n        }}\n      >\n        <span className=\"ew-select-selector-value\">{option[labelProps]}</span>\n      </div>\n      <div className=\"ew-select-arrow\">\n        {allowClear && selectValue && showClear ? (\n          <ClearIcon onClick={onClearHandler} ref={clearIconRef} />\n        ) : (\n          <ArrowIcon\n            onClick={() => {\n              if (!disabled) {\n                setVisible(!visible);\n              }\n            }}\n          />\n        )}\n      </div>\n      <div\n        className=\"ew-select-dropdown\"\n        style={{ display: visible ? 'block' : 'none' }}\n      >\n        {optionChildren.map((item, index) =>\n          cloneElement(item, {\n            onOptionChange: onChangeHandler,\n            defaultValue: selectValue,\n            key: item.key || String(index + 1),\n            active: item.props.value === selectValue,\n          }),\n        )}\n      </div>\n    </div>\n  );\n};\nSelect.Option = Option;\nexport default Select;",
+        "import React, {\n  useState,\n  useEffect,\n  cloneElement,\n  createRef,\n  forwardRef,\n} from 'react';\nimport type { OptionValueProps } from './Option';\nimport classnames from '../../utils/classnames';\nimport useClickOutside from '../../utils/useClickOutside';\nimport Option from './Option';\nimport './select.less';\n\nexport interface SelectProps extends Record<string, any> {\n  disabled: boolean;\n  defaultValue: string;\n  value: string;\n  onChange(v: Partial<OptionValueProps>): void;\n  placeholder: string;\n  children: JSX.Element[] | JSX.Element;\n  allowClear: boolean;\n  labelProps: string;\n}\nconst ClearIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => {\n    const { onClick, ...rest } = props;\n    return (\n      <svg\n        className=\"ew-select-clear-icon\"\n        viewBox=\"0 0 1024 1024\"\n        version=\"1.1\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n        p-id=\"2381\"\n        ref={ref}\n        onClick={(e) => {\n          onClick?.(e);\n        }}\n        {...rest}\n      >\n        <path\n          d=\"M512 39.384615C250.092308 39.384615 39.384615 250.092308 39.384615 512s210.707692 472.615385 472.615385 472.615385 472.615385-210.707692 472.615385-472.615385S773.907692 39.384615 512 39.384615z m96.492308 488.369231l153.6 153.6c7.876923 7.876923 7.876923 19.692308 0 27.569231l-55.138462 55.138461c-7.876923 7.876923-19.692308 7.876923-27.569231 0L525.784615 610.461538c-7.876923-7.876923-19.692308-7.876923-27.56923 0l-153.6 153.6c-7.876923 7.876923-19.692308 7.876923-27.569231 0L261.907692 708.923077c-7.876923-7.876923-7.876923-19.692308 0-27.569231l153.6-153.6c7.876923-7.876923 7.876923-19.692308 0-27.569231l-155.56923-155.56923c-7.876923-7.876923-7.876923-19.692308 0-27.569231l55.138461-55.138462c7.876923-7.876923 19.692308-7.876923 27.569231 0l155.569231 155.569231c7.876923 7.876923 19.692308 7.876923 27.56923 0l153.6-153.6c7.876923-7.876923 19.692308-7.876923 27.569231 0l55.138462 55.138462c7.876923 7.876923 7.876923 19.692308 0 27.56923l-153.6 153.6c-5.907692 7.876923-5.907692 19.692308 0 27.569231z\"\n          p-id=\"2382\"\n          fill=\"#dbdbdb\"\n          className=\"ew-select-clear-icon-path\"\n        ></path>\n      </svg>\n    );\n  },\n);\nconst ArrowIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => (\n    <svg\n      className=\"ew-select-arrow-icon\"\n      viewBox=\"0 0 1024 1024\"\n      version=\"1.1\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      p-id=\"2216\"\n      ref={ref}\n      {...props}\n    >\n      <path\n        d=\"M512 714.666667c-8.533333 0-17.066667-2.133333-23.466667-8.533334l-341.333333-341.333333c-12.8-12.8-12.8-32 0-44.8 12.8-12.8 32-12.8 44.8 0l320 317.866667 317.866667-320c12.8-12.8 32-12.8 44.8 0 12.8 12.8 12.8 32 0 44.8L533.333333 704c-4.266667 8.533333-12.8 10.666667-21.333333 10.666667z\"\n        p-id=\"2217\"\n      ></path>\n    </svg>\n  ),\n);\nconst Select = (\n  props: Partial<Omit<SelectProps, 'children'>> & Pick<SelectProps, 'children'>,\n) => {\n  const {\n    disabled,\n    defaultValue,\n    value,\n    onChange,\n    placeholder = '\u8bf7\u8f93\u5165',\n    allowClear = true,\n    children,\n    labelProps = 'label',\n    ...rest\n  } = props;\n  const dropdownRef = createRef<HTMLDivElement>();\n  const clearIconRef = createRef<HTMLOrSVGElement>();\n  const [selectValue, setSelectValue] = useState<string | undefined>(\n    defaultValue,\n  );\n  const [option, setOption] = useState<Partial<OptionValueProps>>({});\n  const [visible, setVisible] = useState(false);\n  const [showClear, setShowClear] = useState(false);\n\n  const optionChildren = Array.isArray(children)\n    ? children\n    : [children]?.filter((item) => item?.type?.displayName === 'Option') || [];\n\n  useEffect(() => {\n    if (typeof value === 'string') {\n      setSelectValue(value);\n    }\n  }, [value]);\n\n  const onChangeHandler = (v: Partial<OptionValueProps>) => {\n    setOption(v);\n    setSelectValue(v.value);\n    if (!disabled) {\n      setVisible(false);\n      setShowClear(false);\n    }\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  const onClearHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setOption({ label: '', value: '' });\n    setSelectValue('');\n  };\n  const selectClassNames = {\n    'ew-select': true,\n    'ew-select-disabled': disabled,\n  };\n  const valueClassNames = {\n    'ew-select-selector': true,\n    'ew-select-selector-placeholder': !selectValue,\n  };\n  useClickOutside(dropdownRef, () => {\n    if (!disabled) {\n      setVisible(false);\n    }\n  });\n  return (\n    <div\n      className={classnames(selectClassNames)}\n      {...rest}\n      ref={dropdownRef}\n      onMouseEnter={() => {\n        if (!disabled) {\n          setShowClear(true);\n        }\n      }}\n      onMouseLeave={() => {\n        if (!disabled) {\n          setShowClear(false);\n        }\n      }}\n    >\n      <div\n        className={classnames(valueClassNames)}\n        placeholder={placeholder}\n        onClick={() => {\n          if (!disabled) {\n            setVisible(!visible);\n          }\n        }}\n      >\n        <span className=\"ew-select-selector-value\">{option[labelProps]}</span>\n      </div>\n      <div className=\"ew-select-arrow\">\n        {allowClear && selectValue && showClear ? (\n          <ClearIcon onClick={onClearHandler} ref={clearIconRef} />\n        ) : (\n          <ArrowIcon\n            onClick={() => {\n              if (!disabled) {\n                setVisible(!visible);\n              }\n            }}\n          />\n        )}\n      </div>\n      <div\n        className=\"ew-select-dropdown\"\n        style={{ display: visible ? 'block' : 'none' }}\n      >\n        {optionChildren.map((item, index) =>\n          cloneElement(item, {\n            onOptionChange: onChangeHandler,\n            defaultValue: selectValue,\n            key: item.key || String(index + 1),\n            active: item.props.value === selectValue,\n          }),\n        )}\n      </div>\n    </div>\n  );\n};\nSelect.Option = Option;\nexport default Select;",
       Tn =
         "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
       In =
-        "import React, { useState, useEffect } from 'react';\nimport type { ReactNode } from 'react';\nimport classnames from '../../utils/classnames';\nexport interface OptionValueProps {\n  label: string;\n  value: string;\n}\nexport interface OptionProps extends Record<string, any>, OptionValueProps {\n  disabled: boolean;\n  children: ReactNode;\n  defaultValue: string;\n  onOptionChange(v: Partial<OptionValueProps>): void;\n  active: boolean;\n}\nconst Option = (props: Partial<OptionProps>) => {\n  const {\n    label,\n    value,\n    disabled,\n    defaultValue,\n    children,\n    onOptionChange,\n    active,\n    ...rest\n  } = props;\n  const [currentValue, setCurrentValue] = useState<string | undefined>(\n    defaultValue,\n  );\n\n  const classNames = {\n    'ew-select-dropdown-option': true,\n    'ew-select-dropdown-option-disabled': disabled,\n    active: active,\n  };\n  const onChangeHandler = (options: Partial<OptionValueProps>) => {\n    if (disabled) {\n      return;\n    }\n\n    setCurrentValue(options.value);\n    if (onOptionChange) {\n      onOptionChange(options);\n    }\n  };\n\n  useEffect(() => {\n    if (currentValue) {\n      if (onOptionChange) {\n        onOptionChange({ label, value });\n      }\n    }\n  }, [currentValue]);\n  return (\n    <div\n      className={classnames(classNames)}\n      data-value={currentValue}\n      {...rest}\n      onClick={() => onChangeHandler({ label, value })}\n    >\n      {children ? children : label ? label : ''}\n    </div>\n  );\n};\nexport default Option;",
+        "import React, { useState, useEffect } from 'react';\nimport type { ReactNode } from 'react';\nimport classnames from '../../utils/classnames';\nexport interface OptionValueProps {\n  label: string;\n  value: string;\n}\nexport interface OptionProps extends Record<string, any>, OptionValueProps {\n  disabled: boolean;\n  children: ReactNode;\n  defaultValue: string;\n  onOptionChange(v: Partial<OptionValueProps>): void;\n  active: boolean;\n}\nconst Option = (props: Partial<OptionProps>) => {\n  const {\n    label,\n    value,\n    disabled,\n    defaultValue,\n    children,\n    onOptionChange,\n    active,\n    ...rest\n  } = props;\n  const [currentValue, setCurrentValue] = useState<string | undefined>(\n    defaultValue,\n  );\n\n  const classNames = {\n    'ew-select-dropdown-option': true,\n    'ew-select-dropdown-option-disabled': disabled,\n    active: active,\n  };\n  const onChangeHandler = (options: Partial<OptionValueProps>) => {\n    if (disabled) {\n      return;\n    }\n\n    setCurrentValue(options.value);\n    if (onOptionChange) {\n      onOptionChange(options);\n    }\n  };\n\n  useEffect(() => {\n    if (currentValue) {\n      onOptionChange?.({ label, value });\n    }\n  }, [currentValue]);\n  return (\n    <div\n      className={classnames(classNames)}\n      data-value={currentValue}\n      {...rest}\n      onClick={() => onChangeHandler({ label, value })}\n    >\n      {children ? children : label ? label : ''}\n    </div>\n  );\n};\nOption.displayName = \"Option\";\nexport default Option;",
       Nn =
         "@prefix: ew-;\n\n.@{prefix}select {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: rgba(0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  cursor: pointer;\n  border-radius: 4px;\n  min-width: 120px;\n\n  &-disabled {\n    .@{prefix}select-selector {\n      background: #f5f5f5;\n      cursor: not-allowed;\n      color: rgba(0, 0, 0, 0.25);\n    }\n\n    .@{prefix}select-arrow {\n      cursor: not-allowed;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-selector,\n  &:not(.@{prefix}select-disabled):active &-selector {\n    border-color: #2396ef;\n  }\n\n  &-selector {\n    position: relative;\n    background-color: #fff;\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    width: 100%;\n    height: 32px;\n    padding: 0 11px;\n\n    &&-placeholder::after {\n      content: attr(placeholder);\n      display: inline-block;\n      padding-right: 18px;\n      color: rgba(0, 0, 0, 0.35);\n      position: relative;\n      left: -15px;\n    }\n\n    &-value {\n      padding-right: 18px;\n      line-height: 30px;\n      position: relative;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-value {\n    border-color: #2396ef;\n    border-right-width: 1px;\n  }\n\n  &-arrow {\n    display: inline-block;\n    color: inherit;\n    font-style: normal;\n    line-height: 0;\n    text-transform: none;\n    vertical-align: -0.125em;\n    text-rendering: optimizelegibility;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    position: absolute;\n    top: 50%;\n    right: 11px;\n    display: flex;\n    align-items: center;\n    margin-top: -6px;\n    font-size: 12px;\n    line-height: 1;\n    text-align: center;\n\n    &-icon,\n    .@{prefix}select-clear-icon {\n      width: 16px;\n      height: 16px;\n      display: inline-block;\n      color: rgba(0, 0, 0, 0.25);\n    }\n  }\n\n  .@{prefix}select-clear-icon {\n    position: relative;\n    top: -2px;\n  }\n\n  &-dropdown {\n    margin: 0;\n    color: rgba(0, 0, 0.85);\n    font-variant: tabular-nums;\n    line-height: 1.5715;\n    position: absolute;\n    z-index: 1050;\n    box-sizing: border-box;\n    padding: 4px 0;\n    overflow: hidden;\n    font-size: 14px;\n    font-variant: initial;\n    background-color: #fff;\n    border-radius: 2px;\n    outline: none;\n    width: 100%;\n    top: 40px;\n    box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014,\n      0 9px 28px 8px #0000000d;\n\n    &-option {\n      position: relative;\n      display: flex;\n      min-height: 32px;\n      padding: 5px 12px;\n      color: rgba(0, 0, 0.85);\n      font-weight: 400;\n      font-size: 14px;\n      line-height: 22px;\n      cursor: pointer;\n      transition: background 0.3s ease;\n      flex: auto;\n      overflow: hidden;\n      white-space: nowrap;\n      text-overflow: ellipsis;\n\n      &-disabled {\n        color: rgba(0, 0, 0, 0.25);\n        cursor: not-allowed;\n      }\n\n      &:not(:last-of-type) {\n        margin-bottom: 8px;\n      }\n\n      &:not(&-disabled):hover {\n        background-color: #f5f5f5;\n      }\n\n      &:not(&-disabled).active {\n        background-color: #e6f7ff;\n      }\n    }\n  }\n}",
       Pn =
-        'import React from \'react\';\nimport Select from \'./Select\';\nimport type { SelectProps } from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler: SelectProps[\'onChange\'] = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
+        'import React from \'react\';\r\nimport Select from \'./Select\';\r\nimport { Space } from \'antd\';\r\nconst { Option } = Select;\r\nconst Demo = () => {\r\n  const onChangeHandler = (v) => {\r\n    console.log(v);\r\n  };\r\n  return (\r\n    <Space>\r\n      <Select\r\n        placeholder="please select"\r\n        defaultValue="Grapefruit"\r\n        onChange={onChangeHandler}\r\n      >\r\n        <Option label="grapefruit" value="Grapefruit"></Option>\r\n        <Option label="lime" value="lime"></Option>\r\n        <Option label="coconut" value="coconut" disabled></Option>\r\n        <Option label="mango" value="mango"></Option>\r\n      </Select>\r\n      <Select\r\n        placeholder="please select"\r\n        defaultValue="Grapefruit"\r\n        onChange={onChangeHandler}\r\n        disabled\r\n      >\r\n        <Option label="grapefruit" value="Grapefruit"></Option>\r\n        <Option label="lime" value="lime"></Option>\r\n        <Option label="coconut" value="coconut" disabled></Option>\r\n        <Option label="mango" value="mango"></Option>\r\n      </Select>\r\n    </Space>\r\n  );\r\n};\r\nexport default Demo;',
       Rn =
-        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['name1', 'name2', 'name3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
+        'import React, {\r\n    useState,\r\n    useEffect,\r\n    cloneElement,\r\n    createRef,\r\n    forwardRef,\r\n} from \'react\';\r\nimport classnames from \'../../../utils/classnames\';\r\nimport useClickOutside from \'../../../utils/useClickOutside\';\r\nimport Option from \'./Option\';\r\nimport \'../select.less\';\r\n\r\nconst ClearIcon = forwardRef(\r\n    (props, ref) => {\r\n        const { onClick, ...rest } = props;\r\n        return (\r\n            <svg\r\n                className="ew-select-clear-icon"\r\n                viewBox="0 0 1024 1024"\r\n                version="1.1"\r\n                xmlns="http://www.w3.org/2000/svg"\r\n                p-id="2381"\r\n                ref={ref}\r\n                onClick={(e) => {\r\n                    onClick?.(e);\r\n                }}\r\n                {...rest}\r\n            >\r\n                <path\r\n                    d="M512 39.384615C250.092308 39.384615 39.384615 250.092308 39.384615 512s210.707692 472.615385 472.615385 472.615385 472.615385-210.707692 472.615385-472.615385S773.907692 39.384615 512 39.384615z m96.492308 488.369231l153.6 153.6c7.876923 7.876923 7.876923 19.692308 0 27.569231l-55.138462 55.138461c-7.876923 7.876923-19.692308 7.876923-27.569231 0L525.784615 610.461538c-7.876923-7.876923-19.692308-7.876923-27.56923 0l-153.6 153.6c-7.876923 7.876923-19.692308 7.876923-27.569231 0L261.907692 708.923077c-7.876923-7.876923-7.876923-19.692308 0-27.569231l153.6-153.6c7.876923-7.876923 7.876923-19.692308 0-27.569231l-155.56923-155.56923c-7.876923-7.876923-7.876923-19.692308 0-27.569231l55.138461-55.138462c7.876923-7.876923 19.692308-7.876923 27.569231 0l155.569231 155.569231c7.876923 7.876923 19.692308 7.876923 27.56923 0l153.6-153.6c7.876923-7.876923 19.692308-7.876923 27.569231 0l55.138462 55.138462c7.876923 7.876923 7.876923 19.692308 0 27.56923l-153.6 153.6c-5.907692 7.876923-5.907692 19.692308 0 27.569231z"\r\n                    p-id="2382"\r\n                    fill="#dbdbdb"\r\n                    className="ew-select-clear-icon-path"\r\n                ></path>\r\n            </svg>\r\n        );\r\n    },\r\n);\r\nconst ArrowIcon = forwardRef(\r\n    (props, ref) => (\r\n        <svg\r\n            className="ew-select-arrow-icon"\r\n            viewBox="0 0 1024 1024"\r\n            version="1.1"\r\n            xmlns="http://www.w3.org/2000/svg"\r\n            p-id="2216"\r\n            ref={ref}\r\n            {...props}\r\n        >\r\n            <path\r\n                d="M512 714.666667c-8.533333 0-17.066667-2.133333-23.466667-8.533334l-341.333333-341.333333c-12.8-12.8-12.8-32 0-44.8 12.8-12.8 32-12.8 44.8 0l320 317.866667 317.866667-320c12.8-12.8 32-12.8 44.8 0 12.8 12.8 12.8 32 0 44.8L533.333333 704c-4.266667 8.533333-12.8 10.666667-21.333333 10.666667z"\r\n                p-id="2217"\r\n            ></path>\r\n        </svg>\r\n    ),\r\n);\r\nconst Select = (\r\n    props,\r\n) => {\r\n    const {\r\n        disabled,\r\n        defaultValue,\r\n        value,\r\n        onChange,\r\n        placeholder = \'\u8bf7\u8f93\u5165\',\r\n        allowClear = true,\r\n        children,\r\n        labelProps = \'label\',\r\n        ...rest\r\n    } = props;\r\n    const dropdownRef = createRef();\r\n    const clearIconRef = createRef();\r\n    const [selectValue, setSelectValue] = useState(\r\n        defaultValue,\r\n    );\r\n    const [option, setOption] = useState({});\r\n    const [visible, setVisible] = useState(false);\r\n    const [showClear, setShowClear] = useState(false);\r\n\r\n    const optionChildren = Array.isArray(children)\r\n        ? children\r\n        : [children]?.filter((item) => item?.type?.displayName === \'Option\') || [];\r\n\r\n    useEffect(() => {\r\n        if (typeof value === \'string\') {\r\n            setSelectValue(value);\r\n        }\r\n    }, [value]);\r\n\r\n    const onChangeHandler = (v) => {\r\n        setOption(v);\r\n        setSelectValue(v.value);\r\n        if (!disabled) {\r\n            setVisible(false);\r\n            setShowClear(false);\r\n        }\r\n        if (onChange) {\r\n            onChange(v);\r\n        }\r\n    };\r\n    const onClearHandler = () => {\r\n        if (disabled) {\r\n            return;\r\n        }\r\n        setOption({ label: \'\', value: \'\' });\r\n        setSelectValue(\'\');\r\n    };\r\n    const selectClassNames = {\r\n        \'ew-select\': true,\r\n        \'ew-select-disabled\': disabled,\r\n    };\r\n    const valueClassNames = {\r\n        \'ew-select-selector\': true,\r\n        \'ew-select-selector-placeholder\': !selectValue,\r\n    };\r\n    useClickOutside(dropdownRef, () => {\r\n        if (!disabled) {\r\n            setVisible(false);\r\n        }\r\n    });\r\n    return (\r\n        <div\r\n            className={classnames(selectClassNames)}\r\n            {...rest}\r\n            ref={dropdownRef}\r\n            onMouseEnter={() => {\r\n                if (!disabled) {\r\n                    setShowClear(true);\r\n                }\r\n            }}\r\n            onMouseLeave={() => {\r\n                if (!disabled) {\r\n                    setShowClear(false);\r\n                }\r\n            }}\r\n        >\r\n            <div\r\n                className={classnames(valueClassNames)}\r\n                placeholder={placeholder}\r\n                onClick={() => {\r\n                    if (!disabled) {\r\n                        setVisible(!visible);\r\n                    }\r\n                }}\r\n            >\r\n                <span className="ew-select-selector-value">{option[labelProps]}</span>\r\n            </div>\r\n            <div className="ew-select-arrow">\r\n                {allowClear && selectValue && showClear ? (\r\n                    <ClearIcon onClick={onClearHandler} ref={clearIconRef} />\r\n                ) : (\r\n                    <ArrowIcon\r\n                        onClick={() => {\r\n                            if (!disabled) {\r\n                                setVisible(!visible);\r\n                            }\r\n                        }}\r\n                    />\r\n                )}\r\n            </div>\r\n            <div\r\n                className="ew-select-dropdown"\r\n                style={{ display: visible ? \'block\' : \'none\' }}\r\n            >\r\n                {optionChildren.map((item, index) =>\r\n                    cloneElement(item, {\r\n                        onOptionChange: onChangeHandler,\r\n                        defaultValue: selectValue,\r\n                        key: item.key || String(index + 1),\r\n                        active: item.props.value === selectValue,\r\n                    }),\r\n                )}\r\n            </div>\r\n        </div>\r\n    );\r\n};\r\nSelect.Option = Option;\r\nexport default Select;',
       Ln =
-        "import { css } from '@emotion/css';\nimport React from 'react';\n\ninterface DataListProps {\n  data: string[];\n  isOrdered: boolean;\n  isBordered: boolean;\n}\nconst SimpleStyleDataList = css`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-size: 14px;\n  line-height: 1.5715;\n  list-style: none;\n  position: relative;\n  &.bordered {\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n  }\n`;\nconst SimpleDataListItem = css`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 24px;\n  color: rgba(0, 0, 0, 0.85);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  &:last-of-type {\n    border-bottom: 0;\n  }\n`;\nconst SimpleDataList = (props: Partial<DataListProps>) => {\n  const { data, isOrdered = false, isBordered = true } = props;\n  const List = data?.map((val, index) => (\n    <li className={SimpleDataListItem} key={`${val}-${index}`}>\n      {val}\n    </li>\n  ));\n  const containerClassName = `${SimpleStyleDataList}${\n    isBordered ? ' bordered' : ''\n  }`;\n  return isOrdered ? (\n    <ol className={containerClassName}>{List}</ol>\n  ) : (\n    <ul className={containerClassName}>{List}</ul>\n  );\n};\n\nexport default SimpleDataList;",
+        "import React, { useState, useEffect } from 'react';\r\nimport classnames from '../../../utils/classnames';\r\n\r\nconst Option = (props) => {\r\n  const {\r\n    label,\r\n    value,\r\n    disabled,\r\n    defaultValue,\r\n    children,\r\n    onOptionChange,\r\n    active,\r\n    ...rest\r\n  } = props;\r\n  const [currentValue, setCurrentValue] = useState(\r\n    defaultValue,\r\n  );\r\n\r\n  const classNames = {\r\n    'ew-select-dropdown-option': true,\r\n    'ew-select-dropdown-option-disabled': disabled,\r\n    active: active,\r\n  };\r\n  const onChangeHandler = (options) => {\r\n    if (disabled) {\r\n      return;\r\n    }\r\n\r\n    setCurrentValue(options.value);\r\n    if (onOptionChange) {\r\n      onOptionChange(options);\r\n    }\r\n  };\r\n\r\n  useEffect(() => {\r\n    if (currentValue) {\r\n      onOptionChange?.({ label, value });\r\n    }\r\n  }, [currentValue]);\r\n  return (\r\n    <div\r\n      className={classnames(classNames)}\r\n      data-value={currentValue}\r\n      {...rest}\r\n      onClick={() => onChangeHandler({ label, value })}\r\n    >\r\n      {children ? children : label ? label : ''}\r\n    </div>\r\n  );\r\n};\r\nOption.displayName = \"Option\";\r\nexport default Option;",
       An =
-        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['name1', 'name2', 'name3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
+        'import React from \'react\';\nimport Select from \'./Select\';\nimport type { SelectProps } from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler: SelectProps[\'onChange\'] = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
       Mn =
-        "import { css } from '@emotion/css';\nimport React from 'react';\nconst SimpleStyleDataList = css`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-size: 14px;\n  line-height: 1.5715;\n  list-style: none;\n  position: relative;\n  &.bordered {\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n  }\n`;\nconst SimpleDataListItem = css`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 24px;\n  color: rgba(0, 0, 0, 0.85);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  &:last-of-type {\n    border-bottom: 0;\n  }\n`;\nconst SimpleDataList = (props) => {\n  const { data, isOrdered = false, isBordered = true } = props;\n  const List = data?.map((val, index) => (\n    <li className={SimpleDataListItem} key={`${val}-${index}`}>\n      {val}\n    </li>\n  ));\n  const containerClassName = `${SimpleStyleDataList}${\n    isBordered ? ' bordered' : ''\n  }`;\n  return isOrdered ? (\n    <ol className={containerClassName}>{List}</ol>\n  ) : (\n    <ul className={containerClassName}>{List}</ul>\n  );\n};\n\nexport default SimpleDataList;",
+        'import React from \'react\';\r\nimport Select from \'./Select\';\r\nimport { Space } from \'antd\';\r\nconst { Option } = Select;\r\nconst Demo = () => {\r\n  const onChangeHandler = (v) => {\r\n    console.log(v);\r\n  };\r\n  return (\r\n    <Space>\r\n      <Select\r\n        placeholder="\u8bf7\u9009\u62e9"\r\n        defaultValue="Grapefruit"\r\n        onChange={onChangeHandler}\r\n      >\r\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\r\n        <Option label="\u9178\u6a59" value="lime"></Option>\r\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\r\n        <Option label="\u8292\u679c" value="mango"></Option>\r\n      </Select>\r\n      <Select\r\n        placeholder="\u8bf7\u9009\u62e9"\r\n        defaultValue="Grapefruit"\r\n        onChange={onChangeHandler}\r\n        disabled\r\n      >\r\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\r\n        <Option label="\u9178\u6a59" value="lime"></Option>\r\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\r\n        <Option label="\u8292\u679c" value="mango"></Option>\r\n      </Select>\r\n    </Space>\r\n  );\r\n};\r\nexport default Demo;',
       Dn =
-        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['\u59d3\u540d1', '\u59d3\u540d2', '\u59d3\u540d3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
+        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['name1', 'name2', 'name3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
       zn =
-        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['\u59d3\u540d1', '\u59d3\u540d2', '\u59d3\u540d3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
+        "import { css } from '@emotion/css';\nimport React from 'react';\n\ninterface DataListProps {\n  data: string[];\n  isOrdered: boolean;\n  isBordered: boolean;\n}\nconst SimpleStyleDataList = css`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-size: 14px;\n  line-height: 1.5715;\n  list-style: none;\n  position: relative;\n  &.bordered {\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n  }\n`;\nconst SimpleDataListItem = css`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 24px;\n  color: rgba(0, 0, 0, 0.85);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  &:last-of-type {\n    border-bottom: 0;\n  }\n`;\nconst SimpleDataList = (props: Partial<DataListProps>) => {\n  const { data, isOrdered = false, isBordered = true } = props;\n  const List = data?.map((val, index) => (\n    <li className={SimpleDataListItem} key={`${val}-${index}`}>\n      {val}\n    </li>\n  ));\n  const containerClassName = `${SimpleStyleDataList}${\n    isBordered ? ' bordered' : ''\n  }`;\n  return isOrdered ? (\n    <ol className={containerClassName}>{List}</ol>\n  ) : (\n    <ul className={containerClassName}>{List}</ul>\n  );\n};\n\nexport default SimpleDataList;",
       _n =
-        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
+        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['name1', 'name2', 'name3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
       Fn =
-        'import React from \'react\';\nimport \'./simpleDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleDataTable = (props: Partial<SimpleDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {data?.map((item) => (\n          <tr key={item.key} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleDataTable;',
+        "import { css } from '@emotion/css';\nimport React from 'react';\nconst SimpleStyleDataList = css`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-size: 14px;\n  line-height: 1.5715;\n  list-style: none;\n  position: relative;\n  &.bordered {\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n  }\n`;\nconst SimpleDataListItem = css`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 24px;\n  color: rgba(0, 0, 0, 0.85);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  &:last-of-type {\n    border-bottom: 0;\n  }\n`;\nconst SimpleDataList = (props) => {\n  const { data, isOrdered = false, isBordered = true } = props;\n  const List = data?.map((val, index) => (\n    <li className={SimpleDataListItem} key={`${val}-${index}`}>\n      {val}\n    </li>\n  ));\n  const containerClassName = `${SimpleStyleDataList}${\n    isBordered ? ' bordered' : ''\n  }`;\n  return isOrdered ? (\n    <ol className={containerClassName}>{List}</ol>\n  ) : (\n    <ul className={containerClassName}>{List}</ul>\n  );\n};\n\nexport default SimpleDataList;",
       Bn =
-        '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
+        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['\u59d3\u540d1', '\u59d3\u540d2', '\u59d3\u540d3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
       Un =
-        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
+        "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['\u59d3\u540d1', '\u59d3\u540d2', '\u59d3\u540d3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
       Hn =
-        'import React from \'react\';\nimport \'../simpleDataTable.less\';\n\nconst SimpleDataTable = (props) => {\n  const { columns, data, isBordered } = props;\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {data?.map((item) => (\n          <tr key={item.key} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleDataTable;',
+        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
       Vn =
-        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
+        'import React from \'react\';\nimport \'./simpleDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleDataTable = (props: Partial<SimpleDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {data?.map((item) => (\n          <tr key={item.key} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleDataTable;',
       qn =
-        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
-      Gn =
-        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
-      $n =
-        'import React from \'react\';\nimport \'./SimpleMappedDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleMappedDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleMappedDataTable = (props: Partial<SimpleMappedDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n\n  let filteredData = data?.map((v) =>\n    Object.keys(v)\n      .filter((k) => columns?.some((col) => col.dataIndex === k))\n      .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n  ) as DataProps[];\n\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {filteredData?.map((item, index) => (\n          <tr key={`${index}_${index}`} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleMappedDataTable;',
-      Wn =
         '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
+      Gn =
+        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
+      $n =
+        'import React from \'react\';\nimport \'../simpleDataTable.less\';\n\nconst SimpleDataTable = (props) => {\n  const { columns, data, isBordered } = props;\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {data?.map((item) => (\n          <tr key={item.key} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleDataTable;',
+      Wn =
+        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
       Kn =
-        "import React from 'react';\r\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\r\n\r\nconst Demo = () => {\r\n  const data = [\r\n    {\r\n      key: '1',\r\n      name: 'Tiger Hu',\r\n      age: 32,\r\n      address: 'No. 1, Hudi Park, Xihu District',\r\n    },\r\n    {\r\n      key: '2',\r\n      name: 'Hu Yanzu',\r\n      age: 42,\r\n      address: 'No. 1, Hudi Park, Xihu District',\r\n    },\r\n    {\r\n      key: '3',\r\n      name: 'Hu Yanzu',\r\n      age: 42,\r\n      address: 'No. 1, Hudi Park, Xihu District',\r\n    },\r\n    {\r\n      key: '4',\r\n      name: 'Hu Yanzu',\r\n      age: 42,\r\n      address: 'No. 1, Hudi Park, Xihu District',\r\n    },\r\n  ];\r\n  const columns = [\r\n    {\r\n      key: 'name',\r\n      dataIndex: 'name',\r\n      title: 'name',\r\n    },\r\n    {\r\n      key: 'age',\r\n      dataIndex: 'age',\r\n      title: 'age',\r\n    },\r\n    {\r\n      key: 'address',\r\n      dataIndex: 'address',\r\n      title: 'address',\r\n    },\r\n  ];\r\n  return <SimpleMappedDataTable data={data} columns={columns} isBordered />;\r\n};\r\nexport default Demo;",
+        "import React from 'react';\nimport SimpleDataTable from './SimpleDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
       Yn =
-        'import React from \'react\';\r\nimport \'../SimpleMappedDataTable.less\';\r\nconst SimpleMappedDataTable = (props) => {\r\n    const { columns, data, isBordered } = props;\r\n\r\n    let filteredData = data?.map((v) =>\r\n        Object.keys(v)\r\n            .filter((k) => columns?.some((col) => col.dataIndex === k))\r\n            .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\r\n    );\r\n\r\n    return (\r\n        <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\r\n            <thead className="sim-table-header">\r\n                <tr>\r\n                    {columns?.map((column) => (\r\n                        <th className="sim-table-cell" key={column.key}>\r\n                            {column.title}\r\n                        </th>\r\n                    ))}\r\n                </tr>\r\n            </thead>\r\n            <tbody className="sim-table-body">\r\n                {filteredData?.map((item, index) => (\r\n                    <tr key={`${index}_${index}`} className="sim-table-row">\r\n                        {columns?.map((col) => (\r\n                            <td className="sim-table-cell" key={col.key}>\r\n                                {item[col.dataIndex]}\r\n                            </td>\r\n                        ))}\r\n                    </tr>\r\n                ))}\r\n            </tbody>\r\n        </table>\r\n    );\r\n};\r\n\r\nexport default SimpleMappedDataTable;',
+        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
       Qn =
-        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
-      Zn =
-        "import React from 'react';\r\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\r\n\r\nconst Demo = () => {\r\n  const data = [\r\n    {\r\n      key: '1',\r\n      name: '\u80e1\u5f66\u658c',\r\n      age: 32,\r\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\r\n    },\r\n    {\r\n      key: '2',\r\n      name: '\u80e1\u5f66\u7956',\r\n      age: 42,\r\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\r\n    },\r\n    {\r\n      key: '3',\r\n      name: '\u80e1\u5f66\u7956',\r\n      age: 42,\r\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\r\n    },\r\n    {\r\n      key: '4',\r\n      name: '\u80e1\u5f66\u7956',\r\n      age: 42,\r\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\r\n    },\r\n  ];\r\n  const columns = [\r\n    {\r\n      key: 'name',\r\n      dataIndex: 'name',\r\n      title: '\u59d3\u540d',\r\n    },\r\n    {\r\n      key: 'age',\r\n      dataIndex: 'age',\r\n      title: '\u5e74\u9f84',\r\n    },\r\n    {\r\n      key: 'address',\r\n      dataIndex: 'address',\r\n      title: '\u5730\u5740',\r\n    },\r\n  ];\r\n  return <SimpleMappedDataTable data={data} columns={columns} />;\r\n};\r\nexport default Demo;",
+        'import React from \'react\';\nimport \'./SimpleMappedDataTable.less\';\n\nexport interface columnProps {\n  title: string;\n  key: string;\n  dataIndex: string;\n}\nexport type DataProps = Record<string, any> & Pick<columnProps, \'key\'>;\nexport interface SimpleMappedDataTableProps {\n  columns: columnProps[];\n  data: DataProps[];\n  isBordered: boolean;\n}\nconst SimpleMappedDataTable = (props: Partial<SimpleMappedDataTableProps>) => {\n  const { columns, data, isBordered } = props;\n\n  let filteredData = data?.map((v) =>\n    Object.keys(v)\n      .filter((k) => columns?.some((col) => col.dataIndex === k))\n      .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n  ) as DataProps[];\n\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {filteredData?.map((item, index) => (\n          <tr key={`${index}_${index}`} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleMappedDataTable;',
       Xn =
-        "import React from 'react';\nimport Slider from './Slider';\n\nconst Demo = () => {\n  return <Slider></Slider>;\n};\n\nexport default Demo;",
+        '@prefix: sim-;\n\n.@{prefix}table {\n  border-collapse: collapse;\n  width: 100%;\n  border-radius: 5px;\n  &.is-bordered {\n    border: 1px solid #dedede;\n  }\n\n  &-cell {\n    font-size: 16px;\n    padding: 6px 12px;\n    position: relative;\n    text-align: left;\n    color: rgba(0, 0, 0, 0.85);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  }\n  &-header > tr > th {\n    background-color: #fafafa;\n  }\n  &-row {\n    transition: background 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);\n    &:hover {\n      background-color: #f2f3f4;\n    }\n  }\n}',
+      Zn =
+        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: 'Tiger Hu',\n      age: 32,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '2',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '3',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n    {\n      key: '4',\n      name: 'Hu Yanzu',\n      age: 42,\n      address: 'No. 1, Hudi Park, Xihu District',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: 'name',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: 'age',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: 'address',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} isBordered />;\n};\nexport default Demo;",
       Jn =
-        "import React from 'react';\nimport './slider.less';\nimport classnames from '../../utils/classnames';\n\nexport interface SliderProps extends Record<string, any> {\n  direction: 'horizontal' | 'vertical';\n  min: number;\n  max: number;\n  step: number;\n  disabled: boolean;\n  value: number;\n}\n\nconst Slider = (props: Partial<SliderProps>) => {\n  const { direction = 'horizontal' } = props;\n\n  const prefixClasses = {\n    'ew-slider': true,\n    [`ew-slider-${direction}`]: direction,\n  };\n\n  return (\n    <div className={classnames(prefixClasses)}>\n      <div className=\"ew-slider-rail\"></div>\n      <div className=\"ew-slider-track\"></div>\n      <div className=\"ew-slider-step\"></div>\n      <div className=\"ew-slider-handle\"></div>\n    </div>\n  );\n};\n\nexport default Slider;",
+        'import React from \'react\';\nimport \'../SimpleMappedDataTable.less\';\nconst SimpleMappedDataTable = (props) => {\n  const { columns, data, isBordered } = props;\n\n  let filteredData = data?.map((v) =>\n    Object.keys(v)\n      .filter((k) => columns?.some((col) => col.dataIndex === k))\n      .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n  );\n\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {filteredData?.map((item, index) => (\n          <tr key={`${index}_${index}`} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleMappedDataTable;',
       et =
-        "@prefix: ew-;\n\n.@{prefix}slider {\n  box-sizing: border-box;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  height: 12px;\n  margin: 10px 6px;\n  padding: 4px 0;\n  cursor: pointer;\n\n  &-rail {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background-color: #f5f5f5;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-track {\n    position: absolute;\n    height: 4px;\n    background-color: #2396ef;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-step {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background: 0 0;\n  }\n}",
+        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
       nt =
-        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        Load image\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`Error ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <FetchImage\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport SimpleMappedDataTable from './SimpleMappedDataTable';\n\nconst Demo = () => {\n  const data = [\n    {\n      key: '1',\n      name: '\u80e1\u5f66\u658c',\n      age: 32,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '2',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '3',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n    {\n      key: '4',\n      name: '\u80e1\u5f66\u7956',\n      age: 42,\n      address: '\u897f\u6e56\u533a\u6e56\u5e95\u516c\u56ed1\u53f7',\n    },\n  ];\n  const columns = [\n    {\n      key: 'name',\n      dataIndex: 'name',\n      title: '\u59d3\u540d',\n    },\n    {\n      key: 'age',\n      dataIndex: 'age',\n      title: '\u5e74\u9f84',\n    },\n    {\n      key: 'address',\n      dataIndex: 'address',\n      title: '\u5730\u5740',\n    },\n  ];\n  return <SimpleMappedDataTable data={data} columns={columns} />;\n};\nexport default Demo;",
       tt =
-        "import { useReducer } from 'react';\nexport type StateType = {\n  loading: boolean;\n  value: any;\n  error: any;\n};\nexport type ActionType = Partial<StateType> & { type: string };\nexport type RunType = (args: unknown) => Promise<void>;\nconst useAsync = (handler: (...args: any) => any) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n  const stateReducer = (_: any, action: ActionType) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args: unknown) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
+        "import React from 'react';\nimport Slider from './Slider';\n\nconst Demo = () => {\n  return <Slider></Slider>;\n};\n\nexport default Demo;",
       rt =
-        "import React from 'react';\nimport Button from '../../../guide/Button/Button';\nimport Loader from '../../../guide/Loader/Loader';\nimport Alert from '../../../guide/Alert/Alert';\nimport styled from '@emotion/styled';\nimport useAsync from './useAsync';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={imgFetch?.loading}\n      >\n        Load image\n      </Button>\n      {imgFetch?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {imgFetch?.error && (\n        <Alert type=\"error\" message={`Error ${imgFetch?.error}`}></Alert>\n      )}\n      {imgFetch?.value && (\n        <FetchImage\n          src={imgFetch?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport './slider.less';\nimport classnames from '../../utils/classnames';\n\nexport interface SliderProps extends Record<string, any> {\n  direction: 'horizontal' | 'vertical';\n  min: number;\n  max: number;\n  step: number;\n  disabled: boolean;\n  value: number;\n}\n\nconst Slider = (props: Partial<SliderProps>) => {\n  const { direction = 'horizontal' } = props;\n\n  const prefixClasses = {\n    'ew-slider': true,\n    [`ew-slider-${direction}`]: direction,\n  };\n\n  return (\n    <div className={classnames(prefixClasses)}>\n      <div className=\"ew-slider-rail\"></div>\n      <div className=\"ew-slider-track\"></div>\n      <div className=\"ew-slider-step\"></div>\n      <div className=\"ew-slider-handle\"></div>\n    </div>\n  );\n};\n\nexport default Slider;",
       at =
-        "import { useReducer } from 'react';\n\nconst useAsync = (handler) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n\n  const stateReducer = (_, action) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
+        "@prefix: ew-;\n\n.@{prefix}slider {\n  box-sizing: border-box;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  list-style: none;\n  font-feature-settings: 'tnum';\n  position: relative;\n  height: 12px;\n  margin: 10px 6px;\n  padding: 4px 0;\n  cursor: pointer;\n\n  &-rail {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background-color: #f5f5f5;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-track {\n    position: absolute;\n    height: 4px;\n    background-color: #2396ef;\n    border-radius: 2px;\n    transition: background-color 0.3s;\n  }\n  &-step {\n    position: absolute;\n    width: 100%;\n    height: 4px;\n    background: 0 0;\n  }\n}",
       ot =
-        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\nconst FetchImage = styled.img({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`\u9519\u8bef ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <FetchImage\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        Load image\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`Error ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <FetchImage\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
       it =
-        "import React from 'react';\nimport Button from '../../../guide/Button/Button';\nimport Loader from '../../../guide/Loader/Loader';\nimport Alert from '../../../guide/Alert/Alert';\nimport styled from '@emotion/styled';\nimport useAsync from './useAsync';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={imgFetch?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {imgFetch?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {imgFetch?.error && (\n        <Alert type=\"error\" message={`\u9519\u8bef ${imgFetch?.error}`}></Alert>\n      )}\n      {imgFetch?.value && (\n        <FetchImage\n          src={imgFetch?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
+        "import { useReducer } from 'react';\nexport type StateType = {\n  loading: boolean;\n  value: any;\n  error: any;\n};\nexport type ActionType = Partial<StateType> & { type: string };\nexport type RunType = (args: unknown) => Promise<void>;\nconst useAsync = (handler: (...args: any) => any) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n  const stateReducer = (_: any, action: ActionType) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args: unknown) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
       lt =
-        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      Scroll locked! <br />\n      <Button onClick={onCancel}>Click me to unlock</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport Button from '../../../guide/Button/Button';\nimport Loader from '../../../guide/Loader/Loader';\nimport Alert from '../../../guide/Alert/Alert';\nimport styled from '@emotion/styled';\nimport useAsync from './useAsync';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={imgFetch?.loading}\n      >\n        Load image\n      </Button>\n      {imgFetch?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {imgFetch?.error && (\n        <Alert type=\"error\" message={`Error ${imgFetch?.error}`}></Alert>\n      )}\n      {imgFetch?.value && (\n        <FetchImage\n          src={imgFetch?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
       ct =
-        "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  // see https://zhuanlan.zhihu.com/p/147173241\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container!).overflow;\n    container!.style.overflow = 'hidden';\n    return () => {\n      container!.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
+        "import { useReducer } from 'react';\n\nconst useAsync = (handler) => {\n  const initialState = {\n    loading: false,\n    error: null,\n    value: null,\n  };\n\n  const stateReducer = (_, action) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null };\n      case 'finish':\n        return { loading: false, error: null, value: action.value };\n      case 'error':\n        return { loading: false, error: action.error, value: null };\n    }\n  };\n\n  const [state, dispatch] = useReducer(stateReducer, initialState);\n\n  const run = async (args) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await handler(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n\n  return { ...state, run };\n};\n\nexport default useAsync;",
       st =
-        "import React, { useState } from 'react';\nimport Modal from '../../../guide/Modal/jsx/Modal';\nimport Button from '../../../guide/Button/jsx/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nconst ScrollModal = (props) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      Scroll locked! <br />\n      <Button onClick={onCancel}>Click me to unlock</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+        "import React from 'react';\nimport Button from '../../guide/Button/Button';\nimport Loader from '../../guide/Loader/Loader';\nimport Alert from '../../guide/Alert/Alert';\nimport useAsync, { StateType } from './useAsync';\nimport styled from '@emotion/styled';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\nconst FetchImage = styled.img({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={(imgFetch as StateType)?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {(imgFetch as StateType)?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {(imgFetch as StateType)?.error && (\n        <Alert\n          type=\"error\"\n          message={`\u9519\u8bef ${(imgFetch as StateType)?.error}`}\n        ></Alert>\n      )}\n      {(imgFetch as StateType)?.value && (\n        <FetchImage\n          src={(imgFetch as StateType)?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
       ut =
-        "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  // see https://zhuanlan.zhihu.com/p/147173241\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container).overflow;\n    container.style.overflow = 'hidden';\n    return () => {\n      container.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
+        "import React from 'react';\nimport Button from '../../../guide/Button/Button';\nimport Loader from '../../../guide/Loader/Loader';\nimport Alert from '../../../guide/Alert/Alert';\nimport styled from '@emotion/styled';\nimport useAsync from './useAsync';\n\nconst LoadContainer = styled.div`\n  margin-top: 10px;\n  color: #2396ef;\n`;\nconst Container = styled.div`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 300px;\n  flex-direction: column;\n`;\n\nconst FetchImage = styled('img')({\n  display: 'block',\n  marginTop: 10,\n  borderRadius: 5,\n  maxWidth: '100%',\n});\n\nconst Demo = () => {\n  const imgFetch = useAsync((url) => fetch(url).then((res) => res.json()));\n  return (\n    <Container>\n      <Button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={imgFetch?.loading}\n      >\n        \u52a0\u8f7d\u56fe\u7247\n      </Button>\n      {imgFetch?.loading && (\n        <LoadContainer>\n          <Loader size={16}></Loader>\n        </LoadContainer>\n      )}\n      {imgFetch?.error && (\n        <Alert type=\"error\" message={`\u9519\u8bef ${imgFetch?.error}`}></Alert>\n      )}\n      {imgFetch?.value && (\n        <FetchImage\n          src={imgFetch?.value.message}\n          alt=\"avatar\"\n          width={400}\n          height=\"auto\"\n        />\n      )}\n    </Container>\n  );\n};\n\nexport default Demo;",
       dt =
-        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      Scroll locked! <br />\n      <Button onClick={onCancel}>Click me to unlock</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
       pt =
-        "import React, { useState } from 'react';\nimport Modal from '../../../guide/Modal/jsx/Modal';\nimport Button from '../../../guide/Button/jsx/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nconst ScrollModal = (props) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
+        "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  // see https://zhuanlan.zhihu.com/p/147173241\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container!).overflow;\n    container!.style.overflow = 'hidden';\n    return () => {\n      container!.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
       ft =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click inside this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox\n      onClickInside={() =>\n        Modal.confirm({\n          content: 'click inside',\n          cancelText: 'Cancel',\n          okText: 'Ok',\n        })\n      }\n    ></ClickBox>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Modal from '../../../guide/Modal/jsx/Modal';\nimport Button from '../../../guide/Button/jsx/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nconst ScrollModal = (props) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      Scroll locked! <br />\n      <Button onClick={onCancel}>Click me to unlock</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>open the modal</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
       mt =
-        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
+        "import { useLayoutEffect } from 'react';\n\nconst useBodyScrollLock = () => {\n  // see https://zhuanlan.zhihu.com/p/147173241\n  useLayoutEffect(() => {\n    const container = document.body;\n    const originOverflowStyle = window.getComputedStyle(container).overflow;\n    container.style.overflow = 'hidden';\n    return () => {\n      container.style.overflow = originOverflowStyle;\n    };\n  }, []);\n};\n\nexport default useBodyScrollLock;",
       ht =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5185\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox onClickInside={() => Modal.confirm('\u70b9\u51fb\u4e86\u8be5\u533a\u57df\u5185')}></ClickBox>\n  );\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Modal from '../../guide/Modal/Modal';\nimport Button from '../../guide/Button/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nexport interface ScrollModalProps {\n  visible: boolean;\n  onCancel(): void;\n  onOk(): void;\n}\nconst ScrollModal = (props: ScrollModalProps) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
       vt =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click out of this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('click outside')}></ClickBox>;\n};\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Modal from '../../../guide/Modal/jsx/Modal';\nimport Button from '../../../guide/Button/jsx/Button';\nimport useBodyScrollLock from './useBodyScrollLock';\nimport styled from '@emotion/styled';\n\nconst ScrollModal = (props) => {\n  const { visible, onCancel, onOk } = props;\n\n  useBodyScrollLock();\n\n  return (\n    <Modal\n      title=\"scrollModal\"\n      visible={visible}\n      showCancel\n      cancelText=\"Cancel\"\n      okText=\"Ok\"\n      onCancel={onCancel}\n      onOk={onOk}\n    >\n      \u6eda\u52a8\u88ab\u9501\u5b9a! <br />\n      <Button onClick={onCancel}>\u70b9\u51fb\u6211\u89e3\u9664\u9501\u5b9a</Button>\n    </Modal>\n  );\n};\n\nconst DemoContainer = styled.div`\n  height: 400vh;\n  text-align: center;\n  padding-top: 100px;\n  overflow: auto;\n`;\n\nconst Demo = () => {\n  const [visible, setVisible] = useState(false);\n  const handleClose = () => setVisible(false);\n  return (\n    <DemoContainer>\n      <Button onClick={() => setVisible(true)}>\u6253\u5f00\u5f39\u51fa\u6846</Button>\n      {visible && (\n        <ScrollModal\n          visible={visible}\n          onCancel={handleClose}\n          onOk={handleClose}\n        ></ScrollModal>\n      )}\n    </DemoContainer>\n  );\n};\n\nexport default Demo;",
       gt =
-        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click inside this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox\n      onClickInside={() =>\n        Modal.confirm({\n          content: 'click inside',\n          cancelText: 'Cancel',\n          okText: 'Ok',\n        })\n      }\n    ></ClickBox>\n  );\n};\n\nexport default Demo;",
       bt =
-        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5916\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('\u70b9\u51fb\u4e86\u533a\u57df\u4e4b\u5916')}></ClickBox>;\n};\n\nexport default Demo;",
+        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
       yt =
-        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      'Component did mount, get the element:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickInside from './useClickInside';\nimport Modal from '../../guide/Modal/Modal';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickInside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickInside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickInside(clickRef, () => {\n    if (onClickInside) {\n      onClickInside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5185\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return (\n    <ClickBox onClickInside={() => Modal.confirm('\u70b9\u51fb\u4e86\u8be5\u533a\u57df\u5185')}></ClickBox>\n  );\n};\n\nexport default Demo;",
       xt =
-        "import { useEffect } from 'react';\nconst useComponentDidMount = (onMountHandler: Function) => {\n  useEffect(() => {\n    onMountHandler();\n  }, []);\n};\nexport default useComponentDidMount;",
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>Click out of this element</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('click outside')}></ClickBox>;\n};\n\nexport default Demo;",
       Et =
-        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      '\u7ec4\u4ef6\u786e\u5b9e\u6302\u8f7d\uff0c\u83b7\u53d6\u5143\u7d20:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
+        "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
       wt =
-        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('Current value is:' + value + '.');\n  }, [value]);\n  return (\n    <>\n      <p>\n        Value:{value},otherValue: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          Increment value\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          Increment other value\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport styled from '@emotion/styled';\nimport useClickOutside from './useClickOutside';\n\nconst ClickStyleBox = styled.div`\n  border: 2px dashed #2396ef;\n  height: 200px;\n  width: 400px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n`;\n\nexport interface ClickBoxProps {\n  onClickOutside(): void;\n}\nconst ClickBox = (props: Partial<ClickBoxProps>) => {\n  const { onClickOutside } = props;\n  const clickRef = useRef<HTMLDivElement | null>(null);\n  useClickOutside(clickRef, () => {\n    if (onClickOutside) {\n      onClickOutside();\n    }\n  });\n  return (\n    <ClickStyleBox ref={clickRef}>\n      <p>\u70b9\u51fb\u8fd9\u4e2a\u5143\u7d20\u4e4b\u5916\u7684\u533a\u57df</p>\n    </ClickStyleBox>\n  );\n};\nconst Demo = () => {\n  return <ClickBox onClickOutside={() => alert('\u70b9\u51fb\u4e86\u533a\u57df\u4e4b\u5916')}></ClickBox>;\n};\n\nexport default Demo;",
       kt =
-        "import { useEffect, DependencyList, useRef } from 'react';\nconst useComponentDidUpdate = (\n  handler: (...args: any[]) => any,\n  deps: DependencyList,\n) => {\n  const mounted = useRef(false);\n  useEffect(() => {\n    if (mounted.current) {\n      handler?.();\n    } else {\n      mounted.current = true;\n    }\n  }, deps);\n};\n\nexport default useComponentDidUpdate;",
+        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      'Component did mount, get the element:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
       Ct =
-        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('\u5f53\u524d\u7684\u503c\u662f:' + value + '\u3002');\n  }, [value]);\n  return (\n    <>\n      <p>\n        \u503c\u662f:{value},\u5176\u5b83\u503c\u662f: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          \u589e\u52a0\u503c\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          \u589e\u52a0\u5176\u5b83\u503c\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
+        "import { useEffect } from 'react';\nconst useComponentDidMount = (onMountHandler: Function) => {\n  useEffect(() => {\n    onMountHandler();\n  }, []);\n};\nexport default useComponentDidMount;",
       Ot =
-        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('Component will unmount'));\n  return <div>Check the console</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
+        "import React, { useRef } from 'react';\nimport useComponentDidMount from './useComponentDidMount';\nconst Mounter = () => {\n  const containerRef = useRef<HTMLDivElement | null>(null);\n  useComponentDidMount(() =>\n    console.log(\n      '\u7ec4\u4ef6\u786e\u5b9e\u6302\u8f7d\uff0c\u83b7\u53d6\u5143\u7d20:',\n      containerRef.current?.tagName.toLowerCase(),\n    ),\n  );\n  return <div ref={containerRef}>Check the console!</div>;\n};\n\nconst Demo = () => <Mounter />;\n\nexport default Demo;",
       St =
-        "import { useEffect } from 'react';\n\nconst useComponentWillUnmount = (onUnmountHandler) => {\n  useEffect(() => () => onUnmountHandler?.(), []);\n};\n\nexport default useComponentWillUnmount;",
+        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('Current value is:' + value + '.');\n  }, [value]);\n  return (\n    <>\n      <p>\n        Value:{value},otherValue: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          Increment value\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          Increment other value\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
       jt =
-        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d'));\n  return <div>\u68c0\u67e5\u63a7\u5236\u53f0</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
+        "import { useEffect, DependencyList, useRef } from 'react';\nconst useComponentDidUpdate = (\n  handler: (...args: any[]) => any,\n  deps: DependencyList,\n) => {\n  const mounted = useRef(false);\n  useEffect(() => {\n    if (mounted.current) {\n      handler?.();\n    } else {\n      mounted.current = true;\n    }\n  }, deps);\n};\n\nexport default useComponentDidUpdate;",
       Tt =
-        "import React, { SyntheticEvent } from 'react';\nimport useCopyToClipboard from './useCopyToClipboard';\nimport { Space } from 'antd';\nimport Button from '../../guide/Button/Button';\n\nexport interface TextCopyProps {\n  text: string;\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n  const { text = 'Lorem ipsum' } = props;\n  const [copied, copy] = useCopyToClipboard(text);\n  return (\n    <Space>\n      <Button\n        type=\"primary\"\n        ripple\n        onClick={copy as (e: SyntheticEvent) => void}\n      >\n        Click to Copy!\n      </Button>\n      <span>{copied && 'Copied!'}</span>\n    </Space>\n  );\n};\n\nconst Demo = () => <TextCopy text=\"The copy text!\" />;\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useComponentDidUpdate from './useComponentDidUpdate';\nimport { Space } from 'antd';\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const [otherValue, setOtherValue] = useState(1);\n\n  useComponentDidUpdate(() => {\n    console.log('\u5f53\u524d\u7684\u503c\u662f:' + value + '\u3002');\n  }, [value]);\n  return (\n    <>\n      <p>\n        \u503c\u662f:{value},\u5176\u5b83\u503c\u662f: {otherValue}\n      </p>\n      <Space>\n        <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n          \u589e\u52a0\u503c\n        </Button>\n        <Button type=\"primary\" onClick={() => setOtherValue(otherValue + 1)}>\n          \u589e\u52a0\u5176\u5b83\u503c\n        </Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
       It =
-        "import { useState, useCallback, useEffect } from 'react';\n\nconst useCopyToClipboard = (text: string) => {\n  const copyToClipboard = (str: string) => {\n    const el = document.createElement('textarea');\n    el.value = str;\n    el.setAttribute('readonly', '');\n    el.style.position = 'absolute';\n    el.style.left = '-9999px';\n    document.body.appendChild(el);\n    const selected =\n      document.getSelection()!.rangeCount > 0\n        ? document.getSelection()?.getRangeAt(0)\n        : false;\n    el.select();\n    const success = document.execCommand('copy');\n    document.body.removeChild(el);\n    if (selected) {\n      document.getSelection()?.removeAllRanges();\n      document.getSelection()?.addRange(selected);\n    }\n    return success;\n  };\n\n  const [copied, setCopied] = useState(false);\n\n  const copy = useCallback(() => {\n    if (!copied) {\n      setCopied(copyToClipboard(text));\n    }\n  }, [text]);\n\n  useEffect(() => () => setCopied(false), [text]);\n\n  return [copied, copy];\n};\n\nexport default useCopyToClipboard;",
+        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('Component will unmount'));\n  return <div>Check the console</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
       Nt =
+        "import { useEffect } from 'react';\n\nconst useComponentWillUnmount = (onUnmountHandler) => {\n  useEffect(() => () => onUnmountHandler?.(), []);\n};\n\nexport default useComponentWillUnmount;",
+      Pt =
+        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d'));\n  return <div>\u68c0\u67e5\u63a7\u5236\u53f0</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
+      Rt =
+        "import React, { SyntheticEvent } from 'react';\nimport useCopyToClipboard from './useCopyToClipboard';\nimport { Space } from 'antd';\nimport Button from '../../guide/Button/Button';\n\nexport interface TextCopyProps {\n  text: string;\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n  const { text = 'Lorem ipsum' } = props;\n  const [copied, copy] = useCopyToClipboard(text);\n  return (\n    <Space>\n      <Button\n        type=\"primary\"\n        ripple\n        onClick={copy as (e: SyntheticEvent) => void}\n      >\n        Click to Copy!\n      </Button>\n      <span>{copied && 'Copied!'}</span>\n    </Space>\n  );\n};\n\nconst Demo = () => <TextCopy text=\"The copy text!\" />;\n\nexport default Demo;",
+      Lt =
+        "import { useState, useCallback, useEffect } from 'react';\n\nconst useCopyToClipboard = (text: string) => {\n  const copyToClipboard = (str: string) => {\n    const el = document.createElement('textarea');\n    el.value = str;\n    el.setAttribute('readonly', '');\n    el.style.position = 'absolute';\n    el.style.left = '-9999px';\n    document.body.appendChild(el);\n    const selected =\n      document.getSelection()!.rangeCount > 0\n        ? document.getSelection()?.getRangeAt(0)\n        : false;\n    el.select();\n    const success = document.execCommand('copy');\n    document.body.removeChild(el);\n    if (selected) {\n      document.getSelection()?.removeAllRanges();\n      document.getSelection()?.addRange(selected);\n    }\n    return success;\n  };\n\n  const [copied, setCopied] = useState(false);\n\n  const copy = useCallback(() => {\n    if (!copied) {\n      setCopied(copyToClipboard(text));\n    }\n  }, [text]);\n\n  useEffect(() => () => setCopied(false), [text]);\n\n  return [copied, copy];\n};\n\nexport default useCopyToClipboard;",
+      At =
         "import React, { SyntheticEvent } from 'react';\nimport useCopyToClipboard from './useCopyToClipboard';\nimport { Space } from 'antd';\nimport Button from '../../guide/Button/Button';\n\nexport interface TextCopyProps {\n  text: string;\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n  const { text = 'Lorem ipsum' } = props;\n  const [copied, copy] = useCopyToClipboard(text);\n  return (\n    <Space>\n      <Button\n        type=\"primary\"\n        ripple\n        onClick={copy as (e: SyntheticEvent) => void}\n      >\n        \u70b9\u51fb\u8fd9\u91cc\u590d\u5236!\n      </Button>\n      <span>{copied && '\u5df2\u590d\u5236!'}</span>\n    </Space>\n  );\n};\n\nconst Demo = () => <TextCopy text=\"\u590d\u5236\u7684\u6587\u672c!\" />;\n\nexport default Demo;",
-      Pt = {
+      Mt = {
         'loadingbutton-demo': {
           component: t('4ZnB').default,
           previewerProps: {
@@ -33282,8 +33311,8 @@
           previewerProps: {
             sources: {
               _: { tsx: Q },
-              'Carousel.tsx': { import: './Carousel', content: Z },
-              'Carousel.less': { import: './Carousel.less', content: X },
+              'Carousel.tsx': { import: './Carousel', content: X },
+              'Carousel.less': { import: './Carousel.less', content: Z },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'carousel-demo',
@@ -33295,7 +33324,7 @@
             sources: {
               _: { jsx: J },
               'Carousel.jsx': { import: './Carousel', content: ee },
-              'Carousel.less': { import: './Carousel.less', content: X },
+              'Carousel.less': { import: './Carousel.less', content: Z },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'jsx-demo-5',
@@ -33306,8 +33335,8 @@
           previewerProps: {
             sources: {
               _: { tsx: ne },
-              'Carousel.tsx': { import: './Carousel', content: Z },
-              'Carousel.less': { import: './Carousel.less', content: X },
+              'Carousel.tsx': { import: './Carousel', content: X },
+              'Carousel.less': { import: './Carousel.less', content: Z },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'carousel-demo.zh-cn',
@@ -33319,7 +33348,7 @@
             sources: {
               _: { jsx: te },
               'Carousel.jsx': { import: './Carousel', content: ee },
-              'Carousel.less': { import: './Carousel.less', content: X },
+              'Carousel.less': { import: './Carousel.less', content: Z },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'jsx-demo.zh-cn-5',
@@ -33835,7 +33864,7 @@
               _: { jsx: Qe },
               'LimitedWordTextarea.jsx': {
                 import: './LimitedWordTextarea',
-                content: Ze,
+                content: Xe,
               },
             },
             dependencies: {
@@ -33851,7 +33880,7 @@
           component: t('O8zO').default,
           previewerProps: {
             sources: {
-              _: { tsx: Xe },
+              _: { tsx: Ze },
               'LimitedWordTextarea.tsx': {
                 import: './LimitedWordTextarea',
                 content: Ye,
@@ -33873,7 +33902,7 @@
               _: { jsx: Je },
               'LimitedWordTextarea.jsx': {
                 import: './LimitedWordTextarea',
-                content: Ze,
+                content: Xe,
               },
             },
             dependencies: {
@@ -34182,11 +34211,36 @@
             identifier: 'select-demo',
           },
         },
+        'jsx-demo-18': {
+          component: t('brg6').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: Pn },
+              'Select.jsx': { import: './Select', content: Rn },
+              'utils/classnames.ts': {
+                import: '../../utils/classnames',
+                content: _,
+              },
+              'utils/useClickOutside.ts': {
+                import: '../../utils/useClickOutside',
+                content: Tn,
+              },
+              'Option.jsx': { import: './Option', content: Ln },
+              'select.less': { import: './select.less', content: Nn },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              antd: { version: '4.22.8', css: 'antd/dist/antd.css' },
+              'react-dom': { version: '>=16.9.0' },
+            },
+            identifier: 'jsx-demo-18',
+          },
+        },
         'select-demo.zh-cn': {
           component: t('Juw3').default,
           previewerProps: {
             sources: {
-              _: { tsx: Pn },
+              _: { tsx: An },
               'Select.tsx': { import: './Select', content: jn },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
@@ -34207,12 +34261,37 @@
             identifier: 'select-demo.zh-cn',
           },
         },
+        'jsx-demo.zh-cn-18': {
+          component: t('n7Fp').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: Mn },
+              'Select.jsx': { import: './Select', content: Rn },
+              'utils/classnames.ts': {
+                import: '../../utils/classnames',
+                content: _,
+              },
+              'utils/useClickOutside.ts': {
+                import: '../../utils/useClickOutside',
+                content: Tn,
+              },
+              'Option.jsx': { import: './Option', content: Ln },
+              'select.less': { import: './select.less', content: Nn },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              antd: { version: '4.22.8', css: 'antd/dist/antd.css' },
+              'react-dom': { version: '>=16.9.0' },
+            },
+            identifier: 'jsx-demo.zh-cn-18',
+          },
+        },
         'simpledatalist-demo': {
           component: t('kFD3').default,
           previewerProps: {
             sources: {
-              _: { tsx: Rn },
-              'SimpleDataList.tsx': { import: './SimpleDataList', content: Ln },
+              _: { tsx: Dn },
+              'SimpleDataList.tsx': { import: './SimpleDataList', content: zn },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -34222,27 +34301,27 @@
             identifier: 'simpledatalist-demo',
           },
         },
-        'jsx-demo-18': {
+        'jsx-demo-19': {
           component: t('5z5X').default,
           previewerProps: {
             sources: {
-              _: { jsx: An },
-              'SimpleDataList.jsx': { import: './SimpleDataList', content: Mn },
+              _: { jsx: _n },
+              'SimpleDataList.jsx': { import: './SimpleDataList', content: Fn },
             },
             dependencies: {
               react: { version: '16.14.0' },
               '@emotion/css': { version: '11.10.0' },
               '@babel/core': { version: '^7.0.0' },
             },
-            identifier: 'jsx-demo-18',
+            identifier: 'jsx-demo-19',
           },
         },
         'simpledatalist-demo.zh-cn': {
           component: t('9yqU').default,
           previewerProps: {
             sources: {
-              _: { tsx: Dn },
-              'SimpleDataList.tsx': { import: './SimpleDataList', content: Ln },
+              _: { tsx: Bn },
+              'SimpleDataList.tsx': { import: './SimpleDataList', content: zn },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -34252,172 +34331,172 @@
             identifier: 'simpledatalist-demo.zh-cn',
           },
         },
-        'jsx-demo.zh-cn-18': {
+        'jsx-demo.zh-cn-19': {
           component: t('WJ8N').default,
           previewerProps: {
             sources: {
-              _: { jsx: zn },
-              'SimpleDataList.jsx': { import: './SimpleDataList', content: Mn },
+              _: { jsx: Un },
+              'SimpleDataList.jsx': { import: './SimpleDataList', content: Fn },
             },
             dependencies: {
               react: { version: '16.14.0' },
               '@emotion/css': { version: '11.10.0' },
               '@babel/core': { version: '^7.0.0' },
             },
-            identifier: 'jsx-demo.zh-cn-18',
+            identifier: 'jsx-demo.zh-cn-19',
           },
         },
         'simpledatatable-demo': {
           component: t('iBx2').default,
           previewerProps: {
             sources: {
-              _: { tsx: _n },
+              _: { tsx: Hn },
               'SimpleDataTable.tsx': {
                 import: './SimpleDataTable',
-                content: Fn,
+                content: Vn,
               },
               'simpleDataTable.less': {
                 import: './simpleDataTable.less',
-                content: Bn,
+                content: qn,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'simpledatatable-demo',
           },
         },
-        'jsx-demo-19': {
+        'jsx-demo-20': {
           component: t('Vi0Y').default,
           previewerProps: {
             sources: {
-              _: { jsx: Un },
+              _: { jsx: Gn },
               'SimpleDataTable.jsx': {
                 import: './SimpleDataTable',
-                content: Hn,
-              },
-              'simpleDataTable.less': {
-                import: './simpleDataTable.less',
-                content: Bn,
-              },
-            },
-            dependencies: { react: { version: '16.14.0' } },
-            identifier: 'jsx-demo-19',
-          },
-        },
-        'simpledatatable-demo.zh-cn': {
-          component: t('LCi9').default,
-          previewerProps: {
-            sources: {
-              _: { tsx: Vn },
-              'SimpleDataTable.tsx': {
-                import: './SimpleDataTable',
-                content: Fn,
-              },
-              'simpleDataTable.less': {
-                import: './simpleDataTable.less',
-                content: Bn,
-              },
-            },
-            dependencies: { react: { version: '16.14.0' } },
-            identifier: 'simpledatatable-demo.zh-cn',
-          },
-        },
-        'jsx-demo.zh-cn-19': {
-          component: t('aRW3').default,
-          previewerProps: {
-            sources: {
-              _: { jsx: qn },
-              'SimpleDataTable.jsx': {
-                import: './SimpleDataTable',
-                content: Hn,
-              },
-              'simpleDataTable.less': {
-                import: './simpleDataTable.less',
-                content: Bn,
-              },
-            },
-            dependencies: { react: { version: '16.14.0' } },
-            identifier: 'jsx-demo.zh-cn-19',
-          },
-        },
-        'simplemappeddatatable-demo': {
-          component: t('X23V').default,
-          previewerProps: {
-            sources: {
-              _: { tsx: Gn },
-              'SimpleMappedDataTable.tsx': {
-                import: './SimpleMappedDataTable',
                 content: $n,
               },
-              'SimpleMappedDataTable.less': {
-                import: './SimpleMappedDataTable.less',
-                content: Wn,
-              },
-            },
-            dependencies: { react: { version: '16.14.0' } },
-            identifier: 'simplemappeddatatable-demo',
-          },
-        },
-        'jsx-demo-20': {
-          component: t('9zP4').default,
-          previewerProps: {
-            sources: {
-              _: { jsx: Kn },
-              'SimpleMappedDataTable.jsx': {
-                import: './SimpleMappedDataTable',
-                content: Yn,
-              },
-              'SimpleMappedDataTable.less': {
-                import: './SimpleMappedDataTable.less',
-                content: Wn,
+              'simpleDataTable.less': {
+                import: './simpleDataTable.less',
+                content: qn,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'jsx-demo-20',
           },
         },
-        'simplemappeddatatable-demo.zh-cn': {
-          component: t('/ncw').default,
+        'simpledatatable-demo.zh-cn': {
+          component: t('LCi9').default,
           previewerProps: {
             sources: {
-              _: { tsx: Qn },
-              'SimpleMappedDataTable.tsx': {
-                import: './SimpleMappedDataTable',
-                content: $n,
+              _: { tsx: Wn },
+              'SimpleDataTable.tsx': {
+                import: './SimpleDataTable',
+                content: Vn,
               },
-              'SimpleMappedDataTable.less': {
-                import: './SimpleMappedDataTable.less',
-                content: Wn,
+              'simpleDataTable.less': {
+                import: './simpleDataTable.less',
+                content: qn,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
-            identifier: 'simplemappeddatatable-demo.zh-cn',
+            identifier: 'simpledatatable-demo.zh-cn',
           },
         },
         'jsx-demo.zh-cn-20': {
-          component: t('q8KE').default,
+          component: t('aRW3').default,
           previewerProps: {
             sources: {
-              _: { jsx: Zn },
-              'SimpleMappedDataTable.jsx': {
-                import: './SimpleMappedDataTable',
-                content: Yn,
+              _: { jsx: Kn },
+              'SimpleDataTable.jsx': {
+                import: './SimpleDataTable',
+                content: $n,
               },
-              'SimpleMappedDataTable.less': {
-                import: './SimpleMappedDataTable.less',
-                content: Wn,
+              'simpleDataTable.less': {
+                import: './simpleDataTable.less',
+                content: qn,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'jsx-demo.zh-cn-20',
           },
         },
+        'simplemappeddatatable-demo': {
+          component: t('X23V').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: Yn },
+              'SimpleMappedDataTable.tsx': {
+                import: './SimpleMappedDataTable',
+                content: Qn,
+              },
+              'SimpleMappedDataTable.less': {
+                import: './SimpleMappedDataTable.less',
+                content: Xn,
+              },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'simplemappeddatatable-demo',
+          },
+        },
+        'jsx-demo-21': {
+          component: t('9zP4').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: Zn },
+              'SimpleMappedDataTable.jsx': {
+                import: './SimpleMappedDataTable',
+                content: Jn,
+              },
+              'SimpleMappedDataTable.less': {
+                import: './SimpleMappedDataTable.less',
+                content: Xn,
+              },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'jsx-demo-21',
+          },
+        },
+        'simplemappeddatatable-demo.zh-cn': {
+          component: t('/ncw').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: et },
+              'SimpleMappedDataTable.tsx': {
+                import: './SimpleMappedDataTable',
+                content: Qn,
+              },
+              'SimpleMappedDataTable.less': {
+                import: './SimpleMappedDataTable.less',
+                content: Xn,
+              },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'simplemappeddatatable-demo.zh-cn',
+          },
+        },
+        'jsx-demo.zh-cn-21': {
+          component: t('q8KE').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: nt },
+              'SimpleMappedDataTable.jsx': {
+                import: './SimpleMappedDataTable',
+                content: Jn,
+              },
+              'SimpleMappedDataTable.less': {
+                import: './SimpleMappedDataTable.less',
+                content: Xn,
+              },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'jsx-demo.zh-cn-21',
+          },
+        },
         'slider-demo': {
           component: t('5VUJ').default,
           previewerProps: {
             sources: {
-              _: { tsx: Xn },
-              'Slider.tsx': { import: './Slider', content: Jn },
-              'slider.less': { import: './slider.less', content: et },
+              _: { tsx: tt },
+              'Slider.tsx': { import: './Slider', content: rt },
+              'slider.less': { import: './slider.less', content: at },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: _,
@@ -34429,64 +34508,6 @@
         },
         'useasync-demo': {
           component: t('sqNe').default,
-          previewerProps: {
-            sources: {
-              _: { tsx: nt },
-              'guide/Button/Button.tsx': { import: './Button', content: D },
-              'button.less': { import: './button.less', content: z },
-              'utils/classnames.ts': {
-                import: '../../utils/classnames',
-                content: _,
-              },
-              'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
-              'guide/Loader/Loader.tsx': {
-                import: '../Loader/Loader',
-                content: F,
-              },
-              'guide/Alert/Alert.tsx': { import: './Alert', content: k },
-              'alert.less': { import: './alert.less', content: C },
-              'useAsync.ts': { import: './useAsync', content: tt },
-            },
-            dependencies: {
-              react: { version: '16.14.0' },
-              '@emotion/styled': { version: '11.10.0' },
-              '@babel/core': { version: '^7.0.0' },
-              '@emotion/react': { version: '^11.0.0-rc.0' },
-            },
-            identifier: 'useasync-demo',
-          },
-        },
-        'js-demo': {
-          component: t('DVnI').default,
-          previewerProps: {
-            sources: {
-              _: { jsx: rt },
-              'guide/Button/Button.tsx': { import: './Button', content: D },
-              'button.less': { import: './button.less', content: z },
-              'utils/classnames.ts': {
-                import: '../../utils/classnames',
-                content: _,
-              },
-              'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
-              'guide/Loader/Loader.tsx': {
-                import: '../Loader/Loader',
-                content: F,
-              },
-              'guide/Alert/Alert.tsx': { import: './Alert', content: k },
-              'alert.less': { import: './alert.less', content: C },
-              'useAsync.js': { import: './useAsync', content: at },
-            },
-            dependencies: {
-              react: { version: '16.14.0' },
-              '@emotion/styled': { version: '11.10.0' },
-              '@babel/core': { version: '^7.0.0' },
-              '@emotion/react': { version: '^11.0.0-rc.0' },
-            },
-            identifier: 'js-demo',
-          },
-        },
-        'useasync-demo.zh-cn': {
-          component: t('mlG9').default,
           previewerProps: {
             sources: {
               _: { tsx: ot },
@@ -34503,7 +34524,65 @@
               },
               'guide/Alert/Alert.tsx': { import: './Alert', content: k },
               'alert.less': { import: './alert.less', content: C },
-              'useAsync.ts': { import: './useAsync', content: tt },
+              'useAsync.ts': { import: './useAsync', content: it },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              '@emotion/styled': { version: '11.10.0' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+            },
+            identifier: 'useasync-demo',
+          },
+        },
+        'js-demo': {
+          component: t('DVnI').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: lt },
+              'guide/Button/Button.tsx': { import: './Button', content: D },
+              'button.less': { import: './button.less', content: z },
+              'utils/classnames.ts': {
+                import: '../../utils/classnames',
+                content: _,
+              },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
+              'guide/Loader/Loader.tsx': {
+                import: '../Loader/Loader',
+                content: F,
+              },
+              'guide/Alert/Alert.tsx': { import: './Alert', content: k },
+              'alert.less': { import: './alert.less', content: C },
+              'useAsync.js': { import: './useAsync', content: ct },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              '@emotion/styled': { version: '11.10.0' },
+              '@babel/core': { version: '^7.0.0' },
+              '@emotion/react': { version: '^11.0.0-rc.0' },
+            },
+            identifier: 'js-demo',
+          },
+        },
+        'useasync-demo.zh-cn': {
+          component: t('mlG9').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: st },
+              'guide/Button/Button.tsx': { import: './Button', content: D },
+              'button.less': { import: './button.less', content: z },
+              'utils/classnames.ts': {
+                import: '../../utils/classnames',
+                content: _,
+              },
+              'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
+              'guide/Loader/Loader.tsx': {
+                import: '../Loader/Loader',
+                content: F,
+              },
+              'guide/Alert/Alert.tsx': { import: './Alert', content: k },
+              'alert.less': { import: './alert.less', content: C },
+              'useAsync.ts': { import: './useAsync', content: it },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -34518,7 +34597,7 @@
           component: t('YSJU').default,
           previewerProps: {
             sources: {
-              _: { jsx: it },
+              _: { jsx: ut },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -34532,7 +34611,7 @@
               },
               'guide/Alert/Alert.tsx': { import: './Alert', content: k },
               'alert.less': { import: './alert.less', content: C },
-              'useAsync.js': { import: './useAsync', content: at },
+              'useAsync.js': { import: './useAsync', content: ct },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -34547,7 +34626,7 @@
           component: t('AgAx').default,
           previewerProps: {
             sources: {
-              _: { tsx: lt },
+              _: { tsx: dt },
               'guide/Modal/Modal.tsx': { import: './Modal', content: fn },
               'Modal.less': { import: './Modal.less', content: mn },
               'guide/Button/Button.tsx': { import: './Button', content: D },
@@ -34559,7 +34638,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useBodyScrollLock.ts': {
                 import: './useBodyScrollLock',
-                content: ct,
+                content: pt,
               },
             },
             dependencies: {
@@ -34576,7 +34655,7 @@
           component: t('JWXv').default,
           previewerProps: {
             sources: {
-              _: { jsx: st },
+              _: { jsx: ft },
               'guide/Modal/jsx/Modal.jsx': { import: './Modal', content: vn },
               'Modal.less': { import: './Modal.less', content: mn },
               'guide/Button/jsx/Button.jsx': { import: './Button', content: U },
@@ -34588,7 +34667,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useBodyScrollLock.js': {
                 import: './useBodyScrollLock',
-                content: ut,
+                content: mt,
               },
             },
             dependencies: {
@@ -34605,7 +34684,7 @@
           component: t('hVMu').default,
           previewerProps: {
             sources: {
-              _: { tsx: dt },
+              _: { tsx: ht },
               'guide/Modal/Modal.tsx': { import: './Modal', content: fn },
               'Modal.less': { import: './Modal.less', content: mn },
               'guide/Button/Button.tsx': { import: './Button', content: D },
@@ -34617,7 +34696,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useBodyScrollLock.ts': {
                 import: './useBodyScrollLock',
-                content: ct,
+                content: pt,
               },
             },
             dependencies: {
@@ -34634,7 +34713,7 @@
           component: t('K/OV').default,
           previewerProps: {
             sources: {
-              _: { jsx: pt },
+              _: { jsx: vt },
               'guide/Modal/jsx/Modal.jsx': { import: './Modal', content: vn },
               'Modal.less': { import: './Modal.less', content: mn },
               'guide/Button/jsx/Button.jsx': { import: './Button', content: U },
@@ -34646,7 +34725,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useBodyScrollLock.js': {
                 import: './useBodyScrollLock',
-                content: ut,
+                content: mt,
               },
             },
             dependencies: {
@@ -34663,8 +34742,8 @@
           component: t('n4d3').default,
           previewerProps: {
             sources: {
-              _: { tsx: ft },
-              'useClickInside.ts': { import: './useClickInside', content: mt },
+              _: { tsx: gt },
+              'useClickInside.ts': { import: './useClickInside', content: bt },
               'guide/Modal/Modal.tsx': { import: './Modal', content: fn },
               'Modal.less': { import: './Modal.less', content: mn },
             },
@@ -34682,8 +34761,8 @@
           component: t('nKlt').default,
           previewerProps: {
             sources: {
-              _: { tsx: ht },
-              'useClickInside.ts': { import: './useClickInside', content: mt },
+              _: { tsx: yt },
+              'useClickInside.ts': { import: './useClickInside', content: bt },
               'guide/Modal/Modal.tsx': { import: './Modal', content: fn },
               'Modal.less': { import: './Modal.less', content: mn },
             },
@@ -34701,10 +34780,10 @@
           component: t('6srN').default,
           previewerProps: {
             sources: {
-              _: { tsx: vt },
+              _: { tsx: xt },
               'useClickOutside.ts': {
                 import: './useClickOutside',
-                content: gt,
+                content: Et,
               },
             },
             dependencies: {
@@ -34720,10 +34799,10 @@
           component: t('6aGR').default,
           previewerProps: {
             sources: {
-              _: { tsx: bt },
+              _: { tsx: wt },
               'useClickOutside.ts': {
                 import: './useClickOutside',
-                content: gt,
+                content: Et,
               },
             },
             dependencies: {
@@ -34739,10 +34818,10 @@
           component: t('4BP0').default,
           previewerProps: {
             sources: {
-              _: { tsx: yt },
+              _: { tsx: kt },
               'useComponentDidMount.ts': {
                 import: './useComponentDidMount',
-                content: xt,
+                content: Ct,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -34753,10 +34832,10 @@
           component: t('3Mo/').default,
           previewerProps: {
             sources: {
-              _: { tsx: Et },
+              _: { tsx: Ot },
               'useComponentDidMount.ts': {
                 import: './useComponentDidMount',
-                content: xt,
+                content: Ct,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -34767,7 +34846,7 @@
           component: t('+EnM').default,
           previewerProps: {
             sources: {
-              _: { tsx: wt },
+              _: { tsx: St },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -34777,7 +34856,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useComponentDidUpdate.ts': {
                 import: './useComponentDidUpdate',
-                content: kt,
+                content: jt,
               },
             },
             dependencies: {
@@ -34795,7 +34874,7 @@
           component: t('pc0r').default,
           previewerProps: {
             sources: {
-              _: { tsx: Ct },
+              _: { tsx: Tt },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
               'utils/classnames.ts': {
@@ -34805,7 +34884,7 @@
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
               'useComponentDidUpdate.ts': {
                 import: './useComponentDidUpdate',
-                content: kt,
+                content: jt,
               },
             },
             dependencies: {
@@ -34823,10 +34902,10 @@
           component: t('YT/L').default,
           previewerProps: {
             sources: {
-              _: { tsx: Ot },
+              _: { tsx: It },
               'useComponentWillUnmount.ts': {
                 import: './useComponentWillUnmount',
-                content: St,
+                content: Nt,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -34837,10 +34916,10 @@
           component: t('s6jP').default,
           previewerProps: {
             sources: {
-              _: { tsx: jt },
+              _: { tsx: Pt },
               'useComponentWillUnmount.ts': {
                 import: './useComponentWillUnmount',
-                content: St,
+                content: Nt,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -34851,10 +34930,10 @@
           component: t('6Hiq').default,
           previewerProps: {
             sources: {
-              _: { tsx: Tt },
+              _: { tsx: Rt },
               'useCopyToClipboard.ts': {
                 import: './useCopyToClipboard',
-                content: It,
+                content: Lt,
               },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
@@ -34879,10 +34958,10 @@
           component: t('NfPr').default,
           previewerProps: {
             sources: {
-              _: { tsx: Nt },
+              _: { tsx: At },
               'useCopyToClipboard.ts': {
                 import: './useCopyToClipboard',
-                content: It,
+                content: Lt,
               },
               'guide/Button/Button.tsx': { import: './Button', content: D },
               'button.less': { import: './button.less', content: z },
@@ -34904,13 +34983,13 @@
           },
         },
       },
-      Rt = t('Zs1V'),
-      Lt = t('BI2/'),
-      At = t.n(Lt);
+      Dt = t('Zs1V'),
+      zt = t('BI2/'),
+      _t = t.n(zt);
     n['default'] = (e) =>
       o.a.createElement(
-        At.a,
-        Object(r['a'])({}, e, { config: i, demos: Pt, apis: Rt }),
+        _t.a,
+        Object(r['a'])({}, e, { config: i, demos: Mt, apis: Dt }),
       );
   },
   Odut: function (e, n, t) {
@@ -35079,6 +35158,243 @@
           : ((e = r(t, a)), (n.index += e.length), { value: e, done: !1 });
       },
     );
+  },
+  PSi5: function (e, n, t) {
+    'use strict';
+    var r = t('tJVT'),
+      a = t('0Owb'),
+      o = t('PpiC'),
+      i = t('q1tI'),
+      l = t.n(i),
+      c = t('xdOR'),
+      s = t('wXdP'),
+      u = (e) => {
+        var n = e.label,
+          t = e.value,
+          s = e.disabled,
+          u = e.defaultValue,
+          d = e.children,
+          p = e.onOptionChange,
+          f = e.active,
+          m = Object(o['a'])(e, [
+            'label',
+            'value',
+            'disabled',
+            'defaultValue',
+            'children',
+            'onOptionChange',
+            'active',
+          ]),
+          h = Object(i['useState'])(u),
+          v = Object(r['a'])(h, 2),
+          g = v[0],
+          b = v[1],
+          y = {
+            'ew-select-dropdown-option': !0,
+            'ew-select-dropdown-option-disabled': s,
+            active: f,
+          },
+          x = (e) => {
+            s || (b(e.value), p && p(e));
+          };
+        return (
+          Object(i['useEffect'])(() => {
+            g && (null === p || void 0 === p || p({ label: n, value: t }));
+          }, [g]),
+          l.a.createElement(
+            'div',
+            Object(a['a'])(
+              { className: Object(c['a'])(y), 'data-value': g },
+              m,
+              { onClick: () => x({ label: n, value: t }) },
+            ),
+            d || n || '',
+          )
+        );
+      };
+    u.displayName = 'Option';
+    var d = u,
+      p =
+        (t('eLGL'),
+        Object(i['forwardRef'])((e, n) => {
+          var t = e.onClick,
+            r = Object(o['a'])(e, ['onClick']);
+          return l.a.createElement(
+            'svg',
+            Object(a['a'])(
+              {
+                className: 'ew-select-clear-icon',
+                viewBox: '0 0 1024 1024',
+                version: '1.1',
+                xmlns: 'http://www.w3.org/2000/svg',
+                'p-id': '2381',
+                ref: n,
+                onClick: (e) => {
+                  null === t || void 0 === t || t(e);
+                },
+              },
+              r,
+            ),
+            l.a.createElement('path', {
+              d: 'M512 39.384615C250.092308 39.384615 39.384615 250.092308 39.384615 512s210.707692 472.615385 472.615385 472.615385 472.615385-210.707692 472.615385-472.615385S773.907692 39.384615 512 39.384615z m96.492308 488.369231l153.6 153.6c7.876923 7.876923 7.876923 19.692308 0 27.569231l-55.138462 55.138461c-7.876923 7.876923-19.692308 7.876923-27.569231 0L525.784615 610.461538c-7.876923-7.876923-19.692308-7.876923-27.56923 0l-153.6 153.6c-7.876923 7.876923-19.692308 7.876923-27.569231 0L261.907692 708.923077c-7.876923-7.876923-7.876923-19.692308 0-27.569231l153.6-153.6c7.876923-7.876923 7.876923-19.692308 0-27.569231l-155.56923-155.56923c-7.876923-7.876923-7.876923-19.692308 0-27.569231l55.138461-55.138462c7.876923-7.876923 19.692308-7.876923 27.569231 0l155.569231 155.569231c7.876923 7.876923 19.692308 7.876923 27.56923 0l153.6-153.6c7.876923-7.876923 19.692308-7.876923 27.569231 0l55.138462 55.138462c7.876923 7.876923 7.876923 19.692308 0 27.56923l-153.6 153.6c-5.907692 7.876923-5.907692 19.692308 0 27.569231z',
+              'p-id': '2382',
+              fill: '#dbdbdb',
+              className: 'ew-select-clear-icon-path',
+            }),
+          );
+        })),
+      f = Object(i['forwardRef'])((e, n) =>
+        l.a.createElement(
+          'svg',
+          Object(a['a'])(
+            {
+              className: 'ew-select-arrow-icon',
+              viewBox: '0 0 1024 1024',
+              version: '1.1',
+              xmlns: 'http://www.w3.org/2000/svg',
+              'p-id': '2216',
+              ref: n,
+            },
+            e,
+          ),
+          l.a.createElement('path', {
+            d: 'M512 714.666667c-8.533333 0-17.066667-2.133333-23.466667-8.533334l-341.333333-341.333333c-12.8-12.8-12.8-32 0-44.8 12.8-12.8 32-12.8 44.8 0l320 317.866667 317.866667-320c12.8-12.8 32-12.8 44.8 0 12.8 12.8 12.8 32 0 44.8L533.333333 704c-4.266667 8.533333-12.8 10.666667-21.333333 10.666667z',
+            'p-id': '2217',
+          }),
+        ),
+      ),
+      m = (e) => {
+        var n,
+          t = e.disabled,
+          u = e.defaultValue,
+          d = e.value,
+          m = e.onChange,
+          h = e.placeholder,
+          v = void 0 === h ? '\u8bf7\u8f93\u5165' : h,
+          g = e.allowClear,
+          b = void 0 === g || g,
+          y = e.children,
+          x = e.labelProps,
+          E = void 0 === x ? 'label' : x,
+          w = Object(o['a'])(e, [
+            'disabled',
+            'defaultValue',
+            'value',
+            'onChange',
+            'placeholder',
+            'allowClear',
+            'children',
+            'labelProps',
+          ]),
+          k = Object(i['createRef'])(),
+          C = Object(i['createRef'])(),
+          O = Object(i['useState'])(u),
+          S = Object(r['a'])(O, 2),
+          j = S[0],
+          T = S[1],
+          I = Object(i['useState'])({}),
+          N = Object(r['a'])(I, 2),
+          P = N[0],
+          R = N[1],
+          L = Object(i['useState'])(!1),
+          A = Object(r['a'])(L, 2),
+          M = A[0],
+          D = A[1],
+          z = Object(i['useState'])(!1),
+          _ = Object(r['a'])(z, 2),
+          F = _[0],
+          B = _[1],
+          U = Array.isArray(y)
+            ? y
+            : (null === (n = [y]) || void 0 === n
+                ? void 0
+                : n.filter((e) => {
+                    var n;
+                    return (
+                      'Option' ===
+                      (null === e ||
+                      void 0 === e ||
+                      null === (n = e.type) ||
+                      void 0 === n
+                        ? void 0
+                        : n.displayName)
+                    );
+                  })) || [];
+        Object(i['useEffect'])(() => {
+          'string' === typeof d && T(d);
+        }, [d]);
+        var H = (e) => {
+            R(e), T(e.value), t || (D(!1), B(!1)), m && m(e);
+          },
+          V = () => {
+            t || (R({ label: '', value: '' }), T(''));
+          },
+          q = { 'ew-select': !0, 'ew-select-disabled': t },
+          G = {
+            'ew-select-selector': !0,
+            'ew-select-selector-placeholder': !j,
+          };
+        return (
+          Object(s['a'])(k, () => {
+            t || D(!1);
+          }),
+          l.a.createElement(
+            'div',
+            Object(a['a'])({ className: Object(c['a'])(q) }, w, {
+              ref: k,
+              onMouseEnter: () => {
+                t || B(!0);
+              },
+              onMouseLeave: () => {
+                t || B(!1);
+              },
+            }),
+            l.a.createElement(
+              'div',
+              {
+                className: Object(c['a'])(G),
+                placeholder: v,
+                onClick: () => {
+                  t || D(!M);
+                },
+              },
+              l.a.createElement(
+                'span',
+                { className: 'ew-select-selector-value' },
+                P[E],
+              ),
+            ),
+            l.a.createElement(
+              'div',
+              { className: 'ew-select-arrow' },
+              b && j && F
+                ? l.a.createElement(p, { onClick: V, ref: C })
+                : l.a.createElement(f, {
+                    onClick: () => {
+                      t || D(!M);
+                    },
+                  }),
+            ),
+            l.a.createElement(
+              'div',
+              {
+                className: 'ew-select-dropdown',
+                style: { display: M ? 'block' : 'none' },
+              },
+              U.map((e, n) =>
+                Object(i['cloneElement'])(e, {
+                  onOptionChange: H,
+                  defaultValue: j,
+                  key: e.key || String(n + 1),
+                  active: e.props.value === j,
+                }),
+              ),
+            ),
+          )
+        );
+      };
+    m.Option = d;
+    n['a'] = m;
   },
   PXyy: function (e, n, t) {
     var r = t('aH83'),
@@ -35646,10 +35962,10 @@
           K = Object(o['a'])(W, 2),
           Y = K[0],
           Q = K[1],
-          Z = u['useContext'](p['b']),
-          X = Z.getPrefixCls,
-          J = Z.autoInsertSpaceInButton,
-          ee = Z.direction,
+          X = u['useContext'](p['b']),
+          Z = X.getPrefixCls,
+          J = X.autoInsertSpaceInButton,
+          ee = X.direction,
           ne = n || u['createRef'](),
           te = function () {
             return 1 === u['Children'].count(O) && !S && !R(v);
@@ -35685,7 +36001,7 @@
             var t = e.onClick;
             G || U ? n.preventDefault() : null === t || void 0 === t || t(n);
           },
-          ie = X('btn', d),
+          ie = Z('btn', d),
           le = !1 !== J,
           ce = { large: 'lg', small: 'sm', middle: void 0 },
           se = H || w || F,
@@ -42988,9 +43304,9 @@
       }
       var h = k();
       function v(e) {
-        Object(r['a'])(X, e),
-          (X.length = n.length),
-          h.notifyListeners(X.location, X.action);
+        Object(r['a'])(Z, e),
+          (Z.length = n.length),
+          h.notifyListeners(Z.location, Z.action);
       }
       var y = !1,
         w = null;
@@ -43007,7 +43323,7 @@
         if (e !== n) F(n);
         else {
           var t = p(),
-            r = X.location;
+            r = Z.location;
           if (!y && S(r, t)) return;
           if (w === x(t)) return;
           (w = null), I(t);
@@ -43023,7 +43339,7 @@
         }
       }
       function N(e) {
-        var n = X.location,
+        var n = Z.location,
           t = B.lastIndexOf(x(n));
         -1 === t && (t = 0);
         var r = B.lastIndexOf(x(e));
@@ -43046,7 +43362,7 @@
       }
       function H(e, n) {
         var t = 'PUSH',
-          r = E(e, void 0, void 0, X.location);
+          r = E(e, void 0, void 0, Z.location);
         h.confirmTransitionTo(r, t, o, function (e) {
           if (e) {
             var n = x(r),
@@ -43054,7 +43370,7 @@
               o = z() !== a;
             if (o) {
               (w = n), _(a);
-              var i = B.lastIndexOf(x(X.location)),
+              var i = B.lastIndexOf(x(Z.location)),
                 l = B.slice(0, i + 1);
               l.push(n), (B = l), v({ action: t, location: r });
             } else v();
@@ -43063,14 +43379,14 @@
       }
       function V(e, n) {
         var t = 'REPLACE',
-          r = E(e, void 0, void 0, X.location);
+          r = E(e, void 0, void 0, Z.location);
         h.confirmTransitionTo(r, t, o, function (e) {
           if (e) {
             var n = x(r),
               a = u(c + n),
               o = z() !== a;
             o && ((w = n), F(a));
-            var i = B.indexOf(x(X.location));
+            var i = B.indexOf(x(Z.location));
             -1 !== i && (B[i] = n), v({ action: t, location: r });
           }
         });
@@ -43102,7 +43418,7 @@
           }
         );
       }
-      function Z(e) {
+      function X(e) {
         var n = h.appendListener(e);
         return (
           K(1),
@@ -43111,7 +43427,7 @@
           }
         );
       }
-      var X = {
+      var Z = {
         length: n.length,
         action: 'POP',
         location: L,
@@ -43122,9 +43438,9 @@
         goBack: G,
         goForward: $,
         block: Q,
-        listen: Z,
+        listen: X,
       };
-      return X;
+      return Z;
     }
     function U(e, n, t) {
       return Math.min(Math.max(e, n), t);
@@ -43507,7 +43823,7 @@
       s = a.a.memo((e) => {
         var n = e.demos,
           t = n['simpledatalist-demo'].component,
-          r = n['jsx-demo-18'].component;
+          r = n['jsx-demo-19'].component;
         return a.a.createElement(
           a.a.Fragment,
           null,
@@ -43625,7 +43941,7 @@
             ),
             a.a.createElement(
               i['default'],
-              n['jsx-demo-18'].previewerProps,
+              n['jsx-demo-19'].previewerProps,
               a.a.createElement(r, null),
             ),
           ),
@@ -44037,8 +44353,8 @@
         K = $[1],
         Y = _(0),
         Q = Object(o['a'])(Y, 2),
-        Z = Q[0],
-        X = Q[1],
+        X = Q[0],
+        Z = Q[1],
         J = _(0),
         ee = Object(o['a'])(J, 2),
         ne = ee[0],
@@ -44066,7 +44382,7 @@
         be = ge[0],
         ye = ge[1],
         xe = ''.concat(c, '-item'),
-        Ee = Math.max(Z, ne),
+        Ee = Math.max(X, ne),
         we = C === T,
         ke = f.length && we,
         Ce = C === I,
@@ -44126,7 +44442,7 @@
         });
       }
       function Le(e, n) {
-        te(n), X(ne);
+        te(n), Z(ne);
       }
       function Ae(e, n) {
         ie(n);
@@ -45028,7 +45344,7 @@
       s = a.a.memo((e) => {
         var n = e.demos,
           t = n['simplemappeddatatable-demo'].component,
-          r = n['jsx-demo-20'].component;
+          r = n['jsx-demo-21'].component;
         return a.a.createElement(
           a.a.Fragment,
           null,
@@ -45159,7 +45475,7 @@
                 'SimpleMappedDataTable.jsx',
               ),
               a.a.createElement(l['a'], {
-                code: 'import React from \'react\';\nimport \'../SimpleMappedDataTable.less\';\nconst SimpleMappedDataTable = (props) => {\n    const { columns, data, isBordered } = props;\n\n    let filteredData = data?.map((v) =>\n        Object.keys(v)\n            .filter((k) => columns?.some((col) => col.dataIndex === k))\n            .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n    );\n\n    return (\n        <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n            <thead className="sim-table-header">\n                <tr>\n                    {columns?.map((column) => (\n                        <th className="sim-table-cell" key={column.key}>\n                            {column.title}\n                        </th>\n                    ))}\n                </tr>\n            </thead>\n            <tbody className="sim-table-body">\n                {filteredData?.map((item, index) => (\n                    <tr key={`${index}_${index}`} className="sim-table-row">\n                        {columns?.map((col) => (\n                            <td className="sim-table-cell" key={col.key}>\n                                {item[col.dataIndex]}\n                            </td>\n                        ))}\n                    </tr>\n                ))}\n            </tbody>\n        </table>\n    );\n};\n\nexport default SimpleMappedDataTable;',
+                code: 'import React from \'react\';\nimport \'../SimpleMappedDataTable.less\';\nconst SimpleMappedDataTable = (props) => {\n  const { columns, data, isBordered } = props;\n\n  let filteredData = data?.map((v) =>\n    Object.keys(v)\n      .filter((k) => columns?.some((col) => col.dataIndex === k))\n      .reduce((acc, key) => ((acc[key] = v[key]), acc), {}),\n  );\n\n  return (\n    <table className={`sim-table${isBordered ? \' is-bordered\' : \'\'}`}>\n      <thead className="sim-table-header">\n        <tr>\n          {columns?.map((column) => (\n            <th className="sim-table-cell" key={column.key}>\n              {column.title}\n            </th>\n          ))}\n        </tr>\n      </thead>\n      <tbody className="sim-table-body">\n        {filteredData?.map((item, index) => (\n          <tr key={`${index}_${index}`} className="sim-table-row">\n            {columns?.map((col) => (\n              <td className="sim-table-cell" key={col.key}>\n                {item[col.dataIndex]}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  );\n};\n\nexport default SimpleMappedDataTable;',
                 lang: 'jsx',
               }),
               a.a.createElement('p', null, 'Demo:'),
@@ -45176,7 +45492,7 @@
             ),
             a.a.createElement(
               i['default'],
-              n['jsx-demo-20'].previewerProps,
+              n['jsx-demo-21'].previewerProps,
               a.a.createElement(r, null),
             ),
           ),
@@ -45868,6 +46184,58 @@
       return r(this, e).get(e);
     }
     e.exports = a;
+  },
+  brg6: function (e, n, t) {
+    'use strict';
+    t.r(n);
+    var r = t('q1tI'),
+      a = t.n(r),
+      o = t('PSi5'),
+      i = t('xzqI'),
+      l = o['a'].Option,
+      c = () => {
+        var e = (e) => {
+          console.log(e);
+        };
+        return a.a.createElement(
+          i['b'],
+          null,
+          a.a.createElement(
+            o['a'],
+            {
+              placeholder: 'please select',
+              defaultValue: 'Grapefruit',
+              onChange: e,
+            },
+            a.a.createElement(l, { label: 'grapefruit', value: 'Grapefruit' }),
+            a.a.createElement(l, { label: 'lime', value: 'lime' }),
+            a.a.createElement(l, {
+              label: 'coconut',
+              value: 'coconut',
+              disabled: !0,
+            }),
+            a.a.createElement(l, { label: 'mango', value: 'mango' }),
+          ),
+          a.a.createElement(
+            o['a'],
+            {
+              placeholder: 'please select',
+              defaultValue: 'Grapefruit',
+              onChange: e,
+              disabled: !0,
+            },
+            a.a.createElement(l, { label: 'grapefruit', value: 'Grapefruit' }),
+            a.a.createElement(l, { label: 'lime', value: 'lime' }),
+            a.a.createElement(l, {
+              label: 'coconut',
+              value: 'coconut',
+              disabled: !0,
+            }),
+            a.a.createElement(l, { label: 'mango', value: 'mango' }),
+          ),
+        );
+      };
+    n['default'] = c;
   },
   buC1: function (e, n, t) {
     'use strict';
@@ -48939,10 +49307,10 @@
       while (!H(F())) _();
       return U(e, P);
     }
-    function Z(e) {
-      return q(X('', null, null, null, [''], (e = V(e)), 0, [0], e));
+    function X(e) {
+      return q(Z('', null, null, null, [''], (e = V(e)), 0, [0], e));
     }
-    function X(e, n, t, r, a, o, i, l, c) {
+    function Z(e, n, t, r, a, o, i, l, c) {
       var s = 0,
         u = 0,
         d = i,
@@ -49015,13 +49383,13 @@
                   (S((j = J(T, n, t, s, u, a, l, w, (k = []), (O = []), d)), o),
                   123 === y)
                 )
-                  if (0 === u) X(T, n, j, j, k, o, d, l, O);
+                  if (0 === u) Z(T, n, j, j, k, o, d, l, O);
                   else
                     switch (p) {
                       case 100:
                       case 109:
                       case 115:
-                        X(
+                        Z(
                           e,
                           j,
                           j,
@@ -49034,7 +49402,7 @@
                         );
                         break;
                       default:
-                        X(T, j, j, j, [''], O, 0, l, O);
+                        Z(T, j, j, j, [''], O, 0, l, O);
                     }
             }
             (s = u = f = 0), (v = b = 1), (w = T = ''), (d = i);
@@ -49425,7 +49793,7 @@
           ],
           p = oe(s.concat(r, d)),
           f = function (e) {
-            return re(Z(e), p);
+            return re(X(e), p);
           };
         i = function (e, n, t, r) {
           (u = t),
@@ -49844,7 +50212,7 @@
       s = a.a.memo((e) => {
         var n = e.demos,
           t = n['simpledatatable-demo'].component,
-          r = n['jsx-demo-19'].component;
+          r = n['jsx-demo-20'].component;
         return a.a.createElement(
           a.a.Fragment,
           null,
@@ -49973,7 +50341,7 @@
             ),
             a.a.createElement(
               i['default'],
-              n['jsx-demo-19'].previewerProps,
+              n['jsx-demo-20'].previewerProps,
               a.a.createElement(r, null),
             ),
           ),
@@ -52423,7 +52791,7 @@
       s = a.a.memo((e) => {
         var n = e.demos,
           t = n['simpledatalist-demo.zh-cn'].component,
-          r = n['jsx-demo.zh-cn-18'].component;
+          r = n['jsx-demo.zh-cn-19'].component;
         return a.a.createElement(
           a.a.Fragment,
           null,
@@ -52553,7 +52921,7 @@
             ),
             a.a.createElement(
               i['default'],
-              n['jsx-demo.zh-cn-18'].previewerProps,
+              n['jsx-demo.zh-cn-19'].previewerProps,
               a.a.createElement(r, null),
             ),
           ),
@@ -53186,10 +53554,10 @@
               domEvent: e,
             };
           },
-          Z = f || A,
-          X = T(u, K, v, g),
-          J = X.active,
-          ee = Object(c['a'])(X, $),
+          X = f || A,
+          Z = T(u, K, v, g),
+          J = Z.active,
+          ee = Object(c['a'])(Z, $),
           ne = M.includes(u),
           te = R(Y.length),
           re = function (e) {
@@ -53249,7 +53617,7 @@
               {},
               { isSelected: ne },
             ),
-            icon: Z,
+            icon: X,
           }),
         );
         return F && (le = F(le, e, { selected: ne })), le;
@@ -53275,11 +53643,11 @@
       );
     }
     var Q = Y,
-      Z = t('erl9'),
-      X = t('tmk9'),
+      X = t('erl9'),
+      Z = t('tmk9'),
       J = ['label', 'children', 'key', 'type'];
     function ee(e, n) {
-      return Object(X['a'])(e).map(function (e, t) {
+      return Object(Z['a'])(e).map(function (e, t) {
         if (s['isValidElement'](e)) {
           var r,
             a,
@@ -53306,7 +53674,7 @@
     function ne(e) {
       return (e || [])
         .map(function (e, n) {
-          if (e && 'object' === Object(Z['a'])(e)) {
+          if (e && 'object' === Object(X['a'])(e)) {
             var t = e.label,
               a = e.children,
               o = e.key,
@@ -53603,9 +53971,9 @@
           K = M.expandIcon,
           Y = M.onItemClick,
           Q = M.onOpenChange,
-          Z = M.onActive,
-          X = s['useContext'](V),
-          J = X._internalRenderSubMenuItem,
+          X = M.onActive,
+          Z = s['useContext'](V),
+          J = Z._internalRenderSubMenuItem,
           ee = s['useContext'](_),
           ne = ee.isSubPathKey,
           te = z(),
@@ -53653,7 +54021,7 @@
             'inline' !== F && Q(p, e);
           },
           Le = function () {
-            Z(p);
+            X(p);
           },
           Ae = A && ''.concat(A, '-popup'),
           Me = s['createElement'](
@@ -54148,8 +54516,8 @@
           W = e.selectable,
           K = void 0 === W || W,
           Y = e.multiple,
-          Z = void 0 !== Y && Y,
-          X = e.defaultSelectedKeys,
+          X = void 0 !== Y && Y,
+          Z = e.defaultSelectedKeys,
           J = e.selectedKeys,
           ee = e.onSelect,
           ne = e.onDeselect,
@@ -54211,11 +54579,11 @@
           qe = Object(l['a'])(Ve, 2),
           Ye = qe[0],
           Qe = qe[1],
-          Ze = function (e) {
+          Xe = function (e) {
             Qe(e), null === be || void 0 === be || be(e);
           },
-          Xe = s['useState'](Ye),
-          Je = Object(l['a'])(Xe, 2),
+          Ze = s['useState'](Ye),
+          Je = Object(l['a'])(Ze, 2),
           en = Je[0],
           nn = Je[1],
           tn = 'inline' === Ae,
@@ -54228,7 +54596,7 @@
         ),
           s['useEffect'](
             function () {
-              rn.current && (tn ? Qe(en) : Ze(Ke));
+              rn.current && (tn ? Qe(en) : Xe(Ke));
             },
             [tn],
           ),
@@ -54316,7 +54684,7 @@
             },
           };
         });
-        var En = Object(m['a'])(X || [], {
+        var En = Object(m['a'])(Z || [], {
             value: J,
             postState: function (e) {
               return Array.isArray(e)
@@ -54334,7 +54702,7 @@
               var n,
                 t = e.key,
                 r = kn.includes(t);
-              (n = Z
+              (n = X
                 ? r
                   ? kn.filter(function (e) {
                       return e !== t;
@@ -54351,7 +54719,7 @@
                 ? null === ne || void 0 === ne || ne(a)
                 : null === ee || void 0 === ee || ee(a);
             }
-            !Z && Ye.length && 'inline' !== Ae && Ze(Ke);
+            !X && Ye.length && 'inline' !== Ae && Xe(Ke);
           },
           Sn = re(function (e) {
             null === ge || void 0 === ge || ge(N(e)), On(e);
@@ -54367,7 +54735,7 @@
                 return !r.has(e);
               });
             }
-            f()(Ye, t) || Ze(t);
+            f()(Ye, t) || Xe(t);
           }),
           Tn = re(ve),
           In = function (e, n) {
@@ -54498,13 +54866,13 @@
         );
       }),
       Qe = Ye,
-      Ze = ['className', 'title', 'eventKey', 'children'],
-      Xe = ['children'],
+      Xe = ['className', 'title', 'eventKey', 'children'],
+      Ze = ['children'],
       Je = function (e) {
         var n = e.className,
           t = e.title,
           a = (e.eventKey, e.children),
-          o = Object(c['a'])(e, Ze),
+          o = Object(c['a'])(e, Xe),
           i = s['useContext'](O),
           l = i.prefixCls,
           u = ''.concat(l, '-item-group');
@@ -54529,7 +54897,7 @@
       };
     function en(e) {
       var n = e.children,
-        t = Object(c['a'])(e, Xe),
+        t = Object(c['a'])(e, Ze),
         r = z(t.eventKey),
         a = ee(n, r),
         o = M();
@@ -55039,19 +55407,8 @@
       i = t('q1tI'),
       l = t.n(i),
       c = t('xdOR'),
-      s = (e, n) => {
-        var t = (t) => {
-          e.current && !e.current.contains(t.target) && n();
-        };
-        Object(i['useEffect'])(
-          () => (
-            document.addEventListener('click', t),
-            () => document.removeEventListener('click', t)
-          ),
-        );
-      },
-      u = s,
-      d = (e) => {
+      s = t('wXdP'),
+      u = (e) => {
         var n = e.label,
           t = e.value,
           s = e.disabled,
@@ -55082,7 +55439,7 @@
           };
         return (
           Object(i['useEffect'])(() => {
-            g && p && p({ label: n, value: t });
+            g && (null === p || void 0 === p || p({ label: n, value: t }));
           }, [g]),
           l.a.createElement(
             'div',
@@ -55094,9 +55451,10 @@
             d || n || '',
           )
         );
-      },
-      p = d,
-      f =
+      };
+    u.displayName = 'Option';
+    var d = u,
+      p =
         (t('eLGL'),
         Object(i['forwardRef'])((e, n) => {
           var t = e.onClick,
@@ -55112,7 +55470,7 @@
                 'p-id': '2381',
                 ref: n,
                 onClick: (e) => {
-                  t && t(e);
+                  null === t || void 0 === t || t(e);
                 },
               },
               r,
@@ -55125,7 +55483,7 @@
             }),
           );
         })),
-      m = Object(i['forwardRef'])((e, n) =>
+      f = Object(i['forwardRef'])((e, n) =>
         l.a.createElement(
           'svg',
           Object(a['a'])(
@@ -55145,12 +55503,12 @@
           }),
         ),
       ),
-      h = (e) => {
+      m = (e) => {
         var n,
           t = e.disabled,
-          s = e.defaultValue,
+          u = e.defaultValue,
           d = e.value,
-          p = e.onChange,
+          m = e.onChange,
           h = e.placeholder,
           v = void 0 === h ? '\u8bf7\u8f93\u5165' : h,
           g = e.allowClear,
@@ -55170,7 +55528,7 @@
           ]),
           k = Object(i['createRef'])(),
           C = Object(i['createRef'])(),
-          O = Object(i['useState'])(s),
+          O = Object(i['useState'])(u),
           S = Object(r['a'])(O, 2),
           j = S[0],
           T = S[1],
@@ -55199,14 +55557,14 @@
                       null === (n = e.type) ||
                       void 0 === n
                         ? void 0
-                        : n.name)
+                        : n.displayName)
                     );
                   })) || [];
         Object(i['useEffect'])(() => {
           'string' === typeof d && T(d);
         }, [d]);
         var H = (e) => {
-            R(e), T(e.value), t || (D(!1), B(!1)), p && p(e);
+            R(e), T(e.value), t || (D(!1), B(!1)), m && m(e);
           },
           V = () => {
             t || (R({ label: '', value: '' }), T(''));
@@ -55217,7 +55575,7 @@
             'ew-select-selector-placeholder': !j,
           };
         return (
-          u(k, () => {
+          Object(s['a'])(k, () => {
             t || D(!1);
           }),
           l.a.createElement(
@@ -55250,8 +55608,8 @@
               'div',
               { className: 'ew-select-arrow' },
               b && j && F
-                ? l.a.createElement(f, { onClick: V, ref: C })
-                : l.a.createElement(m, {
+                ? l.a.createElement(p, { onClick: V, ref: C })
+                : l.a.createElement(f, {
                     onClick: () => {
                       t || D(!M);
                     },
@@ -55275,8 +55633,8 @@
           )
         );
       };
-    h.Option = p;
-    n['a'] = h;
+    m.Option = d;
+    n['a'] = m;
   },
   'm/L8': function (e, n, t) {
     var r = t('g6v/'),
@@ -56180,6 +56538,64 @@
         },
       },
     );
+  },
+  n7Fp: function (e, n, t) {
+    'use strict';
+    t.r(n);
+    var r = t('q1tI'),
+      a = t.n(r),
+      o = t('PSi5'),
+      i = t('xzqI'),
+      l = o['a'].Option,
+      c = () => {
+        var e = (e) => {
+          console.log(e);
+        };
+        return a.a.createElement(
+          i['b'],
+          null,
+          a.a.createElement(
+            o['a'],
+            {
+              placeholder: '\u8bf7\u9009\u62e9',
+              defaultValue: 'Grapefruit',
+              onChange: e,
+            },
+            a.a.createElement(l, {
+              label: '\u897f\u67da',
+              value: 'Grapefruit',
+            }),
+            a.a.createElement(l, { label: '\u9178\u6a59', value: 'lime' }),
+            a.a.createElement(l, {
+              label: '\u6930\u5b50',
+              value: 'coconut',
+              disabled: !0,
+            }),
+            a.a.createElement(l, { label: '\u8292\u679c', value: 'mango' }),
+          ),
+          a.a.createElement(
+            o['a'],
+            {
+              placeholder: '\u8bf7\u9009\u62e9',
+              defaultValue: 'Grapefruit',
+              onChange: e,
+              disabled: !0,
+            },
+            a.a.createElement(l, {
+              label: '\u897f\u67da',
+              value: 'Grapefruit',
+            }),
+            a.a.createElement(l, { label: '\u9178\u6a59', value: 'lime' }),
+            a.a.createElement(l, {
+              label: '\u6930\u5b50',
+              value: 'coconut',
+              disabled: !0,
+            }),
+            a.a.createElement(l, { label: '\u8292\u679c', value: 'mango' }),
+          ),
+        );
+      };
+    n['default'] = c;
   },
   nIe3: function (e, n, t) {
     'use strict';
@@ -57245,8 +57661,8 @@
       K = C.f,
       Y = O.f,
       Q = w.f,
-      Z = S.f,
-      X = I('symbols'),
+      X = S.f,
+      Z = I('symbols'),
       J = I('op-symbols'),
       ee = I('string-to-symbol-registry'),
       ne = I('symbol-to-string-registry'),
@@ -57273,7 +57689,7 @@
             }
           : Y,
       ie = function (e, n) {
-        var t = (X[e] = y($[U]));
+        var t = (Z[e] = y($[U]));
         return (
           V(t, { type: B, tag: e, description: n }), l || (t.description = n), t
         );
@@ -57290,7 +57706,7 @@
         var r = g(n, !0);
         return (
           m(t),
-          d(X, r)
+          d(Z, r)
             ? (t.enumerable
                 ? (d(e, F) && e[F][r] && (e[F][r] = !1),
                   (t = y(t, { enumerable: b(0, !1) })))
@@ -57315,19 +57731,19 @@
       },
       de = function (e) {
         var n = g(e, !0),
-          t = Z.call(this, n);
+          t = X.call(this, n);
         return (
-          !(this === G && d(X, n) && !d(J, n)) &&
-          (!(t || !d(this, n) || !d(X, n) || (d(this, F) && this[F][n])) || t)
+          !(this === G && d(Z, n) && !d(J, n)) &&
+          (!(t || !d(this, n) || !d(Z, n) || (d(this, F) && this[F][n])) || t)
         );
       },
       pe = function (e, n) {
         var t = v(e),
           r = g(n, !0);
-        if (t !== G || !d(X, r) || d(J, r)) {
+        if (t !== G || !d(Z, r) || d(J, r)) {
           var a = K(t, r);
           return (
-            !a || !d(X, r) || (d(t, F) && t[F][r]) || (a.enumerable = !0), a
+            !a || !d(Z, r) || (d(t, F) && t[F][r]) || (a.enumerable = !0), a
           );
         }
       },
@@ -57336,7 +57752,7 @@
           t = [];
         return (
           _(n, function (e) {
-            d(X, e) || d(P, e) || t.push(e);
+            d(Z, e) || d(P, e) || t.push(e);
           }),
           t
         );
@@ -57347,7 +57763,7 @@
           r = [];
         return (
           _(t, function (e) {
-            !d(X, e) || (n && !d(G, e)) || r.push(X[e]);
+            !d(Z, e) || (n && !d(G, e)) || r.push(Z[e]);
           }),
           r
         );
@@ -59463,12 +59879,12 @@
           }
           t(o);
         },
-        Z = function (e, n, t, r, a) {
+        X = function (e, n, t, r, a) {
           var o = [],
             i = Array.isArray(n) ? 'array' : typeof n;
           z.required(e, n, r, o, a, i), t(o);
         },
-        X = function (e, n, t, r, a) {
+        Z = function (e, n, t, r, a) {
           var o = e.type,
             i = [],
             l = e.required || (!e.required && r.hasOwnProperty(e.field));
@@ -59500,10 +59916,10 @@
           enum: K,
           pattern: Y,
           date: Q,
-          url: X,
-          hex: X,
-          email: X,
-          required: Z,
+          url: Z,
+          hex: Z,
+          email: Z,
+          required: X,
           any: J,
         };
       function ne() {
@@ -61548,7 +61964,8 @@
       c = t('SQsl'),
       s = a.a.memo((e) => {
         var n = e.demos,
-          t = n['select-demo'].component;
+          t = n['select-demo'].component,
+          r = n['jsx-demo-18'].component;
         return a.a.createElement(
           a.a.Fragment,
           null,
@@ -61621,24 +62038,93 @@
                   'Each item in values must be a 2-element array, where the first element is the value of the item and the second one is the displayed text for it.',
                 ),
               ),
-              a.a.createElement('p', null, 'useClickOutside:'),
+              a.a.createElement(
+                'h4',
+                { id: 'useclickoutsidets' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#useclickoutsidets',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useClickOutside.ts',
+              ),
               a.a.createElement(l['a'], {
                 code: "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
                 lang: 'ts',
               }),
+              a.a.createElement(
+                'h4',
+                { id: 'selectless' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#selectless', 'aria-hidden': 'true', tabIndex: -1 },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'select.less',
+              ),
               a.a.createElement(l['a'], {
                 code: "@prefix: ew-;\n\n.@{prefix}select {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: rgba(0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  cursor: pointer;\n  border-radius: 4px;\n  min-width: 120px;\n\n  &-disabled {\n    .@{prefix}select-selector {\n      background: #f5f5f5;\n      cursor: not-allowed;\n      color: rgba(0, 0, 0, 0.25);\n    }\n\n    .@{prefix}select-arrow {\n      cursor: not-allowed;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-selector,\n  &:not(.@{prefix}select-disabled):active &-selector {\n    border-color: #2396ef;\n  }\n\n  &-selector {\n    position: relative;\n    background-color: #fff;\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    display: flex;\n    width: 100%;\n    height: 32px;\n    padding: 0 11px;\n\n    &-value {\n      padding-right: 18px;\n      line-height: 30px;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-value {\n    border-color: #2396ef;\n    border-right-width: 1px;\n  }\n\n  &-arrow {\n    display: inline-block;\n    color: inherit;\n    font-style: normal;\n    line-height: 0;\n    text-transform: none;\n    vertical-align: -0.125em;\n    text-rendering: optimizelegibility;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    position: absolute;\n    top: 50%;\n    right: 11px;\n    display: flex;\n    align-items: center;\n    margin-top: -6px;\n    font-size: 12px;\n    line-height: 1;\n    text-align: center;\n\n    &-icon,\n    .@{prefix}select-clear-icon {\n      width: 16px;\n      height: 16px;\n      display: inline-block;\n      color: rgba(0, 0, 0, 0.25);\n    }\n  }\n\n  .@{prefix}select-clear-icon {\n    position: relative;\n    top: -2px;\n  }\n\n  &-dropdown {\n    margin: 0;\n    color: rgba(0, 0, 0.85);\n    font-variant: tabular-nums;\n    line-height: 1.5715;\n    list-style: none;\n    font-feature-settings: 'tnum';\n    position: absolute;\n    z-index: 1050;\n    box-sizing: border-box;\n    padding: 4px 0;\n    overflow: hidden;\n    font-size: 14px;\n    font-variant: initial;\n    background-color: #fff;\n    border-radius: 2px;\n    outline: none;\n    width: 100%;\n    top: 40px;\n    box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014,\n      0 9px 28px 8px #0000000d;\n\n    &-option {\n      position: relative;\n      display: flex;\n      min-height: 32px;\n      padding: 5px 12px;\n      color: rgba(0, 0, 0.85);\n      font-weight: 400;\n      font-size: 14px;\n      line-height: 22px;\n      cursor: pointer;\n      transition: background 0.3s ease;\n      flex: auto;\n      overflow: hidden;\n      white-space: nowrap;\n      text-overflow: ellipsis;\n\n      &-disabled {\n        color: rgba(0, 0, 0, 0.25);\n        cursor: not-allowed;\n      }\n\n      &:not(:last-of-type) {\n        margin-bottom: 8px;\n      }\n\n      &:not(&-disabled):hover {\n        background-color: #f5f5f5;\n      }\n\n      &:not(&-disabled).active {\n        background-color: #e6f7ff;\n      }\n    }\n  }\n}",
                 lang: 'less',
               }),
-              a.a.createElement('p', null, 'Option:'),
+              a.a.createElement(
+                'h4',
+                { id: 'optiontsx' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#optiontsx', 'aria-hidden': 'true', tabIndex: -1 },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'Option.tsx',
+              ),
               a.a.createElement(l['a'], {
                 code: "import React, { useState, useEffect } from 'react';\nimport type { ReactNode } from 'react';\nimport classnames from '../../utils/classnames';\nexport interface OptionValueProps {\n  label: string;\n  value: string;\n}\nexport interface OptionProps extends Record<string, any>, OptionValueProps {\n  disabled: boolean;\n  children: ReactNode;\n  defaultValue: string;\n  onOptionChange(v: Partial<OptionValueProps>): void;\n  active: boolean;\n}\nconst Option = (props: Partial<OptionProps>) => {\n  const {\n    label,\n    value,\n    disabled,\n    defaultValue,\n    children,\n    onOptionChange,\n    active,\n    ...rest\n  } = props;\n  const [currentValue, setCurrentValue] = useState<string | undefined>(\n    defaultValue,\n  );\n\n  const classNames = {\n    'ew-select-dropdown-option': true,\n    'ew-select-dropdown-option-disabled': disabled,\n    active: active,\n  };\n  const onChangeHandler = (options: Partial<OptionValueProps>) => {\n    if (disabled) {\n      return;\n    }\n\n    setCurrentValue(options.value);\n    if (onOptionChange) {\n      onOptionChange(options);\n    }\n  };\n\n  useEffect(() => {\n    if (currentValue) {\n      if (onOptionChange) {\n        onOptionChange({ label, value });\n      }\n    }\n  }, [currentValue]);\n  return (\n    <div\n      className={classnames(classNames)}\n      data-value={currentValue}\n      {...rest}\n      onClick={() => onChangeHandler({ label, value })}\n    >\n      {children ? children : label ? label : ''}\n    </div>\n  );\n};\nexport default Option;",
                 lang: 'tsx',
               }),
-              a.a.createElement('p', null, 'Select:'),
+              a.a.createElement(
+                'h4',
+                { id: 'optionjsx' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#optionjsx', 'aria-hidden': 'true', tabIndex: -1 },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'Option.JSX',
+              ),
               a.a.createElement(l['a'], {
-                code: "import React, {\n  useState,\n  useEffect,\n  cloneElement,\n  createRef,\n  forwardRef,\n} from 'react';\nimport type { OptionValueProps } from './Option';\nimport classnames from '../../utils/classnames';\nimport useClickOutside from '../../utils/useClickOutside';\nimport Option from './Option';\nimport './select.less';\n\nexport interface SelectProps extends Record<string, any> {\n  disabled: boolean;\n  defaultValue: string;\n  value: string;\n  onChange(v: Partial<OptionValueProps>): void;\n  placeholder: string;\n  children: JSX.Element[] | JSX.Element;\n  allowClear: boolean;\n  labelProps: string;\n}\nconst ClearIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => {\n    const { onClick, ...rest } = props;\n    return (\n      <svg\n        className=\"ew-select-clear-icon\"\n        viewBox=\"0 0 1024 1024\"\n        version=\"1.1\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n        p-id=\"2381\"\n        ref={ref}\n        onClick={(e) => {\n          if (onClick) {\n            onClick(e);\n          }\n        }}\n        {...rest}\n      >\n        <path\n          d=\"M512 39.384615C250.092308 39.384615 39.384615 250.092308 39.384615 512s210.707692 472.615385 472.615385 472.615385 472.615385-210.707692 472.615385-472.615385S773.907692 39.384615 512 39.384615z m96.492308 488.369231l153.6 153.6c7.876923 7.876923 7.876923 19.692308 0 27.569231l-55.138462 55.138461c-7.876923 7.876923-19.692308 7.876923-27.569231 0L525.784615 610.461538c-7.876923-7.876923-19.692308-7.876923-27.56923 0l-153.6 153.6c-7.876923 7.876923-19.692308 7.876923-27.569231 0L261.907692 708.923077c-7.876923-7.876923-7.876923-19.692308 0-27.569231l153.6-153.6c7.876923-7.876923 7.876923-19.692308 0-27.569231l-155.56923-155.56923c-7.876923-7.876923-7.876923-19.692308 0-27.569231l55.138461-55.138462c7.876923-7.876923 19.692308-7.876923 27.569231 0l155.569231 155.569231c7.876923 7.876923 19.692308 7.876923 27.56923 0l153.6-153.6c7.876923-7.876923 19.692308-7.876923 27.569231 0l55.138462 55.138462c7.876923 7.876923 7.876923 19.692308 0 27.56923l-153.6 153.6c-5.907692 7.876923-5.907692 19.692308 0 27.569231z\"\n          p-id=\"2382\"\n          fill=\"#dbdbdb\"\n          className=\"ew-select-clear-icon-path\"\n        ></path>\n      </svg>\n    );\n  },\n);\nconst ArrowIcon = () => (\n  <svg\n    className=\"ew-select-arrow-icon\"\n    viewBox=\"0 0 1024 1024\"\n    version=\"1.1\"\n    xmlns=\"http://www.w3.org/2000/svg\"\n    p-id=\"2216\"\n  >\n    <path\n      d=\"M512 714.666667c-8.533333 0-17.066667-2.133333-23.466667-8.533334l-341.333333-341.333333c-12.8-12.8-12.8-32 0-44.8 12.8-12.8 32-12.8 44.8 0l320 317.866667 317.866667-320c12.8-12.8 32-12.8 44.8 0 12.8 12.8 12.8 32 0 44.8L533.333333 704c-4.266667 8.533333-12.8 10.666667-21.333333 10.666667z\"\n      p-id=\"2217\"\n    ></path>\n  </svg>\n);\nconst Select = (\n  props: Partial<Omit<SelectProps, 'children'>> & Pick<SelectProps, 'children'>,\n) => {\n  const {\n    disabled,\n    defaultValue,\n    value,\n    onChange,\n    placeholder = '\u8bf7\u8f93\u5165',\n    allowClear = true,\n    children,\n    labelProps = 'label',\n    ...rest\n  } = props;\n  const dropdownRef = createRef<HTMLDivElement>();\n  const clearIconRef = createRef<HTMLOrSVGElement>();\n  const [selectValue, setSelectValue] = useState<string | undefined>(\n    defaultValue,\n  );\n  const [option, setOption] = useState<Partial<OptionValueProps>>({});\n  const [visible, setVisible] = useState(false);\n  const [showClear, setShowClear] = useState(false);\n\n  const optionChildren = Array.isArray(children)\n    ? children\n    : [children]?.filter((item) => item?.type?.name === 'Option') || [];\n\n  useEffect(() => {\n    if (typeof value === 'string') {\n      setSelectValue(value);\n    }\n  }, [value]);\n\n  const onChangeHandler = (v: Partial<OptionValueProps>) => {\n    setOption(v);\n    setSelectValue(v.value);\n    if (!disabled) {\n      setVisible(false);\n      setShowClear(false);\n    }\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  const onClearHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setOption({ label: '', value: '' });\n    setSelectValue('');\n  };\n  const selectClassNames = {\n    'ew-select': true,\n    'ew-select-disabled': disabled,\n  };\n  const valueClassNames = {\n    'ew-select-selector': true,\n    'ew-select-value-placeholder': !selectValue,\n  };\n  useClickOutside(dropdownRef, () => {\n    if (!disabled) {\n      setVisible(false);\n    }\n  });\n  return (\n    <div\n      className={classnames(selectClassNames)}\n      {...rest}\n      ref={dropdownRef}\n      onMouseEnter={() => {\n        if (!disabled) {\n          setShowClear(true);\n        }\n      }}\n      onMouseLeave={() => {\n        if (!disabled) {\n          setShowClear(false);\n        }\n      }}\n    >\n      <div\n        className={classnames(valueClassNames)}\n        placeholder={placeholder}\n        onClick={() => {\n          if (!disabled) {\n            setVisible(!visible);\n          }\n        }}\n      >\n        <span className=\"ew-select-selector-value\">{option[labelProps]}</span>\n      </div>\n      <div className=\"ew-select-arrow\">\n        {allowClear && selectValue && showClear ? (\n          <ClearIcon onClick={onClearHandler} ref={clearIconRef} />\n        ) : (\n          <ArrowIcon />\n        )}\n      </div>\n      <div\n        className=\"ew-select-dropdown\"\n        style={{ display: visible ? 'block' : 'none' }}\n      >\n        {optionChildren.map((item, index) =>\n          cloneElement(item, {\n            onOptionChange: onChangeHandler,\n            defaultValue: selectValue,\n            key: item.key || String(index + 1),\n            active: item.props.value === selectValue,\n          }),\n        )}\n      </div>\n    </div>\n  );\n};\nSelect.Option = Option;\nexport default Select;",
+                code: "import React, { useState, useEffect } from 'react';\nimport classnames from '../../../utils/classnames';\n\nconst Option = (props) => {\n  const {\n    label,\n    value,\n    disabled,\n    defaultValue,\n    children,\n    onOptionChange,\n    active,\n    ...rest\n  } = props;\n  const [currentValue, setCurrentValue] = useState(\n    defaultValue,\n  );\n\n  const classNames = {\n    'ew-select-dropdown-option': true,\n    'ew-select-dropdown-option-disabled': disabled,\n    active: active,\n  };\n  const onChangeHandler = (options) => {\n    if (disabled) {\n      return;\n    }\n\n    setCurrentValue(options.value);\n    if (onOptionChange) {\n      onOptionChange(options);\n    }\n  };\n\n  useEffect(() => {\n    if (currentValue) {\n      onOptionChange?.({ label, value });\n    }\n  }, [currentValue]);\n  return (\n    <div\n      className={classnames(classNames)}\n      data-value={currentValue}\n      {...rest}\n      onClick={() => onChangeHandler({ label, value })}\n    >\n      {children ? children : label ? label : ''}\n    </div>\n  );\n};\nOption.displayName = \"Option\";\nexport default Option;",
+                lang: 'jsx',
+              }),
+              a.a.createElement(
+                'h4',
+                { id: 'selecttsx' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#selecttsx', 'aria-hidden': 'true', tabIndex: -1 },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'Select.tsx',
+              ),
+              a.a.createElement(l['a'], {
+                code: "import React, {\n  useState,\n  useEffect,\n  cloneElement,\n  createRef,\n  forwardRef,\n} from 'react';\nimport type { OptionValueProps } from './Option';\nimport classnames from '../../utils/classnames';\nimport useClickOutside from '../../utils/useClickOutside';\nimport Option from './Option';\nimport './select.less';\n\nexport interface SelectProps extends Record<string, any> {\n  disabled: boolean;\n  defaultValue: string;\n  value: string;\n  onChange(v: Partial<OptionValueProps>): void;\n  placeholder: string;\n  children: JSX.Element[] | JSX.Element;\n  allowClear: boolean;\n  labelProps: string;\n}\nconst ClearIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => {\n    const { onClick, ...rest } = props;\n    return (\n      <svg\n        className=\"ew-select-clear-icon\"\n        viewBox=\"0 0 1024 1024\"\n        version=\"1.1\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n        p-id=\"2381\"\n        ref={ref}\n        onClick={(e) => {\n          onClick?.(e);\n        }}\n        {...rest}\n      >\n        <path\n          d=\"M512 39.384615C250.092308 39.384615 39.384615 250.092308 39.384615 512s210.707692 472.615385 472.615385 472.615385 472.615385-210.707692 472.615385-472.615385S773.907692 39.384615 512 39.384615z m96.492308 488.369231l153.6 153.6c7.876923 7.876923 7.876923 19.692308 0 27.569231l-55.138462 55.138461c-7.876923 7.876923-19.692308 7.876923-27.569231 0L525.784615 610.461538c-7.876923-7.876923-19.692308-7.876923-27.56923 0l-153.6 153.6c-7.876923 7.876923-19.692308 7.876923-27.569231 0L261.907692 708.923077c-7.876923-7.876923-7.876923-19.692308 0-27.569231l153.6-153.6c7.876923-7.876923 7.876923-19.692308 0-27.569231l-155.56923-155.56923c-7.876923-7.876923-7.876923-19.692308 0-27.569231l55.138461-55.138462c7.876923-7.876923 19.692308-7.876923 27.569231 0l155.569231 155.569231c7.876923 7.876923 19.692308 7.876923 27.56923 0l153.6-153.6c7.876923-7.876923 19.692308-7.876923 27.569231 0l55.138462 55.138462c7.876923 7.876923 7.876923 19.692308 0 27.56923l-153.6 153.6c-5.907692 7.876923-5.907692 19.692308 0 27.569231z\"\n          p-id=\"2382\"\n          fill=\"#dbdbdb\"\n          className=\"ew-select-clear-icon-path\"\n        ></path>\n      </svg>\n    );\n  },\n);\nconst ArrowIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => (\n    <svg\n      className=\"ew-select-arrow-icon\"\n      viewBox=\"0 0 1024 1024\"\n      version=\"1.1\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      p-id=\"2216\"\n      ref={ref}\n      {...props}\n    >\n      <path\n        d=\"M512 714.666667c-8.533333 0-17.066667-2.133333-23.466667-8.533334l-341.333333-341.333333c-12.8-12.8-12.8-32 0-44.8 12.8-12.8 32-12.8 44.8 0l320 317.866667 317.866667-320c12.8-12.8 32-12.8 44.8 0 12.8 12.8 12.8 32 0 44.8L533.333333 704c-4.266667 8.533333-12.8 10.666667-21.333333 10.666667z\"\n        p-id=\"2217\"\n      ></path>\n    </svg>\n  ),\n);\nconst Select = (\n  props: Partial<Omit<SelectProps, 'children'>> & Pick<SelectProps, 'children'>,\n) => {\n  const {\n    disabled,\n    defaultValue,\n    value,\n    onChange,\n    placeholder = '\u8bf7\u8f93\u5165',\n    allowClear = true,\n    children,\n    labelProps = 'label',\n    ...rest\n  } = props;\n  const dropdownRef = createRef<HTMLDivElement>();\n  const clearIconRef = createRef<HTMLOrSVGElement>();\n  const [selectValue, setSelectValue] = useState<string | undefined>(\n    defaultValue,\n  );\n  const [option, setOption] = useState<Partial<OptionValueProps>>({});\n  const [visible, setVisible] = useState(false);\n  const [showClear, setShowClear] = useState(false);\n\n  const optionChildren = Array.isArray(children)\n    ? children\n    : [children]?.filter((item) => item?.type?.displayName === 'Option') || [];\n\n  useEffect(() => {\n    if (typeof value === 'string') {\n      setSelectValue(value);\n    }\n  }, [value]);\n\n  const onChangeHandler = (v: Partial<OptionValueProps>) => {\n    setOption(v);\n    setSelectValue(v.value);\n    if (!disabled) {\n      setVisible(false);\n      setShowClear(false);\n    }\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  const onClearHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setOption({ label: '', value: '' });\n    setSelectValue('');\n  };\n  const selectClassNames = {\n    'ew-select': true,\n    'ew-select-disabled': disabled,\n  };\n  const valueClassNames = {\n    'ew-select-selector': true,\n    'ew-select-selector-placeholder': !selectValue,\n  };\n  useClickOutside(dropdownRef, () => {\n    if (!disabled) {\n      setVisible(false);\n    }\n  });\n  return (\n    <div\n      className={classnames(selectClassNames)}\n      {...rest}\n      ref={dropdownRef}\n      onMouseEnter={() => {\n        if (!disabled) {\n          setShowClear(true);\n        }\n      }}\n      onMouseLeave={() => {\n        if (!disabled) {\n          setShowClear(false);\n        }\n      }}\n    >\n      <div\n        className={classnames(valueClassNames)}\n        placeholder={placeholder}\n        onClick={() => {\n          if (!disabled) {\n            setVisible(!visible);\n          }\n        }}\n      >\n        <span className=\"ew-select-selector-value\">{option[labelProps]}</span>\n      </div>\n      <div className=\"ew-select-arrow\">\n        {allowClear && selectValue && showClear ? (\n          <ClearIcon onClick={onClearHandler} ref={clearIconRef} />\n        ) : (\n          <ArrowIcon\n            onClick={() => {\n              if (!disabled) {\n                setVisible(!visible);\n              }\n            }}\n          />\n        )}\n      </div>\n      <div\n        className=\"ew-select-dropdown\"\n        style={{ display: visible ? 'block' : 'none' }}\n      >\n        {optionChildren.map((item, index) =>\n          cloneElement(item, {\n            onOptionChange: onChangeHandler,\n            defaultValue: selectValue,\n            key: item.key || String(index + 1),\n            active: item.props.value === selectValue,\n          }),\n        )}\n      </div>\n    </div>\n  );\n};\nSelect.Option = Option;\nexport default Select;",
                 lang: 'tsx',
+              }),
+              a.a.createElement(
+                'h4',
+                { id: 'selectjsx' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#selectjsx', 'aria-hidden': 'true', tabIndex: -1 },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'Select.jsx',
+              ),
+              a.a.createElement(l['a'], {
+                code: 'import React, {\n    useState,\n    useEffect,\n    cloneElement,\n    createRef,\n    forwardRef,\n} from \'react\';\nimport classnames from \'../../../utils/classnames\';\nimport useClickOutside from \'../../../utils/useClickOutside\';\nimport Option from \'./Option\';\nimport \'../select.less\';\n\nconst ClearIcon = forwardRef(\n    (props, ref) => {\n        const { onClick, ...rest } = props;\n        return (\n            <svg\n                className="ew-select-clear-icon"\n                viewBox="0 0 1024 1024"\n                version="1.1"\n                xmlns="http://www.w3.org/2000/svg"\n                p-id="2381"\n                ref={ref}\n                onClick={(e) => {\n                    onClick?.(e);\n                }}\n                {...rest}\n            >\n                <path\n                    d="M512 39.384615C250.092308 39.384615 39.384615 250.092308 39.384615 512s210.707692 472.615385 472.615385 472.615385 472.615385-210.707692 472.615385-472.615385S773.907692 39.384615 512 39.384615z m96.492308 488.369231l153.6 153.6c7.876923 7.876923 7.876923 19.692308 0 27.569231l-55.138462 55.138461c-7.876923 7.876923-19.692308 7.876923-27.569231 0L525.784615 610.461538c-7.876923-7.876923-19.692308-7.876923-27.56923 0l-153.6 153.6c-7.876923 7.876923-19.692308 7.876923-27.569231 0L261.907692 708.923077c-7.876923-7.876923-7.876923-19.692308 0-27.569231l153.6-153.6c7.876923-7.876923 7.876923-19.692308 0-27.569231l-155.56923-155.56923c-7.876923-7.876923-7.876923-19.692308 0-27.569231l55.138461-55.138462c7.876923-7.876923 19.692308-7.876923 27.569231 0l155.569231 155.569231c7.876923 7.876923 19.692308 7.876923 27.56923 0l153.6-153.6c7.876923-7.876923 19.692308-7.876923 27.569231 0l55.138462 55.138462c7.876923 7.876923 7.876923 19.692308 0 27.56923l-153.6 153.6c-5.907692 7.876923-5.907692 19.692308 0 27.569231z"\n                    p-id="2382"\n                    fill="#dbdbdb"\n                    className="ew-select-clear-icon-path"\n                ></path>\n            </svg>\n        );\n    },\n);\nconst ArrowIcon = forwardRef(\n    (props, ref) => (\n        <svg\n            className="ew-select-arrow-icon"\n            viewBox="0 0 1024 1024"\n            version="1.1"\n            xmlns="http://www.w3.org/2000/svg"\n            p-id="2216"\n            ref={ref}\n            {...props}\n        >\n            <path\n                d="M512 714.666667c-8.533333 0-17.066667-2.133333-23.466667-8.533334l-341.333333-341.333333c-12.8-12.8-12.8-32 0-44.8 12.8-12.8 32-12.8 44.8 0l320 317.866667 317.866667-320c12.8-12.8 32-12.8 44.8 0 12.8 12.8 12.8 32 0 44.8L533.333333 704c-4.266667 8.533333-12.8 10.666667-21.333333 10.666667z"\n                p-id="2217"\n            ></path>\n        </svg>\n    ),\n);\nconst Select = (\n    props,\n) => {\n    const {\n        disabled,\n        defaultValue,\n        value,\n        onChange,\n        placeholder = \'\u8bf7\u8f93\u5165\',\n        allowClear = true,\n        children,\n        labelProps = \'label\',\n        ...rest\n    } = props;\n    const dropdownRef = createRef();\n    const clearIconRef = createRef();\n    const [selectValue, setSelectValue] = useState(\n        defaultValue,\n    );\n    const [option, setOption] = useState({});\n    const [visible, setVisible] = useState(false);\n    const [showClear, setShowClear] = useState(false);\n\n    const optionChildren = Array.isArray(children)\n        ? children\n        : [children]?.filter((item) => item?.type?.displayName === \'Option\') || [];\n\n    useEffect(() => {\n        if (typeof value === \'string\') {\n            setSelectValue(value);\n        }\n    }, [value]);\n\n    const onChangeHandler = (v) => {\n        setOption(v);\n        setSelectValue(v.value);\n        if (!disabled) {\n            setVisible(false);\n            setShowClear(false);\n        }\n        if (onChange) {\n            onChange(v);\n        }\n    };\n    const onClearHandler = () => {\n        if (disabled) {\n            return;\n        }\n        setOption({ label: \'\', value: \'\' });\n        setSelectValue(\'\');\n    };\n    const selectClassNames = {\n        \'ew-select\': true,\n        \'ew-select-disabled\': disabled,\n    };\n    const valueClassNames = {\n        \'ew-select-selector\': true,\n        \'ew-select-selector-placeholder\': !selectValue,\n    };\n    useClickOutside(dropdownRef, () => {\n        if (!disabled) {\n            setVisible(false);\n        }\n    });\n    return (\n        <div\n            className={classnames(selectClassNames)}\n            {...rest}\n            ref={dropdownRef}\n            onMouseEnter={() => {\n                if (!disabled) {\n                    setShowClear(true);\n                }\n            }}\n            onMouseLeave={() => {\n                if (!disabled) {\n                    setShowClear(false);\n                }\n            }}\n        >\n            <div\n                className={classnames(valueClassNames)}\n                placeholder={placeholder}\n                onClick={() => {\n                    if (!disabled) {\n                        setVisible(!visible);\n                    }\n                }}\n            >\n                <span className="ew-select-selector-value">{option[labelProps]}</span>\n            </div>\n            <div className="ew-select-arrow">\n                {allowClear && selectValue && showClear ? (\n                    <ClearIcon onClick={onClearHandler} ref={clearIconRef} />\n                ) : (\n                    <ArrowIcon\n                        onClick={() => {\n                            if (!disabled) {\n                                setVisible(!visible);\n                            }\n                        }}\n                    />\n                )}\n            </div>\n            <div\n                className="ew-select-dropdown"\n                style={{ display: visible ? \'block\' : \'none\' }}\n            >\n                {optionChildren.map((item, index) =>\n                    cloneElement(item, {\n                        onOptionChange: onChangeHandler,\n                        defaultValue: selectValue,\n                        key: item.key || String(index + 1),\n                        active: item.props.value === selectValue,\n                    }),\n                )}\n            </div>\n        </div>\n    );\n};\nSelect.Option = Option;\nexport default Select;',
+                lang: 'jsx',
               }),
               a.a.createElement('p', null, 'Demo:'),
             ),
@@ -61646,6 +62132,16 @@
               i['default'],
               n['select-demo'].previewerProps,
               a.a.createElement(t, null),
+            ),
+            a.a.createElement(
+              'div',
+              { className: 'markdown' },
+              a.a.createElement('p', null, 'jsx Demo:'),
+            ),
+            a.a.createElement(
+              i['default'],
+              n['jsx-demo-18'].previewerProps,
+              a.a.createElement(r, null),
             ),
           ),
         );
@@ -62846,8 +63342,8 @@
       return t;
     }
     var Q,
-      Z,
       X,
+      Z,
       J = 3,
       ee = 1,
       ne = '',
@@ -62861,10 +63357,10 @@
       void 0 !== e.top && ((Q = e.top), (G = null)),
         void 0 !== e.duration && (J = e.duration),
         void 0 !== e.prefixCls && (ne = e.prefixCls),
-        void 0 !== e.getContainer && ((Z = e.getContainer), (G = null)),
+        void 0 !== e.getContainer && ((X = e.getContainer), (G = null)),
         void 0 !== e.transitionName &&
           ((te = e.transitionName), (G = null), (re = !0)),
-        void 0 !== e.maxCount && ((X = e.maxCount), (G = null)),
+        void 0 !== e.maxCount && ((Z = e.maxCount), (G = null)),
         void 0 !== e.rtl && (ae = e.rtl);
     }
     function le(e, n) {
@@ -62884,8 +63380,8 @@
           prefixCls: c,
           transitionName: re ? te : ''.concat(s, '-').concat(te),
           style: { top: Q },
-          getContainer: Z || r,
-          maxCount: X,
+          getContainer: X || r,
+          maxCount: Z,
         };
         W.newInstance(d, function (e) {
           G
@@ -63699,8 +64195,8 @@
       var t = Ye(e, n);
       Object($e['a'])() && Object(We['a'])(t, ''.concat(Ke, '-dynamic-theme'));
     }
-    var Ze,
-      Xe,
+    var Xe,
+      Ze,
       Je = t('wo7N'),
       en = t('plZ8'),
       nn = [
@@ -63715,16 +64211,16 @@
       tn = 'ant',
       rn = 'anticon';
     function an() {
-      return Ze || tn;
+      return Xe || tn;
     }
     function on() {
-      return Xe || rn;
+      return Ze || rn;
     }
     var ln = function (e) {
         var n = e.prefixCls,
           t = e.iconPrefixCls,
           r = e.theme;
-        void 0 !== n && (Ze = n), void 0 !== t && (Xe = t), r && Qe(an(), r);
+        void 0 !== n && (Xe = n), void 0 !== t && (Ze = t), r && Qe(an(), r);
       },
       cn = function () {
         return {
@@ -63735,7 +64231,7 @@
           getRootPrefixCls: function (e, n) {
             return (
               e ||
-              Ze ||
+              Xe ||
               (n && n.includes('-') ? n.replace(/^(.*)-[^-]*$/, '$1') : an())
             );
           },
@@ -66200,6 +66696,22 @@
     }
     e.exports = t;
   },
+  wXdP: function (e, n, t) {
+    'use strict';
+    var r = t('q1tI'),
+      a = (e, n) => {
+        var t = (t) => {
+          e.current && !e.current.contains(t.target) && n();
+        };
+        Object(r['useEffect'])(
+          () => (
+            document.addEventListener('click', t),
+            () => document.removeEventListener('click', t)
+          ),
+        );
+      };
+    n['a'] = a;
+  },
   'wZ/5': function (e, n, t) {
     'use strict';
     var r = t('I+eb'),
@@ -66760,14 +67272,14 @@
       function Q(e) {
         null === O || void 0 === O || O(e);
       }
-      var Z = Object(o['useRef'])(!1),
-        X = Object(o['useRef'])(),
+      var X = Object(o['useRef'])(!1),
+        Z = Object(o['useRef'])(),
         J = function () {
-          clearTimeout(X.current), (Z.current = !0);
+          clearTimeout(Z.current), (X.current = !0);
         },
         ee = function () {
-          X.current = setTimeout(function () {
-            Z.current = !1;
+          Z.current = setTimeout(function () {
+            X.current = !1;
           });
         },
         ne = null;
@@ -66779,7 +67291,7 @@
       return (
         z &&
           (ne = function (e) {
-            Z.current ? (Z.current = !1) : H.current === e.target && Q(e);
+            X.current ? (X.current = !1) : H.current === e.target && Q(e);
           }),
         Object(o['useEffect'])(
           function () {
@@ -66789,7 +67301,7 @@
         ),
         Object(o['useEffect'])(function () {
           return function () {
-            clearTimeout(X.current);
+            clearTimeout(Z.current);
           };
         }, []),
         Object(o['useEffect'])(
@@ -66965,7 +67477,7 @@
       s = a.a.memo((e) => {
         var n = e.demos,
           t = n['simpledatatable-demo.zh-cn'].component,
-          r = n['jsx-demo.zh-cn-19'].component;
+          r = n['jsx-demo.zh-cn-20'].component;
         return a.a.createElement(
           a.a.Fragment,
           null,
@@ -67106,7 +67618,7 @@
             ),
             a.a.createElement(
               i['default'],
-              n['jsx-demo.zh-cn-19'].previewerProps,
+              n['jsx-demo.zh-cn-20'].previewerProps,
               a.a.createElement(r, null),
             ),
           ),
@@ -68338,7 +68850,8 @@
       c = t('SQsl'),
       s = a.a.memo((e) => {
         var n = e.demos,
-          t = n['select-demo.zh-cn'].component;
+          t = n['select-demo.zh-cn'].component,
+          r = n['jsx-demo.zh-cn-18'].component;
         return a.a.createElement(
           a.a.Fragment,
           null,
@@ -68423,24 +68936,79 @@
                   'values \u4e2d\u7684\u6bcf\u4e2a\u9879\u76ee\u90fd\u5fc5\u987b\u662f\u4e00\u4e2a 2 \u5143\u7d20\u6570\u7ec4\uff0c\u5176\u4e2d\u7b2c\u4e00\u4e2a\u5143\u7d20\u662f\u9879\u76ee\u7684\u503c\uff0c\u7b2c\u4e8c\u4e2a\u5143\u7d20\u662f\u5b83\u7684\u663e\u793a\u6587\u672c\u3002',
                 ),
               ),
-              a.a.createElement('p', null, 'useClickOutside:'),
+              a.a.createElement(
+                'h4',
+                { id: 'useclickoutsidets' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#useclickoutsidets',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useClickOutside.ts',
+              ),
               a.a.createElement(l['a'], {
                 code: "import { useEffect } from 'react';\nimport type { MutableRefObject } from 'react';\n\nconst useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {\n  const handleClick = (e: MouseEvent) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n  useEffect(() => {\n    document.addEventListener('click', handleClick);\n    return () => document.removeEventListener('click', handleClick);\n  });\n};\n\nexport default useClickOutside;",
                 lang: 'ts',
               }),
+              a.a.createElement(
+                'h4',
+                { id: 'selectless' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#selectless', 'aria-hidden': 'true', tabIndex: -1 },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'select.less',
+              ),
               a.a.createElement(l['a'], {
                 code: "@prefix: ew-;\n\n.@{prefix}select {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: rgba(0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  cursor: pointer;\n  border-radius: 4px;\n  min-width: 120px;\n\n  &-disabled {\n    .@{prefix}select-selector {\n      background: #f5f5f5;\n      cursor: not-allowed;\n      color: rgba(0, 0, 0, 0.25);\n    }\n\n    .@{prefix}select-arrow {\n      cursor: not-allowed;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-selector,\n  &:not(.@{prefix}select-disabled):active &-selector {\n    border-color: #2396ef;\n  }\n\n  &-selector {\n    position: relative;\n    background-color: #fff;\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    display: flex;\n    width: 100%;\n    height: 32px;\n    padding: 0 11px;\n\n    &-value {\n      padding-right: 18px;\n      line-height: 30px;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-value {\n    border-color: #2396ef;\n    border-right-width: 1px;\n  }\n\n  &-arrow {\n    display: inline-block;\n    color: inherit;\n    font-style: normal;\n    line-height: 0;\n    text-transform: none;\n    vertical-align: -0.125em;\n    text-rendering: optimizelegibility;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    position: absolute;\n    top: 50%;\n    right: 11px;\n    display: flex;\n    align-items: center;\n    margin-top: -6px;\n    font-size: 12px;\n    line-height: 1;\n    text-align: center;\n\n    &-icon,\n    .@{prefix}select-clear-icon {\n      width: 16px;\n      height: 16px;\n      display: inline-block;\n      color: rgba(0, 0, 0, 0.25);\n    }\n  }\n\n  .@{prefix}select-clear-icon {\n    position: relative;\n    top: -2px;\n  }\n\n  &-dropdown {\n    margin: 0;\n    color: rgba(0, 0, 0.85);\n    font-variant: tabular-nums;\n    line-height: 1.5715;\n    list-style: none;\n    font-feature-settings: 'tnum';\n    position: absolute;\n    z-index: 1050;\n    box-sizing: border-box;\n    padding: 4px 0;\n    overflow: hidden;\n    font-size: 14px;\n    font-variant: initial;\n    background-color: #fff;\n    border-radius: 2px;\n    outline: none;\n    width: 100%;\n    top: 40px;\n    box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014,\n      0 9px 28px 8px #0000000d;\n\n    &-option {\n      position: relative;\n      display: flex;\n      min-height: 32px;\n      padding: 5px 12px;\n      color: rgba(0, 0, 0.85);\n      font-weight: 400;\n      font-size: 14px;\n      line-height: 22px;\n      cursor: pointer;\n      transition: background 0.3s ease;\n      flex: auto;\n      overflow: hidden;\n      white-space: nowrap;\n      text-overflow: ellipsis;\n\n      &-disabled {\n        color: rgba(0, 0, 0, 0.25);\n        cursor: not-allowed;\n      }\n\n      &:not(:last-of-type) {\n        margin-bottom: 8px;\n      }\n\n      &:not(&-disabled):hover {\n        background-color: #f5f5f5;\n      }\n\n      &:not(&-disabled).active {\n        background-color: #e6f7ff;\n      }\n    }\n  }\n}",
                 lang: 'less',
               }),
-              a.a.createElement('p', null, 'Option:'),
+              a.a.createElement(
+                'h4',
+                { id: 'optiontsx' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#optiontsx', 'aria-hidden': 'true', tabIndex: -1 },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'Option.tsx',
+              ),
               a.a.createElement(l['a'], {
                 code: "import React, { useState, useEffect } from 'react';\nimport type { ReactNode } from 'react';\nimport classnames from '../../utils/classnames';\nexport interface OptionValueProps {\n  label: string;\n  value: string;\n}\nexport interface OptionProps extends Record<string, any>, OptionValueProps {\n  disabled: boolean;\n  children: ReactNode;\n  defaultValue: string;\n  onOptionChange(v: Partial<OptionValueProps>): void;\n  active: boolean;\n}\nconst Option = (props: Partial<OptionProps>) => {\n  const {\n    label,\n    value,\n    disabled,\n    defaultValue,\n    children,\n    onOptionChange,\n    active,\n    ...rest\n  } = props;\n  const [currentValue, setCurrentValue] = useState<string | undefined>(\n    defaultValue,\n  );\n\n  const classNames = {\n    'ew-select-dropdown-option': true,\n    'ew-select-dropdown-option-disabled': disabled,\n    active: active,\n  };\n  const onChangeHandler = (options: Partial<OptionValueProps>) => {\n    if (disabled) {\n      return;\n    }\n\n    setCurrentValue(options.value);\n    if (onOptionChange) {\n      onOptionChange(options);\n    }\n  };\n\n  useEffect(() => {\n    if (currentValue) {\n      if (onOptionChange) {\n        onOptionChange({ label, value });\n      }\n    }\n  }, [currentValue]);\n  return (\n    <div\n      className={classnames(classNames)}\n      data-value={currentValue}\n      {...rest}\n      onClick={() => onChangeHandler({ label, value })}\n    >\n      {children ? children : label ? label : ''}\n    </div>\n  );\n};\nexport default Option;",
                 lang: 'tsx',
               }),
-              a.a.createElement('p', null, 'Select:'),
+              a.a.createElement(
+                'h4',
+                { id: 'selecttsx' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#selecttsx', 'aria-hidden': 'true', tabIndex: -1 },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'Select.tsx',
+              ),
               a.a.createElement(l['a'], {
                 code: "import React, {\n  useState,\n  useEffect,\n  cloneElement,\n  createRef,\n  forwardRef,\n} from 'react';\nimport type { OptionValueProps } from './Option';\nimport classnames from '../../utils/classnames';\nimport useClickOutside from '../../utils/useClickOutside';\nimport Option from './Option';\nimport './select.less';\n\nexport interface SelectProps extends Record<string, any> {\n  disabled: boolean;\n  defaultValue: string;\n  value: string;\n  onChange(v: Partial<OptionValueProps>): void;\n  placeholder: string;\n  children: JSX.Element[] | JSX.Element;\n  allowClear: boolean;\n  labelProps: string;\n}\nconst ClearIcon = forwardRef(\n  (props: Partial<Record<string, any>>, ref: any) => {\n    const { onClick, ...rest } = props;\n    return (\n      <svg\n        className=\"ew-select-clear-icon\"\n        viewBox=\"0 0 1024 1024\"\n        version=\"1.1\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n        p-id=\"2381\"\n        ref={ref}\n        onClick={(e) => {\n          if (onClick) {\n            onClick(e);\n          }\n        }}\n        {...rest}\n      >\n        <path\n          d=\"M512 39.384615C250.092308 39.384615 39.384615 250.092308 39.384615 512s210.707692 472.615385 472.615385 472.615385 472.615385-210.707692 472.615385-472.615385S773.907692 39.384615 512 39.384615z m96.492308 488.369231l153.6 153.6c7.876923 7.876923 7.876923 19.692308 0 27.569231l-55.138462 55.138461c-7.876923 7.876923-19.692308 7.876923-27.569231 0L525.784615 610.461538c-7.876923-7.876923-19.692308-7.876923-27.56923 0l-153.6 153.6c-7.876923 7.876923-19.692308 7.876923-27.569231 0L261.907692 708.923077c-7.876923-7.876923-7.876923-19.692308 0-27.569231l153.6-153.6c7.876923-7.876923 7.876923-19.692308 0-27.569231l-155.56923-155.56923c-7.876923-7.876923-7.876923-19.692308 0-27.569231l55.138461-55.138462c7.876923-7.876923 19.692308-7.876923 27.569231 0l155.569231 155.569231c7.876923 7.876923 19.692308 7.876923 27.56923 0l153.6-153.6c7.876923-7.876923 19.692308-7.876923 27.569231 0l55.138462 55.138462c7.876923 7.876923 7.876923 19.692308 0 27.56923l-153.6 153.6c-5.907692 7.876923-5.907692 19.692308 0 27.569231z\"\n          p-id=\"2382\"\n          fill=\"#dbdbdb\"\n          className=\"ew-select-clear-icon-path\"\n        ></path>\n      </svg>\n    );\n  },\n);\nconst ArrowIcon = () => (\n  <svg\n    className=\"ew-select-arrow-icon\"\n    viewBox=\"0 0 1024 1024\"\n    version=\"1.1\"\n    xmlns=\"http://www.w3.org/2000/svg\"\n    p-id=\"2216\"\n  >\n    <path\n      d=\"M512 714.666667c-8.533333 0-17.066667-2.133333-23.466667-8.533334l-341.333333-341.333333c-12.8-12.8-12.8-32 0-44.8 12.8-12.8 32-12.8 44.8 0l320 317.866667 317.866667-320c12.8-12.8 32-12.8 44.8 0 12.8 12.8 12.8 32 0 44.8L533.333333 704c-4.266667 8.533333-12.8 10.666667-21.333333 10.666667z\"\n      p-id=\"2217\"\n    ></path>\n  </svg>\n);\nconst Select = (\n  props: Partial<Omit<SelectProps, 'children'>> & Pick<SelectProps, 'children'>,\n) => {\n  const {\n    disabled,\n    defaultValue,\n    value,\n    onChange,\n    placeholder = '\u8bf7\u8f93\u5165',\n    allowClear = true,\n    children,\n    labelProps = 'label',\n    ...rest\n  } = props;\n  const dropdownRef = createRef<HTMLDivElement>();\n  const clearIconRef = createRef<HTMLOrSVGElement>();\n  const [selectValue, setSelectValue] = useState<string | undefined>(\n    defaultValue,\n  );\n  const [option, setOption] = useState<Partial<OptionValueProps>>({});\n  const [visible, setVisible] = useState(false);\n  const [showClear, setShowClear] = useState(false);\n\n  const optionChildren = Array.isArray(children)\n    ? children\n    : [children]?.filter((item) => item?.type?.name === 'Option') || [];\n\n  useEffect(() => {\n    if (typeof value === 'string') {\n      setSelectValue(value);\n    }\n  }, [value]);\n\n  const onChangeHandler = (v: Partial<OptionValueProps>) => {\n    setOption(v);\n    setSelectValue(v.value);\n    if (!disabled) {\n      setVisible(false);\n      setShowClear(false);\n    }\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  const onClearHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setOption({ label: '', value: '' });\n    setSelectValue('');\n  };\n  const selectClassNames = {\n    'ew-select': true,\n    'ew-select-disabled': disabled,\n  };\n  const valueClassNames = {\n    'ew-select-selector': true,\n    'ew-select-value-placeholder': !selectValue,\n  };\n  useClickOutside(dropdownRef, () => {\n    if (!disabled) {\n      setVisible(false);\n    }\n  });\n  return (\n    <div\n      className={classnames(selectClassNames)}\n      {...rest}\n      ref={dropdownRef}\n      onMouseEnter={() => {\n        if (!disabled) {\n          setShowClear(true);\n        }\n      }}\n      onMouseLeave={() => {\n        if (!disabled) {\n          setShowClear(false);\n        }\n      }}\n    >\n      <div\n        className={classnames(valueClassNames)}\n        placeholder={placeholder}\n        onClick={() => {\n          if (!disabled) {\n            setVisible(!visible);\n          }\n        }}\n      >\n        <span className=\"ew-select-selector-value\">{option[labelProps]}</span>\n      </div>\n      <div className=\"ew-select-arrow\">\n        {allowClear && selectValue && showClear ? (\n          <ClearIcon onClick={onClearHandler} ref={clearIconRef} />\n        ) : (\n          <ArrowIcon />\n        )}\n      </div>\n      <div\n        className=\"ew-select-dropdown\"\n        style={{ display: visible ? 'block' : 'none' }}\n      >\n        {optionChildren.map((item, index) =>\n          cloneElement(item, {\n            onOptionChange: onChangeHandler,\n            defaultValue: selectValue,\n            key: item.key || String(index + 1),\n            active: item.props.value === selectValue,\n          }),\n        )}\n      </div>\n    </div>\n  );\n};\nSelect.Option = Option;\nexport default Select;",
                 lang: 'tsx',
+              }),
+              a.a.createElement(
+                'h4',
+                { id: 'selectjsx' },
+                a.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#selectjsx', 'aria-hidden': 'true', tabIndex: -1 },
+                  a.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'Select.jsx',
+              ),
+              a.a.createElement(l['a'], {
+                code: 'import React, {\n    useState,\n    useEffect,\n    cloneElement,\n    createRef,\n    forwardRef,\n} from \'react\';\nimport classnames from \'../../../utils/classnames\';\nimport useClickOutside from \'../../../utils/useClickOutside\';\nimport Option from \'./Option\';\nimport \'../select.less\';\n\nconst ClearIcon = forwardRef(\n    (props, ref) => {\n        const { onClick, ...rest } = props;\n        return (\n            <svg\n                className="ew-select-clear-icon"\n                viewBox="0 0 1024 1024"\n                version="1.1"\n                xmlns="http://www.w3.org/2000/svg"\n                p-id="2381"\n                ref={ref}\n                onClick={(e) => {\n                    onClick?.(e);\n                }}\n                {...rest}\n            >\n                <path\n                    d="M512 39.384615C250.092308 39.384615 39.384615 250.092308 39.384615 512s210.707692 472.615385 472.615385 472.615385 472.615385-210.707692 472.615385-472.615385S773.907692 39.384615 512 39.384615z m96.492308 488.369231l153.6 153.6c7.876923 7.876923 7.876923 19.692308 0 27.569231l-55.138462 55.138461c-7.876923 7.876923-19.692308 7.876923-27.569231 0L525.784615 610.461538c-7.876923-7.876923-19.692308-7.876923-27.56923 0l-153.6 153.6c-7.876923 7.876923-19.692308 7.876923-27.569231 0L261.907692 708.923077c-7.876923-7.876923-7.876923-19.692308 0-27.569231l153.6-153.6c7.876923-7.876923 7.876923-19.692308 0-27.569231l-155.56923-155.56923c-7.876923-7.876923-7.876923-19.692308 0-27.569231l55.138461-55.138462c7.876923-7.876923 19.692308-7.876923 27.569231 0l155.569231 155.569231c7.876923 7.876923 19.692308 7.876923 27.56923 0l153.6-153.6c7.876923-7.876923 19.692308-7.876923 27.569231 0l55.138462 55.138462c7.876923 7.876923 7.876923 19.692308 0 27.56923l-153.6 153.6c-5.907692 7.876923-5.907692 19.692308 0 27.569231z"\n                    p-id="2382"\n                    fill="#dbdbdb"\n                    className="ew-select-clear-icon-path"\n                ></path>\n            </svg>\n        );\n    },\n);\nconst ArrowIcon = forwardRef(\n    (props, ref) => (\n        <svg\n            className="ew-select-arrow-icon"\n            viewBox="0 0 1024 1024"\n            version="1.1"\n            xmlns="http://www.w3.org/2000/svg"\n            p-id="2216"\n            ref={ref}\n            {...props}\n        >\n            <path\n                d="M512 714.666667c-8.533333 0-17.066667-2.133333-23.466667-8.533334l-341.333333-341.333333c-12.8-12.8-12.8-32 0-44.8 12.8-12.8 32-12.8 44.8 0l320 317.866667 317.866667-320c12.8-12.8 32-12.8 44.8 0 12.8 12.8 12.8 32 0 44.8L533.333333 704c-4.266667 8.533333-12.8 10.666667-21.333333 10.666667z"\n                p-id="2217"\n            ></path>\n        </svg>\n    ),\n);\nconst Select = (\n    props,\n) => {\n    const {\n        disabled,\n        defaultValue,\n        value,\n        onChange,\n        placeholder = \'\u8bf7\u8f93\u5165\',\n        allowClear = true,\n        children,\n        labelProps = \'label\',\n        ...rest\n    } = props;\n    const dropdownRef = createRef();\n    const clearIconRef = createRef();\n    const [selectValue, setSelectValue] = useState(\n        defaultValue,\n    );\n    const [option, setOption] = useState({});\n    const [visible, setVisible] = useState(false);\n    const [showClear, setShowClear] = useState(false);\n\n    const optionChildren = Array.isArray(children)\n        ? children\n        : [children]?.filter((item) => item?.type?.displayName === \'Option\') || [];\n\n    useEffect(() => {\n        if (typeof value === \'string\') {\n            setSelectValue(value);\n        }\n    }, [value]);\n\n    const onChangeHandler = (v) => {\n        setOption(v);\n        setSelectValue(v.value);\n        if (!disabled) {\n            setVisible(false);\n            setShowClear(false);\n        }\n        if (onChange) {\n            onChange(v);\n        }\n    };\n    const onClearHandler = () => {\n        if (disabled) {\n            return;\n        }\n        setOption({ label: \'\', value: \'\' });\n        setSelectValue(\'\');\n    };\n    const selectClassNames = {\n        \'ew-select\': true,\n        \'ew-select-disabled\': disabled,\n    };\n    const valueClassNames = {\n        \'ew-select-selector\': true,\n        \'ew-select-selector-placeholder\': !selectValue,\n    };\n    useClickOutside(dropdownRef, () => {\n        if (!disabled) {\n            setVisible(false);\n        }\n    });\n    return (\n        <div\n            className={classnames(selectClassNames)}\n            {...rest}\n            ref={dropdownRef}\n            onMouseEnter={() => {\n                if (!disabled) {\n                    setShowClear(true);\n                }\n            }}\n            onMouseLeave={() => {\n                if (!disabled) {\n                    setShowClear(false);\n                }\n            }}\n        >\n            <div\n                className={classnames(valueClassNames)}\n                placeholder={placeholder}\n                onClick={() => {\n                    if (!disabled) {\n                        setVisible(!visible);\n                    }\n                }}\n            >\n                <span className="ew-select-selector-value">{option[labelProps]}</span>\n            </div>\n            <div className="ew-select-arrow">\n                {allowClear && selectValue && showClear ? (\n                    <ClearIcon onClick={onClearHandler} ref={clearIconRef} />\n                ) : (\n                    <ArrowIcon\n                        onClick={() => {\n                            if (!disabled) {\n                                setVisible(!visible);\n                            }\n                        }}\n                    />\n                )}\n            </div>\n            <div\n                className="ew-select-dropdown"\n                style={{ display: visible ? \'block\' : \'none\' }}\n            >\n                {optionChildren.map((item, index) =>\n                    cloneElement(item, {\n                        onOptionChange: onChangeHandler,\n                        defaultValue: selectValue,\n                        key: item.key || String(index + 1),\n                        active: item.props.value === selectValue,\n                    }),\n                )}\n            </div>\n        </div>\n    );\n};\nSelect.Option = Option;\nexport default Select;',
+                lang: 'jsx',
               }),
               a.a.createElement('p', null, '\u793a\u4f8b:'),
             ),
@@ -68448,6 +69016,16 @@
               i['default'],
               n['select-demo.zh-cn'].previewerProps,
               a.a.createElement(t, null),
+            ),
+            a.a.createElement(
+              'div',
+              { className: 'markdown' },
+              a.a.createElement('p', null, 'jsx\u793a\u4f8b:'),
+            ),
+            a.a.createElement(
+              i['default'],
+              n['jsx-demo.zh-cn-18'].previewerProps,
+              a.a.createElement(r, null),
             ),
           ),
         );
@@ -68797,11 +69375,11 @@
         (this.type = n),
         (this.sanitizeURL = o);
     }
-    var Z = {};
+    var X = {};
     'children dangerouslySetInnerHTML defaultValue defaultChecked innerHTML suppressContentEditableWarning suppressHydrationWarning style'
       .split(' ')
       .forEach(function (e) {
-        Z[e] = new Q(e, 0, !1, e, null, !1);
+        X[e] = new Q(e, 0, !1, e, null, !1);
       }),
       [
         ['acceptCharset', 'accept-charset'],
@@ -68810,12 +69388,12 @@
         ['httpEquiv', 'http-equiv'],
       ].forEach(function (e) {
         var n = e[0];
-        Z[n] = new Q(n, 1, !1, e[1], null, !1);
+        X[n] = new Q(n, 1, !1, e[1], null, !1);
       }),
       ['contentEditable', 'draggable', 'spellCheck', 'value'].forEach(function (
         e,
       ) {
-        Z[e] = new Q(e, 2, !1, e.toLowerCase(), null, !1);
+        X[e] = new Q(e, 2, !1, e.toLowerCase(), null, !1);
       }),
       [
         'autoReverse',
@@ -68823,49 +69401,49 @@
         'focusable',
         'preserveAlpha',
       ].forEach(function (e) {
-        Z[e] = new Q(e, 2, !1, e, null, !1);
+        X[e] = new Q(e, 2, !1, e, null, !1);
       }),
       'allowFullScreen async autoFocus autoPlay controls default defer disabled disablePictureInPicture formNoValidate hidden loop noModule noValidate open playsInline readOnly required reversed scoped seamless itemScope'
         .split(' ')
         .forEach(function (e) {
-          Z[e] = new Q(e, 3, !1, e.toLowerCase(), null, !1);
+          X[e] = new Q(e, 3, !1, e.toLowerCase(), null, !1);
         }),
       ['checked', 'multiple', 'muted', 'selected'].forEach(function (e) {
-        Z[e] = new Q(e, 3, !0, e, null, !1);
+        X[e] = new Q(e, 3, !0, e, null, !1);
       }),
       ['capture', 'download'].forEach(function (e) {
-        Z[e] = new Q(e, 4, !1, e, null, !1);
+        X[e] = new Q(e, 4, !1, e, null, !1);
       }),
       ['cols', 'rows', 'size', 'span'].forEach(function (e) {
-        Z[e] = new Q(e, 6, !1, e, null, !1);
+        X[e] = new Q(e, 6, !1, e, null, !1);
       }),
       ['rowSpan', 'start'].forEach(function (e) {
-        Z[e] = new Q(e, 5, !1, e.toLowerCase(), null, !1);
+        X[e] = new Q(e, 5, !1, e.toLowerCase(), null, !1);
       });
-    var X = /[\-:]([a-z])/g;
+    var Z = /[\-:]([a-z])/g;
     function J(e) {
       return e[1].toUpperCase();
     }
     'accent-height alignment-baseline arabic-form baseline-shift cap-height clip-path clip-rule color-interpolation color-interpolation-filters color-profile color-rendering dominant-baseline enable-background fill-opacity fill-rule flood-color flood-opacity font-family font-size font-size-adjust font-stretch font-style font-variant font-weight glyph-name glyph-orientation-horizontal glyph-orientation-vertical horiz-adv-x horiz-origin-x image-rendering letter-spacing lighting-color marker-end marker-mid marker-start overline-position overline-thickness paint-order panose-1 pointer-events rendering-intent shape-rendering stop-color stop-opacity strikethrough-position strikethrough-thickness stroke-dasharray stroke-dashoffset stroke-linecap stroke-linejoin stroke-miterlimit stroke-opacity stroke-width text-anchor text-decoration text-rendering underline-position underline-thickness unicode-bidi unicode-range units-per-em v-alphabetic v-hanging v-ideographic v-mathematical vector-effect vert-adv-y vert-origin-x vert-origin-y word-spacing writing-mode xmlns:xlink x-height'
       .split(' ')
       .forEach(function (e) {
-        var n = e.replace(X, J);
-        Z[n] = new Q(n, 1, !1, e, null, !1);
+        var n = e.replace(Z, J);
+        X[n] = new Q(n, 1, !1, e, null, !1);
       }),
       'xlink:actuate xlink:arcrole xlink:role xlink:show xlink:title xlink:type'
         .split(' ')
         .forEach(function (e) {
-          var n = e.replace(X, J);
-          Z[n] = new Q(n, 1, !1, e, 'http://www.w3.org/1999/xlink', !1);
+          var n = e.replace(Z, J);
+          X[n] = new Q(n, 1, !1, e, 'http://www.w3.org/1999/xlink', !1);
         }),
       ['xml:base', 'xml:lang', 'xml:space'].forEach(function (e) {
-        var n = e.replace(X, J);
-        Z[n] = new Q(n, 1, !1, e, 'http://www.w3.org/XML/1998/namespace', !1);
+        var n = e.replace(Z, J);
+        X[n] = new Q(n, 1, !1, e, 'http://www.w3.org/XML/1998/namespace', !1);
       }),
       ['tabIndex', 'crossOrigin'].forEach(function (e) {
-        Z[e] = new Q(e, 1, !1, e.toLowerCase(), null, !1);
+        X[e] = new Q(e, 1, !1, e.toLowerCase(), null, !1);
       }),
-      (Z.xlinkHref = new Q(
+      (X.xlinkHref = new Q(
         'xlinkHref',
         1,
         !1,
@@ -68874,11 +69452,11 @@
         !0,
       )),
       ['src', 'href', 'action', 'formAction'].forEach(function (e) {
-        Z[e] = new Q(e, 1, !1, e.toLowerCase(), null, !0);
+        X[e] = new Q(e, 1, !1, e.toLowerCase(), null, !0);
       });
     var ee = r.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
     function ne(e, n, t, r) {
-      var a = Z.hasOwnProperty(n) ? Z[n] : null,
+      var a = X.hasOwnProperty(n) ? X[n] : null,
         o =
           null !== a
             ? 0 === a.type
@@ -69302,7 +69880,7 @@
       },
       Ye = {},
       Qe = {};
-    function Ze(e) {
+    function Xe(e) {
       if (Ye[e]) return Ye[e];
       if (!Ke[e]) return e;
       var n,
@@ -69317,10 +69895,10 @@
         delete Ke.animationiteration.animation,
         delete Ke.animationstart.animation),
       'TransitionEvent' in window || delete Ke.transitionend.transition);
-    var Xe = Ze('animationend'),
-      Je = Ze('animationiteration'),
-      en = Ze('animationstart'),
-      nn = Ze('transitionend'),
+    var Ze = Xe('animationend'),
+      Je = Xe('animationiteration'),
+      en = Xe('animationstart'),
+      nn = Xe('transitionend'),
       tn =
         'abort canplay canplaythrough durationchange emptied encrypted ended error loadeddata loadedmetadata loadstart pause play playing progress ratechange seeked seeking stalled suspend timeupdate volumechange waiting'.split(
           ' ',
@@ -69752,7 +70330,7 @@
       Qn = [
         'abort',
         'abort',
-        Xe,
+        Ze,
         'animationEnd',
         Je,
         'animationIteration',
@@ -69801,7 +70379,7 @@
         'waiting',
         'waiting',
       ];
-    function Zn(e, n) {
+    function Xn(e, n) {
       for (var t = 0; t < e.length; t += 2) {
         var r = e[t],
           a = e[t + 1],
@@ -69816,29 +70394,29 @@
           (Wn[a] = o);
       }
     }
-    Zn(
+    Xn(
       'blur blur cancel cancel click click close close contextmenu contextMenu copy copy cut cut auxclick auxClick dblclick doubleClick dragend dragEnd dragstart dragStart drop drop focus focus input input invalid invalid keydown keyDown keypress keyPress keyup keyUp mousedown mouseDown mouseup mouseUp paste paste pause pause play play pointercancel pointerCancel pointerdown pointerDown pointerup pointerUp ratechange rateChange reset reset seeked seeked submit submit touchcancel touchCancel touchend touchEnd touchstart touchStart volumechange volumeChange'.split(
         ' ',
       ),
       0,
     ),
-      Zn(
+      Xn(
         'drag drag dragenter dragEnter dragexit dragExit dragleave dragLeave dragover dragOver mousemove mouseMove mouseout mouseOut mouseover mouseOver pointermove pointerMove pointerout pointerOut pointerover pointerOver scroll scroll toggle toggle touchmove touchMove wheel wheel'.split(
           ' ',
         ),
         1,
       ),
-      Zn(Qn, 2);
+      Xn(Qn, 2);
     for (
-      var Xn =
+      var Zn =
           'change selectionchange textInput compositionstart compositionend compositionupdate'.split(
             ' ',
           ),
         Jn = 0;
-      Jn < Xn.length;
+      Jn < Zn.length;
       Jn++
     )
-      Yn.set(Xn[Jn], 0);
+      Yn.set(Zn[Jn], 0);
     var et = o.unstable_UserBlockingPriority,
       nt = o.unstable_runWithPriority,
       tt = !0;
@@ -70274,10 +70852,10 @@
     function Qt(e) {
       e && e.dispatchConfig.registrationName && Yt(e._targetInst, null, e);
     }
-    function Zt(e) {
+    function Xt(e) {
       pn(e, Kt);
     }
-    var Xt = null,
+    var Zt = null,
       Jt = null,
       er = null;
     function nr() {
@@ -70286,7 +70864,7 @@
         n,
         t = Jt,
         r = t.length,
-        a = 'value' in Xt ? Xt.value : Xt.textContent,
+        a = 'value' in Zt ? Zt.value : Zt.textContent,
         o = a.length;
       for (e = 0; e < r && t[e] === a[e]; e++);
       var i = r - e;
@@ -70480,7 +71058,7 @@
     function wr(e, n) {
       if (xr)
         return 'compositionend' === e || (!dr && br(e, n))
-          ? ((e = nr()), (er = Jt = Xt = null), (xr = !1), e)
+          ? ((e = nr()), (er = Jt = Zt = null), (xr = !1), e)
           : null;
       switch (e) {
         case 'paste':
@@ -70531,18 +71109,18 @@
                   'ko' !== t.locale &&
                   (xr || o !== vr.compositionStart
                     ? o === vr.compositionEnd && xr && (a = nr())
-                    : ((Xt = r),
-                      (Jt = 'value' in Xt ? Xt.value : Xt.textContent),
+                    : ((Zt = r),
+                      (Jt = 'value' in Zt ? Zt.value : Zt.textContent),
                       (xr = !0))),
                 (o = cr.getPooled(o, n, t, r)),
                 a ? (o.data = a) : ((a = yr(t)), null !== a && (o.data = a)),
-                Zt(o),
+                Xt(o),
                 (a = o))
               : (a = null),
             (e = fr ? Er(e, t) : wr(e, t))
               ? ((n = sr.getPooled(vr.beforeInput, n, t, r)),
                 (n.data = e),
-                Zt(n))
+                Xt(n))
               : (n = null),
             null === a ? n : null === n ? a : [a, n]
           );
@@ -70586,7 +71164,7 @@
         (e = ar.getPooled(Sr.change, e, n, t)),
         (e.type = 'change'),
         L(t),
-        Zt(e),
+        Xt(e),
         e
       );
     }
@@ -70733,7 +71311,7 @@
         pointerType: null,
         isPrimary: null,
       }),
-      Zr = {
+      Xr = {
         mouseEnter: {
           registrationName: 'onMouseEnter',
           dependencies: ['mouseout', 'mouseover'],
@@ -70751,8 +71329,8 @@
           dependencies: ['pointerout', 'pointerover'],
         },
       },
-      Xr = {
-        eventTypes: Zr,
+      Zr = {
+        eventTypes: Xr,
         extractEvents: function (e, n, t, r, a) {
           var o = 'mouseover' === e || 'pointerover' === e,
             i = 'mouseout' === e || 'pointerout' === e;
@@ -70782,14 +71360,14 @@
           if (i === n) return null;
           if ('mouseout' === e || 'mouseover' === e)
             var c = Yr,
-              s = Zr.mouseLeave,
-              u = Zr.mouseEnter,
+              s = Xr.mouseLeave,
+              u = Xr.mouseEnter,
               d = 'mouse';
           else
             ('pointerout' !== e && 'pointerover' !== e) ||
               ((c = Qr),
-              (s = Zr.pointerLeave),
-              (u = Zr.pointerEnter),
+              (s = Xr.pointerLeave),
+              (u = Xr.pointerEnter),
               (d = 'pointer'));
           if (
             ((e = null == i ? o : Vt(i)),
@@ -70893,7 +71471,7 @@
               (e = ar.getPooled(aa.select, ia, e, n)),
               (e.type = 'select'),
               (e.target = oa),
-              Zt(e),
+              Xt(e),
               e));
     }
     var ua = {
@@ -71132,7 +71710,7 @@
             case 'touchstart':
               e = ya;
               break;
-            case Xe:
+            case Ze:
             case Je:
             case en:
               e = da;
@@ -71164,7 +71742,7 @@
             default:
               e = ar;
           }
-          return (n = e.getPooled(a, n, t, r)), Zt(n), n;
+          return (n = e.getPooled(a, n, t, r)), Xt(n), n;
         },
       };
     if (y) throw Error(i(101));
@@ -71180,7 +71758,7 @@
       (g = Vt),
       j({
         SimpleEventPlugin: wa,
-        EnterLeaveEventPlugin: Xr,
+        EnterLeaveEventPlugin: Zr,
         ChangeEventPlugin: Br,
         SelectEventPlugin: ua,
         BeforeInputEventPlugin: kr,
@@ -71267,8 +71845,8 @@
       Ka = o.unstable_LowPriority,
       Ya = o.unstable_IdlePriority,
       Qa = {},
-      Za = o.unstable_shouldYield,
-      Xa = void 0 !== Ha ? Ha : function () {},
+      Xa = o.unstable_shouldYield,
+      Za = void 0 !== Ha ? Ha : function () {},
       Ja = null,
       eo = null,
       no = !1,
@@ -72069,10 +72647,10 @@
       }
       Sa($o), ja($o, n);
     }
-    function Zo() {
+    function Xo() {
       Sa($o), Sa(Wo), Sa(Ko);
     }
-    function Xo(e) {
+    function Zo(e) {
       Yo(Ko.current);
       var n = Yo($o.current),
         t = Ve(n, e.type);
@@ -72703,7 +73281,7 @@
             fl(e, n, a))
       );
     }
-    function Zi(e, n, t, r, a, o) {
+    function Xi(e, n, t, r, a, o) {
       if (null === e) {
         var i = t.type;
         return 'function' !== typeof i ||
@@ -72715,7 +73293,7 @@
             (e.ref = n.ref),
             (e.return = n),
             (n.child = e))
-          : ((n.tag = 15), (n.type = i), Xi(e, n, i, r, a, o));
+          : ((n.tag = 15), (n.type = i), Zi(e, n, i, r, a, o));
       }
       return (
         (i = e.child),
@@ -72732,7 +73310,7 @@
             (n.child = e))
       );
     }
-    function Xi(e, n, t, r, a, o) {
+    function Zi(e, n, t, r, a, o) {
       return null !== e &&
         ta(e.memoizedProps, r) &&
         e.ref === n.ref &&
@@ -73145,7 +73723,7 @@
           return La(n.type) && Aa(), null;
         case 3:
           return (
-            Zo(),
+            Xo(),
             Sa(Na),
             Sa(Ia),
             (t = n.stateNode),
@@ -73395,7 +73973,7 @@
                 null)
           );
         case 4:
-          return Zo(), ol(n), null;
+          return Xo(), ol(n), null;
         case 10:
           return yo(n), null;
         case 17:
@@ -73504,7 +74082,7 @@
           var n = e.effectTag;
           return 4096 & n ? ((e.effectTag = (-4097 & n) | 64), e) : null;
         case 3:
-          if ((Zo(), Sa(Na), Sa(Ia), (n = e.effectTag), 0 !== (64 & n)))
+          if ((Xo(), Sa(Na), Sa(Ia), (n = e.effectTag), 0 !== (64 & n)))
             throw Error(i(285));
           return (e.effectTag = (-4097 & n) | 64), e;
         case 5:
@@ -73518,7 +74096,7 @@
         case 19:
           return Sa(ei), null;
         case 4:
-          return Zo(), null;
+          return Xo(), null;
         case 10:
           return yo(e), null;
         default:
@@ -74117,7 +74695,7 @@
         var t = e.stateNode;
         null === t && (t = e.stateNode = new bl()),
           n.forEach(function (n) {
-            var r = Zc.bind(null, e, n);
+            var r = Xc.bind(null, e, n);
             t.has(n) || (t.add(n), n.then(r, r));
           });
       }
@@ -74170,8 +74748,8 @@
       Kl = 2,
       Yl = 3,
       Ql = 4,
-      Zl = 5,
-      Xl = Hl,
+      Xl = 5,
+      Zl = Hl,
       Jl = null,
       ec = null,
       nc = 0,
@@ -74196,7 +74774,7 @@
       xc = null,
       Ec = 0;
     function wc() {
-      return (Xl & (ql | Gl)) !== Hl
+      return (Zl & (ql | Gl)) !== Hl
         ? 1073741821 - ((ro() / 10) | 0)
         : 0 !== Ec
         ? Ec
@@ -74206,7 +74784,7 @@
       if (((n = n.mode), 0 === (2 & n))) return 1073741823;
       var r = ao();
       if (0 === (4 & n)) return 99 === r ? 1073741823 : 1073741822;
-      if ((Xl & ql) !== Hl) return nc;
+      if ((Zl & ql) !== Hl) return nc;
       if (null !== t) e = po(e, 0 | t.timeoutMs || 5e3, 250);
       else
         switch (r) {
@@ -74233,11 +74811,11 @@
       if (((e = Oc(e, n)), null !== e)) {
         var t = ao();
         1073741823 === n
-          ? (Xl & Vl) !== Hl && (Xl & (ql | Gl)) === Hl
+          ? (Zl & Vl) !== Hl && (Zl & (ql | Gl)) === Hl
             ? Ic(e)
-            : (jc(e), Xl === Hl && so())
+            : (jc(e), Zl === Hl && so())
           : jc(e),
-          (4 & Xl) === Hl ||
+          (4 & Zl) === Hl ||
             (98 !== t && 99 !== t) ||
             (null === bc
               ? (bc = new Map([[e, n]]))
@@ -74325,11 +74903,11 @@
       if (((Ec = 0), n)) return (n = wc()), ms(e, n), jc(e), null;
       var t = Sc(e);
       if (0 !== t) {
-        if (((n = e.callbackNode), (Xl & (ql | Gl)) !== Hl))
+        if (((n = e.callbackNode), (Zl & (ql | Gl)) !== Hl))
           throw Error(i(327));
         if (($c(), (e === Jl && t === nc) || Lc(e, t), null !== ec)) {
-          var r = Xl;
-          Xl |= ql;
+          var r = Zl;
+          Zl |= ql;
           var a = Mc();
           do {
             try {
@@ -74339,7 +74917,7 @@
               Ac(e, c);
             }
           } while (1);
-          if ((bo(), (Xl = r), (Bl.current = a), tc === Wl))
+          if ((bo(), (Zl = r), (Bl.current = a), tc === Wl))
             throw ((n = rc), Lc(e, t), ps(e, t), jc(e), n);
           if (null === ec)
             switch (
@@ -74426,7 +75004,7 @@
                 }
                 Vc(e);
                 break;
-              case Zl:
+              case Xl:
                 if (1073741823 !== ac && null !== ic) {
                   o = ac;
                   var l = ic;
@@ -74457,11 +75035,11 @@
     }
     function Ic(e) {
       var n = e.lastExpiredTime;
-      if (((n = 0 !== n ? n : 1073741823), (Xl & (ql | Gl)) !== Hl))
+      if (((n = 0 !== n ? n : 1073741823), (Zl & (ql | Gl)) !== Hl))
         throw Error(i(327));
       if (($c(), (e === Jl && n === nc) || Lc(e, n), null !== ec)) {
-        var t = Xl;
-        Xl |= ql;
+        var t = Zl;
+        Zl |= ql;
         var r = Mc();
         do {
           try {
@@ -74471,7 +75049,7 @@
             Ac(e, a);
           }
         } while (1);
-        if ((bo(), (Xl = t), (Bl.current = r), tc === Wl))
+        if ((bo(), (Zl = t), (Bl.current = r), tc === Wl))
           throw ((t = rc), Lc(e, n), ps(e, n), jc(e), t);
         if (null !== ec) throw Error(i(261));
         (e.finishedWork = e.current.alternate),
@@ -74493,21 +75071,21 @@
       }
     }
     function Pc(e, n) {
-      var t = Xl;
-      Xl |= 1;
+      var t = Zl;
+      Zl |= 1;
       try {
         return e(n);
       } finally {
-        (Xl = t), Xl === Hl && so();
+        (Zl = t), Zl === Hl && so();
       }
     }
     function Rc(e, n) {
-      var t = Xl;
-      (Xl &= -2), (Xl |= Vl);
+      var t = Zl;
+      (Zl &= -2), (Zl |= Vl);
       try {
         return e(n);
       } finally {
-        (Xl = t), Xl === Hl && so();
+        (Zl = t), Zl === Hl && so();
       }
     }
     function Lc(e, n) {
@@ -74522,13 +75100,13 @@
                 null !== r && void 0 !== r && Aa();
               break;
             case 3:
-              Zo(), Sa(Na), Sa(Ia);
+              Xo(), Sa(Na), Sa(Ia);
               break;
             case 5:
               Jo(r);
               break;
             case 4:
-              Zo();
+              Xo();
               break;
             case 13:
               Sa(ei);
@@ -74646,7 +75224,7 @@
                   we(i),
               );
             }
-            tc !== Zl && (tc = Kl), (l = gl(l, i)), (d = o);
+            tc !== Xl && (tc = Kl), (l = gl(l, i)), (d = o);
             do {
               switch (d.tag) {
                 case 3:
@@ -74697,7 +75275,7 @@
       for (; null !== ec; ) ec = Bc(ec);
     }
     function Fc() {
-      for (; null !== ec && !Za(); ) ec = Bc(ec);
+      for (; null !== ec && !Xa(); ) ec = Bc(ec);
     }
     function Bc(e) {
       var n = _l(e.alternate, e, nc);
@@ -74742,7 +75320,7 @@
         if (((n = ec.sibling), null !== n)) return n;
         ec = e;
       } while (null !== ec);
-      return tc === $l && (tc = Zl), null;
+      return tc === $l && (tc = Xl), null;
     }
     function Hc(e) {
       var n = e.expirationTime;
@@ -74756,7 +75334,7 @@
       do {
         $c();
       } while (null !== vc);
-      if ((Xl & (ql | Gl)) !== Hl) throw Error(i(327));
+      if ((Zl & (ql | Gl)) !== Hl) throw Error(i(327));
       var t = e.finishedWork,
         r = e.finishedExpirationTime;
       if (null === t) return null;
@@ -74789,8 +75367,8 @@
           : (a = t.firstEffect),
         null !== a)
       ) {
-        var o = Xl;
-        (Xl |= Gl), (Ul.current = null), (It = tt);
+        var o = Zl;
+        (Zl |= Gl), (Ul.current = null), (It = tt);
         var l = kt();
         if (Ct(l)) {
           if ('selectionStart' in l)
@@ -74981,7 +75559,7 @@
             Yc(dc, S), (dc = dc.nextEffect);
           }
         } while (null !== dc);
-        (dc = null), Xa(), (Xl = o);
+        (dc = null), Za(), (Zl = o);
       } else e.current = t;
       if (hc) (hc = !1), (vc = e), (gc = n);
       else
@@ -74991,12 +75569,12 @@
         ((n = e.firstPendingTime),
         0 === n && (mc = null),
         1073741823 === n ? (e === xc ? yc++ : ((yc = 0), (xc = e))) : (yc = 0),
-        'function' === typeof Xc && Xc(t.stateNode, r),
+        'function' === typeof Zc && Zc(t.stateNode, r),
         jc(e),
         pc)
       )
         throw ((pc = !1), (e = fc), (fc = null), e);
-      return (Xl & Vl) !== Hl || so(), null;
+      return (Zl & Vl) !== Hl || so(), null;
     }
     function Gc() {
       for (; null !== dc; ) {
@@ -75020,9 +75598,9 @@
     function Wc() {
       if (null === vc) return !1;
       var e = vc;
-      if (((vc = null), (Xl & (ql | Gl)) !== Hl)) throw Error(i(331));
-      var n = Xl;
-      for (Xl |= Gl, e = e.current.firstEffect; null !== e; ) {
+      if (((vc = null), (Zl & (ql | Gl)) !== Hl)) throw Error(i(331));
+      var n = Zl;
+      for (Zl |= Gl, e = e.current.firstEffect; null !== e; ) {
         try {
           var t = e;
           if (0 !== (512 & t.effectTag))
@@ -75039,7 +75617,7 @@
         }
         (t = e.nextEffect), (e.nextEffect = null), (e = t);
       }
-      return (Xl = n), so(), !0;
+      return (Zl = n), so(), !0;
     }
     function Kc(e, n, t) {
       (n = gl(t, n)),
@@ -75085,7 +75663,7 @@
             ((n = e.lastPingedTime),
             (0 !== n && n < t) || ((e.lastPingedTime = t), jc(e)));
     }
-    function Zc(e, n) {
+    function Xc(e, n) {
       var t = e.stateNode;
       null !== t && t.delete(n),
         (n = 0),
@@ -75105,7 +75683,7 @@
                 rl(n), $i();
                 break;
               case 5:
-                if ((Xo(n), 4 & n.mode && 1 !== t && a.hidden))
+                if ((Zo(n), 4 & n.mode && 1 !== t && a.hidden))
                   return (n.expirationTime = n.childExpirationTime = 1), null;
                 break;
               case 1:
@@ -75219,7 +75797,7 @@
                 n = Qi(null, n, a, e, t);
                 break e;
               case 14:
-                n = Zi(null, n, a, fo(a.type, e), r, t);
+                n = Xi(null, n, a, fo(a.type, e), r, t);
                 break e;
             }
             throw Error(i(306, a, ''));
@@ -75268,7 +75846,7 @@
           return n;
         case 5:
           return (
-            Xo(n),
+            Zo(n),
             null === e && Vi(n),
             (r = n.type),
             (a = n.pendingProps),
@@ -75385,10 +75963,10 @@
             (a = n.type),
             (o = fo(a, n.pendingProps)),
             (o = fo(a.type, o)),
-            Zi(e, n, a, o, r, t)
+            Xi(e, n, a, o, r, t)
           );
         case 15:
-          return Xi(e, n, n.type, n.pendingProps, r, t);
+          return Zi(e, n, n.type, n.pendingProps, r, t);
         case 17:
           return (
             (r = n.type),
@@ -75408,7 +75986,7 @@
       }
       throw Error(i(156, n.tag));
     };
-    var Xc = null,
+    var Zc = null,
       Jc = null;
     function es(e) {
       if ('undefined' === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__) return !1;
@@ -75416,7 +75994,7 @@
       if (n.isDisabled || !n.supportsFiber) return !0;
       try {
         var t = n.inject(e);
-        (Xc = function (e) {
+        (Zc = function (e) {
           try {
             n.onCommitFiberRoot(
               t,
@@ -75844,24 +76422,24 @@
       }),
       (M = Pc),
       (D = function (e, n, t, r, a) {
-        var o = Xl;
-        Xl |= 4;
+        var o = Zl;
+        Zl |= 4;
         try {
           return io(98, e.bind(null, n, t, r, a));
         } finally {
-          (Xl = o), Xl === Hl && so();
+          (Zl = o), Zl === Hl && so();
         }
       }),
       (z = function () {
-        (Xl & (1 | ql | Gl)) === Hl && (Nc(), $c());
+        (Zl & (1 | ql | Gl)) === Hl && (Nc(), $c());
       }),
       (_ = function (e, n) {
-        var t = Xl;
-        Xl |= 2;
+        var t = Zl;
+        Zl |= 2;
         try {
           return e(n);
         } finally {
-          (Xl = t), Xl === Hl && so();
+          (Zl = t), Zl === Hl && so();
         }
       });
     var Os = {
@@ -75871,7 +76449,7 @@
         qt,
         j,
         C,
-        Zt,
+        Xt,
         function (e) {
           pn(e, Qt);
         },
@@ -75924,13 +76502,13 @@
         return (e = un(n)), (e = null === e ? null : e.stateNode), e;
       }),
       (n.flushSync = function (e, n) {
-        if ((Xl & (ql | Gl)) !== Hl) throw Error(i(187));
-        var t = Xl;
-        Xl |= 1;
+        if ((Zl & (ql | Gl)) !== Hl) throw Error(i(187));
+        var t = Zl;
+        Zl |= 1;
         try {
           return io(99, e.bind(null, n));
         } finally {
-          (Xl = t), so();
+          (Zl = t), so();
         }
       }),
       (n.hydrate = function (e, n, t) {

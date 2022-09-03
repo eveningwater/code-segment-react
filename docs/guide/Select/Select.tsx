@@ -33,9 +33,7 @@ const ClearIcon = forwardRef(
         p-id="2381"
         ref={ref}
         onClick={(e) => {
-          if (onClick) {
-            onClick(e);
-          }
+          onClick?.(e);
         }}
         {...rest}
       >
@@ -92,7 +90,7 @@ const Select = (
 
   const optionChildren = Array.isArray(children)
     ? children
-    : [children]?.filter((item) => item?.type?.name === 'Option') || [];
+    : [children]?.filter((item) => item?.type?.displayName === 'Option') || [];
 
   useEffect(() => {
     if (typeof value === 'string') {
