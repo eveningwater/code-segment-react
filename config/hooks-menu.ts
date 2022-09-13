@@ -31,4 +31,8 @@ export default [
     title: 'useCopyToClipboard',
     path: '/hooks/use-copy-to-clipboard/use-copy-to-clipboard',
   },
+  {
+    title: 'useDebounce',
+    path: '/hooks/use-debounce/use-debounce',
+  },
 ];

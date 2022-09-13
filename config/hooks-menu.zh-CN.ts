@@ -31,4 +31,8 @@ export default [
     title: '复制到剪贴板',
     path: '/zh-CN/hooks/use-copy-to-clipboard/use-copy-to-clipboard',
   },
+  {
+    title: '防抖',
+    path: '/zh-CN/hooks/use-debounce/use-debounce',
+  },
 ];
