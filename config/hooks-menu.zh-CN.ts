@@ -35,4 +35,8 @@ export default [
     title: '防抖',
     path: '/zh-CN/hooks/use-debounce/use-debounce',
   },
+  {
+    title: '默认值',
+    path: '/zh-CN/hooks/use-default/use-default',
+  },
 ];

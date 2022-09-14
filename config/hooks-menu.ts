@@ -35,4 +35,8 @@ export default [
     title: 'useDebounce',
     path: '/hooks/use-debounce/use-debounce',
   },
+  {
+    title: 'useDefault',
+    path: '/hooks/use-default/use-default',
+  },
 ];
