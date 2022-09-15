@@ -39,4 +39,8 @@ export default [
     title: '默认值',
     path: '/zh-CN/hooks/use-default/use-default',
   },
+  {
+    title: '延迟状态',
+    path: '/zh-CN/hooks/use-delayed-state/use-delayed-state',
+  },
 ];

@@ -39,4 +39,8 @@ export default [
     title: 'useDefault',
     path: '/hooks/use-default/use-default',
   },
+  {
+    title: 'useDelayedState',
+    path: '/hooks/use-delayed-state/use-delayed-state',
+  },
 ];

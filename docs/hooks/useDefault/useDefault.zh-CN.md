@@ -80,10 +80,10 @@ const Demo = () => {
 export default Demo;
 ```
 
-Demo:
+示例:
 
 <code src="./Demo.zh-CN.tsx"></code>
 
-js Demo:
+js 示例:
 
 <code src="./js/Demo.zh-CN.jsx"></code>
