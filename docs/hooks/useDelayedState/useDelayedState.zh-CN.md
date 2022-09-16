@@ -53,7 +53,7 @@ const useDelayedState = <T, U>(
 export default useDelayedState;
 ```
 
-#### Demo
+#### 示例
 
 ```tsx | pure
 import React, { useState, useEffect } from 'react';
@@ -132,7 +132,7 @@ const useDelayedState = (initialState, condition) => {
 export default useDelayedState;
 ```
 
-#### js Demo
+#### js 示例
 
 ```jsx | pure
 import React, { useState, useEffect } from 'react';
@@ -177,8 +177,8 @@ export default Demo;
 
 示例:
 
-<code src="./Demo.tsx"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 js 示例:
 
-<code src="./js/Demo.jsx"></code>
+<code src="./js/Demo.zh-CN.jsx"></code>

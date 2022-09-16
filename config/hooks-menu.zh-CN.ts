@@ -43,4 +43,8 @@ export default [
     title: '延迟状态',
     path: '/zh-CN/hooks/use-delayed-state/use-delayed-state',
   },
+  {
+    title: '只执行一次的钩子函数',
+    path: '/zh-CN/hooks/use-effect-once/use-effect-once',
+  },
 ];

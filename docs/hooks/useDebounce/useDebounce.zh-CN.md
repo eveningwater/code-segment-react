@@ -33,7 +33,7 @@ const useDebounce = <T>(value: T, delay: number) => {
 export default useDebounce;
 ```
 
-#### Demo
+#### 示例
 
 ```tsx | pure
 import React, { useState } from 'react';
@@ -80,7 +80,7 @@ const useDebounce = (value, delay) => {
 export default useDebounce;
 ```
 
-#### js Demo
+#### js 示例
 
 ```jsx | pure
 import React, { useState } from 'react';

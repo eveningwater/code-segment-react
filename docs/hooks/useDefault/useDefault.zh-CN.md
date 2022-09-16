@@ -22,7 +22,7 @@ const useDefault = <T, U>(
 export default useDefault;
 ```
 
-#### Demo
+#### 示例
 
 ```tsx | pure
 import React from 'react';
@@ -59,7 +59,7 @@ const useDefault = (defaultState, initialState) => {
 export default useDefault;
 ```
 
-#### js Demo
+#### js 示例
 
 ```jsx | pure
 import React from 'react';

@@ -43,4 +43,8 @@ export default [
     title: 'useDelayedState',
     path: '/hooks/use-delayed-state/use-delayed-state',
   },
+  {
+    title: 'useEffectOnce',
+    path: '/hooks/use-effect-once/use-effect-once',
+  },
 ];
