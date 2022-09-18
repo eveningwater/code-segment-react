@@ -47,4 +47,8 @@ export default [
     title: '只执行一次的钩子函数',
     path: '/zh-CN/hooks/use-effect-once/use-effect-once',
   },
+  {
+    title: '错误钩子函数',
+    path: '/zh-CN/hooks/use-error/use-error',
+  },
 ];

@@ -47,4 +47,8 @@ export default [
     title: 'useEffectOnce',
     path: '/hooks/use-effect-once/use-effect-once',
   },
+  {
+    title: 'useError',
+    path: '/hooks/use-error/use-error',
+  },
 ];
