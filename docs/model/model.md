@@ -320,6 +320,6 @@ Demo:
 
 Of course, this idea is not my own. The source has been indicated at the end of the article. This article has made an analysis of the source code.
 
-[source code](https://github.com/eveningwater/code-segment-react/docs/model/model.zh-CN.md)
+[source code](https://eveningwater.github.io/code-segment-react/model/model)
 
 > PS: The source code of this article comes from [unstated-next](https://github.com/jamiebuilds/unstated-next/blob/master/src/unstated-next.tsx).

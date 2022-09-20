@@ -327,6 +327,6 @@ export const useModel = <Value, State = void>(
 
 当然这个想法也并不是我本人想的，文末已注明来源，本文对源码做了一遍分析。
 
-[源码地址](https://github.com/eveningwater/code-segment-react/docs/model/model.zh-CN.md)
+[源码地址](https://eveningwater.github.io/code-segment-react/zh-CN/model/model)
 
 > PS: 本文源码来自[unstated-next](https://github.com/jamiebuilds/unstated-next/blob/master/src/unstated-next.tsx)。
