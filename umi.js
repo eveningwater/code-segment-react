@@ -14158,8 +14158,10 @@
     var r = t('tJVT'),
       a = t('q1tI'),
       o = t.n(a),
-      i = t('KXQ/');
-    function l() {
+      i = t('KXQ/'),
+      l = t('xzqI'),
+      c = t('z5OR');
+    function s() {
       var e =
           arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 0,
         n = Object(a['useState'])(e),
@@ -14170,34 +14172,34 @@
         c = () => i(o + 1);
       return { count: o, decrement: l, increment: c };
     }
-    var c = Object(i['a'])(l);
-    function s() {
-      var e = c.useModel();
+    var u = Object(i['a'])(s);
+    function d() {
+      var e = u.useModel();
       return o.a.createElement(
-        'div',
-        null,
-        o.a.createElement('button', { onClick: e.decrement }, '-'),
+        l['b'],
+        { wrap: !0 },
+        o.a.createElement(c['a'], { onClick: e.decrement }, '-'),
         o.a.createElement('span', null, e.count),
-        o.a.createElement('button', { onClick: e.increment }, '+'),
+        o.a.createElement(c['a'], { onClick: e.increment }, '+'),
       );
     }
-    function u() {
+    function p() {
       return o.a.createElement(
-        c.Provider,
+        u.Provider,
         null,
-        o.a.createElement(s, null),
+        o.a.createElement(d, null),
         o.a.createElement(
-          c.Provider,
+          u.Provider,
           { initialState: 2 },
           o.a.createElement(
             'div',
             null,
-            o.a.createElement('div', null, o.a.createElement(s, null)),
+            o.a.createElement('div', null, o.a.createElement(d, null)),
           ),
         ),
       );
     }
-    n['default'] = u;
+    n['default'] = p;
   },
   '3QZg': function (e, n, t) {
     'use strict';
@@ -36607,11 +36609,11 @@
       ur =
         "import React from 'react';\nimport { Button } from 'antd';\nimport useError from './useError';\nconst Demo = () => {\n  const dispatchError = useError('');\n  const clickHandler = () => {\n    dispatchError(new Error('\u9519\u8bef!'));\n  };\n  return <Button onClick={clickHandler}>\u629b\u51fa\u9519\u8bef</Button>;\n};\n\nexport default Demo;",
       dr =
-        "import React, { useState } from 'react';\nimport { createModel } from './createModel';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <div>\n      <button onClick={counter.decrement}>-</button>\n      <span>{counter.count}</span>\n      <button onClick={counter.increment}>+</button>\n    </div>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport { createModel } from './createModel';\nimport { Space,Button } from 'antd';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <Space wrap>\n      <Button onClick={counter.decrement}>-</Button>\n      <span>{counter.count}</span>\n      <Button onClick={counter.increment}>+</Button>\n    </Space>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
       pr =
         "// \u5bfc\u5165\u7c7b\u578b\nimport type { ReactNode, ComponentType } from 'react';\nimport React from 'react';\nimport { createContext, useContext } from 'react';\nconst EMPTY: unique symbol = Symbol();\nexport interface ModelProviderProps<State = void> {\n  initialState?: State;\n  children: ReactNode;\n}\nexport interface Model<Value, State = void> {\n  Provider: ComponentType<ModelProviderProps<State>>;\n  useModel: () => Value;\n}\nexport const createModel = <Value, State = void>(\n  useHook: (initialState?: State) => Value,\n): Model<Value, State> => {\n  //\u521b\u5efa\u4e00\u4e2acontext\n  const context = createContext<Value | typeof EMPTY>(EMPTY);\n  // \u5b9a\u4e49Provider\u51fd\u6570\n  const Provider = (props: ModelProviderProps<State>) => {\n    const { Provider: ModelProvider } = context;\n    const { initialState, children } = props;\n    const value = useHook(initialState);\n    return <ModelProvider value={value}>{children}</ModelProvider>;\n  };\n  // \u5b9a\u4e49useModel\u51fd\u6570\n  const useModel = (): Value => {\n    const value = useContext(context);\n    // \u8fd9\u91cc\u786e\u5b9a\u4e00\u4e0b\u7528\u6237\u662f\u5426\u6b63\u786e\u4f7f\u7528Provider\n    if (value === EMPTY) {\n      //\u629b\u51fa\u5f02\u5e38\uff0c\u4f7f\u7528\u8005\u5e76\u6ca1\u6709\u7528Provider\u5305\u88f9\u7ec4\u4ef6\n      throw new Error('Component must be wrapped with <Container.Provider>');\n    }\n    // \u8fd4\u56decontext\n    return value;\n  };\n  return { Provider, useModel };\n};\nexport const useModel = <Value, State = void>(\n  model: Model<Value, State>,\n): Value => {\n  return model.useModel();\n};",
       fr =
-        "import React, { useState } from 'react';\nimport { createModel } from './createModel';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <div>\n      <button onClick={counter.decrement}>-</button>\n      <span>{counter.count}</span>\n      <button onClick={counter.increment}>+</button>\n    </div>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport { createModel } from './createModel';\nimport { Space,Button } from 'antd';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <Space wrap>\n      <Button onClick={counter.decrement}>-</Button>\n      <span>{counter.count}</span>\n      <Button onClick={counter.increment}>+</Button>\n    </Space>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
       mr = {
         'loadingbutton-demo': {
           component: t('4ZnB').default,
@@ -39130,7 +39132,11 @@
               _: { tsx: dr },
               'createModel.tsx': { import: './createModel', content: pr },
             },
-            dependencies: { react: { version: '16.14.0' } },
+            dependencies: {
+              react: { version: '16.14.0' },
+              antd: { version: '4.22.8', css: 'antd/dist/antd.css' },
+              'react-dom': { version: '>=16.9.0' },
+            },
             identifier: 'model-demo',
           },
         },
@@ -39141,7 +39147,11 @@
               _: { tsx: fr },
               'createModel.tsx': { import: './createModel', content: pr },
             },
-            dependencies: { react: { version: '16.14.0' } },
+            dependencies: {
+              react: { version: '16.14.0' },
+              antd: { version: '4.22.8', css: 'antd/dist/antd.css' },
+              'react-dom': { version: '>=16.9.0' },
+            },
             identifier: 'model-demo.zh-cn',
           },
         },
@@ -60246,8 +60256,10 @@
     var r = t('tJVT'),
       a = t('q1tI'),
       o = t.n(a),
-      i = t('KXQ/');
-    function l() {
+      i = t('KXQ/'),
+      l = t('xzqI'),
+      c = t('z5OR');
+    function s() {
       var e =
           arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 0,
         n = Object(a['useState'])(e),
@@ -60258,34 +60270,34 @@
         c = () => i(o + 1);
       return { count: o, decrement: l, increment: c };
     }
-    var c = Object(i['a'])(l);
-    function s() {
-      var e = c.useModel();
+    var u = Object(i['a'])(s);
+    function d() {
+      var e = u.useModel();
       return o.a.createElement(
-        'div',
-        null,
-        o.a.createElement('button', { onClick: e.decrement }, '-'),
+        l['b'],
+        { wrap: !0 },
+        o.a.createElement(c['a'], { onClick: e.decrement }, '-'),
         o.a.createElement('span', null, e.count),
-        o.a.createElement('button', { onClick: e.increment }, '+'),
+        o.a.createElement(c['a'], { onClick: e.increment }, '+'),
       );
     }
-    function u() {
+    function p() {
       return o.a.createElement(
-        c.Provider,
+        u.Provider,
         null,
-        o.a.createElement(s, null),
+        o.a.createElement(d, null),
         o.a.createElement(
-          c.Provider,
+          u.Provider,
           { initialState: 2 },
           o.a.createElement(
             'div',
             null,
-            o.a.createElement('div', null, o.a.createElement(s, null)),
+            o.a.createElement('div', null, o.a.createElement(d, null)),
           ),
         ),
       );
     }
-    n['default'] = u;
+    n['default'] = p;
   },
   'lw/w': function (e, n, t) {
     'use strict';
