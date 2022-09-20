@@ -11,4 +11,16 @@ export default {
   '/zh-CN/antd': antdMenuZhCN,
   '/hooks': hooksMenu,
   '/zh-CN/hooks': hooksMenuZhCN,
+  '/model': [
+    {
+      title: 'React model',
+      path: '/model/model',
+    },
+  ],
+  '/zh-CN/model': [
+    {
+      title: 'react状态管理工具',
+      path: '/model/model',
+    },
+  ],
 };

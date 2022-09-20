@@ -48,6 +48,10 @@ export default defineConfig({
         path: '/hooks',
       },
       {
+        title: 'model',
+        path: '/model',
+      },
+      {
         title: 'antd',
         path: '/antd',
       },
@@ -73,6 +77,10 @@ export default defineConfig({
       {
         title: '钩子函数',
         path: '/zh-CN/hooks',
+      },
+      {
+        title: '状态管理',
+        path: '/zh-CN/model',
       },
       {
         title: '蚂蚁设计',
