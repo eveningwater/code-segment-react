@@ -7369,7 +7369,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/model/model.md',
-                updatedTime: 1663676931611,
+                updatedTime: 1663688167004,
                 slugs: [
                   {
                     depth: 3,
@@ -7393,24 +7393,24 @@
               exact: !0,
               meta: {
                 filePath: 'docs/model/model.zh-CN.md',
-                updatedTime: 1663676912253,
+                updatedTime: 1663688176715,
                 slugs: [
                   {
                     depth: 3,
                     value:
-                      '\u624b\u5199\u4e00\u4e2amini\u7248\u672c\u7684React\u72b6\u6001\u7ba1\u7406\u5de5\u5177',
+                      '\u624b\u5199\u4e00\u4e2a mini \u7248\u672c\u7684 React \u72b6\u6001\u7ba1\u7406\u5de5\u5177',
                     heading:
-                      '\u624b\u5199\u4e00\u4e2amini\u7248\u672c\u7684react\u72b6\u6001\u7ba1\u7406\u5de5\u5177',
+                      '\u624b\u5199\u4e00\u4e2a-mini-\u7248\u672c\u7684-react-\u72b6\u6001\u7ba1\u7406\u5de5\u5177',
                   },
                 ],
                 title:
-                  '\u624b\u5199\u4e00\u4e2amini\u7248\u672c\u7684React\u72b6\u6001\u7ba1\u7406\u5de5\u5177',
+                  '\u624b\u5199\u4e00\u4e2a mini \u7248\u672c\u7684 React \u72b6\u6001\u7ba1\u7406\u5de5\u5177',
                 hasPreviewer: !0,
                 locale: 'zh-CN',
                 nav: { path: '/zh-CN/model', title: 'Model' },
               },
               title:
-                '\u624b\u5199\u4e00\u4e2amini\u7248\u672c\u7684React\u72b6\u6001\u7ba1\u7406\u5de5\u5177 - react-code-segment',
+                '\u624b\u5199\u4e00\u4e2a mini \u7248\u672c\u7684 React \u72b6\u6001\u7ba1\u7406\u5de5\u5177 - react-code-segment',
             },
             {
               path: '/antd',
@@ -19139,7 +19139,7 @@
                 "First, let's look at how this state management tool is used. Suppose there is a counter state, and then we modify the counter by two methods, that is, addition and subtraction. In other words, we need to use a counter state and two methods to modify this state. In React functional components, we use the useState method to initialize a state, so we can easily write the following code:",
               ),
               a.a.createElement(l['a'], {
-                code: "import { useState } from 'react'\nconst useCounter = (initialCount = 0) => {\n    const [count,setCount] = useState(initialCount);\n    const increment = () => setCount(count + 1);\n    const decrement = () => setCount(count - 1);\n    return {\n        count,\n        increment,\n        decrement\n    }\n}\nexport default useCounter;",
+                code: "import { useState } from 'react';\nconst useCounter = (initialCount = 0) => {\n  const [count, setCount] = useState(initialCount);\n  const increment = () => setCount(count + 1);\n  const decrement = () => setCount(count - 1);\n  return {\n    count,\n    increment,\n    decrement,\n  };\n};\nexport default useCounter;",
                 lang: 'tsx',
               }),
               a.a.createElement(
@@ -19148,7 +19148,7 @@
                 "Now, let's create a component to use this useCounter hook function as follows:",
               ),
               a.a.createElement(l['a'], {
-                code: 'import React from \'react\'\nimport useCounter from \'./useCounter\'\n\nconst Counter = () => {\n    const { count,increment,decrement } = useCounter();\n    return (\n        <div className="counter">\n            { count }\n            <button type="button" onClick={increment}>add</button>\n            <button type="button" onClick={decrement}>plus</button>\n        </div>\n    )\n}',
+                code: 'import React from \'react\';\nimport useCounter from \'./useCounter\';\n\nconst Counter = () => {\n  const { count, increment, decrement } = useCounter();\n  return (\n    <div className="counter">\n      {count}\n      <button type="button" onClick={increment}>\n        add\n      </button>\n      <button type="button" onClick={decrement}>\n        plus\n      </button>\n    </div>\n  );\n};',
                 lang: 'tsx',
               }),
               a.a.createElement(
@@ -19157,7 +19157,7 @@
                 'Then use it in the root component App, as follows:',
               ),
               a.a.createElement(l['a'], {
-                code: 'import React from \'react\'\nconst App = () => {\n    return (\n        <div className="App">\n            <Counter />\n            <Counter />\n        </div>\n    )\n}',
+                code: 'import React from \'react\';\nconst App = () => {\n  return (\n    <div className="App">\n      <Counter />\n      <Counter />\n    </div>\n  );\n};',
                 lang: 'tsx',
               }),
               a.a.createElement(
@@ -19182,7 +19182,7 @@
                 lang: 'ts',
               }),
               a.a.createElement(l['a'], {
-                code: "import React,{ createContext } from 'react'\nimport CounterContext from './CounterContext'\n\nconst App = () => {\n    const { count,increment,decrement } = useCounter();\n    return (\n        <div className=\"App\">\n            <CounterContext.Provider value={{count,increment,decrement}}>\n                <Counter />\n                <Counter />\n            </CounterContext.Provider>\n        </div>\n    )\n}",
+                code: "import React, { createContext } from 'react';\nimport CounterContext from './CounterContext';\n\nconst App = () => {\n  const { count, increment, decrement } = useCounter();\n  return (\n    <div className=\"App\">\n      <CounterContext.Provider value={{ count, increment, decrement }}>\n        <Counter />\n        <Counter />\n      </CounterContext.Provider>\n    </div>\n  );\n};",
                 lang: 'tsx',
               }),
               a.a.createElement(
@@ -19191,7 +19191,7 @@
                 'Then in the Counter component code we also modify it as follows:',
               ),
               a.a.createElement(l['a'], {
-                code: 'import React,{ useContext } from \'react\'\nimport CounterContext from \'./CounterContext\'\n\nconst Counter = () => {\n    const { count,increment,decrement } = useContext(CounterContext);\n    return (\n        <div className="counter">\n            { count }\n            <button type="button" onClick={increment}>add</button>\n            <button type="button" onClick={decrement}>plus</button>\n        </div>\n    )\n}',
+                code: 'import React, { useContext } from \'react\';\nimport CounterContext from \'./CounterContext\';\n\nconst Counter = () => {\n  const { count, increment, decrement } = useContext(CounterContext);\n  return (\n    <div className="counter">\n      {count}\n      <button type="button" onClick={increment}>\n        add\n      </button>\n      <button type="button" onClick={decrement}>\n        plus\n      </button>\n    </div>\n  );\n};',
                 lang: 'tsx',
               }),
               a.a.createElement(
@@ -19209,7 +19209,7 @@
                 lang: 'ts',
               }),
               a.a.createElement(l['a'], {
-                code: 'const { Provider,useModel } = Counter;',
+                code: 'const { Provider, useModel } = Counter;',
                 lang: 'tsx',
               }),
               a.a.createElement(
@@ -19218,7 +19218,7 @@
                 'Then our App component should look like this:',
               ),
               a.a.createElement(l['a'], {
-                code: "import React,{ createContext } from 'react'\nimport counter from './Counter'\n\nconst App = () => {\n    const { Provider } = counter;\n    return (\n        <div className=\"App\">\n            <Provider>\n                <Counter />\n                <Counter />\n            </Provider>\n        </div>\n    )\n}",
+                code: "import React, { createContext } from 'react';\nimport counter from './Counter';\n\nconst App = () => {\n  const { Provider } = counter;\n  return (\n    <div className=\"App\">\n      <Provider>\n        <Counter />\n        <Counter />\n      </Provider>\n    </div>\n  );\n};",
                 lang: 'tsx',
               }),
               a.a.createElement(
@@ -19227,7 +19227,7 @@
                 'Continue to modify our Counter component as follows:',
               ),
               a.a.createElement(l['a'], {
-                code: 'import React,{ useContext } from \'react\'\nimport counter from \'./Counter\'\n\nconst Counter = () => {\n    const { count,increment,decrement } = counter.useModel();\n    return (\n        <div className="counter">\n            { count }\n            <button type="button" onClick={increment}>add</button>\n            <button type="button" onClick={decrement}>plus</button>\n        </div>\n    )\n}',
+                code: 'import React, { useContext } from \'react\';\nimport counter from \'./Counter\';\n\nconst Counter = () => {\n  const { count, increment, decrement } = counter.useModel();\n  return (\n    <div className="counter">\n      {count}\n      <button type="button" onClick={increment}>\n        add\n      </button>\n      <button type="button" onClick={decrement}>\n        plus\n      </button>\n    </div>\n  );\n};',
                 lang: 'tsx',
               }),
               a.a.createElement(
@@ -19241,7 +19241,7 @@
                 'Next, we will unveil the mystery of this state management tool. First, we need to use the API related to React, so we need to import it. as follows:',
               ),
               a.a.createElement(l['a'], {
-                code: "// Import the type\nimport type { ReactNode,ComponentType } from 'react';\nimport { createContext,useContext } from 'react';",
+                code: "// Import the type\nimport type { ReactNode, ComponentType } from 'react';\nimport { createContext, useContext } from 'react';",
                 lang: 'tsx',
               }),
               a.a.createElement(
@@ -19250,7 +19250,7 @@
                 'Next, define a unique identifier to determine the incoming Context, and this is used to determine that the user uses the Context correctly.',
               ),
               a.a.createElement(l['a'], {
-                code: 'const EMPTY:unique symbol = Symbol();',
+                code: 'const EMPTY: unique symbol = Symbol();',
                 lang: 'tsx',
               }),
               a.a.createElement(
@@ -19259,7 +19259,7 @@
                 'Next we need to define the type of provider. as follows:',
               ),
               a.a.createElement(l['a'], {
-                code: 'export interface ModelProviderProps<State = void> {\n    initialState?: State\n    children: ReactNode\n}',
+                code: 'export interface ModelProviderProps<State = void> {\n  initialState?: State;\n  children: ReactNode;\n}',
                 lang: 'tsx',
               }),
               a.a.createElement(
@@ -19273,7 +19273,7 @@
                 'Then there is our Model type, as follows:',
               ),
               a.a.createElement(l['a'], {
-                code: 'export interface Model<Value,State = void> {\n    Provider: ComponentType<ModelProviderProps<State>>\n    useModel: () => Value\n}',
+                code: 'export interface Model<Value, State = void> {\n  Provider: ComponentType<ModelProviderProps<State>>;\n  useModel: () => Value;\n}',
                 lang: 'tsx',
               }),
               a.a.createElement(
@@ -19287,7 +19287,7 @@
                 "Next is the implementation of our core function createModel function. Let's go step by step. First of all, of course, define this function, pay attention to the type, as follows:",
               ),
               a.a.createElement(l['a'], {
-                code: 'export const createModel = <Value,State = void>(useHook:(initialState?:State) => Value): Model<Value,State> => {\n   //core code\n}',
+                code: 'export const createModel = <Value, State = void>(\n  useHook: (initialState?: State) => Value,\n): Model<Value, State> => {\n  //core code\n};',
                 lang: 'tsx',
               }),
               a.a.createElement(
@@ -19310,7 +19310,7 @@
                 'Then we need to create a Provider function, which is essentially a React component, as follows:',
               ),
               a.a.createElement(l['a'], {
-                code: 'const Provider = (props:ModelProviderProps<State>) => {\n    // The ModelProvider used here is mainly because it cannot conflict with the defined function name\n    const { Provider:ModelProvider } = context;\n    const { initialState,children } = props;\n    const value = useHook(initialState);\n    return (\n        <ModelProvider value={value}>{children}</ModelProvider>\n    )\n}',
+                code: 'const Provider = (props: ModelProviderProps<State>) => {\n  // The ModelProvider used here is mainly because it cannot conflict with the defined function name\n  const { Provider: ModelProvider } = context;\n  const { initialState, children } = props;\n  const value = useHook(initialState);\n  return <ModelProvider value={value}>{children}</ModelProvider>;\n};',
                 lang: 'tsx',
               }),
               a.a.createElement(
@@ -19324,7 +19324,7 @@
                 'In the third step, we need to define a hook function to get this custom Context, as follows:',
               ),
               a.a.createElement(l['a'], {
-                code: "const useModel = ():Value => {\n    const value = useContext(context);\n    // Here to determine whether the user is using the Provider correctly\n    if(value === EMPTY){\n        //Throw an exception, the user does not wrap the component with Provider\n        throw new Error('Component must be wrapped with <Container.Provider>');\n    }\n    // Return the context\n    return value;\n}",
+                code: "const useModel = (): Value => {\n  const value = useContext(context);\n  // Here to determine whether the user is using the Provider correctly\n  if (value === EMPTY) {\n    //Throw an exception, the user does not wrap the component with Provider\n    throw new Error('Component must be wrapped with <Container.Provider>');\n  }\n  // Return the context\n  return value;\n};",
                 lang: 'tsx',
               }),
               a.a.createElement(
@@ -19338,7 +19338,7 @@
                 'Finally, we return these two things inside this function, that is, return the two functions of Provider and useModel. as follows:',
               ),
               a.a.createElement(l['a'], {
-                code: 'return { Provider,useModel }',
+                code: 'return { Provider, useModel };',
                 lang: 'tsx',
               }),
               a.a.createElement(
@@ -19352,7 +19352,7 @@
                 'Finally, we merge all the code and the state management tool is complete.',
               ),
               a.a.createElement(l['a'], {
-                code: "import type { ReactNode,ComponentType } from 'react';\nimport { createContext,useContext } from 'react';\nconst EMPTY:unique symbol = Symbol();\nexport interface ModelProviderProps<State = void> {\n    initialState?: State\n    children: ReactNode\n}\nexport interface Model<Value,State = void> {\n    Provider: ComponentType<ModelProviderProps<State>>\n    useModel: () => Value\n}\nexport const createModel = <Value,State = void>(useHook:(initialState?:State) => Value): Model<Value,State> => {\n    const context = createContext<Value | typeof EMPTY>(EMPTY);\n    const Provider = (props:ModelProviderProps<State>) => {\n        const { Provider:ModelProvider } = context;\n        const { initialState,children } = props;\n        const value = useHook(initialState);\n        return (\n            <ModelProvider value={value}>{children}</ModelProvider>\n        )\n    }\n    const useModel = ():Value => {\n        const value = useContext(context);\n        if(value === EMPTY){\n            throw new Error('Component must be wrapped with <Container.Provider>');\n        }\n        return value;\n    }\n    return { Provider,useModel };\n}",
+                code: "import type { ReactNode, ComponentType } from 'react';\nimport { createContext, useContext } from 'react';\nconst EMPTY: unique symbol = Symbol();\nexport interface ModelProviderProps<State = void> {\n  initialState?: State;\n  children: ReactNode;\n}\nexport interface Model<Value, State = void> {\n  Provider: ComponentType<ModelProviderProps<State>>;\n  useModel: () => Value;\n}\nexport const createModel = <Value, State = void>(\n  useHook: (initialState?: State) => Value,\n): Model<Value, State> => {\n  const context = createContext<Value | typeof EMPTY>(EMPTY);\n  const Provider = (props: ModelProviderProps<State>) => {\n    const { Provider: ModelProvider } = context;\n    const { initialState, children } = props;\n    const value = useHook(initialState);\n    return <ModelProvider value={value}>{children}</ModelProvider>;\n  };\n  const useModel = (): Value => {\n    const value = useContext(context);\n    if (value === EMPTY) {\n      throw new Error('Component must be wrapped with <Container.Provider>');\n    }\n    return value;\n  };\n  return { Provider, useModel };\n};",
                 lang: 'tsx',
               }),
               a.a.createElement(
@@ -19361,7 +19361,7 @@
                 'Going a step further, we export a useModel function as follows:',
               ),
               a.a.createElement(l['a'], {
-                code: 'export const useModel = <Value,State = void>(model:Model<Value,State>):Value => {\n    return model.useModel();\n}',
+                code: 'export const useModel = <Value, State = void>(\n  model: Model<Value, State>,\n): Value => {\n  return model.useModel();\n};',
                 lang: 'tsx',
               }),
               a.a.createElement(
@@ -19390,7 +19390,7 @@
                 a.a.createElement(
                   o['Link'],
                   {
-                    to: 'https://github.com/eveningwater/code-segment-react/docs/model/model.zh-CN.md',
+                    to: 'https://eveningwater.github.io/code-segment-react/model/model',
                   },
                   'source code',
                 ),
@@ -32862,23 +32862,23 @@
               a.a.createElement(
                 'h3',
                 {
-                  id: '\u624b\u5199\u4e00\u4e2amini\u7248\u672c\u7684react\u72b6\u6001\u7ba1\u7406\u5de5\u5177',
+                  id: '\u624b\u5199\u4e00\u4e2a-mini-\u7248\u672c\u7684-react-\u72b6\u6001\u7ba1\u7406\u5de5\u5177',
                 },
                 a.a.createElement(
                   o['AnchorLink'],
                   {
-                    to: '#\u624b\u5199\u4e00\u4e2amini\u7248\u672c\u7684react\u72b6\u6001\u7ba1\u7406\u5de5\u5177',
+                    to: '#\u624b\u5199\u4e00\u4e2a-mini-\u7248\u672c\u7684-react-\u72b6\u6001\u7ba1\u7406\u5de5\u5177',
                     'aria-hidden': 'true',
                     tabIndex: -1,
                   },
                   a.a.createElement('span', { className: 'icon icon-link' }),
                 ),
-                '\u624b\u5199\u4e00\u4e2amini\u7248\u672c\u7684React\u72b6\u6001\u7ba1\u7406\u5de5\u5177',
+                '\u624b\u5199\u4e00\u4e2a mini \u7248\u672c\u7684 React \u72b6\u6001\u7ba1\u7406\u5de5\u5177',
               ),
               a.a.createElement(
                 'p',
                 null,
-                '\u76ee\u524d\u5728React\u4e2d\uff0c\u6709\u5f88\u591a\u5404\u5f0f\u5404\u6837\u7684\u72b6\u6001\u7ba1\u7406\u5de5\u5177\uff0c\u5982\uff1a',
+                '\u76ee\u524d\u5728 React \u4e2d\uff0c\u6709\u5f88\u591a\u5404\u5f0f\u5404\u6837\u7684\u72b6\u6001\u7ba1\u7406\u5de5\u5177\uff0c\u5982\uff1a',
               ),
               a.a.createElement(
                 'ul',
@@ -32914,7 +32914,7 @@
               a.a.createElement(
                 'p',
                 null,
-                '\u6bcf\u4e00\u4e2a\u72b6\u6001\u7ba1\u7406\u5de5\u5177\u90fd\u6709\u7740\u4e0d\u5c3d\u76f8\u540c\u7684API\u548c\u4f7f\u7528\u65b9\u5f0f\uff0c\u800c\u4e14\u90fd\u6709\u4e00\u5b9a\u7684\u5b66\u4e60\u6210\u672c\uff0c\u800c\u4e14\u8fd9\u4e9b\u72b6\u6001\u7ba1\u7406\u5de5\u5177\u4e5f\u6709\u4e00\u5b9a\u7684\u590d\u6742\u5ea6\uff0c\u5e76\u6ca1\u6709\u505a\u5230\u6781\u81f4\u7684\u7b80\u5355\u3002\u5728\u5f00\u53d1\u8005\u7684\u773c\u4e2d\uff0c\u53ea\u6709\u7528\u8d77\u6765\u6bd4\u8f83\u7b80\u5355\uff0c\u90a3\u4e48\u624d\u4f1a\u6709\u66f4\u591a\u7684\u4eba\u53bb\u4f7f\u7528\u5b83\uff0cVue\u4e0d\u5c31\u662f\u56e0\u4e3a\u4f7f\u7528\u7b80\u5355\uff0c\u4e0a\u624b\u5feb\uff0c\u800c\u6d41\u884c\u7684\u5417\uff1f',
+                '\u6bcf\u4e00\u4e2a\u72b6\u6001\u7ba1\u7406\u5de5\u5177\u90fd\u6709\u7740\u4e0d\u5c3d\u76f8\u540c\u7684 API \u548c\u4f7f\u7528\u65b9\u5f0f\uff0c\u800c\u4e14\u90fd\u6709\u4e00\u5b9a\u7684\u5b66\u4e60\u6210\u672c\uff0c\u800c\u4e14\u8fd9\u4e9b\u72b6\u6001\u7ba1\u7406\u5de5\u5177\u4e5f\u6709\u4e00\u5b9a\u7684\u590d\u6742\u5ea6\uff0c\u5e76\u6ca1\u6709\u505a\u5230\u6781\u81f4\u7684\u7b80\u5355\u3002\u5728\u5f00\u53d1\u8005\u7684\u773c\u4e2d\uff0c\u53ea\u6709\u7528\u8d77\u6765\u6bd4\u8f83\u7b80\u5355\uff0c\u90a3\u4e48\u624d\u4f1a\u6709\u66f4\u591a\u7684\u4eba\u53bb\u4f7f\u7528\u5b83\uff0cVue \u4e0d\u5c31\u662f\u56e0\u4e3a\u4f7f\u7528\u7b80\u5355\uff0c\u4e0a\u624b\u5feb\uff0c\u800c\u6d41\u884c\u7684\u5417\uff1f',
               ),
               a.a.createElement(
                 'p',
@@ -32935,33 +32935,33 @@
                   { to: 'https://reactjs.org/docs/context.html' },
                   'Context API',
                 ),
-                ',\u5728\u4e86\u89e3\u672c\u6587\u4e4b\u524d\u52a1\u5fc5\u5148\u4e86\u89e3\u5e76\u719f\u6089\u4f7f\u7528\u8fd9\u4e2aAPI\u7684\u7528\u6cd5\u3002',
+                ',\u5728\u4e86\u89e3\u672c\u6587\u4e4b\u524d\u52a1\u5fc5\u5148\u4e86\u89e3\u5e76\u719f\u6089\u4f7f\u7528\u8fd9\u4e2a API \u7684\u7528\u6cd5\u3002',
               ),
               a.a.createElement(
                 'p',
                 null,
-                '\u9996\u5148\u6211\u4eec\u6765\u770b\u8fd9\u4e2a\u72b6\u6001\u7ba1\u7406\u5de5\u5177\u662f\u5982\u4f55\u4f7f\u7528\u7684\u3002\u5047\u8bbe\u6709\u4e00\u4e2a\u8ba1\u6570\u5668\u72b6\u6001\uff0c\u7136\u540e\u6211\u4eec\u901a\u8fc7\u4e8c\u4e2a\u65b9\u6cd5\u5206\u522b\u53bb\u4fee\u6539\u8ba1\u6570\u5668\uff0c\u4e5f\u5c31\u662f\u505a\u52a0\u6cd5\u548c\u51cf\u6cd5\uff0c\u6362\u53e5\u8bdd\u8bf4\u6211\u4eec\u9700\u8981\u7528\u5230\u4e00\u4e2a\u8ba1\u6570\u5668\u72b6\u6001\uff0c\u4e8c\u4e2a\u65b9\u6cd5\u6765\u4fee\u6539\u8fd9\u4e2a\u72b6\u6001\u3002\u5728React\u51fd\u6570\u7ec4\u4ef6\u4e2d\uff0c\u6211\u4eec\u4f7f\u7528useState\u65b9\u6cd5\u6765\u521d\u59cb\u5316\u4e00\u4e2a\u72b6\u6001\uff0c\u56e0\u6b64\uff0c\u6211\u4eec\u53ef\u4ee5\u5f88\u5bb9\u6613\u7684\u5199\u51fa\u5982\u4e0b\u4ee3\u7801\uff1a',
+                '\u9996\u5148\u6211\u4eec\u6765\u770b\u8fd9\u4e2a\u72b6\u6001\u7ba1\u7406\u5de5\u5177\u662f\u5982\u4f55\u4f7f\u7528\u7684\u3002\u5047\u8bbe\u6709\u4e00\u4e2a\u8ba1\u6570\u5668\u72b6\u6001\uff0c\u7136\u540e\u6211\u4eec\u901a\u8fc7\u4e8c\u4e2a\u65b9\u6cd5\u5206\u522b\u53bb\u4fee\u6539\u8ba1\u6570\u5668\uff0c\u4e5f\u5c31\u662f\u505a\u52a0\u6cd5\u548c\u51cf\u6cd5\uff0c\u6362\u53e5\u8bdd\u8bf4\u6211\u4eec\u9700\u8981\u7528\u5230\u4e00\u4e2a\u8ba1\u6570\u5668\u72b6\u6001\uff0c\u4e8c\u4e2a\u65b9\u6cd5\u6765\u4fee\u6539\u8fd9\u4e2a\u72b6\u6001\u3002\u5728 React \u51fd\u6570\u7ec4\u4ef6\u4e2d\uff0c\u6211\u4eec\u4f7f\u7528 useState \u65b9\u6cd5\u6765\u521d\u59cb\u5316\u4e00\u4e2a\u72b6\u6001\uff0c\u56e0\u6b64\uff0c\u6211\u4eec\u53ef\u4ee5\u5f88\u5bb9\u6613\u7684\u5199\u51fa\u5982\u4e0b\u4ee3\u7801\uff1a',
               ),
               a.a.createElement(l['a'], {
-                code: "import { useState } from 'react'\nconst useCounter = (initialCount = 0) => {\n    const [count,setCount] = useState(initialCount);\n    const increment = () => setCount(count + 1);\n    const decrement = () => setCount(count - 1);\n    return {\n        count,\n        increment,\n        decrement\n    }\n}\nexport default useCounter;",
+                code: "import { useState } from 'react';\nconst useCounter = (initialCount = 0) => {\n  const [count, setCount] = useState(initialCount);\n  const increment = () => setCount(count + 1);\n  const decrement = () => setCount(count - 1);\n  return {\n    count,\n    increment,\n    decrement,\n  };\n};\nexport default useCounter;",
                 lang: 'ts',
               }),
               a.a.createElement(
                 'p',
                 null,
-                '\u73b0\u5728\uff0c\u8ba9\u6211\u4eec\u521b\u5efa\u4e00\u4e2a\u7ec4\u4ef6\u6765\u4f7f\u7528\u8fd9\u4e2auseCounter\u94a9\u5b50\u51fd\u6570\uff0c\u5982\u4e0b:',
+                '\u73b0\u5728\uff0c\u8ba9\u6211\u4eec\u521b\u5efa\u4e00\u4e2a\u7ec4\u4ef6\u6765\u4f7f\u7528\u8fd9\u4e2a useCounter \u94a9\u5b50\u51fd\u6570\uff0c\u5982\u4e0b:',
               ),
               a.a.createElement(l['a'], {
-                code: 'import React from \'react\'\nimport useCounter from \'./useCounter\'\n\nconst Counter = () => {\n    const { count,increment,decrement } = useCounter();\n    return (\n        <div className="counter">\n            { count }\n            <button type="button" onClick={increment}>add</button>\n            <button type="button" onClick={decrement}>plus</button>\n        </div>\n    )\n}',
+                code: 'import React from \'react\';\nimport useCounter from \'./useCounter\';\n\nconst Counter = () => {\n  const { count, increment, decrement } = useCounter();\n  return (\n    <div className="counter">\n      {count}\n      <button type="button" onClick={increment}>\n        add\n      </button>\n      <button type="button" onClick={decrement}>\n        plus\n      </button>\n    </div>\n  );\n};',
                 lang: 'tsx',
               }),
               a.a.createElement(
                 'p',
                 null,
-                '\u7136\u540e\u5728\u6839\u7ec4\u4ef6App\u5f53\u4e2d\u4f7f\u7528\uff0c\u5982\u4e0b:',
+                '\u7136\u540e\u5728\u6839\u7ec4\u4ef6 App \u5f53\u4e2d\u4f7f\u7528\uff0c\u5982\u4e0b:',
               ),
               a.a.createElement(l['a'], {
-                code: 'import React from \'react\'\nconst App = () => {\n    return (\n        <div className="App">\n            <Counter />\n            <Counter />\n        </div>\n    )\n}',
+                code: 'import React from \'react\';\nconst App = () => {\n  return (\n    <div className="App">\n      <Counter />\n      <Counter />\n    </div>\n  );\n};',
                 lang: 'tsx',
               }),
               a.a.createElement(
@@ -32972,135 +32972,135 @@
               a.a.createElement(
                 'p',
                 null,
-                '\u9996\u5148\uff0c\u6211\u4eec\u5e94\u8be5\u77e5\u9053\u8ba1\u6570\u5668\u7ec4\u4ef6\u7684\u72b6\u6001\u5e94\u8be5\u662f\u4e00\u81f4\u7684\uff0c\u4e5f\u5c31\u662f\u8bf4\u6211\u4eec\u7684\u8ba1\u6570\u5668\u7ec4\u4ef6\u5e94\u8be5\u662f\u5171\u4eab\u540c\u4e00\u4e2a\u72b6\u6001\uff0c\u90a3\u4e48\u5982\u4f55\u5171\u4eab\u540c\u4e00\u4e2a\u72b6\u6001\uff1f\u8fd9\u65f6\u5019\u5c31\u9700\u8981Context\u51fa\u573a\u4e86\u3002\u5c06\u4ee5\u4e0a\u7684\u7ec4\u4ef6\u6539\u9020\u4e00\u4e0b\uff0c\u6211\u4eec\u5c06\u72b6\u6001\u653e\u5728\u6839\u7ec4\u4ef6App\u5f53\u4e2d\u521d\u59cb\u5316\uff0c\u5e76\u4e14\u4f20\u5230\u5b50\u7ec4\u4ef6\u4e2d\u53bb\u3002\u5148\u4fee\u6539App\u6839\u7ec4\u4ef6\u7684\u4ee3\u7801\u5982\u4e0b:',
+                '\u9996\u5148\uff0c\u6211\u4eec\u5e94\u8be5\u77e5\u9053\u8ba1\u6570\u5668\u7ec4\u4ef6\u7684\u72b6\u6001\u5e94\u8be5\u662f\u4e00\u81f4\u7684\uff0c\u4e5f\u5c31\u662f\u8bf4\u6211\u4eec\u7684\u8ba1\u6570\u5668\u7ec4\u4ef6\u5e94\u8be5\u662f\u5171\u4eab\u540c\u4e00\u4e2a\u72b6\u6001\uff0c\u90a3\u4e48\u5982\u4f55\u5171\u4eab\u540c\u4e00\u4e2a\u72b6\u6001\uff1f\u8fd9\u65f6\u5019\u5c31\u9700\u8981 Context \u51fa\u573a\u4e86\u3002\u5c06\u4ee5\u4e0a\u7684\u7ec4\u4ef6\u6539\u9020\u4e00\u4e0b\uff0c\u6211\u4eec\u5c06\u72b6\u6001\u653e\u5728\u6839\u7ec4\u4ef6 App \u5f53\u4e2d\u521d\u59cb\u5316\uff0c\u5e76\u4e14\u4f20\u5230\u5b50\u7ec4\u4ef6\u4e2d\u53bb\u3002\u5148\u4fee\u6539 App \u6839\u7ec4\u4ef6\u7684\u4ee3\u7801\u5982\u4e0b:',
               ),
               a.a.createElement(
                 'p',
                 null,
-                '\u65b0\u5efa\u4e00\u4e2aCounterContext.ts\u6587\u4ef6\uff0c\u4ee3\u7801\u5982\u4e0b:',
+                '\u65b0\u5efa\u4e00\u4e2a CounterContext.ts \u6587\u4ef6\uff0c\u4ee3\u7801\u5982\u4e0b:',
               ),
               a.a.createElement(l['a'], {
                 code: 'const CounterContext = createContext();\nexport default CounterContext;',
                 lang: 'ts',
               }),
               a.a.createElement(l['a'], {
-                code: "import React,{ createContext } from 'react'\nimport CounterContext from './CounterContext'\n\nconst App = () => {\n    const { count,increment,decrement } = useCounter();\n    return (\n        <div className=\"App\">\n            <CounterContext.Provider value={{count,increment,decrement}}>\n                <Counter />\n                <Counter />\n            </CounterContext.Provider>\n        </div>\n    )\n}",
+                code: "import React, { createContext } from 'react';\nimport CounterContext from './CounterContext';\n\nconst App = () => {\n  const { count, increment, decrement } = useCounter();\n  return (\n    <div className=\"App\">\n      <CounterContext.Provider value={{ count, increment, decrement }}>\n        <Counter />\n        <Counter />\n      </CounterContext.Provider>\n    </div>\n  );\n};",
                 lang: 'tsx',
               }),
               a.a.createElement(
                 'p',
                 null,
-                '\u7136\u540e\u5728Counter\u7ec4\u4ef6\u4ee3\u7801\u6211\u4eec\u4e5f\u4fee\u6539\u5982\u4e0b:',
+                '\u7136\u540e\u5728 Counter \u7ec4\u4ef6\u4ee3\u7801\u6211\u4eec\u4e5f\u4fee\u6539\u5982\u4e0b:',
               ),
               a.a.createElement(l['a'], {
-                code: 'import React,{ useContext } from \'react\'\nimport CounterContext from \'./CounterContext\'\n\nconst Counter = () => {\n    const { count,increment,decrement } = useContext(CounterContext);\n    return (\n        <div className="counter">\n            { count }\n            <button type="button" onClick={increment}>add</button>\n            <button type="button" onClick={decrement}>plus</button>\n        </div>\n    )\n}',
+                code: 'import React, { useContext } from \'react\';\nimport CounterContext from \'./CounterContext\';\n\nconst Counter = () => {\n  const { count, increment, decrement } = useContext(CounterContext);\n  return (\n    <div className="counter">\n      {count}\n      <button type="button" onClick={increment}>\n        add\n      </button>\n      <button type="button" onClick={decrement}>\n        plus\n      </button>\n    </div>\n  );\n};',
                 lang: 'tsx',
               }),
               a.a.createElement(
                 'p',
                 null,
-                '\u5982\u6b64\u4e00\u6765\uff0c\u6211\u4eec\u5c31\u53ef\u4ee5\u5171\u4eabcount\u72b6\u6001\uff0c\u65e0\u8bba\u662f\u5728\u591a\u6df1\u7684\u5b50\u7ec4\u4ef6\u5f53\u4e2d\u4f7f\u7528\u90fd\u6ca1\u6709\u95ee\u9898\uff0c\u4f46\u662f\u8fd9\u5e76\u6ca1\u6709\u7ed3\u675f\uff0c\u8ba9\u6211\u4eec\u7ee7\u7eed\u3002',
+                '\u5982\u6b64\u4e00\u6765\uff0c\u6211\u4eec\u5c31\u53ef\u4ee5\u5171\u4eab count \u72b6\u6001\uff0c\u65e0\u8bba\u662f\u5728\u591a\u6df1\u7684\u5b50\u7ec4\u4ef6\u5f53\u4e2d\u4f7f\u7528\u90fd\u6ca1\u6709\u95ee\u9898\uff0c\u4f46\u662f\u8fd9\u5e76\u6ca1\u6709\u7ed3\u675f\uff0c\u8ba9\u6211\u4eec\u7ee7\u7eed\u3002',
               ),
               a.a.createElement(
                 'p',
                 null,
-                '\u867d\u7136\u8fd9\u6837\u4f7f\u7528\u89e3\u51b3\u4e86\u5171\u4eab\u72b6\u6001\u7684\u95ee\u9898\uff0c\u53ef\u662f\u6211\u4eec\u53d1\u73b0\uff0c\u6211\u4eec\u5728\u4f7f\u7528\u7684\u65f6\u5019\u8fd8\u8981\u989d\u5916\u7684\u4f20\u5165\u4e00\u4e2acontext\u540d\uff0c\u6240\u4ee5\u6211\u4eec\u9700\u8981\u5305\u88c5\u4e00\u4e0b\uff0c\u5230\u6700\u540e\uff0c\u6211\u4eec\u53ea\u9700\u8981\u50cf\u5982\u4e0b\u8fd9\u6837\u4f7f\u7528\uff1a',
+                '\u867d\u7136\u8fd9\u6837\u4f7f\u7528\u89e3\u51b3\u4e86\u5171\u4eab\u72b6\u6001\u7684\u95ee\u9898\uff0c\u53ef\u662f\u6211\u4eec\u53d1\u73b0\uff0c\u6211\u4eec\u5728\u4f7f\u7528\u7684\u65f6\u5019\u8fd8\u8981\u989d\u5916\u7684\u4f20\u5165\u4e00\u4e2a context \u540d\uff0c\u6240\u4ee5\u6211\u4eec\u9700\u8981\u5305\u88c5\u4e00\u4e0b\uff0c\u5230\u6700\u540e\uff0c\u6211\u4eec\u53ea\u9700\u8981\u50cf\u5982\u4e0b\u8fd9\u6837\u4f7f\u7528\uff1a',
               ),
               a.a.createElement(l['a'], {
                 code: 'const Counter = createModel(useCounter);\nexport default Counter;',
                 lang: 'ts',
               }),
               a.a.createElement(l['a'], {
-                code: 'const { Provider,useModel } = Counter;',
+                code: 'const { Provider, useModel } = Counter;',
                 lang: 'tsx',
               }),
               a.a.createElement(
                 'p',
                 null,
-                '\u7136\u540e\u6211\u4eec\u7684App\u7ec4\u4ef6\u5c31\u5e94\u8be5\u662f\u8fd9\u6837:',
+                '\u7136\u540e\u6211\u4eec\u7684 App \u7ec4\u4ef6\u5c31\u5e94\u8be5\u662f\u8fd9\u6837:',
               ),
               a.a.createElement(l['a'], {
-                code: "import React,{ createContext } from 'react'\nimport counter from './Counter'\n\nconst App = () => {\n    const { Provider } = counter;\n    return (\n        <div className=\"App\">\n            <Provider>\n                <Counter />\n                <Counter />\n            </Provider>\n        </div>\n    )\n}",
+                code: "import React, { createContext } from 'react';\nimport counter from './Counter';\n\nconst App = () => {\n  const { Provider } = counter;\n  return (\n    <div className=\"App\">\n      <Provider>\n        <Counter />\n        <Counter />\n      </Provider>\n    </div>\n  );\n};",
                 lang: 'tsx',
               }),
               a.a.createElement(
                 'p',
                 null,
-                '\u7ee7\u7eed\u4fee\u6539\u6211\u4eec\u7684Counter\u7ec4\u4ef6\uff0c\u5982\u4e0b:',
+                '\u7ee7\u7eed\u4fee\u6539\u6211\u4eec\u7684 Counter \u7ec4\u4ef6\uff0c\u5982\u4e0b:',
               ),
               a.a.createElement(l['a'], {
-                code: 'import React,{ useContext } from \'react\'\nimport counter from \'./Counter\'\n\nconst Counter = () => {\n    const { count,increment,decrement } = counter.useModel();\n    return (\n        <div className="counter">\n            { count }\n            <button type="button" onClick={increment}>add</button>\n            <button type="button" onClick={decrement}>plus</button>\n        </div>\n    )\n}',
+                code: 'import React, { useContext } from \'react\';\nimport counter from \'./Counter\';\n\nconst Counter = () => {\n  const { count, increment, decrement } = counter.useModel();\n  return (\n    <div className="counter">\n      {count}\n      <button type="button" onClick={increment}>\n        add\n      </button>\n      <button type="button" onClick={decrement}>\n        plus\n      </button>\n    </div>\n  );\n};',
                 lang: 'tsx',
               }),
               a.a.createElement(
                 'p',
                 null,
-                '\u901a\u8fc7\u4ee5\u4e0a\u4ee3\u7801\u7684\u5c55\u793a\uff0c\u5176\u5b9e\u6211\u4eec\u4e5f\u5c31\u660e\u767d\u4e86\uff0c\u6211\u4eec\u65e0\u975e\u662f\u5c06useContext\u548ccreateContext\u5185\u7f6e\u5230\u6211\u4eec\u5c01\u88c5\u7684Model\u91cc\u9762\u53bb\u4e86\u3002',
+                '\u901a\u8fc7\u4ee5\u4e0a\u4ee3\u7801\u7684\u5c55\u793a\uff0c\u5176\u5b9e\u6211\u4eec\u4e5f\u5c31\u660e\u767d\u4e86\uff0c\u6211\u4eec\u65e0\u975e\u662f\u5c06 useContext \u548c createContext \u5185\u7f6e\u5230\u6211\u4eec\u5c01\u88c5\u7684 Model \u91cc\u9762\u53bb\u4e86\u3002',
               ),
               a.a.createElement(
                 'p',
                 null,
-                '\u63a5\u4e0b\u6765\u6211\u4eec\u5c31\u6765\u63ed\u5f00\u8fd9\u4e2a\u72b6\u6001\u7ba1\u7406\u5de5\u5177\u7684\u795e\u79d8\u9762\u7eb1\uff0c\u9996\u5148\u8981\u7528\u5230React\u76f8\u5173\u7684API\uff0c\u6240\u4ee5\u6211\u4eec\u9700\u8981\u5bfc\u5165\u8fdb\u6765\u3002\u5982\u4e0b:',
+                '\u63a5\u4e0b\u6765\u6211\u4eec\u5c31\u6765\u63ed\u5f00\u8fd9\u4e2a\u72b6\u6001\u7ba1\u7406\u5de5\u5177\u7684\u795e\u79d8\u9762\u7eb1\uff0c\u9996\u5148\u8981\u7528\u5230 React \u76f8\u5173\u7684 API\uff0c\u6240\u4ee5\u6211\u4eec\u9700\u8981\u5bfc\u5165\u8fdb\u6765\u3002\u5982\u4e0b:',
               ),
               a.a.createElement(l['a'], {
-                code: "// \u5bfc\u5165\u7c7b\u578b\nimport type { ReactNode,ComponentType } from 'react';\nimport { createContext,useContext } from 'react';",
+                code: "// \u5bfc\u5165\u7c7b\u578b\nimport type { ReactNode, ComponentType } from 'react';\nimport { createContext, useContext } from 'react';",
                 lang: 'tsx',
               }),
               a.a.createElement(
                 'p',
                 null,
-                '\u63a5\u4e0b\u6765\u5b9a\u4e49\u4e00\u4e2a\u552f\u4e00\u6807\u8bc6\uff0c\u7528\u4e8e\u786e\u5b9a\u4f20\u5165\u7684Context\uff0c\u5e76\u4e14\u8fd9\u4e2a\u7528\u6765\u786e\u5b9a\u4f7f\u7528\u8005\u4f7f\u7528Context\u65f6\u662f\u6b63\u786e\u4f7f\u7528\u7684\u3002',
+                '\u63a5\u4e0b\u6765\u5b9a\u4e49\u4e00\u4e2a\u552f\u4e00\u6807\u8bc6\uff0c\u7528\u4e8e\u786e\u5b9a\u4f20\u5165\u7684 Context\uff0c\u5e76\u4e14\u8fd9\u4e2a\u7528\u6765\u786e\u5b9a\u4f7f\u7528\u8005\u4f7f\u7528 Context \u65f6\u662f\u6b63\u786e\u4f7f\u7528\u7684\u3002',
               ),
               a.a.createElement(l['a'], {
-                code: 'const EMPTY:unique symbol = Symbol();',
+                code: 'const EMPTY: unique symbol = Symbol();',
                 lang: 'tsx',
               }),
               a.a.createElement(
                 'p',
                 null,
-                '\u63a5\u4e0b\u6765\u6211\u4eec\u8981\u5b9a\u4e49Provider\u7684\u7c7b\u578b\u3002\u5982\u4e0b:',
+                '\u63a5\u4e0b\u6765\u6211\u4eec\u8981\u5b9a\u4e49 Provider \u7684\u7c7b\u578b\u3002\u5982\u4e0b:',
               ),
               a.a.createElement(l['a'], {
-                code: 'export interface ModelProviderProps<State = void> {\n    initialState?: State\n    children: ReactNode\n}',
+                code: 'export interface ModelProviderProps<State = void> {\n  initialState?: State;\n  children: ReactNode;\n}',
                 lang: 'tsx',
               }),
               a.a.createElement(
                 'p',
                 null,
-                '\u4ee5\u4e0a\u6211\u4eec\u5b9a\u4e49\u4e86context\u7684\u72b6\u6001\u7c7b\u578b\uff0c\u662f\u4e00\u4e2a\u6cdb\u578b\uff0c\u53c2\u6570\u5c31\u662f\u72b6\u6001\u7684\u7c7b\u578b\uff0c\u9ed8\u8ba4\u521d\u59cb\u5316\u4e3aundefined\u7c7b\u578b\uff0c\u5e76\u4e14\u5b9a\u4e49\u4e86\u4e00\u4e2achildren\u7684\u7c7b\u578b\uff0c\u56e0\u4e3aProvider\u7684\u5b50\u8282\u70b9\u662f\u4e00\u4e2aReact\u8282\u70b9\uff0c\u6240\u4ee5\u4e5f\u5c31\u5b9a\u4e49\u6210ReactNode\u7c7b\u578b\u3002',
+                '\u4ee5\u4e0a\u6211\u4eec\u5b9a\u4e49\u4e86 context \u7684\u72b6\u6001\u7c7b\u578b\uff0c\u662f\u4e00\u4e2a\u6cdb\u578b\uff0c\u53c2\u6570\u5c31\u662f\u72b6\u6001\u7684\u7c7b\u578b\uff0c\u9ed8\u8ba4\u521d\u59cb\u5316\u4e3a undefined \u7c7b\u578b\uff0c\u5e76\u4e14\u5b9a\u4e49\u4e86\u4e00\u4e2a children \u7684\u7c7b\u578b\uff0c\u56e0\u4e3a Provider \u7684\u5b50\u8282\u70b9\u662f\u4e00\u4e2a React \u8282\u70b9\uff0c\u6240\u4ee5\u4e5f\u5c31\u5b9a\u4e49\u6210 ReactNode \u7c7b\u578b\u3002',
               ),
               a.a.createElement(
                 'p',
                 null,
-                '\u7136\u540e\u5c31\u662f\u6211\u4eec\u7684Model\u7c7b\u578b\uff0c\u5982\u4e0b:',
+                '\u7136\u540e\u5c31\u662f\u6211\u4eec\u7684 Model \u7c7b\u578b\uff0c\u5982\u4e0b:',
               ),
               a.a.createElement(l['a'], {
-                code: 'export interface Model<Value,State = void> {\n    Provider: ComponentType<ModelProviderProps<State>>\n    useModel: () => Value\n}',
+                code: 'export interface Model<Value, State = void> {\n  Provider: ComponentType<ModelProviderProps<State>>;\n  useModel: () => Value;\n}',
                 lang: 'tsx',
               }),
               a.a.createElement(
                 'p',
                 null,
-                '\u8fd9\u4e2a\u4e5f\u5f88\u597d\u7406\u89e3\uff0c\u56e0\u4e3aModel\u66b4\u9732\u4e86\u4e24\u4e2a\u4e1c\u897f\uff0c\u7b2c\u4e00\u4e2a\u662fProvider\uff0c\u7b2c\u4e8c\u4e2a\u5c31\u662fuseContext\uff0c\u53ea\u662f\u6362\u4e86\u4e00\u4e2a\u540d\u5b57\u800c\u5df2\uff0c\u5b9a\u4e49\u8fd9\u4e24\u4e2a\u7684\u7c7b\u578b\u5c31\u591f\u4e86\u3002',
+                '\u8fd9\u4e2a\u4e5f\u5f88\u597d\u7406\u89e3\uff0c\u56e0\u4e3a Model \u66b4\u9732\u4e86\u4e24\u4e2a\u4e1c\u897f\uff0c\u7b2c\u4e00\u4e2a\u662f Provider\uff0c\u7b2c\u4e8c\u4e2a\u5c31\u662f useContext\uff0c\u53ea\u662f\u6362\u4e86\u4e00\u4e2a\u540d\u5b57\u800c\u5df2\uff0c\u5b9a\u4e49\u8fd9\u4e24\u4e2a\u7684\u7c7b\u578b\u5c31\u591f\u4e86\u3002',
               ),
               a.a.createElement(
                 'p',
                 null,
-                '\u63a5\u4e0b\u6765\u5c31\u662f\u6211\u4eec\u7684\u6838\u5fc3\u51fd\u6570createModel\u51fd\u6570\u7684\u5b9e\u73b0\uff0c\u6211\u4eec\u4e00\u6b65\u4e00\u6b65\u6765\uff0c\u9996\u5148\u5f53\u7136\u662f\u5b9a\u4e49\u8fd9\u4e2a\u51fd\u6570\uff0c\u6ce8\u610f\u7c7b\u578b\uff0c\u5982\u4e0b:',
+                '\u63a5\u4e0b\u6765\u5c31\u662f\u6211\u4eec\u7684\u6838\u5fc3\u51fd\u6570 createModel \u51fd\u6570\u7684\u5b9e\u73b0\uff0c\u6211\u4eec\u4e00\u6b65\u4e00\u6b65\u6765\uff0c\u9996\u5148\u5f53\u7136\u662f\u5b9a\u4e49\u8fd9\u4e2a\u51fd\u6570\uff0c\u6ce8\u610f\u7c7b\u578b\uff0c\u5982\u4e0b:',
               ),
               a.a.createElement(l['a'], {
-                code: 'export const createModel = <Value,State = void>(useHook:(initialState?:State) => Value): Model<Value,State> => {\n    //\u6838\u5fc3\u4ee3\u7801\n}',
+                code: 'export const createModel = <Value, State = void>(\n  useHook: (initialState?: State) => Value,\n): Model<Value, State> => {\n  //\u6838\u5fc3\u4ee3\u7801\n};',
                 lang: 'tsx',
               }),
               a.a.createElement(
                 'p',
                 null,
-                '\u4ee5\u4e0a\u51fd\u6570\u96be\u4ee5\u7406\u89e3\u7684\u5e94\u8be5\u662f\u7c7b\u578b\u7684\u5b9a\u4e49\uff0c\u6211\u4eeccreateModel\u51fd\u6570\u4f20\u5165\u4e00\u4e2ahook\u51fd\u6570\uff0chook\u51fd\u6570\u4f20\u5165\u4e00\u4e2a\u72b6\u6001\u4f5c\u4e3a\u53c2\u6570\uff0c\u7136\u540e\u8fd4\u56de\u503c\u5c31\u662f\u6211\u4eec\u5b9a\u4e49\u597d\u7684Model\u6cdb\u578b\uff0c\u53c2\u6570\u4e3a\u7c7b\u578b\u5c31\u662f\u6211\u4eec\u5b9a\u4e49\u597d\u7684\u8fd9\u4e2a\u51fd\u6570\u7684\u6cdb\u578b\u3002',
+                '\u4ee5\u4e0a\u51fd\u6570\u96be\u4ee5\u7406\u89e3\u7684\u5e94\u8be5\u662f\u7c7b\u578b\u7684\u5b9a\u4e49\uff0c\u6211\u4eec createModel \u51fd\u6570\u4f20\u5165\u4e00\u4e2a hook \u51fd\u6570\uff0chook \u51fd\u6570\u4f20\u5165\u4e00\u4e2a\u72b6\u6001\u4f5c\u4e3a\u53c2\u6570\uff0c\u7136\u540e\u8fd4\u56de\u503c\u5c31\u662f\u6211\u4eec\u5b9a\u4e49\u597d\u7684 Model \u6cdb\u578b\uff0c\u53c2\u6570\u4e3a\u7c7b\u578b\u5c31\u662f\u6211\u4eec\u5b9a\u4e49\u597d\u7684\u8fd9\u4e2a\u51fd\u6570\u7684\u6cdb\u578b\u3002',
               ),
               a.a.createElement(
                 'p',
                 null,
-                '\u63a5\u4e0b\u6765\uff0c\u6211\u4eec\u8981\u505a\u7684\u81ea\u7136\u662f\u521b\u5efa\u4e00\u4e2acontext\uff0c\u5982\u4e0b:',
+                '\u63a5\u4e0b\u6765\uff0c\u6211\u4eec\u8981\u505a\u7684\u81ea\u7136\u662f\u521b\u5efa\u4e00\u4e2a context\uff0c\u5982\u4e0b:',
               ),
               a.a.createElement(l['a'], {
                 code: '//\u521b\u5efa\u4e00\u4e2acontext\nconst context = createContext<Value | typeof EMPTY>(EMPTY);',
@@ -33109,44 +33109,44 @@
               a.a.createElement(
                 'p',
                 null,
-                '\u7136\u540e\u6211\u4eec\u8981\u521b\u5efa\u4e00\u4e2aProvider\u51fd\u6570\uff0c\u672c\u8d28\u4e0a\u4e5f\u662f\u4e00\u4e2aReact\u7ec4\u4ef6\uff0c\u5982\u4e0b:',
+                '\u7136\u540e\u6211\u4eec\u8981\u521b\u5efa\u4e00\u4e2a Provider \u51fd\u6570\uff0c\u672c\u8d28\u4e0a\u4e5f\u662f\u4e00\u4e2a React \u7ec4\u4ef6\uff0c\u5982\u4e0b:',
               ),
               a.a.createElement(l['a'], {
-                code: 'const Provider = (props:ModelProviderProps<State>) => {\n    // \u8fd9\u91cc\u4f7f\u7528ModelProvider\u4e3b\u8981\u662f\u4e0d\u80fd\u548c\u5b9a\u4e49\u7684\u51fd\u6570\u540d\u8d77\u51b2\u7a81\n    const { Provider:ModelProvider } = context;\n    const { initialState,children } = props;\n    const value = useHook(initialState);\n    return (\n        <ModelProvider value={value}>{children}</ModelProvider>\n    )\n}',
+                code: 'const Provider = (props: ModelProviderProps<State>) => {\n  // \u8fd9\u91cc\u4f7f\u7528ModelProvider\u4e3b\u8981\u662f\u4e0d\u80fd\u548c\u5b9a\u4e49\u7684\u51fd\u6570\u540d\u8d77\u51b2\u7a81\n  const { Provider: ModelProvider } = context;\n  const { initialState, children } = props;\n  const value = useHook(initialState);\n  return <ModelProvider value={value}>{children}</ModelProvider>;\n};',
                 lang: 'tsx',
               }),
               a.a.createElement(
                 'p',
                 null,
-                '\u8fd9\u91cc\u4e5f\u5f88\u597d\u7406\u89e3\uff0c\u5b9e\u9645\u4e0a\u5c31\u662f\u901a\u8fc7\u7236\u7ec4\u4ef6\u62ff\u5230\u521d\u59cb\u72b6\u6001\u548c\u5b50\u8282\u70b9\uff0c\u4ececontext\u4e2d\u62ff\u5230Provider\u7ec4\u4ef6\uff0c\u7136\u540e\u8fd4\u56de\u5373\u53ef\uff0c\u6ce8\u610f\u6211\u4eec\u7684value\u662f\u901a\u8fc7\u4f20\u5165\u7684\u81ea\u5b9a\u4e49hook\u51fd\u6570\u5305\u88c5\u540e\u7684\u503c\u3002',
+                '\u8fd9\u91cc\u4e5f\u5f88\u597d\u7406\u89e3\uff0c\u5b9e\u9645\u4e0a\u5c31\u662f\u901a\u8fc7\u7236\u7ec4\u4ef6\u62ff\u5230\u521d\u59cb\u72b6\u6001\u548c\u5b50\u8282\u70b9\uff0c\u4ece context \u4e2d\u62ff\u5230 Provider \u7ec4\u4ef6\uff0c\u7136\u540e\u8fd4\u56de\u5373\u53ef\uff0c\u6ce8\u610f\u6211\u4eec\u7684 value \u662f\u901a\u8fc7\u4f20\u5165\u7684\u81ea\u5b9a\u4e49 hook \u51fd\u6570\u5305\u88c5\u540e\u7684\u503c\u3002',
               ),
               a.a.createElement(
                 'p',
                 null,
-                '\u7b2c\u4e09\u6b65\uff0c\u6211\u4eec\u5c31\u9700\u8981\u5b9a\u4e49\u4e00\u4e2ahook\u51fd\u6570\u62ff\u5230\u8fd9\u4e2a\u81ea\u5b9a\u4e49\u7684Context\uff0c\u5982\u4e0b:',
+                '\u7b2c\u4e09\u6b65\uff0c\u6211\u4eec\u5c31\u9700\u8981\u5b9a\u4e49\u4e00\u4e2a hook \u51fd\u6570\u62ff\u5230\u8fd9\u4e2a\u81ea\u5b9a\u4e49\u7684 Context\uff0c\u5982\u4e0b:',
               ),
               a.a.createElement(l['a'], {
-                code: "const useModel = ():Value => {\n    const value = useContext(context);\n    // \u8fd9\u91cc\u786e\u5b9a\u4e00\u4e0b\u7528\u6237\u662f\u5426\u6b63\u786e\u4f7f\u7528Provider\n    if(value === EMPTY){\n        //\u629b\u51fa\u5f02\u5e38\uff0c\u4f7f\u7528\u8005\u5e76\u6ca1\u6709\u7528Provider\u5305\u88f9\u7ec4\u4ef6\n        throw new Error('Component must be wrapped with <Container.Provider>');\n    }\n    // \u8fd4\u56decontext\n    return value;\n}",
+                code: "const useModel = (): Value => {\n  const value = useContext(context);\n  // \u8fd9\u91cc\u786e\u5b9a\u4e00\u4e0b\u7528\u6237\u662f\u5426\u6b63\u786e\u4f7f\u7528Provider\n  if (value === EMPTY) {\n    //\u629b\u51fa\u5f02\u5e38\uff0c\u4f7f\u7528\u8005\u5e76\u6ca1\u6709\u7528Provider\u5305\u88f9\u7ec4\u4ef6\n    throw new Error('Component must be wrapped with <Container.Provider>');\n  }\n  // \u8fd4\u56decontext\n  return value;\n};",
                 lang: 'tsx',
               }),
               a.a.createElement(
                 'p',
                 null,
-                '\u8fd9\u4e2a\u51fd\u6570\u7684\u5b9e\u73b0\u4e5f\u5f88\u597d\u7406\u89e3\uff0c\u5c31\u662f\u83b7\u53d6context\uff0c\u5224\u65adcontext\u662f\u5426\u6b63\u786e\u4f7f\u7528\uff0c\u7136\u540e\u8fd4\u56de\u3002',
+                '\u8fd9\u4e2a\u51fd\u6570\u7684\u5b9e\u73b0\u4e5f\u5f88\u597d\u7406\u89e3\uff0c\u5c31\u662f\u83b7\u53d6 context\uff0c\u5224\u65ad context \u662f\u5426\u6b63\u786e\u4f7f\u7528\uff0c\u7136\u540e\u8fd4\u56de\u3002',
               ),
               a.a.createElement(
                 'p',
                 null,
-                '\u6700\u540e\u6211\u4eec\u5728\u8fd9\u4e2a\u51fd\u6570\u5185\u90e8\u8fd4\u56de\u8fd92\u4e2a\u4e1c\u897f\uff0c\u5373\u8fd4\u56deProvider\u548cuseModel\u4e24\u4e2a\u51fd\u6570\u3002\u5982\u4e0b:',
+                '\u6700\u540e\u6211\u4eec\u5728\u8fd9\u4e2a\u51fd\u6570\u5185\u90e8\u8fd4\u56de\u8fd9 2 \u4e2a\u4e1c\u897f\uff0c\u5373\u8fd4\u56de Provider \u548c useModel \u4e24\u4e2a\u51fd\u6570\u3002\u5982\u4e0b:',
               ),
               a.a.createElement(l['a'], {
-                code: 'return { Provider,useModel }',
+                code: 'return { Provider, useModel };',
                 lang: 'tsx',
               }),
               a.a.createElement(
                 'p',
                 null,
-                '\u628a\u4ee5\u4e0a\u4ee3\u7801\u5168\u90e8\u5408\u5e76\u8d77\u6765\uff0ccreateModel\u51fd\u6570\u5c31\u5927\u529f\u544a\u6210\u5566\u3002',
+                '\u628a\u4ee5\u4e0a\u4ee3\u7801\u5168\u90e8\u5408\u5e76\u8d77\u6765\uff0ccreateModel \u51fd\u6570\u5c31\u5927\u529f\u544a\u6210\u5566\u3002',
               ),
               a.a.createElement(
                 'p',
@@ -33154,22 +33154,22 @@
                 '\u6700\u540e\uff0c\u6211\u4eec\u628a\u6240\u6709\u4ee3\u7801\u5408\u5e76\u8d77\u6765\uff0c\u8fd9\u4e2a\u72b6\u6001\u7ba1\u7406\u5de5\u5177\u4e5f\u5c31\u5b8c\u6210\u4e86\u3002',
               ),
               a.a.createElement(l['a'], {
-                code: "// \u5bfc\u5165\u7c7b\u578b\nimport type { ReactNode,ComponentType } from 'react';\nimport { createContext,useContext } from 'react';\nconst EMPTY:unique symbol = Symbol();\nexport interface ModelProviderProps<State = void> {\n    initialState?: State\n    children: ReactNode\n}\nexport interface Model<Value,State = void> {\n    Provider: ComponentType<ModelProviderProps<State>>\n    useModel: () => Value\n}\nexport const createModel = <Value,State = void>(useHook:(initialState?:State) => Value): Model<Value,State> => {\n    //\u521b\u5efa\u4e00\u4e2acontext\n    const context = createContext<Value | typeof EMPTY>(EMPTY);\n    // \u5b9a\u4e49Provider\u51fd\u6570\n    const Provider = (props:ModelProviderProps<State>) => {\n        const { Provider:ModelProvider } = context;\n        const { initialState,children } = props;\n        const value = useHook(initialState);\n        return (\n            <ModelProvider value={value}>{children}</ModelProvider>\n        )\n    }\n    // \u5b9a\u4e49useModel\u51fd\u6570\n    const useModel = ():Value => {\n        const value = useContext(context);\n        // \u8fd9\u91cc\u786e\u5b9a\u4e00\u4e0b\u7528\u6237\u662f\u5426\u6b63\u786e\u4f7f\u7528Provider\n        if(value === EMPTY){\n            //\u629b\u51fa\u5f02\u5e38\uff0c\u4f7f\u7528\u8005\u5e76\u6ca1\u6709\u7528Provider\u5305\u88f9\u7ec4\u4ef6\n            throw new Error('Component must be wrapped with <Container.Provider>');\n        }\n        // \u8fd4\u56decontext\n        return value;\n    }\n    return { Provider,useModel };\n}",
+                code: "// \u5bfc\u5165\u7c7b\u578b\nimport type { ReactNode, ComponentType } from 'react';\nimport { createContext, useContext } from 'react';\nconst EMPTY: unique symbol = Symbol();\nexport interface ModelProviderProps<State = void> {\n  initialState?: State;\n  children: ReactNode;\n}\nexport interface Model<Value, State = void> {\n  Provider: ComponentType<ModelProviderProps<State>>;\n  useModel: () => Value;\n}\nexport const createModel = <Value, State = void>(\n  useHook: (initialState?: State) => Value,\n): Model<Value, State> => {\n  //\u521b\u5efa\u4e00\u4e2acontext\n  const context = createContext<Value | typeof EMPTY>(EMPTY);\n  // \u5b9a\u4e49Provider\u51fd\u6570\n  const Provider = (props: ModelProviderProps<State>) => {\n    const { Provider: ModelProvider } = context;\n    const { initialState, children } = props;\n    const value = useHook(initialState);\n    return <ModelProvider value={value}>{children}</ModelProvider>;\n  };\n  // \u5b9a\u4e49useModel\u51fd\u6570\n  const useModel = (): Value => {\n    const value = useContext(context);\n    // \u8fd9\u91cc\u786e\u5b9a\u4e00\u4e0b\u7528\u6237\u662f\u5426\u6b63\u786e\u4f7f\u7528Provider\n    if (value === EMPTY) {\n      //\u629b\u51fa\u5f02\u5e38\uff0c\u4f7f\u7528\u8005\u5e76\u6ca1\u6709\u7528Provider\u5305\u88f9\u7ec4\u4ef6\n      throw new Error('Component must be wrapped with <Container.Provider>');\n    }\n    // \u8fd4\u56decontext\n    return value;\n  };\n  return { Provider, useModel };\n};",
                 lang: 'tsx',
               }),
               a.a.createElement(
                 'p',
                 null,
-                '\u66f4\u8fdb\u4e00\u6b65\uff0c\u6211\u4eec\u518d\u5bfc\u51fa\u4e00\u4e2auseModel\u51fd\u6570\uff0c\u5982\u4e0b:',
+                '\u66f4\u8fdb\u4e00\u6b65\uff0c\u6211\u4eec\u518d\u5bfc\u51fa\u4e00\u4e2a useModel \u51fd\u6570\uff0c\u5982\u4e0b:',
               ),
               a.a.createElement(l['a'], {
-                code: 'export const useModel = <Value,State = void>(model:Model<Value,State>):Value => {\n    return model.useModel();\n}',
+                code: 'export const useModel = <Value, State = void>(\n  model: Model<Value, State>,\n): Value => {\n  return model.useModel();\n};',
                 lang: 'tsx',
               }),
               a.a.createElement(
                 'p',
                 null,
-                '\u5230\u76ee\u524d\u4e3a\u6b62\uff0c\u6211\u4eec\u7684\u6574\u4e2a\u72b6\u6001\u7ba1\u7406\u5de5\u5177\u5c31\u5b8c\u6210\u5566\uff0c\u4f7f\u7528\u8d77\u6765\u4e5f\u5f88\u7b80\u5355\uff0c\u5f88\u591a\u8f7b\u91cf\u7684\u5171\u4eab\u72b6\u6001\u9879\u76ee\u5f53\u4e2d\u6211\u4eec\u4e5f\u5c31\u518d\u4e5f\u4e0d\u9700\u8981\u4f7f\u7528\u50cfRedux\u8fd9\u6837\u7684\u6bd4\u8f83\u590d\u6742\u7684\u72b6\u6001\u7ba1\u7406\u5de5\u5177\u4e86\u3002',
+                '\u5230\u76ee\u524d\u4e3a\u6b62\uff0c\u6211\u4eec\u7684\u6574\u4e2a\u72b6\u6001\u7ba1\u7406\u5de5\u5177\u5c31\u5b8c\u6210\u5566\uff0c\u4f7f\u7528\u8d77\u6765\u4e5f\u5f88\u7b80\u5355\uff0c\u5f88\u591a\u8f7b\u91cf\u7684\u5171\u4eab\u72b6\u6001\u9879\u76ee\u5f53\u4e2d\u6211\u4eec\u4e5f\u5c31\u518d\u4e5f\u4e0d\u9700\u8981\u4f7f\u7528\u50cf Redux \u8fd9\u6837\u7684\u6bd4\u8f83\u590d\u6742\u7684\u72b6\u6001\u7ba1\u7406\u5de5\u5177\u4e86\u3002',
               ),
               a.a.createElement('p', null, '\u5728\u7ebf\u793a\u4f8b:'),
             ),
@@ -33192,7 +33192,7 @@
                 a.a.createElement(
                   o['Link'],
                   {
-                    to: 'https://github.com/eveningwater/code-segment-react/docs/model/model.zh-CN.md',
+                    to: 'https://eveningwater.github.io/code-segment-react/zh-CN/model/model',
                   },
                   '\u6e90\u7801\u5730\u5740',
                 ),
@@ -36607,11 +36607,11 @@
       ur =
         "import React from 'react';\nimport { Button } from 'antd';\nimport useError from './useError';\nconst Demo = () => {\n  const dispatchError = useError('');\n  const clickHandler = () => {\n    dispatchError(new Error('\u9519\u8bef!'));\n  };\n  return <Button onClick={clickHandler}>\u629b\u51fa\u9519\u8bef</Button>;\n};\n\nexport default Demo;",
       dr =
-        'import React, { useState } from "react"\r\nimport { createModel } from "./createModel"\r\n\r\nfunction useCounter(initialState = 0) {\r\n\tlet [count, setCount] = useState(initialState)\r\n\tlet decrement = () => setCount(count - 1)\r\n\tlet increment = () => setCount(count + 1)\r\n\treturn { count, decrement, increment }\r\n}\r\n\r\nlet Counter = createModel(useCounter)\r\n\r\nfunction CounterDisplay() {\r\n\tlet counter = Counter.useModel()\r\n\treturn (\r\n\t\t<div>\r\n\t\t\t<button onClick={counter.decrement}>-</button>\r\n\t\t\t<span>{counter.count}</span>\r\n\t\t\t<button onClick={counter.increment}>+</button>\r\n\t\t</div>\r\n\t)\r\n}\r\n\r\nfunction Demo() {\r\n\treturn (\r\n\t\t<Counter.Provider>\r\n\t\t\t<CounterDisplay />\r\n\t\t\t<Counter.Provider initialState={2}>\r\n\t\t\t\t<div>\r\n\t\t\t\t\t<div>\r\n\t\t\t\t\t\t<CounterDisplay />\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</Counter.Provider>\r\n\t\t</Counter.Provider>\r\n\t)\r\n}\r\n\r\nexport default Demo;',
+        "import React, { useState } from 'react';\nimport { createModel } from './createModel';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <div>\n      <button onClick={counter.decrement}>-</button>\n      <span>{counter.count}</span>\n      <button onClick={counter.increment}>+</button>\n    </div>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
       pr =
-        "// \u5bfc\u5165\u7c7b\u578b\r\nimport type { ReactNode,ComponentType } from 'react';\r\nimport React from 'react';\r\nimport { createContext,useContext } from 'react';\r\nconst EMPTY:unique symbol = Symbol();\r\nexport interface ModelProviderProps<State = void> {\r\n    initialState?: State\r\n    children: ReactNode\r\n}\r\nexport interface Model<Value,State = void> {\r\n    Provider: ComponentType<ModelProviderProps<State>>\r\n    useModel: () => Value\r\n}\r\nexport const createModel = <Value,State = void>(useHook:(initialState?:State) => Value): Model<Value,State> => {\r\n    //\u521b\u5efa\u4e00\u4e2acontext\r\n    const context = createContext<Value | typeof EMPTY>(EMPTY);\r\n    // \u5b9a\u4e49Provider\u51fd\u6570\r\n    const Provider = (props:ModelProviderProps<State>) => {\r\n        const { Provider:ModelProvider } = context;\r\n        const { initialState,children } = props;\r\n        const value = useHook(initialState);\r\n        return (\r\n            <ModelProvider value={value}>{children}</ModelProvider>\r\n        )\r\n    }\r\n    // \u5b9a\u4e49useModel\u51fd\u6570\r\n    const useModel = ():Value => {\r\n        const value = useContext(context);\r\n        // \u8fd9\u91cc\u786e\u5b9a\u4e00\u4e0b\u7528\u6237\u662f\u5426\u6b63\u786e\u4f7f\u7528Provider\r\n        if(value === EMPTY){\r\n            //\u629b\u51fa\u5f02\u5e38\uff0c\u4f7f\u7528\u8005\u5e76\u6ca1\u6709\u7528Provider\u5305\u88f9\u7ec4\u4ef6\r\n            throw new Error('Component must be wrapped with <Container.Provider>');\r\n        }\r\n        // \u8fd4\u56decontext\r\n        return value;\r\n    }\r\n    return { Provider,useModel };\r\n}\r\nexport const useModel = <Value,State = void>(model:Model<Value,State>):Value => {\r\n    return model.useModel();\r\n}",
+        "// \u5bfc\u5165\u7c7b\u578b\nimport type { ReactNode, ComponentType } from 'react';\nimport React from 'react';\nimport { createContext, useContext } from 'react';\nconst EMPTY: unique symbol = Symbol();\nexport interface ModelProviderProps<State = void> {\n  initialState?: State;\n  children: ReactNode;\n}\nexport interface Model<Value, State = void> {\n  Provider: ComponentType<ModelProviderProps<State>>;\n  useModel: () => Value;\n}\nexport const createModel = <Value, State = void>(\n  useHook: (initialState?: State) => Value,\n): Model<Value, State> => {\n  //\u521b\u5efa\u4e00\u4e2acontext\n  const context = createContext<Value | typeof EMPTY>(EMPTY);\n  // \u5b9a\u4e49Provider\u51fd\u6570\n  const Provider = (props: ModelProviderProps<State>) => {\n    const { Provider: ModelProvider } = context;\n    const { initialState, children } = props;\n    const value = useHook(initialState);\n    return <ModelProvider value={value}>{children}</ModelProvider>;\n  };\n  // \u5b9a\u4e49useModel\u51fd\u6570\n  const useModel = (): Value => {\n    const value = useContext(context);\n    // \u8fd9\u91cc\u786e\u5b9a\u4e00\u4e0b\u7528\u6237\u662f\u5426\u6b63\u786e\u4f7f\u7528Provider\n    if (value === EMPTY) {\n      //\u629b\u51fa\u5f02\u5e38\uff0c\u4f7f\u7528\u8005\u5e76\u6ca1\u6709\u7528Provider\u5305\u88f9\u7ec4\u4ef6\n      throw new Error('Component must be wrapped with <Container.Provider>');\n    }\n    // \u8fd4\u56decontext\n    return value;\n  };\n  return { Provider, useModel };\n};\nexport const useModel = <Value, State = void>(\n  model: Model<Value, State>,\n): Value => {\n  return model.useModel();\n};",
       fr =
-        'import React, { useState } from "react"\r\nimport { createModel } from "./createModel"\r\n\r\nfunction useCounter(initialState = 0) {\r\n\tlet [count, setCount] = useState(initialState)\r\n\tlet decrement = () => setCount(count - 1)\r\n\tlet increment = () => setCount(count + 1)\r\n\treturn { count, decrement, increment }\r\n}\r\n\r\nlet Counter = createModel(useCounter)\r\n\r\nfunction CounterDisplay() {\r\n\tlet counter = Counter.useModel()\r\n\treturn (\r\n\t\t<div>\r\n\t\t\t<button onClick={counter.decrement}>-</button>\r\n\t\t\t<span>{counter.count}</span>\r\n\t\t\t<button onClick={counter.increment}>+</button>\r\n\t\t</div>\r\n\t)\r\n}\r\n\r\nfunction Demo() {\r\n\treturn (\r\n\t\t<Counter.Provider>\r\n\t\t\t<CounterDisplay />\r\n\t\t\t<Counter.Provider initialState={2}>\r\n\t\t\t\t<div>\r\n\t\t\t\t\t<div>\r\n\t\t\t\t\t\t<CounterDisplay />\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</Counter.Provider>\r\n\t\t</Counter.Provider>\r\n\t)\r\n}\r\n\r\nexport default Demo;',
+        "import React, { useState } from 'react';\nimport { createModel } from './createModel';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <div>\n      <button onClick={counter.decrement}>-</button>\n      <span>{counter.count}</span>\n      <button onClick={counter.increment}>+</button>\n    </div>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
       mr = {
         'loadingbutton-demo': {
           component: t('4ZnB').default,
