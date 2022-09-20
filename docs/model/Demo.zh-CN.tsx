@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { createModel } from './createModel';
+import { Space, Button } from 'antd';
 
 function useCounter(initialState = 0) {
   let [count, setCount] = useState(initialState);
@@ -13,11 +14,11 @@ let Counter = createModel(useCounter);
 function CounterDisplay() {
   let counter = Counter.useModel();
   return (
-    <div>
-      <button onClick={counter.decrement}>-</button>
+    <Space wrap>
+      <Button onClick={counter.decrement}>-</Button>
       <span>{counter.count}</span>
-      <button onClick={counter.increment}>+</button>
-    </div>
+      <Button onClick={counter.increment}>+</Button>
+    </Space>
   );
 }
 
