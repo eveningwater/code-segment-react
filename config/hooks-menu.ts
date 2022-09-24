@@ -51,4 +51,8 @@ export default [
     title: 'useError',
     path: '/hooks/use-error/use-error',
   },
+  {
+    title: 'useEventListener',
+    path: '/hooks/use-event-listener/use-event-listener',
+  },
 ];

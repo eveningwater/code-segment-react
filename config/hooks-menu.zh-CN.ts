@@ -51,4 +51,8 @@ export default [
     title: '错误钩子函数',
     path: '/zh-CN/hooks/use-error/use-error',
   },
+  {
+    title: '事件监听钩子函数',
+    path: '/zh-CN/hooks/use-event-listener/use-event-listener',
+  },
 ];
