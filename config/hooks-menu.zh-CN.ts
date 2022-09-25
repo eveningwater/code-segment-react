@@ -55,4 +55,8 @@ export default [
     title: '事件监听钩子函数',
     path: '/zh-CN/hooks/use-event-listener/use-event-listener',
   },
+  {
+    title: '请求钩子函数',
+    path: '/zh-CN/hooks/use-fetch/use-fetch',
+  },
 ];

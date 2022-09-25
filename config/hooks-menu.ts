@@ -55,4 +55,8 @@ export default [
     title: 'useEventListener',
     path: '/hooks/use-event-listener/use-event-listener',
   },
+  {
+    title: 'useFetch',
+    path: '/hooks/use-fetch/use-fetch',
+  },
 ];

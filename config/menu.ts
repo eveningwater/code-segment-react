@@ -20,7 +20,7 @@ export default {
   '/zh-CN/model': [
     {
       title: 'react状态管理工具',
-      path: '/model/model',
+      path: '/zh-CN/model/model',
     },
   ],
 };
