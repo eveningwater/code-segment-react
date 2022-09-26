@@ -59,4 +59,8 @@ export default [
     title: 'useFetch',
     path: '/hooks/use-fetch/use-fetch',
   },
+  {
+    title: 'useForm',
+    path: '/hooks/use-form/use-form',
+  },
 ];

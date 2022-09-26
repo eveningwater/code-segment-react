@@ -59,4 +59,8 @@ export default [
     title: '请求钩子函数',
     path: '/zh-CN/hooks/use-fetch/use-fetch',
   },
+  {
+    title: '表单钩子函数',
+    path: '/zh-CN/hooks/use-form/use-form',
+  },
 ];

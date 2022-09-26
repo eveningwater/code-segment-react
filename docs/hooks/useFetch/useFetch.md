@@ -130,7 +130,7 @@ export default Demo;
 
 Demo:
 
-<!-- <code src="./Demo.tsx"></code> -->
+<code src="./Demo.tsx"></code>
 
 js Demo:
 
