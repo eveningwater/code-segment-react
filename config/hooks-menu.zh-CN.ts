@@ -63,4 +63,8 @@ export default [
     title: '表单钩子函数',
     path: '/zh-CN/hooks/use-form/use-form',
   },
+  {
+    title: '状态设置钩子函数',
+    path: '/zh-CN/hooks/use-get-set/use-get-set',
+  },
 ];

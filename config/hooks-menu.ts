@@ -63,4 +63,8 @@ export default [
     title: 'useForm',
     path: '/hooks/use-form/use-form',
   },
+  {
+    title: 'useGetSet',
+    path: '/hooks/use-get-set/use-get-set',
+  },
 ];
