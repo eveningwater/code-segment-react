@@ -67,4 +67,8 @@ export default [
     title: '状态设置钩子函数',
     path: '/zh-CN/hooks/use-get-set/use-get-set',
   },
+  {
+    title: '修改hash值的钩子函数',
+    path: '/zh-CN/hooks/use-hash/use-hash',
+  },
 ];

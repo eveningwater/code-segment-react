@@ -67,4 +67,8 @@ export default [
     title: 'useGetSet',
     path: '/hooks/use-get-set/use-get-set',
   },
+  {
+    title: 'useHash',
+    path: '/hooks/use-hash/use-hash',
+  },
 ];
