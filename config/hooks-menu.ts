@@ -71,4 +71,8 @@ export default [
     title: 'useHash',
     path: '/hooks/use-hash/use-hash',
   },
+  {
+    title: 'useHover',
+    path: '/hooks/use-hover/use-hover',
+  },
 ];

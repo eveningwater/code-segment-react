@@ -71,4 +71,8 @@ export default [
     title: '修改hash值的钩子函数',
     path: '/zh-CN/hooks/use-hash/use-hash',
   },
+  {
+    title: '悬浮钩子函数',
+    path: '/zh-CN/hooks/use-hover/use-hover',
+  },
 ];
