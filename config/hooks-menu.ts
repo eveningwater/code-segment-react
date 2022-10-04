@@ -75,4 +75,8 @@ export default [
     title: 'useHover',
     path: '/hooks/use-hover/use-hover',
   },
+  {
+    title: 'useIntersectionObserver',
+    path: '/hooks/use-intersection-observer/use-intersection-observer',
+  },
 ];

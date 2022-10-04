@@ -75,4 +75,8 @@ export default [
     title: '悬浮钩子函数',
     path: '/zh-CN/hooks/use-hover/use-hover',
   },
+  {
+    title: '监听元素是否进入可视区域的钩子函数',
+    path: '/zh-CN/hooks/use-intersection-observer/use-intersection-observer',
+  },
 ];
