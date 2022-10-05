@@ -79,4 +79,8 @@ export default [
     title: 'useIntersectionObserver',
     path: '/hooks/use-intersection-observer/use-intersection-observer',
   },
+  {
+    title: 'useInterval',
+    path: '/hooks/use-interval/use-interval',
+  },
 ];
