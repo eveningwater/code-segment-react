@@ -83,4 +83,8 @@ export default [
     title: '定时器钩子函数',
     path: '/zh-CN/hooks/use-interval/use-interval',
   },
+  {
+    title: '副作用钩子函数',
+    path: '/zh-CN/hooks/use-isomorphic-effect/use-isomorphic-effect',
+  },
 ];

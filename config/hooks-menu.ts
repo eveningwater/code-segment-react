@@ -83,4 +83,8 @@ export default [
     title: 'useInterval',
     path: '/hooks/use-interval/use-interval',
   },
+  {
+    title: 'useIsomorphicEffect',
+    path: '/hooks/use-isomorphic-effect/use-isomorphic-effect',
+  },
 ];
