@@ -87,4 +87,8 @@ export default [
     title: '副作用钩子函数',
     path: '/zh-CN/hooks/use-isomorphic-effect/use-isomorphic-effect',
   },
+  {
+    title: '按键钩子函数',
+    path: '/zh-CN/hooks/use-key-press/use-key-press',
+  },
 ];

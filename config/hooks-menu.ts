@@ -87,4 +87,8 @@ export default [
     title: 'useIsomorphicEffect',
     path: '/hooks/use-isomorphic-effect/use-isomorphic-effect',
   },
+  {
+    title: 'useKeyPress',
+    path: '/hooks/use-key-press/use-key-press',
+  },
 ];
