@@ -91,4 +91,8 @@ export default [
     title: '按键钩子函数',
     path: '/zh-CN/hooks/use-key-press/use-key-press',
   },
+  {
+    title: '存储状态钩子函数',
+    path: '/zh-CN/hooks/use-local-storage/use-local-storage',
+  },
 ];

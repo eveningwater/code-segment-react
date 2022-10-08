@@ -91,4 +91,8 @@ export default [
     title: 'useKeyPress',
     path: '/hooks/use-key-press/use-key-press',
   },
+  {
+    title: 'useLocalStorage',
+    path: '/hooks/use-local-storage/use-local-storage',
+  },
 ];
