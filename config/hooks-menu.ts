@@ -95,4 +95,8 @@ export default [
     title: 'useLocalStorage',
     path: '/hooks/use-local-storage/use-local-storage',
   },
+  {
+    title: 'useMap',
+    path: '/hooks/use-map/use-map',
+  },
 ];

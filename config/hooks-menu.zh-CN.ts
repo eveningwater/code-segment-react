@@ -95,4 +95,8 @@ export default [
     title: '存储状态钩子函数',
     path: '/zh-CN/hooks/use-local-storage/use-local-storage',
   },
+  {
+    title: '映射钩子函数',
+    path: '/hooks/use-map/use-map',
+  },
 ];
