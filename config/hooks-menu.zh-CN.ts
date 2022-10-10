@@ -97,6 +97,10 @@ export default [
   },
   {
     title: '映射钩子函数',
-    path: '/hooks/use-map/use-map',
+    path: '/zh-CN/hooks/use-map/use-map',
+  },
+  {
+    title: '检查媒体查询环境钩子函数',
+    path: '/zh-CN/hooks/use-media-query/use-media-query',
   },
 ];

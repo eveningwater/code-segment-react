@@ -99,4 +99,8 @@ export default [
     title: 'useMap',
     path: '/hooks/use-map/use-map',
   },
+  {
+    title: 'useMediaQuery',
+    path: '/hooks/use-media-query/use-media-query',
+  },
 ];
