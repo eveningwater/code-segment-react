@@ -103,4 +103,8 @@ export default [
     title: '检查媒体查询环境钩子函数',
     path: '/zh-CN/hooks/use-media-query/use-media-query',
   },
+  {
+    title: '合并状态的钩子函数',
+    path: '/zh-CN/hooks/use-merge-state/use-merge-state',
+  },
 ];

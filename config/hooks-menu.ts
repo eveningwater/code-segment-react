@@ -103,4 +103,8 @@ export default [
     title: 'useMediaQuery',
     path: '/hooks/use-media-query/use-media-query',
   },
+  {
+    title: 'useMergeState',
+    path: '/hooks/use-merge-state/use-merge-state',
+  },
 ];
