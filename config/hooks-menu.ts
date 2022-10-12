@@ -107,4 +107,8 @@ export default [
     title: 'useMergeState',
     path: '/hooks/use-merge-state/use-merge-state',
   },
+  {
+    title: 'useMutationObserver',
+    path: '/hooks/use-mutation-observer/use-mutation-observer',
+  },
 ];

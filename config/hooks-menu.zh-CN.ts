@@ -107,4 +107,8 @@ export default [
     title: '合并状态的钩子函数',
     path: '/zh-CN/hooks/use-merge-state/use-merge-state',
   },
+  {
+    title: '监听元素的钩子函数',
+    path: '/zh-CN/hooks/use-mutation-observer/use-mutation-observer',
+  },
 ];
