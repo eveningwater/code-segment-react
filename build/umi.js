@@ -8887,7 +8887,7 @@
               meta: {
                 filePath:
                   'docs/hooks/useMutationObserver/useMutationObserver.md',
-                updatedTime: 1665578275121,
+                updatedTime: 1665578698291,
                 slugs: [
                   {
                     depth: 4,
@@ -8919,7 +8919,7 @@
               meta: {
                 filePath:
                   'docs/hooks/useMutationObserver/useMutationObserver.zh-CN.md',
-                updatedTime: 1665578281711,
+                updatedTime: 1665578698356,
                 slugs: [
                   {
                     depth: 4,
@@ -8948,6 +8948,74 @@
                 },
               },
               title: 'useMutationObserver.ts - react-code-segment',
+            },
+            {
+              path: '/hooks/use-navigator-on-line/use-navigator-on-line',
+              component: n('BWkn').default,
+              exact: !0,
+              meta: {
+                filePath: 'docs/hooks/useNavigatorOnLine/useNavigatorOnLine.md',
+                updatedTime: 1665666224946,
+                slugs: [
+                  {
+                    depth: 4,
+                    value: 'useNavigatorOnLine.ts',
+                    heading: 'usenavigatoronlinets',
+                  },
+                  { depth: 4, value: 'Demo', heading: 'demo' },
+                  {
+                    depth: 4,
+                    value: 'useNavigatorOnLine.js',
+                    heading: 'usenavigatoronlinejs',
+                  },
+                  { depth: 4, value: 'js Demo', heading: 'js-demo' },
+                ],
+                title: 'useNavigatorOnLine.ts',
+                hasPreviewer: !0,
+                nav: { path: '/hooks', title: 'Hooks' },
+                group: {
+                  path: '/hooks/use-navigator-on-line',
+                  title: 'UseNavigatorOnLine',
+                },
+              },
+              title: 'useNavigatorOnLine.ts - react-code-segment',
+            },
+            {
+              path: '/zh-CN/hooks/use-navigator-on-line/use-navigator-on-line',
+              component: n('ozWO').default,
+              exact: !0,
+              meta: {
+                filePath:
+                  'docs/hooks/useNavigatorOnLine/useNavigatorOnLine.zh-CN.md',
+                updatedTime: 1665666245692,
+                slugs: [
+                  {
+                    depth: 4,
+                    value: 'useNavigatorOnLine.ts',
+                    heading: 'usenavigatoronlinets',
+                  },
+                  { depth: 4, value: '\u793a\u4f8b', heading: '\u793a\u4f8b' },
+                  {
+                    depth: 4,
+                    value: 'useNavigatorOnLine.js',
+                    heading: 'usenavigatoronlinejs',
+                  },
+                  {
+                    depth: 4,
+                    value: 'js \u793a\u4f8b',
+                    heading: 'js-\u793a\u4f8b',
+                  },
+                ],
+                title: 'useNavigatorOnLine.ts',
+                hasPreviewer: !0,
+                locale: 'zh-CN',
+                nav: { path: '/zh-CN/hooks', title: 'Hooks' },
+                group: {
+                  path: '/zh-CN/hooks/use-navigator-on-line',
+                  title: 'UseNavigatorOnLine',
+                },
+              },
+              title: 'useNavigatorOnLine.ts - react-code-segment',
             },
             {
               path: '/model/model',
@@ -9660,6 +9728,19 @@
               exact: !0,
               redirect:
                 '/zh-CN/hooks/use-mutation-observer/use-mutation-observer',
+            },
+            {
+              path: '/hooks/use-navigator-on-line',
+              meta: {},
+              exact: !0,
+              redirect: '/hooks/use-navigator-on-line/use-navigator-on-line',
+            },
+            {
+              path: '/zh-CN/hooks/use-navigator-on-line',
+              meta: {},
+              exact: !0,
+              redirect:
+                '/zh-CN/hooks/use-navigator-on-line/use-navigator-on-line',
             },
             { path: '/model', meta: {}, exact: !0, redirect: '/model/model' },
             {
@@ -18615,6 +18696,38 @@
       );
     };
   },
+  '4+ke': function (e, t, n) {
+    'use strict';
+    var a = n('tJVT'),
+      r = n('q1tI'),
+      o = () =>
+        'undefined' === typeof navigator ||
+        'boolean' !== typeof navigator.onLine ||
+        navigator.onLine,
+      l = () => {
+        var e = Object(r['useState'])(o()),
+          t = Object(a['a'])(e, 2),
+          n = t[0],
+          l = t[1],
+          i = () => l(!0),
+          s = () => l(!1);
+        return (
+          Object(r['useEffect'])(
+            () => (
+              window.addEventListener('online', i),
+              window.addEventListener('offline', s),
+              () => {
+                window.removeEventListener('online', i),
+                  window.removeEventListener('offline', s);
+              }
+            ),
+            [],
+          ),
+          n
+        );
+      };
+    t['a'] = l;
+  },
   '42cH': function (e, t, n) {
     'use strict';
     n.r(t);
@@ -25381,6 +25494,192 @@
       };
   },
   BVaq: function (e, t, n) {},
+  BWkn: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('cGfz'),
+      l = n('GKDz'),
+      i = n('1i5+'),
+      s = n('SQsl'),
+      c = r.a.memo((e) => {
+        var t = e.demos,
+          n = t['usenavigatoronline-demo'].component,
+          a = t['js-demo-22'].component;
+        return r.a.createElement(
+          r.a.Fragment,
+          null,
+          r.a.createElement(
+            r.a.Fragment,
+            null,
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement(
+                s['a'],
+                null,
+                r.a.createElement(
+                  'thead',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement('th', null, 'title'),
+                    r.a.createElement('th', null, 'tags'),
+                    r.a.createElement('th', null, 'firstSeen'),
+                    r.a.createElement('th', null, 'lastUpdated'),
+                  ),
+                ),
+                r.a.createElement(
+                  'tbody',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement(
+                      'td',
+                      null,
+                      'React useNavigatorOnLine hook',
+                    ),
+                    r.a.createElement('td', null, 'hooks,state,effect'),
+                    r.a.createElement('td', null, '2022/10/13'),
+                    r.a.createElement('td', null, '2022/10/13'),
+                  ),
+                ),
+              ),
+              r.a.createElement(
+                'p',
+                null,
+                'Checks if the client is online or offline.',
+              ),
+              r.a.createElement(
+                'ul',
+                null,
+                r.a.createElement(
+                  'li',
+                  null,
+                  'Create a function, getOnLineStatus, that uses the Navigator.onLine web API to get the online status of the client.',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  'Use the useState() hook to create an appropriate state variable, status, and setter.',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  'Use the useEffect() hook to add listeners for appropriate events, updating state, and cleanup those listeners when unmounting.',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  'Finally return the status state variable.',
+                ),
+              ),
+              r.a.createElement(
+                'h4',
+                { id: 'usenavigatoronlinets' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#usenavigatoronlinets',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useNavigatorOnLine.ts',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import { useEffect,useState } from 'react';\nconst getOnLineStatus = ():boolean => typeof navigator !== 'undefined' && typeof navigator.onLine === 'boolean' ? navigator.onLine : true;\nconst useNavigatorOnLine = ():boolean => {\n    const [status,setStatus] = useState(getOnLineStatus());\n\n    const setOnline = () => setStatus(true);\n    const setOffline = () => setStatus(false);\n\n    useEffect(() => {\n        window.addEventListener('online',setOnline);\n        window.addEventListener('offline',setOffline);\n\n        return () => {\n            window.removeEventListener('online',setOnline);\n            window.removeEventListener('offline',setOffline);\n        }\n    },[])\n\n    return status;\n}\n\nexport default useNavigatorOnLine;",
+                lang: 'ts',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'demo' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#demo', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'Demo',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport useNavigatorOnLine from './useNavigatorOnLine';\n\nconst Demo = () => {\n    const isOnline = useNavigatorOnLine()\n    return (\n        <span>You are { isOnline ? 'online' : 'offline'}</span>\n    )\n}\n\nexport default Demo;",
+                lang: 'tsx',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'usenavigatoronlinejs' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#usenavigatoronlinejs',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useNavigatorOnLine.js',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import { useEffect,useState } from 'react';\nconst getOnLineStatus = () => typeof navigator !== 'undefined' && typeof navigator.onLine === 'boolean' ? navigator.onLine : true;\nconst useNavigatorOnLine = () => {\n    const [status,setStatus] = useState(getOnLineStatus());\n\n    const setOnline = () => setStatus(true);\n    const setOffline = () => setStatus(false);\n\n    useEffect(() => {\n        window.addEventListener('online',setOnline);\n        window.addEventListener('offline',setOffline);\n\n        return () => {\n            window.removeEventListener('online',setOnline);\n            window.removeEventListener('offline',setOffline);\n        }\n    },[])\n\n    return status;\n}\n\nexport default useNavigatorOnLine;",
+                lang: 'js',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'js-demo' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#js-demo', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'js Demo',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport useNavigatorOnLine from './useNavigatorOnLine';\n\nconst Demo = () => {\n    const isOnline = useNavigatorOnLine()\n    return (\n        <span>You are { isOnline ? 'online' : 'offline'}</span>\n    )\n}\n\nexport default Demo;",
+                lang: 'jsx',
+              }),
+              r.a.createElement('p', null, 'Demo:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              t['usenavigatoronline-demo'].previewerProps,
+              r.a.createElement(n, null),
+            ),
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement('p', null, 'js Demo:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              t['js-demo-22'].previewerProps,
+              r.a.createElement(a, null),
+            ),
+          ),
+        );
+      });
+    t['default'] = (e) => {
+      var t = r.a.useContext(o['context']),
+        n = t.demos;
+      return (
+        r.a.useEffect(() => {
+          var t;
+          null !== e &&
+            void 0 !== e &&
+            null !== (t = e.location) &&
+            void 0 !== t &&
+            t.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        r.a.createElement(c, { demos: n })
+      );
+    };
+  },
   'BX/b': function (e, t, n) {
     var a = n('/GqU'),
       r = n('JBy8').f,
@@ -42610,24 +42909,36 @@
       _r =
         "import React from 'react';\nimport { Button, Input, Space } from 'antd';\nimport useMergeState from './useMergeState';\n\nconst Demo = () => {\n  const [data, setData] = useMergeState({ name: 'eveningwater', age: 26 });\n  return (\n    <Space wrap>\n      {data.name}\n      <Input\n        value={data.name}\n        onChange={(e) => setData({ name: e.target.value })}\n      />\n      <Button onClick={() => setData(({ age }) => ({ age: age - 1 }))}>\n        -\n      </Button>\n      {data.age}\n      <Button onClick={() => setData(({ age }) => ({ age: age + 1 }))}>\n        +\n      </Button>\n    </Space>\n  );\n};\n\nexport default Demo;",
       Hr =
-        "import React,{ useRef,useState } from 'react';\r\nimport type { RefObject } from 'react';\r\nimport { Input } from 'antd';\r\nimport useMutationObserver from './useMutationObserver';\r\n\r\nconst { TextArea } = Input;\r\n\r\nconst Demo = () => {\r\n    const mutationRef = useRef<HTMLDivElement>(null);\r\n    const [mutationCount,setMutationCount] = useState(0);\r\n    const incrementCount = () => setMutationCount(mutationCount + 1);\r\n    useMutationObserver(mutationRef as RefObject<HTMLElement>,incrementCount);\r\n    const [content,setContent] = useState('hello,world!');\r\n\r\n    return (\r\n        <>\r\n            <label htmlFor=\"content-input\">Edit this to update the text:</label>\r\n            <TextArea id='content-input' style={{ width:'100%' }} value={content} onChange={e => setContent(e.target.value)}></TextArea>\r\n            <div style={{ width:'100%' }} ref={mutationRef}>\r\n                <div style={{ resize:'both',overflow:'auto',maxWidth:'100%',border:'1px solid black' }}>\r\n                    <h2>Resize or change the content:</h2>\r\n                    <p>{ content }</p>\r\n                </div>\r\n                <div>\r\n                    <h3>Mutation count { mutationCount }</h3>\r\n                </div>\r\n            </div>\r\n        </>\r\n    )\r\n}\r\n\r\nexport default Demo;",
+        "import React, { useRef, useState } from 'react';\nimport type { RefObject } from 'react';\nimport { Input } from 'antd';\nimport useMutationObserver from './useMutationObserver';\n\nconst { TextArea } = Input;\n\nconst Demo = () => {\n  const mutationRef = useRef<HTMLDivElement>(null);\n  const [mutationCount, setMutationCount] = useState(0);\n  const incrementCount = () => setMutationCount(mutationCount + 1);\n  useMutationObserver(mutationRef as RefObject<HTMLElement>, incrementCount);\n  const [content, setContent] = useState('hello,world!');\n\n  return (\n    <>\n      <label htmlFor=\"content-input\">Edit this to update the text:</label>\n      <TextArea\n        id=\"content-input\"\n        style={{ width: '100%' }}\n        value={content}\n        onChange={(e) => setContent(e.target.value)}\n      ></TextArea>\n      <div style={{ width: '100%' }} ref={mutationRef}>\n        <div\n          style={{\n            resize: 'both',\n            overflow: 'auto',\n            maxWidth: '100%',\n            border: '1px solid black',\n          }}\n        >\n          <h2>Resize or change the content:</h2>\n          <p>{content}</p>\n        </div>\n        <div>\n          <h3>Mutation count {mutationCount}</h3>\n        </div>\n      </div>\n    </>\n  );\n};\n\nexport default Demo;",
       Vr =
-        "\r\nimport { useEffect } from 'react';\r\nimport type { RefObject } from 'react';\r\n\r\nconst useMutationObserver = <T extends HTMLElement>(ref:RefObject<T>,callback: MutationCallback,options:MutationObserverInit = {\r\n    attributes: true,\r\n    characterData: true,\r\n    childList: true,\r\n    subtree: true,\r\n}) => {\r\n     useEffect(() => {\r\n        if(ref.current){\r\n            const observer = new MutationObserver(callback);            \r\n            observer.observe(ref.current,options);\r\n            return () => {\r\n                observer.disconnect();\r\n            }\r\n        }\r\n     },[callback,options])\r\n}\r\n\r\nexport default useMutationObserver;",
+        "import { useEffect } from 'react';\nimport type { RefObject } from 'react';\n\nconst useMutationObserver = <T extends HTMLElement>(\n  ref: RefObject<T>,\n  callback: MutationCallback,\n  options: MutationObserverInit = {\n    attributes: true,\n    characterData: true,\n    childList: true,\n    subtree: true,\n  },\n) => {\n  useEffect(() => {\n    if (ref.current) {\n      const observer = new MutationObserver(callback);\n      observer.observe(ref.current, options);\n      return () => {\n        observer.disconnect();\n      };\n    }\n  }, [callback, options]);\n};\n\nexport default useMutationObserver;",
       Ur =
-        "import React,{ useRef,useState } from 'react';\r\nimport { Input } from 'antd';\r\nimport useMutationObserver from './useMutationObserver';\r\n\r\nconst { TextArea } = Input;\r\n\r\nconst Demo = () => {\r\n    const mutationRef = useRef();\r\n    const [mutationCount,setMutationCount] = useState(0);\r\n    const incrementCount = () => setMutationCount(mutationCount + 1);\r\n    useMutationObserver(mutationRef,incrementCount);\r\n    const [content,setContent] = useState('hello,world!');\r\n\r\n    return (\r\n        <>\r\n            <label htmlFor=\"content-input\">Edit this to update the text:</label>\r\n            <TextArea id='content-input' style={{ width:'100%' }} value={content} onChange={e => setContent(e.target.value)}></TextArea>\r\n            <div style={{ width:'100%' }} ref={mutationRef}>\r\n                <div style={{ resize:'both',overflow:'auto',maxWidth:'100%',border:'1px solid black' }}>\r\n                    <h2>Resize or change the content:</h2>\r\n                    <p>{ content }</p>\r\n                </div>\r\n                <div>\r\n                    <h3>Mutation count { mutationCount }</h3>\r\n                </div>\r\n            </div>\r\n        </>\r\n    )\r\n}\r\n\r\nexport default Demo;",
+        "import React, { useRef, useState } from 'react';\nimport { Input } from 'antd';\nimport useMutationObserver from './useMutationObserver';\n\nconst { TextArea } = Input;\n\nconst Demo = () => {\n  const mutationRef = useRef();\n  const [mutationCount, setMutationCount] = useState(0);\n  const incrementCount = () => setMutationCount(mutationCount + 1);\n  useMutationObserver(mutationRef, incrementCount);\n  const [content, setContent] = useState('hello,world!');\n\n  return (\n    <>\n      <label htmlFor=\"content-input\">Edit this to update the text:</label>\n      <TextArea\n        id=\"content-input\"\n        style={{ width: '100%' }}\n        value={content}\n        onChange={(e) => setContent(e.target.value)}\n      ></TextArea>\n      <div style={{ width: '100%' }} ref={mutationRef}>\n        <div\n          style={{\n            resize: 'both',\n            overflow: 'auto',\n            maxWidth: '100%',\n            border: '1px solid black',\n          }}\n        >\n          <h2>Resize or change the content:</h2>\n          <p>{content}</p>\n        </div>\n        <div>\n          <h3>Mutation count {mutationCount}</h3>\n        </div>\n      </div>\n    </>\n  );\n};\n\nexport default Demo;",
       qr =
-        "\r\nimport { useEffect } from 'react';\r\n\r\nconst useMutationObserver = (ref,callback,options = {\r\n    attributes: true,\r\n    characterData: true,\r\n    childList: true,\r\n    subtree: true,\r\n}) => {\r\n     useEffect(() => {\r\n        if(ref.current){\r\n            const observer = new MutationObserver(callback);\r\n            observer.observe(ref.current,options);\r\n            return () => {\r\n                observer.disconnect();\r\n            }\r\n        }\r\n     },[callback,options])\r\n}\r\n\r\nexport default useMutationObserver;",
+        "import { useEffect } from 'react';\n\nconst useMutationObserver = (\n  ref,\n  callback,\n  options = {\n    attributes: true,\n    characterData: true,\n    childList: true,\n    subtree: true,\n  },\n) => {\n  useEffect(() => {\n    if (ref.current) {\n      const observer = new MutationObserver(callback);\n      observer.observe(ref.current, options);\n      return () => {\n        observer.disconnect();\n      };\n    }\n  }, [callback, options]);\n};\n\nexport default useMutationObserver;",
       Gr =
-        "import React,{ useRef,useState } from 'react';\r\nimport type { RefObject } from 'react';\r\nimport { Input } from 'antd';\r\nimport useMutationObserver from './useMutationObserver';\r\n\r\nconst { TextArea } = Input;\r\n\r\nconst Demo = () => {\r\n    const mutationRef = useRef<HTMLDivElement>(null);\r\n    const [mutationCount,setMutationCount] = useState(0);\r\n    const incrementCount = () => setMutationCount(mutationCount + 1);\r\n    useMutationObserver(mutationRef as RefObject<HTMLElement>,incrementCount);\r\n    const [content,setContent] = useState('\u4f60\u597d\uff0c\u4e16\u754c\uff01');\r\n\r\n    return (\r\n        <>\r\n            <label htmlFor=\"content-input\">\u7f16\u8f91\u8fd9\u4e2a\u66f4\u6539\u6587\u672c:</label>\r\n            <TextArea id='content-input' style={{ width:'100%' }} value={content} onChange={e => setContent(e.target.value)}></TextArea>\r\n            <div style={{ width:'100%' }} ref={mutationRef}>\r\n                <div style={{ resize:'both',overflow:'auto',maxWidth:'100%',border:'1px solid black' }}>\r\n                    <h2>\u8c03\u6574\u5927\u5c0f\u6216\u66f4\u6539\u5185\u5bb9\uff1a</h2>\r\n                    <p>{ content }</p>\r\n                </div>\r\n                <div>\r\n                    <h3>\u53d8\u52a8\u7684\u8ba1\u6570 { mutationCount }</h3>\r\n                </div>\r\n            </div>\r\n        </>\r\n    )\r\n}\r\n\r\nexport default Demo;",
+        "import React, { useRef, useState } from 'react';\nimport type { RefObject } from 'react';\nimport { Input } from 'antd';\nimport useMutationObserver from './useMutationObserver';\n\nconst { TextArea } = Input;\n\nconst Demo = () => {\n  const mutationRef = useRef<HTMLDivElement>(null);\n  const [mutationCount, setMutationCount] = useState(0);\n  const incrementCount = () => setMutationCount(mutationCount + 1);\n  useMutationObserver(mutationRef as RefObject<HTMLElement>, incrementCount);\n  const [content, setContent] = useState('\u4f60\u597d\uff0c\u4e16\u754c\uff01');\n\n  return (\n    <>\n      <label htmlFor=\"content-input\">\u7f16\u8f91\u8fd9\u4e2a\u66f4\u6539\u6587\u672c:</label>\n      <TextArea\n        id=\"content-input\"\n        style={{ width: '100%' }}\n        value={content}\n        onChange={(e) => setContent(e.target.value)}\n      ></TextArea>\n      <div style={{ width: '100%' }} ref={mutationRef}>\n        <div\n          style={{\n            resize: 'both',\n            overflow: 'auto',\n            maxWidth: '100%',\n            border: '1px solid black',\n          }}\n        >\n          <h2>\u8c03\u6574\u5927\u5c0f\u6216\u66f4\u6539\u5185\u5bb9\uff1a</h2>\n          <p>{content}</p>\n        </div>\n        <div>\n          <h3>\u53d8\u52a8\u7684\u8ba1\u6570 {mutationCount}</h3>\n        </div>\n      </div>\n    </>\n  );\n};\n\nexport default Demo;",
       Wr =
-        "import React,{ useRef,useState } from 'react';\r\nimport { Input } from 'antd';\r\nimport useMutationObserver from './useMutationObserver';\r\n\r\nconst { TextArea } = Input;\r\n\r\nconst Demo = () => {\r\n    const mutationRef = useRef();\r\n    const [mutationCount,setMutationCount] = useState(0);\r\n    const incrementCount = () => setMutationCount(mutationCount + 1);\r\n    useMutationObserver(mutationRef,incrementCount);\r\n    const [content,setContent] = useState('\u4f60\u597d\uff0c\u4e16\u754c\uff01');\r\n\r\n    return (\r\n        <>\r\n            <label htmlFor=\"content-input\">\u7f16\u8f91\u8fd9\u4e2a\u66f4\u6539\u6587\u672c:</label>\r\n            <TextArea id='content-input' style={{ width:'100%' }} value={content} onChange={e => setContent(e.target.value)}></TextArea>\r\n            <div style={{ width:'100%' }} ref={mutationRef}>\r\n                <div style={{ resize:'both',overflow:'auto',maxWidth:'100%',border:'1px solid black' }}>\r\n                    <h2>\u8c03\u6574\u5927\u5c0f\u6216\u66f4\u6539\u5185\u5bb9\uff1a</h2>\r\n                    <p>{ content }</p>\r\n                </div>\r\n                <div>\r\n                    <h3>\u53d8\u52a8\u7684\u8ba1\u6570 { mutationCount }</h3>\r\n                </div>\r\n            </div>\r\n        </>\r\n    )\r\n}\r\n\r\nexport default Demo;",
+        "import React, { useRef, useState } from 'react';\nimport { Input } from 'antd';\nimport useMutationObserver from './useMutationObserver';\n\nconst { TextArea } = Input;\n\nconst Demo = () => {\n  const mutationRef = useRef();\n  const [mutationCount, setMutationCount] = useState(0);\n  const incrementCount = () => setMutationCount(mutationCount + 1);\n  useMutationObserver(mutationRef, incrementCount);\n  const [content, setContent] = useState('\u4f60\u597d\uff0c\u4e16\u754c\uff01');\n\n  return (\n    <>\n      <label htmlFor=\"content-input\">\u7f16\u8f91\u8fd9\u4e2a\u66f4\u6539\u6587\u672c:</label>\n      <TextArea\n        id=\"content-input\"\n        style={{ width: '100%' }}\n        value={content}\n        onChange={(e) => setContent(e.target.value)}\n      ></TextArea>\n      <div style={{ width: '100%' }} ref={mutationRef}>\n        <div\n          style={{\n            resize: 'both',\n            overflow: 'auto',\n            maxWidth: '100%',\n            border: '1px solid black',\n          }}\n        >\n          <h2>\u8c03\u6574\u5927\u5c0f\u6216\u66f4\u6539\u5185\u5bb9\uff1a</h2>\n          <p>{content}</p>\n        </div>\n        <div>\n          <h3>\u53d8\u52a8\u7684\u8ba1\u6570 {mutationCount}</h3>\n        </div>\n      </div>\n    </>\n  );\n};\n\nexport default Demo;",
       $r =
-        "import React, { useState } from 'react';\nimport { createModel } from './createModel';\nimport { Space, Button } from 'antd';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <Space wrap>\n      <Button onClick={counter.decrement}>-</Button>\n      <span>{counter.count}</span>\n      <Button onClick={counter.increment}>+</Button>\n    </Space>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
+        "import React from 'react';\r\nimport useNavigatorOnLine from './useNavigatorOnLine';\r\n\r\nconst Demo = () => {\r\n    const isOnline = useNavigatorOnLine()\r\n    return (\r\n        <span>You are { isOnline ? 'online' : 'offline'}</span>\r\n    )\r\n}\r\n\r\nexport default Demo;",
       Kr =
-        "// \u5bfc\u5165\u7c7b\u578b\nimport type { ReactNode, ComponentType } from 'react';\nimport React from 'react';\nimport { createContext, useContext } from 'react';\nconst EMPTY: unique symbol = Symbol();\nexport interface ModelProviderProps<State = void> {\n  initialState?: State;\n  children: ReactNode;\n}\nexport interface Model<Value, State = void> {\n  Provider: ComponentType<ModelProviderProps<State>>;\n  useModel: () => Value;\n}\nexport const createModel = <Value, State = void>(\n  useHook: (initialState?: State) => Value,\n): Model<Value, State> => {\n  //\u521b\u5efa\u4e00\u4e2acontext\n  const context = createContext<Value | typeof EMPTY>(EMPTY);\n  // \u5b9a\u4e49Provider\u51fd\u6570\n  const Provider = (props: ModelProviderProps<State>) => {\n    const { Provider: ModelProvider } = context;\n    const { initialState, children } = props;\n    const value = useHook(initialState);\n    return <ModelProvider value={value}>{children}</ModelProvider>;\n  };\n  // \u5b9a\u4e49useModel\u51fd\u6570\n  const useModel = (): Value => {\n    const value = useContext(context);\n    // \u8fd9\u91cc\u786e\u5b9a\u4e00\u4e0b\u7528\u6237\u662f\u5426\u6b63\u786e\u4f7f\u7528Provider\n    if (value === EMPTY) {\n      //\u629b\u51fa\u5f02\u5e38\uff0c\u4f7f\u7528\u8005\u5e76\u6ca1\u6709\u7528Provider\u5305\u88f9\u7ec4\u4ef6\n      throw new Error('Component must be wrapped with <Container.Provider>');\n    }\n    // \u8fd4\u56decontext\n    return value;\n  };\n  return { Provider, useModel };\n};\nexport const useModel = <Value, State = void>(\n  model: Model<Value, State>,\n): Value => {\n  return model.useModel();\n};",
+        "import { useEffect,useState } from 'react';\r\nconst getOnLineStatus = ():boolean => typeof navigator !== 'undefined' && typeof navigator.onLine === 'boolean' ? navigator.onLine : true;\r\nconst useNavigatorOnLine = ():boolean => {\r\n    const [status,setStatus] = useState(getOnLineStatus());\r\n\r\n    const setOnline = () => setStatus(true);\r\n    const setOffline = () => setStatus(false);\r\n\r\n    useEffect(() => {\r\n        window.addEventListener('online',setOnline);\r\n        window.addEventListener('offline',setOffline);\r\n\r\n        return () => {\r\n            window.removeEventListener('online',setOnline);\r\n            window.removeEventListener('offline',setOffline);\r\n        }\r\n    },[])\r\n\r\n    return status;\r\n}\r\n\r\nexport default useNavigatorOnLine;",
       Yr =
+        "import React from 'react';\r\nimport useNavigatorOnLine from './useNavigatorOnLine';\r\n\r\nconst Demo = () => {\r\n    const isOnline = useNavigatorOnLine()\r\n    return (\r\n        <span>You are { isOnline ? 'online' : 'offline'}</span>\r\n    )\r\n}\r\n\r\nexport default Demo;",
+      Qr =
+        "import { useEffect,useState } from 'react';\r\nconst getOnLineStatus = () => typeof navigator !== 'undefined' && typeof navigator.onLine === 'boolean' ? navigator.onLine : true;\r\nconst useNavigatorOnLine = () => {\r\n    const [status,setStatus] = useState(getOnLineStatus());\r\n\r\n    const setOnline = () => setStatus(true);\r\n    const setOffline = () => setStatus(false);\r\n\r\n    useEffect(() => {\r\n        window.addEventListener('online',setOnline);\r\n        window.addEventListener('offline',setOffline);\r\n\r\n        return () => {\r\n            window.removeEventListener('online',setOnline);\r\n            window.removeEventListener('offline',setOffline);\r\n        }\r\n    },[])\r\n\r\n    return status;\r\n}\r\n\r\nexport default useNavigatorOnLine;",
+      Jr =
+        "import React from 'react';\r\nimport useNavigatorOnLine from './useNavigatorOnLine';\r\n\r\nconst Demo = () => {\r\n    const isOnline = useNavigatorOnLine()\r\n    return (\r\n        <span>\u4f60{ isOnline ? '\u5728\u7ebf' : '\u79bb\u7ebf'}</span>\r\n    )\r\n}\r\n\r\nexport default Demo;",
+      Xr =
+        "import React from 'react';\r\nimport useNavigatorOnLine from './useNavigatorOnLine';\r\n\r\nconst Demo = () => {\r\n    const isOnline = useNavigatorOnLine()\r\n    return (\r\n        <span>\u4f60{ isOnline ? '\u5728\u7ebf' : '\u79bb\u7ebf'}</span>\r\n    )\r\n}\r\n\r\nexport default Demo;",
+      Zr =
         "import React, { useState } from 'react';\nimport { createModel } from './createModel';\nimport { Space, Button } from 'antd';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <Space wrap>\n      <Button onClick={counter.decrement}>-</Button>\n      <span>{counter.count}</span>\n      <Button onClick={counter.increment}>+</Button>\n    </Space>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
-      Qr = {
+      eo =
+        "// \u5bfc\u5165\u7c7b\u578b\nimport type { ReactNode, ComponentType } from 'react';\nimport React from 'react';\nimport { createContext, useContext } from 'react';\nconst EMPTY: unique symbol = Symbol();\nexport interface ModelProviderProps<State = void> {\n  initialState?: State;\n  children: ReactNode;\n}\nexport interface Model<Value, State = void> {\n  Provider: ComponentType<ModelProviderProps<State>>;\n  useModel: () => Value;\n}\nexport const createModel = <Value, State = void>(\n  useHook: (initialState?: State) => Value,\n): Model<Value, State> => {\n  //\u521b\u5efa\u4e00\u4e2acontext\n  const context = createContext<Value | typeof EMPTY>(EMPTY);\n  // \u5b9a\u4e49Provider\u51fd\u6570\n  const Provider = (props: ModelProviderProps<State>) => {\n    const { Provider: ModelProvider } = context;\n    const { initialState, children } = props;\n    const value = useHook(initialState);\n    return <ModelProvider value={value}>{children}</ModelProvider>;\n  };\n  // \u5b9a\u4e49useModel\u51fd\u6570\n  const useModel = (): Value => {\n    const value = useContext(context);\n    // \u8fd9\u91cc\u786e\u5b9a\u4e00\u4e0b\u7528\u6237\u662f\u5426\u6b63\u786e\u4f7f\u7528Provider\n    if (value === EMPTY) {\n      //\u629b\u51fa\u5f02\u5e38\uff0c\u4f7f\u7528\u8005\u5e76\u6ca1\u6709\u7528Provider\u5305\u88f9\u7ec4\u4ef6\n      throw new Error('Component must be wrapped with <Container.Provider>');\n    }\n    // \u8fd4\u56decontext\n    return value;\n  };\n  return { Provider, useModel };\n};\nexport const useModel = <Value, State = void>(\n  model: Model<Value, State>,\n): Value => {\n  return model.useModel();\n};",
+      to =
+        "import React, { useState } from 'react';\nimport { createModel } from './createModel';\nimport { Space, Button } from 'antd';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <Space wrap>\n      <Button onClick={counter.decrement}>-</Button>\n      <span>{counter.count}</span>\n      <Button onClick={counter.increment}>+</Button>\n    </Space>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
+      no = {
         'loadingbutton-demo': {
           component: n('4ZnB').default,
           previewerProps: {
@@ -45986,12 +46297,68 @@
             identifier: 'js-demo.zh-cn-21',
           },
         },
+        'usenavigatoronline-demo': {
+          component: n('b2dE').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: $r },
+              'useNavigatorOnLine.ts': {
+                import: './useNavigatorOnLine',
+                content: Kr,
+              },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'usenavigatoronline-demo',
+          },
+        },
+        'js-demo-22': {
+          component: n('yOk1').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: Yr },
+              'useNavigatorOnLine.js': {
+                import: './useNavigatorOnLine',
+                content: Qr,
+              },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'js-demo-22',
+          },
+        },
+        'usenavigatoronline-demo.zh-cn': {
+          component: n('PsIl').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: Jr },
+              'useNavigatorOnLine.ts': {
+                import: './useNavigatorOnLine',
+                content: Kr,
+              },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'usenavigatoronline-demo.zh-cn',
+          },
+        },
+        'js-demo.zh-cn-22': {
+          component: n('VcYG').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: Xr },
+              'useNavigatorOnLine.js': {
+                import: './useNavigatorOnLine',
+                content: Qr,
+              },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'js-demo.zh-cn-22',
+          },
+        },
         'model-demo': {
           component: n('3P29').default,
           previewerProps: {
             sources: {
-              _: { tsx: $r },
-              'createModel.tsx': { import: './createModel', content: Kr },
+              _: { tsx: Zr },
+              'createModel.tsx': { import: './createModel', content: eo },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -46005,8 +46372,8 @@
           component: n('lq0m').default,
           previewerProps: {
             sources: {
-              _: { tsx: Yr },
-              'createModel.tsx': { import: './createModel', content: Kr },
+              _: { tsx: to },
+              'createModel.tsx': { import: './createModel', content: eo },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -46017,13 +46384,13 @@
           },
         },
       },
-      Jr = n('Zs1V'),
-      Xr = n('BI2/'),
-      Zr = n.n(Xr);
+      ao = n('Zs1V'),
+      ro = n('BI2/'),
+      oo = n.n(ro);
     t['default'] = (e) =>
       o.a.createElement(
-        Zr.a,
-        Object(a['a'])({}, e, { config: l, demos: Qr, apis: Jr }),
+        oo.a,
+        Object(a['a'])({}, e, { config: l, demos: no, apis: ao }),
       );
   },
   Odut: function (e, t, n) {
@@ -46597,7 +46964,7 @@
                 'useMutationObserver.ts',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useEffect } from 'react';\nimport type { RefObject } from 'react';\n\nconst useMutationObserver = <T extends HTMLElement>(ref:RefObject<T>,callback: MutationCallback,options:MutationObserverInit = {\n    attributes: true,\n    characterData: true,\n    childList: true,\n    subtree: true,\n}) => {\n     useEffect(() => {\n        if(ref.current){\n            const observer = new MutationObserver(callback);\n            observer.observe(ref.current,options);\n            return () => {\n                observer.disconnect();\n            }\n        }\n     },[callback,options])\n}\n\nexport default useMutationObserver;",
+                code: "import { useEffect } from 'react';\nimport type { RefObject } from 'react';\n\nconst useMutationObserver = <T extends HTMLElement>(\n  ref: RefObject<T>,\n  callback: MutationCallback,\n  options: MutationObserverInit = {\n    attributes: true,\n    characterData: true,\n    childList: true,\n    subtree: true,\n  },\n) => {\n  useEffect(() => {\n    if (ref.current) {\n      const observer = new MutationObserver(callback);\n      observer.observe(ref.current, options);\n      return () => {\n        observer.disconnect();\n      };\n    }\n  }, [callback, options]);\n};\n\nexport default useMutationObserver;",
                 lang: 'ts',
               }),
               r.a.createElement(
@@ -46611,7 +46978,7 @@
                 'Demo',
               ),
               r.a.createElement(i['a'], {
-                code: "import React,{ useRef,useState } from 'react';\nimport type { RefObject } from 'react';\nimport { Input } from 'antd';\nimport useMutationObserver from './useMutationObserver';\n\nconst { TextArea } = Input;\n\nconst Demo = () => {\n    const mutationRef = useRef<HTMLDivElement>(null);\n    const [mutationCount,setMutationCount] = useState(0);\n    const incrementCount = () => setMutationCount(mutationCount + 1);\n    useMutationObserver(mutationRef as RefObject<HTMLElement>,incrementCount);\n    const [content,setContent] = useState('hello,world!');\n\n    return (\n        <>\n            <label htmlFor=\"content-input\">Edit this to update the text:</label>\n            <TextArea id='content-input' style={{ width:'100%' }} value={content} onChange={e => setContent(e.target.value)}></TextArea>\n            <div style={{ width:'100%' }} ref={mutationRef}>\n                <div style={{ resize:'both',overflow:'auto',maxWidth:'100%',border:'1px solid black' }}>\n                    <h2>Resize or change the content:</h2>\n                    <p>{ content }</p>\n                </div>\n                <div>\n                    <h3>Mutation count { mutationCount }</h3>\n                </div>\n            </div>\n        </>\n    )\n}\n\nexport default Demo;",
+                code: "import React, { useRef, useState } from 'react';\nimport type { RefObject } from 'react';\nimport { Input } from 'antd';\nimport useMutationObserver from './useMutationObserver';\n\nconst { TextArea } = Input;\n\nconst Demo = () => {\n  const mutationRef = useRef<HTMLDivElement>(null);\n  const [mutationCount, setMutationCount] = useState(0);\n  const incrementCount = () => setMutationCount(mutationCount + 1);\n  useMutationObserver(mutationRef as RefObject<HTMLElement>, incrementCount);\n  const [content, setContent] = useState('hello,world!');\n\n  return (\n    <>\n      <label htmlFor=\"content-input\">Edit this to update the text:</label>\n      <TextArea\n        id=\"content-input\"\n        style={{ width: '100%' }}\n        value={content}\n        onChange={(e) => setContent(e.target.value)}\n      ></TextArea>\n      <div style={{ width: '100%' }} ref={mutationRef}>\n        <div\n          style={{\n            resize: 'both',\n            overflow: 'auto',\n            maxWidth: '100%',\n            border: '1px solid black',\n          }}\n        >\n          <h2>Resize or change the content:</h2>\n          <p>{content}</p>\n        </div>\n        <div>\n          <h3>Mutation count {mutationCount}</h3>\n        </div>\n      </div>\n    </>\n  );\n};\n\nexport default Demo;",
                 lang: 'tsx',
               }),
               r.a.createElement(
@@ -46629,7 +46996,7 @@
                 'useMutationObserver.js',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useEffect } from 'react';\n\nconst useMutationObserver = (ref,callback,options = {\n    attributes: true,\n    characterData: true,\n    childList: true,\n    subtree: true,\n}) => {\n     useEffect(() => {\n        if(ref.current){\n            const observer = new MutationObserver(callback);\n            observer.observe(ref.current,options);\n            return () => {\n                observer.disconnect();\n            }\n        }\n     },[callback,options])\n}\n\nexport default useMutationObserver;",
+                code: "import { useEffect } from 'react';\n\nconst useMutationObserver = (\n  ref,\n  callback,\n  options = {\n    attributes: true,\n    characterData: true,\n    childList: true,\n    subtree: true,\n  },\n) => {\n  useEffect(() => {\n    if (ref.current) {\n      const observer = new MutationObserver(callback);\n      observer.observe(ref.current, options);\n      return () => {\n        observer.disconnect();\n      };\n    }\n  }, [callback, options]);\n};\n\nexport default useMutationObserver;",
                 lang: 'js',
               }),
               r.a.createElement(
@@ -46643,7 +47010,7 @@
                 'js Demo',
               ),
               r.a.createElement(i['a'], {
-                code: "import React,{ useRef,useState } from 'react';\nimport { Input } from 'antd';\nimport useMutationObserver from './useMutationObserver';\n\nconst { TextArea } = Input;\n\nconst Demo = () => {\n    const mutationRef = useRef();\n    const [mutationCount,setMutationCount] = useState(0);\n    const incrementCount = () => setMutationCount(mutationCount + 1);\n    useMutationObserver(mutationRef,incrementCount);\n    const [content,setContent] = useState('hello,world!');\n\n    return (\n        <>\n            <label htmlFor=\"content-input\">Edit this to update the text:</label>\n            <TextArea id='content-input' style={{ width:'100%' }} value={content} onChange={e => setContent(e.target.value)}></TextArea>\n            <div style={{ width:'100%' }} ref={mutationRef}>\n                <div style={{ resize:'both',overflow:'auto',maxWidth:'100%',border:'1px solid black' }}>\n                    <h2>Resize or change the content:</h2>\n                    <p>{ content }</p>\n                </div>\n                <div>\n                    <h3>Mutation count { mutationCount }</h3>\n                </div>\n            </div>\n        </>\n    )\n}\n\nexport default Demo;",
+                code: "import React, { useRef, useState } from 'react';\nimport { Input } from 'antd';\nimport useMutationObserver from './useMutationObserver';\n\nconst { TextArea } = Input;\n\nconst Demo = () => {\n  const mutationRef = useRef();\n  const [mutationCount, setMutationCount] = useState(0);\n  const incrementCount = () => setMutationCount(mutationCount + 1);\n  useMutationObserver(mutationRef, incrementCount);\n  const [content, setContent] = useState('hello,world!');\n\n  return (\n    <>\n      <label htmlFor=\"content-input\">Edit this to update the text:</label>\n      <TextArea\n        id=\"content-input\"\n        style={{ width: '100%' }}\n        value={content}\n        onChange={(e) => setContent(e.target.value)}\n      ></TextArea>\n      <div style={{ width: '100%' }} ref={mutationRef}>\n        <div\n          style={{\n            resize: 'both',\n            overflow: 'auto',\n            maxWidth: '100%',\n            border: '1px solid black',\n          }}\n        >\n          <h2>Resize or change the content:</h2>\n          <p>{content}</p>\n        </div>\n        <div>\n          <h3>Mutation count {mutationCount}</h3>\n        </div>\n      </div>\n    </>\n  );\n};\n\nexport default Demo;",
                 lang: 'jsx',
               }),
               r.a.createElement('p', null, 'Demo:'),
@@ -47031,6 +47398,23 @@
     n.d(t, 'a', function () {
       return r;
     });
+  },
+  PsIl: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('x79j'),
+      l = () => {
+        var e = Object(o['a'])();
+        return r.a.createElement(
+          'span',
+          null,
+          '\u4f60',
+          e ? '\u5728\u7ebf' : '\u79bb\u7ebf',
+        );
+      };
+    t['default'] = l;
   },
   Ptmx: function (e, t, n) {
     'use strict';
@@ -48103,7 +48487,7 @@
   },
   RGYn: function (e) {
     e.exports = JSON.parse(
-      '{"menus":{"en-US":{"/getting-started":[{"path":"/getting-started","title":"react code-segment","meta":{}}],"*":[{"path":"/","title":"Welcome to the website","meta":{}}],"/antd":[{"title":"LoadingButton","path":"/antd/loading-button"},{"title":"OmitText","path":"/antd/omit-text"},{"title":"LoadingModal","path":"/antd/loading-modal"}],"/guide":[{"title":"Accordion","path":"/guide/Accordion/Accordion"},{"title":"Alert","path":"/guide/Alert/Alert"},{"title":"AutoLink","path":"/guide/auto-link/auto-link"},{"title":"Callto","path":"/guide/Callto/Callto"},{"title":"Carousel","path":"/guide/Carousel/Carousel"},{"title":"Collapse","path":"/guide/Collapse/Collapse"},{"title":"ControlledInput","path":"/guide/controlled-input/controlled-input"},{"title":"CountDown","path":"/guide/count-down/count-down"},{"title":"SimpleDataList","path":"/guide/simple-data-list/simple-data-list"},{"title":"SimpleDataTable","path":"/guide/simple-data-table/simple-data-table"},{"title":"FileDrop","path":"/guide/file-drop/file-drop"},{"title":"LazyLoadingImage","path":"/guide/lazy-loading-image/lazy-loading-image"},{"title":"LimitedTextarea","path":"/guide/limited-textarea/limited-textarea"},{"title":"LimitedWordTextarea","path":"/guide/limited-word-textarea/limited-word-textarea"},{"title":"Loader","path":"/guide/Loader/Loader"},{"title":"Mailto","path":"/guide/Mailto/Mailto"},{"title":"SimpleMappedDataTable","path":"/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"Modal","path":"/guide/Modal/Modal"},{"title":"Checkbox","path":"/guide/Checkbox/Checkbox"},{"title":"PasswordRevealer","path":"/guide/password-revealer/password-revealer"},{"title":"Button","path":"/guide/button/button"},{"title":"Select","path":"/guide/select/select"}],"/hooks":[{"title":"useAsync","path":"/hooks/use-async/use-async"},{"title":"useBodyScrollLock","path":"/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"useClickInside","path":"/hooks/use-click-inside/use-click-inside"},{"title":"useClickOutside","path":"/hooks/use-click-outside/use-click-outside"},{"title":"useComponentDidMount","path":"/hooks/use-component-did-mount/use-component-did-mount"},{"title":"useComponentDidUpdate","path":"/hooks/use-component-did-update/use-component-did-update"},{"title":"useComponentWillUnmount","path":"/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"useCopyToClipboard","path":"/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"useDebounce","path":"/hooks/use-debounce/use-debounce"},{"title":"useDefault","path":"/hooks/use-default/use-default"},{"title":"useDelayedState","path":"/hooks/use-delayed-state/use-delayed-state"},{"title":"useEffectOnce","path":"/hooks/use-effect-once/use-effect-once"},{"title":"useError","path":"/hooks/use-error/use-error"},{"title":"useEventListener","path":"/hooks/use-event-listener/use-event-listener"},{"title":"useFetch","path":"/hooks/use-fetch/use-fetch"},{"title":"useForm","path":"/hooks/use-form/use-form"},{"title":"useGetSet","path":"/hooks/use-get-set/use-get-set"},{"title":"useHash","path":"/hooks/use-hash/use-hash"},{"title":"useHover","path":"/hooks/use-hover/use-hover"},{"title":"useIntersectionObserver","path":"/hooks/use-intersection-observer/use-intersection-observer"},{"title":"useInterval","path":"/hooks/use-interval/use-interval"},{"title":"useIsomorphicEffect","path":"/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"useKeyPress","path":"/hooks/use-key-press/use-key-press"},{"title":"useLocalStorage","path":"/hooks/use-local-storage/use-local-storage"},{"title":"useMap","path":"/hooks/use-map/use-map"},{"title":"useMediaQuery","path":"/hooks/use-media-query/use-media-query"},{"title":"useMergeState","path":"/hooks/use-merge-state/use-merge-state"},{"title":"useMutationObserver","path":"/hooks/use-mutation-observer/use-mutation-observer"}],"/model":[{"title":"React model","path":"/model/model"}]},"zh-CN":{"/zh-CN/getting-started":[{"path":"/zh-CN/getting-started","title":"react \u4ee3\u7801\u6bb5","meta":{}}],"*":[{"path":"/zh-CN","title":"\u6b22\u8fce\u6765\u5230\u672c\u7f51\u7ad9","meta":{}}],"/zh-CN/antd":[{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u6309\u94ae","path":"/zh-CN/antd/loading-button"},{"title":"\u7701\u7565\u6587\u672c\u7ec4\u4ef6","path":"/zh-CN/antd/omit-text"},{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u5f39\u6846","path":"/zh-CN/antd/loading-modal"}],"/zh-CN/guide":[{"title":"\u624b\u98ce\u7434","path":"/zh-CN/guide/Accordion/Accordion"},{"title":"\u63d0\u793a","path":"/zh-CN/guide/Alert/Alert"},{"title":"\u81ea\u52a8\u6587\u672c\u94fe\u63a5","path":"/zh-CN/guide/auto-link/auto-link"},{"title":"\u62e8\u7535\u81f3","path":"/zh-CN/guide/Callto/Callto"},{"title":"\u8f6e\u64ad\u56fe","path":"/zh-CN/guide/Carousel/Carousel"},{"title":"\u53ef\u6298\u53e0\u7684\u5185\u5bb9","path":"/zh-CN/guide/Collapse/Collapse"},{"title":"\u53d7\u63a7\u7684\u8f93\u5165\u6846","path":"/zh-CN/guide/controlled-input/controlled-input"},{"title":"\u5012\u8ba1\u65f6\u7ec4\u4ef6","path":"/zh-CN/guide/count-down/count-down"},{"title":"\u7b80\u6613\u6570\u636e\u5217\u8868\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-list/simple-data-list"},{"title":"\u7b80\u6613\u6570\u636e\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-table/simple-data-table"},{"title":"\u62d6\u62fd\u6587\u4ef6\u7ec4\u4ef6","path":"/zh-CN/guide/file-drop/file-drop"},{"title":"\u61d2\u52a0\u8f7d\u56fe\u7247","path":"/zh-CN/guide/lazy-loading-image/lazy-loading-image"},{"title":"\u9650\u5236\u5b57\u7b26\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-textarea/limited-textarea"},{"title":"\u9650\u5236\u5b57\u6570\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-word-textarea/limited-word-textarea"},{"title":"\u52a0\u8f7d\u7ec4\u4ef6","path":"/zh-CN/guide/Loader/Loader"},{"title":"\u90ae\u4ef6\u94fe\u63a5\u7ec4\u4ef6","path":"/zh-CN/guide/Mailto/Mailto"},{"title":"\u7b80\u6613\u5bf9\u8c61\u6570\u7ec4\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"\u5f39\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Modal/Modal"},{"title":"\u590d\u9009\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Checkbox/Checkbox"},{"title":"\u5bc6\u7801\u663e\u793a\u5668","path":"/zh-CN/guide/password-revealer/password-revealer"},{"title":"\u6309\u94ae","path":"/zh-CN/guide/button/button"},{"title":"\u9009\u62e9\u5668","path":"/zh-CN/guide/select/select"}],"/zh-CN/hooks":[{"title":"\u5f02\u6b65","path":"/zh-CN/hooks/use-async/use-async"},{"title":"\u9501\u5b9abody\u5143\u7d20\u7684\u6eda\u52a8","path":"/zh-CN/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5185","path":"/zh-CN/hooks/use-click-inside/use-click-inside"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5916","path":"/zh-CN/hooks/use-click-outside/use-click-outside"},{"title":"\u7ec4\u4ef6\u7684\u6302\u8f7d","path":"/zh-CN/hooks/use-component-did-mount/use-component-did-mount"},{"title":"\u7ec4\u4ef6\u7684\u72b6\u6001\u66f4\u65b0","path":"/zh-CN/hooks/use-component-did-update/use-component-did-update"},{"title":"\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d","path":"/zh-CN/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"\u590d\u5236\u5230\u526a\u8d34\u677f","path":"/zh-CN/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"\u9632\u6296","path":"/zh-CN/hooks/use-debounce/use-debounce"},{"title":"\u9ed8\u8ba4\u503c","path":"/zh-CN/hooks/use-default/use-default"},{"title":"\u5ef6\u8fdf\u72b6\u6001","path":"/zh-CN/hooks/use-delayed-state/use-delayed-state"},{"title":"\u53ea\u6267\u884c\u4e00\u6b21\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-effect-once/use-effect-once"},{"title":"\u9519\u8bef\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-error/use-error"},{"title":"\u4e8b\u4ef6\u76d1\u542c\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-event-listener/use-event-listener"},{"title":"\u8bf7\u6c42\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-fetch/use-fetch"},{"title":"\u8868\u5355\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-form/use-form"},{"title":"\u72b6\u6001\u8bbe\u7f6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-get-set/use-get-set"},{"title":"\u4fee\u6539hash\u503c\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hash/use-hash"},{"title":"\u60ac\u6d6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hover/use-hover"},{"title":"\u5143\u7d20\u5904\u4e8e\u53ef\u89c6\u533a\u57df\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-intersection-observer/use-intersection-observer"},{"title":"\u5b9a\u65f6\u5668\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-interval/use-interval"},{"title":"\u526f\u4f5c\u7528\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"\u6309\u952e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-key-press/use-key-press"},{"title":"\u5b58\u50a8\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-local-storage/use-local-storage"},{"title":"\u6620\u5c04\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-map/use-map"},{"title":"\u68c0\u67e5\u5a92\u4f53\u67e5\u8be2\u73af\u5883\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-media-query/use-media-query"},{"title":"\u5408\u5e76\u72b6\u6001\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-merge-state/use-merge-state"},{"title":"\u76d1\u542c\u5143\u7d20\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-mutation-observer/use-mutation-observer"}],"/zh-CN/model":[{"title":"react\u72b6\u6001\u7ba1\u7406\u5de5\u5177","path":"/zh-CN/model/model"}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"\u4e2d\u6587"}],"navs":{"en-US":[{"title":"getting-started","path":"/getting-started"},{"title":"guide","path":"/guide"},{"title":"hooks","path":"/hooks"},{"title":"model","path":"/model"},{"title":"antd","path":"/antd"},{"title":"github","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"about me","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"jue jin","path":"https://juejin.im/user/4054654613988718"},{"title":"segmentfault","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"gitee","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"blog","path":"https://www.cnblogs.com/eveningwater/"},{"title":"website","path":"https://www.eveningwater.com/"},{"title":"My project","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"17sucai","path":"https://www.17sucai.com/user/800544"},{"title":"ewColorPicker","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}],"zh-CN":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/zh-CN/getting-started"},{"title":"\u6307\u5357","path":"/zh-CN/guide"},{"title":"\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks"},{"title":"\u72b6\u6001\u7ba1\u7406","path":"/zh-CN/model"},{"title":"\u8682\u8681\u8bbe\u8ba1","path":"/zh-CN/antd"},{"title":"\u6e90\u7801\u5730\u5740","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"\u5173\u4e8e\u6211","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"\u6398\u91d1","path":"https://juejin.im/user/4054654613988718"},{"title":"\u601d\u5426","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"\u7801\u4e91","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"\u535a\u5ba2","path":"https://www.cnblogs.com/eveningwater/"},{"title":"\u4e2a\u4eba\u7f51\u7ad9","path":"https://www.eveningwater.com/"},{"title":"\u4e2a\u4eba\u9879\u76ee","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"\u95e8\u7d20\u6750","path":"https://www.17sucai.com/user/800544"},{"title":"\u989c\u8272\u9009\u62e9\u5668","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}]},"title":"react-code-segment","logo":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K","mode":"site","repository":{"url":"","branch":"master"},"theme":{}}',
+      '{"menus":{"en-US":{"/getting-started":[{"path":"/getting-started","title":"react code-segment","meta":{}}],"*":[{"path":"/","title":"Welcome to the website","meta":{}}],"/antd":[{"title":"LoadingButton","path":"/antd/loading-button"},{"title":"OmitText","path":"/antd/omit-text"},{"title":"LoadingModal","path":"/antd/loading-modal"}],"/guide":[{"title":"Accordion","path":"/guide/Accordion/Accordion"},{"title":"Alert","path":"/guide/Alert/Alert"},{"title":"AutoLink","path":"/guide/auto-link/auto-link"},{"title":"Callto","path":"/guide/Callto/Callto"},{"title":"Carousel","path":"/guide/Carousel/Carousel"},{"title":"Collapse","path":"/guide/Collapse/Collapse"},{"title":"ControlledInput","path":"/guide/controlled-input/controlled-input"},{"title":"CountDown","path":"/guide/count-down/count-down"},{"title":"SimpleDataList","path":"/guide/simple-data-list/simple-data-list"},{"title":"SimpleDataTable","path":"/guide/simple-data-table/simple-data-table"},{"title":"FileDrop","path":"/guide/file-drop/file-drop"},{"title":"LazyLoadingImage","path":"/guide/lazy-loading-image/lazy-loading-image"},{"title":"LimitedTextarea","path":"/guide/limited-textarea/limited-textarea"},{"title":"LimitedWordTextarea","path":"/guide/limited-word-textarea/limited-word-textarea"},{"title":"Loader","path":"/guide/Loader/Loader"},{"title":"Mailto","path":"/guide/Mailto/Mailto"},{"title":"SimpleMappedDataTable","path":"/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"Modal","path":"/guide/Modal/Modal"},{"title":"Checkbox","path":"/guide/Checkbox/Checkbox"},{"title":"PasswordRevealer","path":"/guide/password-revealer/password-revealer"},{"title":"Button","path":"/guide/button/button"},{"title":"Select","path":"/guide/select/select"}],"/hooks":[{"title":"useAsync","path":"/hooks/use-async/use-async"},{"title":"useBodyScrollLock","path":"/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"useClickInside","path":"/hooks/use-click-inside/use-click-inside"},{"title":"useClickOutside","path":"/hooks/use-click-outside/use-click-outside"},{"title":"useComponentDidMount","path":"/hooks/use-component-did-mount/use-component-did-mount"},{"title":"useComponentDidUpdate","path":"/hooks/use-component-did-update/use-component-did-update"},{"title":"useComponentWillUnmount","path":"/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"useCopyToClipboard","path":"/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"useDebounce","path":"/hooks/use-debounce/use-debounce"},{"title":"useDefault","path":"/hooks/use-default/use-default"},{"title":"useDelayedState","path":"/hooks/use-delayed-state/use-delayed-state"},{"title":"useEffectOnce","path":"/hooks/use-effect-once/use-effect-once"},{"title":"useError","path":"/hooks/use-error/use-error"},{"title":"useEventListener","path":"/hooks/use-event-listener/use-event-listener"},{"title":"useFetch","path":"/hooks/use-fetch/use-fetch"},{"title":"useForm","path":"/hooks/use-form/use-form"},{"title":"useGetSet","path":"/hooks/use-get-set/use-get-set"},{"title":"useHash","path":"/hooks/use-hash/use-hash"},{"title":"useHover","path":"/hooks/use-hover/use-hover"},{"title":"useIntersectionObserver","path":"/hooks/use-intersection-observer/use-intersection-observer"},{"title":"useInterval","path":"/hooks/use-interval/use-interval"},{"title":"useIsomorphicEffect","path":"/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"useKeyPress","path":"/hooks/use-key-press/use-key-press"},{"title":"useLocalStorage","path":"/hooks/use-local-storage/use-local-storage"},{"title":"useMap","path":"/hooks/use-map/use-map"},{"title":"useMediaQuery","path":"/hooks/use-media-query/use-media-query"},{"title":"useMergeState","path":"/hooks/use-merge-state/use-merge-state"},{"title":"useMutationObserver","path":"/hooks/use-mutation-observer/use-mutation-observer"},{"title":"useNavigatorOnLine","path":"/hooks/use-navigator-on-line/use-navigator-on-line"}],"/model":[{"title":"React model","path":"/model/model"}]},"zh-CN":{"/zh-CN/getting-started":[{"path":"/zh-CN/getting-started","title":"react \u4ee3\u7801\u6bb5","meta":{}}],"*":[{"path":"/zh-CN","title":"\u6b22\u8fce\u6765\u5230\u672c\u7f51\u7ad9","meta":{}}],"/zh-CN/antd":[{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u6309\u94ae","path":"/zh-CN/antd/loading-button"},{"title":"\u7701\u7565\u6587\u672c\u7ec4\u4ef6","path":"/zh-CN/antd/omit-text"},{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u5f39\u6846","path":"/zh-CN/antd/loading-modal"}],"/zh-CN/guide":[{"title":"\u624b\u98ce\u7434","path":"/zh-CN/guide/Accordion/Accordion"},{"title":"\u63d0\u793a","path":"/zh-CN/guide/Alert/Alert"},{"title":"\u81ea\u52a8\u6587\u672c\u94fe\u63a5","path":"/zh-CN/guide/auto-link/auto-link"},{"title":"\u62e8\u7535\u81f3","path":"/zh-CN/guide/Callto/Callto"},{"title":"\u8f6e\u64ad\u56fe","path":"/zh-CN/guide/Carousel/Carousel"},{"title":"\u53ef\u6298\u53e0\u7684\u5185\u5bb9","path":"/zh-CN/guide/Collapse/Collapse"},{"title":"\u53d7\u63a7\u7684\u8f93\u5165\u6846","path":"/zh-CN/guide/controlled-input/controlled-input"},{"title":"\u5012\u8ba1\u65f6\u7ec4\u4ef6","path":"/zh-CN/guide/count-down/count-down"},{"title":"\u7b80\u6613\u6570\u636e\u5217\u8868\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-list/simple-data-list"},{"title":"\u7b80\u6613\u6570\u636e\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-table/simple-data-table"},{"title":"\u62d6\u62fd\u6587\u4ef6\u7ec4\u4ef6","path":"/zh-CN/guide/file-drop/file-drop"},{"title":"\u61d2\u52a0\u8f7d\u56fe\u7247","path":"/zh-CN/guide/lazy-loading-image/lazy-loading-image"},{"title":"\u9650\u5236\u5b57\u7b26\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-textarea/limited-textarea"},{"title":"\u9650\u5236\u5b57\u6570\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-word-textarea/limited-word-textarea"},{"title":"\u52a0\u8f7d\u7ec4\u4ef6","path":"/zh-CN/guide/Loader/Loader"},{"title":"\u90ae\u4ef6\u94fe\u63a5\u7ec4\u4ef6","path":"/zh-CN/guide/Mailto/Mailto"},{"title":"\u7b80\u6613\u5bf9\u8c61\u6570\u7ec4\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"\u5f39\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Modal/Modal"},{"title":"\u590d\u9009\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Checkbox/Checkbox"},{"title":"\u5bc6\u7801\u663e\u793a\u5668","path":"/zh-CN/guide/password-revealer/password-revealer"},{"title":"\u6309\u94ae","path":"/zh-CN/guide/button/button"},{"title":"\u9009\u62e9\u5668","path":"/zh-CN/guide/select/select"}],"/zh-CN/hooks":[{"title":"\u5f02\u6b65","path":"/zh-CN/hooks/use-async/use-async"},{"title":"\u9501\u5b9abody\u5143\u7d20\u7684\u6eda\u52a8","path":"/zh-CN/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5185","path":"/zh-CN/hooks/use-click-inside/use-click-inside"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5916","path":"/zh-CN/hooks/use-click-outside/use-click-outside"},{"title":"\u7ec4\u4ef6\u7684\u6302\u8f7d","path":"/zh-CN/hooks/use-component-did-mount/use-component-did-mount"},{"title":"\u7ec4\u4ef6\u7684\u72b6\u6001\u66f4\u65b0","path":"/zh-CN/hooks/use-component-did-update/use-component-did-update"},{"title":"\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d","path":"/zh-CN/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"\u590d\u5236\u5230\u526a\u8d34\u677f","path":"/zh-CN/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"\u9632\u6296","path":"/zh-CN/hooks/use-debounce/use-debounce"},{"title":"\u9ed8\u8ba4\u503c","path":"/zh-CN/hooks/use-default/use-default"},{"title":"\u5ef6\u8fdf\u72b6\u6001","path":"/zh-CN/hooks/use-delayed-state/use-delayed-state"},{"title":"\u53ea\u6267\u884c\u4e00\u6b21\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-effect-once/use-effect-once"},{"title":"\u9519\u8bef\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-error/use-error"},{"title":"\u4e8b\u4ef6\u76d1\u542c\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-event-listener/use-event-listener"},{"title":"\u8bf7\u6c42\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-fetch/use-fetch"},{"title":"\u8868\u5355\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-form/use-form"},{"title":"\u72b6\u6001\u8bbe\u7f6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-get-set/use-get-set"},{"title":"\u4fee\u6539hash\u503c\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hash/use-hash"},{"title":"\u60ac\u6d6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hover/use-hover"},{"title":"\u5143\u7d20\u5904\u4e8e\u53ef\u89c6\u533a\u57df\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-intersection-observer/use-intersection-observer"},{"title":"\u5b9a\u65f6\u5668\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-interval/use-interval"},{"title":"\u526f\u4f5c\u7528\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"\u6309\u952e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-key-press/use-key-press"},{"title":"\u5b58\u50a8\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-local-storage/use-local-storage"},{"title":"\u6620\u5c04\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-map/use-map"},{"title":"\u68c0\u67e5\u5a92\u4f53\u67e5\u8be2\u73af\u5883\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-media-query/use-media-query"},{"title":"\u5408\u5e76\u72b6\u6001\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-merge-state/use-merge-state"},{"title":"\u76d1\u542c\u5143\u7d20\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-mutation-observer/use-mutation-observer"},{"title":"\u5728\u7ebf\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-navigator-on-line/use-navigator-on-line"}],"/zh-CN/model":[{"title":"react\u72b6\u6001\u7ba1\u7406\u5de5\u5177","path":"/zh-CN/model/model"}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"\u4e2d\u6587"}],"navs":{"en-US":[{"title":"getting-started","path":"/getting-started"},{"title":"guide","path":"/guide"},{"title":"hooks","path":"/hooks"},{"title":"model","path":"/model"},{"title":"antd","path":"/antd"},{"title":"github","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"about me","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"jue jin","path":"https://juejin.im/user/4054654613988718"},{"title":"segmentfault","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"gitee","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"blog","path":"https://www.cnblogs.com/eveningwater/"},{"title":"website","path":"https://www.eveningwater.com/"},{"title":"My project","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"17sucai","path":"https://www.17sucai.com/user/800544"},{"title":"ewColorPicker","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}],"zh-CN":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/zh-CN/getting-started"},{"title":"\u6307\u5357","path":"/zh-CN/guide"},{"title":"\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks"},{"title":"\u72b6\u6001\u7ba1\u7406","path":"/zh-CN/model"},{"title":"\u8682\u8681\u8bbe\u8ba1","path":"/zh-CN/antd"},{"title":"\u6e90\u7801\u5730\u5740","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"\u5173\u4e8e\u6211","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"\u6398\u91d1","path":"https://juejin.im/user/4054654613988718"},{"title":"\u601d\u5426","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"\u7801\u4e91","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"\u535a\u5ba2","path":"https://www.cnblogs.com/eveningwater/"},{"title":"\u4e2a\u4eba\u7f51\u7ad9","path":"https://www.eveningwater.com/"},{"title":"\u4e2a\u4eba\u9879\u76ee","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"\u95e8\u7d20\u6750","path":"https://www.17sucai.com/user/800544"},{"title":"\u989c\u8272\u9009\u62e9\u5668","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}]},"title":"react-code-segment","logo":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K","mode":"site","repository":{"url":"","branch":"master"},"theme":{}}',
     );
   },
   RH9F: function (e, t, n) {
@@ -52003,6 +52387,23 @@
         );
       };
     t['default'] = i;
+  },
+  VcYG: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('4+ke'),
+      l = () => {
+        var e = Object(o['a'])();
+        return r.a.createElement(
+          'span',
+          null,
+          '\u4f60',
+          e ? '\u5728\u7ebf' : '\u79bb\u7ebf',
+        );
+      };
+    t['default'] = l;
   },
   VerF: function (e, t, n) {
     'use strict';
@@ -58291,6 +58692,23 @@
         };
       };
     e.exports = { entries: i(!0), values: i(!1) };
+  },
+  b2dE: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('x79j'),
+      l = () => {
+        var e = Object(o['a'])();
+        return r.a.createElement(
+          'span',
+          null,
+          'You are ',
+          e ? 'online' : 'offline',
+        );
+      };
+    t['default'] = l;
   },
   'b44/': function (e, t, n) {
     'use strict';
@@ -72141,6 +72559,204 @@
       };
     e.exports = l;
   },
+  ozWO: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('cGfz'),
+      l = n('GKDz'),
+      i = n('1i5+'),
+      s = n('SQsl'),
+      c = r.a.memo((e) => {
+        var t = e.demos,
+          n = t['usenavigatoronline-demo.zh-cn'].component,
+          a = t['js-demo.zh-cn-22'].component;
+        return r.a.createElement(
+          r.a.Fragment,
+          null,
+          r.a.createElement(
+            r.a.Fragment,
+            null,
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement(
+                s['a'],
+                null,
+                r.a.createElement(
+                  'thead',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement('th', null, '\u6807\u9898'),
+                    r.a.createElement('th', null, '\u6807\u7b7e'),
+                    r.a.createElement(
+                      'th',
+                      null,
+                      '\u9996\u6b21\u6dfb\u52a0\u65f6\u95f4',
+                    ),
+                    r.a.createElement('th', null, '\u66f4\u65b0\u65f6\u95f4'),
+                  ),
+                ),
+                r.a.createElement(
+                  'tbody',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement(
+                      'td',
+                      null,
+                      '\u662f\u5426\u5728\u7ebf\u94a9\u5b50\u51fd\u6570',
+                    ),
+                    r.a.createElement(
+                      'td',
+                      null,
+                      '\u94a9\u5b50\u51fd\u6570,\u72b6\u6001,\u526f\u4f5c\u7528',
+                    ),
+                    r.a.createElement('td', null, '2022/10/13'),
+                    r.a.createElement('td', null, '2022/10/13'),
+                  ),
+                ),
+              ),
+              r.a.createElement(
+                'p',
+                null,
+                '\u68c0\u67e5\u5ba2\u6237\u7aef\u662f\u5728\u7ebf\u8fd8\u662f\u79bb\u7ebf\u3002',
+              ),
+              r.a.createElement(
+                'ul',
+                null,
+                r.a.createElement(
+                  'li',
+                  null,
+                  '\u521b\u5efa\u4e00\u4e2a\u51fd\u6570 getOnLineStatus\uff0c\u5b83\u4f7f\u7528 Navigator.onLine Web API \u6765\u83b7\u53d6\u5ba2\u6237\u7aef\u7684\u5728\u7ebf\u72b6\u6001\u3002',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 useState() \u6302\u94a9\u521b\u5efa\u9002\u5f53\u7684\u72b6\u6001\u53d8\u91cf\u3001\u72b6\u6001\u548c\u8bbe\u7f6e\u5668\u3002',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 useEffect() \u6302\u94a9\u4e3a\u9002\u5f53\u7684\u4e8b\u4ef6\u6dfb\u52a0\u4fa6\u542c\u5668\uff0c\u66f4\u65b0\u72b6\u6001\uff0c\u5e76\u5728\u5378\u8f7d\u65f6\u6e05\u7406\u8fd9\u4e9b\u4fa6\u542c\u5668\u3002',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  '\u6700\u540e\u8fd4\u56de\u72b6\u6001\u72b6\u6001\u53d8\u91cf\u3002',
+                ),
+              ),
+              r.a.createElement(
+                'h4',
+                { id: 'usenavigatoronlinets' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#usenavigatoronlinets',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useNavigatorOnLine.ts',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import { useEffect,useState } from 'react';\nconst getOnLineStatus = ():boolean => typeof navigator !== 'undefined' && typeof navigator.onLine === 'boolean' ? navigator.onLine : true;\nconst useNavigatorOnLine = ():boolean => {\n    const [status,setStatus] = useState(getOnLineStatus());\n\n    const setOnline = () => setStatus(true);\n    const setOffline = () => setStatus(false);\n\n    useEffect(() => {\n        window.addEventListener('online',setOnline);\n        window.addEventListener('offline',setOffline);\n\n        return () => {\n            window.removeEventListener('online',setOnline);\n            window.removeEventListener('offline',setOffline);\n        }\n    },[])\n\n    return status;\n}\n\nexport default useNavigatorOnLine;",
+                lang: 'ts',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: '\u793a\u4f8b' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#\u793a\u4f8b', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                '\u793a\u4f8b',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport useNavigatorOnLine from './useNavigatorOnLine';\n\nconst Demo = () => {\n    const isOnline = useNavigatorOnLine()\n    return (\n        <span>\u4f60{ isOnline ? '\u5728\u7ebf' : '\u79bb\u7ebf'}</span>\n    )\n}\n\nexport default Demo;",
+                lang: 'tsx',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'usenavigatoronlinejs' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#usenavigatoronlinejs',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useNavigatorOnLine.js',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import { useEffect,useState } from 'react';\nconst getOnLineStatus = () => typeof navigator !== 'undefined' && typeof navigator.onLine === 'boolean' ? navigator.onLine : true;\nconst useNavigatorOnLine = () => {\n    const [status,setStatus] = useState(getOnLineStatus());\n\n    const setOnline = () => setStatus(true);\n    const setOffline = () => setStatus(false);\n\n    useEffect(() => {\n        window.addEventListener('online',setOnline);\n        window.addEventListener('offline',setOffline);\n\n        return () => {\n            window.removeEventListener('online',setOnline);\n            window.removeEventListener('offline',setOffline);\n        }\n    },[])\n\n    return status;\n}\n\nexport default useNavigatorOnLine;",
+                lang: 'js',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'js-\u793a\u4f8b' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#js-\u793a\u4f8b',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'js \u793a\u4f8b',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport useNavigatorOnLine from './useNavigatorOnLine';\n\nconst Demo = () => {\n    const isOnline = useNavigatorOnLine()\n    return (\n        <span>\u4f60{ isOnline ? '\u5728\u7ebf' : '\u79bb\u7ebf'}</span>\n    )\n}\n\nexport default Demo;",
+                lang: 'jsx',
+              }),
+              r.a.createElement('p', null, '\u793a\u4f8b:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              t['usenavigatoronline-demo.zh-cn'].previewerProps,
+              r.a.createElement(n, null),
+            ),
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement('p', null, 'js \u793a\u4f8b:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              t['js-demo.zh-cn-22'].previewerProps,
+              r.a.createElement(a, null),
+            ),
+          ),
+        );
+      });
+    t['default'] = (e) => {
+      var t = r.a.useContext(o['context']),
+        n = t.demos;
+      return (
+        r.a.useEffect(() => {
+          var t;
+          null !== e &&
+            void 0 !== e &&
+            null !== (t = e.location) &&
+            void 0 !== t &&
+            t.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        r.a.createElement(c, { demos: n })
+      );
+    };
+  },
   'p5/I': function (e, t, n) {
     var a = n('kRbv'),
       r = Object.prototype,
@@ -83388,6 +84004,38 @@
       };
     t['default'] = c;
   },
+  x79j: function (e, t, n) {
+    'use strict';
+    var a = n('tJVT'),
+      r = n('q1tI'),
+      o = () =>
+        'undefined' === typeof navigator ||
+        'boolean' !== typeof navigator.onLine ||
+        navigator.onLine,
+      l = () => {
+        var e = Object(r['useState'])(o()),
+          t = Object(a['a'])(e, 2),
+          n = t[0],
+          l = t[1],
+          i = () => l(!0),
+          s = () => l(!1);
+        return (
+          Object(r['useEffect'])(
+            () => (
+              window.addEventListener('online', i),
+              window.addEventListener('offline', s),
+              () => {
+                window.removeEventListener('online', i),
+                  window.removeEventListener('offline', s);
+              }
+            ),
+            [],
+          ),
+          n
+        );
+      };
+    t['a'] = l;
+  },
   x8K7: function (e, t, n) {
     'use strict';
     n.r(t);
@@ -84983,6 +85631,23 @@
         );
       };
     t['default'] = h;
+  },
+  yOk1: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('4+ke'),
+      l = () => {
+        var e = Object(o['a'])();
+        return r.a.createElement(
+          'span',
+          null,
+          'You are ',
+          e ? 'online' : 'offline',
+        );
+      };
+    t['default'] = l;
   },
   ySuJ: function (e, t, n) {
     'use strict';
@@ -93738,7 +94403,7 @@
                 'useMutationObserver.ts',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useEffect } from 'react';\nimport type { RefObject } from 'react';\n\nconst useMutationObserver = <T extends HTMLElement>(ref:RefObject<T>,callback: MutationCallback,options:MutationObserverInit = {\n    attributes: true,\n    characterData: true,\n    childList: true,\n    subtree: true,\n}) => {\n     useEffect(() => {\n        if(ref.current){\n            const observer = new MutationObserver(callback);\n            observer.observe(ref.current,options);\n            return () => {\n                observer.disconnect();\n            }\n        }\n     },[callback,options])\n}\n\nexport default useMutationObserver;",
+                code: "import { useEffect } from 'react';\nimport type { RefObject } from 'react';\n\nconst useMutationObserver = <T extends HTMLElement>(\n  ref: RefObject<T>,\n  callback: MutationCallback,\n  options: MutationObserverInit = {\n    attributes: true,\n    characterData: true,\n    childList: true,\n    subtree: true,\n  },\n) => {\n  useEffect(() => {\n    if (ref.current) {\n      const observer = new MutationObserver(callback);\n      observer.observe(ref.current, options);\n      return () => {\n        observer.disconnect();\n      };\n    }\n  }, [callback, options]);\n};\n\nexport default useMutationObserver;",
                 lang: 'ts',
               }),
               r.a.createElement(
@@ -93752,7 +94417,7 @@
                 '\u793a\u4f8b',
               ),
               r.a.createElement(i['a'], {
-                code: "import React,{ useRef,useState } from 'react';\nimport type { RefObject } from 'react';\nimport { Input } from 'antd';\nimport useMutationObserver from './useMutationObserver';\n\nconst { TextArea } = Input;\n\nconst Demo = () => {\n    const mutationRef = useRef<HTMLDivElement>(null);\n    const [mutationCount,setMutationCount] = useState(0);\n    const incrementCount = () => setMutationCount(mutationCount + 1);\n    useMutationObserver(mutationRef as RefObject<HTMLElement>,incrementCount);\n    const [content,setContent] = useState('\u4f60\u597d\uff0c\u4e16\u754c\uff01');\n\n    return (\n        <>\n            <label htmlFor=\"content-input\">\u7f16\u8f91\u8fd9\u4e2a\u66f4\u6539\u6587\u672c:</label>\n            <TextArea id='content-input' style={{ width:'100%' }} value={content} onChange={e => setContent(e.target.value)}></TextArea>\n            <div style={{ width:'100%' }} ref={mutationRef}>\n                <div style={{ resize:'both',overflow:'auto',maxWidth:'100%',border:'1px solid black' }}>\n                    <h2>\u8c03\u6574\u5927\u5c0f\u6216\u66f4\u6539\u5185\u5bb9\uff1a</h2>\n                    <p>{ content }</p>\n                </div>\n                <div>\n                    <h3>\u53d8\u52a8\u7684\u8ba1\u6570 { mutationCount }</h3>\n                </div>\n            </div>\n        </>\n    )\n}\n\nexport default Demo;",
+                code: "import React, { useRef, useState } from 'react';\nimport type { RefObject } from 'react';\nimport { Input } from 'antd';\nimport useMutationObserver from './useMutationObserver';\n\nconst { TextArea } = Input;\n\nconst Demo = () => {\n  const mutationRef = useRef<HTMLDivElement>(null);\n  const [mutationCount, setMutationCount] = useState(0);\n  const incrementCount = () => setMutationCount(mutationCount + 1);\n  useMutationObserver(mutationRef as RefObject<HTMLElement>, incrementCount);\n  const [content, setContent] = useState('\u4f60\u597d\uff0c\u4e16\u754c\uff01');\n\n  return (\n    <>\n      <label htmlFor=\"content-input\">\u7f16\u8f91\u8fd9\u4e2a\u66f4\u6539\u6587\u672c:</label>\n      <TextArea\n        id=\"content-input\"\n        style={{ width: '100%' }}\n        value={content}\n        onChange={(e) => setContent(e.target.value)}\n      ></TextArea>\n      <div style={{ width: '100%' }} ref={mutationRef}>\n        <div\n          style={{\n            resize: 'both',\n            overflow: 'auto',\n            maxWidth: '100%',\n            border: '1px solid black',\n          }}\n        >\n          <h2>\u8c03\u6574\u5927\u5c0f\u6216\u66f4\u6539\u5185\u5bb9\uff1a</h2>\n          <p>{content}</p>\n        </div>\n        <div>\n          <h3>\u53d8\u52a8\u7684\u8ba1\u6570 {mutationCount}</h3>\n        </div>\n      </div>\n    </>\n  );\n};\n\nexport default Demo;",
                 lang: 'tsx',
               }),
               r.a.createElement(
@@ -93770,7 +94435,7 @@
                 'useMutationObserver.js',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useEffect } from 'react';\n\nconst useMutationObserver = (ref,callback,options = {\n    attributes: true,\n    characterData: true,\n    childList: true,\n    subtree: true,\n}) => {\n     useEffect(() => {\n        if(ref.current){\n            const observer = new MutationObserver(callback);\n            observer.observe(ref.current,options);\n            return () => {\n                observer.disconnect();\n            }\n        }\n     },[callback,options])\n}\n\nexport default useMutationObserver;",
+                code: "import { useEffect } from 'react';\n\nconst useMutationObserver = (\n  ref,\n  callback,\n  options = {\n    attributes: true,\n    characterData: true,\n    childList: true,\n    subtree: true,\n  },\n) => {\n  useEffect(() => {\n    if (ref.current) {\n      const observer = new MutationObserver(callback);\n      observer.observe(ref.current, options);\n      return () => {\n        observer.disconnect();\n      };\n    }\n  }, [callback, options]);\n};\n\nexport default useMutationObserver;",
                 lang: 'js',
               }),
               r.a.createElement(
@@ -93788,7 +94453,7 @@
                 'js \u793a\u4f8b',
               ),
               r.a.createElement(i['a'], {
-                code: "import React,{ useRef,useState } from 'react';\nimport { Input } from 'antd';\nimport useMutationObserver from './useMutationObserver';\n\nconst { TextArea } = Input;\n\nconst Demo = () => {\n    const mutationRef = useRef();\n    const [mutationCount,setMutationCount] = useState(0);\n    const incrementCount = () => setMutationCount(mutationCount + 1);\n    useMutationObserver(mutationRef,incrementCount);\n    const [content,setContent] = useState('\u4f60\u597d\uff0c\u4e16\u754c\uff01');\n\n    return (\n        <>\n            <label htmlFor=\"content-input\">\u7f16\u8f91\u8fd9\u4e2a\u66f4\u6539\u6587\u672c:</label>\n            <TextArea id='content-input' style={{ width:'100%' }} value={content} onChange={e => setContent(e.target.value)}></TextArea>\n            <div style={{ width:'100%' }} ref={mutationRef}>\n                <div style={{ resize:'both',overflow:'auto',maxWidth:'100%',border:'1px solid black' }}>\n                    <h2>\u8c03\u6574\u5927\u5c0f\u6216\u66f4\u6539\u5185\u5bb9\uff1a</h2>\n                    <p>{ content }</p>\n                </div>\n                <div>\n                    <h3>\u53d8\u52a8\u7684\u8ba1\u6570 { mutationCount }</h3>\n                </div>\n            </div>\n        </>\n    )\n}\n\nexport default Demo;",
+                code: "import React, { useRef, useState } from 'react';\nimport { Input } from 'antd';\nimport useMutationObserver from './useMutationObserver';\n\nconst { TextArea } = Input;\n\nconst Demo = () => {\n  const mutationRef = useRef();\n  const [mutationCount, setMutationCount] = useState(0);\n  const incrementCount = () => setMutationCount(mutationCount + 1);\n  useMutationObserver(mutationRef, incrementCount);\n  const [content, setContent] = useState('\u4f60\u597d\uff0c\u4e16\u754c\uff01');\n\n  return (\n    <>\n      <label htmlFor=\"content-input\">\u7f16\u8f91\u8fd9\u4e2a\u66f4\u6539\u6587\u672c:</label>\n      <TextArea\n        id=\"content-input\"\n        style={{ width: '100%' }}\n        value={content}\n        onChange={(e) => setContent(e.target.value)}\n      ></TextArea>\n      <div style={{ width: '100%' }} ref={mutationRef}>\n        <div\n          style={{\n            resize: 'both',\n            overflow: 'auto',\n            maxWidth: '100%',\n            border: '1px solid black',\n          }}\n        >\n          <h2>\u8c03\u6574\u5927\u5c0f\u6216\u66f4\u6539\u5185\u5bb9\uff1a</h2>\n          <p>{content}</p>\n        </div>\n        <div>\n          <h3>\u53d8\u52a8\u7684\u8ba1\u6570 {mutationCount}</h3>\n        </div>\n      </div>\n    </>\n  );\n};\n\nexport default Demo;",
                 lang: 'jsx',
               }),
               r.a.createElement('p', null, '\u793a\u4f8b:'),

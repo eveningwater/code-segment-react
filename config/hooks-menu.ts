@@ -111,4 +111,8 @@ export default [
     title: 'useMutationObserver',
     path: '/hooks/use-mutation-observer/use-mutation-observer',
   },
+  {
+    title: 'useNavigatorOnLine',
+    path: '/hooks/use-navigator-on-line/use-navigator-on-line',
+  },
 ];

@@ -111,4 +111,8 @@ export default [
     title: '监听元素的钩子函数',
     path: '/zh-CN/hooks/use-mutation-observer/use-mutation-observer',
   },
+  {
+    title: '在线状态钩子函数',
+    path: '/zh-CN/hooks/use-navigator-on-line/use-navigator-on-line',
+  },
 ];
