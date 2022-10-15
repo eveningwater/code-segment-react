@@ -115,4 +115,8 @@ export default [
     title: 'useNavigatorOnLine',
     path: '/hooks/use-navigator-on-line/use-navigator-on-line',
   },
+  {
+    title: 'useOnGlobalEvent',
+    path: '/hooks/use-on-global-event/use-on-global-event',
+  },
 ];

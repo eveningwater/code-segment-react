@@ -115,4 +115,8 @@ export default [
     title: '在线状态钩子函数',
     path: '/zh-CN/hooks/use-navigator-on-line/use-navigator-on-line',
   },
+  {
+    title: '全局事件钩子函数',
+    path: '/zh-CN/hooks/use-on-global-event/use-on-global-event',
+  },
 ];
