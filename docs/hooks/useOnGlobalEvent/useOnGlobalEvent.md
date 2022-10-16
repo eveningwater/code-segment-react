@@ -1,6 +1,6 @@
-| .                           | title             | tags       | firstSeen  | lastUpdated |
-| --------------------------- | ----------------- | ---------- | ---------- | ----------- |
-| React useOnGlobalEvent hook | hooks,state,event | 2022/10/15 | 2022/10/15 |
+| title                       | tags               | firstSeen  | lastUpdated |
+| --------------------------- | ------------------ | ---------- | ----------- |
+| React useOnGlobalEvent hook | hooks,effect,event | 2022/10/15 | 2022/10/15  |
 
 Executes a callback whenever an event occurs on the global object.
 

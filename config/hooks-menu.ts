@@ -119,4 +119,8 @@ export default [
     title: 'useOnGlobalEvent',
     path: '/hooks/use-on-global-event/use-on-global-event',
   },
+  {
+    title: 'useOnWindowResize',
+    path: '/hooks/use-on-window-resize/use-on-window-resize',
+  },
 ];
