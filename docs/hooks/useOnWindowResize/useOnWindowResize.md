@@ -36,7 +36,17 @@ export default useOnWindowResize;
 #### Demo
 
 ```tsx | pure
+import React from 'react';
+import useOnWindowResize from './useOnWindowResize';
 
+const Demo = () => {
+  useOnWindowResize(() => {
+    console.log(`window size: (${window.innerWidth}, ${window.innerHeight})`);
+  });
+  return <p>Resize the window and check the console.</p>;
+};
+
+export default Demo;
 ```
 
 #### useOnWindowResize.js
@@ -64,7 +74,17 @@ export default useOnWindowResize;
 #### js Demo
 
 ```jsx | pure
+import React from 'react';
+import useOnWindowResize from './useOnWindowResize';
 
+const Demo = () => {
+  useOnWindowResize(() => {
+    console.log(`window size: (${window.innerWidth}, ${window.innerHeight})`);
+  });
+  return <p>Resize the window and check the console.</p>;
+};
+
+export default Demo;
 ```
 
 Demo:

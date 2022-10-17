@@ -120,7 +120,11 @@ export default [
     path: '/zh-CN/hooks/use-on-global-event/use-on-global-event',
   },
   {
-    title: '调整窗口大小事件的钩子函数',
+    title: '调整窗口大小事件钩子函数',
     path: '/zh-CN/hooks/use-on-window-resize/use-on-window-resize',
+  },
+  {
+    title: '窗口滚动事件钩子函数',
+    path: '/hooks/use-on-window-scroll/use-on-window-scroll',
   },
 ];

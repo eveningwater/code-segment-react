@@ -4272,7 +4272,7 @@
                 'useOnWindowResize.ts',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useRef,useEffect } from 'react';\n\nconst useOnWindowResize = (callback: EventListenerOrEventListenerObject) => {\n    const listener = useRef<void | null>(null);\n\n    useEffect(() => {\n        if(listener.current){\n            window.removeEventListener('resize',listener.current);\n        }\n        listener.current = window.addEventListener('resize',callback);\n        return () => {\n            window.removeEventListener('resize',listener.current as unknown as EventListenerOrEventListenerObject);\n        }\n    },[callback])\n}\n\nexport default useOnWindowResize;",
+                code: "import { useRef, useEffect } from 'react';\n\nconst useOnWindowResize = (callback: EventListenerOrEventListenerObject) => {\n  const listener = useRef<void | null>(null);\n\n  useEffect(() => {\n    if (listener.current) {\n      window.removeEventListener('resize', listener.current);\n    }\n    listener.current = window.addEventListener('resize', callback);\n    return () => {\n      window.removeEventListener(\n        'resize',\n        listener.current as unknown as EventListenerOrEventListenerObject,\n      );\n    };\n  }, [callback]);\n};\n\nexport default useOnWindowResize;",
                 lang: 'ts',
               }),
               r.a.createElement(
@@ -4285,7 +4285,10 @@
                 ),
                 'Demo',
               ),
-              r.a.createElement(i['a'], { code: '', lang: 'tsx' }),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport useOnWindowResize from './useOnWindowResize';\n\nconst Demo = () => {\n  useOnWindowResize(() => {\n    console.log(`window size: (${window.innerWidth}, ${window.innerHeight})`);\n  });\n  return <p>Resize the window and check the console.</p>;\n};\n\nexport default Demo;",
+                lang: 'tsx',
+              }),
               r.a.createElement(
                 'h4',
                 { id: 'useonwindowresizejs' },
@@ -4301,7 +4304,7 @@
                 'useOnWindowResize.js',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useRef,useEffect } from 'react';\n\nconst useOnWindowResize = callback => {\n    const listener = useRef(null);\n\n    useEffect(() => {\n        if(listener.current){\n            window.removeEventListener('resize',listener.current);\n        }\n        listener.current = window.addEventListener('resize',callback);\n        return () => {\n            window.removeEventListener('resize',listener.current);\n        }\n    },[callback])\n}\n\nexport default useOnWindowResize;",
+                code: "import { useRef, useEffect } from 'react';\n\nconst useOnWindowResize = (callback) => {\n  const listener = useRef(null);\n\n  useEffect(() => {\n    if (listener.current) {\n      window.removeEventListener('resize', listener.current);\n    }\n    listener.current = window.addEventListener('resize', callback);\n    return () => {\n      window.removeEventListener('resize', listener.current);\n    };\n  }, [callback]);\n};\n\nexport default useOnWindowResize;",
                 lang: 'js',
               }),
               r.a.createElement(
@@ -4314,7 +4317,10 @@
                 ),
                 'js Demo',
               ),
-              r.a.createElement(i['a'], { code: '', lang: 'jsx' }),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport useOnWindowResize from './useOnWindowResize';\n\nconst Demo = () => {\n  useOnWindowResize(() => {\n    console.log(`window size: (${window.innerWidth}, ${window.innerHeight})`);\n  });\n  return <p>Resize the window and check the console.</p>;\n};\n\nexport default Demo;",
+                lang: 'jsx',
+              }),
               r.a.createElement('p', null, 'Demo:'),
             ),
             r.a.createElement(
@@ -9198,7 +9204,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/hooks/useOnGlobalEvent/useOnGlobalEvent.md',
-                updatedTime: 1665907991138,
+                updatedTime: 1665909647854,
                 slugs: [
                   {
                     depth: 4,
@@ -9266,7 +9272,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/hooks/useOnWindowResize/useOnWindowResize.md',
-                updatedTime: 1665909096844,
+                updatedTime: 1666008959560,
                 slugs: [
                   {
                     depth: 4,
@@ -9298,7 +9304,7 @@
               meta: {
                 filePath:
                   'docs/hooks/useOnWindowResize/useOnWindowResize.zh-CN.md',
-                updatedTime: 1665909220026,
+                updatedTime: 1666008980463,
                 slugs: [
                   {
                     depth: 4,
@@ -9327,6 +9333,74 @@
                 },
               },
               title: 'useOnWindowResize.ts - react-code-segment',
+            },
+            {
+              path: '/hooks/use-on-window-scroll/use-on-window-scroll',
+              component: t('v+Kd').default,
+              exact: !0,
+              meta: {
+                filePath: 'docs/hooks/useOnWindowScroll/useOnWindowScroll.md',
+                updatedTime: 1666009202582,
+                slugs: [
+                  {
+                    depth: 4,
+                    value: 'useOnWindowScroll.ts',
+                    heading: 'useonwindowscrollts',
+                  },
+                  { depth: 4, value: 'Demo', heading: 'demo' },
+                  {
+                    depth: 4,
+                    value: 'useOnWindowScroll.js',
+                    heading: 'useonwindowscrolljs',
+                  },
+                  { depth: 4, value: 'js Demo', heading: 'js-demo' },
+                ],
+                title: 'useOnWindowScroll.ts',
+                hasPreviewer: !0,
+                nav: { path: '/hooks', title: 'Hooks' },
+                group: {
+                  path: '/hooks/use-on-window-scroll',
+                  title: 'UseOnWindowScroll',
+                },
+              },
+              title: 'useOnWindowScroll.ts - react-code-segment',
+            },
+            {
+              path: '/zh-CN/hooks/use-on-window-scroll/use-on-window-scroll',
+              component: t('thSz').default,
+              exact: !0,
+              meta: {
+                filePath:
+                  'docs/hooks/useOnWindowScroll/useOnWindowScroll.zh-CN.md',
+                updatedTime: 1666009216392,
+                slugs: [
+                  {
+                    depth: 4,
+                    value: 'useOnWindowScroll.ts',
+                    heading: 'useonwindowscrollts',
+                  },
+                  { depth: 4, value: '\u793a\u4f8b', heading: '\u793a\u4f8b' },
+                  {
+                    depth: 4,
+                    value: 'useOnWindowScroll.js',
+                    heading: 'useonwindowscrolljs',
+                  },
+                  {
+                    depth: 4,
+                    value: 'js \u793a\u4f8b',
+                    heading: 'js-\u793a\u4f8b',
+                  },
+                ],
+                title: 'useOnWindowScroll.ts',
+                hasPreviewer: !0,
+                locale: 'zh-CN',
+                nav: { path: '/zh-CN/hooks', title: 'Hooks' },
+                group: {
+                  path: '/zh-CN/hooks/use-on-window-scroll',
+                  title: 'UseOnWindowScroll',
+                },
+              },
+              title: 'useOnWindowScroll.ts - react-code-segment',
             },
             {
               path: '/model/model',
@@ -10077,6 +10151,19 @@
               exact: !0,
               redirect:
                 '/zh-CN/hooks/use-on-window-resize/use-on-window-resize',
+            },
+            {
+              path: '/hooks/use-on-window-scroll',
+              meta: {},
+              exact: !0,
+              redirect: '/hooks/use-on-window-scroll/use-on-window-scroll',
+            },
+            {
+              path: '/zh-CN/hooks/use-on-window-scroll',
+              meta: {},
+              exact: !0,
+              redirect:
+                '/zh-CN/hooks/use-on-window-scroll/use-on-window-scroll',
             },
             { path: '/model', meta: {}, exact: !0, redirect: '/model/model' },
             {
@@ -22314,6 +22401,24 @@
       }
     };
   },
+  '7qO8': function (e, n, t) {
+    'use strict';
+    t.r(n);
+    var a = t('q1tI'),
+      r = t.n(a),
+      o = t('E7v+'),
+      l = () => (
+        Object(o['a'])(() =>
+          console.log('scroll Y: '.concat(window.pageYOffset)),
+        ),
+        r.a.createElement(
+          'p',
+          { style: { height: '300vh' } },
+          '\u6eda\u52a8\u5e76\u68c0\u67e5\u63a7\u5236\u53f0',
+        )
+      );
+    n['default'] = l;
+  },
   '7ueG': function (e, n, t) {
     'use strict';
     var a = t('I+eb'),
@@ -24267,6 +24372,24 @@
             (n.current = window.addEventListener('resize', e)),
             () => {
               window.removeEventListener('resize', n.current);
+            }
+          ),
+          [e],
+        );
+      };
+    n['a'] = r;
+  },
+  ABG0: function (e, n, t) {
+    'use strict';
+    var a = t('q1tI'),
+      r = (e) => {
+        var n = Object(a['useRef'])(null);
+        Object(a['useEffect'])(
+          () => (
+            n.current && window.removeEventListener('scroll', n.current),
+            (n.current = window.addEventListener('scroll', e)),
+            () => {
+              window.removeEventListener('scroll', n.current);
             }
           ),
           [e],
@@ -31068,6 +31191,24 @@
       };
     s.displayName = 'CheckCircleFilled';
     n['a'] = r['forwardRef'](s);
+  },
+  'E7v+': function (e, n, t) {
+    'use strict';
+    var a = t('q1tI'),
+      r = (e) => {
+        var n = Object(a['useRef'])(null);
+        Object(a['useEffect'])(
+          () => (
+            n.current && window.removeEventListener('scroll', n.current),
+            (n.current = window.addEventListener('scroll', e)),
+            () => {
+              window.removeEventListener('scroll', n.current);
+            }
+          ),
+          [e],
+        );
+      };
+    n['a'] = r;
   },
   E9XD: function (e, n, t) {
     'use strict';
@@ -39759,6 +39900,24 @@
       );
     };
   },
+  LnTW: function (e, n, t) {
+    'use strict';
+    t.r(n);
+    var a = t('q1tI'),
+      r = t.n(a),
+      o = t('ABG0'),
+      l = () => (
+        Object(o['a'])(() =>
+          console.log('scroll Y: '.concat(window.pageYOffset)),
+        ),
+        r.a.createElement(
+          'p',
+          { style: { height: '300vh' } },
+          '\u6eda\u52a8\u5e76\u68c0\u67e5\u63a7\u5236\u53f0',
+        )
+      );
+    n['default'] = l;
+  },
   Lsth: function (e, n, t) {
     'use strict';
     t.r(n);
@@ -43571,24 +43730,36 @@
       ro =
         "import React from 'react';\nimport useOnGlobalEvent from './useOnGlobalEvent';\n\nconst Demo = () => {\n  useOnGlobalEvent('mousemove', (e) => {\n    const { x, y } = e;\n    console.log(`(${x}, ${y})`);\n  });\n  return <p>\u79fb\u52a8\u4f60\u7684\u9f20\u6807</p>;\n};\n\nexport default Demo;",
       oo =
-        "import React from 'react';\r\nimport useOnWindowResize from './useOnWindowResize';\r\n\r\nconst Demo = () => {\r\n    useOnWindowResize(() => {\r\n        console.log(`window size: (${window.innerWidth}, ${window.innerHeight})`)\r\n    });\r\n    return (\r\n        <p>Resize the window and check the console.</p>\r\n    )\r\n}\r\n\r\nexport default Demo;",
+        "import React from 'react';\nimport useOnWindowResize from './useOnWindowResize';\n\nconst Demo = () => {\n  useOnWindowResize(() => {\n    console.log(`window size: (${window.innerWidth}, ${window.innerHeight})`);\n  });\n  return <p>Resize the window and check the console.</p>;\n};\n\nexport default Demo;",
       lo =
-        "import { useRef,useEffect } from 'react';\r\n\r\nconst useOnWindowResize = (callback: EventListenerOrEventListenerObject) => {\r\n    const listener = useRef<void | null>(null);\r\n\r\n    useEffect(() => {\r\n        if(listener.current){\r\n            window.removeEventListener('resize',listener.current);\r\n        }\r\n        listener.current = window.addEventListener('resize',callback);\r\n        return () => {\r\n            window.removeEventListener('resize',listener.current as unknown as EventListenerOrEventListenerObject);\r\n        }\r\n    },[callback])\r\n}\r\n\r\nexport default useOnWindowResize;",
+        "import { useRef, useEffect } from 'react';\n\nconst useOnWindowResize = (callback: EventListenerOrEventListenerObject) => {\n  const listener = useRef<void | null>(null);\n\n  useEffect(() => {\n    if (listener.current) {\n      window.removeEventListener('resize', listener.current);\n    }\n    listener.current = window.addEventListener('resize', callback);\n    return () => {\n      window.removeEventListener(\n        'resize',\n        listener.current as unknown as EventListenerOrEventListenerObject,\n      );\n    };\n  }, [callback]);\n};\n\nexport default useOnWindowResize;",
       io =
-        "import React from 'react';\r\nimport useOnWindowResize from './useOnWindowResize';\r\n\r\nconst Demo = () => {\r\n    useOnWindowResize(() => {\r\n        console.log(`window size: (${window.innerWidth}, ${window.innerHeight})`)\r\n    });\r\n    return (\r\n        <p>Resize the window and check the console.</p>\r\n    )\r\n}\r\n\r\nexport default Demo;",
+        "import React from 'react';\nimport useOnWindowResize from './useOnWindowResize';\n\nconst Demo = () => {\n  useOnWindowResize(() => {\n    console.log(`window size: (${window.innerWidth}, ${window.innerHeight})`);\n  });\n  return <p>Resize the window and check the console.</p>;\n};\n\nexport default Demo;",
       so =
-        "import { useRef,useEffect } from 'react';\r\n\r\nconst useOnWindowResize = callback => {\r\n    const listener = useRef(null);\r\n\r\n    useEffect(() => {\r\n        if(listener.current){\r\n            window.removeEventListener('resize',listener.current);\r\n        }\r\n        listener.current = window.addEventListener('resize',callback);\r\n        return () => {\r\n            window.removeEventListener('resize',listener.current);\r\n        }\r\n    },[callback])\r\n}\r\n\r\nexport default useOnWindowResize;",
+        "import { useRef, useEffect } from 'react';\n\nconst useOnWindowResize = (callback) => {\n  const listener = useRef(null);\n\n  useEffect(() => {\n    if (listener.current) {\n      window.removeEventListener('resize', listener.current);\n    }\n    listener.current = window.addEventListener('resize', callback);\n    return () => {\n      window.removeEventListener('resize', listener.current);\n    };\n  }, [callback]);\n};\n\nexport default useOnWindowResize;",
       co =
-        "import React from 'react';\r\nimport useOnWindowResize from './useOnWindowResize';\r\n\r\nconst Demo = () => {\r\n    useOnWindowResize(() => {\r\n        console.log(`\u7a97\u53e3\u5927\u5c0f: (${window.innerWidth}, ${window.innerHeight})`)\r\n    });\r\n    return (\r\n        <p>\u8c03\u6574\u7a97\u53e3\u5927\u5c0f\u5e76\u68c0\u67e5\u63a7\u5236\u53f0\u3002</p>\r\n    )\r\n}\r\n\r\nexport default Demo;",
+        "import React from 'react';\nimport useOnWindowResize from './useOnWindowResize';\n\nconst Demo = () => {\n  useOnWindowResize(() => {\n    console.log(`\u7a97\u53e3\u5927\u5c0f: (${window.innerWidth}, ${window.innerHeight})`);\n  });\n  return <p>\u8c03\u6574\u7a97\u53e3\u5927\u5c0f\u5e76\u68c0\u67e5\u63a7\u5236\u53f0\u3002</p>;\n};\n\nexport default Demo;",
       uo =
-        "import React from 'react';\r\nimport useOnWindowResize from './useOnWindowResize';\r\n\r\nconst Demo = () => {\r\n    useOnWindowResize(() => {\r\n        console.log(`\u7a97\u53e3\u5927\u5c0f: (${window.innerWidth}, ${window.innerHeight})`)\r\n    });\r\n    return (\r\n        <p>\u8c03\u6574\u7a97\u53e3\u5927\u5c0f\u5e76\u68c0\u67e5\u63a7\u5236\u53f0\u3002</p>\r\n    )\r\n}\r\n\r\nexport default Demo;",
+        "import React from 'react';\nimport useOnWindowResize from './useOnWindowResize';\n\nconst Demo = () => {\n  useOnWindowResize(() => {\n    console.log(`\u7a97\u53e3\u5927\u5c0f: (${window.innerWidth}, ${window.innerHeight})`);\n  });\n  return <p>\u8c03\u6574\u7a97\u53e3\u5927\u5c0f\u5e76\u68c0\u67e5\u63a7\u5236\u53f0\u3002</p>;\n};\n\nexport default Demo;",
       mo =
-        "import React, { useState } from 'react';\nimport { createModel } from './createModel';\nimport { Space, Button } from 'antd';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <Space wrap>\n      <Button onClick={counter.decrement}>-</Button>\n      <span>{counter.count}</span>\n      <Button onClick={counter.increment}>+</Button>\n    </Space>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
+        "import React from 'react';\r\nimport useOnWindowScroll from './useOnWindowScroll';\r\n\r\nconst Demo = () => {\r\n    useOnWindowScroll(() => console.log(`scroll Y: ${window.pageYOffset}`));\r\n    return <p style={{ height: '300vh' }}>Scroll and check the console</p>;\r\n};\r\n\r\nexport default Demo;",
       po =
-        "// \u5bfc\u5165\u7c7b\u578b\nimport type { ReactNode, ComponentType } from 'react';\nimport React from 'react';\nimport { createContext, useContext } from 'react';\nconst EMPTY: unique symbol = Symbol();\nexport interface ModelProviderProps<State = void> {\n  initialState?: State;\n  children: ReactNode;\n}\nexport interface Model<Value, State = void> {\n  Provider: ComponentType<ModelProviderProps<State>>;\n  useModel: () => Value;\n}\nexport const createModel = <Value, State = void>(\n  useHook: (initialState?: State) => Value,\n): Model<Value, State> => {\n  //\u521b\u5efa\u4e00\u4e2acontext\n  const context = createContext<Value | typeof EMPTY>(EMPTY);\n  // \u5b9a\u4e49Provider\u51fd\u6570\n  const Provider = (props: ModelProviderProps<State>) => {\n    const { Provider: ModelProvider } = context;\n    const { initialState, children } = props;\n    const value = useHook(initialState);\n    return <ModelProvider value={value}>{children}</ModelProvider>;\n  };\n  // \u5b9a\u4e49useModel\u51fd\u6570\n  const useModel = (): Value => {\n    const value = useContext(context);\n    // \u8fd9\u91cc\u786e\u5b9a\u4e00\u4e0b\u7528\u6237\u662f\u5426\u6b63\u786e\u4f7f\u7528Provider\n    if (value === EMPTY) {\n      //\u629b\u51fa\u5f02\u5e38\uff0c\u4f7f\u7528\u8005\u5e76\u6ca1\u6709\u7528Provider\u5305\u88f9\u7ec4\u4ef6\n      throw new Error('Component must be wrapped with <Container.Provider>');\n    }\n    // \u8fd4\u56decontext\n    return value;\n  };\n  return { Provider, useModel };\n};\nexport const useModel = <Value, State = void>(\n  model: Model<Value, State>,\n): Value => {\n  return model.useModel();\n};",
+        "import { useRef, useEffect } from 'react';\r\n\r\nconst useOnWindowScroll = (callback: EventListenerOrEventListenerObject) => {\r\n  const listener = useRef<void | null>(null);\r\n\r\n  useEffect(() => {\r\n    if (listener.current) {\r\n      window.removeEventListener('scroll', listener.current);\r\n    }\r\n    listener.current = window.addEventListener('scroll', callback);\r\n    return () => {\r\n      window.removeEventListener(\r\n        'scroll',\r\n        listener.current as unknown as EventListenerOrEventListenerObject,\r\n      );\r\n    };\r\n  }, [callback]);\r\n};\r\n\r\nexport default useOnWindowScroll;",
       fo =
+        "import React from 'react';\r\nimport useOnWindowScroll from './useOnWindowScroll';\r\n\r\nconst Demo = () => {\r\n    useOnWindowScroll(() => console.log(`scroll Y: ${window.pageYOffset}`));\r\n    return <p style={{ height: '300vh' }}>Scroll and check the console</p>;\r\n};\r\n\r\nexport default Demo;",
+      ho =
+        "import { useRef, useEffect } from 'react';\r\n\r\nconst useOnWindowScroll = callback => {\r\n  const listener = useRef(null);\r\n\r\n  useEffect(() => {\r\n    if (listener.current) {\r\n      window.removeEventListener('scroll', listener.current);\r\n    }\r\n    listener.current = window.addEventListener('scroll', callback);\r\n    return () => {\r\n      window.removeEventListener(\r\n        'scroll',\r\n        listener.current,\r\n      );\r\n    };\r\n  }, [callback]);\r\n};\r\n\r\nexport default useOnWindowScroll;",
+      vo =
+        "import React from 'react';\r\nimport useOnWindowScroll from './useOnWindowScroll';\r\n\r\nconst Demo = () => {\r\n    useOnWindowScroll(() => console.log(`scroll Y: ${window.pageYOffset}`));\r\n    return <p style={{ height: '300vh' }}>\u6eda\u52a8\u5e76\u68c0\u67e5\u63a7\u5236\u53f0</p>;\r\n};\r\n\r\nexport default Demo;",
+      go =
+        "import React from 'react';\r\nimport useOnWindowScroll from './useOnWindowScroll';\r\n\r\nconst Demo = () => {\r\n    useOnWindowScroll(() => console.log(`scroll Y: ${window.pageYOffset}`));\r\n    return <p style={{ height: '300vh' }}>\u6eda\u52a8\u5e76\u68c0\u67e5\u63a7\u5236\u53f0</p>;\r\n};\r\n\r\nexport default Demo;",
+      bo =
         "import React, { useState } from 'react';\nimport { createModel } from './createModel';\nimport { Space, Button } from 'antd';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <Space wrap>\n      <Button onClick={counter.decrement}>-</Button>\n      <span>{counter.count}</span>\n      <Button onClick={counter.increment}>+</Button>\n    </Space>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
-      ho = {
+      yo =
+        "// \u5bfc\u5165\u7c7b\u578b\nimport type { ReactNode, ComponentType } from 'react';\nimport React from 'react';\nimport { createContext, useContext } from 'react';\nconst EMPTY: unique symbol = Symbol();\nexport interface ModelProviderProps<State = void> {\n  initialState?: State;\n  children: ReactNode;\n}\nexport interface Model<Value, State = void> {\n  Provider: ComponentType<ModelProviderProps<State>>;\n  useModel: () => Value;\n}\nexport const createModel = <Value, State = void>(\n  useHook: (initialState?: State) => Value,\n): Model<Value, State> => {\n  //\u521b\u5efa\u4e00\u4e2acontext\n  const context = createContext<Value | typeof EMPTY>(EMPTY);\n  // \u5b9a\u4e49Provider\u51fd\u6570\n  const Provider = (props: ModelProviderProps<State>) => {\n    const { Provider: ModelProvider } = context;\n    const { initialState, children } = props;\n    const value = useHook(initialState);\n    return <ModelProvider value={value}>{children}</ModelProvider>;\n  };\n  // \u5b9a\u4e49useModel\u51fd\u6570\n  const useModel = (): Value => {\n    const value = useContext(context);\n    // \u8fd9\u91cc\u786e\u5b9a\u4e00\u4e0b\u7528\u6237\u662f\u5426\u6b63\u786e\u4f7f\u7528Provider\n    if (value === EMPTY) {\n      //\u629b\u51fa\u5f02\u5e38\uff0c\u4f7f\u7528\u8005\u5e76\u6ca1\u6709\u7528Provider\u5305\u88f9\u7ec4\u4ef6\n      throw new Error('Component must be wrapped with <Container.Provider>');\n    }\n    // \u8fd4\u56decontext\n    return value;\n  };\n  return { Provider, useModel };\n};\nexport const useModel = <Value, State = void>(\n  model: Model<Value, State>,\n): Value => {\n  return model.useModel();\n};",
+      Eo =
+        "import React, { useState } from 'react';\nimport { createModel } from './createModel';\nimport { Space, Button } from 'antd';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <Space wrap>\n      <Button onClick={counter.decrement}>-</Button>\n      <span>{counter.count}</span>\n      <Button onClick={counter.increment}>+</Button>\n    </Space>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
+      xo = {
         'loadingbutton-demo': {
           component: t('4ZnB').default,
           previewerProps: {
@@ -47115,12 +47286,68 @@
             identifier: 'js-demo.zh-cn-24',
           },
         },
+        'useonwindowscroll-demo': {
+          component: t('nLCG').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: mo },
+              'useOnWindowScroll.ts': {
+                import: './useOnWindowScroll',
+                content: po,
+              },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'useonwindowscroll-demo',
+          },
+        },
+        'js-demo-25': {
+          component: t('XOMM').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: fo },
+              'useOnWindowScroll.js': {
+                import: './useOnWindowScroll',
+                content: ho,
+              },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'js-demo-25',
+          },
+        },
+        'useonwindowscroll-demo.zh-cn': {
+          component: t('LnTW').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: vo },
+              'useOnWindowScroll.ts': {
+                import: './useOnWindowScroll',
+                content: po,
+              },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'useonwindowscroll-demo.zh-cn',
+          },
+        },
+        'js-demo.zh-cn-25': {
+          component: t('7qO8').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: go },
+              'useOnWindowScroll.js': {
+                import: './useOnWindowScroll',
+                content: ho,
+              },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'js-demo.zh-cn-25',
+          },
+        },
         'model-demo': {
           component: t('3P29').default,
           previewerProps: {
             sources: {
-              _: { tsx: mo },
-              'createModel.tsx': { import: './createModel', content: po },
+              _: { tsx: bo },
+              'createModel.tsx': { import: './createModel', content: yo },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -47134,8 +47361,8 @@
           component: t('lq0m').default,
           previewerProps: {
             sources: {
-              _: { tsx: fo },
-              'createModel.tsx': { import: './createModel', content: po },
+              _: { tsx: Eo },
+              'createModel.tsx': { import: './createModel', content: yo },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -47146,13 +47373,13 @@
           },
         },
       },
-      vo = t('Zs1V'),
-      go = t('BI2/'),
-      bo = t.n(go);
+      wo = t('Zs1V'),
+      ko = t('BI2/'),
+      Co = t.n(ko);
     n['default'] = (e) =>
       o.a.createElement(
-        bo.a,
-        Object(a['a'])({}, e, { config: l, demos: ho, apis: vo }),
+        Co.a,
+        Object(a['a'])({}, e, { config: l, demos: xo, apis: wo }),
       );
   },
   Odut: function (e, n, t) {
@@ -49249,7 +49476,7 @@
   },
   RGYn: function (e) {
     e.exports = JSON.parse(
-      '{"menus":{"en-US":{"/getting-started":[{"path":"/getting-started","title":"react code-segment","meta":{}}],"*":[{"path":"/","title":"Welcome to the website","meta":{}}],"/antd":[{"title":"LoadingButton","path":"/antd/loading-button"},{"title":"OmitText","path":"/antd/omit-text"},{"title":"LoadingModal","path":"/antd/loading-modal"}],"/guide":[{"title":"Accordion","path":"/guide/Accordion/Accordion"},{"title":"Alert","path":"/guide/Alert/Alert"},{"title":"AutoLink","path":"/guide/auto-link/auto-link"},{"title":"Callto","path":"/guide/Callto/Callto"},{"title":"Carousel","path":"/guide/Carousel/Carousel"},{"title":"Collapse","path":"/guide/Collapse/Collapse"},{"title":"ControlledInput","path":"/guide/controlled-input/controlled-input"},{"title":"CountDown","path":"/guide/count-down/count-down"},{"title":"SimpleDataList","path":"/guide/simple-data-list/simple-data-list"},{"title":"SimpleDataTable","path":"/guide/simple-data-table/simple-data-table"},{"title":"FileDrop","path":"/guide/file-drop/file-drop"},{"title":"LazyLoadingImage","path":"/guide/lazy-loading-image/lazy-loading-image"},{"title":"LimitedTextarea","path":"/guide/limited-textarea/limited-textarea"},{"title":"LimitedWordTextarea","path":"/guide/limited-word-textarea/limited-word-textarea"},{"title":"Loader","path":"/guide/Loader/Loader"},{"title":"Mailto","path":"/guide/Mailto/Mailto"},{"title":"SimpleMappedDataTable","path":"/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"Modal","path":"/guide/Modal/Modal"},{"title":"Checkbox","path":"/guide/Checkbox/Checkbox"},{"title":"PasswordRevealer","path":"/guide/password-revealer/password-revealer"},{"title":"Button","path":"/guide/button/button"},{"title":"Select","path":"/guide/select/select"}],"/hooks":[{"title":"useAsync","path":"/hooks/use-async/use-async"},{"title":"useBodyScrollLock","path":"/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"useClickInside","path":"/hooks/use-click-inside/use-click-inside"},{"title":"useClickOutside","path":"/hooks/use-click-outside/use-click-outside"},{"title":"useComponentDidMount","path":"/hooks/use-component-did-mount/use-component-did-mount"},{"title":"useComponentDidUpdate","path":"/hooks/use-component-did-update/use-component-did-update"},{"title":"useComponentWillUnmount","path":"/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"useCopyToClipboard","path":"/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"useDebounce","path":"/hooks/use-debounce/use-debounce"},{"title":"useDefault","path":"/hooks/use-default/use-default"},{"title":"useDelayedState","path":"/hooks/use-delayed-state/use-delayed-state"},{"title":"useEffectOnce","path":"/hooks/use-effect-once/use-effect-once"},{"title":"useError","path":"/hooks/use-error/use-error"},{"title":"useEventListener","path":"/hooks/use-event-listener/use-event-listener"},{"title":"useFetch","path":"/hooks/use-fetch/use-fetch"},{"title":"useForm","path":"/hooks/use-form/use-form"},{"title":"useGetSet","path":"/hooks/use-get-set/use-get-set"},{"title":"useHash","path":"/hooks/use-hash/use-hash"},{"title":"useHover","path":"/hooks/use-hover/use-hover"},{"title":"useIntersectionObserver","path":"/hooks/use-intersection-observer/use-intersection-observer"},{"title":"useInterval","path":"/hooks/use-interval/use-interval"},{"title":"useIsomorphicEffect","path":"/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"useKeyPress","path":"/hooks/use-key-press/use-key-press"},{"title":"useLocalStorage","path":"/hooks/use-local-storage/use-local-storage"},{"title":"useMap","path":"/hooks/use-map/use-map"},{"title":"useMediaQuery","path":"/hooks/use-media-query/use-media-query"},{"title":"useMergeState","path":"/hooks/use-merge-state/use-merge-state"},{"title":"useMutationObserver","path":"/hooks/use-mutation-observer/use-mutation-observer"},{"title":"useNavigatorOnLine","path":"/hooks/use-navigator-on-line/use-navigator-on-line"},{"title":"useOnGlobalEvent","path":"/hooks/use-on-global-event/use-on-global-event"},{"title":"useOnWindowResize","path":"/hooks/use-on-window-resize/use-on-window-resize"}],"/model":[{"title":"React model","path":"/model/model"}]},"zh-CN":{"/zh-CN/getting-started":[{"path":"/zh-CN/getting-started","title":"react \u4ee3\u7801\u6bb5","meta":{}}],"*":[{"path":"/zh-CN","title":"\u6b22\u8fce\u6765\u5230\u672c\u7f51\u7ad9","meta":{}}],"/zh-CN/antd":[{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u6309\u94ae","path":"/zh-CN/antd/loading-button"},{"title":"\u7701\u7565\u6587\u672c\u7ec4\u4ef6","path":"/zh-CN/antd/omit-text"},{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u5f39\u6846","path":"/zh-CN/antd/loading-modal"}],"/zh-CN/guide":[{"title":"\u624b\u98ce\u7434","path":"/zh-CN/guide/Accordion/Accordion"},{"title":"\u63d0\u793a","path":"/zh-CN/guide/Alert/Alert"},{"title":"\u81ea\u52a8\u6587\u672c\u94fe\u63a5","path":"/zh-CN/guide/auto-link/auto-link"},{"title":"\u62e8\u7535\u81f3","path":"/zh-CN/guide/Callto/Callto"},{"title":"\u8f6e\u64ad\u56fe","path":"/zh-CN/guide/Carousel/Carousel"},{"title":"\u53ef\u6298\u53e0\u7684\u5185\u5bb9","path":"/zh-CN/guide/Collapse/Collapse"},{"title":"\u53d7\u63a7\u7684\u8f93\u5165\u6846","path":"/zh-CN/guide/controlled-input/controlled-input"},{"title":"\u5012\u8ba1\u65f6\u7ec4\u4ef6","path":"/zh-CN/guide/count-down/count-down"},{"title":"\u7b80\u6613\u6570\u636e\u5217\u8868\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-list/simple-data-list"},{"title":"\u7b80\u6613\u6570\u636e\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-table/simple-data-table"},{"title":"\u62d6\u62fd\u6587\u4ef6\u7ec4\u4ef6","path":"/zh-CN/guide/file-drop/file-drop"},{"title":"\u61d2\u52a0\u8f7d\u56fe\u7247","path":"/zh-CN/guide/lazy-loading-image/lazy-loading-image"},{"title":"\u9650\u5236\u5b57\u7b26\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-textarea/limited-textarea"},{"title":"\u9650\u5236\u5b57\u6570\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-word-textarea/limited-word-textarea"},{"title":"\u52a0\u8f7d\u7ec4\u4ef6","path":"/zh-CN/guide/Loader/Loader"},{"title":"\u90ae\u4ef6\u94fe\u63a5\u7ec4\u4ef6","path":"/zh-CN/guide/Mailto/Mailto"},{"title":"\u7b80\u6613\u5bf9\u8c61\u6570\u7ec4\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"\u5f39\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Modal/Modal"},{"title":"\u590d\u9009\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Checkbox/Checkbox"},{"title":"\u5bc6\u7801\u663e\u793a\u5668","path":"/zh-CN/guide/password-revealer/password-revealer"},{"title":"\u6309\u94ae","path":"/zh-CN/guide/button/button"},{"title":"\u9009\u62e9\u5668","path":"/zh-CN/guide/select/select"}],"/zh-CN/hooks":[{"title":"\u5f02\u6b65","path":"/zh-CN/hooks/use-async/use-async"},{"title":"\u9501\u5b9abody\u5143\u7d20\u7684\u6eda\u52a8","path":"/zh-CN/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5185","path":"/zh-CN/hooks/use-click-inside/use-click-inside"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5916","path":"/zh-CN/hooks/use-click-outside/use-click-outside"},{"title":"\u7ec4\u4ef6\u7684\u6302\u8f7d","path":"/zh-CN/hooks/use-component-did-mount/use-component-did-mount"},{"title":"\u7ec4\u4ef6\u7684\u72b6\u6001\u66f4\u65b0","path":"/zh-CN/hooks/use-component-did-update/use-component-did-update"},{"title":"\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d","path":"/zh-CN/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"\u590d\u5236\u5230\u526a\u8d34\u677f","path":"/zh-CN/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"\u9632\u6296","path":"/zh-CN/hooks/use-debounce/use-debounce"},{"title":"\u9ed8\u8ba4\u503c","path":"/zh-CN/hooks/use-default/use-default"},{"title":"\u5ef6\u8fdf\u72b6\u6001","path":"/zh-CN/hooks/use-delayed-state/use-delayed-state"},{"title":"\u53ea\u6267\u884c\u4e00\u6b21\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-effect-once/use-effect-once"},{"title":"\u9519\u8bef\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-error/use-error"},{"title":"\u4e8b\u4ef6\u76d1\u542c\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-event-listener/use-event-listener"},{"title":"\u8bf7\u6c42\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-fetch/use-fetch"},{"title":"\u8868\u5355\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-form/use-form"},{"title":"\u72b6\u6001\u8bbe\u7f6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-get-set/use-get-set"},{"title":"\u4fee\u6539hash\u503c\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hash/use-hash"},{"title":"\u60ac\u6d6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hover/use-hover"},{"title":"\u5143\u7d20\u5904\u4e8e\u53ef\u89c6\u533a\u57df\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-intersection-observer/use-intersection-observer"},{"title":"\u5b9a\u65f6\u5668\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-interval/use-interval"},{"title":"\u526f\u4f5c\u7528\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"\u6309\u952e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-key-press/use-key-press"},{"title":"\u5b58\u50a8\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-local-storage/use-local-storage"},{"title":"\u6620\u5c04\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-map/use-map"},{"title":"\u68c0\u67e5\u5a92\u4f53\u67e5\u8be2\u73af\u5883\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-media-query/use-media-query"},{"title":"\u5408\u5e76\u72b6\u6001\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-merge-state/use-merge-state"},{"title":"\u76d1\u542c\u5143\u7d20\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-mutation-observer/use-mutation-observer"},{"title":"\u5728\u7ebf\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-navigator-on-line/use-navigator-on-line"},{"title":"\u5168\u5c40\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-global-event/use-on-global-event"},{"title":"\u8c03\u6574\u7a97\u53e3\u5927\u5c0f\u4e8b\u4ef6\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-window-resize/use-on-window-resize"}],"/zh-CN/model":[{"title":"react\u72b6\u6001\u7ba1\u7406\u5de5\u5177","path":"/zh-CN/model/model"}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"\u4e2d\u6587"}],"navs":{"en-US":[{"title":"getting-started","path":"/getting-started"},{"title":"guide","path":"/guide"},{"title":"hooks","path":"/hooks"},{"title":"model","path":"/model"},{"title":"antd","path":"/antd"},{"title":"github","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"about me","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"jue jin","path":"https://juejin.im/user/4054654613988718"},{"title":"segmentfault","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"gitee","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"blog","path":"https://www.cnblogs.com/eveningwater/"},{"title":"website","path":"https://www.eveningwater.com/"},{"title":"My project","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"17sucai","path":"https://www.17sucai.com/user/800544"},{"title":"ewColorPicker","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}],"zh-CN":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/zh-CN/getting-started"},{"title":"\u6307\u5357","path":"/zh-CN/guide"},{"title":"\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks"},{"title":"\u72b6\u6001\u7ba1\u7406","path":"/zh-CN/model"},{"title":"\u8682\u8681\u8bbe\u8ba1","path":"/zh-CN/antd"},{"title":"\u6e90\u7801\u5730\u5740","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"\u5173\u4e8e\u6211","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"\u6398\u91d1","path":"https://juejin.im/user/4054654613988718"},{"title":"\u601d\u5426","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"\u7801\u4e91","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"\u535a\u5ba2","path":"https://www.cnblogs.com/eveningwater/"},{"title":"\u4e2a\u4eba\u7f51\u7ad9","path":"https://www.eveningwater.com/"},{"title":"\u4e2a\u4eba\u9879\u76ee","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"\u95e8\u7d20\u6750","path":"https://www.17sucai.com/user/800544"},{"title":"\u989c\u8272\u9009\u62e9\u5668","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}]},"title":"react-code-segment","logo":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K","mode":"site","repository":{"url":"","branch":"master"},"theme":{}}',
+      '{"menus":{"en-US":{"/getting-started":[{"path":"/getting-started","title":"react code-segment","meta":{}}],"*":[{"path":"/","title":"Welcome to the website","meta":{}}],"/antd":[{"title":"LoadingButton","path":"/antd/loading-button"},{"title":"OmitText","path":"/antd/omit-text"},{"title":"LoadingModal","path":"/antd/loading-modal"}],"/guide":[{"title":"Accordion","path":"/guide/Accordion/Accordion"},{"title":"Alert","path":"/guide/Alert/Alert"},{"title":"AutoLink","path":"/guide/auto-link/auto-link"},{"title":"Callto","path":"/guide/Callto/Callto"},{"title":"Carousel","path":"/guide/Carousel/Carousel"},{"title":"Collapse","path":"/guide/Collapse/Collapse"},{"title":"ControlledInput","path":"/guide/controlled-input/controlled-input"},{"title":"CountDown","path":"/guide/count-down/count-down"},{"title":"SimpleDataList","path":"/guide/simple-data-list/simple-data-list"},{"title":"SimpleDataTable","path":"/guide/simple-data-table/simple-data-table"},{"title":"FileDrop","path":"/guide/file-drop/file-drop"},{"title":"LazyLoadingImage","path":"/guide/lazy-loading-image/lazy-loading-image"},{"title":"LimitedTextarea","path":"/guide/limited-textarea/limited-textarea"},{"title":"LimitedWordTextarea","path":"/guide/limited-word-textarea/limited-word-textarea"},{"title":"Loader","path":"/guide/Loader/Loader"},{"title":"Mailto","path":"/guide/Mailto/Mailto"},{"title":"SimpleMappedDataTable","path":"/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"Modal","path":"/guide/Modal/Modal"},{"title":"Checkbox","path":"/guide/Checkbox/Checkbox"},{"title":"PasswordRevealer","path":"/guide/password-revealer/password-revealer"},{"title":"Button","path":"/guide/button/button"},{"title":"Select","path":"/guide/select/select"}],"/hooks":[{"title":"useAsync","path":"/hooks/use-async/use-async"},{"title":"useBodyScrollLock","path":"/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"useClickInside","path":"/hooks/use-click-inside/use-click-inside"},{"title":"useClickOutside","path":"/hooks/use-click-outside/use-click-outside"},{"title":"useComponentDidMount","path":"/hooks/use-component-did-mount/use-component-did-mount"},{"title":"useComponentDidUpdate","path":"/hooks/use-component-did-update/use-component-did-update"},{"title":"useComponentWillUnmount","path":"/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"useCopyToClipboard","path":"/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"useDebounce","path":"/hooks/use-debounce/use-debounce"},{"title":"useDefault","path":"/hooks/use-default/use-default"},{"title":"useDelayedState","path":"/hooks/use-delayed-state/use-delayed-state"},{"title":"useEffectOnce","path":"/hooks/use-effect-once/use-effect-once"},{"title":"useError","path":"/hooks/use-error/use-error"},{"title":"useEventListener","path":"/hooks/use-event-listener/use-event-listener"},{"title":"useFetch","path":"/hooks/use-fetch/use-fetch"},{"title":"useForm","path":"/hooks/use-form/use-form"},{"title":"useGetSet","path":"/hooks/use-get-set/use-get-set"},{"title":"useHash","path":"/hooks/use-hash/use-hash"},{"title":"useHover","path":"/hooks/use-hover/use-hover"},{"title":"useIntersectionObserver","path":"/hooks/use-intersection-observer/use-intersection-observer"},{"title":"useInterval","path":"/hooks/use-interval/use-interval"},{"title":"useIsomorphicEffect","path":"/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"useKeyPress","path":"/hooks/use-key-press/use-key-press"},{"title":"useLocalStorage","path":"/hooks/use-local-storage/use-local-storage"},{"title":"useMap","path":"/hooks/use-map/use-map"},{"title":"useMediaQuery","path":"/hooks/use-media-query/use-media-query"},{"title":"useMergeState","path":"/hooks/use-merge-state/use-merge-state"},{"title":"useMutationObserver","path":"/hooks/use-mutation-observer/use-mutation-observer"},{"title":"useNavigatorOnLine","path":"/hooks/use-navigator-on-line/use-navigator-on-line"},{"title":"useOnGlobalEvent","path":"/hooks/use-on-global-event/use-on-global-event"},{"title":"useOnWindowResize","path":"/hooks/use-on-window-resize/use-on-window-resize"},{"title":"useOnWindowScroll","path":"/hooks/use-on-window-scroll/use-on-window-scroll"}],"/model":[{"title":"React model","path":"/model/model"}]},"zh-CN":{"/zh-CN/getting-started":[{"path":"/zh-CN/getting-started","title":"react \u4ee3\u7801\u6bb5","meta":{}}],"*":[{"path":"/zh-CN","title":"\u6b22\u8fce\u6765\u5230\u672c\u7f51\u7ad9","meta":{}}],"/zh-CN/antd":[{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u6309\u94ae","path":"/zh-CN/antd/loading-button"},{"title":"\u7701\u7565\u6587\u672c\u7ec4\u4ef6","path":"/zh-CN/antd/omit-text"},{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u5f39\u6846","path":"/zh-CN/antd/loading-modal"}],"/zh-CN/guide":[{"title":"\u624b\u98ce\u7434","path":"/zh-CN/guide/Accordion/Accordion"},{"title":"\u63d0\u793a","path":"/zh-CN/guide/Alert/Alert"},{"title":"\u81ea\u52a8\u6587\u672c\u94fe\u63a5","path":"/zh-CN/guide/auto-link/auto-link"},{"title":"\u62e8\u7535\u81f3","path":"/zh-CN/guide/Callto/Callto"},{"title":"\u8f6e\u64ad\u56fe","path":"/zh-CN/guide/Carousel/Carousel"},{"title":"\u53ef\u6298\u53e0\u7684\u5185\u5bb9","path":"/zh-CN/guide/Collapse/Collapse"},{"title":"\u53d7\u63a7\u7684\u8f93\u5165\u6846","path":"/zh-CN/guide/controlled-input/controlled-input"},{"title":"\u5012\u8ba1\u65f6\u7ec4\u4ef6","path":"/zh-CN/guide/count-down/count-down"},{"title":"\u7b80\u6613\u6570\u636e\u5217\u8868\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-list/simple-data-list"},{"title":"\u7b80\u6613\u6570\u636e\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-table/simple-data-table"},{"title":"\u62d6\u62fd\u6587\u4ef6\u7ec4\u4ef6","path":"/zh-CN/guide/file-drop/file-drop"},{"title":"\u61d2\u52a0\u8f7d\u56fe\u7247","path":"/zh-CN/guide/lazy-loading-image/lazy-loading-image"},{"title":"\u9650\u5236\u5b57\u7b26\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-textarea/limited-textarea"},{"title":"\u9650\u5236\u5b57\u6570\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-word-textarea/limited-word-textarea"},{"title":"\u52a0\u8f7d\u7ec4\u4ef6","path":"/zh-CN/guide/Loader/Loader"},{"title":"\u90ae\u4ef6\u94fe\u63a5\u7ec4\u4ef6","path":"/zh-CN/guide/Mailto/Mailto"},{"title":"\u7b80\u6613\u5bf9\u8c61\u6570\u7ec4\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"\u5f39\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Modal/Modal"},{"title":"\u590d\u9009\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Checkbox/Checkbox"},{"title":"\u5bc6\u7801\u663e\u793a\u5668","path":"/zh-CN/guide/password-revealer/password-revealer"},{"title":"\u6309\u94ae","path":"/zh-CN/guide/button/button"},{"title":"\u9009\u62e9\u5668","path":"/zh-CN/guide/select/select"}],"/zh-CN/hooks":[{"title":"\u5f02\u6b65","path":"/zh-CN/hooks/use-async/use-async"},{"title":"\u9501\u5b9abody\u5143\u7d20\u7684\u6eda\u52a8","path":"/zh-CN/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5185","path":"/zh-CN/hooks/use-click-inside/use-click-inside"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5916","path":"/zh-CN/hooks/use-click-outside/use-click-outside"},{"title":"\u7ec4\u4ef6\u7684\u6302\u8f7d","path":"/zh-CN/hooks/use-component-did-mount/use-component-did-mount"},{"title":"\u7ec4\u4ef6\u7684\u72b6\u6001\u66f4\u65b0","path":"/zh-CN/hooks/use-component-did-update/use-component-did-update"},{"title":"\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d","path":"/zh-CN/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"\u590d\u5236\u5230\u526a\u8d34\u677f","path":"/zh-CN/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"\u9632\u6296","path":"/zh-CN/hooks/use-debounce/use-debounce"},{"title":"\u9ed8\u8ba4\u503c","path":"/zh-CN/hooks/use-default/use-default"},{"title":"\u5ef6\u8fdf\u72b6\u6001","path":"/zh-CN/hooks/use-delayed-state/use-delayed-state"},{"title":"\u53ea\u6267\u884c\u4e00\u6b21\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-effect-once/use-effect-once"},{"title":"\u9519\u8bef\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-error/use-error"},{"title":"\u4e8b\u4ef6\u76d1\u542c\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-event-listener/use-event-listener"},{"title":"\u8bf7\u6c42\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-fetch/use-fetch"},{"title":"\u8868\u5355\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-form/use-form"},{"title":"\u72b6\u6001\u8bbe\u7f6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-get-set/use-get-set"},{"title":"\u4fee\u6539hash\u503c\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hash/use-hash"},{"title":"\u60ac\u6d6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hover/use-hover"},{"title":"\u5143\u7d20\u5904\u4e8e\u53ef\u89c6\u533a\u57df\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-intersection-observer/use-intersection-observer"},{"title":"\u5b9a\u65f6\u5668\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-interval/use-interval"},{"title":"\u526f\u4f5c\u7528\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"\u6309\u952e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-key-press/use-key-press"},{"title":"\u5b58\u50a8\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-local-storage/use-local-storage"},{"title":"\u6620\u5c04\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-map/use-map"},{"title":"\u68c0\u67e5\u5a92\u4f53\u67e5\u8be2\u73af\u5883\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-media-query/use-media-query"},{"title":"\u5408\u5e76\u72b6\u6001\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-merge-state/use-merge-state"},{"title":"\u76d1\u542c\u5143\u7d20\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-mutation-observer/use-mutation-observer"},{"title":"\u5728\u7ebf\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-navigator-on-line/use-navigator-on-line"},{"title":"\u5168\u5c40\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-global-event/use-on-global-event"},{"title":"\u8c03\u6574\u7a97\u53e3\u5927\u5c0f\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-window-resize/use-on-window-resize"},{"title":"\u7a97\u53e3\u6eda\u52a8\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-window-scroll/use-on-window-scroll"}],"/zh-CN/model":[{"title":"react\u72b6\u6001\u7ba1\u7406\u5de5\u5177","path":"/zh-CN/model/model"}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"\u4e2d\u6587"}],"navs":{"en-US":[{"title":"getting-started","path":"/getting-started"},{"title":"guide","path":"/guide"},{"title":"hooks","path":"/hooks"},{"title":"model","path":"/model"},{"title":"antd","path":"/antd"},{"title":"github","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"about me","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"jue jin","path":"https://juejin.im/user/4054654613988718"},{"title":"segmentfault","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"gitee","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"blog","path":"https://www.cnblogs.com/eveningwater/"},{"title":"website","path":"https://www.eveningwater.com/"},{"title":"My project","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"17sucai","path":"https://www.17sucai.com/user/800544"},{"title":"ewColorPicker","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}],"zh-CN":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/zh-CN/getting-started"},{"title":"\u6307\u5357","path":"/zh-CN/guide"},{"title":"\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks"},{"title":"\u72b6\u6001\u7ba1\u7406","path":"/zh-CN/model"},{"title":"\u8682\u8681\u8bbe\u8ba1","path":"/zh-CN/antd"},{"title":"\u6e90\u7801\u5730\u5740","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"\u5173\u4e8e\u6211","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"\u6398\u91d1","path":"https://juejin.im/user/4054654613988718"},{"title":"\u601d\u5426","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"\u7801\u4e91","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"\u535a\u5ba2","path":"https://www.cnblogs.com/eveningwater/"},{"title":"\u4e2a\u4eba\u7f51\u7ad9","path":"https://www.eveningwater.com/"},{"title":"\u4e2a\u4eba\u9879\u76ee","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"\u95e8\u7d20\u6750","path":"https://www.17sucai.com/user/800544"},{"title":"\u989c\u8272\u9009\u62e9\u5668","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}]},"title":"react-code-segment","logo":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K","mode":"site","repository":{"url":"","branch":"master"},"theme":{}}',
     );
   },
   RH9F: function (e, n, t) {
@@ -55278,6 +55505,24 @@
       };
     });
   },
+  XOMM: function (e, n, t) {
+    'use strict';
+    t.r(n);
+    var a = t('q1tI'),
+      r = t.n(a),
+      o = t('E7v+'),
+      l = () => (
+        Object(o['a'])(() =>
+          console.log('scroll Y: '.concat(window.pageYOffset)),
+        ),
+        r.a.createElement(
+          'p',
+          { style: { height: '300vh' } },
+          'Scroll and check the console',
+        )
+      );
+    n['default'] = l;
+  },
   XRuG: function (e, n, t) {
     'use strict';
     function a(e, n, t, a, r, o, l) {
@@ -59086,7 +59331,7 @@
                 'useOnWindowResize.ts',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useRef,useEffect } from 'react';\n\nconst useOnWindowResize = (callback: EventListenerOrEventListenerObject) => {\n    const listener = useRef<void | null>(null);\n\n    useEffect(() => {\n        if(listener.current){\n            window.removeEventListener('resize',listener.current);\n        }\n        listener.current = window.addEventListener('resize',callback);\n        return () => {\n            window.removeEventListener('resize',listener.current as unknown as EventListenerOrEventListenerObject);\n        }\n    },[callback])\n}\n\nexport default useOnWindowResize;",
+                code: "import { useRef, useEffect } from 'react';\n\nconst useOnWindowResize = (callback: EventListenerOrEventListenerObject) => {\n  const listener = useRef<void | null>(null);\n\n  useEffect(() => {\n    if (listener.current) {\n      window.removeEventListener('resize', listener.current);\n    }\n    listener.current = window.addEventListener('resize', callback);\n    return () => {\n      window.removeEventListener(\n        'resize',\n        listener.current as unknown as EventListenerOrEventListenerObject,\n      );\n    };\n  }, [callback]);\n};\n\nexport default useOnWindowResize;",
                 lang: 'ts',
               }),
               r.a.createElement(
@@ -59099,7 +59344,10 @@
                 ),
                 '\u793a\u4f8b',
               ),
-              r.a.createElement(i['a'], { code: '', lang: 'tsx' }),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport useOnWindowResize from './useOnWindowResize';\n\nconst Demo = () => {\n  useOnWindowResize(() => {\n    console.log(`\u7a97\u53e3\u5927\u5c0f: (${window.innerWidth}, ${window.innerHeight})`);\n  });\n  return <p>\u8c03\u6574\u7a97\u53e3\u5927\u5c0f\u5e76\u68c0\u67e5\u63a7\u5236\u53f0\u3002</p>;\n};\n\nexport default Demo;",
+                lang: 'tsx',
+              }),
               r.a.createElement(
                 'h4',
                 { id: 'useonwindowresizejs' },
@@ -59115,7 +59363,7 @@
                 'useOnWindowResize.js',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useRef,useEffect } from 'react';\n\nconst useOnWindowResize = callback => {\n    const listener = useRef(null);\n\n    useEffect(() => {\n        if(listener.current){\n            window.removeEventListener('resize',listener.current);\n        }\n        listener.current = window.addEventListener('resize',callback);\n        return () => {\n            window.removeEventListener('resize',listener.current);\n        }\n    },[callback])\n}\n\nexport default useOnWindowResize;",
+                code: "import { useRef, useEffect } from 'react';\n\nconst useOnWindowResize = (callback) => {\n  const listener = useRef(null);\n\n  useEffect(() => {\n    if (listener.current) {\n      window.removeEventListener('resize', listener.current);\n    }\n    listener.current = window.addEventListener('resize', callback);\n    return () => {\n      window.removeEventListener('resize', listener.current);\n    };\n  }, [callback]);\n};\n\nexport default useOnWindowResize;",
                 lang: 'js',
               }),
               r.a.createElement(
@@ -59132,7 +59380,10 @@
                 ),
                 'js \u793a\u4f8b',
               ),
-              r.a.createElement(i['a'], { code: '', lang: 'jsx' }),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport useOnWindowResize from './useOnWindowResize';\n\nconst Demo = () => {\n  useOnWindowResize(() => {\n    console.log(`\u7a97\u53e3\u5927\u5c0f: (${window.innerWidth}, ${window.innerHeight})`);\n  });\n  return <p>\u8c03\u6574\u7a97\u53e3\u5927\u5c0f\u5e76\u68c0\u67e5\u63a7\u5236\u53f0\u3002</p>;\n};\n\nexport default Demo;",
+                lang: 'jsx',
+              }),
               r.a.createElement('p', null, '\u793a\u4f8b:'),
             ),
             r.a.createElement(
@@ -72625,6 +72876,24 @@
         });
     n['default'] = m;
   },
+  nLCG: function (e, n, t) {
+    'use strict';
+    t.r(n);
+    var a = t('q1tI'),
+      r = t.n(a),
+      o = t('ABG0'),
+      l = () => (
+        Object(o['a'])(() =>
+          console.log('scroll Y: '.concat(window.pageYOffset)),
+        ),
+        r.a.createElement(
+          'p',
+          { style: { height: '300vh' } },
+          'Scroll and check the console',
+        )
+      );
+    n['default'] = l;
+  },
   nMam: function (e, n, t) {
     'use strict';
     t.d(n, 'a', function () {
@@ -79594,6 +79863,199 @@
       return a;
     });
   },
+  thSz: function (e, n, t) {
+    'use strict';
+    t.r(n);
+    var a = t('q1tI'),
+      r = t.n(a),
+      o = t('cGfz'),
+      l = t('GKDz'),
+      i = t('1i5+'),
+      s = t('SQsl'),
+      c = r.a.memo((e) => {
+        var n = e.demos,
+          t = n['useonwindowscroll-demo.zh-cn'].component,
+          a = n['js-demo.zh-cn-25'].component;
+        return r.a.createElement(
+          r.a.Fragment,
+          null,
+          r.a.createElement(
+            r.a.Fragment,
+            null,
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement(
+                s['a'],
+                null,
+                r.a.createElement(
+                  'thead',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement('th', null, '\u6807\u9898'),
+                    r.a.createElement('th', null, '\u6807\u7b7e'),
+                    r.a.createElement(
+                      'th',
+                      null,
+                      '\u9996\u6b21\u6dfb\u52a0\u65f6\u95f4',
+                    ),
+                    r.a.createElement('th', null, '\u66f4\u65b0\u65f6\u95f4'),
+                  ),
+                ),
+                r.a.createElement(
+                  'tbody',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement(
+                      'td',
+                      null,
+                      '\u7a97\u53e3\u6eda\u52a8\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570',
+                    ),
+                    r.a.createElement(
+                      'td',
+                      null,
+                      '\u94a9\u5b50\u51fd\u6570,\u526f\u4f5c\u7528\uff0c\u4e8b\u4ef6',
+                    ),
+                    r.a.createElement('td', null, '2022/10/17'),
+                    r.a.createElement('td', null, '2022/10/17'),
+                  ),
+                ),
+              ),
+              r.a.createElement(
+                'p',
+                null,
+                '\u6bcf\u5f53\u6eda\u52a8\u7a97\u53e3\u65f6\u6267\u884c\u56de\u8c03\u3002',
+              ),
+              r.a.createElement(
+                'ul',
+                null,
+                r.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 useRef() \u6302\u94a9\u521b\u5efa\u4e00\u4e2a\u53d8\u91cf listener\uff0c\u5b83\u5c06\u4fdd\u5b58 listener \u5f15\u7528\u3002',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 useEffect() \u94a9\u5b50\u548c EventTarget.addEventListener() \u6765\u76d1\u542c Window \u5168\u5c40\u5bf9\u8c61\u7684\u201c\u6eda\u52a8\u201d\u4e8b\u4ef6\u3002',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 EventTarget.removeEventListener() \u5220\u9664\u4efb\u4f55\u73b0\u6709\u7684\u4fa6\u542c\u5668\u5e76\u5728\u7ec4\u4ef6\u5378\u8f7d\u65f6\u8fdb\u884c\u6e05\u7406\u3002',
+                ),
+              ),
+              r.a.createElement(
+                'h4',
+                { id: 'useonwindowscrollts' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#useonwindowscrollts',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useOnWindowScroll.ts',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import { useRef, useEffect } from 'react';\n\nconst useOnWindowScroll = (callback: EventListenerOrEventListenerObject) => {\n  const listener = useRef<void | null>(null);\n\n  useEffect(() => {\n    if (listener.current) {\n      window.removeEventListener('scroll', listener.current);\n    }\n    listener.current = window.addEventListener('scroll', callback);\n    return () => {\n      window.removeEventListener(\n        'scroll',\n        listener.current as unknown as EventListenerOrEventListenerObject,\n      );\n    };\n  }, [callback]);\n};\n\nexport default useOnWindowScroll;",
+                lang: 'ts',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: '\u793a\u4f8b' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#\u793a\u4f8b', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                '\u793a\u4f8b',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport useOnWindowScroll from './useOnWindowScroll';\n\nconst Demo = () => {\n    useOnWindowScroll(() => console.log(`scroll Y: ${window.pageYOffset}`));\n    return <p style={{ height: '300vh' }}>\u6eda\u52a8\u5e76\u68c0\u67e5\u63a7\u5236\u53f0</p>;\n};\n\nexport default Demo;",
+                lang: 'tsx',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'useonwindowscrolljs' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#useonwindowscrolljs',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useOnWindowScroll.js',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import { useRef, useEffect } from 'react';\n\nconst useOnWindowScroll = callback => {\n  const listener = useRef(null);\n\n  useEffect(() => {\n    if (listener.current) {\n      window.removeEventListener('scroll', listener.current);\n    }\n    listener.current = window.addEventListener('scroll', callback);\n    return () => {\n      window.removeEventListener(\n        'scroll',\n        listener.current,\n      );\n    };\n  }, [callback]);\n};\n\nexport default useOnWindowScroll;",
+                lang: 'js',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'js-\u793a\u4f8b' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#js-\u793a\u4f8b',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'js \u793a\u4f8b',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport useOnWindowScroll from './useOnWindowScroll';\n\nconst Demo = () => {\n    useOnWindowScroll(() => console.log(`scroll Y: ${window.pageYOffset}`));\n    return <p style={{ height: '300vh' }}>\u6eda\u52a8\u5e76\u68c0\u67e5\u63a7\u5236\u53f0</p>;\n};\n\nexport default Demo;",
+                lang: 'jsx',
+              }),
+              r.a.createElement('p', null, '\u793a\u4f8b:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              n['useonwindowscroll-demo.zh-cn'].previewerProps,
+              r.a.createElement(t, null),
+            ),
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement('p', null, 'js \u793a\u4f8b:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              n['js-demo.zh-cn-25'].previewerProps,
+              r.a.createElement(a, null),
+            ),
+          ),
+        );
+      });
+    n['default'] = (e) => {
+      var n = r.a.useContext(o['context']),
+        t = n.demos;
+      return (
+        r.a.useEffect(() => {
+          var n;
+          null !== e &&
+            void 0 !== e &&
+            null !== (n = e.location) &&
+            void 0 !== n &&
+            n.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        r.a.createElement(c, { demos: t })
+      );
+    };
+  },
   tiKp: function (e, n, t) {
     var a = t('2oRo'),
       r = t('VpIT'),
@@ -82221,6 +82683,187 @@
     e.exports = !a(function () {
       return Object.isExtensible(Object.preventExtensions({}));
     });
+  },
+  'v+Kd': function (e, n, t) {
+    'use strict';
+    t.r(n);
+    var a = t('q1tI'),
+      r = t.n(a),
+      o = t('cGfz'),
+      l = t('GKDz'),
+      i = t('1i5+'),
+      s = t('SQsl'),
+      c = r.a.memo((e) => {
+        var n = e.demos,
+          t = n['useonwindowscroll-demo'].component,
+          a = n['js-demo-25'].component;
+        return r.a.createElement(
+          r.a.Fragment,
+          null,
+          r.a.createElement(
+            r.a.Fragment,
+            null,
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement(
+                s['a'],
+                null,
+                r.a.createElement(
+                  'thead',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement('th', null, 'title'),
+                    r.a.createElement('th', null, 'tags'),
+                    r.a.createElement('th', null, 'firstSeen'),
+                    r.a.createElement('th', null, 'lastUpdated'),
+                  ),
+                ),
+                r.a.createElement(
+                  'tbody',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement(
+                      'td',
+                      null,
+                      'React useOnWindowScroll hook',
+                    ),
+                    r.a.createElement('td', null, 'hooks,effect,event'),
+                    r.a.createElement('td', null, '2022/10/17'),
+                    r.a.createElement('td', null, '2022/10/17'),
+                  ),
+                ),
+              ),
+              r.a.createElement(
+                'p',
+                null,
+                'Executes a callback whenever the window is scrolled.',
+              ),
+              r.a.createElement(
+                'ul',
+                null,
+                r.a.createElement(
+                  'li',
+                  null,
+                  'Use the useRef() hook to create a variable, listener, which will hold the listener reference.',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  "Use the useEffect() hook and EventTarget.addEventListener() to listen to the 'scroll' event of the Window global object.",
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  'Use EventTarget.removeEventListener() to remove any existing listeners and clean up when the component unmounts.',
+                ),
+              ),
+              r.a.createElement(
+                'h4',
+                { id: 'useonwindowscrollts' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#useonwindowscrollts',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useOnWindowScroll.ts',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import { useRef, useEffect } from 'react';\n\nconst useOnWindowScroll = (callback: EventListenerOrEventListenerObject) => {\n  const listener = useRef<void | null>(null);\n\n  useEffect(() => {\n    if (listener.current) {\n      window.removeEventListener('scroll', listener.current);\n    }\n    listener.current = window.addEventListener('scroll', callback);\n    return () => {\n      window.removeEventListener(\n        'scroll',\n        listener.current as unknown as EventListenerOrEventListenerObject,\n      );\n    };\n  }, [callback]);\n};\n\nexport default useOnWindowScroll;",
+                lang: 'ts',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'demo' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#demo', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'Demo',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport useOnWindowScroll from './useOnWindowScroll';\n\nconst Demo = () => {\n    useOnWindowScroll(() => console.log(`scroll Y: ${window.pageYOffset}`));\n    return <p style={{ height: '300vh' }}>Scroll and check the console</p>;\n};\n\nexport default Demo;",
+                lang: 'tsx',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'useonwindowscrolljs' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#useonwindowscrolljs',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useOnWindowScroll.js',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import { useRef, useEffect } from 'react';\n\nconst useOnWindowScroll = callback => {\n  const listener = useRef(null);\n\n  useEffect(() => {\n    if (listener.current) {\n      window.removeEventListener('scroll', listener.current);\n    }\n    listener.current = window.addEventListener('scroll', callback);\n    return () => {\n      window.removeEventListener(\n        'scroll',\n        listener.current,\n      );\n    };\n  }, [callback]);\n};\n\nexport default useOnWindowScroll;",
+                lang: 'js',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'js-demo' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#js-demo', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'js Demo',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport useOnWindowScroll from './useOnWindowScroll';\n\nconst Demo = () => {\n    useOnWindowScroll(() => console.log(`scroll Y: ${window.pageYOffset}`));\n    return <p style={{ height: '300vh' }}>Scroll and check the console</p>;\n};\n\nexport default Demo;",
+                lang: 'jsx',
+              }),
+              r.a.createElement('p', null, 'Demo:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              n['useonwindowscroll-demo'].previewerProps,
+              r.a.createElement(t, null),
+            ),
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement('p', null, 'js Demo:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              n['js-demo-25'].previewerProps,
+              r.a.createElement(a, null),
+            ),
+          ),
+        );
+      });
+    n['default'] = (e) => {
+      var n = r.a.useContext(o['context']),
+        t = n.demos;
+      return (
+        r.a.useEffect(() => {
+          var n;
+          null !== e &&
+            void 0 !== e &&
+            null !== (n = e.location) &&
+            void 0 !== n &&
+            n.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        r.a.createElement(c, { demos: t })
+      );
+    };
   },
   v5b1: function (e, n, t) {
     'use strict';

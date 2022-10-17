@@ -123,4 +123,8 @@ export default [
     title: 'useOnWindowResize',
     path: '/hooks/use-on-window-resize/use-on-window-resize',
   },
+  {
+    title: 'useOnWindowScroll',
+    path: '/hooks/use-on-window-scroll/use-on-window-scroll',
+  },
 ];
