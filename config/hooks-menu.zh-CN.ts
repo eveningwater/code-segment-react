@@ -125,6 +125,10 @@ export default [
   },
   {
     title: '窗口滚动事件钩子函数',
-    path: '/hooks/use-on-window-scroll/use-on-window-scroll',
+    path: '/zh-CN/hooks/use-on-window-scroll/use-on-window-scroll',
+  },
+  {
+    title: '永久存储状态钩子函数',
+    path: '/zh-CN/hooks/use-persisted-state/use-persisted-state',
   },
 ];

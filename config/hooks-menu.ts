@@ -127,4 +127,8 @@ export default [
     title: 'useOnWindowScroll',
     path: '/hooks/use-on-window-scroll/use-on-window-scroll',
   },
+  {
+    title: 'usePersistedState',
+    path: '/hooks/use-persisted-state/use-persisted-state',
+  },
 ];
