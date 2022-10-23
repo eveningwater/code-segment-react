@@ -131,4 +131,8 @@ export default [
     title: '永久存储状态钩子函数',
     path: '/zh-CN/hooks/use-persisted-state/use-persisted-state',
   },
+  {
+    title: '传送门钩子函数',
+    path: '/zh-CN/hooks/use-portal/use-portal',
+  },
 ];

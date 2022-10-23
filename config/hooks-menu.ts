@@ -131,4 +131,8 @@ export default [
     title: 'usePersistedState',
     path: '/hooks/use-persisted-state/use-persisted-state',
   },
+  {
+    title: 'usePortal',
+    path: '/hooks/use-portal/use-portal',
+  },
 ];

@@ -9408,7 +9408,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/hooks/usePersistedState/usePersistedState.md',
-                updatedTime: 1666103339690,
+                updatedTime: 1666103894471,
                 slugs: [
                   {
                     depth: 4,
@@ -9440,7 +9440,7 @@
               meta: {
                 filePath:
                   'docs/hooks/usePersistedState/usePersistedState.zh-CN.md',
-                updatedTime: 1666103353623,
+                updatedTime: 1666103894576,
                 slugs: [
                   {
                     depth: 4,
@@ -9469,6 +9469,51 @@
                 },
               },
               title: 'usePersistedState.ts - react-code-segment',
+            },
+            {
+              path: '/hooks/use-portal/use-portal',
+              component: n('8mq1').default,
+              exact: !0,
+              meta: {
+                filePath: 'docs/hooks/usePortal/usePortal.md',
+                updatedTime: 1666531403562,
+                slugs: [
+                  { depth: 4, value: 'usePortal.ts', heading: 'useportalts' },
+                  { depth: 4, value: 'Demo', heading: 'demo' },
+                  { depth: 4, value: 'usePortal.js', heading: 'useportaljs' },
+                  { depth: 4, value: 'js Demo', heading: 'js-demo' },
+                ],
+                title: 'usePortal.ts',
+                hasPreviewer: !0,
+                nav: { path: '/hooks', title: 'Hooks' },
+                group: { path: '/hooks/use-portal', title: 'UsePortal' },
+              },
+              title: 'usePortal.ts - react-code-segment',
+            },
+            {
+              path: '/zh-CN/hooks/use-portal/use-portal',
+              component: n('YsGT').default,
+              exact: !0,
+              meta: {
+                filePath: 'docs/hooks/usePortal/usePortal.zh-CN.md',
+                updatedTime: 1666531345737,
+                slugs: [
+                  { depth: 4, value: 'usePortal.ts', heading: 'useportalts' },
+                  { depth: 4, value: '\u793a\u4f8b', heading: '\u793a\u4f8b' },
+                  { depth: 4, value: 'usePortal.js', heading: 'useportaljs' },
+                  {
+                    depth: 4,
+                    value: 'js \u793a\u4f8b',
+                    heading: 'js-\u793a\u4f8b',
+                  },
+                ],
+                title: 'usePortal.ts',
+                hasPreviewer: !0,
+                locale: 'zh-CN',
+                nav: { path: '/zh-CN/hooks', title: 'Hooks' },
+                group: { path: '/zh-CN/hooks/use-portal', title: 'UsePortal' },
+              },
+              title: 'usePortal.ts - react-code-segment',
             },
             {
               path: '/model/model',
@@ -10244,6 +10289,18 @@
               meta: {},
               exact: !0,
               redirect: '/zh-CN/hooks/use-persisted-state/use-persisted-state',
+            },
+            {
+              path: '/hooks/use-portal',
+              meta: {},
+              exact: !0,
+              redirect: '/hooks/use-portal/use-portal',
+            },
+            {
+              path: '/zh-CN/hooks/use-portal',
+              meta: {},
+              exact: !0,
+              redirect: '/zh-CN/hooks/use-portal/use-portal',
             },
             { path: '/model', meta: {}, exact: !0, redirect: '/model/model' },
             {
@@ -23410,6 +23467,180 @@
       }
     };
   },
+  '8mq1': function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('cGfz'),
+      l = n('GKDz'),
+      i = n('1i5+'),
+      s = n('SQsl'),
+      c = r.a.memo((e) => {
+        var t = e.demos,
+          n = t['useportal-demo'].component,
+          a = t['js-demo-27'].component;
+        return r.a.createElement(
+          r.a.Fragment,
+          null,
+          r.a.createElement(
+            r.a.Fragment,
+            null,
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement(
+                s['a'],
+                null,
+                r.a.createElement(
+                  'thead',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement('th', null, 'title'),
+                    r.a.createElement('th', null, 'tags'),
+                    r.a.createElement('th', null, 'firstSeen'),
+                    r.a.createElement('th', null, 'lastUpdated'),
+                  ),
+                ),
+                r.a.createElement(
+                  'tbody',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement('td', null, 'React usePortal hook'),
+                    r.a.createElement('td', null, 'hooks,effect,state'),
+                    r.a.createElement('td', null, '2022/10/23'),
+                    r.a.createElement('td', null, '2022/10/23'),
+                  ),
+                ),
+              ),
+              r.a.createElement(
+                'p',
+                null,
+                'Creates a portal, allowing rendering of children outside the parent component.',
+              ),
+              r.a.createElement(
+                'ul',
+                null,
+                r.a.createElement(
+                  'li',
+                  null,
+                  'Use the useState() hook to create a state variable that holds the render() and remove() functions for the portal.',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  'Use ReactDOM.createPortal() and ReactDOM.unmountComponentAtNode() to create a portal and a function to remove it. Use the useCallback() hook to wrap and memoize these functions as createPortal().',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  "Use the useEffect() hook to call createPortal() and update the state variable any time el's value changes.",
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  'Finally, return the render() function of the state variable.',
+                ),
+              ),
+              r.a.createElement(
+                'h4',
+                { id: 'useportalts' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#useportalts', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'usePortal.ts',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React,{ useState,useEffect,useCallback } from 'react';\nimport ReactDOM from 'react-dom';\nexport type ReturnPortalType = React.ReactPortal | (() => null);\nexport type RenderType = ((props: React.PropsWithChildren) => React.ReactPortal) | (() => null);\nexport type PortalType = {\n    render: RenderType,\n    remove: (() => boolean) | (() => null)\n}\nconst usePortal = <T extends Element>(el: T):ReturnPortalType  => {\n    const [portal,setPortal] = useState<PortalType>({\n        render: () => null,\n        remove: () => null\n    });\n\n    const createPortal = useCallback((el: T) => {\n        const Portal = (props: React.PropsWithChildren) => ReactDOM.createPortal(props.children,el);\n        const remove = () => ReactDOM.unmountComponentAtNode(el);\n\n        return {\n            render: Portal,\n            remove\n        }\n    },[])\n\n    useEffect(() => {\n        if(el){\n            portal.remove();\n        }\n        const newPortal = createPortal(el);\n        setPortal(newPortal as PortalType);\n\n        return () => {\n            newPortal.remove();\n        }\n    },[el])\n\n    return portal.render as ReturnPortalType;\n}\n\nexport default usePortal;",
+                lang: 'ts',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'demo' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#demo', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'Demo',
+              ),
+              r.a.createElement(i['a'], {
+                code: 'import React, { JSXElementConstructor } from "react";\nimport usePortal from "./usePortal";\n\nconst Demo = () => {\n    const Portal = usePortal(document.querySelector(\'.title\')!) as JSXElementConstructor<any>;\n\n    return (\n        <p>\n            hello,world!\n            <Portal>Portalized Title</Portal>\n        </p>\n    )\n}\n\nexport default Demo;',
+                lang: 'tsx',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'useportaljs' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#useportaljs', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'usePortal.js',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React,{ useState,useEffect,useCallback } from 'react';\nimport ReactDOM from 'react-dom';\nconst usePortal = el  => {\n    const [portal,setPortal] = useState({\n        render: () => null,\n        remove: () => null\n    });\n\n    const createPortal = useCallback(el => {\n        const Portal = (props) => ReactDOM.createPortal(props.children,el);\n        const remove = () => ReactDOM.unmountComponentAtNode(el);\n\n        return {\n            render: Portal,\n            remove\n        }\n    },[])\n\n    useEffect(() => {\n        if(el){\n            portal.remove();\n        }\n        const newPortal = createPortal(el);\n        setPortal(newPortal);\n\n        return () => {\n            newPortal.remove();\n        }\n    },[el])\n\n    return portal.render;\n}\n\nexport default usePortal;",
+                lang: 'js',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'js-demo' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#js-demo', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'js Demo',
+              ),
+              r.a.createElement(i['a'], {
+                code: 'import React, { JSXElementConstructor } from "react";\nimport usePortal from "./usePortal";\n\nconst Demo = () => {\n    const Portal = usePortal(document.querySelector(\'.title\'));\n\n    return (\n        <p>\n            hello,world!\n            <Portal>Portalized Title</Portal>\n        </p>\n    )\n}\n\nexport default Demo;',
+                lang: 'jsx',
+              }),
+              r.a.createElement('p', null, 'Demo:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              t['useportal-demo'].previewerProps,
+              r.a.createElement(n, null),
+            ),
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement('p', null, 'js Demo:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              t['js-demo-27'].previewerProps,
+              r.a.createElement(a, null),
+            ),
+          ),
+        );
+      });
+    t['default'] = (e) => {
+      var t = r.a.useContext(o['context']),
+        n = t.demos;
+      return (
+        r.a.useEffect(() => {
+          var t;
+          null !== e &&
+            void 0 !== e &&
+            null !== (t = e.location) &&
+            void 0 !== t &&
+            t.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        r.a.createElement(c, { demos: n })
+      );
+    };
+  },
   '8r4s': function (e, t, n) {
     var a = n('I+eb'),
       r = n('P940');
@@ -23588,6 +23819,42 @@
         },
       },
     );
+  },
+  '9Ioe': function (e, t, n) {
+    'use strict';
+    var a = n('tJVT'),
+      r = n('q1tI'),
+      o = n('i8i4'),
+      l = n.n(o),
+      i = (e) => {
+        if (!e) return () => null;
+        var t = Object(r['useState'])({
+            render: () => null,
+            remove: () => null,
+          }),
+          n = Object(a['a'])(t, 2),
+          o = n[0],
+          i = n[1],
+          s = Object(r['useCallback'])((e) => {
+            var t = (t) => l.a.createPortal(t.children, e),
+              n = () => l.a.unmountComponentAtNode(e);
+            return { render: t, remove: n };
+          }, []);
+        return (
+          Object(r['useEffect'])(() => {
+            e && o.remove();
+            var t = s(e);
+            return (
+              i(t),
+              () => {
+                t.remove();
+              }
+            );
+          }, [e]),
+          o.render
+        );
+      };
+    t['a'] = i;
   },
   '9N29': function (e, t, n) {
     'use strict';
@@ -43944,24 +44211,36 @@
       go =
         "import React from 'react';\nimport useOnWindowScroll from './useOnWindowScroll';\n\nconst Demo = () => {\n  useOnWindowScroll(() => console.log(`scroll Y: ${window.pageYOffset}`));\n  return <p style={{ height: '300vh' }}>\u6eda\u52a8\u5e76\u68c0\u67e5\u63a7\u5236\u53f0</p>;\n};\n\nexport default Demo;",
       bo =
-        "import React,{ useState } from 'react';\r\nimport usePersistedState from './usePersistedState';\r\nimport { Input } from 'antd';\r\n\r\nconst MyComponent = (props: { name: string }) => {\r\n    const { name } = props;\r\n    const [value,setValue] = usePersistedState(name,'10');\r\n\r\n    return (\r\n        <Input value={value} onChange={e => setValue(e.target.value)} />\r\n    )\r\n}\r\n\r\n\r\nconst Demo = () => {\r\n    const [name,setName] = useState('my-value');\r\n    return (\r\n        <>\r\n            <MyComponent name={name} />\r\n            <Input value={name} onChange={e => setName(e.target.name)}/>\r\n        </>\r\n    )\r\n\r\n}\r\n\r\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport usePersistedState from './usePersistedState';\nimport { Input } from 'antd';\n\nconst MyComponent = (props: { name: string }) => {\n  const { name } = props;\n  const [value, setValue] = usePersistedState(name, '10');\n\n  return <Input value={value} onChange={(e) => setValue(e.target.value)} />;\n};\n\nconst Demo = () => {\n  const [name, setName] = useState('my-value');\n  return (\n    <>\n      <MyComponent name={name} />\n      <Input value={name} onChange={(e) => setName(e.target.name)} />\n    </>\n  );\n};\n\nexport default Demo;",
       yo =
-        "import { useEffect,useState,useRef } from 'react';\r\nimport type { Dispatch,SetStateAction } from 'react';\r\n\r\nconst usePersistedState = (name: string,defaultValue:string): [string,Dispatch<SetStateAction<string>>] => {\r\n    const [value,setValue] = useState(defaultValue);\r\n    const nameRef = useRef<string>(name);\r\n\r\n    useEffect(() => {\r\n        try {\r\n            const storeValue = localStorage.getItem(name);\r\n            if(storeValue !== null){\r\n                setValue(storeValue);\r\n            }else {\r\n                localStorage.setItem(name,defaultValue);\r\n            }\r\n        } catch {\r\n            setValue(defaultValue);\r\n        }\r\n    },[]);\r\n\r\n    useEffect(() => {\r\n        try {\r\n            localStorage.setItem(nameRef.current,value);\r\n        } catch {}\r\n    },[value])\r\n\r\n    useEffect(() => {\r\n        const lastName = nameRef.current;\r\n        if(name !== lastName){\r\n            try {\r\n                localStorage.setItem(name,value);\r\n                nameRef.current = name;\r\n                localStorage.removeItem(lastName);\r\n            } catch {}\r\n        }\r\n    },[name])\r\n\r\n\r\n    return [value,setValue];\r\n}\r\n\r\nexport default usePersistedState",
+        "import { useEffect, useState, useRef } from 'react';\nimport type { Dispatch, SetStateAction } from 'react';\n\nconst usePersistedState = (\n  name: string,\n  defaultValue: string,\n): [string, Dispatch<SetStateAction<string>>] => {\n  const [value, setValue] = useState(defaultValue);\n  const nameRef = useRef<string>(name);\n\n  useEffect(() => {\n    try {\n      const storeValue = localStorage.getItem(name);\n      if (storeValue !== null) {\n        setValue(storeValue);\n      } else {\n        localStorage.setItem(name, defaultValue);\n      }\n    } catch {\n      setValue(defaultValue);\n    }\n  }, []);\n\n  useEffect(() => {\n    try {\n      localStorage.setItem(nameRef.current, value);\n    } catch {}\n  }, [value]);\n\n  useEffect(() => {\n    const lastName = nameRef.current;\n    if (name !== lastName) {\n      try {\n        localStorage.setItem(name, value);\n        nameRef.current = name;\n        localStorage.removeItem(lastName);\n      } catch {}\n    }\n  }, [name]);\n\n  return [value, setValue];\n};\n\nexport default usePersistedState;",
       Eo =
-        "import React,{ useState } from 'react';\r\nimport usePersistedState from './usePersistedState';\r\nimport { Input } from 'antd';\r\n\r\nconst MyComponent = props => {\r\n    const { name } = props;\r\n    const [value,setValue] = usePersistedState(name,'10');\r\n\r\n    return (\r\n        <Input value={value} onChange={e => setValue(e.target.value)} />\r\n    )\r\n}\r\n\r\n\r\nconst Demo = () => {\r\n    const [name,setName] = useState('my-value');\r\n    return (\r\n        <>\r\n            <MyComponent name={name} />\r\n            <Input value={name} onChange={e => setName(e.target.name)}/>\r\n        </>\r\n    )\r\n\r\n}\r\n\r\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport usePersistedState from './usePersistedState';\nimport { Input } from 'antd';\n\nconst MyComponent = (props) => {\n  const { name } = props;\n  const [value, setValue] = usePersistedState(name, '10');\n\n  return <Input value={value} onChange={(e) => setValue(e.target.value)} />;\n};\n\nconst Demo = () => {\n  const [name, setName] = useState('my-value');\n  return (\n    <>\n      <MyComponent name={name} />\n      <Input value={name} onChange={(e) => setName(e.target.name)} />\n    </>\n  );\n};\n\nexport default Demo;",
       xo =
-        "import { useEffect,useState,useRef } from 'react';\r\n\r\nconst usePersistedState = (name,defaultValue) => {\r\n    const [value,setValue] = useState(defaultValue);\r\n    const nameRef = useRef(name);\r\n\r\n    useEffect(() => {\r\n        try {\r\n            const storeValue = localStorage.getItem(name);\r\n            if(storeValue !== null){\r\n                setValue(storeValue);\r\n            }else {\r\n                localStorage.setItem(name,defaultValue);\r\n            }\r\n        } catch {\r\n            setValue(defaultValue);\r\n        }\r\n    },[]);\r\n\r\n    useEffect(() => {\r\n        try {\r\n            localStorage.setItem(nameRef.current,value);\r\n        } catch {}\r\n    },[value])\r\n\r\n    useEffect(() => {\r\n        const lastName = nameRef.current;\r\n        if(name !== lastName){\r\n            try {\r\n                localStorage.setItem(name,value);\r\n                nameRef.current = name;\r\n                localStorage.removeItem(lastName);\r\n            } catch {}\r\n        }\r\n    },[name])\r\n\r\n\r\n    return [value,setValue];\r\n}\r\n\r\nexport default usePersistedState",
+        "import { useEffect, useState, useRef } from 'react';\n\nconst usePersistedState = (name, defaultValue) => {\n  const [value, setValue] = useState(defaultValue);\n  const nameRef = useRef(name);\n\n  useEffect(() => {\n    try {\n      const storeValue = localStorage.getItem(name);\n      if (storeValue !== null) {\n        setValue(storeValue);\n      } else {\n        localStorage.setItem(name, defaultValue);\n      }\n    } catch {\n      setValue(defaultValue);\n    }\n  }, []);\n\n  useEffect(() => {\n    try {\n      localStorage.setItem(nameRef.current, value);\n    } catch {}\n  }, [value]);\n\n  useEffect(() => {\n    const lastName = nameRef.current;\n    if (name !== lastName) {\n      try {\n        localStorage.setItem(name, value);\n        nameRef.current = name;\n        localStorage.removeItem(lastName);\n      } catch {}\n    }\n  }, [name]);\n\n  return [value, setValue];\n};\n\nexport default usePersistedState;",
       wo =
-        "import React,{ useState } from 'react';\r\nimport usePersistedState from './usePersistedState';\r\nimport { Input } from 'antd';\r\n\r\nconst MyComponent = (props: { name: string }) => {\r\n    const { name } = props;\r\n    const [value,setValue] = usePersistedState(name,'10');\r\n\r\n    return (\r\n        <Input value={value} onChange={e => setValue(e.target.value)} />\r\n    )\r\n}\r\n\r\n\r\nconst Demo = () => {\r\n    const [name,setName] = useState('my-value');\r\n    return (\r\n        <>\r\n            <MyComponent name={name} />\r\n            <Input value={name} onChange={e => setName(e.target.name)}/>\r\n        </>\r\n    )\r\n\r\n}\r\n\r\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport usePersistedState from './usePersistedState';\nimport { Input } from 'antd';\n\nconst MyComponent = (props: { name: string }) => {\n  const { name } = props;\n  const [value, setValue] = usePersistedState(name, '10');\n\n  return <Input value={value} onChange={(e) => setValue(e.target.value)} />;\n};\n\nconst Demo = () => {\n  const [name, setName] = useState('my-value');\n  return (\n    <>\n      <MyComponent name={name} />\n      <Input value={name} onChange={(e) => setName(e.target.name)} />\n    </>\n  );\n};\n\nexport default Demo;",
       ko =
-        "import React,{ useState } from 'react';\r\nimport usePersistedState from './usePersistedState';\r\nimport { Input } from 'antd';\r\n\r\nconst MyComponent = props => {\r\n    const { name } = props;\r\n    const [value,setValue] = usePersistedState(name,'10');\r\n\r\n    return (\r\n        <Input value={value} onChange={e => setValue(e.target.value)} />\r\n    )\r\n}\r\n\r\n\r\nconst Demo = () => {\r\n    const [name,setName] = useState('my-value');\r\n    return (\r\n        <>\r\n            <MyComponent name={name} />\r\n            <Input value={name} onChange={e => setName(e.target.name)}/>\r\n        </>\r\n    )\r\n\r\n}\r\n\r\nexport default Demo;",
+        "import React, { useState } from 'react';\nimport usePersistedState from './usePersistedState';\nimport { Input } from 'antd';\n\nconst MyComponent = (props) => {\n  const { name } = props;\n  const [value, setValue] = usePersistedState(name, '10');\n\n  return <Input value={value} onChange={(e) => setValue(e.target.value)} />;\n};\n\nconst Demo = () => {\n  const [name, setName] = useState('my-value');\n  return (\n    <>\n      <MyComponent name={name} />\n      <Input value={name} onChange={(e) => setName(e.target.name)} />\n    </>\n  );\n};\n\nexport default Demo;",
       Co =
-        "import React, { useState } from 'react';\nimport { createModel } from './createModel';\nimport { Space, Button } from 'antd';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <Space wrap>\n      <Button onClick={counter.decrement}>-</Button>\n      <span>{counter.count}</span>\n      <Button onClick={counter.increment}>+</Button>\n    </Space>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
+        'import React, { JSXElementConstructor } from "react";\r\nimport usePortal from "./usePortal";\r\n\r\nconst Demo = () => {\r\n    const Portal = usePortal(document.querySelector(\'title\')!) as JSXElementConstructor<any>;\r\n\r\n    return (\r\n        <p>\r\n            hello,world!\r\n            <Portal>Portalized Title</Portal>\r\n        </p>\r\n    )\r\n}\r\n\r\nexport default Demo;',
       Oo =
-        "// \u5bfc\u5165\u7c7b\u578b\nimport type { ReactNode, ComponentType } from 'react';\nimport React from 'react';\nimport { createContext, useContext } from 'react';\nconst EMPTY: unique symbol = Symbol();\nexport interface ModelProviderProps<State = void> {\n  initialState?: State;\n  children: ReactNode;\n}\nexport interface Model<Value, State = void> {\n  Provider: ComponentType<ModelProviderProps<State>>;\n  useModel: () => Value;\n}\nexport const createModel = <Value, State = void>(\n  useHook: (initialState?: State) => Value,\n): Model<Value, State> => {\n  //\u521b\u5efa\u4e00\u4e2acontext\n  const context = createContext<Value | typeof EMPTY>(EMPTY);\n  // \u5b9a\u4e49Provider\u51fd\u6570\n  const Provider = (props: ModelProviderProps<State>) => {\n    const { Provider: ModelProvider } = context;\n    const { initialState, children } = props;\n    const value = useHook(initialState);\n    return <ModelProvider value={value}>{children}</ModelProvider>;\n  };\n  // \u5b9a\u4e49useModel\u51fd\u6570\n  const useModel = (): Value => {\n    const value = useContext(context);\n    // \u8fd9\u91cc\u786e\u5b9a\u4e00\u4e0b\u7528\u6237\u662f\u5426\u6b63\u786e\u4f7f\u7528Provider\n    if (value === EMPTY) {\n      //\u629b\u51fa\u5f02\u5e38\uff0c\u4f7f\u7528\u8005\u5e76\u6ca1\u6709\u7528Provider\u5305\u88f9\u7ec4\u4ef6\n      throw new Error('Component must be wrapped with <Container.Provider>');\n    }\n    // \u8fd4\u56decontext\n    return value;\n  };\n  return { Provider, useModel };\n};\nexport const useModel = <Value, State = void>(\n  model: Model<Value, State>,\n): Value => {\n  return model.useModel();\n};",
+        "import React,{ useState,useEffect,useCallback } from 'react';\r\nimport ReactDOM from 'react-dom';\r\nexport type ReturnPortalType = React.ReactPortal | (() => null);\r\nexport type RenderType = ((props: React.PropsWithChildren) => React.ReactPortal) | (() => null);\r\nexport type PortalType = {\r\n    render: RenderType,\r\n    remove: (() => boolean) | (() => null)\r\n}\r\nconst usePortal = <T extends Element>(el: T):ReturnPortalType  => {\r\n    if(!el){\r\n        return () => null\r\n    }\r\n    \r\n    const [portal,setPortal] = useState<PortalType>({\r\n        render: () => null,\r\n        remove: () => null\r\n    });\r\n\r\n    const createPortal = useCallback((el: T) => {\r\n        const Portal = (props: React.PropsWithChildren) => ReactDOM.createPortal(props.children,el);\r\n        const remove = () => ReactDOM.unmountComponentAtNode(el);\r\n\r\n        return {\r\n            render: Portal,\r\n            remove\r\n        }\r\n    },[])\r\n\r\n    useEffect(() => {\r\n        if(el){\r\n            portal.remove();\r\n        }\r\n        const newPortal = createPortal(el);\r\n        setPortal(newPortal as PortalType);\r\n\r\n        return () => {\r\n            newPortal.remove();\r\n        }\r\n    },[el])\r\n\r\n    return portal.render as ReturnPortalType;\r\n}\r\n\r\nexport default usePortal;",
       So =
+        'import React, { JSXElementConstructor } from "react";\r\nimport usePortal from "./usePortal";\r\n\r\nconst Demo = () => {\r\n    const Portal = usePortal(document.querySelector(\'title\'));\r\n\r\n    return (\r\n        <p>\r\n            hello,world!\r\n            <Portal>Portalized Title</Portal>\r\n        </p>\r\n    )\r\n}\r\n\r\nexport default Demo;',
+      jo =
+        "import React,{ useState,useEffect,useCallback } from 'react';\r\nimport ReactDOM from 'react-dom';\r\nconst usePortal = el  => {\r\n    if(!el){\r\n        return () => null\r\n    }\r\n    const [portal,setPortal] = useState({\r\n        render: () => null,\r\n        remove: () => null\r\n    });\r\n\r\n    const createPortal = useCallback(el => {\r\n        const Portal = (props) => ReactDOM.createPortal(props.children,el);\r\n        const remove = () => ReactDOM.unmountComponentAtNode(el);\r\n\r\n        return {\r\n            render: Portal,\r\n            remove\r\n        }\r\n    },[])\r\n\r\n    useEffect(() => {\r\n        if(el){\r\n            portal.remove();\r\n        }\r\n        const newPortal = createPortal(el);\r\n        setPortal(newPortal);\r\n\r\n        return () => {\r\n            newPortal.remove();\r\n        }\r\n    },[el])\r\n\r\n    return portal.render;\r\n}\r\n\r\nexport default usePortal;",
+      Io =
+        'import React, { JSXElementConstructor } from "react";\r\nimport usePortal from "./usePortal";\r\n\r\nconst Demo = () => {\r\n    const Portal = usePortal(document.querySelector(\'title\')!) as JSXElementConstructor<any>;\r\n\r\n    return (\r\n        <p>\r\n            \u4f60\u597d\uff0c\u4e16\u754c!\r\n            <Portal>\u4f20\u9001\u95e8\u6807\u9898</Portal>\r\n        </p>\r\n    )\r\n}\r\n\r\nexport default Demo;',
+      To =
+        'import React, { JSXElementConstructor } from "react";\r\nimport usePortal from "./usePortal";\r\n\r\nconst Demo = () => {\r\n    const Portal = usePortal(document.querySelector(\'title\'));\r\n\r\n    return (\r\n        <p>\r\n            \u4f60\u597d\uff0c\u4e16\u754c!\r\n            <Portal>\u4f20\u9001\u95e8\u6807\u9898</Portal>\r\n        </p>\r\n    )\r\n}\r\n\r\nexport default Demo;',
+      No =
         "import React, { useState } from 'react';\nimport { createModel } from './createModel';\nimport { Space, Button } from 'antd';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <Space wrap>\n      <Button onClick={counter.decrement}>-</Button>\n      <span>{counter.count}</span>\n      <Button onClick={counter.increment}>+</Button>\n    </Space>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
-      jo = {
+      Ro =
+        "// \u5bfc\u5165\u7c7b\u578b\nimport type { ReactNode, ComponentType } from 'react';\nimport React from 'react';\nimport { createContext, useContext } from 'react';\nconst EMPTY: unique symbol = Symbol();\nexport interface ModelProviderProps<State = void> {\n  initialState?: State;\n  children: ReactNode;\n}\nexport interface Model<Value, State = void> {\n  Provider: ComponentType<ModelProviderProps<State>>;\n  useModel: () => Value;\n}\nexport const createModel = <Value, State = void>(\n  useHook: (initialState?: State) => Value,\n): Model<Value, State> => {\n  //\u521b\u5efa\u4e00\u4e2acontext\n  const context = createContext<Value | typeof EMPTY>(EMPTY);\n  // \u5b9a\u4e49Provider\u51fd\u6570\n  const Provider = (props: ModelProviderProps<State>) => {\n    const { Provider: ModelProvider } = context;\n    const { initialState, children } = props;\n    const value = useHook(initialState);\n    return <ModelProvider value={value}>{children}</ModelProvider>;\n  };\n  // \u5b9a\u4e49useModel\u51fd\u6570\n  const useModel = (): Value => {\n    const value = useContext(context);\n    // \u8fd9\u91cc\u786e\u5b9a\u4e00\u4e0b\u7528\u6237\u662f\u5426\u6b63\u786e\u4f7f\u7528Provider\n    if (value === EMPTY) {\n      //\u629b\u51fa\u5f02\u5e38\uff0c\u4f7f\u7528\u8005\u5e76\u6ca1\u6709\u7528Provider\u5305\u88f9\u7ec4\u4ef6\n      throw new Error('Component must be wrapped with <Container.Provider>');\n    }\n    // \u8fd4\u56decontext\n    return value;\n  };\n  return { Provider, useModel };\n};\nexport const useModel = <Value, State = void>(\n  model: Model<Value, State>,\n): Value => {\n  return model.useModel();\n};",
+      Po =
+        "import React, { useState } from 'react';\nimport { createModel } from './createModel';\nimport { Space, Button } from 'antd';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <Space wrap>\n      <Button onClick={counter.decrement}>-</Button>\n      <span>{counter.count}</span>\n      <Button onClick={counter.increment}>+</Button>\n    </Space>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
+      Lo = {
         'loadingbutton-demo': {
           component: n('4ZnB').default,
           previewerProps: {
@@ -47616,12 +47895,68 @@
             identifier: 'js-demo.zh-cn-26',
           },
         },
+        'useportal-demo': {
+          component: n('jnKy').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: Co },
+              'usePortal.ts': { import: './usePortal', content: Oo },
+            },
+            dependencies: {
+              react: { version: '^16.14.0' },
+              'react-dom': { version: '16.14.0' },
+            },
+            identifier: 'useportal-demo',
+          },
+        },
+        'js-demo-27': {
+          component: n('mDit').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: So },
+              'usePortal.js': { import: './usePortal', content: jo },
+            },
+            dependencies: {
+              react: { version: '^16.14.0' },
+              'react-dom': { version: '16.14.0' },
+            },
+            identifier: 'js-demo-27',
+          },
+        },
+        'useportal-demo.zh-cn': {
+          component: n('erod').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: Io },
+              'usePortal.ts': { import: './usePortal', content: Oo },
+            },
+            dependencies: {
+              react: { version: '^16.14.0' },
+              'react-dom': { version: '16.14.0' },
+            },
+            identifier: 'useportal-demo.zh-cn',
+          },
+        },
+        'js-demo.zh-cn-27': {
+          component: n('vpce').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: To },
+              'usePortal.js': { import: './usePortal', content: jo },
+            },
+            dependencies: {
+              react: { version: '^16.14.0' },
+              'react-dom': { version: '16.14.0' },
+            },
+            identifier: 'js-demo.zh-cn-27',
+          },
+        },
         'model-demo': {
           component: n('3P29').default,
           previewerProps: {
             sources: {
-              _: { tsx: Co },
-              'createModel.tsx': { import: './createModel', content: Oo },
+              _: { tsx: No },
+              'createModel.tsx': { import: './createModel', content: Ro },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -47635,8 +47970,8 @@
           component: n('lq0m').default,
           previewerProps: {
             sources: {
-              _: { tsx: So },
-              'createModel.tsx': { import: './createModel', content: Oo },
+              _: { tsx: Po },
+              'createModel.tsx': { import: './createModel', content: Ro },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -47647,13 +47982,13 @@
           },
         },
       },
-      Io = n('Zs1V'),
-      To = n('BI2/'),
-      No = n.n(To);
+      Do = n('Zs1V'),
+      Ao = n('BI2/'),
+      Mo = n.n(Ao);
     t['default'] = (e) =>
       o.a.createElement(
-        No.a,
-        Object(a['a'])({}, e, { config: l, demos: jo, apis: Io }),
+        Mo.a,
+        Object(a['a'])({}, e, { config: l, demos: Lo, apis: Do }),
       );
   },
   Odut: function (e, t, n) {
@@ -49750,7 +50085,7 @@
   },
   RGYn: function (e) {
     e.exports = JSON.parse(
-      '{"menus":{"en-US":{"/getting-started":[{"path":"/getting-started","title":"react code-segment","meta":{}}],"*":[{"path":"/","title":"Welcome to the website","meta":{}}],"/antd":[{"title":"LoadingButton","path":"/antd/loading-button"},{"title":"OmitText","path":"/antd/omit-text"},{"title":"LoadingModal","path":"/antd/loading-modal"}],"/guide":[{"title":"Accordion","path":"/guide/Accordion/Accordion"},{"title":"Alert","path":"/guide/Alert/Alert"},{"title":"AutoLink","path":"/guide/auto-link/auto-link"},{"title":"Callto","path":"/guide/Callto/Callto"},{"title":"Carousel","path":"/guide/Carousel/Carousel"},{"title":"Collapse","path":"/guide/Collapse/Collapse"},{"title":"ControlledInput","path":"/guide/controlled-input/controlled-input"},{"title":"CountDown","path":"/guide/count-down/count-down"},{"title":"SimpleDataList","path":"/guide/simple-data-list/simple-data-list"},{"title":"SimpleDataTable","path":"/guide/simple-data-table/simple-data-table"},{"title":"FileDrop","path":"/guide/file-drop/file-drop"},{"title":"LazyLoadingImage","path":"/guide/lazy-loading-image/lazy-loading-image"},{"title":"LimitedTextarea","path":"/guide/limited-textarea/limited-textarea"},{"title":"LimitedWordTextarea","path":"/guide/limited-word-textarea/limited-word-textarea"},{"title":"Loader","path":"/guide/Loader/Loader"},{"title":"Mailto","path":"/guide/Mailto/Mailto"},{"title":"SimpleMappedDataTable","path":"/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"Modal","path":"/guide/Modal/Modal"},{"title":"Checkbox","path":"/guide/Checkbox/Checkbox"},{"title":"PasswordRevealer","path":"/guide/password-revealer/password-revealer"},{"title":"Button","path":"/guide/button/button"},{"title":"Select","path":"/guide/select/select"}],"/hooks":[{"title":"useAsync","path":"/hooks/use-async/use-async"},{"title":"useBodyScrollLock","path":"/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"useClickInside","path":"/hooks/use-click-inside/use-click-inside"},{"title":"useClickOutside","path":"/hooks/use-click-outside/use-click-outside"},{"title":"useComponentDidMount","path":"/hooks/use-component-did-mount/use-component-did-mount"},{"title":"useComponentDidUpdate","path":"/hooks/use-component-did-update/use-component-did-update"},{"title":"useComponentWillUnmount","path":"/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"useCopyToClipboard","path":"/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"useDebounce","path":"/hooks/use-debounce/use-debounce"},{"title":"useDefault","path":"/hooks/use-default/use-default"},{"title":"useDelayedState","path":"/hooks/use-delayed-state/use-delayed-state"},{"title":"useEffectOnce","path":"/hooks/use-effect-once/use-effect-once"},{"title":"useError","path":"/hooks/use-error/use-error"},{"title":"useEventListener","path":"/hooks/use-event-listener/use-event-listener"},{"title":"useFetch","path":"/hooks/use-fetch/use-fetch"},{"title":"useForm","path":"/hooks/use-form/use-form"},{"title":"useGetSet","path":"/hooks/use-get-set/use-get-set"},{"title":"useHash","path":"/hooks/use-hash/use-hash"},{"title":"useHover","path":"/hooks/use-hover/use-hover"},{"title":"useIntersectionObserver","path":"/hooks/use-intersection-observer/use-intersection-observer"},{"title":"useInterval","path":"/hooks/use-interval/use-interval"},{"title":"useIsomorphicEffect","path":"/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"useKeyPress","path":"/hooks/use-key-press/use-key-press"},{"title":"useLocalStorage","path":"/hooks/use-local-storage/use-local-storage"},{"title":"useMap","path":"/hooks/use-map/use-map"},{"title":"useMediaQuery","path":"/hooks/use-media-query/use-media-query"},{"title":"useMergeState","path":"/hooks/use-merge-state/use-merge-state"},{"title":"useMutationObserver","path":"/hooks/use-mutation-observer/use-mutation-observer"},{"title":"useNavigatorOnLine","path":"/hooks/use-navigator-on-line/use-navigator-on-line"},{"title":"useOnGlobalEvent","path":"/hooks/use-on-global-event/use-on-global-event"},{"title":"useOnWindowResize","path":"/hooks/use-on-window-resize/use-on-window-resize"},{"title":"useOnWindowScroll","path":"/hooks/use-on-window-scroll/use-on-window-scroll"},{"title":"usePersistedState","path":"/hooks/use-persisted-state/use-persisted-state"}],"/model":[{"title":"React model","path":"/model/model"}]},"zh-CN":{"/zh-CN/getting-started":[{"path":"/zh-CN/getting-started","title":"react \u4ee3\u7801\u6bb5","meta":{}}],"*":[{"path":"/zh-CN","title":"\u6b22\u8fce\u6765\u5230\u672c\u7f51\u7ad9","meta":{}}],"/zh-CN/antd":[{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u6309\u94ae","path":"/zh-CN/antd/loading-button"},{"title":"\u7701\u7565\u6587\u672c\u7ec4\u4ef6","path":"/zh-CN/antd/omit-text"},{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u5f39\u6846","path":"/zh-CN/antd/loading-modal"}],"/zh-CN/guide":[{"title":"\u624b\u98ce\u7434","path":"/zh-CN/guide/Accordion/Accordion"},{"title":"\u63d0\u793a","path":"/zh-CN/guide/Alert/Alert"},{"title":"\u81ea\u52a8\u6587\u672c\u94fe\u63a5","path":"/zh-CN/guide/auto-link/auto-link"},{"title":"\u62e8\u7535\u81f3","path":"/zh-CN/guide/Callto/Callto"},{"title":"\u8f6e\u64ad\u56fe","path":"/zh-CN/guide/Carousel/Carousel"},{"title":"\u53ef\u6298\u53e0\u7684\u5185\u5bb9","path":"/zh-CN/guide/Collapse/Collapse"},{"title":"\u53d7\u63a7\u7684\u8f93\u5165\u6846","path":"/zh-CN/guide/controlled-input/controlled-input"},{"title":"\u5012\u8ba1\u65f6\u7ec4\u4ef6","path":"/zh-CN/guide/count-down/count-down"},{"title":"\u7b80\u6613\u6570\u636e\u5217\u8868\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-list/simple-data-list"},{"title":"\u7b80\u6613\u6570\u636e\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-table/simple-data-table"},{"title":"\u62d6\u62fd\u6587\u4ef6\u7ec4\u4ef6","path":"/zh-CN/guide/file-drop/file-drop"},{"title":"\u61d2\u52a0\u8f7d\u56fe\u7247","path":"/zh-CN/guide/lazy-loading-image/lazy-loading-image"},{"title":"\u9650\u5236\u5b57\u7b26\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-textarea/limited-textarea"},{"title":"\u9650\u5236\u5b57\u6570\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-word-textarea/limited-word-textarea"},{"title":"\u52a0\u8f7d\u7ec4\u4ef6","path":"/zh-CN/guide/Loader/Loader"},{"title":"\u90ae\u4ef6\u94fe\u63a5\u7ec4\u4ef6","path":"/zh-CN/guide/Mailto/Mailto"},{"title":"\u7b80\u6613\u5bf9\u8c61\u6570\u7ec4\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"\u5f39\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Modal/Modal"},{"title":"\u590d\u9009\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Checkbox/Checkbox"},{"title":"\u5bc6\u7801\u663e\u793a\u5668","path":"/zh-CN/guide/password-revealer/password-revealer"},{"title":"\u6309\u94ae","path":"/zh-CN/guide/button/button"},{"title":"\u9009\u62e9\u5668","path":"/zh-CN/guide/select/select"}],"/zh-CN/hooks":[{"title":"\u5f02\u6b65","path":"/zh-CN/hooks/use-async/use-async"},{"title":"\u9501\u5b9abody\u5143\u7d20\u7684\u6eda\u52a8","path":"/zh-CN/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5185","path":"/zh-CN/hooks/use-click-inside/use-click-inside"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5916","path":"/zh-CN/hooks/use-click-outside/use-click-outside"},{"title":"\u7ec4\u4ef6\u7684\u6302\u8f7d","path":"/zh-CN/hooks/use-component-did-mount/use-component-did-mount"},{"title":"\u7ec4\u4ef6\u7684\u72b6\u6001\u66f4\u65b0","path":"/zh-CN/hooks/use-component-did-update/use-component-did-update"},{"title":"\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d","path":"/zh-CN/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"\u590d\u5236\u5230\u526a\u8d34\u677f","path":"/zh-CN/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"\u9632\u6296","path":"/zh-CN/hooks/use-debounce/use-debounce"},{"title":"\u9ed8\u8ba4\u503c","path":"/zh-CN/hooks/use-default/use-default"},{"title":"\u5ef6\u8fdf\u72b6\u6001","path":"/zh-CN/hooks/use-delayed-state/use-delayed-state"},{"title":"\u53ea\u6267\u884c\u4e00\u6b21\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-effect-once/use-effect-once"},{"title":"\u9519\u8bef\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-error/use-error"},{"title":"\u4e8b\u4ef6\u76d1\u542c\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-event-listener/use-event-listener"},{"title":"\u8bf7\u6c42\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-fetch/use-fetch"},{"title":"\u8868\u5355\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-form/use-form"},{"title":"\u72b6\u6001\u8bbe\u7f6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-get-set/use-get-set"},{"title":"\u4fee\u6539hash\u503c\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hash/use-hash"},{"title":"\u60ac\u6d6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hover/use-hover"},{"title":"\u5143\u7d20\u5904\u4e8e\u53ef\u89c6\u533a\u57df\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-intersection-observer/use-intersection-observer"},{"title":"\u5b9a\u65f6\u5668\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-interval/use-interval"},{"title":"\u526f\u4f5c\u7528\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"\u6309\u952e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-key-press/use-key-press"},{"title":"\u5b58\u50a8\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-local-storage/use-local-storage"},{"title":"\u6620\u5c04\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-map/use-map"},{"title":"\u68c0\u67e5\u5a92\u4f53\u67e5\u8be2\u73af\u5883\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-media-query/use-media-query"},{"title":"\u5408\u5e76\u72b6\u6001\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-merge-state/use-merge-state"},{"title":"\u76d1\u542c\u5143\u7d20\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-mutation-observer/use-mutation-observer"},{"title":"\u5728\u7ebf\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-navigator-on-line/use-navigator-on-line"},{"title":"\u5168\u5c40\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-global-event/use-on-global-event"},{"title":"\u8c03\u6574\u7a97\u53e3\u5927\u5c0f\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-window-resize/use-on-window-resize"},{"title":"\u7a97\u53e3\u6eda\u52a8\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-window-scroll/use-on-window-scroll"},{"title":"\u6c38\u4e45\u5b58\u50a8\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-persisted-state/use-persisted-state"}],"/zh-CN/model":[{"title":"react\u72b6\u6001\u7ba1\u7406\u5de5\u5177","path":"/zh-CN/model/model"}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"\u4e2d\u6587"}],"navs":{"en-US":[{"title":"getting-started","path":"/getting-started"},{"title":"guide","path":"/guide"},{"title":"hooks","path":"/hooks"},{"title":"model","path":"/model"},{"title":"antd","path":"/antd"},{"title":"github","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"about me","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"jue jin","path":"https://juejin.im/user/4054654613988718"},{"title":"segmentfault","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"gitee","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"blog","path":"https://www.cnblogs.com/eveningwater/"},{"title":"website","path":"https://www.eveningwater.com/"},{"title":"My project","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"17sucai","path":"https://www.17sucai.com/user/800544"},{"title":"ewColorPicker","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}],"zh-CN":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/zh-CN/getting-started"},{"title":"\u6307\u5357","path":"/zh-CN/guide"},{"title":"\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks"},{"title":"\u72b6\u6001\u7ba1\u7406","path":"/zh-CN/model"},{"title":"\u8682\u8681\u8bbe\u8ba1","path":"/zh-CN/antd"},{"title":"\u6e90\u7801\u5730\u5740","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"\u5173\u4e8e\u6211","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"\u6398\u91d1","path":"https://juejin.im/user/4054654613988718"},{"title":"\u601d\u5426","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"\u7801\u4e91","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"\u535a\u5ba2","path":"https://www.cnblogs.com/eveningwater/"},{"title":"\u4e2a\u4eba\u7f51\u7ad9","path":"https://www.eveningwater.com/"},{"title":"\u4e2a\u4eba\u9879\u76ee","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"\u95e8\u7d20\u6750","path":"https://www.17sucai.com/user/800544"},{"title":"\u989c\u8272\u9009\u62e9\u5668","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}]},"title":"react-code-segment","logo":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K","mode":"site","repository":{"url":"","branch":"master"},"theme":{}}',
+      '{"menus":{"en-US":{"/getting-started":[{"path":"/getting-started","title":"react code-segment","meta":{}}],"*":[{"path":"/","title":"Welcome to the website","meta":{}}],"/antd":[{"title":"LoadingButton","path":"/antd/loading-button"},{"title":"OmitText","path":"/antd/omit-text"},{"title":"LoadingModal","path":"/antd/loading-modal"}],"/guide":[{"title":"Accordion","path":"/guide/Accordion/Accordion"},{"title":"Alert","path":"/guide/Alert/Alert"},{"title":"AutoLink","path":"/guide/auto-link/auto-link"},{"title":"Callto","path":"/guide/Callto/Callto"},{"title":"Carousel","path":"/guide/Carousel/Carousel"},{"title":"Collapse","path":"/guide/Collapse/Collapse"},{"title":"ControlledInput","path":"/guide/controlled-input/controlled-input"},{"title":"CountDown","path":"/guide/count-down/count-down"},{"title":"SimpleDataList","path":"/guide/simple-data-list/simple-data-list"},{"title":"SimpleDataTable","path":"/guide/simple-data-table/simple-data-table"},{"title":"FileDrop","path":"/guide/file-drop/file-drop"},{"title":"LazyLoadingImage","path":"/guide/lazy-loading-image/lazy-loading-image"},{"title":"LimitedTextarea","path":"/guide/limited-textarea/limited-textarea"},{"title":"LimitedWordTextarea","path":"/guide/limited-word-textarea/limited-word-textarea"},{"title":"Loader","path":"/guide/Loader/Loader"},{"title":"Mailto","path":"/guide/Mailto/Mailto"},{"title":"SimpleMappedDataTable","path":"/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"Modal","path":"/guide/Modal/Modal"},{"title":"Checkbox","path":"/guide/Checkbox/Checkbox"},{"title":"PasswordRevealer","path":"/guide/password-revealer/password-revealer"},{"title":"Button","path":"/guide/button/button"},{"title":"Select","path":"/guide/select/select"}],"/hooks":[{"title":"useAsync","path":"/hooks/use-async/use-async"},{"title":"useBodyScrollLock","path":"/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"useClickInside","path":"/hooks/use-click-inside/use-click-inside"},{"title":"useClickOutside","path":"/hooks/use-click-outside/use-click-outside"},{"title":"useComponentDidMount","path":"/hooks/use-component-did-mount/use-component-did-mount"},{"title":"useComponentDidUpdate","path":"/hooks/use-component-did-update/use-component-did-update"},{"title":"useComponentWillUnmount","path":"/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"useCopyToClipboard","path":"/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"useDebounce","path":"/hooks/use-debounce/use-debounce"},{"title":"useDefault","path":"/hooks/use-default/use-default"},{"title":"useDelayedState","path":"/hooks/use-delayed-state/use-delayed-state"},{"title":"useEffectOnce","path":"/hooks/use-effect-once/use-effect-once"},{"title":"useError","path":"/hooks/use-error/use-error"},{"title":"useEventListener","path":"/hooks/use-event-listener/use-event-listener"},{"title":"useFetch","path":"/hooks/use-fetch/use-fetch"},{"title":"useForm","path":"/hooks/use-form/use-form"},{"title":"useGetSet","path":"/hooks/use-get-set/use-get-set"},{"title":"useHash","path":"/hooks/use-hash/use-hash"},{"title":"useHover","path":"/hooks/use-hover/use-hover"},{"title":"useIntersectionObserver","path":"/hooks/use-intersection-observer/use-intersection-observer"},{"title":"useInterval","path":"/hooks/use-interval/use-interval"},{"title":"useIsomorphicEffect","path":"/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"useKeyPress","path":"/hooks/use-key-press/use-key-press"},{"title":"useLocalStorage","path":"/hooks/use-local-storage/use-local-storage"},{"title":"useMap","path":"/hooks/use-map/use-map"},{"title":"useMediaQuery","path":"/hooks/use-media-query/use-media-query"},{"title":"useMergeState","path":"/hooks/use-merge-state/use-merge-state"},{"title":"useMutationObserver","path":"/hooks/use-mutation-observer/use-mutation-observer"},{"title":"useNavigatorOnLine","path":"/hooks/use-navigator-on-line/use-navigator-on-line"},{"title":"useOnGlobalEvent","path":"/hooks/use-on-global-event/use-on-global-event"},{"title":"useOnWindowResize","path":"/hooks/use-on-window-resize/use-on-window-resize"},{"title":"useOnWindowScroll","path":"/hooks/use-on-window-scroll/use-on-window-scroll"},{"title":"usePersistedState","path":"/hooks/use-persisted-state/use-persisted-state"},{"title":"usePortal","path":"/hooks/use-portal/use-portal"}],"/model":[{"title":"React model","path":"/model/model"}]},"zh-CN":{"/zh-CN/getting-started":[{"path":"/zh-CN/getting-started","title":"react \u4ee3\u7801\u6bb5","meta":{}}],"*":[{"path":"/zh-CN","title":"\u6b22\u8fce\u6765\u5230\u672c\u7f51\u7ad9","meta":{}}],"/zh-CN/antd":[{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u6309\u94ae","path":"/zh-CN/antd/loading-button"},{"title":"\u7701\u7565\u6587\u672c\u7ec4\u4ef6","path":"/zh-CN/antd/omit-text"},{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u5f39\u6846","path":"/zh-CN/antd/loading-modal"}],"/zh-CN/guide":[{"title":"\u624b\u98ce\u7434","path":"/zh-CN/guide/Accordion/Accordion"},{"title":"\u63d0\u793a","path":"/zh-CN/guide/Alert/Alert"},{"title":"\u81ea\u52a8\u6587\u672c\u94fe\u63a5","path":"/zh-CN/guide/auto-link/auto-link"},{"title":"\u62e8\u7535\u81f3","path":"/zh-CN/guide/Callto/Callto"},{"title":"\u8f6e\u64ad\u56fe","path":"/zh-CN/guide/Carousel/Carousel"},{"title":"\u53ef\u6298\u53e0\u7684\u5185\u5bb9","path":"/zh-CN/guide/Collapse/Collapse"},{"title":"\u53d7\u63a7\u7684\u8f93\u5165\u6846","path":"/zh-CN/guide/controlled-input/controlled-input"},{"title":"\u5012\u8ba1\u65f6\u7ec4\u4ef6","path":"/zh-CN/guide/count-down/count-down"},{"title":"\u7b80\u6613\u6570\u636e\u5217\u8868\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-list/simple-data-list"},{"title":"\u7b80\u6613\u6570\u636e\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-table/simple-data-table"},{"title":"\u62d6\u62fd\u6587\u4ef6\u7ec4\u4ef6","path":"/zh-CN/guide/file-drop/file-drop"},{"title":"\u61d2\u52a0\u8f7d\u56fe\u7247","path":"/zh-CN/guide/lazy-loading-image/lazy-loading-image"},{"title":"\u9650\u5236\u5b57\u7b26\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-textarea/limited-textarea"},{"title":"\u9650\u5236\u5b57\u6570\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-word-textarea/limited-word-textarea"},{"title":"\u52a0\u8f7d\u7ec4\u4ef6","path":"/zh-CN/guide/Loader/Loader"},{"title":"\u90ae\u4ef6\u94fe\u63a5\u7ec4\u4ef6","path":"/zh-CN/guide/Mailto/Mailto"},{"title":"\u7b80\u6613\u5bf9\u8c61\u6570\u7ec4\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"\u5f39\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Modal/Modal"},{"title":"\u590d\u9009\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Checkbox/Checkbox"},{"title":"\u5bc6\u7801\u663e\u793a\u5668","path":"/zh-CN/guide/password-revealer/password-revealer"},{"title":"\u6309\u94ae","path":"/zh-CN/guide/button/button"},{"title":"\u9009\u62e9\u5668","path":"/zh-CN/guide/select/select"}],"/zh-CN/hooks":[{"title":"\u5f02\u6b65","path":"/zh-CN/hooks/use-async/use-async"},{"title":"\u9501\u5b9abody\u5143\u7d20\u7684\u6eda\u52a8","path":"/zh-CN/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5185","path":"/zh-CN/hooks/use-click-inside/use-click-inside"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5916","path":"/zh-CN/hooks/use-click-outside/use-click-outside"},{"title":"\u7ec4\u4ef6\u7684\u6302\u8f7d","path":"/zh-CN/hooks/use-component-did-mount/use-component-did-mount"},{"title":"\u7ec4\u4ef6\u7684\u72b6\u6001\u66f4\u65b0","path":"/zh-CN/hooks/use-component-did-update/use-component-did-update"},{"title":"\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d","path":"/zh-CN/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"\u590d\u5236\u5230\u526a\u8d34\u677f","path":"/zh-CN/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"\u9632\u6296","path":"/zh-CN/hooks/use-debounce/use-debounce"},{"title":"\u9ed8\u8ba4\u503c","path":"/zh-CN/hooks/use-default/use-default"},{"title":"\u5ef6\u8fdf\u72b6\u6001","path":"/zh-CN/hooks/use-delayed-state/use-delayed-state"},{"title":"\u53ea\u6267\u884c\u4e00\u6b21\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-effect-once/use-effect-once"},{"title":"\u9519\u8bef\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-error/use-error"},{"title":"\u4e8b\u4ef6\u76d1\u542c\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-event-listener/use-event-listener"},{"title":"\u8bf7\u6c42\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-fetch/use-fetch"},{"title":"\u8868\u5355\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-form/use-form"},{"title":"\u72b6\u6001\u8bbe\u7f6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-get-set/use-get-set"},{"title":"\u4fee\u6539hash\u503c\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hash/use-hash"},{"title":"\u60ac\u6d6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hover/use-hover"},{"title":"\u5143\u7d20\u5904\u4e8e\u53ef\u89c6\u533a\u57df\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-intersection-observer/use-intersection-observer"},{"title":"\u5b9a\u65f6\u5668\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-interval/use-interval"},{"title":"\u526f\u4f5c\u7528\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"\u6309\u952e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-key-press/use-key-press"},{"title":"\u5b58\u50a8\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-local-storage/use-local-storage"},{"title":"\u6620\u5c04\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-map/use-map"},{"title":"\u68c0\u67e5\u5a92\u4f53\u67e5\u8be2\u73af\u5883\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-media-query/use-media-query"},{"title":"\u5408\u5e76\u72b6\u6001\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-merge-state/use-merge-state"},{"title":"\u76d1\u542c\u5143\u7d20\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-mutation-observer/use-mutation-observer"},{"title":"\u5728\u7ebf\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-navigator-on-line/use-navigator-on-line"},{"title":"\u5168\u5c40\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-global-event/use-on-global-event"},{"title":"\u8c03\u6574\u7a97\u53e3\u5927\u5c0f\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-window-resize/use-on-window-resize"},{"title":"\u7a97\u53e3\u6eda\u52a8\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-window-scroll/use-on-window-scroll"},{"title":"\u6c38\u4e45\u5b58\u50a8\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-persisted-state/use-persisted-state"},{"title":"\u4f20\u9001\u95e8\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-portal/use-portal"}],"/zh-CN/model":[{"title":"react\u72b6\u6001\u7ba1\u7406\u5de5\u5177","path":"/zh-CN/model/model"}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"\u4e2d\u6587"}],"navs":{"en-US":[{"title":"getting-started","path":"/getting-started"},{"title":"guide","path":"/guide"},{"title":"hooks","path":"/hooks"},{"title":"model","path":"/model"},{"title":"antd","path":"/antd"},{"title":"github","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"about me","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"jue jin","path":"https://juejin.im/user/4054654613988718"},{"title":"segmentfault","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"gitee","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"blog","path":"https://www.cnblogs.com/eveningwater/"},{"title":"website","path":"https://www.eveningwater.com/"},{"title":"My project","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"17sucai","path":"https://www.17sucai.com/user/800544"},{"title":"ewColorPicker","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}],"zh-CN":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/zh-CN/getting-started"},{"title":"\u6307\u5357","path":"/zh-CN/guide"},{"title":"\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks"},{"title":"\u72b6\u6001\u7ba1\u7406","path":"/zh-CN/model"},{"title":"\u8682\u8681\u8bbe\u8ba1","path":"/zh-CN/antd"},{"title":"\u6e90\u7801\u5730\u5740","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"\u5173\u4e8e\u6211","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"\u6398\u91d1","path":"https://juejin.im/user/4054654613988718"},{"title":"\u601d\u5426","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"\u7801\u4e91","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"\u535a\u5ba2","path":"https://www.cnblogs.com/eveningwater/"},{"title":"\u4e2a\u4eba\u7f51\u7ad9","path":"https://www.eveningwater.com/"},{"title":"\u4e2a\u4eba\u9879\u76ee","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"\u95e8\u7d20\u6750","path":"https://www.17sucai.com/user/800544"},{"title":"\u989c\u8272\u9009\u62e9\u5668","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}]},"title":"react-code-segment","logo":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K","mode":"site","repository":{"url":"","branch":"master"},"theme":{}}',
     );
   },
   RH9F: function (e, t, n) {
@@ -52926,6 +53261,42 @@
           : null
       );
     }
+  },
+  V0Ab: function (e, t, n) {
+    'use strict';
+    var a = n('tJVT'),
+      r = n('q1tI'),
+      o = n('i8i4'),
+      l = n.n(o),
+      i = (e) => {
+        if (!e) return () => null;
+        var t = Object(r['useState'])({
+            render: () => null,
+            remove: () => null,
+          }),
+          n = Object(a['a'])(t, 2),
+          o = n[0],
+          i = n[1],
+          s = Object(r['useCallback'])((e) => {
+            var t = (t) => l.a.createPortal(t.children, e),
+              n = () => l.a.unmountComponentAtNode(e);
+            return { render: t, remove: n };
+          }, []);
+        return (
+          Object(r['useEffect'])(() => {
+            e && o.remove();
+            var t = s(e);
+            return (
+              i(t),
+              () => {
+                t.remove();
+              }
+            );
+          }, [e]),
+          o.render
+        );
+      };
+    t['a'] = i;
   },
   V7Vl: function (e, t, n) {
     'use strict';
@@ -58258,6 +58629,196 @@
             r.a.createElement(
               l['default'],
               t['jsx-demo-19'].previewerProps,
+              r.a.createElement(a, null),
+            ),
+          ),
+        );
+      });
+    t['default'] = (e) => {
+      var t = r.a.useContext(o['context']),
+        n = t.demos;
+      return (
+        r.a.useEffect(() => {
+          var t;
+          null !== e &&
+            void 0 !== e &&
+            null !== (t = e.location) &&
+            void 0 !== t &&
+            t.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        r.a.createElement(c, { demos: n })
+      );
+    };
+  },
+  YsGT: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('cGfz'),
+      l = n('GKDz'),
+      i = n('1i5+'),
+      s = n('SQsl'),
+      c = r.a.memo((e) => {
+        var t = e.demos,
+          n = t['useportal-demo.zh-cn'].component,
+          a = t['js-demo.zh-cn-27'].component;
+        return r.a.createElement(
+          r.a.Fragment,
+          null,
+          r.a.createElement(
+            r.a.Fragment,
+            null,
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement(
+                s['a'],
+                null,
+                r.a.createElement(
+                  'thead',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement('th', null, '\u6807\u9898'),
+                    r.a.createElement('th', null, '\u6807\u7b7e'),
+                    r.a.createElement(
+                      'th',
+                      null,
+                      '\u9996\u6b21\u6dfb\u52a0\u65f6\u95f4',
+                    ),
+                    r.a.createElement('th', null, '\u66f4\u65b0\u65f6\u95f4'),
+                  ),
+                ),
+                r.a.createElement(
+                  'tbody',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement(
+                      'td',
+                      null,
+                      '\u4f20\u9001\u95e8\u94a9\u5b50\u51fd\u6570',
+                    ),
+                    r.a.createElement(
+                      'td',
+                      null,
+                      '\u94a9\u5b50\u51fd\u6570,\u526f\u4f5c\u7528\uff0c\u72b6\u6001',
+                    ),
+                    r.a.createElement('td', null, '2022/10/23'),
+                    r.a.createElement('td', null, '2022/10/23'),
+                  ),
+                ),
+              ),
+              r.a.createElement(
+                'p',
+                null,
+                '\u521b\u5efa\u4e00\u4e2a\u4f20\u9001\u95e8\uff0c\u5141\u8bb8\u5728\u7236\u7ec4\u4ef6\u4e4b\u5916\u6e32\u67d3\u5b50\u7ec4\u4ef6\u3002',
+              ),
+              r.a.createElement(
+                'ul',
+                null,
+                r.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 useState() \u6302\u94a9\u521b\u5efa\u4e00\u4e2a\u72b6\u6001\u53d8\u91cf\uff0c\u7528\u4e8e\u4fdd\u5b58\u95e8\u6237\u7684 render() \u548c remove() \u51fd\u6570\u3002',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 ReactDOM.createPortal() \u548c ReactDOM.unmountComponentAtNode() \u521b\u5efa\u4e00\u4e2a\u95e8\u6237\u548c\u4e00\u4e2a\u5220\u9664\u5b83\u7684\u51fd\u6570\u3002 \u4f7f\u7528 useCallback() \u6302\u94a9\u5c06\u8fd9\u4e9b\u51fd\u6570\u5305\u88c5\u548c\u8bb0\u5fc6\u4e3a createPortal()\u3002',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 useEffect() \u6302\u94a9\u8c03\u7528 createPortal() \u5e76\u5728 el \u7684\u503c\u66f4\u6539\u65f6\u66f4\u65b0\u72b6\u6001\u53d8\u91cf\u3002',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  '\u6700\u540e\uff0c\u8fd4\u56de\u72b6\u6001\u53d8\u91cf\u7684 render() \u51fd\u6570\u3002',
+                ),
+              ),
+              r.a.createElement(
+                'h4',
+                { id: 'useportalts' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#useportalts', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'usePortal.ts',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React,{ useState,useEffect,useCallback } from 'react';\nimport ReactDOM from 'react-dom';\nexport type ReturnPortalType = React.ReactPortal | (() => null);\nexport type RenderType = ((props: React.PropsWithChildren) => React.ReactPortal) | (() => null);\nexport type PortalType = {\n    render: RenderType,\n    remove: (() => boolean) | (() => null)\n}\nconst usePortal = <T extends Element>(el: T):ReturnPortalType  => {\n    const [portal,setPortal] = useState<PortalType>({\n        render: () => null,\n        remove: () => null\n    });\n\n    const createPortal = useCallback((el: T) => {\n        const Portal = (props: React.PropsWithChildren) => ReactDOM.createPortal(props.children,el);\n        const remove = () => ReactDOM.unmountComponentAtNode(el);\n\n        return {\n            render: Portal,\n            remove\n        }\n    },[])\n\n    useEffect(() => {\n        if(el){\n            portal.remove();\n        }\n        const newPortal = createPortal(el);\n        setPortal(newPortal as PortalType);\n\n        return () => {\n            newPortal.remove();\n        }\n    },[el])\n\n    return portal.render as ReturnPortalType;\n}\n\nexport default usePortal;",
+                lang: 'ts',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: '\u793a\u4f8b' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#\u793a\u4f8b', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                '\u793a\u4f8b',
+              ),
+              r.a.createElement(i['a'], {
+                code: 'import React, { JSXElementConstructor } from "react";\nimport usePortal from "./usePortal";\n\nconst Demo = () => {\n    const Portal = usePortal(document.querySelector(\'.title\')!) as JSXElementConstructor<any>;\n\n    return (\n        <p>\n            \u4f60\u597d\uff0c\u4e16\u754c!\n            <Portal>\u4f20\u9001\u95e8\u6807\u9898</Portal>\n        </p>\n    )\n}\n\nexport default Demo;',
+                lang: 'tsx',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'useportaljs' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#useportaljs', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'usePortal.js',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React,{ useState,useEffect,useCallback } from 'react';\nimport ReactDOM from 'react-dom';\nconst usePortal = el  => {\n    const [portal,setPortal] = useState({\n        render: () => null,\n        remove: () => null\n    });\n\n    const createPortal = useCallback(el => {\n        const Portal = (props) => ReactDOM.createPortal(props.children,el);\n        const remove = () => ReactDOM.unmountComponentAtNode(el);\n\n        return {\n            render: Portal,\n            remove\n        }\n    },[])\n\n    useEffect(() => {\n        if(el){\n            portal.remove();\n        }\n        const newPortal = createPortal(el);\n        setPortal(newPortal);\n\n        return () => {\n            newPortal.remove();\n        }\n    },[el])\n\n    return portal.render;\n}\n\nexport default usePortal;",
+                lang: 'js',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'js-\u793a\u4f8b' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#js-\u793a\u4f8b',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'js \u793a\u4f8b',
+              ),
+              r.a.createElement(i['a'], {
+                code: 'import React, { JSXElementConstructor } from "react";\nimport usePortal from "./usePortal";\n\nconst Demo = () => {\n    const Portal = usePortal(document.querySelector(\'.title\'));\n\n    return (\n        <p>\n            \u4f60\u597d\uff0c\u4e16\u754c!\n            <Portal>\u4f20\u9001\u95e8\u6807\u9898</Portal>\n        </p>\n    )\n}\n\nexport default Demo;',
+                lang: 'jsx',
+              }),
+              r.a.createElement('p', null, '\u793a\u4f8b:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              t['useportal-demo.zh-cn'].previewerProps,
+              r.a.createElement(n, null),
+            ),
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement('p', null, 'js \u793a\u4f8b:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              t['js-demo.zh-cn-27'].previewerProps,
               r.a.createElement(a, null),
             ),
           ),
@@ -64024,6 +64585,23 @@
       return a;
     });
   },
+  erod: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('9Ioe'),
+      l = () => {
+        var e = Object(o['a'])(document.querySelector('title'));
+        return r.a.createElement(
+          'p',
+          null,
+          '\u4f60\u597d\uff0c\u4e16\u754c!',
+          r.a.createElement(e, null, '\u4f20\u9001\u95e8\u6807\u9898'),
+        );
+      };
+    t['default'] = l;
+  },
   eu5X: function (e, t, n) {
     var a = n('+F0/'),
       r = (function () {
@@ -68172,7 +68750,7 @@
                 'usePersistedState.ts',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useEffect,useState,useRef } from 'react';\nimport type { Dispatch,SetStateAction } from 'react';\n\nconst usePersistedState = (name: string,defaultValue:string): [string,Dispatch<SetStateAction<string>>] => {\n    const [value,setValue] = useState(defaultValue);\n    const nameRef = useRef<string>(name);\n\n    useEffect(() => {\n        try {\n            const storeValue = localStorage.getItem(name);\n            if(storeValue !== null){\n                setValue(storeValue);\n            }else {\n                localStorage.setItem(name,defaultValue);\n            }\n        } catch {\n            setValue(defaultValue);\n        }\n    },[]);\n\n    useEffect(() => {\n        try {\n            localStorage.setItem(nameRef.current,value);\n        } catch {}\n    },[value])\n\n    useEffect(() => {\n        const lastName = nameRef.current;\n        if(name !== lastName){\n            try {\n                localStorage.setItem(name,value);\n                nameRef.current = name;\n                localStorage.removeItem(lastName);\n            } catch {}\n        }\n    },[name])\n\n\n    return [value,setValue];\n}\n\nexport default usePersistedState",
+                code: "import { useEffect, useState, useRef } from 'react';\nimport type { Dispatch, SetStateAction } from 'react';\n\nconst usePersistedState = (\n  name: string,\n  defaultValue: string,\n): [string, Dispatch<SetStateAction<string>>] => {\n  const [value, setValue] = useState(defaultValue);\n  const nameRef = useRef<string>(name);\n\n  useEffect(() => {\n    try {\n      const storeValue = localStorage.getItem(name);\n      if (storeValue !== null) {\n        setValue(storeValue);\n      } else {\n        localStorage.setItem(name, defaultValue);\n      }\n    } catch {\n      setValue(defaultValue);\n    }\n  }, []);\n\n  useEffect(() => {\n    try {\n      localStorage.setItem(nameRef.current, value);\n    } catch {}\n  }, [value]);\n\n  useEffect(() => {\n    const lastName = nameRef.current;\n    if (name !== lastName) {\n      try {\n        localStorage.setItem(name, value);\n        nameRef.current = name;\n        localStorage.removeItem(lastName);\n      } catch {}\n    }\n  }, [name]);\n\n  return [value, setValue];\n};\n\nexport default usePersistedState;",
                 lang: 'ts',
               }),
               r.a.createElement(
@@ -68186,7 +68764,7 @@
                 'Demo',
               ),
               r.a.createElement(i['a'], {
-                code: "import React,{ useState } from 'react';\nimport usePersistedState from './usePersistedState';\nimport { Input } from 'antd';\n\nconst MyComponent = (props: { name: string }) => {\n    const { name } = props;\n    const [value,setValue] = usePersistedState(name,'10');\n\n    return (\n        <Input value={value} onChange={e => setValue(e.target.value)} />\n    )\n}\n\n\nconst Demo = () => {\n    const [name,setName] = useState('my-value');\n    return (\n        <>\n            <MyComponent name={name} />\n            <Input value={name} onChange={e => setName(e.target.name)}/>\n        </>\n    )\n\n}\n\nexport default Demo;",
+                code: "import React, { useState } from 'react';\nimport usePersistedState from './usePersistedState';\nimport { Input } from 'antd';\n\nconst MyComponent = (props: { name: string }) => {\n  const { name } = props;\n  const [value, setValue] = usePersistedState(name, '10');\n\n  return <Input value={value} onChange={(e) => setValue(e.target.value)} />;\n};\n\nconst Demo = () => {\n  const [name, setName] = useState('my-value');\n  return (\n    <>\n      <MyComponent name={name} />\n      <Input value={name} onChange={(e) => setName(e.target.name)} />\n    </>\n  );\n};\n\nexport default Demo;",
                 lang: 'tsx',
               }),
               r.a.createElement(
@@ -68204,7 +68782,7 @@
                 'usePersistedState.js',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useEffect,useState,useRef } from 'react';\n\nconst usePersistedState = (name,defaultValue) => {\n    const [value,setValue] = useState(defaultValue);\n    const nameRef = useRef(name);\n\n    useEffect(() => {\n        try {\n            const storeValue = localStorage.getItem(name);\n            if(storeValue !== null){\n                setValue(storeValue);\n            }else {\n                localStorage.setItem(name,defaultValue);\n            }\n        } catch {\n            setValue(defaultValue);\n        }\n    },[]);\n\n    useEffect(() => {\n        try {\n            localStorage.setItem(nameRef.current,value);\n        } catch {}\n    },[value])\n\n    useEffect(() => {\n        const lastName = nameRef.current;\n        if(name !== lastName){\n            try {\n                localStorage.setItem(name,value);\n                nameRef.current = name;\n                localStorage.removeItem(lastName);\n            } catch {}\n        }\n    },[name])\n\n\n    return [value,setValue];\n}\n\nexport default usePersistedState",
+                code: "import { useEffect, useState, useRef } from 'react';\n\nconst usePersistedState = (name, defaultValue) => {\n  const [value, setValue] = useState(defaultValue);\n  const nameRef = useRef(name);\n\n  useEffect(() => {\n    try {\n      const storeValue = localStorage.getItem(name);\n      if (storeValue !== null) {\n        setValue(storeValue);\n      } else {\n        localStorage.setItem(name, defaultValue);\n      }\n    } catch {\n      setValue(defaultValue);\n    }\n  }, []);\n\n  useEffect(() => {\n    try {\n      localStorage.setItem(nameRef.current, value);\n    } catch {}\n  }, [value]);\n\n  useEffect(() => {\n    const lastName = nameRef.current;\n    if (name !== lastName) {\n      try {\n        localStorage.setItem(name, value);\n        nameRef.current = name;\n        localStorage.removeItem(lastName);\n      } catch {}\n    }\n  }, [name]);\n\n  return [value, setValue];\n};\n\nexport default usePersistedState;",
                 lang: 'js',
               }),
               r.a.createElement(
@@ -68218,7 +68796,7 @@
                 'js Demo',
               ),
               r.a.createElement(i['a'], {
-                code: "import React,{ useState } from 'react';\nimport usePersistedState from './usePersistedState';\nimport { Input } from 'antd';\n\nconst MyComponent = props => {\n    const { name } = props;\n    const [value,setValue] = usePersistedState(name,'10');\n\n    return (\n        <Input value={value} onChange={e => setValue(e.target.value)} />\n    )\n}\n\n\nconst Demo = () => {\n    const [name,setName] = useState('my-value');\n    return (\n        <>\n            <MyComponent name={name} />\n            <Input value={name} onChange={e => setName(e.target.name)}/>\n        </>\n    )\n\n}\n\nexport default Demo;",
+                code: "import React, { useState } from 'react';\nimport usePersistedState from './usePersistedState';\nimport { Input } from 'antd';\n\nconst MyComponent = (props) => {\n  const { name } = props;\n  const [value, setValue] = usePersistedState(name, '10');\n\n  return <Input value={value} onChange={(e) => setValue(e.target.value)} />;\n};\n\nconst Demo = () => {\n  const [name, setName] = useState('my-value');\n  return (\n    <>\n      <MyComponent name={name} />\n      <Input value={name} onChange={(e) => setName(e.target.name)} />\n    </>\n  );\n};\n\nexport default Demo;",
                 lang: 'jsx',
               }),
               r.a.createElement('p', null, 'Demo:'),
@@ -68405,6 +68983,23 @@
         );
       };
     t['a'] = p;
+  },
+  jnKy: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('9Ioe'),
+      l = () => {
+        var e = Object(o['a'])(document.querySelector('title'));
+        return r.a.createElement(
+          'p',
+          null,
+          'hello,world!',
+          r.a.createElement(e, null, 'Portalized Title'),
+        );
+      };
+    t['default'] = l;
   },
   k1fw: function (e, t, n) {
     'use strict';
@@ -72587,6 +73182,23 @@
         throw (void 0 !== o && a(o.call(e)), l);
       }
     };
+  },
+  mDit: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('V0Ab'),
+      l = () => {
+        var e = Object(o['a'])(document.querySelector('title'));
+        return r.a.createElement(
+          'p',
+          null,
+          'hello,world!',
+          r.a.createElement(e, null, 'Portalized Title'),
+        );
+      };
+    t['default'] = l;
   },
   mGGf: function (e, t, n) {
     'use strict';
@@ -84163,6 +84775,23 @@
           : ((e - t) * (r - a)) / (n - t) + a;
       };
   },
+  vpce: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('V0Ab'),
+      l = () => {
+        var e = Object(o['a'])(document.querySelector('title'));
+        return r.a.createElement(
+          'p',
+          null,
+          '\u4f60\u597d\uff0c\u4e16\u754c!',
+          r.a.createElement(e, null, '\u4f20\u9001\u95e8\u6807\u9898'),
+        );
+      };
+    t['default'] = l;
+  },
   vskn: function (e, t, n) {
     'use strict';
     n.r(t);
@@ -85339,7 +85968,7 @@
                 'usePersistedState.ts',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useEffect,useState,useRef } from 'react';\nimport type { Dispatch,SetStateAction } from 'react';\n\nconst usePersistedState = (name: string,defaultValue:string): [string,Dispatch<SetStateAction<string>>] => {\n    const [value,setValue] = useState(defaultValue);\n    const nameRef = useRef<string>(name);\n\n    useEffect(() => {\n        try {\n            const storeValue = localStorage.getItem(name);\n            if(storeValue !== null){\n                setValue(storeValue);\n            }else {\n                localStorage.setItem(name,defaultValue);\n            }\n        } catch {\n            setValue(defaultValue);\n        }\n    },[]);\n\n    useEffect(() => {\n        try {\n            localStorage.setItem(nameRef.current,value);\n        } catch {}\n    },[value])\n\n    useEffect(() => {\n        const lastName = nameRef.current;\n        if(name !== lastName){\n            try {\n                localStorage.setItem(name,value);\n                nameRef.current = name;\n                localStorage.removeItem(lastName);\n            } catch {}\n        }\n    },[name])\n\n\n    return [value,setValue];\n}\n\nexport default usePersistedState",
+                code: "import { useEffect, useState, useRef } from 'react';\nimport type { Dispatch, SetStateAction } from 'react';\n\nconst usePersistedState = (\n  name: string,\n  defaultValue: string,\n): [string, Dispatch<SetStateAction<string>>] => {\n  const [value, setValue] = useState(defaultValue);\n  const nameRef = useRef<string>(name);\n\n  useEffect(() => {\n    try {\n      const storeValue = localStorage.getItem(name);\n      if (storeValue !== null) {\n        setValue(storeValue);\n      } else {\n        localStorage.setItem(name, defaultValue);\n      }\n    } catch {\n      setValue(defaultValue);\n    }\n  }, []);\n\n  useEffect(() => {\n    try {\n      localStorage.setItem(nameRef.current, value);\n    } catch {}\n  }, [value]);\n\n  useEffect(() => {\n    const lastName = nameRef.current;\n    if (name !== lastName) {\n      try {\n        localStorage.setItem(name, value);\n        nameRef.current = name;\n        localStorage.removeItem(lastName);\n      } catch {}\n    }\n  }, [name]);\n\n  return [value, setValue];\n};\n\nexport default usePersistedState;",
                 lang: 'ts',
               }),
               r.a.createElement(
@@ -85353,7 +85982,7 @@
                 '\u793a\u4f8b',
               ),
               r.a.createElement(i['a'], {
-                code: "import React,{ useState } from 'react';\nimport usePersistedState from './usePersistedState';\nimport { Input } from 'antd';\n\nconst MyComponent = (props: { name: string }) => {\n    const { name } = props;\n    const [value,setValue] = usePersistedState(name,'10');\n\n    return (\n        <Input value={value} onChange={e => setValue(e.target.value)} />\n    )\n}\n\n\nconst Demo = () => {\n    const [name,setName] = useState('my-value');\n    return (\n        <>\n            <MyComponent name={name} />\n            <Input value={name} onChange={e => setName(e.target.name)}/>\n        </>\n    )\n\n}\n\nexport default Demo;",
+                code: "import React, { useState } from 'react';\nimport usePersistedState from './usePersistedState';\nimport { Input } from 'antd';\n\nconst MyComponent = (props: { name: string }) => {\n  const { name } = props;\n  const [value, setValue] = usePersistedState(name, '10');\n\n  return <Input value={value} onChange={(e) => setValue(e.target.value)} />;\n};\n\nconst Demo = () => {\n  const [name, setName] = useState('my-value');\n  return (\n    <>\n      <MyComponent name={name} />\n      <Input value={name} onChange={(e) => setName(e.target.name)} />\n    </>\n  );\n};\n\nexport default Demo;",
                 lang: 'tsx',
               }),
               r.a.createElement(
@@ -85371,7 +86000,7 @@
                 'usePersistedState.js',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useEffect,useState,useRef } from 'react';\n\nconst usePersistedState = (name,defaultValue) => {\n    const [value,setValue] = useState(defaultValue);\n    const nameRef = useRef(name);\n\n    useEffect(() => {\n        try {\n            const storeValue = localStorage.getItem(name);\n            if(storeValue !== null){\n                setValue(storeValue);\n            }else {\n                localStorage.setItem(name,defaultValue);\n            }\n        } catch {\n            setValue(defaultValue);\n        }\n    },[]);\n\n    useEffect(() => {\n        try {\n            localStorage.setItem(nameRef.current,value);\n        } catch {}\n    },[value])\n\n    useEffect(() => {\n        const lastName = nameRef.current;\n        if(name !== lastName){\n            try {\n                localStorage.setItem(name,value);\n                nameRef.current = name;\n                localStorage.removeItem(lastName);\n            } catch {}\n        }\n    },[name])\n\n\n    return [value,setValue];\n}\n\nexport default usePersistedState",
+                code: "import { useEffect, useState, useRef } from 'react';\n\nconst usePersistedState = (name, defaultValue) => {\n  const [value, setValue] = useState(defaultValue);\n  const nameRef = useRef(name);\n\n  useEffect(() => {\n    try {\n      const storeValue = localStorage.getItem(name);\n      if (storeValue !== null) {\n        setValue(storeValue);\n      } else {\n        localStorage.setItem(name, defaultValue);\n      }\n    } catch {\n      setValue(defaultValue);\n    }\n  }, []);\n\n  useEffect(() => {\n    try {\n      localStorage.setItem(nameRef.current, value);\n    } catch {}\n  }, [value]);\n\n  useEffect(() => {\n    const lastName = nameRef.current;\n    if (name !== lastName) {\n      try {\n        localStorage.setItem(name, value);\n        nameRef.current = name;\n        localStorage.removeItem(lastName);\n      } catch {}\n    }\n  }, [name]);\n\n  return [value, setValue];\n};\n\nexport default usePersistedState;",
                 lang: 'js',
               }),
               r.a.createElement(
@@ -85389,7 +86018,7 @@
                 'js \u793a\u4f8b',
               ),
               r.a.createElement(i['a'], {
-                code: "import React,{ useState } from 'react';\nimport usePersistedState from './usePersistedState';\nimport { Input } from 'antd';\n\nconst MyComponent = props => {\n    const { name } = props;\n    const [value,setValue] = usePersistedState(name,'10');\n\n    return (\n        <Input value={value} onChange={e => setValue(e.target.value)} />\n    )\n}\n\n\nconst Demo = () => {\n    const [name,setName] = useState('my-value');\n    return (\n        <>\n            <MyComponent name={name} />\n            <Input value={name} onChange={e => setName(e.target.name)}/>\n        </>\n    )\n\n}\n\nexport default Demo;",
+                code: "import React, { useState } from 'react';\nimport usePersistedState from './usePersistedState';\nimport { Input } from 'antd';\n\nconst MyComponent = (props) => {\n  const { name } = props;\n  const [value, setValue] = usePersistedState(name, '10');\n\n  return <Input value={value} onChange={(e) => setValue(e.target.value)} />;\n};\n\nconst Demo = () => {\n  const [name, setName] = useState('my-value');\n  return (\n    <>\n      <MyComponent name={name} />\n      <Input value={name} onChange={(e) => setName(e.target.name)} />\n    </>\n  );\n};\n\nexport default Demo;",
                 lang: 'jsx',
               }),
               r.a.createElement('p', null, '\u793a\u4f8b:'),
