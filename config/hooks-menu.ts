@@ -135,4 +135,8 @@ export default [
     title: 'usePortal',
     path: '/hooks/use-portal/use-portal',
   },
+  {
+    title: 'usePrevious',
+    path: '/hooks/use-previous/use-previous',
+  },
 ];

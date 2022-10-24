@@ -23,6 +23,10 @@ export type PortalType = {
   remove: (() => boolean) | (() => null);
 };
 const usePortal = <T extends Element>(el: T): ReturnPortalType => {
+  if (!el) {
+    return () => null;
+  }
+
   const [portal, setPortal] = useState<PortalType>({
     render: () => null,
     remove: () => null,
@@ -85,6 +89,9 @@ export default Demo;
 import React, { useState, useEffect, useCallback } from 'react';
 import ReactDOM from 'react-dom';
 const usePortal = (el) => {
+  if (!el) {
+    return () => null;
+  }
   const [portal, setPortal] = useState({
     render: () => null,
     remove: () => null,

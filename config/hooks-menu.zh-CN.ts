@@ -135,4 +135,8 @@ export default [
     title: '传送门钩子函数',
     path: '/zh-CN/hooks/use-portal/use-portal',
   },
+  {
+    title: '存储旧值状态钩子函数',
+    path: '/zh-CN/hooks/use-previous/use-previous',
+  },
 ];
