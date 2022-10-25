@@ -139,4 +139,8 @@ export default [
     title: 'usePrevious',
     path: '/hooks/use-previous/use-previous',
   },
+  {
+    title: 'useRequestAnimationFrame',
+    path: '/hooks/use-request-animation-frame/use-request-animation-frame',
+  },
 ];

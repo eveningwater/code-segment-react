@@ -139,4 +139,8 @@ export default [
     title: '存储旧值状态钩子函数',
     path: '/zh-CN/hooks/use-previous/use-previous',
   },
+  {
+    title: '动画钩子函数',
+    path: '/zh-CN/hooks/use-request-animation-frame/use-request-animation-frame',
+  },
 ];

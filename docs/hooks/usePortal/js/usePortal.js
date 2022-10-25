@@ -11,7 +11,7 @@ const usePortal = (el) => {
 
   const createPortal = useCallback((el) => {
     const Portal = (props) => ReactDOM.createPortal(props.children, el);
-    const remove = () => ReactDOM.unmountComponentAtNode(el);
+    const remove = () => el && ReactDOM.unmountComponentAtNode(el);
 
     return {
       render: Portal,
