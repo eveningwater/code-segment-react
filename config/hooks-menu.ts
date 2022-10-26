@@ -143,4 +143,8 @@ export default [
     title: 'useRequestAnimationFrame',
     path: '/hooks/use-request-animation-frame/use-request-animation-frame',
   },
+  {
+    title: 'useSSR',
+    path: '/hooks/use-ssr/use-ssr',
+  },
 ];

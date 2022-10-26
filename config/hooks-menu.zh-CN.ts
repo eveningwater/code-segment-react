@@ -143,4 +143,8 @@ export default [
     title: '动画钩子函数',
     path: '/zh-CN/hooks/use-request-animation-frame/use-request-animation-frame',
   },
+  {
+    title: '判断环境的钩子函数',
+    path: '/zh-CN/hooks/use-ssr/use-ssr',
+  },
 ];
