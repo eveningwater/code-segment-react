@@ -147,4 +147,8 @@ export default [
     title: '判断环境的钩子函数',
     path: '/zh-CN/hooks/use-ssr/use-ssr',
   },
+  {
+    title: '动态加载脚本钩子函数',
+    path: '/zh-CN/hooks/use-script/use-script',
+  },
 ];

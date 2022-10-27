@@ -147,4 +147,8 @@ export default [
     title: 'useSSR',
     path: '/hooks/use-ssr/use-ssr',
   },
+  {
+    title: 'useScript',
+    path: '/hooks/use-script/use-script',
+  },
 ];
