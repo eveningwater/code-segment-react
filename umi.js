@@ -516,8 +516,8 @@
         )
       );
     }
-    var T,
-      P = n('erl9'),
+    var P,
+      T = n('erl9'),
       L = n('APDf');
     function D(e, t) {
       var n = Object.keys(e);
@@ -583,12 +583,12 @@
     }
     var F = { Webkit: '-webkit-', Moz: '-moz-', ms: '-ms-', O: '-o-' };
     function B() {
-      if (void 0 !== T) return T;
-      T = '';
+      if (void 0 !== P) return P;
+      P = '';
       var e = document.createElement('p').style,
         t = 'Transform';
-      for (var n in F) n + t in e && (T = n);
-      return T;
+      for (var n in F) n + t in e && (P = n);
+      return P;
     }
     function _() {
       return B() ? ''.concat(B(), 'TransitionProperty') : 'transitionProperty';
@@ -912,7 +912,7 @@
         });
     });
     var Ne = { position: 'absolute', visibility: 'hidden', display: 'block' };
-    function Te() {
+    function Pe() {
       for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++)
         t[n] = arguments[n];
       var a,
@@ -926,19 +926,19 @@
         a
       );
     }
-    function Pe(e, t) {
+    function Te(e, t) {
       for (var n in t) t.hasOwnProperty(n) && (e[n] = t[n]);
       return e;
     }
     ye(['width', 'height'], function (e) {
       var t = e.charAt(0).toUpperCase() + e.slice(1);
       Ie['outer'.concat(t)] = function (t, n) {
-        return t && Te(t, e, n ? Se : Ce);
+        return t && Pe(t, e, n ? Se : Ce);
       };
       var n = 'width' === e ? ['Left', 'Right'] : ['Top', 'Bottom'];
       Ie[e] = function (t, a) {
         var r = a;
-        if (void 0 === r) return t && Te(t, e, we);
+        if (void 0 === r) return t && Pe(t, e, we);
         if (t) {
           var o = Ee(t);
           return o && (r += je(t, ['padding', 'border'], n)), X(t, e, r);
@@ -968,7 +968,7 @@
           for (t in e) e.hasOwnProperty(t) && (n.overflow[t] = e.overflow[t]);
         return n;
       },
-      mix: Pe,
+      mix: Te,
       getWindowScrollLeft: function (e) {
         return te(e);
       },
@@ -983,7 +983,7 @@
       viewportWidth: 0,
       viewportHeight: 0,
     };
-    Pe(Le, Ie);
+    Te(Le, Ie);
     var De = Le.getParent;
     function Ae(e) {
       if (Le.isWindow(e) || 9 === e.nodeType) return null;
@@ -1343,7 +1343,7 @@
       return 'function' !== typeof e ? null : e();
     }
     function ct(e) {
-      return 'object' === Object(P['a'])(e) && e ? e : null;
+      return 'object' === Object(T['a'])(e) && e ? e : null;
     }
     var ut = function (e, t) {
         var n = e.children,
@@ -1579,9 +1579,9 @@
           O = Object(u['useRef'])(),
           j = Object(u['useRef'])(),
           N = Object(u['useState'])(),
-          T = Object(S['a'])(N, 2),
-          P = T[0],
-          L = T[1],
+          P = Object(S['a'])(N, 2),
+          T = P[0],
+          L = P[1],
           D = Et(d),
           A = Object(S['a'])(D, 2),
           M = A[0],
@@ -1607,7 +1607,7 @@
         }
         function Q(e, t) {
           var n = g(t);
-          P !== n && L(n),
+          T !== n && L(n),
             W(function (e) {
               return e + 1;
             }),
@@ -1694,7 +1694,7 @@
             function (e, t) {
               var n = e.className,
                 r = e.style,
-                i = x()(o, l, P, n);
+                i = x()(o, l, T, n);
               return u['createElement'](
                 pt,
                 {
@@ -1812,10 +1812,10 @@
       It = u['createContext'](null),
       Rt = It;
     function Nt() {}
-    function Tt() {
+    function Pt() {
       return '';
     }
-    function Pt(e) {
+    function Tt(e) {
       return e ? e.ownerDocument : window.document;
     }
     var Lt = [
@@ -2426,8 +2426,8 @@
         (t.contextType = Rt),
         (t.defaultProps = {
           prefixCls: 'rc-trigger-popup',
-          getPopupClassNameFromAlign: Tt,
-          getDocument: Pt,
+          getPopupClassNameFromAlign: Pt,
+          getDocument: Tt,
           onPopupVisibleChange: Nt,
           afterPopupVisibleChange: Nt,
           onPopupAlign: Nt,
@@ -2621,20 +2621,20 @@
           },
           N = Object(i['cloneElement'])(t, { value: C, hidden: O });
         if (v(e)) {
-          var T,
-            P = ''.concat(n, '-affix-wrapper'),
+          var P,
+            T = ''.concat(n, '-affix-wrapper'),
             L = l()(
-              P,
-              ((T = {}),
-              Object(r['a'])(T, ''.concat(P, '-disabled'), y),
-              Object(r['a'])(T, ''.concat(P, '-focused'), x),
-              Object(r['a'])(T, ''.concat(P, '-readonly'), E),
+              T,
+              ((P = {}),
+              Object(r['a'])(P, ''.concat(T, '-disabled'), y),
+              Object(r['a'])(P, ''.concat(T, '-focused'), x),
+              Object(r['a'])(P, ''.concat(T, '-readonly'), E),
               Object(r['a'])(
-                T,
-                ''.concat(P, '-input-with-clear-btn'),
+                P,
+                ''.concat(T, '-input-with-clear-btn'),
                 o && k && C,
               ),
-              T),
+              P),
               !h(e) && d,
               f,
             ),
@@ -2724,8 +2724,8 @@
           E = e.disabled,
           R = e.htmlSize,
           N = e.className,
-          T = e.maxLength,
-          P = e.suffix,
+          P = e.maxLength,
+          T = e.suffix,
           L = e.showCount,
           D = e.type,
           A = void 0 === D ? 'text' : D,
@@ -2828,13 +2828,13 @@
             );
           },
           ee = function () {
-            var e = Number(T) > 0;
-            if (P || L) {
+            var e = Number(P) > 0;
+            if (T || L) {
               var t = Object(w['a'])(y(_)).length,
                 n =
                   'object' === Object(p['a'])(L)
-                    ? L.formatter({ count: t, maxLength: T })
-                    : ''.concat(t).concat(e ? ' / '.concat(T) : '');
+                    ? L.formatter({ count: t, maxLength: P })
+                    : ''.concat(t).concat(e ? ' / '.concat(P) : '');
               return s.a.createElement(
                 s.a.Fragment,
                 null,
@@ -2847,13 +2847,13 @@
                         Object(r['a'])(
                           {},
                           ''.concat(f, '-show-count-has-suffix'),
-                          !!P,
+                          !!T,
                         ),
                       ),
                     },
                     n,
                   ),
-                P,
+                T,
               );
             }
             return null;
@@ -2878,8 +2878,8 @@
         );
       }),
       N = R,
-      T = N,
-      P = n('R7Sf'),
+      P = N,
+      T = n('R7Sf'),
       L = n('wo7N'),
       D = n('plZ8'),
       A = n('Lgf6');
@@ -3065,10 +3065,10 @@
             ? (ee = k)
             : k && (ee = { clearIcon: s.a.createElement(f['a'], null) }),
           s.a.createElement(
-            T,
+            P,
             Object(a['a'])(
               {
-                ref: Object(P['a'])(t, _),
+                ref: Object(T['a'])(t, _),
                 prefixCls: A,
                 autoComplete:
                   null === N || void 0 === N ? void 0 : N.autoComplete,
@@ -3387,7 +3387,7 @@
           I = i['useRef'](!1),
           R = m || j,
           N = i['useRef'](null),
-          T = function (e) {
+          P = function (e) {
             e && e.target && 'click' === e.type && y && y(e.target.value, e),
               E && E(e);
           },
@@ -3479,14 +3479,14 @@
           };
         return i['createElement'](
           q,
-          Object(a['a'])({ ref: Object(P['a'])(N, t), onPressEnter: M }, k, {
+          Object(a['a'])({ ref: Object(T['a'])(N, t), onPressEnter: M }, k, {
             size: R,
             onCompositionStart: G,
             onCompositionEnd: W,
             prefixCls: F,
             addonAfter: o,
             suffix: p,
-            onChange: T,
+            onChange: P,
             className: U,
             disabled: b,
           }),
@@ -3662,8 +3662,8 @@
           ]),
           R = i['useContext'](c['b']),
           N = R.getPrefixCls,
-          T = R.direction,
-          P = i['useContext'](D['b']),
+          P = R.direction,
+          T = i['useContext'](D['b']),
           A = i['useContext'](L['b']),
           F = y || A,
           B = i['useContext'](u['a']),
@@ -3778,12 +3778,12 @@
                 Object(r['a'])(
                   n,
                   ''.concat(fe, '-sm'),
-                  'small' === P || 'small' === b,
+                  'small' === T || 'small' === b,
                 ),
                 Object(r['a'])(
                   n,
                   ''.concat(fe, '-lg'),
-                  'large' === P || 'large' === b,
+                  'large' === T || 'large' === b,
                 ),
                 n),
                 M(fe, K),
@@ -3805,7 +3805,7 @@
           xe,
           Object(a['a'])({ disabled: F }, I, {
             prefixCls: fe,
-            direction: T,
+            direction: P,
             inputType: 'text',
             value: ve,
             element: he,
@@ -3835,7 +3835,7 @@
                   Object(r['a'])(
                     be,
                     ''.concat(fe, '-textarea-rtl'),
-                    'rtl' === T,
+                    'rtl' === P,
                   ),
                   Object(r['a'])(be, ''.concat(fe, '-textarea-show-count'), f),
                   Object(r['a'])(
@@ -4576,8 +4576,8 @@
     }
     var R = [],
       N = [],
-      T = 1,
-      P = null,
+      P = 1,
+      T = null,
       L = 3,
       D = !1,
       A = !1,
@@ -4605,28 +4605,28 @@
       var a = L;
       try {
         for (
-          z(n), P = O(R);
-          null !== P && (!(P.expirationTime > n) || (e && !l()));
+          z(n), T = O(R);
+          null !== T && (!(T.expirationTime > n) || (e && !l()));
 
         ) {
-          var i = P.callback;
+          var i = T.callback;
           if (null !== i) {
-            (P.callback = null), (L = P.priorityLevel);
-            var s = i(P.expirationTime <= n);
+            (T.callback = null), (L = T.priorityLevel);
+            var s = i(T.expirationTime <= n);
             (n = t.unstable_now()),
-              'function' === typeof s ? (P.callback = s) : P === O(R) && j(R),
+              'function' === typeof s ? (T.callback = s) : T === O(R) && j(R),
               z(n);
           } else j(R);
-          P = O(R);
+          T = O(R);
         }
-        if (null !== P) var c = !0;
+        if (null !== T) var c = !0;
         else {
           var u = O(N);
           null !== u && r(F, u.startTime - n), (c = !1);
         }
         return c;
       } finally {
-        (P = null), (L = a), (D = !1);
+        (T = null), (L = a), (D = !1);
       }
     }
     function _(e) {
@@ -4711,7 +4711,7 @@
         return (
           (l = s + l),
           (e = {
-            id: T++,
+            id: P++,
             callback: n,
             priorityLevel: e,
             startTime: s,
@@ -4731,12 +4731,12 @@
         z(e);
         var n = O(R);
         return (
-          (n !== P &&
-            null !== P &&
+          (n !== T &&
+            null !== T &&
             null !== n &&
             null !== n.callback &&
             n.startTime <= e &&
-            n.expirationTime < P.expirationTime) ||
+            n.expirationTime < T.expirationTime) ||
           l()
         );
       }),
@@ -5002,11 +5002,11 @@
         o = n[1];
       return R.setTwoToneColors({ primaryColor: a, secondaryColor: o });
     }
-    function T() {
+    function P() {
       var e = R.getTwoToneColors();
       return e.calculated ? [e.primaryColor, e.secondaryColor] : e.primaryColor;
     }
-    var P = [
+    var T = [
       'className',
       'icon',
       'spin',
@@ -5025,7 +5025,7 @@
         f = e.tabIndex,
         h = e.onClick,
         v = e.twoToneColor,
-        g = Object(l['a'])(e, P),
+        g = Object(l['a'])(e, T),
         b = i['useContext'](d['a']),
         y = b.prefixCls,
         E = void 0 === y ? 'anticon' : y,
@@ -5065,7 +5065,7 @@
       );
     });
     (L.displayName = 'AntdIcon'),
-      (L.getTwoToneColor = T),
+      (L.getTwoToneColor = P),
       (L.setTwoToneColor = N);
     t['a'] = L;
   },
@@ -9727,7 +9727,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/hooks/useScript/useScript.md',
-                updatedTime: 1666874745823,
+                updatedTime: 1666875295488,
                 slugs: [
                   { depth: 4, value: 'useScript.ts', heading: 'usescriptts' },
                   { depth: 4, value: 'Demo', heading: 'demo' },
@@ -9747,7 +9747,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/hooks/useScript/useScript.zh-CN.md',
-                updatedTime: 1666874758730,
+                updatedTime: 1666875295573,
                 slugs: [
                   { depth: 4, value: 'useScript.ts', heading: 'usescriptts' },
                   { depth: 4, value: '\u793a\u4f8b', heading: '\u793a\u4f8b' },
@@ -9765,6 +9765,73 @@
                 group: { path: '/zh-CN/hooks/use-script', title: 'UseScript' },
               },
               title: 'useScript.ts - react-code-segment',
+            },
+            {
+              path: '/hooks/use-search-param/use-search-param',
+              component: n('yjsn').default,
+              exact: !0,
+              meta: {
+                filePath: 'docs/hooks/useSearchParam/useSearchParam.md',
+                updatedTime: 1666960021835,
+                slugs: [
+                  {
+                    depth: 4,
+                    value: 'useSearchParam.ts',
+                    heading: 'usesearchparamts',
+                  },
+                  { depth: 4, value: 'Demo', heading: 'demo' },
+                  {
+                    depth: 4,
+                    value: 'useSearchParam.js',
+                    heading: 'usesearchparamjs',
+                  },
+                  { depth: 4, value: 'js Demo', heading: 'js-demo' },
+                ],
+                title: 'useSearchParam.ts',
+                hasPreviewer: !0,
+                nav: { path: '/hooks', title: 'Hooks' },
+                group: {
+                  path: '/hooks/use-search-param',
+                  title: 'UseSearchParam',
+                },
+              },
+              title: 'useSearchParam.ts - react-code-segment',
+            },
+            {
+              path: '/zh-CN/hooks/use-search-param/use-search-param',
+              component: n('bgqu').default,
+              exact: !0,
+              meta: {
+                filePath: 'docs/hooks/useSearchParam/useSearchParam.zh-CN.md',
+                updatedTime: 1666960014521,
+                slugs: [
+                  {
+                    depth: 4,
+                    value: 'useSearchParam.ts',
+                    heading: 'usesearchparamts',
+                  },
+                  { depth: 4, value: '\u793a\u4f8b', heading: '\u793a\u4f8b' },
+                  {
+                    depth: 4,
+                    value: 'useSearchParam.js',
+                    heading: 'usesearchparamjs',
+                  },
+                  {
+                    depth: 4,
+                    value: 'js \u793a\u4f8b',
+                    heading: 'js-\u793a\u4f8b',
+                  },
+                ],
+                title: 'useSearchParam.ts',
+                hasPreviewer: !0,
+                locale: 'zh-CN',
+                nav: { path: '/zh-CN/hooks', title: 'Hooks' },
+                group: {
+                  path: '/zh-CN/hooks/use-search-param',
+                  title: 'UseSearchParam',
+                },
+              },
+              title: 'useSearchParam.ts - react-code-segment',
             },
             {
               path: '/hooks/use-ssr/use-ssr',
@@ -10635,6 +10702,18 @@
               meta: {},
               exact: !0,
               redirect: '/zh-CN/hooks/use-script/use-script',
+            },
+            {
+              path: '/hooks/use-search-param',
+              meta: {},
+              exact: !0,
+              redirect: '/hooks/use-search-param/use-search-param',
+            },
+            {
+              path: '/zh-CN/hooks/use-search-param',
+              meta: {},
+              exact: !0,
+              redirect: '/zh-CN/hooks/use-search-param/use-search-param',
             },
             {
               path: '/hooks/use-ssr',
@@ -11741,16 +11820,16 @@
           I = Object(l['useState'])(!1),
           R = Object(r['a'])(I, 2),
           N = R[0],
-          T = R[1];
+          P = R[1];
         Object(l['useEffect'])(() => {
           -1 !== O.x && -1 !== O.y
-            ? (T(!0), setTimeout(() => T(!1), 300))
-            : T(!1);
+            ? (P(!0), setTimeout(() => P(!1), 300))
+            : P(!1);
         }, [O]),
           Object(l['useEffect'])(() => {
             N || j({ x: -1, y: -1 });
           }, [N]);
-        var P = {
+        var T = {
             'ew-btn': !0,
             ['ew-btn-'.concat(t)]: !h,
             'ew-btn-ripple': u,
@@ -11779,7 +11858,7 @@
                 Object(a['a'])(
                   {
                     href: h,
-                    className: Object(s['a'])(P),
+                    className: Object(s['a'])(T),
                     target: g,
                     onClick: D,
                   },
@@ -11798,7 +11877,7 @@
                   {
                     type: m,
                     disabled: p,
-                    className: Object(s['a'])(P),
+                    className: Object(s['a'])(T),
                     onClick: D,
                   },
                   k,
@@ -12461,14 +12540,14 @@
                       O--, (C = e.slice(k, R)), (S.index -= k);
                     } else if (((S = o(x, 0, C, g)), !S)) continue;
                     j = S.index;
-                    var T = S[0],
-                      P = C.slice(0, j),
-                      L = C.slice(j + T.length),
+                    var P = S[0],
+                      T = C.slice(0, j),
+                      L = C.slice(j + P.length),
                       D = k + C.length;
                     d && D > d.reach && (d.reach = D);
                     var A = w.prev;
-                    P && ((A = s(t, A, P)), (k += P.length)), c(t, A, O);
-                    var M = new r(m, v ? a.tokenize(T, v) : T, y, T);
+                    T && ((A = s(t, A, T)), (k += T.length)), c(t, A, O);
+                    var M = new r(m, v ? a.tokenize(P, v) : P, y, P);
                     if (((w = s(t, A, M)), L && s(t, w, L), O > 1)) {
                       var z = { cause: m + ',' + f, reach: D };
                       l(e, t, n, w.prev, k, z),
@@ -18115,8 +18194,8 @@
       return void 0 === e.state && -1 === navigator.userAgent.indexOf('CriOS');
     }
     var N = 'popstate',
-      T = 'hashchange';
-    function P() {
+      P = 'hashchange';
+    function T() {
       try {
         return window.history.state || {};
       } catch (e) {
@@ -18160,7 +18239,7 @@
         R(e) || A(p(e.state));
       }
       function L() {
-        A(p(P()));
+        A(p(T()));
       }
       var D = !1;
       function A(e) {
@@ -18181,7 +18260,7 @@
         var r = n - a;
         r && ((D = !0), H(r));
       }
-      var z = p(P()),
+      var z = p(T()),
         F = [z.key];
       function B(e) {
         return m + x(e);
@@ -18239,10 +18318,10 @@
         (G += e),
           1 === G && 1 === e
             ? (window.addEventListener(N, I),
-              a && window.addEventListener(T, L))
+              a && window.addEventListener(P, L))
             : 0 === G &&
               (window.removeEventListener(N, I),
-              a && window.removeEventListener(T, L));
+              a && window.removeEventListener(P, L));
       }
       var K = !1;
       function $(e) {
@@ -18368,9 +18447,9 @@
         var r = n - a;
         r && ((g = !0), q(r));
       }
-      var T = z(),
-        P = u(T);
-      T !== P && B(P);
+      var P = z(),
+        T = u(P);
+      P !== T && B(T);
       var L = m(),
         _ = [x(L)];
       function V(e) {
@@ -19489,6 +19568,37 @@
       },
     );
   },
+  '3vQq': function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('yRrL'),
+      l = n('z5OR'),
+      i = () => {
+        var e = Object(o['a'])('post'),
+          t = (e) => {
+            history.pushState({}, '', location.pathname + (e || ''));
+          };
+        return r.a.createElement(
+          'div',
+          null,
+          r.a.createElement(
+            'p',
+            null,
+            'Post param value:',
+            r.a.createElement(r.a.Fragment, null, e || 'null'),
+          ),
+          r.a.createElement(
+            l['a'],
+            { onClick: () => t('?post=42') },
+            'View post 42',
+          ),
+          r.a.createElement(l['a'], { onClick: () => t() }, 'Exit'),
+        );
+      };
+    t['default'] = i;
+  },
   '3yM1': function (e, t, n) {
     'use strict';
     n.r(t);
@@ -20378,10 +20488,10 @@
               })
             : null,
           N = !!(v ? v(R, n) : R),
-          T = N ? E(f, i) : f,
-          P = N ? Object(s['a'])({}, C, {}, p) : C,
+          P = N ? E(f, i) : f,
+          T = N ? Object(s['a'])({}, C, {}, p) : C,
           L = Object(s['a'])(
-            { 'aria-current': (N && r) || null, className: T, style: P, to: o },
+            { 'aria-current': (N && r) || null, className: P, style: T, to: o },
             j,
           );
         return (
@@ -20812,10 +20922,10 @@
       I = n('8GlL'),
       R = n('5mdu'),
       N = n('afO8'),
-      T = n('lMq5'),
-      P = n('tiKp'),
+      P = n('lMq5'),
+      T = n('tiKp'),
       L = n('LQDL'),
-      D = P('species'),
+      D = T('species'),
       A = 'Promise',
       M = N.get,
       z = N.set,
@@ -20836,7 +20946,7 @@
       X = 2,
       Z = 1,
       ee = 2,
-      te = T(A, function () {
+      te = P(A, function () {
         var e = E(B) !== String(B);
         if (!e) {
           if (66 === L) return !0;
@@ -21207,8 +21317,8 @@
         );
       },
       N = R,
-      T = n('0mlB'),
-      P = n('msW/'),
+      P = n('0mlB'),
+      T = n('msW/'),
       L = n('wm/v'),
       D = n('Irhw'),
       A = n('kpsG'),
@@ -21307,7 +21417,7 @@
           'span',
           { className: ''.concat(k, '-close-x') },
           g ||
-            u['createElement'](P['a'], {
+            u['createElement'](T['a'], {
               className: ''.concat(k, '-close-icon'),
             }),
         ),
@@ -21333,8 +21443,8 @@
             onClose: l,
             closeIcon: R,
             focusTriggerAfterClose: y,
-            transitionName: Object(T['a'])(C, 'zoom', e.transitionName),
-            maskTransitionName: Object(T['a'])(C, 'fade', e.maskTransitionName),
+            transitionName: Object(P['a'])(C, 'zoom', e.transitionName),
+            maskTransitionName: Object(P['a'])(C, 'fade', e.maskTransitionName),
           }),
         ),
       );
@@ -21372,7 +21482,7 @@
           j = void 0 !== O && O,
           I = e.closeIcon,
           R = e.modalRender,
-          P = e.focusTriggerAfterClose,
+          T = e.focusTriggerAfterClose,
           L = e.okType || 'primary',
           D = ''.concat(b, '-confirm'),
           A = !('okCancel' in e) || e.okCancel,
@@ -21418,8 +21528,8 @@
               visible: i,
               title: '',
               footer: '',
-              transitionName: Object(T['a'])(k, 'zoom', e.transitionName),
-              maskTransitionName: Object(T['a'])(
+              transitionName: Object(P['a'])(k, 'zoom', e.transitionName),
+              maskTransitionName: Object(P['a'])(
                 k,
                 'fade',
                 e.maskTransitionName,
@@ -21438,7 +21548,7 @@
               closable: j,
               closeIcon: I,
               modalRender: R,
-              focusTriggerAfterClose: P,
+              focusTriggerAfterClose: T,
             },
             u['createElement'](
               'div',
@@ -22126,11 +22236,11 @@
         var t = c(e);
         return 'DataView' === t || s(R, t);
       },
-      T = function (e) {
+      P = function (e) {
         return i(e) && s(R, c(e));
       },
-      P = function (e) {
-        if (T(e)) return e;
+      T = function (e) {
+        if (P(e)) return e;
         throw TypeError('Target is not a typed array');
       },
       L = function (e) {
@@ -22190,12 +22300,12 @@
     e.exports = {
       NATIVE_ARRAY_BUFFER_VIEWS: j,
       TYPED_ARRAY_TAG: I && O,
-      aTypedArray: P,
+      aTypedArray: T,
       aTypedArrayConstructor: L,
       exportTypedArrayMethod: D,
       exportTypedArrayStaticMethod: A,
       isView: N,
-      isTypedArray: T,
+      isTypedArray: P,
       TypedArray: x,
       TypedArrayPrototype: w,
     };
@@ -27204,7 +27314,7 @@
       I = '[object Uint16Array]',
       R = '[object Uint32Array]',
       N = {};
-    function T(e) {
+    function P(e) {
       return o(e) && r(e.length) && !!N[a(e)];
     }
     (N[x] = N[w] = N[k] = N[C] = N[S] = N[O] = N[j] = N[I] = N[R] = !0),
@@ -27224,7 +27334,7 @@
         N[g] =
         N[b] =
           !1),
-      (e.exports = T);
+      (e.exports = P);
   },
   'Bg+W': function (e, t, n) {
     'use strict';
@@ -27338,8 +27448,8 @@
       I = 'enter',
       R = 'leave',
       N = 'none',
-      T = 'prepare',
-      P = 'start',
+      P = 'prepare',
+      T = 'start',
       L = 'active',
       D = 'end',
       A = n('TEpf'),
@@ -27375,7 +27485,7 @@
       },
       F = Object(m['a'])() ? i['useLayoutEffect'] : i['useEffect'],
       B = F,
-      _ = [T, P, L, D],
+      _ = [P, T, L, D],
       V = !1,
       H = !0;
     function U(e) {
@@ -27391,7 +27501,7 @@
           u = c[0],
           d = c[1];
         function m() {
-          l(T, !0);
+          l(P, !0);
         }
         return (
           B(
@@ -27512,24 +27622,24 @@
               case j:
                 return (
                   (e = {}),
-                  Object(a['a'])(e, T, v),
-                  Object(a['a'])(e, P, y),
+                  Object(a['a'])(e, P, v),
+                  Object(a['a'])(e, T, y),
                   Object(a['a'])(e, L, w),
                   e
                 );
               case I:
                 return (
                   (t = {}),
-                  Object(a['a'])(t, T, g),
-                  Object(a['a'])(t, P, E),
+                  Object(a['a'])(t, P, g),
+                  Object(a['a'])(t, T, E),
                   Object(a['a'])(t, L, k),
                   t
                 );
               case R:
                 return (
                   (n = {}),
-                  Object(a['a'])(n, T, b),
-                  Object(a['a'])(n, P, x),
+                  Object(a['a'])(n, P, b),
+                  Object(a['a'])(n, T, x),
                   Object(a['a'])(n, L, C),
                   n
                 );
@@ -27540,8 +27650,8 @@
           [Y],
         ),
         ue = q(Y, function (e) {
-          if (e === T) {
-            var t = ce[T];
+          if (e === P) {
+            var t = ce[P];
             return t ? t(ae()) : V;
           }
           var n;
@@ -27604,7 +27714,7 @@
       );
       var ve = Z;
       return (
-        ce[T] && pe === P && (ve = Object(r['a'])({ transition: 'none' }, ve)),
+        ce[P] && pe === T && (ve = Object(r['a'])({ transition: 'none' }, ve)),
         [Y, pe, ve, null !== _ && void 0 !== _ ? _ : t]
       );
     }
@@ -27678,11 +27788,11 @@
         if (h)
           if (j !== O && n(e)) {
             var z, F;
-            I === T
+            I === P
               ? (F = 'prepare')
               : U(I)
               ? (F = 'active')
-              : I === P && (F = 'start'),
+              : I === T && (F = 'start'),
               (D = h(
                 Object(r['a'])(
                   Object(r['a'])({}, M),
@@ -29728,27 +29838,27 @@
         ? e
         : R(e, t, n, a);
     }
-    function T(e) {
+    function P(e) {
       return Array.isArray(e)
         ? L(e)
         : 'object' === Object(O['a'])(e) && null !== e
-        ? P(e)
+        ? T(e)
         : e;
     }
-    function P(e) {
+    function T(e) {
       if (Object.getPrototypeOf(e) === Object.prototype) {
         var t = {};
-        for (var n in e) t[n] = T(e[n]);
+        for (var n in e) t[n] = P(e[n]);
         return t;
       }
       return e;
     }
     function L(e) {
       return e.map(function (e) {
-        return T(e);
+        return P(e);
       });
     }
-    var D = T;
+    var D = P;
     function A(e) {
       return E(e);
     }
@@ -31601,8 +31711,8 @@
           I = j.getInternalHooks(v),
           R = I.useSubscribe,
           N = I.setInitialValues,
-          T = I.setCallbacks,
-          P = I.setValidateMessages,
+          P = I.setCallbacks,
+          T = I.setValidateMessages,
           L = I.setPreserve,
           D = I.destroyForm;
         a['useImperativeHandle'](t, function () {
@@ -31619,8 +31729,8 @@
             },
             [C, j, n],
           ),
-          P(Object(i['a'])(Object(i['a'])({}, C.validateMessages), f)),
-          T({
+          T(Object(i['a'])(Object(i['a'])({}, C.validateMessages), f)),
+          P({
             onValuesChange: b,
             onFieldsChange: function (e) {
               if ((C.triggerFormChange(n, e), E)) {
@@ -31740,14 +31850,14 @@
         o
       );
     }
-    var Te = Ne,
-      Pe = a['forwardRef'](Ie),
-      Le = Pe;
+    var Pe = Ne,
+      Te = a['forwardRef'](Ie),
+      Le = Te;
     (Le.FormProvider = Ce),
       (Le.Field = se),
       (Le.List = me),
       (Le.useForm = we),
-      (Le.useWatch = Te);
+      (Le.useWatch = Pe);
   },
   DdFg: function (e, t, n) {
     var a = n('LIvs'),
@@ -33505,6 +33615,37 @@
       );
     };
   },
+  GAnJ: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('yRrL'),
+      l = n('z5OR'),
+      i = () => {
+        var e = Object(o['a'])('post'),
+          t = (e) => {
+            history.pushState({}, '', location.pathname + (e || ''));
+          };
+        return r.a.createElement(
+          'div',
+          null,
+          r.a.createElement(
+            'p',
+            null,
+            'Post\u53c2\u6570\u503c:',
+            r.a.createElement(r.a.Fragment, null, e || 'null'),
+          ),
+          r.a.createElement(
+            l['a'],
+            { onClick: () => t('?post=42') },
+            '\u67e5\u770bpost\u53c2\u6570\u503c42',
+          ),
+          r.a.createElement(l['a'], { onClick: () => t() }, '\u9000\u51fa'),
+        );
+      };
+    t['default'] = i;
+  },
   GC2F: function (e, t, n) {
     var a = n('+M1K');
     e.exports = function (e, t) {
@@ -33763,46 +33904,46 @@
     var I = n('lS4b'),
       R = n('+HFI'),
       N = { adjustX: 1, adjustY: 1 },
-      T = [0, 0],
-      P = {
+      P = [0, 0],
+      T = {
         topLeft: {
           points: ['bl', 'tl'],
           overflow: N,
           offset: [0, -4],
-          targetOffset: T,
+          targetOffset: P,
         },
         topCenter: {
           points: ['bc', 'tc'],
           overflow: N,
           offset: [0, -4],
-          targetOffset: T,
+          targetOffset: P,
         },
         topRight: {
           points: ['br', 'tr'],
           overflow: N,
           offset: [0, -4],
-          targetOffset: T,
+          targetOffset: P,
         },
         bottomLeft: {
           points: ['tl', 'bl'],
           overflow: N,
           offset: [0, 4],
-          targetOffset: T,
+          targetOffset: P,
         },
         bottomCenter: {
           points: ['tc', 'bc'],
           overflow: N,
           offset: [0, 4],
-          targetOffset: T,
+          targetOffset: P,
         },
         bottomRight: {
           points: ['tr', 'br'],
           overflow: N,
           offset: [0, 4],
-          targetOffset: T,
+          targetOffset: P,
         },
       },
-      L = P,
+      L = T,
       D = n('0rob'),
       A = x['a'].ESC,
       M = x['a'].TAB;
@@ -33918,10 +34059,10 @@
         j = e.autoFocus,
         I = Object(c['a'])(e, F),
         N = a['useState'](),
-        T = Object(i['a'])(N, 2),
-        P = T[0],
-        D = T[1],
-        A = 'visible' in e ? C : P,
+        P = Object(i['a'])(N, 2),
+        T = P[0],
+        D = P[1],
+        A = 'visible' in e ? C : T,
         M = a['useRef'](null);
       a['useImperativeHandle'](t, function () {
         return M.current;
@@ -34061,11 +34202,11 @@
         j = S[1],
         R = Object(a['useState'])(null),
         N = Object(i['a'])(R, 2),
-        T = N[0],
-        P = N[1],
+        P = N[0],
+        T = N[1],
         L = ''.concat(r, '-more-popup'),
         D = ''.concat(n, '-dropdown'),
-        A = null !== T ? ''.concat(L, '-').concat(T) : null,
+        A = null !== P ? ''.concat(L, '-').concat(P) : null,
         M = null === s || void 0 === s ? void 0 : s.dropdownAriaLabel;
       function z(e, t) {
         e.preventDefault(),
@@ -34085,7 +34226,7 @@
           tabIndex: -1,
           role: 'listbox',
           'aria-activedescendant': A,
-          selectedKeys: [T],
+          selectedKeys: [P],
           'aria-label': void 0 !== M ? M : 'expanded dropdown',
         },
         o.map(function (e) {
@@ -34124,7 +34265,7 @@
             }),
             n =
               t.findIndex(function (e) {
-                return e.key === T;
+                return e.key === P;
               }) || 0,
             a = t.length,
             r = 0;
@@ -34133,7 +34274,7 @@
         ) {
           n = (n + e + a) % a;
           var l = t[n];
-          if (!l.disabled) return void P(l.key);
+          if (!l.disabled) return void T(l.key);
         }
       }
       function _(e) {
@@ -34151,7 +34292,7 @@
               break;
             case x['a'].SPACE:
             case x['a'].ENTER:
-              null !== T && E(T, e);
+              null !== P && E(P, e);
               break;
           }
         else
@@ -34163,11 +34304,11 @@
           var e = document.getElementById(A);
           e && e.scrollIntoView && e.scrollIntoView(!1);
         },
-        [T],
+        [P],
       ),
         Object(a['useEffect'])(
           function () {
-            O || P(null);
+            O || T(null);
           },
           [O],
         );
@@ -34388,8 +34529,8 @@
         I = e.locale,
         R = e.tabPosition,
         N = e.tabBarGutter,
-        T = e.children,
-        P = e.onTabClick,
+        P = e.children,
+        T = e.onTabClick,
         L = e.onTabScroll,
         D = Object(a['useRef'])(),
         A = Object(a['useRef'])(),
@@ -34439,8 +34580,8 @@
         Ie = E(new Map()),
         Re = Object(i['a'])(Ie, 2),
         Ne = Re[0],
-        Te = Re[1],
-        Pe = S(c, Ne, le),
+        Pe = Re[1],
+        Te = S(c, Ne, le),
         Le = ''.concat(s, '-nav-operations-hidden'),
         De = 0,
         Ae = 0;
@@ -34466,7 +34607,7 @@
       function qe() {
         var e =
             arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : x,
-          t = Pe.get(e) || { width: 0, height: 0, left: 0, right: 0, top: 0 };
+          t = Te.get(e) || { width: 0, height: 0, left: 0, right: 0, top: 0 };
         if (H) {
           var n = $;
           w
@@ -34517,7 +34658,7 @@
           [_e],
         );
       var Ge = j(
-          Pe,
+          Te,
           { width: fe, height: be, left: $, top: ne },
           { width: le, height: ue },
           { width: we, height: Oe },
@@ -34541,12 +34682,12 @@
             closable: e.closable,
             editable: O,
             active: n === x,
-            renderWrapper: T,
+            renderWrapper: P,
             removeAriaLabel:
               null === I || void 0 === I ? void 0 : I.removeAriaLabel,
             ref: _(n),
             onClick: function (e) {
-              P(n, e);
+              T(n, e);
             },
             onRemove: function () {
               V(n);
@@ -34593,7 +34734,7 @@
                 : o.offsetHeight) || 0) - u;
           ie(d),
             de(m),
-            Te(function () {
+            Pe(function () {
               var e = new Map();
               return (
                 c.forEach(function (t) {
@@ -34618,7 +34759,7 @@
         nt = Object(i['a'])(tt, 2),
         at = nt[0],
         rt = nt[1],
-        ot = Pe.get(x),
+        ot = Te.get(x),
         lt = Object(a['useRef'])();
       function it() {
         g['a'].cancel(lt.current);
@@ -34645,7 +34786,7 @@
           function () {
             qe();
           },
-          [x, ot, Pe, H],
+          [x, ot, Te, H],
         ),
         Object(a['useEffect'])(
           function () {
@@ -34921,8 +35062,8 @@
         I = e.tabBarStyle,
         R = e.tabBarExtraContent,
         N = e.locale,
-        T = e.moreIcon,
-        P = e.moreTransitionName,
+        P = e.moreIcon,
+        T = e.moreTransitionName,
         L = e.destroyInactiveTabPane,
         D = e.renderTabBar,
         A = e.onChange,
@@ -35015,8 +35156,8 @@
           {
             editable: w,
             locale: N,
-            moreIcon: T,
-            moreTransitionName: P,
+            moreIcon: P,
+            moreTransitionName: T,
             tabBarGutter: j,
             onTabClick: me,
             onTabScroll: z,
@@ -35185,9 +35326,9 @@
         I = Object(a['useState'])(ke(O, c.sources[O])),
         R = ge(I, 2),
         N = R[0],
-        T = R[1],
-        P = Object(a['useState'])(Boolean(c.defaultShowCode)),
-        L = ge(P, 2),
+        P = R[1],
+        T = Object(a['useState'])(Boolean(c.defaultShowCode)),
+        L = ge(T, 2),
         D = L[0],
         A = L[1],
         M = Object(a['useState'])(Math.random()),
@@ -35208,7 +35349,7 @@
               }
             : W;
       function $(e) {
-        j(e), T(ke(e, c.sources[e]));
+        j(e), P(ke(e, c.sources[e]));
       }
       return (
         Object(a['useEffect'])(
@@ -38700,8 +38841,8 @@
       I = 'Invalid host',
       R = 'Invalid port',
       N = /[A-Za-z]/,
-      T = /[\d+-.A-Za-z]/,
-      P = /\d/,
+      P = /[\d+-.A-Za-z]/,
+      T = /\d/,
       L = /^(0x|0X)/,
       D = /^[0-7]+$/,
       A = /^\d+$/,
@@ -38796,8 +38937,8 @@
                   if (!('.' == m() && a < 4)) return;
                   d++;
                 }
-                if (!P.test(m())) return;
-                while (P.test(m())) {
+                if (!T.test(m())) return;
+                while (T.test(m())) {
                   if (((o = parseInt(m(), 10)), null === r)) r = o;
                   else {
                     if (0 == r) return;
@@ -38970,7 +39111,7 @@
               (m += l.toLowerCase()), (c = ie);
               break;
             case ie:
-              if (l && (T.test(l) || '+' == l || '-' == l || '.' == l))
+              if (l && (P.test(l) || '+' == l || '-' == l || '.' == l))
                 m += l.toLowerCase();
               else {
                 if (':' != l) {
@@ -39141,7 +39282,7 @@
               }
               break;
             case be:
-              if (!P.test(l)) {
+              if (!T.test(l)) {
                 if (
                   l == a ||
                   '/' == l ||
@@ -39299,8 +39440,8 @@
           }),
           o ||
             ((a.href = Ne.call(a)),
-            (a.origin = Te.call(a)),
-            (a.protocol = Pe.call(a)),
+            (a.origin = Pe.call(a)),
+            (a.protocol = Te.call(a)),
             (a.username = Le.call(a)),
             (a.password = De.call(a)),
             (a.host = Ae.call(a)),
@@ -39336,7 +39477,7 @@
           c
         );
       },
-      Te = function () {
+      Pe = function () {
         var e = k(this),
           t = e.scheme,
           n = e.port;
@@ -39350,7 +39491,7 @@
           ? t + '://' + G(e.host) + (null !== n ? ':' + n : '')
           : 'null';
       },
-      Pe = function () {
+      Te = function () {
         return k(this).scheme + ':';
       },
       Le = function () {
@@ -39402,8 +39543,8 @@
             if (a) throw TypeError(a);
             x(t.searchParams).updateSearchParams(t.query);
           }),
-          origin: He(Te),
-          protocol: He(Pe, function (e) {
+          origin: He(Pe),
+          protocol: He(Te, function (e) {
             var t = k(this);
             je(t, String(e) + ':', le);
           }),
@@ -41307,7 +41448,7 @@
         n
       );
     }
-    function T(e) {
+    function P(e) {
       var t = { loading: !1, loaded: {}, error: null },
         n = [];
       try {
@@ -41339,11 +41480,11 @@
         t
       );
     }
-    function P(e) {
+    function T(e) {
       return e && e.__esModule ? e['default'] : e;
     }
     function L(e, t) {
-      return Object(s['createElement'])(P(e), t);
+      return Object(s['createElement'])(T(e), t);
     }
     function D(e, t) {
       var n = Object.assign(
@@ -41527,7 +41668,7 @@
         throw new Error(
           'LoadableMap requires a `render(loaded, props)` function',
         );
-      return D(T, e);
+      return D(P, e);
     }
     function F(e, t) {
       var n = [];
@@ -42590,9 +42731,9 @@
               'onMask',
             ]),
             N = Object(i['useState'])(!1),
-            T = Object(o['a'])(N, 2),
-            P = T[0],
-            L = T[1],
+            P = Object(o['a'])(N, 2),
+            T = P[0],
+            L = P[1],
             D = (e) => {
               var t = e.key;
               switch (t) {
@@ -42616,12 +42757,12 @@
             'number' === typeof k
               ? (A['width'] = k + 'px')
               : 'string' === typeof k && (A['width'] = k),
-            S && !P
+            S && !T
               ? null
               : s.a.createElement(
                   'div',
                   Object(r['a'])({ className: 'modal-container' }, R, {
-                    style: { display: P ? 'block' : 'none' },
+                    style: { display: T ? 'block' : 'none' },
                   }),
                   s.a.createElement(
                     'div',
@@ -43842,7 +43983,7 @@
                 'useScript.ts',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useState,useEffect } from 'react';\n\nconst useScript = (src: string): string => {\n    const [status,setStatus] = useState(src ? 'loading' : 'idle');\n    useEffect(() => {\n        if(!src){\n            setStatus('idle');\n            return;\n        }\n\n        let script = document.querySelector(`script[src=\"${src}\"]`) as HTMLScriptElement;\n\n        if(!script){\n            script = document.createElement('script') as HTMLScriptElement;\n            script.src = src;\n            script.async = true;\n            script.setAttribute('data-status','loading');\n            document.body.appendChild(script);\n\n\n            const setDataStatus = (event:Event) => {\n                script.setAttribute('data-status',event.type === 'load' ? 'ready' : 'error');\n            }\n\n            script.addEventListener('load',setDataStatus);\n            script.addEventListener('error',setDataStatus);\n        }else{\n            setStatus(script.getAttribute('data-status') as string);\n        }\n\n        const setStateStatus = (event: Event) => {\n            setStatus(event.type === 'load' ? 'ready' : 'error');\n        }\n\n        script.addEventListener('load',setStateStatus);\n        script.addEventListener('error',setStateStatus);\n\n        return () => {\n            if(script){\n                script.removeEventListener('load',setStateStatus);\n                script.removeEventListener('error',setStateStatus);\n            }\n        }\n    },[src])\n    return status;\n}\n\nexport default useScript;",
+                code: "import { useState, useEffect } from 'react';\n\nconst useScript = (src: string): string => {\n  const [status, setStatus] = useState(src ? 'loading' : 'idle');\n  useEffect(() => {\n    if (!src) {\n      setStatus('idle');\n      return;\n    }\n\n    let script = document.querySelector(\n      `script[src=\"${src}\"]`,\n    ) as HTMLScriptElement;\n\n    if (!script) {\n      script = document.createElement('script') as HTMLScriptElement;\n      script.src = src;\n      script.async = true;\n      script.setAttribute('data-status', 'loading');\n      document.body.appendChild(script);\n\n      const setDataStatus = (event: Event) => {\n        script.setAttribute(\n          'data-status',\n          event.type === 'load' ? 'ready' : 'error',\n        );\n      };\n\n      script.addEventListener('load', setDataStatus);\n      script.addEventListener('error', setDataStatus);\n    } else {\n      setStatus(script.getAttribute('data-status') as string);\n    }\n\n    const setStateStatus = (event: Event) => {\n      setStatus(event.type === 'load' ? 'ready' : 'error');\n    };\n\n    script.addEventListener('load', setStateStatus);\n    script.addEventListener('error', setStateStatus);\n\n    return () => {\n      if (script) {\n        script.removeEventListener('load', setStateStatus);\n        script.removeEventListener('error', setStateStatus);\n      }\n    };\n  }, [src]);\n  return status;\n};\n\nexport default useScript;",
                 lang: 'ts',
               }),
               r.a.createElement(
@@ -43856,7 +43997,7 @@
                 'Demo',
               ),
               r.a.createElement(i['a'], {
-                code: "import React from 'react';\nimport useScript from './useScript';\nconst script = 'data:text/plain;charset=utf-8;base64,KGZ1bmN0aW9uKCl7IGNvbnNvbGUubG9nKCdIZWxsbycpIH0pKCk7';\n\nconst Child = () => {\n  const status = useScript(script);\n  return <p>Child status: {status}</p>;\n};\n\nconst Demo = () => {\n  const status = useScript(script);\n  return (\n    <>\n      <p>Parent status: {status}</p>\n      <Child />\n    </>\n  );\n};\n\nexport default Demo;",
+                code: "import React from 'react';\nimport useScript from './useScript';\nconst script =\n  'data:text/plain;charset=utf-8;base64,KGZ1bmN0aW9uKCl7IGNvbnNvbGUubG9nKCdIZWxsbycpIH0pKCk7';\n\nconst Child = () => {\n  const status = useScript(script);\n  return <p>Child status: {status}</p>;\n};\n\nconst Demo = () => {\n  const status = useScript(script);\n  return (\n    <>\n      <p>Parent status: {status}</p>\n      <Child />\n    </>\n  );\n};\n\nexport default Demo;",
                 lang: 'tsx',
               }),
               r.a.createElement(
@@ -43870,7 +44011,7 @@
                 'useScript.js',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useState,useEffect } from 'react';\n\nconst useScript = src => {\n    const [status,setStatus] = useState(src ? 'loading' : 'idle');\n    useEffect(() => {\n        if(!src){\n            setStatus('idle');\n            return;\n        }\n\n        let script = document.querySelector(`script[src=\"${src}\"]`);\n\n        if(!script){\n            script = document.createElement('script');\n            script.src = src;\n            script.async = true;\n            script.setAttribute('data-status','loading');\n            document.body.appendChild(script);\n\n\n            const setDataStatus = event => {\n                script.setAttribute('data-status',event.type === 'load' ? 'ready' : 'error');\n            }\n\n            script.addEventListener('load',setDataStatus);\n            script.addEventListener('error',setDataStatus);\n        }else{\n            setStatus(script.getAttribute('data-status'));\n        }\n\n        const setStateStatus = event => {\n            setStatus(event.type === 'load' ? 'ready' : 'error');\n        }\n\n        script.addEventListener('load',setStateStatus);\n        script.addEventListener('error',setStateStatus);\n\n        return () => {\n            if(script){\n                script.removeEventListener('load',setStateStatus);\n                script.removeEventListener('error',setStateStatus);\n            }\n        }\n    },[src])\n    return status;\n}\n\nexport default useScript;",
+                code: "import { useState, useEffect } from 'react';\n\nconst useScript = (src) => {\n  const [status, setStatus] = useState(src ? 'loading' : 'idle');\n  useEffect(() => {\n    if (!src) {\n      setStatus('idle');\n      return;\n    }\n\n    let script = document.querySelector(`script[src=\"${src}\"]`);\n\n    if (!script) {\n      script = document.createElement('script');\n      script.src = src;\n      script.async = true;\n      script.setAttribute('data-status', 'loading');\n      document.body.appendChild(script);\n\n      const setDataStatus = (event) => {\n        script.setAttribute(\n          'data-status',\n          event.type === 'load' ? 'ready' : 'error',\n        );\n      };\n\n      script.addEventListener('load', setDataStatus);\n      script.addEventListener('error', setDataStatus);\n    } else {\n      setStatus(script.getAttribute('data-status'));\n    }\n\n    const setStateStatus = (event) => {\n      setStatus(event.type === 'load' ? 'ready' : 'error');\n    };\n\n    script.addEventListener('load', setStateStatus);\n    script.addEventListener('error', setStateStatus);\n\n    return () => {\n      if (script) {\n        script.removeEventListener('load', setStateStatus);\n        script.removeEventListener('error', setStateStatus);\n      }\n    };\n  }, [src]);\n  return status;\n};\n\nexport default useScript;",
                 lang: 'js',
               }),
               r.a.createElement(
@@ -43884,7 +44025,7 @@
                 'js Demo',
               ),
               r.a.createElement(i['a'], {
-                code: "import React from 'react';\nimport useScript from './useScript';\nconst script = 'data:text/plain;charset=utf-8;base64,KGZ1bmN0aW9uKCl7IGNvbnNvbGUubG9nKCdIZWxsbycpIH0pKCk7';\n\nconst Child = () => {\n  const status = useScript(script);\n  return <p>Child status: {status}</p>;\n};\n\nconst Demo = () => {\n  const status = useScript(script);\n  return (\n    <>\n      <p>Parent status: {status}</p>\n      <Child />\n    </>\n  );\n};\n\nexport default Demo;",
+                code: "import React from 'react';\nimport useScript from './useScript';\nconst script =\n  'data:text/plain;charset=utf-8;base64,KGZ1bmN0aW9uKCl7IGNvbnNvbGUubG9nKCdIZWxsbycpIH0pKCk7';\n\nconst Child = () => {\n  const status = useScript(script);\n  return <p>Child status: {status}</p>;\n};\n\nconst Demo = () => {\n  const status = useScript(script);\n  return (\n    <>\n      <p>Parent status: {status}</p>\n      <Child />\n    </>\n  );\n};\n\nexport default Demo;",
                 lang: 'jsx',
               }),
               r.a.createElement('p', null, 'Demo:'),
@@ -44416,9 +44557,9 @@
         "import React from 'react';\nimport AutoLink from './AutoLink';\n\nconst Demo = () => {\n  return <AutoLink text=\"foo bar baz https://www.eveningwater.com bar\" />;\n};\n\nexport default Demo;",
       N =
         "import React from 'react';\nimport styled from '@emotion/styled';\n\nconst LinkContainer = styled.span`\n  display: inline-block;\n  a {\n    line-height: 1.5715;\n    position: relative;\n    display: inline-block;\n    font-weight: 400;\n    white-space: nowrap;\n    text-align: center;\n    cursor: pointer;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    user-select: none;\n    touch-action: manipulation;\n    height: 32px;\n    padding: 4px 15px;\n    font-size: 14px;\n    border-radius: 2px;\n    color: #1890ff;\n    background: transparent;\n    text-decoration: none;\n    &:hover {\n      color: #40a9ff;\n    }\n  }\n`;\n\ninterface AutoLinkPropType {\n  text: string;\n}\nconst AutoLink = (props: Partial<AutoLinkPropType>) => {\n  const { text } = props;\n  const delimiter =\n    /((?:https?:\\/\\/)?(?:(?:[a-z0-9]?(?:[a-z0-9\\-]{1,61}[a-z0-9])?\\.[^\\.|\\s])+[a-z\\.]*[a-z]+|(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3})(?::\\d{1,5})*[a-z0-9.,_\\/~#&=;%+?\\-\\\\(\\\\)]*)/gi;\n  return (\n    <LinkContainer>\n      {text?.split(delimiter).map((word) => {\n        const match = word.match(delimiter);\n        if (match) {\n          const url = match[0];\n          return (\n            <a\n              href={url.startsWith('http') ? url : `http://${url}`}\n              target=\"_blank\"\n              rel=\"noopener noreferrer\"\n            >\n              {url}\n            </a>\n          );\n        }\n        return word;\n      })}\n    </LinkContainer>\n  );\n};\n\nexport default AutoLink;",
-      T =
-        "import React from 'react';\nimport AutoLink from './AutoLink';\n\nconst Demo = () => {\n  return <AutoLink text=\"foo bar baz https://www.eveningwater.com bar\" />;\n};\n\nexport default Demo;",
       P =
+        "import React from 'react';\nimport AutoLink from './AutoLink';\n\nconst Demo = () => {\n  return <AutoLink text=\"foo bar baz https://www.eveningwater.com bar\" />;\n};\n\nexport default Demo;",
+      T =
         "import React from 'react';\nimport styled from '@emotion/styled';\n\nconst LinkContainer = styled.span`\n  display: inline-block;\n  a {\n    line-height: 1.5715;\n    position: relative;\n    display: inline-block;\n    font-weight: 400;\n    white-space: nowrap;\n    text-align: center;\n    cursor: pointer;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    user-select: none;\n    touch-action: manipulation;\n    height: 32px;\n    padding: 4px 15px;\n    font-size: 14px;\n    border-radius: 2px;\n    color: #1890ff;\n    background: transparent;\n    text-decoration: none;\n    &:hover {\n      color: #40a9ff;\n    }\n  }\n`;\n\nconst AutoLink = (props) => {\n  const { text } = props;\n  const delimiter =\n    /((?:https?:\\/\\/)?(?:(?:[a-z0-9]?(?:[a-z0-9\\-]{1,61}[a-z0-9])?\\.[^\\.|\\s])+[a-z\\.]*[a-z]+|(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3})(?::\\d{1,5})*[a-z0-9.,_\\/~#&=;%+?\\-\\\\(\\\\)]*)/gi;\n  return (\n    <LinkContainer>\n      {text?.split(delimiter).map((word) => {\n        const match = word.match(delimiter);\n        if (match) {\n          const url = match[0];\n          return (\n            <a\n              href={url.startsWith('http') ? url : `http://${url}`}\n              target=\"_blank\"\n              rel=\"noopener noreferrer\"\n            >\n              {url}\n            </a>\n          );\n        }\n        return word;\n      })}\n    </LinkContainer>\n  );\n};\n\nexport default AutoLink;",
       L =
         "import React from 'react';\nimport AutoLink from './AutoLink';\n\nconst Demo = () => {\n  return <AutoLink text=\"\u70b9\u51fbhttps://www.eveningwater.com\u6211\u554a\" />;\n};\n\nexport default Demo;",
@@ -44524,9 +44665,9 @@
         "import { Space, Button } from 'antd';\nimport React, { useRef, useState } from 'react';\nimport CountDown from './CountDown';\n\nconst Demo = () => {\n  const countdownRef = useRef();\n  const [paused, setPaused] = useState(false);\n  const onPaused = () => {\n    setPaused(!paused);\n    countdownRef.current.onPaused(paused);\n  };\n  const onRestart = () => {\n    countdownRef.current.onRestart();\n  };\n  return (\n    <>\n      <CountDown\n        ref={countdownRef}\n        hours={1}\n        minutes={45}\n        overText=\"\u5012\u8ba1\u65f6\u7ed3\u675f\"\n        pausedText=\"\u6682\u505c\u4e2d\"\n      />\n      <Space>\n        <Button onClick={onPaused}>{paused ? '\u7ee7\u7eed' : '\u6682\u505c'}</Button>\n        <Button onClick={onRestart}>\u91cd\u65b0\u5f00\u59cb</Button>\n      </Space>\n    </>\n  );\n};\n\nexport default Demo;",
       Ne =
         "import React from 'react';\nimport FileDrop from './FileDrop';\n\nconst Demo = () => {\n  return <FileDrop onDrop={console.log} />;\n};\nexport default Demo;",
-      Te =
-        "import React, { createRef, useEffect, useState } from 'react';\nimport styled from '@emotion/styled';\nconst DropContainer = styled.div`\n  min-height: 120px;\n  border: 3px solid #d3d3d3;\n  text-align: center;\n  font-size: 24px;\n  padding: 32px;\n  border-radius: 4px;\n  &.drag {\n    border: 3px dashed #1e90ff;\n  }\n  &.ready {\n    border: 3px solid #32cd32;\n  }\n`;\ninterface FileDropProps {\n  onDrop(file?: File): void;\n  emptyText: string;\n}\nconst FileDrop = (props: Partial<FileDropProps>) => {\n  const { onDrop, emptyText } = props;\n  const [drag, setDrag] = useState(false);\n  const [filename, setFilename] = useState('');\n  const dropRef = createRef<HTMLDivElement>();\n  let dragCount = 0;\n  const commonHandler = (e: Event) => {\n    e.preventDefault();\n    e.stopPropagation();\n  };\n  const onDragEnterHandler = (e: Event) => {\n    commonHandler(e);\n    dragCount++;\n    const event = e as DragEvent;\n    if (event.dataTransfer?.items && event.dataTransfer.items.length) {\n      setDrag(true);\n    }\n  };\n  const onDragLeaveHandler = (e: Event) => {\n    commonHandler(e);\n    dragCount--;\n    if (dragCount === 0) {\n      setDrag(false);\n    }\n  };\n  const onDragOverHandler = (e: Event) => {\n    commonHandler(e);\n  };\n  const onDropHandler = (e: Event) => {\n    commonHandler(e);\n    setDrag(false);\n    const event = e as DragEvent;\n    if (event.dataTransfer?.files && event.dataTransfer.files.length) {\n      if (onDrop) {\n        onDrop(event.dataTransfer?.files[0]);\n        setFilename(event.dataTransfer?.files[0].name);\n        event.dataTransfer.clearData();\n        dragCount = 0;\n      }\n    }\n  };\n  const events = [\n    { type: 'dragenter', handlerName: onDragEnterHandler },\n    { type: 'dragleave', handlerName: onDragLeaveHandler },\n    { type: 'dragover', handlerName: onDragOverHandler },\n    { type: 'drop', handlerName: onDropHandler },\n  ];\n  useEffect(() => {\n    const container = dropRef.current;\n    events.forEach((item) =>\n      container?.addEventListener(item.type, item.handlerName),\n    );\n    return () => {\n      events.forEach((item) =>\n        container?.removeEventListener(item.type, item.handlerName),\n      );\n    };\n  }, []);\n\n  return (\n    <DropContainer\n      ref={dropRef}\n      className={drag ? ' drag' : filename ? ' ready' : ''}\n    >\n      {filename && !drag ? filename : emptyText || 'Drop a file here!'}\n    </DropContainer>\n  );\n};\nexport default FileDrop;",
       Pe =
+        "import React, { createRef, useEffect, useState } from 'react';\nimport styled from '@emotion/styled';\nconst DropContainer = styled.div`\n  min-height: 120px;\n  border: 3px solid #d3d3d3;\n  text-align: center;\n  font-size: 24px;\n  padding: 32px;\n  border-radius: 4px;\n  &.drag {\n    border: 3px dashed #1e90ff;\n  }\n  &.ready {\n    border: 3px solid #32cd32;\n  }\n`;\ninterface FileDropProps {\n  onDrop(file?: File): void;\n  emptyText: string;\n}\nconst FileDrop = (props: Partial<FileDropProps>) => {\n  const { onDrop, emptyText } = props;\n  const [drag, setDrag] = useState(false);\n  const [filename, setFilename] = useState('');\n  const dropRef = createRef<HTMLDivElement>();\n  let dragCount = 0;\n  const commonHandler = (e: Event) => {\n    e.preventDefault();\n    e.stopPropagation();\n  };\n  const onDragEnterHandler = (e: Event) => {\n    commonHandler(e);\n    dragCount++;\n    const event = e as DragEvent;\n    if (event.dataTransfer?.items && event.dataTransfer.items.length) {\n      setDrag(true);\n    }\n  };\n  const onDragLeaveHandler = (e: Event) => {\n    commonHandler(e);\n    dragCount--;\n    if (dragCount === 0) {\n      setDrag(false);\n    }\n  };\n  const onDragOverHandler = (e: Event) => {\n    commonHandler(e);\n  };\n  const onDropHandler = (e: Event) => {\n    commonHandler(e);\n    setDrag(false);\n    const event = e as DragEvent;\n    if (event.dataTransfer?.files && event.dataTransfer.files.length) {\n      if (onDrop) {\n        onDrop(event.dataTransfer?.files[0]);\n        setFilename(event.dataTransfer?.files[0].name);\n        event.dataTransfer.clearData();\n        dragCount = 0;\n      }\n    }\n  };\n  const events = [\n    { type: 'dragenter', handlerName: onDragEnterHandler },\n    { type: 'dragleave', handlerName: onDragLeaveHandler },\n    { type: 'dragover', handlerName: onDragOverHandler },\n    { type: 'drop', handlerName: onDropHandler },\n  ];\n  useEffect(() => {\n    const container = dropRef.current;\n    events.forEach((item) =>\n      container?.addEventListener(item.type, item.handlerName),\n    );\n    return () => {\n      events.forEach((item) =>\n        container?.removeEventListener(item.type, item.handlerName),\n      );\n    };\n  }, []);\n\n  return (\n    <DropContainer\n      ref={dropRef}\n      className={drag ? ' drag' : filename ? ' ready' : ''}\n    >\n      {filename && !drag ? filename : emptyText || 'Drop a file here!'}\n    </DropContainer>\n  );\n};\nexport default FileDrop;",
+      Te =
         "import React from 'react';\nimport FileDrop from './FileDrop';\n\nconst Demo = () => {\n  return <FileDrop onDrop={console.log} />;\n};\nexport default Demo;",
       Le =
         "import React, { createRef, useEffect, useState } from 'react';\nimport styled from '@emotion/styled';\nconst DropContainer = styled.div`\n  min-height: 120px;\n  border: 3px solid #d3d3d3;\n  text-align: center;\n  font-size: 24px;\n  padding: 32px;\n  border-radius: 4px;\n  &.drag {\n    border: 3px dashed #1e90ff;\n  }\n  &.ready {\n    border: 3px solid #32cd32;\n  }\n`;\nconst FileDrop = (props) => {\n  const { onDrop, emptyText } = props;\n  const [drag, setDrag] = useState(false);\n  const [filename, setFilename] = useState('');\n  const dropRef = createRef();\n  let dragCount = 0;\n  const commonHandler = (e) => {\n    e.preventDefault();\n    e.stopPropagation();\n  };\n  const onDragEnterHandler = (e) => {\n    commonHandler(e);\n    dragCount++;\n    const event = e;\n    if (event.dataTransfer?.items && event.dataTransfer.items.length) {\n      setDrag(true);\n    }\n  };\n  const onDragLeaveHandler = (e) => {\n    commonHandler(e);\n    dragCount--;\n    if (dragCount === 0) {\n      setDrag(false);\n    }\n  };\n  const onDragOverHandler = (e) => {\n    commonHandler(e);\n  };\n  const onDropHandler = (e) => {\n    commonHandler(e);\n    setDrag(false);\n    const event = e;\n    if (event.dataTransfer?.files && event.dataTransfer.files.length) {\n      if (onDrop) {\n        onDrop(event.dataTransfer?.files[0]);\n        setFilename(event.dataTransfer?.files[0].name);\n        event.dataTransfer.clearData();\n        dragCount = 0;\n      }\n    }\n  };\n  const events = [\n    { type: 'dragenter', handlerName: onDragEnterHandler },\n    { type: 'dragleave', handlerName: onDragLeaveHandler },\n    { type: 'dragover', handlerName: onDragOverHandler },\n    { type: 'drop', handlerName: onDropHandler },\n  ];\n  useEffect(() => {\n    const container = dropRef.current;\n    events.forEach((item) =>\n      container?.addEventListener(item.type, item.handlerName),\n    );\n    return () => {\n      events.forEach((item) =>\n        container?.removeEventListener(item.type, item.handlerName),\n      );\n    };\n  }, []);\n\n  return (\n    <DropContainer\n      ref={dropRef}\n      className={drag ? ' drag' : filename ? ' ready' : ''}\n    >\n      {filename && !drag ? filename : emptyText || 'Drop a file here!'}\n    </DropContainer>\n  );\n};\nexport default FileDrop;",
@@ -44632,9 +44773,9 @@
         "@prefix: ew-;\n\n.@{prefix}select {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: rgba(0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  font-feature-settings: 'tnum';\n  position: relative;\n  display: inline-block;\n  cursor: pointer;\n  border-radius: 4px;\n  min-width: 120px;\n\n  &-disabled {\n    .@{prefix}select-selector {\n      background: #f5f5f5;\n      cursor: not-allowed;\n      color: rgba(0, 0, 0, 0.25);\n    }\n\n    .@{prefix}select-arrow {\n      cursor: not-allowed;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-selector,\n  &:not(.@{prefix}select-disabled):active &-selector {\n    border-color: #2396ef;\n  }\n\n  &-selector {\n    position: relative;\n    background-color: #fff;\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n    width: 100%;\n    height: 32px;\n    padding: 0 11px;\n\n    &&-placeholder::after {\n      content: attr(placeholder);\n      display: inline-block;\n      padding-right: 18px;\n      color: rgba(0, 0, 0, 0.35);\n      position: relative;\n      left: -15px;\n    }\n\n    &-value {\n      padding-right: 18px;\n      line-height: 30px;\n      position: relative;\n    }\n  }\n\n  &:not(.@{prefix}select-disabled):hover &-value {\n    border-color: #2396ef;\n    border-right-width: 1px;\n  }\n\n  &-arrow {\n    display: inline-block;\n    color: inherit;\n    font-style: normal;\n    line-height: 0;\n    text-transform: none;\n    vertical-align: -0.125em;\n    text-rendering: optimizelegibility;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    position: absolute;\n    top: 50%;\n    right: 11px;\n    display: flex;\n    align-items: center;\n    margin-top: -6px;\n    font-size: 12px;\n    line-height: 1;\n    text-align: center;\n\n    &-icon,\n    .@{prefix}select-clear-icon {\n      width: 16px;\n      height: 16px;\n      display: inline-block;\n      color: rgba(0, 0, 0, 0.25);\n    }\n  }\n\n  .@{prefix}select-clear-icon {\n    position: relative;\n    top: -2px;\n  }\n\n  &-dropdown {\n    margin: 0;\n    color: rgba(0, 0, 0.85);\n    font-variant: tabular-nums;\n    line-height: 1.5715;\n    position: absolute;\n    z-index: 1050;\n    box-sizing: border-box;\n    padding: 4px 0;\n    overflow: hidden;\n    font-size: 14px;\n    font-variant: initial;\n    background-color: #fff;\n    border-radius: 2px;\n    outline: none;\n    width: 100%;\n    top: 40px;\n    box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014,\n      0 9px 28px 8px #0000000d;\n\n    &-option {\n      position: relative;\n      display: flex;\n      min-height: 32px;\n      padding: 5px 12px;\n      color: rgba(0, 0, 0.85);\n      font-weight: 400;\n      font-size: 14px;\n      line-height: 22px;\n      cursor: pointer;\n      transition: background 0.3s ease;\n      flex: auto;\n      overflow: hidden;\n      white-space: nowrap;\n      text-overflow: ellipsis;\n\n      &-disabled {\n        color: rgba(0, 0, 0, 0.25);\n        cursor: not-allowed;\n      }\n\n      &:not(:last-of-type) {\n        margin-bottom: 8px;\n      }\n\n      &:not(&-disabled):hover {\n        background-color: #f5f5f5;\n      }\n\n      &:not(&-disabled).active {\n        background-color: #e6f7ff;\n      }\n    }\n  }\n}",
       Nt =
         'import React from \'react\';\nimport Select from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="please select"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="grapefruit" value="Grapefruit"></Option>\n        <Option label="lime" value="lime"></Option>\n        <Option label="coconut" value="coconut" disabled></Option>\n        <Option label="mango" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="please select"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="grapefruit" value="Grapefruit"></Option>\n        <Option label="lime" value="lime"></Option>\n        <Option label="coconut" value="coconut" disabled></Option>\n        <Option label="mango" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
-      Tt =
-        'import React, {\n  useState,\n  useEffect,\n  cloneElement,\n  createRef,\n  forwardRef,\n} from \'react\';\nimport classnames from \'../../../utils/classnames\';\nimport useClickOutside from \'../../../utils/useClickOutside\';\nimport Option from \'./Option\';\nimport \'../select.less\';\n\nconst ClearIcon = forwardRef((props, ref) => {\n  const { onClick, ...rest } = props;\n  return (\n    <svg\n      className="ew-select-clear-icon"\n      viewBox="0 0 1024 1024"\n      version="1.1"\n      xmlns="http://www.w3.org/2000/svg"\n      p-id="2381"\n      ref={ref}\n      onClick={(e) => {\n        onClick?.(e);\n      }}\n      {...rest}\n    >\n      <path\n        d="M512 39.384615C250.092308 39.384615 39.384615 250.092308 39.384615 512s210.707692 472.615385 472.615385 472.615385 472.615385-210.707692 472.615385-472.615385S773.907692 39.384615 512 39.384615z m96.492308 488.369231l153.6 153.6c7.876923 7.876923 7.876923 19.692308 0 27.569231l-55.138462 55.138461c-7.876923 7.876923-19.692308 7.876923-27.569231 0L525.784615 610.461538c-7.876923-7.876923-19.692308-7.876923-27.56923 0l-153.6 153.6c-7.876923 7.876923-19.692308 7.876923-27.569231 0L261.907692 708.923077c-7.876923-7.876923-7.876923-19.692308 0-27.569231l153.6-153.6c7.876923-7.876923 7.876923-19.692308 0-27.569231l-155.56923-155.56923c-7.876923-7.876923-7.876923-19.692308 0-27.569231l55.138461-55.138462c7.876923-7.876923 19.692308-7.876923 27.569231 0l155.569231 155.569231c7.876923 7.876923 19.692308 7.876923 27.56923 0l153.6-153.6c7.876923-7.876923 19.692308-7.876923 27.569231 0l55.138462 55.138462c7.876923 7.876923 7.876923 19.692308 0 27.56923l-153.6 153.6c-5.907692 7.876923-5.907692 19.692308 0 27.569231z"\n        p-id="2382"\n        fill="#dbdbdb"\n        className="ew-select-clear-icon-path"\n      ></path>\n    </svg>\n  );\n});\nconst ArrowIcon = forwardRef((props, ref) => (\n  <svg\n    className="ew-select-arrow-icon"\n    viewBox="0 0 1024 1024"\n    version="1.1"\n    xmlns="http://www.w3.org/2000/svg"\n    p-id="2216"\n    ref={ref}\n    {...props}\n  >\n    <path\n      d="M512 714.666667c-8.533333 0-17.066667-2.133333-23.466667-8.533334l-341.333333-341.333333c-12.8-12.8-12.8-32 0-44.8 12.8-12.8 32-12.8 44.8 0l320 317.866667 317.866667-320c12.8-12.8 32-12.8 44.8 0 12.8 12.8 12.8 32 0 44.8L533.333333 704c-4.266667 8.533333-12.8 10.666667-21.333333 10.666667z"\n      p-id="2217"\n    ></path>\n  </svg>\n));\nconst Select = (props) => {\n  const {\n    disabled,\n    defaultValue,\n    value,\n    onChange,\n    placeholder = \'\u8bf7\u8f93\u5165\',\n    allowClear = true,\n    children,\n    labelProps = \'label\',\n    ...rest\n  } = props;\n  const dropdownRef = createRef();\n  const clearIconRef = createRef();\n  const [selectValue, setSelectValue] = useState(defaultValue);\n  const [option, setOption] = useState({});\n  const [visible, setVisible] = useState(false);\n  const [showClear, setShowClear] = useState(false);\n\n  const optionChildren = Array.isArray(children)\n    ? children\n    : [children]?.filter((item) => item?.type?.displayName === \'Option\') || [];\n\n  useEffect(() => {\n    if (typeof value === \'string\') {\n      setSelectValue(value);\n    }\n  }, [value]);\n\n  const onChangeHandler = (v) => {\n    setOption(v);\n    setSelectValue(v.value);\n    if (!disabled) {\n      setVisible(false);\n      setShowClear(false);\n    }\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  const onClearHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setOption({ label: \'\', value: \'\' });\n    setSelectValue(\'\');\n  };\n  const selectClassNames = {\n    \'ew-select\': true,\n    \'ew-select-disabled\': disabled,\n  };\n  const valueClassNames = {\n    \'ew-select-selector\': true,\n    \'ew-select-selector-placeholder\': !selectValue,\n  };\n  useClickOutside(dropdownRef, () => {\n    if (!disabled) {\n      setVisible(false);\n    }\n  });\n  return (\n    <div\n      className={classnames(selectClassNames)}\n      {...rest}\n      ref={dropdownRef}\n      onMouseEnter={() => {\n        if (!disabled) {\n          setShowClear(true);\n        }\n      }}\n      onMouseLeave={() => {\n        if (!disabled) {\n          setShowClear(false);\n        }\n      }}\n    >\n      <div\n        className={classnames(valueClassNames)}\n        placeholder={placeholder}\n        onClick={() => {\n          if (!disabled) {\n            setVisible(!visible);\n          }\n        }}\n      >\n        <span className="ew-select-selector-value">{option[labelProps]}</span>\n      </div>\n      <div className="ew-select-arrow">\n        {allowClear && selectValue && showClear ? (\n          <ClearIcon onClick={onClearHandler} ref={clearIconRef} />\n        ) : (\n          <ArrowIcon\n            onClick={() => {\n              if (!disabled) {\n                setVisible(!visible);\n              }\n            }}\n          />\n        )}\n      </div>\n      <div\n        className="ew-select-dropdown"\n        style={{ display: visible ? \'block\' : \'none\' }}\n      >\n        {optionChildren.map((item, index) =>\n          cloneElement(item, {\n            onOptionChange: onChangeHandler,\n            defaultValue: selectValue,\n            key: item.key || String(index + 1),\n            active: item.props.value === selectValue,\n          }),\n        )}\n      </div>\n    </div>\n  );\n};\nSelect.Option = Option;\nexport default Select;',
       Pt =
+        'import React, {\n  useState,\n  useEffect,\n  cloneElement,\n  createRef,\n  forwardRef,\n} from \'react\';\nimport classnames from \'../../../utils/classnames\';\nimport useClickOutside from \'../../../utils/useClickOutside\';\nimport Option from \'./Option\';\nimport \'../select.less\';\n\nconst ClearIcon = forwardRef((props, ref) => {\n  const { onClick, ...rest } = props;\n  return (\n    <svg\n      className="ew-select-clear-icon"\n      viewBox="0 0 1024 1024"\n      version="1.1"\n      xmlns="http://www.w3.org/2000/svg"\n      p-id="2381"\n      ref={ref}\n      onClick={(e) => {\n        onClick?.(e);\n      }}\n      {...rest}\n    >\n      <path\n        d="M512 39.384615C250.092308 39.384615 39.384615 250.092308 39.384615 512s210.707692 472.615385 472.615385 472.615385 472.615385-210.707692 472.615385-472.615385S773.907692 39.384615 512 39.384615z m96.492308 488.369231l153.6 153.6c7.876923 7.876923 7.876923 19.692308 0 27.569231l-55.138462 55.138461c-7.876923 7.876923-19.692308 7.876923-27.569231 0L525.784615 610.461538c-7.876923-7.876923-19.692308-7.876923-27.56923 0l-153.6 153.6c-7.876923 7.876923-19.692308 7.876923-27.569231 0L261.907692 708.923077c-7.876923-7.876923-7.876923-19.692308 0-27.569231l153.6-153.6c7.876923-7.876923 7.876923-19.692308 0-27.569231l-155.56923-155.56923c-7.876923-7.876923-7.876923-19.692308 0-27.569231l55.138461-55.138462c7.876923-7.876923 19.692308-7.876923 27.569231 0l155.569231 155.569231c7.876923 7.876923 19.692308 7.876923 27.56923 0l153.6-153.6c7.876923-7.876923 19.692308-7.876923 27.569231 0l55.138462 55.138462c7.876923 7.876923 7.876923 19.692308 0 27.56923l-153.6 153.6c-5.907692 7.876923-5.907692 19.692308 0 27.569231z"\n        p-id="2382"\n        fill="#dbdbdb"\n        className="ew-select-clear-icon-path"\n      ></path>\n    </svg>\n  );\n});\nconst ArrowIcon = forwardRef((props, ref) => (\n  <svg\n    className="ew-select-arrow-icon"\n    viewBox="0 0 1024 1024"\n    version="1.1"\n    xmlns="http://www.w3.org/2000/svg"\n    p-id="2216"\n    ref={ref}\n    {...props}\n  >\n    <path\n      d="M512 714.666667c-8.533333 0-17.066667-2.133333-23.466667-8.533334l-341.333333-341.333333c-12.8-12.8-12.8-32 0-44.8 12.8-12.8 32-12.8 44.8 0l320 317.866667 317.866667-320c12.8-12.8 32-12.8 44.8 0 12.8 12.8 12.8 32 0 44.8L533.333333 704c-4.266667 8.533333-12.8 10.666667-21.333333 10.666667z"\n      p-id="2217"\n    ></path>\n  </svg>\n));\nconst Select = (props) => {\n  const {\n    disabled,\n    defaultValue,\n    value,\n    onChange,\n    placeholder = \'\u8bf7\u8f93\u5165\',\n    allowClear = true,\n    children,\n    labelProps = \'label\',\n    ...rest\n  } = props;\n  const dropdownRef = createRef();\n  const clearIconRef = createRef();\n  const [selectValue, setSelectValue] = useState(defaultValue);\n  const [option, setOption] = useState({});\n  const [visible, setVisible] = useState(false);\n  const [showClear, setShowClear] = useState(false);\n\n  const optionChildren = Array.isArray(children)\n    ? children\n    : [children]?.filter((item) => item?.type?.displayName === \'Option\') || [];\n\n  useEffect(() => {\n    if (typeof value === \'string\') {\n      setSelectValue(value);\n    }\n  }, [value]);\n\n  const onChangeHandler = (v) => {\n    setOption(v);\n    setSelectValue(v.value);\n    if (!disabled) {\n      setVisible(false);\n      setShowClear(false);\n    }\n    if (onChange) {\n      onChange(v);\n    }\n  };\n  const onClearHandler = () => {\n    if (disabled) {\n      return;\n    }\n    setOption({ label: \'\', value: \'\' });\n    setSelectValue(\'\');\n  };\n  const selectClassNames = {\n    \'ew-select\': true,\n    \'ew-select-disabled\': disabled,\n  };\n  const valueClassNames = {\n    \'ew-select-selector\': true,\n    \'ew-select-selector-placeholder\': !selectValue,\n  };\n  useClickOutside(dropdownRef, () => {\n    if (!disabled) {\n      setVisible(false);\n    }\n  });\n  return (\n    <div\n      className={classnames(selectClassNames)}\n      {...rest}\n      ref={dropdownRef}\n      onMouseEnter={() => {\n        if (!disabled) {\n          setShowClear(true);\n        }\n      }}\n      onMouseLeave={() => {\n        if (!disabled) {\n          setShowClear(false);\n        }\n      }}\n    >\n      <div\n        className={classnames(valueClassNames)}\n        placeholder={placeholder}\n        onClick={() => {\n          if (!disabled) {\n            setVisible(!visible);\n          }\n        }}\n      >\n        <span className="ew-select-selector-value">{option[labelProps]}</span>\n      </div>\n      <div className="ew-select-arrow">\n        {allowClear && selectValue && showClear ? (\n          <ClearIcon onClick={onClearHandler} ref={clearIconRef} />\n        ) : (\n          <ArrowIcon\n            onClick={() => {\n              if (!disabled) {\n                setVisible(!visible);\n              }\n            }}\n          />\n        )}\n      </div>\n      <div\n        className="ew-select-dropdown"\n        style={{ display: visible ? \'block\' : \'none\' }}\n      >\n        {optionChildren.map((item, index) =>\n          cloneElement(item, {\n            onOptionChange: onChangeHandler,\n            defaultValue: selectValue,\n            key: item.key || String(index + 1),\n            active: item.props.value === selectValue,\n          }),\n        )}\n      </div>\n    </div>\n  );\n};\nSelect.Option = Option;\nexport default Select;',
+      Tt =
         "import React, { useState, useEffect } from 'react';\nimport classnames from '../../../utils/classnames';\n\nconst Option = (props) => {\n  const {\n    label,\n    value,\n    disabled,\n    defaultValue,\n    children,\n    onOptionChange,\n    active,\n    ...rest\n  } = props;\n  const [currentValue, setCurrentValue] = useState(defaultValue);\n\n  const classNames = {\n    'ew-select-dropdown-option': true,\n    'ew-select-dropdown-option-disabled': disabled,\n    active: active,\n  };\n  const onChangeHandler = (options) => {\n    if (disabled) {\n      return;\n    }\n\n    setCurrentValue(options.value);\n    if (onOptionChange) {\n      onOptionChange(options);\n    }\n  };\n\n  useEffect(() => {\n    if (currentValue) {\n      onOptionChange?.({ label, value });\n    }\n  }, [currentValue]);\n  return (\n    <div\n      className={classnames(classNames)}\n      data-value={currentValue}\n      {...rest}\n      onClick={() => onChangeHandler({ label, value })}\n    >\n      {children ? children : label ? label : ''}\n    </div>\n  );\n};\nOption.displayName = 'Option';\nexport default Option;",
       Lt =
         'import React from \'react\';\nimport Select from \'./Select\';\nimport type { SelectProps } from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler: SelectProps[\'onChange\'] = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
@@ -44738,9 +44879,9 @@
         "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('Component will unmount'));\n  return <div>Check the console</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
       Nn =
         "import { useEffect } from 'react';\n\nconst useComponentWillUnmount = (onUnmountHandler) => {\n  useEffect(() => () => onUnmountHandler?.(), []);\n};\n\nexport default useComponentWillUnmount;",
-      Tn =
-        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d'));\n  return <div>\u68c0\u67e5\u63a7\u5236\u53f0</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
       Pn =
+        "import React from 'react';\nimport useComponentWillUnmount from './useComponentWillUnmount';\n\nconst UnMounter = () => {\n  useComponentWillUnmount(() => console.log('\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d'));\n  return <div>\u68c0\u67e5\u63a7\u5236\u53f0</div>;\n};\n\nconst Demo = () => <UnMounter />;\n\nexport default Demo;",
+      Tn =
         "import React, { SyntheticEvent } from 'react';\nimport useCopyToClipboard from './useCopyToClipboard';\nimport { Space } from 'antd';\nimport Button from '../../guide/Button/Button';\n\nexport interface TextCopyProps {\n  text: string;\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n  const { text = 'Lorem ipsum' } = props;\n  const [copied, copy] = useCopyToClipboard(text);\n  return (\n    <Space>\n      <Button\n        type=\"primary\"\n        ripple\n        onClick={copy as (e: SyntheticEvent) => void}\n      >\n        Click to Copy!\n      </Button>\n      <span>{copied && 'Copied!'}</span>\n    </Space>\n  );\n};\n\nconst Demo = () => <TextCopy text=\"The copy text!\" />;\n\nexport default Demo;",
       Ln =
         "import { useState, useCallback, useEffect } from 'react';\n\nconst useCopyToClipboard = (text: string) => {\n  const copyToClipboard = (str: string) => {\n    const el = document.createElement('textarea');\n    el.value = str;\n    el.setAttribute('readonly', '');\n    el.style.position = 'absolute';\n    el.style.left = '-9999px';\n    document.body.appendChild(el);\n    const selected =\n      document.getSelection()!.rangeCount > 0\n        ? document.getSelection()?.getRangeAt(0)\n        : false;\n    el.select();\n    const success = document.execCommand('copy');\n    document.body.removeChild(el);\n    if (selected) {\n      document.getSelection()?.removeAllRanges();\n      document.getSelection()?.addRange(selected);\n    }\n    return success;\n  };\n\n  const [copied, setCopied] = useState(false);\n\n  const copy = useCallback(() => {\n    if (!copied) {\n      setCopied(copyToClipboard(text));\n    }\n  }, [text]);\n\n  useEffect(() => () => setCopied(false), [text]);\n\n  return [copied, copy];\n};\n\nexport default useCopyToClipboard;",
@@ -44846,9 +44987,9 @@
         "import React from 'react';\nimport useGetSet from './useGetSet';\nimport { Button } from 'antd';\n\nconst Demo = () => {\n  const [count, setCount] = useGetSet(0);\n\n  const onClickHandler = () => {\n    setTimeout(() => {\n      setCount((count() as unknown as number) + 1);\n    }, 1_000);\n  };\n\n  return (\n    <Button onClick={onClickHandler}>\n      Count: {count() as unknown as number}\n    </Button>\n  );\n};\n\nexport default Demo;",
       Na =
         "import { useRef, useReducer, useMemo } from 'react';\n\nconst useGetSet = <T>(initialState?: T) => {\n  const state = useRef(initialState);\n  const [, update] = useReducer(() => ({}), {});\n  return useMemo(\n    () => [\n      () => state.current,\n      (newState?: T) => {\n        state.current = newState;\n        update();\n      },\n    ],\n    [],\n  );\n};\n\nexport default useGetSet;",
-      Ta =
-        "import React from 'react';\nimport useGetSet from './useGetSet';\nimport { Button } from 'antd';\n\nconst Demo = () => {\n  const [count, setCount] = useGetSet(0);\n\n  const onClickHandler = () => {\n    setTimeout(() => {\n      setCount(count() + 1);\n    }, 1_000);\n  };\n\n  return <Button onClick={onClickHandler}>Count: {count()}</Button>;\n};\n\nexport default Demo;",
       Pa =
+        "import React from 'react';\nimport useGetSet from './useGetSet';\nimport { Button } from 'antd';\n\nconst Demo = () => {\n  const [count, setCount] = useGetSet(0);\n\n  const onClickHandler = () => {\n    setTimeout(() => {\n      setCount(count() + 1);\n    }, 1_000);\n  };\n\n  return <Button onClick={onClickHandler}>Count: {count()}</Button>;\n};\n\nexport default Demo;",
+      Ta =
         "import { useRef, useReducer, useMemo } from 'react';\n\nconst useGetSet = (initialState) => {\n  const state = useRef(initialState);\n  const [, update] = useReducer(() => ({}));\n  return useMemo(\n    () => [\n      () => state.current,\n      (newState) => {\n        state.current = newState;\n        update?.();\n      },\n    ],\n    [],\n  );\n};\n\nexport default useGetSet;",
       La =
         "import React from 'react';\nimport useGetSet from './useGetSet';\nimport { Button } from 'antd';\n\nconst Demo = () => {\n  const [count, setCount] = useGetSet(0);\n\n  const onClickHandler = () => {\n    setTimeout(() => {\n      setCount((count() as unknown as number) + 1);\n    }, 1_000);\n  };\n\n  return (\n    <Button onClick={onClickHandler}>\n      \u8ba1\u6570: {count() as unknown as number}\n    </Button>\n  );\n};\n\nexport default Demo;",
@@ -44954,9 +45095,9 @@
         "import React from 'react';\nimport useMediaQuery from './useMediaQuery';\n\nconst Demo = () => {\n  const text = useMediaQuery(\n    '(max-width: 400px)',\n    'Less than 400px wide',\n    'More than 400px wide',\n  );\n  return <span>{text}</span>;\n};\n\nexport default Demo;",
       Nr =
         "import { useState, useEffect } from 'react';\n\nconst useMediaQuery = <T extends string, U, K>(\n  query: T,\n  whenTrue: U,\n  whenFalse: K,\n): U | K => {\n  if (\n    typeof window === 'undefined' ||\n    typeof window.matchMedia === 'undefined'\n  ) {\n    return whenFalse;\n  }\n\n  const mediaQuery = window.matchMedia(query);\n\n  const [match, setMatch] = useState(!!mediaQuery.matches);\n\n  useEffect(() => {\n    const handler = () => setMatch(!!mediaQuery.matches);\n\n    mediaQuery.addListener(handler);\n\n    return () => {\n      mediaQuery.removeListener(handler);\n    };\n  }, []);\n\n  return match ? whenTrue : whenFalse;\n};\n\nexport default useMediaQuery;",
-      Tr =
-        "import React from 'react';\nimport useMediaQuery from './useMediaQuery';\n\nconst Demo = () => {\n  const text = useMediaQuery(\n    '(max-width: 400px)',\n    'Less than 400px wide',\n    'More than 400px wide',\n  );\n  return <span>{text}</span>;\n};\n\nexport default Demo;",
       Pr =
+        "import React from 'react';\nimport useMediaQuery from './useMediaQuery';\n\nconst Demo = () => {\n  const text = useMediaQuery(\n    '(max-width: 400px)',\n    'Less than 400px wide',\n    'More than 400px wide',\n  );\n  return <span>{text}</span>;\n};\n\nexport default Demo;",
+      Tr =
         "import { useState, useEffect } from 'react';\n\nconst useMediaQuery = (query, whenTrue, whenFalse) => {\n  if (\n    typeof window === 'undefined' ||\n    typeof window.matchMedia === 'undefined'\n  ) {\n    return whenFalse;\n  }\n\n  const mediaQuery = window.matchMedia(query);\n\n  const [match, setMatch] = useState(!!mediaQuery.matches);\n\n  useEffect(() => {\n    const handler = () => setMatch(!!mediaQuery.matches);\n\n    mediaQuery.addListener(handler);\n\n    return () => {\n      mediaQuery.removeListener(handler);\n    };\n  }, []);\n\n  return match ? whenTrue : whenFalse;\n};\n\nexport default useMediaQuery;",
       Lr =
         "import React from 'react';\nimport useMediaQuery from './useMediaQuery';\n\nconst Demo = () => {\n  const text = useMediaQuery(\n    '(max-width: 400px)',\n    '\u5bbd\u5ea6\u5c0f\u4e8e 400 \u50cf\u7d20',\n    '\u5bbd\u5ea6\u5927\u4e8e 400 \u50cf\u7d20',\n  );\n  return <span>{text}</span>;\n};\n\nexport default Demo;",
@@ -45060,9 +45201,9 @@
         "import React, { useState } from 'react';\nimport usePrevious from './usePrevious';\nimport { Button } from 'antd';\n\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const lastValue = usePrevious(value);\n\n  return (\n    <div>\n      <p>\n        <>\n          Current: {value} - Previous: {lastValue}\n        </>\n      </p>\n      <Button onClick={() => setValue(value + 1)}>Increment</Button>\n    </div>\n  );\n};\n\nexport default Demo;",
       No =
         "import { useRef, useEffect } from 'react';\n\nconst usePrevious = <T>(value: T): T | void => {\n  const ref = useRef<T>();\n  useEffect(() => {\n    ref.current = value;\n  });\n\n  return ref.current;\n};\n\nexport default usePrevious;",
-      To =
-        "import React, { useState } from 'react';\nimport usePrevious from './usePrevious';\nimport { Button } from 'antd';\n\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const lastValue = usePrevious(value);\n\n  return (\n    <div>\n      <p>\n        Current: {value} - Previous: {lastValue}\n      </p>\n      <Button onClick={() => setValue(value + 1)}>Increment</Button>\n    </div>\n  );\n};\n\nexport default Demo;",
       Po =
+        "import React, { useState } from 'react';\nimport usePrevious from './usePrevious';\nimport { Button } from 'antd';\n\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const lastValue = usePrevious(value);\n\n  return (\n    <div>\n      <p>\n        Current: {value} - Previous: {lastValue}\n      </p>\n      <Button onClick={() => setValue(value + 1)}>Increment</Button>\n    </div>\n  );\n};\n\nexport default Demo;",
+      To =
         "import { useRef, useEffect } from 'react';\n\nconst usePrevious = (value) => {\n  const ref = useRef();\n  useEffect(() => {\n    ref.current = value;\n  });\n\n  return ref.current;\n};\n\nexport default usePrevious;",
       Lo =
         "import React, { useState } from 'react';\nimport usePrevious from './usePrevious';\nimport { Button } from 'antd';\n\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const lastValue = usePrevious(value);\n\n  return (\n    <div>\n      <p>\n        <>\n          \u5f53\u524d\u503c: {value} - \u4e4b\u524d\u503c: {lastValue}\n        </>\n      </p>\n      <Button onClick={() => setValue(value + 1)}>\u589e\u52a0</Button>\n    </div>\n  );\n};\n\nexport default Demo;",
@@ -45081,36 +45222,48 @@
       _o =
         "import React, { useState } from 'react';\nimport useRequestAnimationFrame from './useRequestAnimationFrame';\n\nconst Demo = () => {\n  const [count, setCount] = useState(0);\n\n  useRequestAnimationFrame((deltaTime) => {\n    setCount((prevCount) => (prevCount + deltaTime * 0.01) % 100);\n  });\n\n  return <p>{Math.round(count)}</p>;\n};\n\nexport default Demo;",
       Vo =
-        "import React from 'react';\r\nimport useScript from './useScript';\r\nconst script = 'data:text/plain;charset=utf-8;base64,KGZ1bmN0aW9uKCl7IGNvbnNvbGUubG9nKCdIZWxsbycpIH0pKCk7';\r\n\r\nconst Child = () => {\r\n  const status = useScript(script);\r\n  return <p>Child status: {status}</p>;\r\n};\r\n\r\nconst Demo = () => {\r\n  const status = useScript(script);\r\n  return (\r\n    <>\r\n      <p>Parent status: {status}</p>\r\n      <Child />\r\n    </>\r\n  );\r\n};\r\n\r\nexport default Demo;",
+        "import React from 'react';\nimport useScript from './useScript';\nconst script =\n  'data:text/plain;charset=utf-8;base64,KGZ1bmN0aW9uKCl7IGNvbnNvbGUubG9nKCdIZWxsbycpIH0pKCk7';\n\nconst Child = () => {\n  const status = useScript(script);\n  return <p>Child status: {status}</p>;\n};\n\nconst Demo = () => {\n  const status = useScript(script);\n  return (\n    <>\n      <p>Parent status: {status}</p>\n      <Child />\n    </>\n  );\n};\n\nexport default Demo;",
       Ho =
-        "import { useState,useEffect } from 'react';\r\n\r\nconst useScript = (src: string): string => {\r\n    const [status,setStatus] = useState(src ? 'loading' : 'idle');\r\n    useEffect(() => {\r\n        if(!src){\r\n            setStatus('idle');\r\n            return;\r\n        }\r\n\r\n        let script = document.querySelector(`script[src=\"${src}\"]`) as HTMLScriptElement;\r\n\r\n        if(!script){\r\n            script = document.createElement('script') as HTMLScriptElement;\r\n            script.src = src;\r\n            script.async = true;\r\n            script.setAttribute('data-status','loading');\r\n            document.body.appendChild(script);\r\n\r\n\r\n            const setDataStatus = (event:Event) => {\r\n                script.setAttribute('data-status',event.type === 'load' ? 'ready' : 'error');\r\n            }\r\n\r\n            script.addEventListener('load',setDataStatus);\r\n            script.addEventListener('error',setDataStatus);\r\n        }else{\r\n            setStatus(script.getAttribute('data-status') as string);\r\n        }\r\n\r\n        const setStateStatus = (event: Event) => {\r\n            setStatus(event.type === 'load' ? 'ready' : 'error');\r\n        }\r\n\r\n        script.addEventListener('load',setStateStatus);\r\n        script.addEventListener('error',setStateStatus);\r\n\r\n        return () => {\r\n            if(script){\r\n                script.removeEventListener('load',setStateStatus);\r\n                script.removeEventListener('error',setStateStatus);\r\n            }\r\n        }\r\n    },[src])\r\n    return status;\r\n}\r\n\r\nexport default useScript;",
+        "import { useState, useEffect } from 'react';\n\nconst useScript = (src: string): string => {\n  const [status, setStatus] = useState(src ? 'loading' : 'idle');\n  useEffect(() => {\n    if (!src) {\n      setStatus('idle');\n      return;\n    }\n\n    let script = document.querySelector(\n      `script[src=\"${src}\"]`,\n    ) as HTMLScriptElement;\n\n    if (!script) {\n      script = document.createElement('script') as HTMLScriptElement;\n      script.src = src;\n      script.async = true;\n      script.setAttribute('data-status', 'loading');\n      document.body.appendChild(script);\n\n      const setDataStatus = (event: Event) => {\n        script.setAttribute(\n          'data-status',\n          event.type === 'load' ? 'ready' : 'error',\n        );\n      };\n\n      script.addEventListener('load', setDataStatus);\n      script.addEventListener('error', setDataStatus);\n    } else {\n      setStatus(script.getAttribute('data-status') as string);\n    }\n\n    const setStateStatus = (event: Event) => {\n      setStatus(event.type === 'load' ? 'ready' : 'error');\n    };\n\n    script.addEventListener('load', setStateStatus);\n    script.addEventListener('error', setStateStatus);\n\n    return () => {\n      if (script) {\n        script.removeEventListener('load', setStateStatus);\n        script.removeEventListener('error', setStateStatus);\n      }\n    };\n  }, [src]);\n  return status;\n};\n\nexport default useScript;",
       Uo =
-        "import React from 'react';\r\nimport useScript from './useScript';\r\nconst script = 'data:text/plain;charset=utf-8;base64,KGZ1bmN0aW9uKCl7IGNvbnNvbGUubG9nKCdIZWxsbycpIH0pKCk7';\r\n\r\nconst Child = () => {\r\n  const status = useScript(script);\r\n  return <p>Child status: {status}</p>;\r\n};\r\n\r\nconst Demo = () => {\r\n  const status = useScript(script);\r\n  return (\r\n    <>\r\n      <p>Parent status: {status}</p>\r\n      <Child />\r\n    </>\r\n  );\r\n};\r\n\r\nexport default Demo;",
+        "import React from 'react';\nimport useScript from './useScript';\nconst script =\n  'data:text/plain;charset=utf-8;base64,KGZ1bmN0aW9uKCl7IGNvbnNvbGUubG9nKCdIZWxsbycpIH0pKCk7';\n\nconst Child = () => {\n  const status = useScript(script);\n  return <p>Child status: {status}</p>;\n};\n\nconst Demo = () => {\n  const status = useScript(script);\n  return (\n    <>\n      <p>Parent status: {status}</p>\n      <Child />\n    </>\n  );\n};\n\nexport default Demo;",
       qo =
-        "import { useState,useEffect } from 'react';\r\n\r\nconst useScript = src => {\r\n    const [status,setStatus] = useState(src ? 'loading' : 'idle');\r\n    useEffect(() => {\r\n        if(!src){\r\n            setStatus('idle');\r\n            return;\r\n        }\r\n\r\n        let script = document.querySelector(`script[src=\"${src}\"]`);\r\n\r\n        if(!script){\r\n            script = document.createElement('script');\r\n            script.src = src;\r\n            script.async = true;\r\n            script.setAttribute('data-status','loading');\r\n            document.body.appendChild(script);\r\n\r\n\r\n            const setDataStatus = event => {\r\n                script.setAttribute('data-status',event.type === 'load' ? 'ready' : 'error');\r\n            }\r\n\r\n            script.addEventListener('load',setDataStatus);\r\n            script.addEventListener('error',setDataStatus);\r\n        }else{\r\n            setStatus(script.getAttribute('data-status'));\r\n        }\r\n\r\n        const setStateStatus = event => {\r\n            setStatus(event.type === 'load' ? 'ready' : 'error');\r\n        }\r\n\r\n        script.addEventListener('load',setStateStatus);\r\n        script.addEventListener('error',setStateStatus);\r\n\r\n        return () => {\r\n            if(script){\r\n                script.removeEventListener('load',setStateStatus);\r\n                script.removeEventListener('error',setStateStatus);\r\n            }\r\n        }\r\n    },[src])\r\n    return status;\r\n}\r\n\r\nexport default useScript;",
+        "import { useState, useEffect } from 'react';\n\nconst useScript = (src) => {\n  const [status, setStatus] = useState(src ? 'loading' : 'idle');\n  useEffect(() => {\n    if (!src) {\n      setStatus('idle');\n      return;\n    }\n\n    let script = document.querySelector(`script[src=\"${src}\"]`);\n\n    if (!script) {\n      script = document.createElement('script');\n      script.src = src;\n      script.async = true;\n      script.setAttribute('data-status', 'loading');\n      document.body.appendChild(script);\n\n      const setDataStatus = (event) => {\n        script.setAttribute(\n          'data-status',\n          event.type === 'load' ? 'ready' : 'error',\n        );\n      };\n\n      script.addEventListener('load', setDataStatus);\n      script.addEventListener('error', setDataStatus);\n    } else {\n      setStatus(script.getAttribute('data-status'));\n    }\n\n    const setStateStatus = (event) => {\n      setStatus(event.type === 'load' ? 'ready' : 'error');\n    };\n\n    script.addEventListener('load', setStateStatus);\n    script.addEventListener('error', setStateStatus);\n\n    return () => {\n      if (script) {\n        script.removeEventListener('load', setStateStatus);\n        script.removeEventListener('error', setStateStatus);\n      }\n    };\n  }, [src]);\n  return status;\n};\n\nexport default useScript;",
       Go =
-        "import React from 'react';\r\nimport useScript from './useScript';\r\nconst script = 'data:text/plain;charset=utf-8;base64,KGZ1bmN0aW9uKCl7IGNvbnNvbGUubG9nKCdIZWxsbycpIH0pKCk7';\r\n\r\nconst Child = () => {\r\n  const status = useScript(script);\r\n  return <p>\u5b50\u5143\u7d20\u72b6\u6001: {status}</p>;\r\n};\r\n\r\nconst Demo = () => {\r\n  const status = useScript(script);\r\n  return (\r\n    <>\r\n      <p>\u7236\u5143\u7d20\u72b6\u6001: {status}</p>\r\n      <Child />\r\n    </>\r\n  );\r\n};\r\n\r\nexport default Demo;",
+        "import React from 'react';\nimport useScript from './useScript';\nconst script =\n  'data:text/plain;charset=utf-8;base64,KGZ1bmN0aW9uKCl7IGNvbnNvbGUubG9nKCdIZWxsbycpIH0pKCk7';\n\nconst Child = () => {\n  const status = useScript(script);\n  return <p>\u5b50\u5143\u7d20\u72b6\u6001: {status}</p>;\n};\n\nconst Demo = () => {\n  const status = useScript(script);\n  return (\n    <>\n      <p>\u7236\u5143\u7d20\u72b6\u6001: {status}</p>\n      <Child />\n    </>\n  );\n};\n\nexport default Demo;",
       Wo =
-        "import React from 'react';\r\nimport useScript from './useScript';\r\nconst script = 'data:text/plain;charset=utf-8;base64,KGZ1bmN0aW9uKCl7IGNvbnNvbGUubG9nKCdIZWxsbycpIH0pKCk7';\r\n\r\nconst Child = () => {\r\n  const status = useScript(script);\r\n  return <p>\u5b50\u5143\u7d20\u72b6\u6001: {status}</p>;\r\n};\r\n\r\nconst Demo = () => {\r\n  const status = useScript(script);\r\n  return (\r\n    <>\r\n      <p>\u7236\u5143\u7d20\u72b6\u6001: {status}</p>\r\n      <Child />\r\n    </>\r\n  );\r\n};\r\n\r\nexport default Demo;",
+        "import React from 'react';\nimport useScript from './useScript';\nconst script =\n  'data:text/plain;charset=utf-8;base64,KGZ1bmN0aW9uKCl7IGNvbnNvbGUubG9nKCdIZWxsbycpIH0pKCk7';\n\nconst Child = () => {\n  const status = useScript(script);\n  return <p>\u5b50\u5143\u7d20\u72b6\u6001: {status}</p>;\n};\n\nconst Demo = () => {\n  const status = useScript(script);\n  return (\n    <>\n      <p>\u7236\u5143\u7d20\u72b6\u6001: {status}</p>\n      <Child />\n    </>\n  );\n};\n\nexport default Demo;",
       Ko =
-        "import React from 'react';\nimport useSSR from './useSSR';\nconst Demo = () => {\n  const { isBrowser } = useSSR();\n  return <p>{isBrowser ? 'Running on browser' : 'Running on server'}</p>;\n};\n\nexport default Demo;",
+        "import React from 'react';\r\nimport useSearchParam from './useSearchParam';\r\nimport { Button } from 'antd';\r\n\r\nconst Demo = () => {\r\n  const post = useSearchParam('post');\r\n  const onPushState = (param: string | void) => {\r\n    history.pushState({}, '', location.pathname + (param ? param : ''));\r\n  };\r\n  return (\r\n    <div>\r\n      <p>\r\n        Post param value: \r\n        <>\r\n            {post || 'null'}\r\n        </>\r\n      </p>\r\n      <Button onClick={() => onPushState('?post=42')}>View post 42</Button>\r\n      <Button onClick={() => onPushState()}>Exit</Button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Demo;",
       $o =
-        "import { useState, useEffect, useMemo } from 'react';\n\nconst isDOMavailable = !!(\n  typeof window !== 'undefined' &&\n  window.document &&\n  window.document.createElement\n);\nexport type ssrReturnType = {\n  isBrowser: boolean;\n  isServer: boolean;\n  canUseWorkers: boolean;\n  canUseEventListeners: boolean;\n  canUseViewport: boolean;\n};\nconst useSSR = (): ssrReturnType => {\n  const [inBrowser, setInBrowser] = useState(isDOMavailable);\n\n  useEffect(() => {\n    setInBrowser(isDOMavailable);\n    return () => {\n      setInBrowser(false);\n    };\n  }, []);\n\n  const useSSRObject = useMemo(\n    () => ({\n      isBrowser: inBrowser,\n      isServer: !inBrowser,\n      canUseWorkers: typeof Worker !== 'undefined',\n      canUseEventListeners: inBrowser && !!window.addEventListener,\n      canUseViewport: inBrowser && !!window.screen,\n    }),\n    [inBrowser],\n  );\n\n  return useMemo(\n    () => Object.assign(Object.values(useSSRObject), useSSRObject),\n    [inBrowser],\n  );\n};\n\nexport default useSSR;",
+        "import { useState,useCallback,useEffect } from 'react';\r\n\r\nconst events = ['popstate','pushstate','replacestate'];\r\nconst useSearchParam = (param: string): (() => string | null) => {\r\n    const getValue = useCallback(() => () => new URLSearchParams(window.location.search).get(param),[param]);\r\n\r\n    const [value,setValue] = useState(getValue);\r\n\r\n    useEffect(() => {\r\n        const onChange = () => {\r\n            debugger;\r\n            setValue(getValue());\r\n        }\r\n\r\n        events.forEach(type => window.addEventListener(type,onChange));\r\n\r\n        return () => {\r\n            events.forEach(type => window.removeEventListener(type,onChange));\r\n        }\r\n    },[]);\r\n\r\n    return value;\r\n}\r\n\r\nexport default useSearchParam;",
       Yo =
-        "import React from 'react';\nimport useSSR from './useSSR';\nconst Demo = () => {\n  const { isBrowser } = useSSR();\n  return <p>{isBrowser ? 'Running on browser' : 'Running on server'}</p>;\n};\n\nexport default Demo;",
+        "import React from 'react';\r\nimport useSearchParam from './useSearchParam';\r\nimport { Button } from 'antd';\r\n\r\nconst Demo = () => {\r\n  const post = useSearchParam('post');\r\n  const onPushState = param => {\r\n    history.pushState({}, '', location.pathname + (param ? param : ''));\r\n  };\r\n  return (\r\n    <div>\r\n      <p>\r\n        Post param value: \r\n        <>\r\n            {post || 'null'}\r\n        </>\r\n      </p>\r\n      <Button onClick={() => onPushState('?post=42')}>View post 42</Button>\r\n      <Button onClick={() => onPushState()}>Exit</Button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Demo;",
       Qo =
-        "import { useState, useEffect, useMemo } from 'react';\n\nconst isDOMavailable = !!(\n  typeof window !== 'undefined' &&\n  window.document &&\n  window.document.createElement\n);\n\nconst useSSR = () => {\n  const [inBrowser, setInBrowser] = useState(isDOMavailable);\n\n  useEffect(() => {\n    setInBrowser(isDOMavailable);\n    return () => {\n      setInBrowser(false);\n    };\n  }, []);\n\n  const useSSRObject = useMemo(\n    () => ({\n      isBrowser: inBrowser,\n      isServer: !inBrowser,\n      canUseWorkers: typeof Worker !== 'undefined',\n      canUseEventListeners: inBrowser && !!window.addEventListener,\n      canUseViewport: inBrowser && !!window.screen,\n    }),\n    [inBrowser],\n  );\n\n  return useMemo(\n    () => Object.assign(Object.values(useSSRObject), useSSRObject),\n    [inBrowser],\n  );\n};\n\nexport default useSSR;",
+        "import { useState,useCallback,useEffect } from 'react';\r\n\r\nconst events = ['popstate','pushstate','replacestate'];\r\nconst useSearchParam = param => {\r\n    const getValue = useCallback(() => () => new URLSearchParams(window.location.search).get(param),[param]);\r\n\r\n    const [value,setValue] = useState(getValue);\r\n\r\n    useEffect(() => {\r\n        const onChange = () => {\r\n            setValue(getValue());\r\n        }\r\n\r\n        events.forEach(type => window.addEventListener(type,onChange));\r\n\r\n        return () => {\r\n            events.forEach(type => window.removeEventListener(type,onChange));\r\n        }\r\n    },[]);\r\n\r\n    return value;\r\n}\r\n\r\nexport default useSearchParam;",
       Jo =
-        "import React from 'react';\nimport useSSR from './useSSR';\nconst Demo = () => {\n  const { isBrowser } = useSSR();\n  return <p>{isBrowser ? '\u8fd0\u884c\u5728\u6d4f\u89c8\u5668\u73af\u5883\u4e2d' : '\u8fd0\u884c\u5728\u670d\u52a1\u7aef\u73af\u5883\u4e2d'}</p>;\n};\n\nexport default Demo;",
+        "import React from 'react';\r\nimport useSearchParam from './useSearchParam';\r\nimport { Button } from 'antd';\r\n\r\nconst Demo = () => {\r\n  const post = useSearchParam('post');\r\n  const onPushState = (param: string | void) => {\r\n    history.pushState({}, '', location.pathname + (param ? param : ''));\r\n  };\r\n  return (\r\n    <div>\r\n      <p>\r\n        Post\u53c2\u6570\u503c: \r\n        <>\r\n            {post || 'null'}\r\n        </>\r\n      </p>\r\n      <Button onClick={() => onPushState('?post=42')}>\u67e5\u770bpost\u53c2\u6570\u503c42</Button>\r\n      <Button onClick={() => onPushState()}>\u9000\u51fa</Button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Demo;",
       Xo =
-        "import React from 'react';\nimport useSSR from './useSSR';\nconst Demo = () => {\n  const { isBrowser } = useSSR();\n  return <p>{isBrowser ? '\u8fd0\u884c\u5728\u6d4f\u89c8\u5668\u73af\u5883\u4e2d' : '\u8fd0\u884c\u5728\u670d\u52a1\u7aef\u73af\u5883\u4e2d'}</p>;\n};\n\nexport default Demo;",
+        "import React from 'react';\r\nimport useSearchParam from './useSearchParam';\r\nimport { Button } from 'antd';\r\n\r\nconst Demo = () => {\r\n  const post = useSearchParam('post');\r\n  const onPushState = param => {\r\n    history.pushState({}, '', location.pathname + (param ? param : ''));\r\n  };\r\n  return (\r\n    <div>\r\n      <p>\r\n        Post\u53c2\u6570\u503c: \r\n        <>\r\n            {post || 'null'}\r\n        </>\r\n      </p>\r\n      <Button onClick={() => onPushState('?post=42')}>\u67e5\u770bpost\u53c2\u6570\u503c42</Button>\r\n      <Button onClick={() => onPushState()}>\u9000\u51fa</Button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Demo;",
       Zo =
-        "import React, { useState } from 'react';\nimport { createModel } from './createModel';\nimport { Space, Button } from 'antd';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <Space wrap>\n      <Button onClick={counter.decrement}>-</Button>\n      <span>{counter.count}</span>\n      <Button onClick={counter.increment}>+</Button>\n    </Space>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
+        "import React from 'react';\nimport useSSR from './useSSR';\nconst Demo = () => {\n  const { isBrowser } = useSSR();\n  return <p>{isBrowser ? 'Running on browser' : 'Running on server'}</p>;\n};\n\nexport default Demo;",
       el =
-        "// \u5bfc\u5165\u7c7b\u578b\nimport type { ReactNode, ComponentType } from 'react';\nimport React from 'react';\nimport { createContext, useContext } from 'react';\nconst EMPTY: unique symbol = Symbol();\nexport interface ModelProviderProps<State = void> {\n  initialState?: State;\n  children: ReactNode;\n}\nexport interface Model<Value, State = void> {\n  Provider: ComponentType<ModelProviderProps<State>>;\n  useModel: () => Value;\n}\nexport const createModel = <Value, State = void>(\n  useHook: (initialState?: State) => Value,\n): Model<Value, State> => {\n  //\u521b\u5efa\u4e00\u4e2acontext\n  const context = createContext<Value | typeof EMPTY>(EMPTY);\n  // \u5b9a\u4e49Provider\u51fd\u6570\n  const Provider = (props: ModelProviderProps<State>) => {\n    const { Provider: ModelProvider } = context;\n    const { initialState, children } = props;\n    const value = useHook(initialState);\n    return <ModelProvider value={value}>{children}</ModelProvider>;\n  };\n  // \u5b9a\u4e49useModel\u51fd\u6570\n  const useModel = (): Value => {\n    const value = useContext(context);\n    // \u8fd9\u91cc\u786e\u5b9a\u4e00\u4e0b\u7528\u6237\u662f\u5426\u6b63\u786e\u4f7f\u7528Provider\n    if (value === EMPTY) {\n      //\u629b\u51fa\u5f02\u5e38\uff0c\u4f7f\u7528\u8005\u5e76\u6ca1\u6709\u7528Provider\u5305\u88f9\u7ec4\u4ef6\n      throw new Error('Component must be wrapped with <Container.Provider>');\n    }\n    // \u8fd4\u56decontext\n    return value;\n  };\n  return { Provider, useModel };\n};\nexport const useModel = <Value, State = void>(\n  model: Model<Value, State>,\n): Value => {\n  return model.useModel();\n};",
+        "import { useState, useEffect, useMemo } from 'react';\n\nconst isDOMavailable = !!(\n  typeof window !== 'undefined' &&\n  window.document &&\n  window.document.createElement\n);\nexport type ssrReturnType = {\n  isBrowser: boolean;\n  isServer: boolean;\n  canUseWorkers: boolean;\n  canUseEventListeners: boolean;\n  canUseViewport: boolean;\n};\nconst useSSR = (): ssrReturnType => {\n  const [inBrowser, setInBrowser] = useState(isDOMavailable);\n\n  useEffect(() => {\n    setInBrowser(isDOMavailable);\n    return () => {\n      setInBrowser(false);\n    };\n  }, []);\n\n  const useSSRObject = useMemo(\n    () => ({\n      isBrowser: inBrowser,\n      isServer: !inBrowser,\n      canUseWorkers: typeof Worker !== 'undefined',\n      canUseEventListeners: inBrowser && !!window.addEventListener,\n      canUseViewport: inBrowser && !!window.screen,\n    }),\n    [inBrowser],\n  );\n\n  return useMemo(\n    () => Object.assign(Object.values(useSSRObject), useSSRObject),\n    [inBrowser],\n  );\n};\n\nexport default useSSR;",
       tl =
+        "import React from 'react';\nimport useSSR from './useSSR';\nconst Demo = () => {\n  const { isBrowser } = useSSR();\n  return <p>{isBrowser ? 'Running on browser' : 'Running on server'}</p>;\n};\n\nexport default Demo;",
+      nl =
+        "import { useState, useEffect, useMemo } from 'react';\n\nconst isDOMavailable = !!(\n  typeof window !== 'undefined' &&\n  window.document &&\n  window.document.createElement\n);\n\nconst useSSR = () => {\n  const [inBrowser, setInBrowser] = useState(isDOMavailable);\n\n  useEffect(() => {\n    setInBrowser(isDOMavailable);\n    return () => {\n      setInBrowser(false);\n    };\n  }, []);\n\n  const useSSRObject = useMemo(\n    () => ({\n      isBrowser: inBrowser,\n      isServer: !inBrowser,\n      canUseWorkers: typeof Worker !== 'undefined',\n      canUseEventListeners: inBrowser && !!window.addEventListener,\n      canUseViewport: inBrowser && !!window.screen,\n    }),\n    [inBrowser],\n  );\n\n  return useMemo(\n    () => Object.assign(Object.values(useSSRObject), useSSRObject),\n    [inBrowser],\n  );\n};\n\nexport default useSSR;",
+      al =
+        "import React from 'react';\nimport useSSR from './useSSR';\nconst Demo = () => {\n  const { isBrowser } = useSSR();\n  return <p>{isBrowser ? '\u8fd0\u884c\u5728\u6d4f\u89c8\u5668\u73af\u5883\u4e2d' : '\u8fd0\u884c\u5728\u670d\u52a1\u7aef\u73af\u5883\u4e2d'}</p>;\n};\n\nexport default Demo;",
+      rl =
+        "import React from 'react';\nimport useSSR from './useSSR';\nconst Demo = () => {\n  const { isBrowser } = useSSR();\n  return <p>{isBrowser ? '\u8fd0\u884c\u5728\u6d4f\u89c8\u5668\u73af\u5883\u4e2d' : '\u8fd0\u884c\u5728\u670d\u52a1\u7aef\u73af\u5883\u4e2d'}</p>;\n};\n\nexport default Demo;",
+      ol =
         "import React, { useState } from 'react';\nimport { createModel } from './createModel';\nimport { Space, Button } from 'antd';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <Space wrap>\n      <Button onClick={counter.decrement}>-</Button>\n      <span>{counter.count}</span>\n      <Button onClick={counter.increment}>+</Button>\n    </Space>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
-      nl = {
+      ll =
+        "// \u5bfc\u5165\u7c7b\u578b\nimport type { ReactNode, ComponentType } from 'react';\nimport React from 'react';\nimport { createContext, useContext } from 'react';\nconst EMPTY: unique symbol = Symbol();\nexport interface ModelProviderProps<State = void> {\n  initialState?: State;\n  children: ReactNode;\n}\nexport interface Model<Value, State = void> {\n  Provider: ComponentType<ModelProviderProps<State>>;\n  useModel: () => Value;\n}\nexport const createModel = <Value, State = void>(\n  useHook: (initialState?: State) => Value,\n): Model<Value, State> => {\n  //\u521b\u5efa\u4e00\u4e2acontext\n  const context = createContext<Value | typeof EMPTY>(EMPTY);\n  // \u5b9a\u4e49Provider\u51fd\u6570\n  const Provider = (props: ModelProviderProps<State>) => {\n    const { Provider: ModelProvider } = context;\n    const { initialState, children } = props;\n    const value = useHook(initialState);\n    return <ModelProvider value={value}>{children}</ModelProvider>;\n  };\n  // \u5b9a\u4e49useModel\u51fd\u6570\n  const useModel = (): Value => {\n    const value = useContext(context);\n    // \u8fd9\u91cc\u786e\u5b9a\u4e00\u4e0b\u7528\u6237\u662f\u5426\u6b63\u786e\u4f7f\u7528Provider\n    if (value === EMPTY) {\n      //\u629b\u51fa\u5f02\u5e38\uff0c\u4f7f\u7528\u8005\u5e76\u6ca1\u6709\u7528Provider\u5305\u88f9\u7ec4\u4ef6\n      throw new Error('Component must be wrapped with <Container.Provider>');\n    }\n    // \u8fd4\u56decontext\n    return value;\n  };\n  return { Provider, useModel };\n};\nexport const useModel = <Value, State = void>(\n  model: Model<Value, State>,\n): Value => {\n  return model.useModel();\n};",
+      il =
+        "import React, { useState } from 'react';\nimport { createModel } from './createModel';\nimport { Space, Button } from 'antd';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <Space wrap>\n      <Button onClick={counter.decrement}>-</Button>\n      <span>{counter.count}</span>\n      <Button onClick={counter.increment}>+</Button>\n    </Space>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
+      sl = {
         'loadingbutton-demo': {
           component: n('4ZnB').default,
           previewerProps: {
@@ -45363,8 +45516,8 @@
           component: n('eN+T').default,
           previewerProps: {
             sources: {
-              _: { jsx: T },
-              'AutoLink.jsx': { import: './AutoLink', content: P },
+              _: { jsx: P },
+              'AutoLink.jsx': { import: './AutoLink', content: T },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -45396,7 +45549,7 @@
           previewerProps: {
             sources: {
               _: { jsx: D },
-              'AutoLink.jsx': { import: './AutoLink', content: P },
+              'AutoLink.jsx': { import: './AutoLink', content: T },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -45900,7 +46053,7 @@
           previewerProps: {
             sources: {
               _: { tsx: Ne },
-              'FileDrop.tsx': { import: './FileDrop', content: Te },
+              'FileDrop.tsx': { import: './FileDrop', content: Pe },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -45915,7 +46068,7 @@
           component: n('EREd').default,
           previewerProps: {
             sources: {
-              _: { jsx: Pe },
+              _: { jsx: Te },
               'FileDrop.jsx': { import: './FileDrop', content: Le },
             },
             dependencies: {
@@ -45932,7 +46085,7 @@
           previewerProps: {
             sources: {
               _: { tsx: De },
-              'FileDrop.tsx': { import: './FileDrop', content: Te },
+              'FileDrop.tsx': { import: './FileDrop', content: Pe },
             },
             dependencies: {
               react: { version: '>=16.8.0' },
@@ -46477,7 +46630,7 @@
           previewerProps: {
             sources: {
               _: { jsx: Nt },
-              'Select.jsx': { import: './Select', content: Tt },
+              'Select.jsx': { import: './Select', content: Pt },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: F,
@@ -46486,7 +46639,7 @@
                 import: '../../utils/useClickOutside',
                 content: jt,
               },
-              'Option.jsx': { import: './Option', content: Pt },
+              'Option.jsx': { import: './Option', content: Tt },
               'select.less': { import: './select.less', content: Rt },
             },
             dependencies: {
@@ -46527,7 +46680,7 @@
           previewerProps: {
             sources: {
               _: { jsx: Dt },
-              'Select.jsx': { import: './Select', content: Tt },
+              'Select.jsx': { import: './Select', content: Pt },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: F,
@@ -46536,7 +46689,7 @@
                 import: '../../utils/useClickOutside',
                 content: jt,
               },
-              'Option.jsx': { import: './Option', content: Pt },
+              'Option.jsx': { import: './Option', content: Tt },
               'select.less': { import: './select.less', content: Rt },
             },
             dependencies: {
@@ -47177,7 +47330,7 @@
           component: n('s6jP').default,
           previewerProps: {
             sources: {
-              _: { tsx: Tn },
+              _: { tsx: Pn },
               'useComponentWillUnmount.ts': {
                 import: './useComponentWillUnmount',
                 content: Nn,
@@ -47191,7 +47344,7 @@
           component: n('6Hiq').default,
           previewerProps: {
             sources: {
-              _: { tsx: Pn },
+              _: { tsx: Tn },
               'useCopyToClipboard.ts': {
                 import: './useCopyToClipboard',
                 content: Ln,
@@ -47431,7 +47584,7 @@
               },
               'guide/Select/jsx/Select.jsx': {
                 import: './Select',
-                content: Tt,
+                content: Pt,
               },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
@@ -47441,7 +47594,7 @@
                 import: '../../utils/useClickOutside',
                 content: jt,
               },
-              'Option.jsx': { import: './Option', content: Pt },
+              'Option.jsx': { import: './Option', content: Tt },
               'select.less': { import: './select.less', content: Rt },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -47484,7 +47637,7 @@
               },
               'guide/Select/jsx/Select.jsx': {
                 import: './Select',
-                content: Tt,
+                content: Pt,
               },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
@@ -47494,7 +47647,7 @@
                 import: '../../utils/useClickOutside',
                 content: jt,
               },
-              'Option.jsx': { import: './Option', content: Pt },
+              'Option.jsx': { import: './Option', content: Tt },
               'select.less': { import: './select.less', content: Rt },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -47816,8 +47969,8 @@
           component: n('vkxr').default,
           previewerProps: {
             sources: {
-              _: { jsx: Ta },
-              'useGetSet.js': { import: './useGetSet', content: Pa },
+              _: { jsx: Pa },
+              'useGetSet.js': { import: './useGetSet', content: Ta },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -47847,7 +48000,7 @@
           previewerProps: {
             sources: {
               _: { jsx: Da },
-              'useGetSet.js': { import: './useGetSet', content: Pa },
+              'useGetSet.js': { import: './useGetSet', content: Ta },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -48308,8 +48461,8 @@
           component: n('1Rvk').default,
           previewerProps: {
             sources: {
-              _: { jsx: Tr },
-              'useMediaQuery.js': { import: './useMediaQuery', content: Pr },
+              _: { jsx: Pr },
+              'useMediaQuery.js': { import: './useMediaQuery', content: Tr },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'js-demo-19',
@@ -48331,7 +48484,7 @@
           previewerProps: {
             sources: {
               _: { jsx: Dr },
-              'useMediaQuery.js': { import: './useMediaQuery', content: Pr },
+              'useMediaQuery.js': { import: './useMediaQuery', content: Tr },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'js-demo.zh-cn-19',
@@ -48826,8 +48979,8 @@
           component: n('PBun').default,
           previewerProps: {
             sources: {
-              _: { jsx: To },
-              'usePrevious.js': { import: './usePrevious', content: Po },
+              _: { jsx: Po },
+              'usePrevious.js': { import: './usePrevious', content: To },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -48857,7 +49010,7 @@
           previewerProps: {
             sources: {
               _: { jsx: Do },
-              'usePrevious.js': { import: './usePrevious', content: Po },
+              'usePrevious.js': { import: './usePrevious', content: To },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -48967,56 +49120,116 @@
             identifier: 'js-demo.zh-cn-30',
           },
         },
+        'usesearchparam-demo': {
+          component: n('3vQq').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: Ko },
+              'useSearchParam.ts': { import: './useSearchParam', content: $o },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              antd: { version: '4.22.8', css: 'antd/dist/antd.css' },
+              'react-dom': { version: '>=16.9.0' },
+            },
+            identifier: 'usesearchparam-demo',
+          },
+        },
+        'js-demo-30': {
+          component: n('ujDG').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: Yo },
+              'useSearchParam.js': { import: './useSearchParam', content: Qo },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              antd: { version: '4.22.8', css: 'antd/dist/antd.css' },
+              'react-dom': { version: '>=16.9.0' },
+            },
+            identifier: 'js-demo-30',
+          },
+        },
+        'usesearchparam-demo.zh-cn': {
+          component: n('GAnJ').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: Jo },
+              'useSearchParam.ts': { import: './useSearchParam', content: $o },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              antd: { version: '4.22.8', css: 'antd/dist/antd.css' },
+              'react-dom': { version: '>=16.9.0' },
+            },
+            identifier: 'usesearchparam-demo.zh-cn',
+          },
+        },
+        'js-demo.zh-cn-31': {
+          component: n('V6Y/').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: Xo },
+              'useSearchParam.js': { import: './useSearchParam', content: Qo },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              antd: { version: '4.22.8', css: 'antd/dist/antd.css' },
+              'react-dom': { version: '>=16.9.0' },
+            },
+            identifier: 'js-demo.zh-cn-31',
+          },
+        },
         'usessr-demo': {
           component: n('KhAy').default,
           previewerProps: {
             sources: {
-              _: { tsx: Ko },
-              'useSSR.ts': { import: './useSSR', content: $o },
+              _: { tsx: Zo },
+              'useSSR.ts': { import: './useSSR', content: el },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'usessr-demo',
           },
         },
-        'js-demo-30': {
+        'js-demo-31': {
           component: n('vFHD').default,
           previewerProps: {
             sources: {
-              _: { jsx: Yo },
-              'useSSR.js': { import: './useSSR', content: Qo },
+              _: { jsx: tl },
+              'useSSR.js': { import: './useSSR', content: nl },
             },
             dependencies: { react: { version: '16.14.0' } },
-            identifier: 'js-demo-30',
+            identifier: 'js-demo-31',
           },
         },
         'usessr-demo.zh-cn': {
           component: n('KTTX').default,
           previewerProps: {
             sources: {
-              _: { tsx: Jo },
-              'useSSR.ts': { import: './useSSR', content: $o },
+              _: { tsx: al },
+              'useSSR.ts': { import: './useSSR', content: el },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'usessr-demo.zh-cn',
           },
         },
-        'js-demo.zh-cn-31': {
+        'js-demo.zh-cn-32': {
           component: n('+dpJ').default,
           previewerProps: {
             sources: {
-              _: { jsx: Xo },
-              'useSSR.js': { import: './useSSR', content: Qo },
+              _: { jsx: rl },
+              'useSSR.js': { import: './useSSR', content: nl },
             },
             dependencies: { react: { version: '16.14.0' } },
-            identifier: 'js-demo.zh-cn-31',
+            identifier: 'js-demo.zh-cn-32',
           },
         },
         'model-demo': {
           component: n('3P29').default,
           previewerProps: {
             sources: {
-              _: { tsx: Zo },
-              'createModel.tsx': { import: './createModel', content: el },
+              _: { tsx: ol },
+              'createModel.tsx': { import: './createModel', content: ll },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -49030,8 +49243,8 @@
           component: n('lq0m').default,
           previewerProps: {
             sources: {
-              _: { tsx: tl },
-              'createModel.tsx': { import: './createModel', content: el },
+              _: { tsx: il },
+              'createModel.tsx': { import: './createModel', content: ll },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -49042,13 +49255,13 @@
           },
         },
       },
-      al = n('Zs1V'),
-      rl = n('BI2/'),
-      ol = n.n(rl);
+      cl = n('Zs1V'),
+      ul = n('BI2/'),
+      dl = n.n(ul);
     t['default'] = (e) =>
       o.a.createElement(
-        ol.a,
-        Object(a['a'])({}, e, { config: l, demos: nl, apis: al }),
+        dl.a,
+        Object(a['a'])({}, e, { config: l, demos: sl, apis: cl }),
       );
   },
   Odut: function (e, t, n) {
@@ -49466,8 +49679,8 @@
           I = O[1],
           R = Object(l['useState'])({}),
           N = Object(a['a'])(R, 2),
-          T = N[0],
-          P = N[1],
+          P = N[0],
+          T = N[1],
           L = Object(l['useState'])(!1),
           D = Object(a['a'])(L, 2),
           A = D[0],
@@ -49496,10 +49709,10 @@
           'string' === typeof d && I(d);
         }, [d]);
         var H = (e) => {
-            P(e), I(e.value), n || (M(!1), _(!1)), f && f(e);
+            T(e), I(e.value), n || (M(!1), _(!1)), f && f(e);
           },
           U = () => {
-            n || (P({ label: '', value: '' }), I(''));
+            n || (T({ label: '', value: '' }), I(''));
           },
           q = { 'ew-select': !0, 'ew-select-disabled': n },
           G = {
@@ -49533,7 +49746,7 @@
               i.a.createElement(
                 'span',
                 { className: 'ew-select-selector-value' },
-                T[x],
+                P[x],
               ),
             ),
             i.a.createElement(
@@ -50324,10 +50537,10 @@
       },
       R = /^[\u4e00-\u9fa5]{2}$/,
       N = R.test.bind(R);
-    function T(e) {
+    function P(e) {
       return 'string' === typeof e;
     }
-    function P(e) {
+    function T(e) {
       return 'text' === e || 'link' === e;
     }
     function L(e) {
@@ -50338,7 +50551,7 @@
         var n = t ? ' ' : '';
         return 'string' !== typeof e &&
           'number' !== typeof e &&
-          T(e.type) &&
+          P(e.type) &&
           N(e.props.children)
           ? Object(h['a'])(e, { children: e.props.children.split('').join(n) })
           : 'string' === typeof e
@@ -50391,7 +50604,7 @@
           S = e.children,
           O = e.icon,
           R = e.ghost,
-          T = void 0 !== R && R,
+          P = void 0 !== R && R,
           L = e.block,
           D = void 0 !== L && L,
           M = e.htmlType,
@@ -50429,7 +50642,7 @@
           ee = J.direction,
           te = t || u['createRef'](),
           ne = function () {
-            return 1 === u['Children'].count(S) && !O && !P(v);
+            return 1 === u['Children'].count(S) && !O && !T(v);
           },
           ae = function () {
             if (te && te.current && !1 !== Z) {
@@ -50484,7 +50697,7 @@
               ''.concat(le, '-icon-only'),
               !S && 0 !== S && !!de,
             ),
-            Object(r['a'])(n, ''.concat(le, '-background-ghost'), T && !P(v)),
+            Object(r['a'])(n, ''.concat(le, '-background-ghost'), P && !T(v)),
             Object(r['a'])(n, ''.concat(le, '-loading'), G),
             Object(r['a'])(
               n,
@@ -50530,7 +50743,7 @@
           fe,
           he,
         );
-        return P(v) ? ve : u['createElement'](g['a'], { disabled: !!G }, ve);
+        return T(v) ? ve : u['createElement'](g['a'], { disabled: !!G }, ve);
       },
       F = u['forwardRef'](z);
     (F.Group = x), (F.__ANT_BUTTON = !0);
@@ -51203,7 +51416,7 @@
   },
   RGYn: function (e) {
     e.exports = JSON.parse(
-      '{"menus":{"en-US":{"/getting-started":[{"path":"/getting-started","title":"react code-segment","meta":{}}],"*":[{"path":"/","title":"Welcome to the website","meta":{}}],"/antd":[{"title":"LoadingButton","path":"/antd/loading-button"},{"title":"OmitText","path":"/antd/omit-text"},{"title":"LoadingModal","path":"/antd/loading-modal"}],"/guide":[{"title":"Accordion","path":"/guide/Accordion/Accordion"},{"title":"Alert","path":"/guide/Alert/Alert"},{"title":"AutoLink","path":"/guide/auto-link/auto-link"},{"title":"Callto","path":"/guide/Callto/Callto"},{"title":"Carousel","path":"/guide/Carousel/Carousel"},{"title":"Collapse","path":"/guide/Collapse/Collapse"},{"title":"ControlledInput","path":"/guide/controlled-input/controlled-input"},{"title":"CountDown","path":"/guide/count-down/count-down"},{"title":"SimpleDataList","path":"/guide/simple-data-list/simple-data-list"},{"title":"SimpleDataTable","path":"/guide/simple-data-table/simple-data-table"},{"title":"FileDrop","path":"/guide/file-drop/file-drop"},{"title":"LazyLoadingImage","path":"/guide/lazy-loading-image/lazy-loading-image"},{"title":"LimitedTextarea","path":"/guide/limited-textarea/limited-textarea"},{"title":"LimitedWordTextarea","path":"/guide/limited-word-textarea/limited-word-textarea"},{"title":"Loader","path":"/guide/Loader/Loader"},{"title":"Mailto","path":"/guide/Mailto/Mailto"},{"title":"SimpleMappedDataTable","path":"/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"Modal","path":"/guide/Modal/Modal"},{"title":"Checkbox","path":"/guide/Checkbox/Checkbox"},{"title":"PasswordRevealer","path":"/guide/password-revealer/password-revealer"},{"title":"Button","path":"/guide/button/button"},{"title":"Select","path":"/guide/select/select"}],"/hooks":[{"title":"useAsync","path":"/hooks/use-async/use-async"},{"title":"useBodyScrollLock","path":"/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"useClickInside","path":"/hooks/use-click-inside/use-click-inside"},{"title":"useClickOutside","path":"/hooks/use-click-outside/use-click-outside"},{"title":"useComponentDidMount","path":"/hooks/use-component-did-mount/use-component-did-mount"},{"title":"useComponentDidUpdate","path":"/hooks/use-component-did-update/use-component-did-update"},{"title":"useComponentWillUnmount","path":"/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"useCopyToClipboard","path":"/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"useDebounce","path":"/hooks/use-debounce/use-debounce"},{"title":"useDefault","path":"/hooks/use-default/use-default"},{"title":"useDelayedState","path":"/hooks/use-delayed-state/use-delayed-state"},{"title":"useEffectOnce","path":"/hooks/use-effect-once/use-effect-once"},{"title":"useError","path":"/hooks/use-error/use-error"},{"title":"useEventListener","path":"/hooks/use-event-listener/use-event-listener"},{"title":"useFetch","path":"/hooks/use-fetch/use-fetch"},{"title":"useForm","path":"/hooks/use-form/use-form"},{"title":"useGetSet","path":"/hooks/use-get-set/use-get-set"},{"title":"useHash","path":"/hooks/use-hash/use-hash"},{"title":"useHover","path":"/hooks/use-hover/use-hover"},{"title":"useIntersectionObserver","path":"/hooks/use-intersection-observer/use-intersection-observer"},{"title":"useInterval","path":"/hooks/use-interval/use-interval"},{"title":"useIsomorphicEffect","path":"/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"useKeyPress","path":"/hooks/use-key-press/use-key-press"},{"title":"useLocalStorage","path":"/hooks/use-local-storage/use-local-storage"},{"title":"useMap","path":"/hooks/use-map/use-map"},{"title":"useMediaQuery","path":"/hooks/use-media-query/use-media-query"},{"title":"useMergeState","path":"/hooks/use-merge-state/use-merge-state"},{"title":"useMutationObserver","path":"/hooks/use-mutation-observer/use-mutation-observer"},{"title":"useNavigatorOnLine","path":"/hooks/use-navigator-on-line/use-navigator-on-line"},{"title":"useOnGlobalEvent","path":"/hooks/use-on-global-event/use-on-global-event"},{"title":"useOnWindowResize","path":"/hooks/use-on-window-resize/use-on-window-resize"},{"title":"useOnWindowScroll","path":"/hooks/use-on-window-scroll/use-on-window-scroll"},{"title":"usePersistedState","path":"/hooks/use-persisted-state/use-persisted-state"},{"title":"usePortal","path":"/hooks/use-portal/use-portal"},{"title":"usePrevious","path":"/hooks/use-previous/use-previous"},{"title":"useRequestAnimationFrame","path":"/hooks/use-request-animation-frame/use-request-animation-frame"},{"title":"useSSR","path":"/hooks/use-ssr/use-ssr"},{"title":"useScript","path":"/hooks/use-script/use-script"}],"/model":[{"title":"React model","path":"/model/model"}]},"zh-CN":{"/zh-CN/getting-started":[{"path":"/zh-CN/getting-started","title":"react \u4ee3\u7801\u6bb5","meta":{}}],"*":[{"path":"/zh-CN","title":"\u6b22\u8fce\u6765\u5230\u672c\u7f51\u7ad9","meta":{}}],"/zh-CN/antd":[{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u6309\u94ae","path":"/zh-CN/antd/loading-button"},{"title":"\u7701\u7565\u6587\u672c\u7ec4\u4ef6","path":"/zh-CN/antd/omit-text"},{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u5f39\u6846","path":"/zh-CN/antd/loading-modal"}],"/zh-CN/guide":[{"title":"\u624b\u98ce\u7434","path":"/zh-CN/guide/Accordion/Accordion"},{"title":"\u63d0\u793a","path":"/zh-CN/guide/Alert/Alert"},{"title":"\u81ea\u52a8\u6587\u672c\u94fe\u63a5","path":"/zh-CN/guide/auto-link/auto-link"},{"title":"\u62e8\u7535\u81f3","path":"/zh-CN/guide/Callto/Callto"},{"title":"\u8f6e\u64ad\u56fe","path":"/zh-CN/guide/Carousel/Carousel"},{"title":"\u53ef\u6298\u53e0\u7684\u5185\u5bb9","path":"/zh-CN/guide/Collapse/Collapse"},{"title":"\u53d7\u63a7\u7684\u8f93\u5165\u6846","path":"/zh-CN/guide/controlled-input/controlled-input"},{"title":"\u5012\u8ba1\u65f6\u7ec4\u4ef6","path":"/zh-CN/guide/count-down/count-down"},{"title":"\u7b80\u6613\u6570\u636e\u5217\u8868\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-list/simple-data-list"},{"title":"\u7b80\u6613\u6570\u636e\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-table/simple-data-table"},{"title":"\u62d6\u62fd\u6587\u4ef6\u7ec4\u4ef6","path":"/zh-CN/guide/file-drop/file-drop"},{"title":"\u61d2\u52a0\u8f7d\u56fe\u7247","path":"/zh-CN/guide/lazy-loading-image/lazy-loading-image"},{"title":"\u9650\u5236\u5b57\u7b26\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-textarea/limited-textarea"},{"title":"\u9650\u5236\u5b57\u6570\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-word-textarea/limited-word-textarea"},{"title":"\u52a0\u8f7d\u7ec4\u4ef6","path":"/zh-CN/guide/Loader/Loader"},{"title":"\u90ae\u4ef6\u94fe\u63a5\u7ec4\u4ef6","path":"/zh-CN/guide/Mailto/Mailto"},{"title":"\u7b80\u6613\u5bf9\u8c61\u6570\u7ec4\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"\u5f39\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Modal/Modal"},{"title":"\u590d\u9009\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Checkbox/Checkbox"},{"title":"\u5bc6\u7801\u663e\u793a\u5668","path":"/zh-CN/guide/password-revealer/password-revealer"},{"title":"\u6309\u94ae","path":"/zh-CN/guide/button/button"},{"title":"\u9009\u62e9\u5668","path":"/zh-CN/guide/select/select"}],"/zh-CN/hooks":[{"title":"\u5f02\u6b65","path":"/zh-CN/hooks/use-async/use-async"},{"title":"\u9501\u5b9abody\u5143\u7d20\u7684\u6eda\u52a8","path":"/zh-CN/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5185","path":"/zh-CN/hooks/use-click-inside/use-click-inside"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5916","path":"/zh-CN/hooks/use-click-outside/use-click-outside"},{"title":"\u7ec4\u4ef6\u7684\u6302\u8f7d","path":"/zh-CN/hooks/use-component-did-mount/use-component-did-mount"},{"title":"\u7ec4\u4ef6\u7684\u72b6\u6001\u66f4\u65b0","path":"/zh-CN/hooks/use-component-did-update/use-component-did-update"},{"title":"\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d","path":"/zh-CN/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"\u590d\u5236\u5230\u526a\u8d34\u677f","path":"/zh-CN/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"\u9632\u6296","path":"/zh-CN/hooks/use-debounce/use-debounce"},{"title":"\u9ed8\u8ba4\u503c","path":"/zh-CN/hooks/use-default/use-default"},{"title":"\u5ef6\u8fdf\u72b6\u6001","path":"/zh-CN/hooks/use-delayed-state/use-delayed-state"},{"title":"\u53ea\u6267\u884c\u4e00\u6b21\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-effect-once/use-effect-once"},{"title":"\u9519\u8bef\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-error/use-error"},{"title":"\u4e8b\u4ef6\u76d1\u542c\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-event-listener/use-event-listener"},{"title":"\u8bf7\u6c42\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-fetch/use-fetch"},{"title":"\u8868\u5355\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-form/use-form"},{"title":"\u72b6\u6001\u8bbe\u7f6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-get-set/use-get-set"},{"title":"\u4fee\u6539hash\u503c\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hash/use-hash"},{"title":"\u60ac\u6d6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hover/use-hover"},{"title":"\u5143\u7d20\u5904\u4e8e\u53ef\u89c6\u533a\u57df\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-intersection-observer/use-intersection-observer"},{"title":"\u5b9a\u65f6\u5668\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-interval/use-interval"},{"title":"\u526f\u4f5c\u7528\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"\u6309\u952e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-key-press/use-key-press"},{"title":"\u5b58\u50a8\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-local-storage/use-local-storage"},{"title":"\u6620\u5c04\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-map/use-map"},{"title":"\u68c0\u67e5\u5a92\u4f53\u67e5\u8be2\u73af\u5883\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-media-query/use-media-query"},{"title":"\u5408\u5e76\u72b6\u6001\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-merge-state/use-merge-state"},{"title":"\u76d1\u542c\u5143\u7d20\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-mutation-observer/use-mutation-observer"},{"title":"\u5728\u7ebf\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-navigator-on-line/use-navigator-on-line"},{"title":"\u5168\u5c40\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-global-event/use-on-global-event"},{"title":"\u8c03\u6574\u7a97\u53e3\u5927\u5c0f\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-window-resize/use-on-window-resize"},{"title":"\u7a97\u53e3\u6eda\u52a8\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-window-scroll/use-on-window-scroll"},{"title":"\u6c38\u4e45\u5b58\u50a8\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-persisted-state/use-persisted-state"},{"title":"\u4f20\u9001\u95e8\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-portal/use-portal"},{"title":"\u5b58\u50a8\u65e7\u503c\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-previous/use-previous"},{"title":"\u52a8\u753b\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-request-animation-frame/use-request-animation-frame"},{"title":"\u5224\u65ad\u73af\u5883\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-ssr/use-ssr"},{"title":"\u52a8\u6001\u52a0\u8f7d\u811a\u672c\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-script/use-script"}],"/zh-CN/model":[{"title":"react\u72b6\u6001\u7ba1\u7406\u5de5\u5177","path":"/zh-CN/model/model"}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"\u4e2d\u6587"}],"navs":{"en-US":[{"title":"getting-started","path":"/getting-started"},{"title":"guide","path":"/guide"},{"title":"hooks","path":"/hooks"},{"title":"model","path":"/model"},{"title":"antd","path":"/antd"},{"title":"github","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"about me","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"jue jin","path":"https://juejin.im/user/4054654613988718"},{"title":"segmentfault","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"gitee","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"blog","path":"https://www.cnblogs.com/eveningwater/"},{"title":"website","path":"https://www.eveningwater.com/"},{"title":"My project","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"17sucai","path":"https://www.17sucai.com/user/800544"},{"title":"ewColorPicker","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}],"zh-CN":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/zh-CN/getting-started"},{"title":"\u6307\u5357","path":"/zh-CN/guide"},{"title":"\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks"},{"title":"\u72b6\u6001\u7ba1\u7406","path":"/zh-CN/model"},{"title":"\u8682\u8681\u8bbe\u8ba1","path":"/zh-CN/antd"},{"title":"\u6e90\u7801\u5730\u5740","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"\u5173\u4e8e\u6211","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"\u6398\u91d1","path":"https://juejin.im/user/4054654613988718"},{"title":"\u601d\u5426","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"\u7801\u4e91","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"\u535a\u5ba2","path":"https://www.cnblogs.com/eveningwater/"},{"title":"\u4e2a\u4eba\u7f51\u7ad9","path":"https://www.eveningwater.com/"},{"title":"\u4e2a\u4eba\u9879\u76ee","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"\u95e8\u7d20\u6750","path":"https://www.17sucai.com/user/800544"},{"title":"\u989c\u8272\u9009\u62e9\u5668","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}]},"title":"react-code-segment","logo":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K","mode":"site","repository":{"url":"","branch":"master"},"theme":{}}',
+      '{"menus":{"en-US":{"/getting-started":[{"path":"/getting-started","title":"react code-segment","meta":{}}],"*":[{"path":"/","title":"Welcome to the website","meta":{}}],"/antd":[{"title":"LoadingButton","path":"/antd/loading-button"},{"title":"OmitText","path":"/antd/omit-text"},{"title":"LoadingModal","path":"/antd/loading-modal"}],"/guide":[{"title":"Accordion","path":"/guide/Accordion/Accordion"},{"title":"Alert","path":"/guide/Alert/Alert"},{"title":"AutoLink","path":"/guide/auto-link/auto-link"},{"title":"Callto","path":"/guide/Callto/Callto"},{"title":"Carousel","path":"/guide/Carousel/Carousel"},{"title":"Collapse","path":"/guide/Collapse/Collapse"},{"title":"ControlledInput","path":"/guide/controlled-input/controlled-input"},{"title":"CountDown","path":"/guide/count-down/count-down"},{"title":"SimpleDataList","path":"/guide/simple-data-list/simple-data-list"},{"title":"SimpleDataTable","path":"/guide/simple-data-table/simple-data-table"},{"title":"FileDrop","path":"/guide/file-drop/file-drop"},{"title":"LazyLoadingImage","path":"/guide/lazy-loading-image/lazy-loading-image"},{"title":"LimitedTextarea","path":"/guide/limited-textarea/limited-textarea"},{"title":"LimitedWordTextarea","path":"/guide/limited-word-textarea/limited-word-textarea"},{"title":"Loader","path":"/guide/Loader/Loader"},{"title":"Mailto","path":"/guide/Mailto/Mailto"},{"title":"SimpleMappedDataTable","path":"/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"Modal","path":"/guide/Modal/Modal"},{"title":"Checkbox","path":"/guide/Checkbox/Checkbox"},{"title":"PasswordRevealer","path":"/guide/password-revealer/password-revealer"},{"title":"Button","path":"/guide/button/button"},{"title":"Select","path":"/guide/select/select"}],"/hooks":[{"title":"useAsync","path":"/hooks/use-async/use-async"},{"title":"useBodyScrollLock","path":"/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"useClickInside","path":"/hooks/use-click-inside/use-click-inside"},{"title":"useClickOutside","path":"/hooks/use-click-outside/use-click-outside"},{"title":"useComponentDidMount","path":"/hooks/use-component-did-mount/use-component-did-mount"},{"title":"useComponentDidUpdate","path":"/hooks/use-component-did-update/use-component-did-update"},{"title":"useComponentWillUnmount","path":"/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"useCopyToClipboard","path":"/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"useDebounce","path":"/hooks/use-debounce/use-debounce"},{"title":"useDefault","path":"/hooks/use-default/use-default"},{"title":"useDelayedState","path":"/hooks/use-delayed-state/use-delayed-state"},{"title":"useEffectOnce","path":"/hooks/use-effect-once/use-effect-once"},{"title":"useError","path":"/hooks/use-error/use-error"},{"title":"useEventListener","path":"/hooks/use-event-listener/use-event-listener"},{"title":"useFetch","path":"/hooks/use-fetch/use-fetch"},{"title":"useForm","path":"/hooks/use-form/use-form"},{"title":"useGetSet","path":"/hooks/use-get-set/use-get-set"},{"title":"useHash","path":"/hooks/use-hash/use-hash"},{"title":"useHover","path":"/hooks/use-hover/use-hover"},{"title":"useIntersectionObserver","path":"/hooks/use-intersection-observer/use-intersection-observer"},{"title":"useInterval","path":"/hooks/use-interval/use-interval"},{"title":"useIsomorphicEffect","path":"/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"useKeyPress","path":"/hooks/use-key-press/use-key-press"},{"title":"useLocalStorage","path":"/hooks/use-local-storage/use-local-storage"},{"title":"useMap","path":"/hooks/use-map/use-map"},{"title":"useMediaQuery","path":"/hooks/use-media-query/use-media-query"},{"title":"useMergeState","path":"/hooks/use-merge-state/use-merge-state"},{"title":"useMutationObserver","path":"/hooks/use-mutation-observer/use-mutation-observer"},{"title":"useNavigatorOnLine","path":"/hooks/use-navigator-on-line/use-navigator-on-line"},{"title":"useOnGlobalEvent","path":"/hooks/use-on-global-event/use-on-global-event"},{"title":"useOnWindowResize","path":"/hooks/use-on-window-resize/use-on-window-resize"},{"title":"useOnWindowScroll","path":"/hooks/use-on-window-scroll/use-on-window-scroll"},{"title":"usePersistedState","path":"/hooks/use-persisted-state/use-persisted-state"},{"title":"usePortal","path":"/hooks/use-portal/use-portal"},{"title":"usePrevious","path":"/hooks/use-previous/use-previous"},{"title":"useRequestAnimationFrame","path":"/hooks/use-request-animation-frame/use-request-animation-frame"},{"title":"useSSR","path":"/hooks/use-ssr/use-ssr"},{"title":"useScript","path":"/hooks/use-script/use-script"},{"title":"useSearchParam","path":"/hooks/use-search-param/use-search-param"}],"/model":[{"title":"React model","path":"/model/model"}]},"zh-CN":{"/zh-CN/getting-started":[{"path":"/zh-CN/getting-started","title":"react \u4ee3\u7801\u6bb5","meta":{}}],"*":[{"path":"/zh-CN","title":"\u6b22\u8fce\u6765\u5230\u672c\u7f51\u7ad9","meta":{}}],"/zh-CN/antd":[{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u6309\u94ae","path":"/zh-CN/antd/loading-button"},{"title":"\u7701\u7565\u6587\u672c\u7ec4\u4ef6","path":"/zh-CN/antd/omit-text"},{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u5f39\u6846","path":"/zh-CN/antd/loading-modal"}],"/zh-CN/guide":[{"title":"\u624b\u98ce\u7434","path":"/zh-CN/guide/Accordion/Accordion"},{"title":"\u63d0\u793a","path":"/zh-CN/guide/Alert/Alert"},{"title":"\u81ea\u52a8\u6587\u672c\u94fe\u63a5","path":"/zh-CN/guide/auto-link/auto-link"},{"title":"\u62e8\u7535\u81f3","path":"/zh-CN/guide/Callto/Callto"},{"title":"\u8f6e\u64ad\u56fe","path":"/zh-CN/guide/Carousel/Carousel"},{"title":"\u53ef\u6298\u53e0\u7684\u5185\u5bb9","path":"/zh-CN/guide/Collapse/Collapse"},{"title":"\u53d7\u63a7\u7684\u8f93\u5165\u6846","path":"/zh-CN/guide/controlled-input/controlled-input"},{"title":"\u5012\u8ba1\u65f6\u7ec4\u4ef6","path":"/zh-CN/guide/count-down/count-down"},{"title":"\u7b80\u6613\u6570\u636e\u5217\u8868\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-list/simple-data-list"},{"title":"\u7b80\u6613\u6570\u636e\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-table/simple-data-table"},{"title":"\u62d6\u62fd\u6587\u4ef6\u7ec4\u4ef6","path":"/zh-CN/guide/file-drop/file-drop"},{"title":"\u61d2\u52a0\u8f7d\u56fe\u7247","path":"/zh-CN/guide/lazy-loading-image/lazy-loading-image"},{"title":"\u9650\u5236\u5b57\u7b26\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-textarea/limited-textarea"},{"title":"\u9650\u5236\u5b57\u6570\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-word-textarea/limited-word-textarea"},{"title":"\u52a0\u8f7d\u7ec4\u4ef6","path":"/zh-CN/guide/Loader/Loader"},{"title":"\u90ae\u4ef6\u94fe\u63a5\u7ec4\u4ef6","path":"/zh-CN/guide/Mailto/Mailto"},{"title":"\u7b80\u6613\u5bf9\u8c61\u6570\u7ec4\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"\u5f39\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Modal/Modal"},{"title":"\u590d\u9009\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Checkbox/Checkbox"},{"title":"\u5bc6\u7801\u663e\u793a\u5668","path":"/zh-CN/guide/password-revealer/password-revealer"},{"title":"\u6309\u94ae","path":"/zh-CN/guide/button/button"},{"title":"\u9009\u62e9\u5668","path":"/zh-CN/guide/select/select"}],"/zh-CN/hooks":[{"title":"\u5f02\u6b65","path":"/zh-CN/hooks/use-async/use-async"},{"title":"\u9501\u5b9abody\u5143\u7d20\u7684\u6eda\u52a8","path":"/zh-CN/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5185","path":"/zh-CN/hooks/use-click-inside/use-click-inside"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5916","path":"/zh-CN/hooks/use-click-outside/use-click-outside"},{"title":"\u7ec4\u4ef6\u7684\u6302\u8f7d","path":"/zh-CN/hooks/use-component-did-mount/use-component-did-mount"},{"title":"\u7ec4\u4ef6\u7684\u72b6\u6001\u66f4\u65b0","path":"/zh-CN/hooks/use-component-did-update/use-component-did-update"},{"title":"\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d","path":"/zh-CN/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"\u590d\u5236\u5230\u526a\u8d34\u677f","path":"/zh-CN/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"\u9632\u6296","path":"/zh-CN/hooks/use-debounce/use-debounce"},{"title":"\u9ed8\u8ba4\u503c","path":"/zh-CN/hooks/use-default/use-default"},{"title":"\u5ef6\u8fdf\u72b6\u6001","path":"/zh-CN/hooks/use-delayed-state/use-delayed-state"},{"title":"\u53ea\u6267\u884c\u4e00\u6b21\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-effect-once/use-effect-once"},{"title":"\u9519\u8bef\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-error/use-error"},{"title":"\u4e8b\u4ef6\u76d1\u542c\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-event-listener/use-event-listener"},{"title":"\u8bf7\u6c42\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-fetch/use-fetch"},{"title":"\u8868\u5355\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-form/use-form"},{"title":"\u72b6\u6001\u8bbe\u7f6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-get-set/use-get-set"},{"title":"\u4fee\u6539hash\u503c\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hash/use-hash"},{"title":"\u60ac\u6d6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hover/use-hover"},{"title":"\u5143\u7d20\u5904\u4e8e\u53ef\u89c6\u533a\u57df\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-intersection-observer/use-intersection-observer"},{"title":"\u5b9a\u65f6\u5668\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-interval/use-interval"},{"title":"\u526f\u4f5c\u7528\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"\u6309\u952e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-key-press/use-key-press"},{"title":"\u5b58\u50a8\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-local-storage/use-local-storage"},{"title":"\u6620\u5c04\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-map/use-map"},{"title":"\u68c0\u67e5\u5a92\u4f53\u67e5\u8be2\u73af\u5883\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-media-query/use-media-query"},{"title":"\u5408\u5e76\u72b6\u6001\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-merge-state/use-merge-state"},{"title":"\u76d1\u542c\u5143\u7d20\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-mutation-observer/use-mutation-observer"},{"title":"\u5728\u7ebf\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-navigator-on-line/use-navigator-on-line"},{"title":"\u5168\u5c40\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-global-event/use-on-global-event"},{"title":"\u8c03\u6574\u7a97\u53e3\u5927\u5c0f\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-window-resize/use-on-window-resize"},{"title":"\u7a97\u53e3\u6eda\u52a8\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-window-scroll/use-on-window-scroll"},{"title":"\u6c38\u4e45\u5b58\u50a8\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-persisted-state/use-persisted-state"},{"title":"\u4f20\u9001\u95e8\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-portal/use-portal"},{"title":"\u5b58\u50a8\u65e7\u503c\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-previous/use-previous"},{"title":"\u52a8\u753b\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-request-animation-frame/use-request-animation-frame"},{"title":"\u5224\u65ad\u73af\u5883\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-ssr/use-ssr"},{"title":"\u52a8\u6001\u52a0\u8f7d\u811a\u672c\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-script/use-script"},{"title":"\u83b7\u53d6\u6d4f\u89c8\u5668\u8def\u5f84\u53c2\u6570\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-search-param/use-search-param"}],"/zh-CN/model":[{"title":"react\u72b6\u6001\u7ba1\u7406\u5de5\u5177","path":"/zh-CN/model/model"}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"\u4e2d\u6587"}],"navs":{"en-US":[{"title":"getting-started","path":"/getting-started"},{"title":"guide","path":"/guide"},{"title":"hooks","path":"/hooks"},{"title":"model","path":"/model"},{"title":"antd","path":"/antd"},{"title":"github","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"about me","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"jue jin","path":"https://juejin.im/user/4054654613988718"},{"title":"segmentfault","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"gitee","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"blog","path":"https://www.cnblogs.com/eveningwater/"},{"title":"website","path":"https://www.eveningwater.com/"},{"title":"My project","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"17sucai","path":"https://www.17sucai.com/user/800544"},{"title":"ewColorPicker","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}],"zh-CN":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/zh-CN/getting-started"},{"title":"\u6307\u5357","path":"/zh-CN/guide"},{"title":"\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks"},{"title":"\u72b6\u6001\u7ba1\u7406","path":"/zh-CN/model"},{"title":"\u8682\u8681\u8bbe\u8ba1","path":"/zh-CN/antd"},{"title":"\u6e90\u7801\u5730\u5740","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"\u5173\u4e8e\u6211","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"\u6398\u91d1","path":"https://juejin.im/user/4054654613988718"},{"title":"\u601d\u5426","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"\u7801\u4e91","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"\u535a\u5ba2","path":"https://www.cnblogs.com/eveningwater/"},{"title":"\u4e2a\u4eba\u7f51\u7ad9","path":"https://www.eveningwater.com/"},{"title":"\u4e2a\u4eba\u9879\u76ee","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"\u95e8\u7d20\u6750","path":"https://www.17sucai.com/user/800544"},{"title":"\u989c\u8272\u9009\u62e9\u5668","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}]},"title":"react-code-segment","logo":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K","mode":"site","repository":{"url":"","branch":"master"},"theme":{}}',
     );
   },
   RH9F: function (e, t, n) {
@@ -53036,15 +53249,15 @@
     }
     var R = {},
       N = 1e4,
-      T = 0;
-    function P(e, t) {
+      P = 0;
+    function T(e, t) {
       var n = '' + t.end + t.strict + t.sensitive,
         a = R[n] || (R[n] = {});
       if (a[e]) return a[e];
       var r = [],
         o = d()(e, r, t),
         l = { regexp: o, keys: r };
-      return T < N && ((a[e] = l), T++), l;
+      return P < N && ((a[e] = l), P++), l;
     }
     function L(e, t) {
       void 0 === t && (t = {}),
@@ -53061,7 +53274,7 @@
       return u.reduce(function (t, n) {
         if (!n && '' !== n) return null;
         if (t) return t;
-        var a = P(n, { end: o, strict: i, sensitive: c }),
+        var a = T(n, { end: o, strict: i, sensitive: c }),
           r = a.regexp,
           l = a.keys,
           s = r.exec(e);
@@ -53424,7 +53637,7 @@
             )
           : b['createElement'](l, { className: ''.concat(a, '-icon') });
       },
-      T = function (e) {
+      P = function (e) {
         var t = e.isClosable,
           n = e.closeText,
           a = e.prefixCls,
@@ -53449,7 +53662,7 @@
             )
           : null;
       },
-      P = function (e) {
+      T = function (e) {
         var t,
           n = e.description,
           l = e.prefixCls,
@@ -53485,8 +53698,8 @@
             'closeIcon',
             'action',
           ]),
-          P = b['useState'](!1),
-          L = Object(r['a'])(P, 2),
+          T = b['useState'](!1),
+          L = Object(r['a'])(T, 2),
           D = L[0],
           A = L[1],
           M = b['useRef'](),
@@ -53580,7 +53793,7 @@
                     I,
                   )
                 : null,
-              b['createElement'](T, {
+              b['createElement'](P, {
                 isClosable: !!U,
                 closeText: C,
                 prefixCls: _,
@@ -53591,8 +53804,8 @@
           },
         );
       };
-    P.ErrorBoundary = O;
-    var L = (t['a'] = P);
+    T.ErrorBoundary = O;
+    var L = (t['a'] = T);
   },
   U8dV: function (e, t, n) {
     'use strict';
@@ -54373,17 +54586,17 @@
               var I = String(k[0]),
                 R = d(m(i(k.index), p.length), 0),
                 N = [],
-                T = 1;
-              T < k.length;
-              T++
+                P = 1;
+              P < k.length;
+              P++
             )
-              N.push(v(k[T]));
-            var P = k.groups;
+              N.push(v(k[P]));
+            var T = k.groups;
             if (f) {
               var L = [I].concat(N, R, p);
-              void 0 !== P && L.push(P);
+              void 0 !== T && L.push(T);
               var D = String(a.apply(void 0, L));
-            } else D = E(I, p, R, N, P, a);
+            } else D = E(I, p, R, N, T, a);
             R >= O && ((S += p.slice(O, R) + D), (O = R + I.length));
           }
           return S + p.slice(O);
@@ -54548,6 +54761,37 @@
           : null
       );
     }
+  },
+  'V6Y/': function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('Z1Ij'),
+      l = n('z5OR'),
+      i = () => {
+        var e = Object(o['a'])('post'),
+          t = (e) => {
+            history.pushState({}, '', location.pathname + (e || ''));
+          };
+        return r.a.createElement(
+          'div',
+          null,
+          r.a.createElement(
+            'p',
+            null,
+            'Post\u53c2\u6570\u503c:',
+            r.a.createElement(r.a.Fragment, null, e || 'null'),
+          ),
+          r.a.createElement(
+            l['a'],
+            { onClick: () => t('?post=42') },
+            '\u67e5\u770bpost\u53c2\u6570\u503c42',
+          ),
+          r.a.createElement(l['a'], { onClick: () => t() }, '\u9000\u51fa'),
+        );
+      };
+    t['default'] = i;
   },
   V7Vl: function (e, t, n) {
     'use strict';
@@ -57068,7 +57312,7 @@
                 'useScript.ts',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useState,useEffect } from 'react';\n\nconst useScript = (src: string): string => {\n    const [status,setStatus] = useState(src ? 'loading' : 'idle');\n    useEffect(() => {\n        if(!src){\n            setStatus('idle');\n            return;\n        }\n\n        let script = document.querySelector(`script[src=\"${src}\"]`) as HTMLScriptElement;\n\n        if(!script){\n            script = document.createElement('script') as HTMLScriptElement;\n            script.src = src;\n            script.async = true;\n            script.setAttribute('data-status','loading');\n            document.body.appendChild(script);\n\n\n            const setDataStatus = (event:Event) => {\n                script.setAttribute('data-status',event.type === 'load' ? 'ready' : 'error');\n            }\n\n            script.addEventListener('load',setDataStatus);\n            script.addEventListener('error',setDataStatus);\n        }else{\n            setStatus(script.getAttribute('data-status') as string);\n        }\n\n        const setStateStatus = (event: Event) => {\n            setStatus(event.type === 'load' ? 'ready' : 'error');\n        }\n\n        script.addEventListener('load',setStateStatus);\n        script.addEventListener('error',setStateStatus);\n\n        return () => {\n            if(script){\n                script.removeEventListener('load',setStateStatus);\n                script.removeEventListener('error',setStateStatus);\n            }\n        }\n    },[src])\n    return status;\n}\n\nexport default useScript;",
+                code: "import { useState, useEffect } from 'react';\n\nconst useScript = (src: string): string => {\n  const [status, setStatus] = useState(src ? 'loading' : 'idle');\n  useEffect(() => {\n    if (!src) {\n      setStatus('idle');\n      return;\n    }\n\n    let script = document.querySelector(\n      `script[src=\"${src}\"]`,\n    ) as HTMLScriptElement;\n\n    if (!script) {\n      script = document.createElement('script') as HTMLScriptElement;\n      script.src = src;\n      script.async = true;\n      script.setAttribute('data-status', 'loading');\n      document.body.appendChild(script);\n\n      const setDataStatus = (event: Event) => {\n        script.setAttribute(\n          'data-status',\n          event.type === 'load' ? 'ready' : 'error',\n        );\n      };\n\n      script.addEventListener('load', setDataStatus);\n      script.addEventListener('error', setDataStatus);\n    } else {\n      setStatus(script.getAttribute('data-status') as string);\n    }\n\n    const setStateStatus = (event: Event) => {\n      setStatus(event.type === 'load' ? 'ready' : 'error');\n    };\n\n    script.addEventListener('load', setStateStatus);\n    script.addEventListener('error', setStateStatus);\n\n    return () => {\n      if (script) {\n        script.removeEventListener('load', setStateStatus);\n        script.removeEventListener('error', setStateStatus);\n      }\n    };\n  }, [src]);\n  return status;\n};\n\nexport default useScript;",
                 lang: 'ts',
               }),
               r.a.createElement(
@@ -57082,7 +57326,7 @@
                 '\u793a\u4f8b',
               ),
               r.a.createElement(i['a'], {
-                code: "import React from 'react';\nimport useScript from './useScript';\nconst script = 'data:text/plain;charset=utf-8;base64,KGZ1bmN0aW9uKCl7IGNvbnNvbGUubG9nKCdIZWxsbycpIH0pKCk7';\n\nconst Child = () => {\n  const status = useScript(script);\n  return <p>\u5b50\u5143\u7d20\u72b6\u6001: {status}</p>;\n};\n\nconst Demo = () => {\n  const status = useScript(script);\n  return (\n    <>\n      <p>\u7236\u5143\u7d20\u72b6\u6001: {status}</p>\n      <Child />\n    </>\n  );\n};\n\nexport default Demo;",
+                code: "import React from 'react';\nimport useScript from './useScript';\nconst script =\n  'data:text/plain;charset=utf-8;base64,KGZ1bmN0aW9uKCl7IGNvbnNvbGUubG9nKCdIZWxsbycpIH0pKCk7';\n\nconst Child = () => {\n  const status = useScript(script);\n  return <p>\u5b50\u5143\u7d20\u72b6\u6001: {status}</p>;\n};\n\nconst Demo = () => {\n  const status = useScript(script);\n  return (\n    <>\n      <p>\u7236\u5143\u7d20\u72b6\u6001: {status}</p>\n      <Child />\n    </>\n  );\n};\n\nexport default Demo;",
                 lang: 'tsx',
               }),
               r.a.createElement(
@@ -57096,7 +57340,7 @@
                 'useScript.js',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useState,useEffect } from 'react';\n\nconst useScript = src => {\n    const [status,setStatus] = useState(src ? 'loading' : 'idle');\n    useEffect(() => {\n        if(!src){\n            setStatus('idle');\n            return;\n        }\n\n        let script = document.querySelector(`script[src=\"${src}\"]`);\n\n        if(!script){\n            script = document.createElement('script');\n            script.src = src;\n            script.async = true;\n            script.setAttribute('data-status','loading');\n            document.body.appendChild(script);\n\n\n            const setDataStatus = event => {\n                script.setAttribute('data-status',event.type === 'load' ? 'ready' : 'error');\n            }\n\n            script.addEventListener('load',setDataStatus);\n            script.addEventListener('error',setDataStatus);\n        }else{\n            setStatus(script.getAttribute('data-status'));\n        }\n\n        const setStateStatus = event => {\n            setStatus(event.type === 'load' ? 'ready' : 'error');\n        }\n\n        script.addEventListener('load',setStateStatus);\n        script.addEventListener('error',setStateStatus);\n\n        return () => {\n            if(script){\n                script.removeEventListener('load',setStateStatus);\n                script.removeEventListener('error',setStateStatus);\n            }\n        }\n    },[src])\n    return status;\n}\n\nexport default useScript;",
+                code: "import { useState, useEffect } from 'react';\n\nconst useScript = (src) => {\n  const [status, setStatus] = useState(src ? 'loading' : 'idle');\n  useEffect(() => {\n    if (!src) {\n      setStatus('idle');\n      return;\n    }\n\n    let script = document.querySelector(`script[src=\"${src}\"]`);\n\n    if (!script) {\n      script = document.createElement('script');\n      script.src = src;\n      script.async = true;\n      script.setAttribute('data-status', 'loading');\n      document.body.appendChild(script);\n\n      const setDataStatus = (event) => {\n        script.setAttribute(\n          'data-status',\n          event.type === 'load' ? 'ready' : 'error',\n        );\n      };\n\n      script.addEventListener('load', setDataStatus);\n      script.addEventListener('error', setDataStatus);\n    } else {\n      setStatus(script.getAttribute('data-status'));\n    }\n\n    const setStateStatus = (event) => {\n      setStatus(event.type === 'load' ? 'ready' : 'error');\n    };\n\n    script.addEventListener('load', setStateStatus);\n    script.addEventListener('error', setStateStatus);\n\n    return () => {\n      if (script) {\n        script.removeEventListener('load', setStateStatus);\n        script.removeEventListener('error', setStateStatus);\n      }\n    };\n  }, [src]);\n  return status;\n};\n\nexport default useScript;",
                 lang: 'js',
               }),
               r.a.createElement(
@@ -57114,7 +57358,7 @@
                 'js \u793a\u4f8b',
               ),
               r.a.createElement(i['a'], {
-                code: "import React from 'react';\nimport useScript from './useScript';\nconst script = 'data:text/plain;charset=utf-8;base64,KGZ1bmN0aW9uKCl7IGNvbnNvbGUubG9nKCdIZWxsbycpIH0pKCk7';\n\nconst Child = () => {\n  const status = useScript(script);\n  return <p>\u5b50\u5143\u7d20\u72b6\u6001: {status}</p>;\n};\n\nconst Demo = () => {\n  const status = useScript(script);\n  return (\n    <>\n      <p>\u7236\u5143\u7d20\u72b6\u6001: {status}</p>\n      <Child />\n    </>\n  );\n};\n\nexport default Demo;",
+                code: "import React from 'react';\nimport useScript from './useScript';\nconst script =\n  'data:text/plain;charset=utf-8;base64,KGZ1bmN0aW9uKCl7IGNvbnNvbGUubG9nKCdIZWxsbycpIH0pKCk7';\n\nconst Child = () => {\n  const status = useScript(script);\n  return <p>\u5b50\u5143\u7d20\u72b6\u6001: {status}</p>;\n};\n\nconst Demo = () => {\n  const status = useScript(script);\n  return (\n    <>\n      <p>\u7236\u5143\u7d20\u72b6\u6001: {status}</p>\n      <Child />\n    </>\n  );\n};\n\nexport default Demo;",
                 lang: 'jsx',
               }),
               r.a.createElement('p', null, '\u793a\u4f8b:'),
@@ -59270,8 +59514,8 @@
       return void 0 === e.state && -1 === navigator.userAgent.indexOf('CriOS');
     }
     var N = 'popstate',
-      T = 'hashchange';
-    function P() {
+      P = 'hashchange';
+    function T() {
       try {
         return window.history.state || {};
       } catch (e) {
@@ -59315,7 +59559,7 @@
         R(e) || A(h(e.state));
       }
       function L() {
-        A(h(P()));
+        A(h(T()));
       }
       var D = !1;
       function A(e) {
@@ -59336,7 +59580,7 @@
         var r = n - a;
         r && ((D = !0), H(r));
       }
-      var z = h(P()),
+      var z = h(T()),
         F = [z.key];
       function B(e) {
         return m + E(e);
@@ -59394,10 +59638,10 @@
         (G += e),
           1 === G && 1 === e
             ? (window.addEventListener(N, I),
-              r && window.addEventListener(T, L))
+              r && window.addEventListener(P, L))
             : 0 === G &&
               (window.removeEventListener(N, I),
-              r && window.removeEventListener(T, L));
+              r && window.removeEventListener(P, L));
       }
       var K = !1;
       function $(e) {
@@ -59523,9 +59767,9 @@
         var r = n - a;
         r && ((y = !0), q(r));
       }
-      var T = z(),
-        P = u(T);
-      T !== P && B(P);
+      var P = z(),
+        T = u(P);
+      P !== T && B(T);
       var L = m(),
         _ = [E(L)];
       function V(e) {
@@ -59813,8 +60057,8 @@
       I = a[k],
       R = I,
       N = a[C],
-      T = N && N[S],
-      P = Object.prototype,
+      P = N && N[S],
+      T = Object.prototype,
       L = a.RangeError,
       D = p.pack,
       A = p.unpack,
@@ -59882,14 +60126,14 @@
           (G = K[$++]) in R || l(R, G, I[G]);
         W.constructor = R;
       }
-      h && f(T) !== P && h(T, P);
+      h && f(P) !== T && h(P, T);
       var Y = new N(new R(2)),
-        Q = T.setInt8;
+        Q = P.setInt8;
       Y.setInt8(0, 2147483648),
         Y.setInt8(1, 2147483649),
         (!Y.getInt8(0) && Y.getInt8(1)) ||
           i(
-            T,
+            P,
             {
               setInt8: function (e, t) {
                 Q.call(this, e, (t << 24) >> 24);
@@ -60464,6 +60708,37 @@
       };
     t['default'] = m;
   },
+  Z1Ij: function (e, t, n) {
+    'use strict';
+    var a = n('tJVT'),
+      r = n('q1tI'),
+      o = ['popstate', 'pushstate', 'replacestate'],
+      l = (e) => {
+        var t = Object(r['useCallback'])(
+            () => () => new URLSearchParams(window.location.search).get(e),
+            [e],
+          ),
+          n = Object(r['useState'])(t),
+          l = Object(a['a'])(n, 2),
+          i = l[0],
+          s = l[1];
+        return (
+          Object(r['useEffect'])(() => {
+            var e = () => {
+              s(t());
+            };
+            return (
+              o.forEach((t) => window.addEventListener(t, e)),
+              () => {
+                o.forEach((t) => window.removeEventListener(t, e));
+              }
+            );
+          }, []),
+          i
+        );
+      };
+    t['a'] = l;
+  },
   Z4nd: function (e, t, n) {
     'use strict';
     var a = n('I+eb'),
@@ -60599,7 +60874,7 @@
         });
       var N = {};
       O && (N['aria-hidden'] = !0);
-      var T = i['createElement'](
+      var P = i['createElement'](
         C,
         Object(a['a'])(
           {
@@ -60614,7 +60889,7 @@
       );
       return (
         f &&
-          (T = i['createElement'](
+          (P = i['createElement'](
             u['a'],
             {
               onResize: function (e) {
@@ -60623,9 +60898,9 @@
               },
               disabled: h,
             },
-            T,
+            P,
           )),
-        T
+        P
       );
     }
     var h = i['forwardRef'](f);
@@ -60706,7 +60981,7 @@
     function N(e) {
       return '+ '.concat(e.length, ' ...');
     }
-    function T(e, t) {
+    function P(e, t) {
       var n = e.prefixCls,
         s = void 0 === n ? 'rc-overflow' : n,
         m = e.data,
@@ -60721,8 +60996,8 @@
         k = e.className,
         C = e.maxCount,
         S = e.renderRest,
-        T = e.renderRawRest,
-        P = e.suffix,
+        P = e.renderRawRest,
+        T = e.suffix,
         L = e.component,
         D = void 0 === L ? 'div' : L,
         A = e.itemComponent,
@@ -60820,10 +61095,10 @@
           n || (ye(e < p.length - 1), null === M || void 0 === M || M(e)),
           void 0 !== t && ue(t));
       }
-      function Te(e, t) {
+      function Pe(e, t) {
         U(t.clientWidth);
       }
-      function Pe(e, t) {
+      function Te(e, t) {
         $(function (n) {
           var a = new Map(n);
           return null === t ? a['delete'](e) : a.set(e, t), a;
@@ -60863,7 +61138,7 @@
                 break;
               }
             }
-            P && Ae(0) + oe > q && ue(null);
+            T && Ae(0) + oe > q && ue(null);
           }
         },
         [q, K, te, oe, Ie, Oe],
@@ -60887,7 +61162,7 @@
                       order: t,
                       item: e,
                       itemKey: n,
-                      registerSize: Pe,
+                      registerSize: Te,
                       display: t <= he,
                     },
                   ),
@@ -60905,7 +61180,7 @@
                   item: e,
                   renderItem: Re,
                   itemKey: n,
-                  registerSize: Pe,
+                  registerSize: Te,
                   display: t <= he,
                 }),
               );
@@ -60916,12 +61191,12 @@
           registerSize: Le,
           display: Me,
         };
-      if (T)
-        T &&
+      if (P)
+        P &&
           (Fe = i['createElement'](
             j.Provider,
             { value: Object(r['a'])(Object(r['a'])({}, Be), Ve) },
-            T(je),
+            P(je),
           ));
       else {
         var He = S || N;
@@ -60936,7 +61211,7 @@
         Object(a['a'])({ className: c()(!Ce && s, k), style: w, ref: t }, z),
         Oe.map(_e),
         Se ? Fe : null,
-        P &&
+        T &&
           i['createElement'](
             v,
             Object(a['a'])({}, Be, {
@@ -60948,25 +61223,25 @@
               display: !0,
               style: ze,
             }),
-            P,
+            T,
           ),
       );
       return (
         we &&
           (Ue = i['createElement'](
             u['a'],
-            { onResize: Te, disabled: !ke },
+            { onResize: Pe, disabled: !ke },
             Ue,
           )),
         Ue
       );
     }
-    var P = i['forwardRef'](T);
-    (P.displayName = 'Overflow'),
-      (P.Item = S),
-      (P.RESPONSIVE = I),
-      (P.INVALIDATE = R);
-    var L = P;
+    var T = i['forwardRef'](P);
+    (T.displayName = 'Overflow'),
+      (T.Item = S),
+      (T.RESPONSIVE = I),
+      (T.INVALIDATE = R);
+    var L = T;
     t['a'] = L;
   },
   ZUTh: function (e, t, n) {
@@ -62878,6 +63153,199 @@
     }
     e.exports = r;
   },
+  bgqu: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('cGfz'),
+      l = n('GKDz'),
+      i = n('1i5+'),
+      s = n('SQsl'),
+      c = r.a.memo((e) => {
+        var t = e.demos,
+          n = t['usesearchparam-demo.zh-cn'].component,
+          a = t['js-demo.zh-cn-31'].component;
+        return r.a.createElement(
+          r.a.Fragment,
+          null,
+          r.a.createElement(
+            r.a.Fragment,
+            null,
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement(
+                s['a'],
+                null,
+                r.a.createElement(
+                  'thead',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement('th', null, '\u6807\u9898'),
+                    r.a.createElement('th', null, '\u6807\u7b7e'),
+                    r.a.createElement(
+                      'th',
+                      null,
+                      '\u9996\u6b21\u6dfb\u52a0\u65f6\u95f4',
+                    ),
+                    r.a.createElement('th', null, '\u66f4\u65b0\u65f6\u95f4'),
+                  ),
+                ),
+                r.a.createElement(
+                  'tbody',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement(
+                      'td',
+                      null,
+                      '\u83b7\u53d6\u6d4f\u89c8\u5668\u8def\u5f84\u53c2\u6570\u94a9\u5b50\u51fd\u6570',
+                    ),
+                    r.a.createElement(
+                      'td',
+                      null,
+                      '\u94a9\u5b50\u51fd\u6570,\u526f\u4f5c\u7528\uff0c\u72b6\u6001',
+                    ),
+                    r.a.createElement('td', null, '2022/10/28'),
+                    r.a.createElement('td', null, '2022/10/28'),
+                  ),
+                ),
+              ),
+              r.a.createElement(
+                'p',
+                null,
+                '\u8ddf\u8e2a\u6d4f\u89c8\u5668\u7684\u4f4d\u7f6e\u641c\u7d22\u53c2\u6570\u3002',
+              ),
+              r.a.createElement(
+                'ul',
+                null,
+                r.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 useCallback() \u6302\u94a9\u521b\u5efa\u4e00\u4e2a\u56de\u8c03\uff0c\u8be5\u56de\u8c03\u4f7f\u7528 URLSearchParams \u6784\u9020\u51fd\u6570\u6765\u83b7\u53d6\u53c2\u6570\u7684\u5f53\u524d\u503c\u3002',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 useState() \u94a9\u5b50\u521b\u5efa\u4e00\u4e2a\u4fdd\u5b58\u53c2\u6570\u5f53\u524d\u503c\u7684\u72b6\u6001\u53d8\u91cf\u3002',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 useEffect() \u6302\u94a9\u8bbe\u7f6e\u9002\u5f53\u7684\u4e8b\u4ef6\u4fa6\u542c\u5668\u4ee5\u5728\u6302\u8f7d\u65f6\u66f4\u65b0\u72b6\u6001\u53d8\u91cf\uff0c\u5e76\u5728\u5378\u8f7d\u65f6\u6e05\u7406\u5b83\u4eec\u3002',
+                ),
+              ),
+              r.a.createElement(
+                'h4',
+                { id: 'usesearchparamts' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#usesearchparamts',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useSearchParam.ts',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import { useState,useCallback,useEffect } from 'react';\n\nconst events = ['popstate','pushstate','replacestate'];\nconst useSearchParam = (param: string): (() => string | null) => {\n    const getValue = useCallback(() => () => new URLSearchParams(window.location.search).get(param),[param]);\n\n    const [value,setValue] = useState(getValue);\n\n    useEffect(() => {\n        const onChange = () => {\n            setValue(getValue());\n        }\n\n        events.forEach(type => window.addEventListener(type,onChange));\n\n        return () => {\n            events.forEach(type => window.removeEventListener(type,onChange));\n        }\n    },[]);\n\n    return value;\n}\n\nexport default useSearchParam;",
+                lang: 'ts',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: '\u793a\u4f8b' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#\u793a\u4f8b', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                '\u793a\u4f8b',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport useSearchParam from './useSearchParam';\nimport { Button } from 'antd';\n\nconst Demo = () => {\n  const post = useSearchParam('post');\n  const onPushState = (param: string | void) => {\n    history.pushState({}, '', location.pathname + (param ? param : ''));\n  };\n  return (\n    <div>\n      <p>\n        Post\u53c2\u6570\u503c: \n        <>\n            {post || 'null'}\n        </>\n      </p>\n      <Button onClick={() => onPushState('?post=42')}>\u67e5\u770bpost\u53c2\u6570\u503c42</Button>\n      <Button onClick={() => onPushState()}>\u9000\u51fa</Button>\n    </div>\n  );\n};\n\nexport default Demo;",
+                lang: 'tsx',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'usesearchparamjs' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#usesearchparamjs',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useSearchParam.js',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import { useState,useCallback,useEffect } from 'react';\n\nconst events = ['popstate','pushstate','replacestate'];\nconst useSearchParam = param => {\n    const getValue = useCallback(() => () => new URLSearchParams(window.location.search).get(param),[param]);\n\n    const [value,setValue] = useState(getValue);\n\n    useEffect(() => {\n        const onChange = () => {\n            setValue(getValue());\n        }\n\n        events.forEach(type => window.addEventListener(type,onChange));\n\n        return () => {\n            events.forEach(type => window.removeEventListener(type,onChange));\n        }\n    },[]);\n\n    return value;\n}\n\nexport default useSearchParam;",
+                lang: 'js',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'js-\u793a\u4f8b' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#js-\u793a\u4f8b',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'js \u793a\u4f8b',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport useSearchParam from './useSearchParam';\nimport { Button } from 'antd';\n\nconst Demo = () => {\n  const post = useSearchParam('post');\n  const onPushState = param => {\n    history.pushState({}, '', location.pathname + (param ? param : ''));\n  };\n  return (\n    <div>\n      <p>\n        Post\u53c2\u6570\u503c: \n        <>\n            {post || 'null'}\n        </>\n      </p>\n      <Button onClick={() => onPushState('?post=42')}>\u67e5\u770bpost\u53c2\u6570\u503c42</Button>\n      <Button onClick={() => onPushState()}>\u9000\u51fa</Button>\n    </div>\n  );\n};\n\nexport default Demo;",
+                lang: 'jsx',
+              }),
+              r.a.createElement('p', null, '\u793a\u4f8b:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              t['usesearchparam-demo.zh-cn'].previewerProps,
+              r.a.createElement(n, null),
+            ),
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement('p', null, 'js \u793a\u4f8b:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              t['js-demo.zh-cn-31'].previewerProps,
+              r.a.createElement(a, null),
+            ),
+          ),
+        );
+      });
+    t['default'] = (e) => {
+      var t = r.a.useContext(o['context']),
+        n = t.demos;
+      return (
+        r.a.useEffect(() => {
+          var t;
+          null !== e &&
+            void 0 !== e &&
+            null !== (t = e.location) &&
+            void 0 !== t &&
+            t.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        r.a.createElement(c, { demos: n })
+      );
+    };
+  },
   bhV4: function (e, t, n) {
     'use strict';
     var a = n('tJVT'),
@@ -64599,8 +65067,8 @@
           I = e.align,
           R = void 0 === I ? {} : I,
           N = e.destroyTooltipOnHide,
-          T = void 0 !== N && N,
-          P = e.defaultVisible,
+          P = void 0 !== N && N,
+          T = e.defaultVisible,
           L = e.getTooltipContainer,
           D = e.overlayInnerStyle,
           A = e.arrowContent,
@@ -64653,9 +65121,9 @@
           },
           U = !1,
           q = !1;
-        if ('boolean' === typeof T) U = T;
-        else if (T && 'object' === Object(p['a'])(T)) {
-          var G = T.keepParent;
+        if ('boolean' === typeof P) U = P;
+        else if (P && 'object' === Object(p['a'])(P)) {
+          var G = P.keepParent;
           (U = !0 === G), (q = !1 === G);
         }
         return l['createElement'](
@@ -64676,7 +65144,7 @@
               popupTransitionName: k,
               popupAnimation: C,
               popupMotion: S,
-              defaultPopupVisible: P,
+              defaultPopupVisible: T,
               destroyPopupOnHide: U,
               autoDestroy: q,
               mouseLeaveDelay: c,
@@ -64713,8 +65181,8 @@
       I = n('0mlB'),
       R = { adjustX: 1, adjustY: 1 },
       N = { adjustX: 0, adjustY: 0 },
-      T = [0, 0];
-    function P(e) {
+      P = [0, 0];
+    function T(e) {
       return 'boolean' === typeof e
         ? e
           ? R
@@ -64748,10 +65216,10 @@
         Object.keys(c).forEach(function (e) {
           (c[e] = s
             ? Object(u['a'])(Object(u['a'])({}, c[e]), {
-                overflow: P(i),
-                targetOffset: T,
+                overflow: T(i),
+                targetOffset: P,
               })
-            : Object(u['a'])(Object(u['a'])({}, y[e]), { overflow: P(i) })),
+            : Object(u['a'])(Object(u['a'])({}, y[e]), { overflow: T(i) })),
             (c[e].ignoreShake = !0);
         }),
         c
@@ -64887,8 +65355,8 @@
         j = e.openClassName,
         R = e.getTooltipContainer,
         N = e.overlayClassName,
-        T = e.color,
-        P = e.overlayInnerStyle,
+        P = e.color,
+        T = e.overlayInnerStyle,
         M = e.children,
         B = o('tooltip', O),
         _ = o(),
@@ -64905,15 +65373,15 @@
           N,
           ((n = {}),
           Object(s['a'])(n, ''.concat(B, '-rtl'), 'rtl' === i),
-          Object(s['a'])(n, ''.concat(B, '-').concat(T), T && z.test(T)),
+          Object(s['a'])(n, ''.concat(B, '-').concat(P), P && z.test(P)),
           n),
         ),
-        K = P;
+        K = T;
       return (
-        T &&
-          !z.test(T) &&
-          ((K = Object(u['a'])(Object(u['a'])({}, P), { background: T })),
-          (H = { '--antd-arrow-background-color': T })),
+        P &&
+          !z.test(P) &&
+          ((K = Object(u['a'])(Object(u['a'])({}, T), { background: P })),
+          (H = { '--antd-arrow-background-color': P })),
         l['createElement'](
           k,
           Object(u['a'])({}, w, {
@@ -65072,8 +65540,8 @@
       I = n('cVYH'),
       R = j.get,
       N = j.set,
-      T = S.f,
-      P = O.f,
+      P = S.f,
+      T = O.f,
       L = Math.round,
       D = r.RangeError,
       A = s.ArrayBuffer,
@@ -65094,7 +65562,7 @@
         return r;
       },
       W = function (e, t) {
-        T(e, t, {
+        P(e, t, {
           get: function () {
             return R(this)[t];
           },
@@ -65114,7 +65582,7 @@
         );
       },
       Y = function (e, t) {
-        return $(e, (t = h(t, !0))) ? u(2, e[t]) : P(e, t);
+        return $(e, (t = h(t, !0))) ? u(2, e[t]) : T(e, t);
       },
       Q = function (e, t, n) {
         return !($(e, (t = h(t, !0))) && b(n) && v(n, 'value')) ||
@@ -65123,7 +65591,7 @@
           n.configurable ||
           (v(n, 'writable') && !n.writable) ||
           (v(n, 'enumerable') && !n.enumerable)
-          ? T(e, t, n)
+          ? P(e, t, n)
           : ((e[t] = n.value), e);
       };
     o
@@ -65156,8 +65624,8 @@
               n && (a = (a = L(a)) < 0 ? 0 : a > 255 ? 255 : 255 & a),
                 r.view[u](t * o + r.byteOffset, a, !0);
             },
-            P = function (e, t) {
-              T(e, t, {
+            T = function (e, t) {
+              P(e, t, {
                 get: function () {
                   return O(this, t);
                 },
@@ -65220,7 +65688,7 @@
                   length: s,
                   view: new M(r),
                 });
-                while (u < s) P(e, u++);
+                while (u < s) T(e, u++);
               })),
               E && E(v, B),
               (g = v.prototype = y(_))),
@@ -66800,8 +67268,8 @@
     var I = 1,
       R = 1,
       N = 0,
-      T = 0,
       P = 0,
+      T = 0,
       L = '';
     function D(e, t, n, a, r, o, l) {
       return {
@@ -66826,19 +67294,19 @@
       );
     }
     function M() {
-      return P;
+      return T;
     }
     function z() {
-      return (P = T > 0 ? w(L, --T) : 0), R--, 10 === P && ((R = 1), I--), P;
+      return (T = P > 0 ? w(L, --P) : 0), R--, 10 === T && ((R = 1), I--), T;
     }
     function F() {
-      return (P = T < N ? w(L, T++) : 0), R++, 10 === P && ((R = 1), I++), P;
+      return (T = P < N ? w(L, P++) : 0), R++, 10 === T && ((R = 1), I++), T;
     }
     function B() {
-      return w(L, T);
+      return w(L, P);
     }
     function _() {
-      return T;
+      return P;
     }
     function V(e, t) {
       return k(L, e, t);
@@ -66876,35 +67344,35 @@
       return 0;
     }
     function U(e) {
-      return (I = R = 1), (N = C((L = e))), (T = 0), [];
+      return (I = R = 1), (N = C((L = e))), (P = 0), [];
     }
     function q(e) {
       return (L = ''), e;
     }
     function G(e) {
-      return b(V(T - 1, $(91 === e ? e + 2 : 40 === e ? e + 1 : e)));
+      return b(V(P - 1, $(91 === e ? e + 2 : 40 === e ? e + 1 : e)));
     }
     function W(e) {
-      while ((P = B())) {
-        if (!(P < 33)) break;
+      while ((T = B())) {
+        if (!(T < 33)) break;
         F();
       }
-      return H(e) > 2 || H(P) > 3 ? '' : ' ';
+      return H(e) > 2 || H(T) > 3 ? '' : ' ';
     }
     function K(e, t) {
       while (--t && F())
-        if (P < 48 || P > 102 || (P > 57 && P < 65) || (P > 70 && P < 97))
+        if (T < 48 || T > 102 || (T > 57 && T < 65) || (T > 70 && T < 97))
           break;
       return V(e, _() + (t < 6 && 32 == B() && 32 == F()));
     }
     function $(e) {
       while (F())
-        switch (P) {
+        switch (T) {
           case e:
-            return T;
+            return P;
           case 34:
           case 39:
-            34 !== e && 39 !== e && $(P);
+            34 !== e && 39 !== e && $(T);
             break;
           case 40:
             41 === e && $(e);
@@ -66913,18 +67381,18 @@
             F();
             break;
         }
-      return T;
+      return P;
     }
     function Y(e, t) {
       while (F()) {
-        if (e + P === 57) break;
-        if (e + P === 84 && 47 === B()) break;
+        if (e + T === 57) break;
+        if (e + T === 84 && 47 === B()) break;
       }
-      return '/*' + V(t, T - 1) + '*' + h(47 === e ? e : F());
+      return '/*' + V(t, P - 1) + '*' + h(47 === e ? e : F());
     }
     function Q(e) {
       while (!H(B())) F();
-      return V(e, T);
+      return V(e, P);
     }
     function J(e) {
       return q(X('', null, null, null, [''], (e = U(e)), 0, [0], e));
@@ -67312,7 +67780,7 @@
             break;
           F();
         }
-        return V(e, T);
+        return V(e, P);
       },
       ce = function (e, t) {
         var n = -1,
@@ -67320,7 +67788,7 @@
         do {
           switch (H(a)) {
             case 0:
-              38 === a && 12 === B() && (t[n] = 1), (e[n] += se(T - 1, t, n));
+              38 === a && 12 === B() && (t[n] = 1), (e[n] += se(P - 1, t, n));
               break;
             case 2:
               e[n] += G(a);
@@ -67706,7 +68174,7 @@
         C,
         S,
         O = function (e) {
-          if (e === p && T) return T;
+          if (e === p && P) return P;
           if (!h && e in R) return R[e];
           switch (e) {
             case g:
@@ -67730,11 +68198,11 @@
         I = !1,
         R = e.prototype,
         N = R[v] || R['@@iterator'] || (p && R[p]),
-        T = (!h && N) || O(p),
-        P = ('Array' == t && R.entries) || N;
+        P = (!h && N) || O(p),
+        T = ('Array' == t && R.entries) || N;
       if (
-        (P &&
-          ((k = o(P.call(new e()))),
+        (T &&
+          ((k = o(T.call(new e()))),
           f !== Object.prototype &&
             k.next &&
             (d ||
@@ -67746,14 +68214,14 @@
           N &&
           N.name !== b &&
           ((I = !0),
-          (T = function () {
+          (P = function () {
             return N.call(this);
           })),
-        (d && !w) || R[v] === T || s(R, v, T),
-        (m[t] = T),
+        (d && !w) || R[v] === P || s(R, v, P),
+        (m[t] = P),
         p)
       )
-        if (((C = { values: O(b), keys: x ? T : O(g), entries: O(y) }), w))
+        if (((C = { values: O(b), keys: x ? P : O(g), entries: O(y) }), w))
           for (S in C) (h || I || !(S in R)) && c(R, S, C[S]);
         else a({ target: t, proto: !0, forced: h || I }, C);
       return C;
@@ -69804,17 +70272,17 @@
           I = j[0],
           R = void 0 === I ? 0 : I,
           N = j[1],
-          T = void 0 === N ? 0 : N,
-          P = j[2],
-          L = void 0 === P ? 0 : P,
+          P = void 0 === N ? 0 : N,
+          T = j[2],
+          L = void 0 === T ? 0 : T,
           D = O[1],
           A = () => {
             if (!y && !k) {
               var e = R,
-                t = T,
+                t = P,
                 n = L;
-              0 === R && 0 === T && 0 === L && C(!0),
-                0 === T && 0 === L && (e--, (t = 59), (n = 59)),
+              0 === R && 0 === P && 0 === L && C(!0),
+                0 === P && 0 === L && (e--, (t = 59), (n = 59)),
                 0 === L && (t--, (n = 60)),
                 n--,
                 D([e, t, n]);
@@ -69829,7 +70297,7 @@
               E(!1), C(!0);
             }, []),
             onRestart: Object(i['useCallback'])(() => {
-              D([R, T, L]), E(!1), C(!1);
+              D([R, P, L]), E(!1), C(!1);
             }, []),
           });
         var M = (e) => e.toString().padStart(2, '0');
@@ -69840,7 +70308,7 @@
             ? c
             : y
             ? f
-            : ''.concat(M(R)).concat(v).concat(M(T)).concat(v).concat(M(L)),
+            : ''.concat(M(R)).concat(v).concat(M(P)).concat(v).concat(M(L)),
         );
       });
     t['a'] = f;
@@ -70936,7 +71404,7 @@
       c = r.a.memo((e) => {
         var t = e.demos,
           n = t['usessr-demo'].component,
-          a = t['js-demo-30'].component;
+          a = t['js-demo-31'].component;
         return r.a.createElement(
           r.a.Fragment,
           null,
@@ -71078,7 +71546,7 @@
             ),
             r.a.createElement(
               l['default'],
-              t['js-demo-30'].previewerProps,
+              t['js-demo-31'].previewerProps,
               r.a.createElement(a, null),
             ),
           ),
@@ -72417,17 +72885,17 @@
           I = j[0],
           R = void 0 === I ? 0 : I,
           N = j[1],
-          T = void 0 === N ? 0 : N,
-          P = j[2],
-          L = void 0 === P ? 0 : P,
+          P = void 0 === N ? 0 : N,
+          T = j[2],
+          L = void 0 === T ? 0 : T,
           D = O[1],
           A = () => {
             if (!y && !k) {
               var e = R,
-                t = T,
+                t = P,
                 n = L;
-              0 === R && 0 === T && 0 === L && C(!0),
-                0 === T && 0 === L && (e--, (t = 59), (n = 59)),
+              0 === R && 0 === P && 0 === L && C(!0),
+                0 === P && 0 === L && (e--, (t = 59), (n = 59)),
                 0 === L && (t--, (n = 60)),
                 n--,
                 D([e, t, n]);
@@ -72442,7 +72910,7 @@
               E(!1), C(!0);
             }, []),
             onRestart: Object(i['useCallback'])(() => {
-              D([R, T, L]), E(!1), C(!1);
+              D([R, P, L]), E(!1), C(!1);
             }, []),
           });
         var M = (e) => e.toString().padStart(2, '0');
@@ -72453,7 +72921,7 @@
             ? c
             : y
             ? f
-            : ''.concat(M(R)).concat(v).concat(M(T)).concat(v).concat(M(L)),
+            : ''.concat(M(R)).concat(v).concat(M(P)).concat(v).concat(M(L)),
         );
       });
     t['a'] = f;
@@ -72557,7 +73025,7 @@
         n
       );
     }
-    function T(e) {
+    function P(e) {
       var t,
         n = e.icon,
         a = e.props,
@@ -72570,7 +73038,7 @@
         t || r || null
       );
     }
-    function P(e) {
+    function T(e) {
       var t = c['useContext'](S),
         n = t.mode,
         a = t.rtl,
@@ -72705,7 +73173,7 @@
           Z = X.active,
           ee = Object(s['a'])(X, W),
           te = A.includes(u),
-          ne = P(Y.length),
+          ne = T(Y.length),
           ae = function (e) {
             if (!$) {
               var t = Q(e);
@@ -72757,7 +73225,7 @@
             },
           ),
           f,
-          c['createElement'](T, {
+          c['createElement'](P, {
             props: Object(o['a'])(
               Object(o['a'])({}, e),
               {},
@@ -72946,10 +73414,10 @@
         I = Object(i['a'])(j, 2),
         R = I[0],
         N = I[1],
-        T = g
+        P = g
           ? Object(o['a'])(Object(o['a'])({}, me), E)
           : Object(o['a'])(Object(o['a'])({}, de), E),
-        P = fe[p],
+        T = fe[p],
         L = pe(p, C, O),
         D = Object(o['a'])(
           Object(o['a'])({}, L),
@@ -72987,8 +73455,8 @@
             ),
             stretch: 'horizontal' === p ? 'minWidth' : null,
             getPopupContainer: v,
-            builtinPlacements: T,
-            popupPlacement: P,
+            builtinPlacements: P,
+            popupPlacement: T,
             popupVisible: R,
             popup: l,
             popupAlign: u && { offset: u },
@@ -73154,16 +73622,16 @@
             },
             [B, ve, G, ke, m, te],
           ),
-          Re = P(ne.length),
+          Re = T(ne.length),
           Ne = function (e) {
             oe ||
               (null === C || void 0 === C || C({ key: m, domEvent: e }),
               'inline' === B && Q(m, !de));
           },
-          Te = ae(function (e) {
+          Pe = ae(function (e) {
             null === x || void 0 === x || x(N(e)), Y(e);
           }),
-          Pe = function (e) {
+          Te = function (e) {
             'inline' !== B && Q(m, e);
           },
           Le = function () {
@@ -73192,7 +73660,7 @@
             ),
             u,
             c['createElement'](
-              T,
+              P,
               {
                 icon: 'horizontal' !== B ? ue : null,
                 props: Object(o['a'])(
@@ -73223,7 +73691,7 @@
                 c['createElement'](ie, { id: De, ref: se }, h),
               ),
               disabled: oe,
-              onVisibleChange: Pe,
+              onVisibleChange: Te,
             },
             Ae,
           );
@@ -73261,7 +73729,7 @@
           c['createElement'](
             j,
             {
-              onItemClick: Te,
+              onItemClick: Pe,
               mode: 'horizontal' === B ? 'vertical' : B,
               itemIcon: ce,
               expandIcon: ue,
@@ -73303,8 +73771,8 @@
       Ie = x['a'].ESC,
       Re = x['a'].HOME,
       Ne = x['a'].END,
-      Te = [Se, Oe, ke, Ce];
-    function Pe(e, t, n, a) {
+      Pe = [Se, Oe, ke, Ce];
+    function Te(e, t, n, a) {
       var o,
         l,
         i,
@@ -73408,7 +73876,7 @@
         }, []),
         function (c) {
           var f = c.which;
-          if ([].concat(Te, [je, Ie, Re, Ne]).includes(f)) {
+          if ([].concat(Pe, [je, Ie, Re, Ne]).includes(f)) {
             var h,
               v,
               g,
@@ -73429,9 +73897,9 @@
             var y = v.get(t),
               E = De(y, h),
               x = g.get(E),
-              w = Pe(e, 1 === l(x, !0).length, n, f);
+              w = Te(e, 1 === l(x, !0).length, n, f);
             if (!w && f !== Re && f !== Ne) return;
-            (Te.includes(f) || [Re, Ne].includes(f)) && c.preventDefault();
+            (Pe.includes(f) || [Re, Ne].includes(f)) && c.preventDefault();
             var k = function (e) {
               if (e) {
                 var t = e,
@@ -73648,8 +74116,8 @@
           O = e.mode,
           I = void 0 === O ? 'vertical' : O,
           R = e.inlineCollapsed,
-          T = e.disabled,
-          P = e.disabledOverflow,
+          P = e.disabled,
+          T = e.disabledOverflow,
           L = e.subMenuOpenDelay,
           A = void 0 === L ? 0.1 : L,
           M = e.subMenuCloseDelay,
@@ -73699,8 +74167,8 @@
           Ie = Oe[1],
           Re = c['useRef'](),
           Ne = _e(S),
-          Te = 'rtl' === C;
-        var Pe = c['useMemo'](
+          Pe = 'rtl' === C;
+        var Te = c['useMemo'](
             function () {
               return ('inline' !== I && 'vertical' !== I) || !R
                 ? [I, !1]
@@ -73708,14 +74176,14 @@
             },
             [I, R],
           ),
-          Le = Object(i['a'])(Pe, 2),
+          Le = Object(i['a'])(Te, 2),
           De = Le[0],
           Ae = Le[1],
           Me = c['useState'](0),
           Fe = Object(i['a'])(Me, 2),
           Be = Fe[0],
           Ve = Fe[1],
-          He = Be >= Ce.length - 1 || 'horizontal' !== De || P,
+          He = Be >= Ce.length - 1 || 'horizontal' !== De || T,
           Ue = Object(f['a'])(H, {
             value: q,
             postState: function (e) {
@@ -73888,7 +74356,7 @@
             var n = null !== t && void 0 !== t ? t : !Ye.includes(e);
             Ot(e, n);
           },
-          Rt = ze(De, vt, Te, Ne, Re, ut, ct, gt, It, ye);
+          Rt = ze(De, vt, Pe, Ne, Re, ut, ct, gt, It, ye);
         c['useEffect'](function () {
           Ie(!0);
         }, []);
@@ -73901,8 +74369,8 @@
             },
             [Ee, we],
           ),
-          Tt =
-            'horizontal' !== De || P
+          Pt =
+            'horizontal' !== De || T
               ? Ce
               : Ce.map(function (e, t) {
                   return c['createElement'](
@@ -73911,7 +74379,7 @@
                     e,
                   );
                 }),
-          Pt = c['createElement'](
+          Tt = c['createElement'](
             v['a'],
             Object(a['a'])(
               {
@@ -73927,7 +74395,7 @@
                   y,
                   ((u = {}),
                   Object(r['a'])(u, ''.concat(h, '-inline-collapsed'), Ae),
-                  Object(r['a'])(u, ''.concat(h, '-rtl'), Te),
+                  Object(r['a'])(u, ''.concat(h, '-rtl'), Pe),
                   u),
                   g,
                 ),
@@ -73935,7 +74403,7 @@
                 style: b,
                 role: 'menu',
                 tabIndex: x,
-                data: Tt,
+                data: Pt,
                 renderRawItem: function (e) {
                   return e;
                 },
@@ -73955,7 +74423,7 @@
                   );
                 },
                 maxCount:
-                  'horizontal' !== De || P
+                  'horizontal' !== De || T
                     ? v['a'].INVALIDATE
                     : v['a'].RESPONSIVE,
                 ssr: 'full',
@@ -73981,8 +74449,8 @@
                 rootClassName: g,
                 mode: De,
                 openKeys: Ye,
-                rtl: Te,
-                disabled: T,
+                rtl: Pe,
+                disabled: P,
                 motion: je ? le : null,
                 defaultMotions: je ? ie : null,
                 activeKey: vt,
@@ -74001,7 +74469,7 @@
                 onItemClick: St,
                 onOpenChange: Ot,
               },
-              c['createElement'](F.Provider, { value: pt }, Pt),
+              c['createElement'](F.Provider, { value: pt }, Tt),
               c['createElement'](
                 'div',
                 { style: { display: 'none' }, 'aria-hidden': !0 },
@@ -74383,16 +74851,16 @@
           I = Object(l['useState'])(!1),
           R = Object(r['a'])(I, 2),
           N = R[0],
-          T = R[1];
+          P = R[1];
         Object(l['useEffect'])(() => {
           -1 !== O.x && -1 !== O.y
-            ? (T(!0), setTimeout(() => T(!1), 300))
-            : T(!1);
+            ? (P(!0), setTimeout(() => P(!1), 300))
+            : P(!1);
         }, [O]),
           Object(l['useEffect'])(() => {
             N || j({ x: -1, y: -1 });
           }, [N]);
-        var P = {
+        var T = {
             'ew-btn': !0,
             ['ew-btn-'.concat(t)]: !h,
             'ew-btn-ripple': u,
@@ -74421,7 +74889,7 @@
                 Object(a['a'])(
                   {
                     href: h,
-                    className: Object(s['a'])(P),
+                    className: Object(s['a'])(T),
                     target: g,
                     onClick: D,
                   },
@@ -74440,7 +74908,7 @@
                   {
                     type: m,
                     disabled: p,
-                    className: Object(s['a'])(P),
+                    className: Object(s['a'])(T),
                     onClick: D,
                   },
                   k,
@@ -74915,8 +75383,8 @@
           I = O[1],
           R = Object(l['useState'])({}),
           N = Object(a['a'])(R, 2),
-          T = N[0],
-          P = N[1],
+          P = N[0],
+          T = N[1],
           L = Object(l['useState'])(!1),
           D = Object(a['a'])(L, 2),
           A = D[0],
@@ -74945,10 +75413,10 @@
           'string' === typeof d && I(d);
         }, [d]);
         var H = (e) => {
-            P(e), I(e.value), n || (M(!1), _(!1)), f && f(e);
+            T(e), I(e.value), n || (M(!1), _(!1)), f && f(e);
           },
           U = () => {
-            n || (P({ label: '', value: '' }), I(''));
+            n || (T({ label: '', value: '' }), I(''));
           },
           q = { 'ew-select': !0, 'ew-select-disabled': n },
           G = {
@@ -74982,7 +75450,7 @@
               i.a.createElement(
                 'span',
                 { className: 'ew-select-selector-value' },
-                T[x],
+                P[x],
               ),
             ),
             i.a.createElement(
@@ -75092,9 +75560,9 @@
               'onMask',
             ]),
             N = Object(i['useState'])(!1),
-            T = Object(o['a'])(N, 2),
-            P = T[0],
-            L = T[1],
+            P = Object(o['a'])(N, 2),
+            T = P[0],
+            L = P[1],
             D = (e) => {
               var t = e.key;
               switch (t) {
@@ -75118,12 +75586,12 @@
             'number' === typeof k
               ? (A['width'] = k + 'px')
               : 'string' === typeof k && (A['width'] = k),
-            S && !P
+            S && !T
               ? null
               : s.a.createElement(
                   'div',
                   Object(r['a'])({ className: 'modal-container' }, R, {
-                    style: { display: P ? 'block' : 'none' },
+                    style: { display: T ? 'block' : 'none' },
                   }),
                   s.a.createElement(
                     'div',
@@ -75333,10 +75801,10 @@
       I = u.getterFor(S),
       R = u.getterFor(O),
       N = /\+/g,
-      T = Array(4),
-      P = function (e) {
+      P = Array(4),
+      T = function (e) {
         return (
-          T[e - 1] || (T[e - 1] = RegExp('((?:%[\\da-f]{2}){' + e + '})', 'gi'))
+          P[e - 1] || (P[e - 1] = RegExp('((?:%[\\da-f]{2}){' + e + '})', 'gi'))
         );
       },
       L = function (e) {
@@ -75352,7 +75820,7 @@
         try {
           return decodeURIComponent(t);
         } catch (a) {
-          while (n) t = t.replace(P(n--), L);
+          while (n) t = t.replace(T(n--), L);
           return t;
         }
       },
@@ -76346,7 +76814,7 @@
       c = r.a.memo((e) => {
         var t = e.demos,
           n = t['usessr-demo.zh-cn'].component,
-          a = t['js-demo.zh-cn-31'].component;
+          a = t['js-demo.zh-cn-32'].component;
         return r.a.createElement(
           r.a.Fragment,
           null,
@@ -76504,7 +76972,7 @@
             ),
             r.a.createElement(
               l['default'],
-              t['js-demo.zh-cn-31'].previewerProps,
+              t['js-demo.zh-cn-32'].previewerProps,
               r.a.createElement(a, null),
             ),
           ),
@@ -78039,8 +78507,8 @@
       I = n('busE'),
       R = n('VpIT'),
       N = n('93I0'),
-      T = n('0BK2'),
-      P = n('kOOl'),
+      P = n('0BK2'),
+      T = n('kOOl'),
       L = n('tiKp'),
       D = n('5Tg+'),
       A = n('dG/n'),
@@ -78150,7 +78618,7 @@
           n = [];
         return (
           F(t, function (e) {
-            d(X, e) || d(T, e) || n.push(e);
+            d(X, e) || d(P, e) || n.push(e);
           }),
           n
         );
@@ -78174,7 +78642,7 @@
               arguments.length && void 0 !== arguments[0]
                 ? String(arguments[0])
                 : void 0,
-            t = P(e),
+            t = T(e),
             n = function (e) {
               this === G && n.call(Z, e),
                 d(this, B) && d(this[B], t) && (this[B][t] = !1),
@@ -78186,7 +78654,7 @@
           return q(this).tag;
         }),
         I(W, 'withoutSetter', function (e) {
-          return le(P(e), e);
+          return le(T(e), e);
         }),
         (O.f = de),
         (S.f = se),
@@ -78291,7 +78759,7 @@
         },
       );
     }
-    W[V][H] || j(W[V], H, W[V].valueOf), M(W, _), (T[B] = !0);
+    W[V][H] || j(W[V], H, W[V].valueOf), M(W, _), (P[B] = !0);
   },
   pTqN: function (e, t, n) {
     'use strict';
@@ -80104,12 +80572,12 @@
             /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+\.)+[a-zA-Z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]{2,}))$/,
           hex: /^#?([a-f0-9]{6}|[a-f0-9]{3})$/i,
         },
-        T = {
+        P = {
           integer: function (e) {
-            return T.number(e) && parseInt(e, 10) === e;
+            return P.number(e) && parseInt(e, 10) === e;
           },
           float: function (e) {
-            return T.number(e) && !T.integer(e);
+            return P.number(e) && !P.integer(e);
           },
           array: function (e) {
             return Array.isArray(e);
@@ -80134,7 +80602,7 @@
             return !isNaN(e) && 'number' === typeof e;
           },
           object: function (e) {
-            return 'object' === typeof e && !T.array(e);
+            return 'object' === typeof e && !P.array(e);
           },
           method: function (e) {
             return 'function' === typeof e;
@@ -80151,7 +80619,7 @@
             return 'string' === typeof e && !!e.match(N.hex);
           },
         },
-        P = function (e, t, n, a, r) {
+        T = function (e, t, n, a, r) {
           if (e.required && void 0 === t) j(e, t, n, a, r);
           else {
             var o = [
@@ -80169,7 +80637,7 @@
               ],
               l = e.type;
             o.indexOf(l) > -1
-              ? T[l](t) || a.push(f(r.messages.types[l], e.fullField, e.type))
+              ? P[l](t) || a.push(f(r.messages.types[l], e.fullField, e.type))
               : l &&
                 typeof t !== e.type &&
                 a.push(f(r.messages.types[l], e.fullField, e.type));
@@ -80227,7 +80695,7 @@
         z = {
           required: j,
           whitespace: I,
-          type: P,
+          type: T,
           range: L,
           enum: A,
           pattern: M,
@@ -84193,8 +84661,8 @@
       I = n('N4YB'),
       R = n.n(I),
       N = n('buC1'),
-      T = n('2T80'),
-      P = n('x2bJ'),
+      P = n('2T80'),
+      T = n('x2bJ'),
       L = n('C+Hi'),
       D = n('i8i4'),
       A = n.n(D),
@@ -84375,7 +84843,7 @@
           (e.hookRefs = new Map()),
           (e.add = function (t, n) {
             var a = t.key || U(),
-              r = Object(T['a'])(Object(T['a'])({}, t), {}, { key: a }),
+              r = Object(P['a'])(Object(P['a'])({}, t), {}, { key: a }),
               o = e.props.maxCount;
             e.setState(function (e) {
               var t = e.notices,
@@ -84447,9 +84915,9 @@
                     s = a === t.length - 1 ? o.updateMark : void 0,
                     u = o.key,
                     d = o.userPassKey,
-                    m = Object(T['a'])(
-                      Object(T['a'])(
-                        Object(T['a'])({ prefixCls: r, closeIcon: l }, o),
+                    m = Object(P['a'])(
+                      Object(P['a'])(
+                        Object(P['a'])({ prefixCls: r, closeIcon: l }, o),
                         o.props,
                       ),
                       {},
@@ -84496,7 +84964,7 @@
                         ? i['createElement']('div', {
                             key: n,
                             className: R()(o, ''.concat(r, '-hook-holder')),
-                            style: Object(T['a'])({}, l),
+                            style: Object(P['a'])({}, l),
                             ref: function (t) {
                               'undefined' !== typeof n &&
                                 (t
@@ -84513,8 +84981,8 @@
                                   ? void 0
                                   : u.className,
                               ),
-                              style: Object(T['a'])(
-                                Object(T['a'])({}, l),
+                              style: Object(P['a'])(
+                                Object(P['a'])({}, l),
                                 null === u || void 0 === u ? void 0 : u.style,
                               ),
                               visible: s,
@@ -84558,14 +85026,14 @@
               },
               component: e,
               destroy: function () {
-                Object(P['b'])(l), l.parentNode && l.parentNode.removeChild(l);
+                Object(T['b'])(l), l.parentNode && l.parentNode.removeChild(l);
               },
               useNotification: function () {
                 return B(e);
               },
             }));
         }
-        Object(P['a'])(
+        Object(T['a'])(
           i['createElement'](q, Object(a['a'])({}, o, { ref: u })),
           l,
         );
@@ -84868,8 +85336,8 @@
       Ie = 24,
       Re = '',
       Ne = 'topRight',
-      Te = !1;
-    function Pe(e) {
+      Pe = !1;
+    function Te(e) {
       var t = e.duration,
         n = e.placement,
         a = e.bottom,
@@ -84884,7 +85352,7 @@
         void 0 !== r && (je = r),
         void 0 !== o && (we = o),
         void 0 !== l && (ke = l),
-        void 0 !== e.rtl && (Te = e.rtl),
+        void 0 !== e.rtl && (Pe = e.rtl),
         void 0 !== e.maxCount && (Ce = e.maxCount);
     }
     function Le(e) {
@@ -84951,7 +85419,7 @@
       else {
         var v = R()(
           ''.concat(m, '-').concat(a),
-          Object(w['a'])({}, ''.concat(m, '-rtl'), !0 === Te),
+          Object(w['a'])({}, ''.concat(m, '-rtl'), !0 === Pe),
         );
         Se[f] = new Promise(function (e) {
           K.newInstance(
@@ -85075,7 +85543,7 @@
           });
         });
       },
-      config: Pe,
+      config: Te,
       destroy: function () {
         Object.keys(Se).forEach(function (e) {
           Promise.resolve(Se[e]).then(function (e) {
@@ -86140,6 +86608,37 @@
       };
     t['default'] = s;
   },
+  ujDG: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('Z1Ij'),
+      l = n('z5OR'),
+      i = () => {
+        var e = Object(o['a'])('post'),
+          t = (e) => {
+            history.pushState({}, '', location.pathname + (e || ''));
+          };
+        return r.a.createElement(
+          'div',
+          null,
+          r.a.createElement(
+            'p',
+            null,
+            'Post param value:',
+            r.a.createElement(r.a.Fragment, null, e || 'null'),
+          ),
+          r.a.createElement(
+            l['a'],
+            { onClick: () => t('?post=42') },
+            'View post 42',
+          ),
+          r.a.createElement(l['a'], { onClick: () => t() }, 'Exit'),
+        );
+      };
+    t['default'] = i;
+  },
   ukYb: function (e, t, n) {
     var a = n('HEEG');
     function r(e) {
@@ -86858,11 +87357,11 @@
         })
       );
     }
-    var T = /\/+/g,
-      P = [];
+    var P = /\/+/g,
+      T = [];
     function L(e, t, n, a) {
-      if (P.length) {
-        var r = P.pop();
+      if (T.length) {
+        var r = T.pop();
         return (
           (r.result = e),
           (r.keyPrefix = t),
@@ -86880,7 +87379,7 @@
         (e.func = null),
         (e.context = null),
         (e.count = 0),
-        10 > P.length && P.push(e);
+        10 > T.length && T.push(e);
     }
     function A(e, t, n, a) {
       var r = typeof e;
@@ -86957,14 +87456,14 @@
                 r +
                   (!e.key || (t && t.key === e.key)
                     ? ''
-                    : ('' + e.key).replace(T, '$&/') + '/') +
+                    : ('' + e.key).replace(P, '$&/') + '/') +
                   n,
               )),
             a.push(e));
     }
     function _(e, t, n, a, r) {
       var o = '';
-      null != n && (o = ('' + n).replace(T, '$&/') + '/'),
+      null != n && (o = ('' + n).replace(P, '$&/') + '/'),
         (t = L(t, o, a, r)),
         M(e, B, t),
         D(t);
@@ -87793,7 +88292,7 @@
       };
     n('HDaU');
     function I(e, t) {
-      return L(e) || P(e, t) || N(e, t) || R();
+      return L(e) || T(e, t) || N(e, t) || R();
     }
     function R() {
       throw new TypeError(
@@ -87802,7 +88301,7 @@
     }
     function N(e, t) {
       if (e) {
-        if ('string' === typeof e) return T(e, t);
+        if ('string' === typeof e) return P(e, t);
         var n = Object.prototype.toString.call(e).slice(8, -1);
         return (
           'Object' === n && e.constructor && (n = e.constructor.name),
@@ -87810,17 +88309,17 @@
             ? Array.from(e)
             : 'Arguments' === n ||
               /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-            ? T(e, t)
+            ? P(e, t)
             : void 0
         );
       }
     }
-    function T(e, t) {
+    function P(e, t) {
       (null == t || t > e.length) && (t = e.length);
       for (var n = 0, a = new Array(t); n < t; n++) a[n] = e[n];
       return a;
     }
-    function P(e, t) {
+    function T(e, t) {
       var n =
         null == e
           ? null
@@ -88122,11 +88621,11 @@
           I = S[1],
           R = 'site' === d,
           N = R && p.hero,
-          T = R && p.features,
-          P = !1 !== p.sidemenu && !N && !T && !p.gapless,
+          P = R && p.features,
+          T = !1 !== p.sidemenu && !N && !P && !p.gapless,
           L =
             !N &&
-            !T &&
+            !P &&
             Boolean(
               null === (t = p.slugs) || void 0 === t ? void 0 : t.length,
             ) &&
@@ -88148,7 +88647,7 @@
           {
             className: '__dumi-default-layout',
             'data-route': i.pathname,
-            'data-show-sidemenu': String(P),
+            'data-show-sidemenu': String(T),
             'data-show-slugs': String(L),
             'data-site-mode': R,
             'data-gapless': String(!!p.gapless),
@@ -88187,13 +88686,13 @@
               className: '__dumi-default-layout-toc',
             }),
           N && H(p.hero),
-          T && U(p.features),
+          P && U(p.features),
           r.a.createElement(
             'div',
             { className: '__dumi-default-layout-content' },
             l,
             !N &&
-              !T &&
+              !P &&
               p.filePath &&
               !p.gapless &&
               r.a.createElement(
@@ -88222,7 +88721,7 @@
                   F,
                 ),
               ),
-            (N || T) &&
+            (N || P) &&
               p.footer &&
               r.a.createElement('div', {
                 className: '__dumi-default-layout-footer',
@@ -89028,20 +89527,20 @@
             },
           };
         });
-        var T,
-          P,
+        var P,
+          T,
           L,
           D = {};
         void 0 !== j && (D.width = j),
           void 0 !== I && (D.height = I),
           m &&
-            (T = l.a.createElement(
+            (P = l.a.createElement(
               'div',
               { className: ''.concat(n, '-footer') },
               m,
             )),
           c &&
-            (P = l.a.createElement(
+            (T = l.a.createElement(
               'div',
               { className: ''.concat(n, '-header') },
               l.a.createElement(
@@ -89068,13 +89567,13 @@
           'div',
           { className: ''.concat(n, '-content') },
           L,
-          P,
+          T,
           l.a.createElement(
             'div',
             Object(a['a'])({ className: ''.concat(n, '-body'), style: g }, b),
             v,
           ),
-          T,
+          P,
         );
         return l.a.createElement(
           'div',
@@ -89184,9 +89683,9 @@
         I = e.transitionName,
         R = e.animation,
         N = e.closable,
-        T = void 0 === N || N,
-        P = e.mask,
-        L = void 0 === P || P,
+        P = void 0 === N || N,
+        T = e.mask,
+        L = void 0 === T || T,
         D = e.maskTransitionName,
         A = e.maskAnimation,
         M = e.maskClosable,
@@ -89298,7 +89797,7 @@
                 onMouseDown: Z,
                 onMouseUp: ee,
                 ref: U,
-                closable: T,
+                closable: P,
                 ariaId: $,
                 prefixCls: n,
                 visible: c,
@@ -90604,8 +91103,8 @@
           'style',
           'wrap',
         ]),
-        T = m(),
-        P = c['useMemo'](
+        P = m(),
+        T = c['useMemo'](
           function () {
             return (Array.isArray(y) ? y : [y, y]).map(function (e) {
               return g(e);
@@ -90613,7 +91112,7 @@
           },
           [y],
         ),
-        L = Object(o['a'])(P, 2),
+        L = Object(o['a'])(T, 2),
         D = L[0],
         A = L[1],
         M = Object(s['a'])(w, { keepEmpty: !0 }),
@@ -90654,16 +91153,16 @@
               horizontalSize: D,
               verticalSize: A,
               latestIndex: H,
-              supportFlexGap: T,
+              supportFlexGap: P,
             };
           },
-          [D, A, H, T],
+          [D, A, H, P],
         );
       if (0 === M.length) return null;
       var G = {};
       return (
-        R && ((G.flexWrap = 'wrap'), T || (G.marginBottom = -A)),
-        T && ((G.columnGap = D), (G.rowGap = A)),
+        R && ((G.flexWrap = 'wrap'), P || (G.marginBottom = -A)),
+        P && ((G.columnGap = D), (G.rowGap = A)),
         c['createElement'](
           'div',
           Object(a['a'])(
@@ -91631,6 +92130,37 @@
       };
     t['default'] = l;
   },
+  yRrL: function (e, t, n) {
+    'use strict';
+    var a = n('tJVT'),
+      r = n('q1tI'),
+      o = ['popstate', 'pushstate', 'replacestate'],
+      l = (e) => {
+        var t = Object(r['useCallback'])(
+            () => () => new URLSearchParams(window.location.search).get(e),
+            [e],
+          ),
+          n = Object(r['useState'])(t),
+          l = Object(a['a'])(n, 2),
+          i = l[0],
+          s = l[1];
+        return (
+          Object(r['useEffect'])(() => {
+            var e = () => {
+              s(t());
+            };
+            return (
+              o.forEach((t) => window.addEventListener(t, e)),
+              () => {
+                o.forEach((t) => window.removeEventListener(t, e));
+              }
+            );
+          }, []),
+          i
+        );
+      };
+    t['a'] = l;
+  },
   ySuJ: function (e, t, n) {
     'use strict';
     n.r(t);
@@ -91877,6 +92407,183 @@
       o = a(r, 'WeakMap');
     e.exports = o;
   },
+  yjsn: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('cGfz'),
+      l = n('GKDz'),
+      i = n('1i5+'),
+      s = n('SQsl'),
+      c = r.a.memo((e) => {
+        var t = e.demos,
+          n = t['usesearchparam-demo'].component,
+          a = t['js-demo-30'].component;
+        return r.a.createElement(
+          r.a.Fragment,
+          null,
+          r.a.createElement(
+            r.a.Fragment,
+            null,
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement(
+                s['a'],
+                null,
+                r.a.createElement(
+                  'thead',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement('th', null, 'title'),
+                    r.a.createElement('th', null, 'tags'),
+                    r.a.createElement('th', null, 'firstSeen'),
+                    r.a.createElement('th', null, 'lastUpdated'),
+                  ),
+                ),
+                r.a.createElement(
+                  'tbody',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement('td', null, 'React useSearchParam hook'),
+                    r.a.createElement('td', null, 'hooks,effect,state'),
+                    r.a.createElement('td', null, '2022/10/28'),
+                    r.a.createElement('td', null, '2022/10/28'),
+                  ),
+                ),
+              ),
+              r.a.createElement(
+                'p',
+                null,
+                "Tracks the browser's location search param.",
+              ),
+              r.a.createElement(
+                'ul',
+                null,
+                r.a.createElement(
+                  'li',
+                  null,
+                  'Use the useCallback() hook to create a callback that uses the URLSearchParams constructor to get the current value of param.',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  'Use the useState() hook to create a state variable that holds the current value of the param.',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  'Use the useEffect() hook to set appropriate event listeners to update the state variable when mounting and clean them up when unmounting.',
+                ),
+              ),
+              r.a.createElement(
+                'h4',
+                { id: 'usesearchparamts' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#usesearchparamts',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useSearchParam.ts',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import { useState,useCallback,useEffect } from 'react';\n\nconst events = ['popstate','pushstate','replacestate'];\nconst useSearchParam = (param: string): (() => string | null) => {\n    const getValue = useCallback(() => () => new URLSearchParams(window.location.search).get(param),[param]);\n\n    const [value,setValue] = useState(getValue);\n\n    useEffect(() => {\n        const onChange = () => {\n            setValue(getValue());\n        }\n\n        events.forEach(type => window.addEventListener(type,onChange));\n\n        return () => {\n            events.forEach(type => window.removeEventListener(type,onChange));\n        }\n    },[]);\n\n    return value;\n}\n\nexport default useSearchParam;",
+                lang: 'ts',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'demo' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#demo', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'Demo',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport useSearchParam from './useSearchParam';\nimport { Button } from 'antd';\n\nconst Demo = () => {\n  const post = useSearchParam('post');\n  const onPushState = (param: string | void) => {\n    history.pushState({}, '', location.pathname + (param ? param : ''));\n  };\n  return (\n    <div>\n      <p>\n        Post param value: \n        <>\n            {post || 'null'}\n        </>\n      </p>\n      <Button onClick={() => onPushState('?post=42')}>View post 42</Button>\n      <Button onClick={() => onPushState()}>Exit</Button>\n    </div>\n  );\n};\n\nexport default Demo;",
+                lang: 'tsx',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'usesearchparamjs' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#usesearchparamjs',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useSearchParam.js',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import { useState,useCallback,useEffect } from 'react';\n\nconst events = ['popstate','pushstate','replacestate'];\nconst useSearchParam = param => {\n    const getValue = useCallback(() => () => new URLSearchParams(window.location.search).get(param),[param]);\n\n    const [value,setValue] = useState(getValue);\n\n    useEffect(() => {\n        const onChange = () => {\n            setValue(getValue());\n        }\n\n        events.forEach(type => window.addEventListener(type,onChange));\n\n        return () => {\n            events.forEach(type => window.removeEventListener(type,onChange));\n        }\n    },[]);\n\n    return value;\n}\n\nexport default useSearchParam;",
+                lang: 'js',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'js-demo' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#js-demo', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'js Demo',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport useSearchParam from './useSearchParam';\nimport { Button } from 'antd';\n\nconst Demo = () => {\n  const post = useSearchParam('post');\n  const onPushState = param => {\n    history.pushState({}, '', location.pathname + (param ? param : ''));\n  };\n  return (\n    <div>\n      <p>\n        Post param value: \n        <>\n            {post || 'null'}\n        </>\n      </p>\n      <Button onClick={() => onPushState('?post=42')}>View post 42</Button>\n      <Button onClick={() => onPushState()}>Exit</Button>\n    </div>\n  );\n};\n\nexport default Demo;",
+                lang: 'jsx',
+              }),
+              r.a.createElement('p', null, 'Demo:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              t['usesearchparam-demo'].previewerProps,
+              r.a.createElement(n, null),
+            ),
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement('p', null, 'js Demo:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              t['js-demo-30'].previewerProps,
+              r.a.createElement(a, null),
+            ),
+          ),
+        );
+      });
+    t['default'] = (e) => {
+      var t = r.a.useContext(o['context']),
+        n = t.demos;
+      return (
+        r.a.useEffect(() => {
+          var t;
+          null !== e &&
+            void 0 !== e &&
+            null !== (t = e.location) &&
+            void 0 !== t &&
+            t.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        r.a.createElement(c, { demos: n })
+      );
+    };
+  },
   yl30: function (e, t, n) {
     'use strict';
     var a = n('q1tI'),
@@ -91991,8 +92698,8 @@
       ),
       R = null,
       N = null,
-      T = null;
-    function P(e) {
+      P = null;
+    function T(e) {
       if ((e = v(e))) {
         if ('function' !== typeof R) throw Error(l(280));
         var t = e.stateNode;
@@ -92000,13 +92707,13 @@
       }
     }
     function L(e) {
-      N ? (T ? T.push(e) : (T = [e])) : (N = e);
+      N ? (P ? P.push(e) : (P = [e])) : (N = e);
     }
     function D() {
       if (N) {
         var e = N,
-          t = T;
-        if (((T = N = null), P(e), t)) for (e = 0; e < t.length; e++) P(t[e]);
+          t = P;
+        if (((P = N = null), T(e), t)) for (e = 0; e < t.length; e++) T(t[e]);
       }
     }
     function A(e, t) {
@@ -92020,7 +92727,7 @@
       B = !1,
       _ = !1;
     function V() {
-      (null === N && null === T) || (z(), D());
+      (null === N && null === P) || (z(), D());
     }
     function H(e, t, n) {
       if (_) return e(t, n);
@@ -92404,7 +93111,7 @@
     function Ne(e, t) {
       (t = t.checked), null != t && te(e, 'checked', t, !1);
     }
-    function Te(e, t) {
+    function Pe(e, t) {
       Ne(e, t);
       var n = ke(t.value),
         a = t.type;
@@ -92421,7 +93128,7 @@
           null != t.defaultChecked &&
           (e.defaultChecked = !!t.defaultChecked);
     }
-    function Pe(e, t, n) {
+    function Te(e, t, n) {
       if (t.hasOwnProperty('value') || t.hasOwnProperty('defaultValue')) {
         var a = t.type;
         if (
@@ -92867,8 +93574,8 @@
       It = null,
       Rt = null,
       Nt = new Map(),
-      Tt = new Map(),
-      Pt = [],
+      Pt = new Map(),
+      Tt = [],
       Lt =
         'mousedown mouseup touchcancel touchend touchstart auxclick dblclick pointercancel pointerdown pointerup dragend dragstart drop compositionend compositionstart keydown keypress keyup input textInput close cancel copy cut paste click change contextmenu reset submit'.split(
           ' ',
@@ -92915,7 +93622,7 @@
           break;
         case 'gotpointercapture':
         case 'lostpointercapture':
-          Tt.delete(t.pointerId);
+          Pt.delete(t.pointerId);
       }
     }
     function Ft(e, t, n, a, r, o) {
@@ -92939,7 +93646,7 @@
         case 'gotpointercapture':
           return (
             (o = r.pointerId),
-            Tt.set(o, Ft(Tt.get(o) || null, e, t, n, a, r)),
+            Pt.set(o, Ft(Pt.get(o) || null, e, t, n, a, r)),
             !0
           );
       }
@@ -93000,7 +93707,7 @@
         null !== It && Vt(It) && (It = null),
         null !== Rt && Vt(Rt) && (Rt = null),
         Nt.forEach(Ht),
-        Tt.forEach(Ht);
+        Pt.forEach(Ht);
     }
     function qt(e, t) {
       e.blockedOn === t &&
@@ -93025,14 +93732,14 @@
           null !== It && qt(It, e),
           null !== Rt && qt(Rt, e),
           Nt.forEach(t),
-          Tt.forEach(t),
+          Pt.forEach(t),
           n = 0;
-        n < Pt.length;
+        n < Tt.length;
         n++
       )
-        (a = Pt[n]), a.blockedOn === e && (a.blockedOn = null);
-      for (; 0 < Pt.length && ((n = Pt[0]), null === n.blockedOn); )
-        _t(n), null === n.blockedOn && Pt.shift();
+        (a = Tt[n]), a.blockedOn === e && (a.blockedOn = null);
+      for (; 0 < Tt.length && ((n = Tt[0]), null === n.blockedOn); )
+        _t(n), null === n.blockedOn && Tt.shift();
     }
     var Wt = {},
       Kt = new Map(),
@@ -93415,7 +94122,7 @@
       In = '$!',
       Rn = null,
       Nn = null;
-    function Tn(e, t) {
+    function Pn(e, t) {
       switch (e) {
         case 'button':
         case 'input':
@@ -93425,7 +94132,7 @@
       }
       return !1;
     }
-    function Pn(e, t) {
+    function Tn(e, t) {
       return (
         'textarea' === e ||
         'option' === e ||
@@ -93883,11 +94590,11 @@
     function Na(e) {
       ft(e);
     }
-    function Ta(e) {
+    function Pa(e) {
       var t = Un(e);
       if (je(t)) return e;
     }
-    function Pa(e, t) {
+    function Ta(e, t) {
       if ('change' === e) return t;
     }
     var La = !1;
@@ -93895,7 +94602,7 @@
       Ia && (Ia.detachEvent('onpropertychange', Aa), (Ra = Ia = null));
     }
     function Aa(e) {
-      if ('value' === e.propertyName && Ta(Ra))
+      if ('value' === e.propertyName && Pa(Ra))
         if (((e = ja(Ra, e, ht(e))), B)) ft(e);
         else {
           B = !0;
@@ -93913,13 +94620,13 @@
     }
     function za(e) {
       if ('selectionchange' === e || 'keyup' === e || 'keydown' === e)
-        return Ta(Ra);
+        return Pa(Ra);
     }
     function Fa(e, t) {
-      if ('click' === e) return Ta(t);
+      if ('click' === e) return Pa(t);
     }
     function Ba(e, t) {
-      if ('input' === e || 'change' === e) return Ta(t);
+      if ('input' === e || 'change' === e) return Pa(t);
     }
     I &&
       (La =
@@ -93931,7 +94638,7 @@
           var r = t ? Un(t) : window,
             o = r.nodeName && r.nodeName.toLowerCase();
           if ('select' === o || ('input' === o && 'file' === r.type))
-            var l = Pa;
+            var l = Ta;
           else if (Sa(r))
             if (La) l = Ba;
             else {
@@ -94484,8 +95191,8 @@
     var Ir = {},
       Rr = { current: Ir },
       Nr = { current: !1 },
-      Tr = Ir;
-    function Pr(e, t) {
+      Pr = Ir;
+    function Tr(e, t) {
       var n = e.type.contextTypes;
       if (!n) return Ir;
       var a = e.stateNode;
@@ -94525,7 +95232,7 @@
         (e =
           ((e = e.stateNode) && e.__reactInternalMemoizedMergedChildContext) ||
           Ir),
-        (Tr = Rr.current),
+        (Pr = Rr.current),
         jr(Rr, e),
         jr(Nr, Nr.current),
         !0
@@ -94535,7 +95242,7 @@
       var a = e.stateNode;
       if (!a) throw Error(l(169));
       n
-        ? ((e = Mr(e, t, Tr)),
+        ? ((e = Mr(e, t, Pr)),
           (a.__reactInternalMemoizedMergedChildContext = e),
           Or(Nr),
           Or(Rr),
@@ -94859,8 +95566,8 @@
           }
         }
     }
-    var To = ee.ReactCurrentBatchConfig,
-      Po = new a.Component().refs;
+    var Po = ee.ReactCurrentBatchConfig,
+      To = new a.Component().refs;
     function Lo(e, t, n, a) {
       (t = e.memoizedState),
         (n = n(a, t)),
@@ -94875,7 +95582,7 @@
       enqueueSetState: function (e, t, n) {
         e = e._reactInternalFiber;
         var a = ws(),
-          r = To.suspense;
+          r = Po.suspense;
         (a = ks(a, e, r)),
           (r = Oo(a, r)),
           (r.payload = t),
@@ -94886,7 +95593,7 @@
       enqueueReplaceState: function (e, t, n) {
         e = e._reactInternalFiber;
         var a = ws(),
-          r = To.suspense;
+          r = Po.suspense;
         (a = ks(a, e, r)),
           (r = Oo(a, r)),
           (r.tag = 1),
@@ -94898,7 +95605,7 @@
       enqueueForceUpdate: function (e, t) {
         e = e._reactInternalFiber;
         var n = ws(),
-          a = To.suspense;
+          a = Po.suspense;
         (n = ks(n, e, a)),
           (a = Oo(n, a)),
           (a.tag = 2),
@@ -94925,9 +95632,9 @@
       return (
         'object' === typeof o && null !== o
           ? (o = wo(o))
-          : ((r = Lr(t) ? Tr : Rr.current),
+          : ((r = Lr(t) ? Pr : Rr.current),
             (a = t.contextTypes),
-            (o = (a = null !== a && void 0 !== a) ? Pr(e, r) : Ir)),
+            (o = (a = null !== a && void 0 !== a) ? Tr(e, r) : Ir)),
         (t = new t(n, o)),
         (e.memoizedState =
           null !== t.state && void 0 !== t.state ? t.state : null),
@@ -94951,11 +95658,11 @@
     }
     function Fo(e, t, n, a) {
       var r = e.stateNode;
-      (r.props = n), (r.state = e.memoizedState), (r.refs = Po), Co(e);
+      (r.props = n), (r.state = e.memoizedState), (r.refs = To), Co(e);
       var o = t.contextType;
       'object' === typeof o && null !== o
         ? (r.context = wo(o))
-        : ((o = Lr(t) ? Tr : Rr.current), (r.context = Pr(e, o))),
+        : ((o = Lr(t) ? Pr : Rr.current), (r.context = Tr(e, o))),
         Ro(e, n, r, a),
         (r.state = e.memoizedState),
         (o = t.getDerivedStateFromProps),
@@ -94994,7 +95701,7 @@
             ? t.ref
             : ((t = function (e) {
                 var t = a.refs;
-                t === Po && (t = a.refs = {}),
+                t === To && (t = a.refs = {}),
                   null === e ? delete t[r] : (t[r] = e);
               }),
               (t._stringRef = r),
@@ -95648,7 +96355,7 @@
         ? a[0]
         : ((n.memoizedState = [e, t]), e);
     }
-    function Tl(e, t) {
+    function Pl(e, t) {
       var n = fl();
       t = void 0 === t ? null : t;
       var a = n.memoizedState;
@@ -95656,7 +96363,7 @@
         ? a[0]
         : ((e = e()), (n.memoizedState = [e, t]), e);
     }
-    function Pl(e, t, n) {
+    function Tl(e, t, n) {
       var a = ro();
       lo(98 > a ? 98 : a, function () {
         e(!0);
@@ -95673,7 +96380,7 @@
     }
     function Ll(e, t, n) {
       var a = ws(),
-        r = To.suspense;
+        r = Po.suspense;
       (a = ks(a, e, r)),
         (r = {
           expirationTime: a,
@@ -95790,7 +96497,7 @@
         useTransition: function (e) {
           var t = bl(!1),
             n = t[0];
-          return (t = t[1]), [Rl(Pl.bind(null, t, e), [t, e]), n];
+          return (t = t[1]), [Rl(Tl.bind(null, t, e), [t, e]), n];
         },
       },
       Ml = {
@@ -95800,7 +96507,7 @@
         useEffect: Cl,
         useImperativeHandle: jl,
         useLayoutEffect: Sl,
-        useMemo: Tl,
+        useMemo: Pl,
         useReducer: vl,
         useRef: El,
         useState: function () {
@@ -95831,7 +96538,7 @@
         useTransition: function (e) {
           var t = vl(hl),
             n = t[0];
-          return (t = t[1]), [Nl(Pl.bind(null, t, e), [t, e]), n];
+          return (t = t[1]), [Nl(Tl.bind(null, t, e), [t, e]), n];
         },
       },
       zl = {
@@ -95841,7 +96548,7 @@
         useEffect: Cl,
         useImperativeHandle: jl,
         useLayoutEffect: Sl,
-        useMemo: Tl,
+        useMemo: Pl,
         useReducer: gl,
         useRef: El,
         useState: function () {
@@ -95872,7 +96579,7 @@
         useTransition: function (e) {
           var t = gl(hl),
             n = t[0];
-          return (t = t[1]), [Nl(Pl.bind(null, t, e), [t, e]), n];
+          return (t = t[1]), [Nl(Tl.bind(null, t, e), [t, e]), n];
         },
       },
       Fl = null,
@@ -95944,7 +96651,7 @@
       var t = e.type;
       if (
         5 !== e.tag ||
-        ('head' !== t && 'body' !== t && !Pn(t, e.memoizedProps))
+        ('head' !== t && 'body' !== t && !Tn(t, e.memoizedProps))
       )
         for (t = Bl; t; ) Vl(e, t), (t = An(t.nextSibling));
       if ((ql(e), 13 === e.tag)) {
@@ -96034,9 +96741,9 @@
         (t.effectTag |= 128);
     }
     function ei(e, t, n, a, r) {
-      var o = Lr(n) ? Tr : Rr.current;
+      var o = Lr(n) ? Pr : Rr.current;
       return (
-        (o = Pr(t, o)),
+        (o = Tr(t, o)),
         xo(t, r),
         (n = ml(e, t, n, a, o, r)),
         null === e || $l
@@ -96066,7 +96773,7 @@
           c = n.contextType;
         'object' === typeof c && null !== c
           ? (c = wo(c))
-          : ((c = Lr(n) ? Tr : Rr.current), (c = Pr(t, c)));
+          : ((c = Lr(n) ? Pr : Rr.current), (c = Tr(t, c)));
         var u = n.getDerivedStateFromProps,
           d =
             'function' === typeof u ||
@@ -96112,7 +96819,7 @@
           (c = n.contextType),
           'object' === typeof c && null !== c
             ? (c = wo(c))
-            : ((c = Lr(n) ? Tr : Rr.current), (c = Pr(t, c))),
+            : ((c = Lr(n) ? Pr : Rr.current), (c = Tr(t, c))),
           (u = n.getDerivedStateFromProps),
           (d =
             'function' === typeof u ||
@@ -96504,7 +97211,7 @@
                 }
               switch (o) {
                 case 'input':
-                  Oe(a), Pe(a, i, !0);
+                  Oe(a), Te(a, i, !0);
                   break;
                 case 'textarea':
                   Oe(a), _e(a);
@@ -96605,7 +97312,7 @@
                 }
               switch (o) {
                 case 'input':
-                  Oe(e), Pe(e, a, !1);
+                  Oe(e), Te(e, a, !1);
                   break;
                 case 'textarea':
                   Oe(e), _e(e);
@@ -96624,7 +97331,7 @@
                 default:
                   'function' === typeof c.onClick && (e.onclick = bn);
               }
-              Tn(o, a) && (t.effectTag |= 4);
+              Pn(o, a) && (t.effectTag |= 4);
             }
             null !== t.ref && (t.effectTag |= 128);
           }
@@ -97049,7 +97756,7 @@
             void (
               null === t &&
               4 & n.effectTag &&
-              Tn(n.type, n.memoizedProps) &&
+              Pn(n.type, n.memoizedProps) &&
               e.focus()
             )
           );
@@ -97113,7 +97820,7 @@
           xi(t);
           break;
         case 4:
-          Pi(e, t, n);
+          Ti(e, t, n);
       }
     }
     function ji(e) {
@@ -97181,7 +97888,7 @@
           break e;
         }
       }
-      a ? Ni(e, n, t) : Ti(e, n, t);
+      a ? Ni(e, n, t) : Pi(e, n, t);
     }
     function Ni(e, t, n) {
       var a = e.tag,
@@ -97203,17 +97910,17 @@
         for (Ni(e, t, n), e = e.sibling; null !== e; )
           Ni(e, t, n), (e = e.sibling);
     }
-    function Ti(e, t, n) {
+    function Pi(e, t, n) {
       var a = e.tag,
         r = 5 === a || 6 === a;
       if (r)
         (e = r ? e.stateNode : e.stateNode.instance),
           t ? n.insertBefore(e, t) : n.appendChild(e);
       else if (4 !== a && ((e = e.child), null !== e))
-        for (Ti(e, t, n), e = e.sibling; null !== e; )
-          Ti(e, t, n), (e = e.sibling);
+        for (Pi(e, t, n), e = e.sibling; null !== e; )
+          Pi(e, t, n), (e = e.sibling);
     }
-    function Pi(e, t, n) {
+    function Ti(e, t, n) {
       for (var a, r, o = t, i = !1; ; ) {
         if (!i) {
           i = o.return;
@@ -97313,7 +98020,7 @@
               }
               switch (e) {
                 case 'input':
-                  Te(n, a);
+                  Pe(n, a);
                   break;
                 case 'textarea':
                   Be(n, a);
@@ -97780,7 +98487,7 @@
           co();
       }
     }
-    function Ts(e, t) {
+    function Ps(e, t) {
       var n = Xi;
       Xi |= 1;
       try {
@@ -97789,7 +98496,7 @@
         (Xi = n), Xi === Hi && co();
       }
     }
-    function Ps(e, t) {
+    function Ts(e, t) {
       var n = Xi;
       (Xi &= -2), (Xi |= Ui);
       try {
@@ -98178,7 +98885,7 @@
                   Li(ds.alternate, ds);
                   break;
                 case 8:
-                  (u = ds), Pi(i, u, s), ji(u);
+                  (u = ds), Ti(i, u, s), ji(u);
               }
               ds = ds.nextEffect;
             }
@@ -98447,7 +99154,7 @@
             null !== e &&
               ((e.alternate = null), (t.alternate = null), (t.effectTag |= 2)),
             (e = t.pendingProps),
-            (r = Pr(t, Rr.current)),
+            (r = Tr(t, Rr.current)),
             xo(t, n),
             (r = ml(null, t, a, e, r, n)),
             (t.effectTag |= 1),
@@ -98562,9 +99269,9 @@
             (r = t.pendingProps),
             (o = null !== e ? e.memoizedProps : null),
             (i = r.children),
-            Pn(a, r)
+            Tn(a, r)
               ? (i = null)
-              : null !== o && Pn(a, o) && (t.effectTag |= 16),
+              : null !== o && Tn(a, o) && (t.effectTag |= 16),
             Zl(e, t),
             4 & t.mode && 1 !== n && r.hidden
               ? ((t.expirationTime = t.childExpirationTime = 1), (t = null))
@@ -98934,7 +99641,7 @@
     function hc(e, t, n, a) {
       var r = t.current,
         o = ws(),
-        i = To.suspense;
+        i = Po.suspense;
       o = ks(o, r, i);
       e: if (n) {
         n = n._reactInternalFiber;
@@ -99053,7 +99760,7 @@
             s.call(e);
           };
         }
-        Ps(function () {
+        Ts(function () {
           hc(t, l, e, r);
         });
       }
@@ -99104,7 +99811,7 @@
       (R = function (e, t, n) {
         switch (t) {
           case 'input':
-            if ((Te(e, n), (t = n.name), 'radio' === n.type && null != t)) {
+            if ((Pe(e, n), (t = n.name), 'radio' === n.type && null != t)) {
               for (n = e; n.parentNode; ) n = n.parentNode;
               for (
                 n = n.querySelectorAll(
@@ -99118,7 +99825,7 @@
                 if (a !== e && a.form === e.form) {
                   var r = qn(a);
                   if (!r) throw Error(l(90));
-                  je(a), Te(a, r);
+                  je(a), Pe(a, r);
                 }
               }
             }
@@ -99130,7 +99837,7 @@
             (t = n.value), null != t && Me(e, !!n.multiple, t, !1);
         }
       }),
-      (A = Ts),
+      (A = Ps),
       (M = function (e, t, n, a, r) {
         var o = Xi;
         Xi |= 4;
@@ -99233,7 +99940,7 @@
         if (!Ec(e)) throw Error(l(40));
         return (
           !!e._reactRootContainer &&
-          (Ps(function () {
+          (Ts(function () {
             wc(null, null, e, !1, function () {
               (e._reactRootContainer = null), (e[_n] = null);
             });
@@ -99241,7 +99948,7 @@
           !0)
         );
       }),
-      (t.unstable_batchedUpdates = Ts),
+      (t.unstable_batchedUpdates = Ps),
       (t.unstable_createPortal = function (e, t) {
         return Cc(
           e,
@@ -100049,7 +100756,7 @@
       var t = e.route,
         n = e.opts,
         a = e.props,
-        r = P(
+        r = T(
           d(d({}, n), {}, { routes: t.routes || [], rootRoutes: n.rootRoutes }),
           { location: a.location },
         ),
@@ -100071,7 +100778,7 @@
       }
       return r;
     }
-    function T(e) {
+    function P(e) {
       var t,
         n,
         a,
@@ -100111,7 +100818,7 @@
             }),
           ));
     }
-    function P(e) {
+    function T(e) {
       var t =
         arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
       return e.routes
@@ -100119,7 +100826,7 @@
             j,
             t,
             e.routes.map(function (t, n) {
-              return T({
+              return P({
                 route: t,
                 index: n,
                 opts: d(d({}, e), {}, { rootRoutes: e.rootRoutes || e.routes }),
@@ -100162,7 +100869,7 @@
           },
           [t],
         ),
-        c['default'].createElement(r.Router, { history: t }, P(n))
+        c['default'].createElement(r.Router, { history: t }, T(n))
       );
     }
     function A(e) {
@@ -100277,7 +100984,7 @@
           : l.hydrate(t, n, a)
         : l.render(t, n, a);
     }
-    (t.renderClient = F), (t.renderRoutes = P);
+    (t.renderClient = F), (t.renderRoutes = T);
   },
   ztt8: function (e, t, n) {
     'use strict';
