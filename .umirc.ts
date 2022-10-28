@@ -23,7 +23,7 @@ export default defineConfig({
   ],
   scripts: [
     {
-      src: 'https://unpkg.com/vconsole@latest/dist/vconsole.min.js',
+      src: 'https://cdn.bootcdn.net/ajax/libs/vConsole/3.14.7/vconsole.min.js',
     },
     {
       src:

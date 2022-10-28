@@ -151,4 +151,8 @@ export default [
     title: 'useScript',
     path: '/hooks/use-script/use-script',
   },
+  {
+    title: 'useSearchParam',
+    path: '/hooks/use-search-param/use-search-param',
+  },
 ];

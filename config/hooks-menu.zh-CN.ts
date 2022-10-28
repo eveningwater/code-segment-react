@@ -151,4 +151,8 @@ export default [
     title: '动态加载脚本钩子函数',
     path: '/zh-CN/hooks/use-script/use-script',
   },
+  {
+    title: '获取浏览器路径参数钩子函数',
+    path: '/zh-CN/hooks/use-search-param/use-search-param',
+  },
 ];
