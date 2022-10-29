@@ -155,4 +155,8 @@ export default [
     title: '获取浏览器路径参数钩子函数',
     path: '/zh-CN/hooks/use-search-param/use-search-param',
   },
+  {
+    title: '会话存储钩子函数',
+    path: '/zh-CN/hooks/use-session-storage/use-session-storage',
+  },
 ];

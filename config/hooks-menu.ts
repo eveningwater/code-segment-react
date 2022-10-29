@@ -155,4 +155,8 @@ export default [
     title: 'useSearchParam',
     path: '/hooks/use-search-param/use-search-param',
   },
+  {
+    title: 'useSessionStorage',
+    path: '/hooks/use-session-storage/use-session-storage',
+  },
 ];
