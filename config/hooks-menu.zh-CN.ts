@@ -159,4 +159,8 @@ export default [
     title: '会话存储钩子函数',
     path: '/zh-CN/hooks/use-session-storage/use-session-storage',
   },
+  {
+    title: 'set钩子函数',
+    path: '/zh-CN/hooks/use-set/use-set',
+  },
 ];

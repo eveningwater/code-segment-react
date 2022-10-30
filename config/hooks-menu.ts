@@ -159,4 +159,8 @@ export default [
     title: 'useSessionStorage',
     path: '/hooks/use-session-storage/use-session-storage',
   },
+  {
+    title: 'useSet',
+    path: '/hooks/use-set/use-set',
+  },
 ];
