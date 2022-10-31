@@ -163,4 +163,8 @@ export default [
     title: 'set钩子函数',
     path: '/zh-CN/hooks/use-set/use-set',
   },
+  {
+    title: '延迟钩子函数',
+    path: '/zh-CN/hooks/use-timeout/use-timeout',
+  },
 ];
