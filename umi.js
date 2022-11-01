@@ -5124,6 +5124,171 @@
       return -1 === n ? [e] : [e.slice(0, n), e.slice(n + t.length)];
     };
   },
+  '/Fre': function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('cGfz'),
+      l = n('GKDz'),
+      i = n('1i5+'),
+      s = n('SQsl'),
+      c = r.a.memo((e) => {
+        var t = e.demos,
+          n = t['usetitle-demo'].component,
+          a = t['js-demo-35'].component;
+        return r.a.createElement(
+          r.a.Fragment,
+          null,
+          r.a.createElement(
+            r.a.Fragment,
+            null,
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement(
+                s['a'],
+                null,
+                r.a.createElement(
+                  'thead',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement('th', null, 'title'),
+                    r.a.createElement('th', null, 'tags'),
+                    r.a.createElement('th', null, 'firstSeen'),
+                    r.a.createElement('th', null, 'lastUpdated'),
+                  ),
+                ),
+                r.a.createElement(
+                  'tbody',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement('td', null, 'React useTitle hook'),
+                    r.a.createElement('td', null, 'hooks,effect'),
+                    r.a.createElement('td', null, '2022/11/01'),
+                    r.a.createElement('td', null, '2022/11/01'),
+                  ),
+                ),
+              ),
+              r.a.createElement('p', null, 'Sets the title of the page'),
+              r.a.createElement(
+                'ul',
+                null,
+                r.a.createElement(
+                  'li',
+                  null,
+                  'Use typeof to determine if the Document is defined or not.',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  'Use the useRef() hook to store the original title of the Document, if defined.',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  'Use the useEffect() hook to set Document.title to the passed value when the component mounts and clean up when unmounting.',
+                ),
+              ),
+              r.a.createElement(
+                'h4',
+                { id: 'usetitlets' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#usetitlets', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useTitle.ts',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import { useRef,useEffect } from 'react';\n\nconst useTitle = (title: string) => {\n    const isDocumentDefined = typeof document !== 'undefined';\n    const originalTitle = useRef<string>(isDocumentDefined ? document.title : '');\n\n    useEffect(() => {\n        if(!isDocumentDefined){\n            return;\n        }\n\n        if(document.title !== title){\n            document.title = title;\n        }\n\n        return () => {\n             document.title = originalTitle.current;\n        }\n    },[])\n}\n\nexport default useTitle;",
+                lang: 'ts',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'demo' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#demo', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'Demo',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport { Button, Alert } from 'antd';\nimport useTitle from './useTitle';\n\nconst CustomAlert = () => {\n  useTitle('Alert');\n  return <Alert message=\"Alert! Title has changed\" type=\"info\"></Alert>;\n};\n\nconst Demo = () => {\n  const [alertOpen, setAlertOpen] = React.useState(false);\n\n  return (\n    <>\n      <Button onClick={() => setAlertOpen(!alertOpen)}>Toggle alert</Button>\n      {alertOpen && <CustomAlert />}\n    </>\n  );\n};\n\nexport default Demo;",
+                lang: 'tsx',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'usetitlejs' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#usetitlejs', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useTitle.js',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import { useRef,useEffect } from 'react';\n\nconst useTitle = title => {\n    const isDocumentDefined = typeof document !== 'undefined';\n    const originalTitle = useRef<string>(isDocumentDefined ? document.title : '');\n\n    useEffect(() => {\n        if(!isDocumentDefined){\n            return;\n        }\n\n        if(document.title !== title){\n            document.title = title;\n        }\n\n        return () => {\n             document.title = originalTitle.current;\n        }\n    },[])\n}\n\nexport default useTitle;",
+                lang: 'js',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'js-demo' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#js-demo', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'js Demo',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport { Button, Alert } from 'antd';\nimport useTitle from './useTitle';\n\nconst CustomAlert = () => {\n  useTitle('Alert');\n  return <Alert message=\"Alert! Title has changed\" type=\"info\"></Alert>;\n};\n\nconst Demo = () => {\n  const [alertOpen, setAlertOpen] = React.useState(false);\n\n  return (\n    <>\n      <Button onClick={() => setAlertOpen(!alertOpen)}>Toggle alert</Button>\n      {alertOpen && <CustomAlert />}\n    </>\n  );\n};\n\nexport default Demo;",
+                lang: 'jsx',
+              }),
+              r.a.createElement('p', null, 'Demo:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              t['usetitle-demo'].previewerProps,
+              r.a.createElement(n, null),
+            ),
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement('p', null, 'js Demo:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              t['js-demo-35'].previewerProps,
+              r.a.createElement(a, null),
+            ),
+          ),
+        );
+      });
+    t['default'] = (e) => {
+      var t = r.a.useContext(o['context']),
+        n = t.demos;
+      return (
+        r.a.useEffect(() => {
+          var t;
+          null !== e &&
+            void 0 !== e &&
+            null !== (t = e.location) &&
+            void 0 !== t &&
+            t.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        r.a.createElement(c, { demos: n })
+      );
+    };
+  },
   '/GqU': function (e, t, n) {
     var a = n('RK3t'),
       r = n('HYAF');
@@ -10077,7 +10242,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/hooks/useTimeout/useTimeout.md',
-                updatedTime: 1667218925389,
+                updatedTime: 1667219317278,
                 slugs: [
                   { depth: 4, value: 'useTimeout.ts', heading: 'usetimeoutts' },
                   { depth: 4, value: 'Demo', heading: 'demo' },
@@ -10097,7 +10262,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/hooks/useTimeout/useTimeout.zh-CN.md',
-                updatedTime: 1667218932726,
+                updatedTime: 1667219317328,
                 slugs: [
                   { depth: 4, value: 'useTimeout.ts', heading: 'usetimeoutts' },
                   { depth: 4, value: '\u793a\u4f8b', heading: '\u793a\u4f8b' },
@@ -10118,6 +10283,51 @@
                 },
               },
               title: 'useTimeout.ts - react-code-segment',
+            },
+            {
+              path: '/hooks/use-title/use-title',
+              component: n('/Fre').default,
+              exact: !0,
+              meta: {
+                filePath: 'docs/hooks/useTitle/useTitle.md',
+                updatedTime: 1667305517992,
+                slugs: [
+                  { depth: 4, value: 'useTitle.ts', heading: 'usetitlets' },
+                  { depth: 4, value: 'Demo', heading: 'demo' },
+                  { depth: 4, value: 'useTitle.js', heading: 'usetitlejs' },
+                  { depth: 4, value: 'js Demo', heading: 'js-demo' },
+                ],
+                title: 'useTitle.ts',
+                hasPreviewer: !0,
+                nav: { path: '/hooks', title: 'Hooks' },
+                group: { path: '/hooks/use-title', title: 'UseTitle' },
+              },
+              title: 'useTitle.ts - react-code-segment',
+            },
+            {
+              path: '/zh-CN/hooks/use-title/use-title',
+              component: n('cPLD').default,
+              exact: !0,
+              meta: {
+                filePath: 'docs/hooks/useTitle/useTitle.zh-CN.md',
+                updatedTime: 1667305532641,
+                slugs: [
+                  { depth: 4, value: 'useTitle.ts', heading: 'usetitlets' },
+                  { depth: 4, value: '\u793a\u4f8b', heading: '\u793a\u4f8b' },
+                  { depth: 4, value: 'useTitle.js', heading: 'usetitlejs' },
+                  {
+                    depth: 4,
+                    value: 'js \u793a\u4f8b',
+                    heading: 'js-\u793a\u4f8b',
+                  },
+                ],
+                title: 'useTitle.ts',
+                hasPreviewer: !0,
+                locale: 'zh-CN',
+                nav: { path: '/zh-CN/hooks', title: 'Hooks' },
+                group: { path: '/zh-CN/hooks/use-title', title: 'UseTitle' },
+              },
+              title: 'useTitle.ts - react-code-segment',
             },
             {
               path: '/model/model',
@@ -11003,6 +11213,18 @@
               meta: {},
               exact: !0,
               redirect: '/zh-CN/hooks/use-timeout/use-timeout',
+            },
+            {
+              path: '/hooks/use-title',
+              meta: {},
+              exact: !0,
+              redirect: '/hooks/use-title/use-title',
+            },
+            {
+              path: '/zh-CN/hooks/use-title',
+              meta: {},
+              exact: !0,
+              redirect: '/zh-CN/hooks/use-title/use-title',
             },
             { path: '/model', meta: {}, exact: !0, redirect: '/model/model' },
             {
@@ -24436,6 +24658,36 @@
       );
     };
   },
+  '8pBM': function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('tJVT'),
+      r = n('q1tI'),
+      o = n.n(r),
+      l = n('U5vM'),
+      i = n('z5OR'),
+      s = n('O1Fu'),
+      c = () => (
+        Object(s['a'])('Alert'),
+        o.a.createElement(l['a'], {
+          message: 'Alert! Title has changed',
+          type: 'info',
+        })
+      ),
+      u = () => {
+        var e = o.a.useState(!1),
+          t = Object(a['a'])(e, 2),
+          n = t[0],
+          r = t[1];
+        return o.a.createElement(
+          o.a.Fragment,
+          null,
+          o.a.createElement(i['a'], { onClick: () => r(!n) }, 'Toggle alert'),
+          n && o.a.createElement(c, null),
+        );
+      };
+    t['default'] = u;
+  },
   '8r4s': function (e, t, n) {
     var a = n('I+eb'),
       r = n('P940');
@@ -36939,6 +37191,36 @@
       o = n('oHi+');
     r('from', o, a);
   },
+  IMaj: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('tJVT'),
+      r = n('q1tI'),
+      o = n.n(r),
+      l = n('U5vM'),
+      i = n('z5OR'),
+      s = n('VVsn'),
+      c = () => (
+        Object(s['a'])('Alert'),
+        o.a.createElement(l['a'], {
+          message: 'Alert! Title has changed',
+          type: 'info',
+        })
+      ),
+      u = () => {
+        var e = o.a.useState(!1),
+          t = Object(a['a'])(e, 2),
+          n = t[0],
+          r = t[1];
+        return o.a.createElement(
+          o.a.Fragment,
+          null,
+          o.a.createElement(i['a'], { onClick: () => r(!n) }, 'Toggle alert'),
+          n && o.a.createElement(c, null),
+        );
+      };
+    t['default'] = u;
+  },
   IPbe: function (e, t, n) {
     'use strict';
     n.r(t);
@@ -44282,6 +44564,24 @@
       );
     };
   },
+  O1Fu: function (e, t, n) {
+    'use strict';
+    var a = n('q1tI'),
+      r = (e) => {
+        var t = 'undefined' !== typeof document,
+          n = a['useRef'] < string > (t ? document.title : '');
+        Object(a['useEffect'])(() => {
+          if (t)
+            return (
+              document.title !== e && (document.title = e),
+              () => {
+                document.title = n.current;
+              }
+            );
+        }, []);
+      };
+    t['a'] = r;
+  },
   O2sK: function (e, t, n) {
     'use strict';
     n.r(t);
@@ -45698,24 +45998,36 @@
       vl =
         "import React from 'react';\nimport useSSR from './useSSR';\nconst Demo = () => {\n  const { isBrowser } = useSSR();\n  return <p>{isBrowser ? '\u8fd0\u884c\u5728\u6d4f\u89c8\u5668\u73af\u5883\u4e2d' : '\u8fd0\u884c\u5728\u670d\u52a1\u7aef\u73af\u5883\u4e2d'}</p>;\n};\n\nexport default Demo;",
       gl =
-        "import React from 'react';\r\nimport useTimeout from './useTimeout';\r\n\r\nconst Demo = () => {\r\n  const [seconds, setSeconds] = React.useState(0);\r\n  useTimeout(() => {\r\n    setSeconds(seconds + 1);\r\n  }, 1000);\r\n\r\n  return <p>{seconds}</p>;\r\n};\r\n\r\nexport default Demo;",
+        "import React from 'react';\nimport useTimeout from './useTimeout';\n\nconst Demo = () => {\n  const [seconds, setSeconds] = React.useState(0);\n  useTimeout(() => {\n    setSeconds(seconds + 1);\n  }, 1000);\n\n  return <p>{seconds}</p>;\n};\n\nexport default Demo;",
       bl =
-        "import { useRef,useEffect } from 'react';\r\n\r\nexport type AnyFunc = (...args:any []) => any;\r\n\r\nconst useTimeout = (callback:AnyFunc ,delay: number) => {\r\n    const savedCallback = useRef<AnyFunc>();\r\n    useEffect(() => {\r\n        savedCallback.current = callback;\r\n    },[callback]);\r\n\r\n    useEffect(() => {\r\n        const tick = () => savedCallback.current?.();\r\n        if(typeof delay === 'number'){\r\n            let id = setTimeout(tick,delay);\r\n            return () => {\r\n                clearTimeout(id);\r\n            }\r\n        }\r\n    },[delay])\r\n}\r\n\r\nexport default useTimeout;",
+        "import { useRef, useEffect } from 'react';\n\nexport type AnyFunc = (...args: any[]) => any;\n\nconst useTimeout = (callback: AnyFunc, delay: number) => {\n  const savedCallback = useRef<AnyFunc>();\n  useEffect(() => {\n    savedCallback.current = callback;\n  }, [callback]);\n\n  useEffect(() => {\n    const tick = () => savedCallback.current?.();\n    if (typeof delay === 'number') {\n      let id = setTimeout(tick, delay);\n      return () => {\n        clearTimeout(id);\n      };\n    }\n  }, [delay]);\n};\n\nexport default useTimeout;",
       El =
-        "import React from 'react';\r\nimport useTimeout from './useTimeout';\r\n\r\nconst Demo = () => {\r\n  const [seconds, setSeconds] = React.useState(0);\r\n  useTimeout(() => {\r\n    setSeconds(seconds + 1);\r\n  }, 1000);\r\n\r\n  return <p>{seconds}</p>;\r\n};\r\n\r\nexport default Demo;",
+        "import React from 'react';\nimport useTimeout from './useTimeout';\n\nconst Demo = () => {\n  const [seconds, setSeconds] = React.useState(0);\n  useTimeout(() => {\n    setSeconds(seconds + 1);\n  }, 1000);\n\n  return <p>{seconds}</p>;\n};\n\nexport default Demo;",
       yl =
-        "import { useRef,useEffect } from 'react';\r\n\r\nconst useTimeout = (callback ,delay) => {\r\n    const savedCallback = useRef();\r\n    useEffect(() => {\r\n        savedCallback.current = callback;\r\n    },[callback]);\r\n\r\n    useEffect(() => {\r\n        const tick = () => savedCallback.current?.();\r\n        if(typeof delay === 'number'){\r\n            let id = setTimeout(tick,delay);\r\n            return () => {\r\n                clearTimeout(id);\r\n            }\r\n        }\r\n    },[delay])\r\n}\r\n\r\nexport default useTimeout;",
+        "import { useRef, useEffect } from 'react';\n\nconst useTimeout = (callback, delay) => {\n  const savedCallback = useRef();\n  useEffect(() => {\n    savedCallback.current = callback;\n  }, [callback]);\n\n  useEffect(() => {\n    const tick = () => savedCallback.current?.();\n    if (typeof delay === 'number') {\n      let id = setTimeout(tick, delay);\n      return () => {\n        clearTimeout(id);\n      };\n    }\n  }, [delay]);\n};\n\nexport default useTimeout;",
       xl =
-        "import React from 'react';\r\nimport useTimeout from './useTimeout';\r\n\r\nconst Demo = () => {\r\n  const [seconds, setSeconds] = React.useState(0);\r\n  useTimeout(() => {\r\n    setSeconds(seconds + 1);\r\n  }, 1000);\r\n\r\n  return <p>{seconds}</p>;\r\n};\r\n\r\nexport default Demo;",
+        "import React from 'react';\nimport useTimeout from './useTimeout';\n\nconst Demo = () => {\n  const [seconds, setSeconds] = React.useState(0);\n  useTimeout(() => {\n    setSeconds(seconds + 1);\n  }, 1000);\n\n  return <p>{seconds}</p>;\n};\n\nexport default Demo;",
       wl =
-        "import React from 'react';\r\nimport useTimeout from './useTimeout';\r\n\r\nconst Demo = () => {\r\n  const [seconds, setSeconds] = React.useState(0);\r\n  useTimeout(() => {\r\n    setSeconds(seconds + 1);\r\n  }, 1000);\r\n\r\n  return <p>{seconds}</p>;\r\n};\r\n\r\nexport default Demo;",
+        "import React from 'react';\nimport useTimeout from './useTimeout';\n\nconst Demo = () => {\n  const [seconds, setSeconds] = React.useState(0);\n  useTimeout(() => {\n    setSeconds(seconds + 1);\n  }, 1000);\n\n  return <p>{seconds}</p>;\n};\n\nexport default Demo;",
       kl =
-        "import React, { useState } from 'react';\nimport { createModel } from './createModel';\nimport { Space, Button } from 'antd';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <Space wrap>\n      <Button onClick={counter.decrement}>-</Button>\n      <span>{counter.count}</span>\n      <Button onClick={counter.increment}>+</Button>\n    </Space>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
+        "import React from 'react';\r\nimport { Button, Alert } from 'antd';\r\nimport useTitle from './useTitle';\r\n\r\nconst CustomAlert = () => {\r\n  useTitle('Alert');\r\n  return <Alert message=\"Alert! Title has changed\" type=\"info\"></Alert>;\r\n};\r\n\r\nconst Demo = () => {\r\n  const [alertOpen, setAlertOpen] = React.useState(false);\r\n\r\n  return (\r\n    <>\r\n      <Button onClick={() => setAlertOpen(!alertOpen)}>Toggle alert</Button>\r\n      {alertOpen && <CustomAlert />}\r\n    </>\r\n  );\r\n};\r\n\r\nexport default Demo;",
       Cl =
-        "// \u5bfc\u5165\u7c7b\u578b\nimport type { ReactNode, ComponentType } from 'react';\nimport React from 'react';\nimport { createContext, useContext } from 'react';\nconst EMPTY: unique symbol = Symbol();\nexport interface ModelProviderProps<State = void> {\n  initialState?: State;\n  children: ReactNode;\n}\nexport interface Model<Value, State = void> {\n  Provider: ComponentType<ModelProviderProps<State>>;\n  useModel: () => Value;\n}\nexport const createModel = <Value, State = void>(\n  useHook: (initialState?: State) => Value,\n): Model<Value, State> => {\n  //\u521b\u5efa\u4e00\u4e2acontext\n  const context = createContext<Value | typeof EMPTY>(EMPTY);\n  // \u5b9a\u4e49Provider\u51fd\u6570\n  const Provider = (props: ModelProviderProps<State>) => {\n    const { Provider: ModelProvider } = context;\n    const { initialState, children } = props;\n    const value = useHook(initialState);\n    return <ModelProvider value={value}>{children}</ModelProvider>;\n  };\n  // \u5b9a\u4e49useModel\u51fd\u6570\n  const useModel = (): Value => {\n    const value = useContext(context);\n    // \u8fd9\u91cc\u786e\u5b9a\u4e00\u4e0b\u7528\u6237\u662f\u5426\u6b63\u786e\u4f7f\u7528Provider\n    if (value === EMPTY) {\n      //\u629b\u51fa\u5f02\u5e38\uff0c\u4f7f\u7528\u8005\u5e76\u6ca1\u6709\u7528Provider\u5305\u88f9\u7ec4\u4ef6\n      throw new Error('Component must be wrapped with <Container.Provider>');\n    }\n    // \u8fd4\u56decontext\n    return value;\n  };\n  return { Provider, useModel };\n};\nexport const useModel = <Value, State = void>(\n  model: Model<Value, State>,\n): Value => {\n  return model.useModel();\n};",
+        "import { useRef,useEffect } from 'react';\r\n\r\nconst useTitle = (title: string) => {\r\n    const isDocumentDefined = typeof document !== 'undefined';\r\n    const originalTitle = useRef<string>(isDocumentDefined ? document.title : '');\r\n\r\n    useEffect(() => {\r\n        if(!isDocumentDefined){\r\n            return;\r\n        }\r\n\r\n        if(document.title !== title){\r\n            document.title = title;\r\n        }\r\n\r\n        return () => {\r\n             document.title = originalTitle.current;\r\n        }\r\n    },[])\r\n}\r\n\r\nexport default useTitle;",
       Sl =
+        "import React from 'react';\r\nimport { Button, Alert } from 'antd';\r\nimport useTitle from './useTitle';\r\n\r\nconst CustomAlert = () => {\r\n  useTitle('Alert');\r\n  return <Alert message=\"Alert! Title has changed\" type=\"info\"></Alert>;\r\n};\r\n\r\nconst Demo = () => {\r\n  const [alertOpen, setAlertOpen] = React.useState(false);\r\n\r\n  return (\r\n    <>\r\n      <Button onClick={() => setAlertOpen(!alertOpen)}>Toggle alert</Button>\r\n      {alertOpen && <CustomAlert />}\r\n    </>\r\n  );\r\n};\r\n\r\nexport default Demo;",
+      Ol =
+        "import { useRef,useEffect } from 'react';\r\n\r\nconst useTitle = title => {\r\n    const isDocumentDefined = typeof document !== 'undefined';\r\n    const originalTitle = useRef<string>(isDocumentDefined ? document.title : '');\r\n\r\n    useEffect(() => {\r\n        if(!isDocumentDefined){\r\n            return;\r\n        }\r\n\r\n        if(document.title !== title){\r\n            document.title = title;\r\n        }\r\n\r\n        return () => {\r\n             document.title = originalTitle.current;\r\n        }\r\n    },[])\r\n}\r\n\r\nexport default useTitle;",
+      jl =
+        "import React from 'react';\r\nimport { Button, Alert } from 'antd';\r\nimport useTitle from './useTitle';\r\n\r\nconst CustomAlert = () => {\r\n  useTitle('\u8b66\u544a');\r\n  return <Alert message=\"\u8b66\u544a!\u6807\u9898\u5df2\u7ecf\u88ab\u4fee\u6539\u3002\" type=\"info\"></Alert>;\r\n};\r\n\r\nconst Demo = () => {\r\n  const [alertOpen, setAlertOpen] = React.useState(false);\r\n\r\n  return (\r\n    <>\r\n      <Button onClick={() => setAlertOpen(!alertOpen)}>\u5207\u6362\u8b66\u544a</Button>\r\n      {alertOpen && <CustomAlert />}\r\n    </>\r\n  );\r\n};\r\n\r\nexport default Demo;",
+      Il =
+        "import React from 'react';\r\nimport { Button, Alert } from 'antd';\r\nimport useTitle from './useTitle';\r\n\r\nconst CustomAlert = () => {\r\n  useTitle('\u8b66\u544a');\r\n  return <Alert message=\"\u8b66\u544a!\u6807\u9898\u5df2\u7ecf\u88ab\u4fee\u6539\u3002\" type=\"info\"></Alert>;\r\n};\r\n\r\nconst Demo = () => {\r\n  const [alertOpen, setAlertOpen] = React.useState(false);\r\n\r\n  return (\r\n    <>\r\n      <Button onClick={() => setAlertOpen(!alertOpen)}>\u5207\u6362\u8b66\u544a</Button>\r\n      {alertOpen && <CustomAlert />}\r\n    </>\r\n  );\r\n};\r\n\r\nexport default Demo;",
+      Rl =
         "import React, { useState } from 'react';\nimport { createModel } from './createModel';\nimport { Space, Button } from 'antd';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <Space wrap>\n      <Button onClick={counter.decrement}>-</Button>\n      <span>{counter.count}</span>\n      <Button onClick={counter.increment}>+</Button>\n    </Space>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
-      Ol = {
+      Tl =
+        "// \u5bfc\u5165\u7c7b\u578b\nimport type { ReactNode, ComponentType } from 'react';\nimport React from 'react';\nimport { createContext, useContext } from 'react';\nconst EMPTY: unique symbol = Symbol();\nexport interface ModelProviderProps<State = void> {\n  initialState?: State;\n  children: ReactNode;\n}\nexport interface Model<Value, State = void> {\n  Provider: ComponentType<ModelProviderProps<State>>;\n  useModel: () => Value;\n}\nexport const createModel = <Value, State = void>(\n  useHook: (initialState?: State) => Value,\n): Model<Value, State> => {\n  //\u521b\u5efa\u4e00\u4e2acontext\n  const context = createContext<Value | typeof EMPTY>(EMPTY);\n  // \u5b9a\u4e49Provider\u51fd\u6570\n  const Provider = (props: ModelProviderProps<State>) => {\n    const { Provider: ModelProvider } = context;\n    const { initialState, children } = props;\n    const value = useHook(initialState);\n    return <ModelProvider value={value}>{children}</ModelProvider>;\n  };\n  // \u5b9a\u4e49useModel\u51fd\u6570\n  const useModel = (): Value => {\n    const value = useContext(context);\n    // \u8fd9\u91cc\u786e\u5b9a\u4e00\u4e0b\u7528\u6237\u662f\u5426\u6b63\u786e\u4f7f\u7528Provider\n    if (value === EMPTY) {\n      //\u629b\u51fa\u5f02\u5e38\uff0c\u4f7f\u7528\u8005\u5e76\u6ca1\u6709\u7528Provider\u5305\u88f9\u7ec4\u4ef6\n      throw new Error('Component must be wrapped with <Container.Provider>');\n    }\n    // \u8fd4\u56decontext\n    return value;\n  };\n  return { Provider, useModel };\n};\nexport const useModel = <Value, State = void>(\n  model: Model<Value, State>,\n): Value => {\n  return model.useModel();\n};",
+      Nl =
+        "import React, { useState } from 'react';\nimport { createModel } from './createModel';\nimport { Space, Button } from 'antd';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <Space wrap>\n      <Button onClick={counter.decrement}>-</Button>\n      <span>{counter.count}</span>\n      <Button onClick={counter.increment}>+</Button>\n    </Space>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
+      Pl = {
         'loadingbutton-demo': {
           component: n('4ZnB').default,
           previewerProps: {
@@ -49852,12 +50164,72 @@
             identifier: 'js-demo.zh-cn-35',
           },
         },
+        'usetitle-demo': {
+          component: n('IMaj').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: kl },
+              'useTitle.ts': { import: './useTitle', content: Cl },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              antd: { version: '4.22.8', css: 'antd/dist/antd.css' },
+              'react-dom': { version: '>=16.9.0' },
+            },
+            identifier: 'usetitle-demo',
+          },
+        },
+        'js-demo-35': {
+          component: n('8pBM').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: Sl },
+              'useTitle.js': { import: './useTitle', content: Ol },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              antd: { version: '4.22.8', css: 'antd/dist/antd.css' },
+              'react-dom': { version: '>=16.9.0' },
+            },
+            identifier: 'js-demo-35',
+          },
+        },
+        'usetitle-demo.zh-cn': {
+          component: n('SLWW').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: jl },
+              'useTitle.ts': { import: './useTitle', content: Cl },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              antd: { version: '4.22.8', css: 'antd/dist/antd.css' },
+              'react-dom': { version: '>=16.9.0' },
+            },
+            identifier: 'usetitle-demo.zh-cn',
+          },
+        },
+        'js-demo.zh-cn-36': {
+          component: n('kmD5').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: Il },
+              'useTitle.js': { import: './useTitle', content: Ol },
+            },
+            dependencies: {
+              react: { version: '16.14.0' },
+              antd: { version: '4.22.8', css: 'antd/dist/antd.css' },
+              'react-dom': { version: '>=16.9.0' },
+            },
+            identifier: 'js-demo.zh-cn-36',
+          },
+        },
         'model-demo': {
           component: n('3P29').default,
           previewerProps: {
             sources: {
-              _: { tsx: kl },
-              'createModel.tsx': { import: './createModel', content: Cl },
+              _: { tsx: Rl },
+              'createModel.tsx': { import: './createModel', content: Tl },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -49871,8 +50243,8 @@
           component: n('lq0m').default,
           previewerProps: {
             sources: {
-              _: { tsx: Sl },
-              'createModel.tsx': { import: './createModel', content: Cl },
+              _: { tsx: Nl },
+              'createModel.tsx': { import: './createModel', content: Tl },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -49883,13 +50255,13 @@
           },
         },
       },
-      jl = n('Zs1V'),
-      Il = n('BI2/'),
-      Rl = n.n(Il);
+      Ll = n('Zs1V'),
+      Dl = n('BI2/'),
+      Al = n.n(Dl);
     t['default'] = (e) =>
       o.a.createElement(
-        Rl.a,
-        Object(a['a'])({}, e, { config: l, demos: Ol, apis: jl }),
+        Al.a,
+        Object(a['a'])({}, e, { config: l, demos: Pl, apis: Ll }),
       );
   },
   Odut: function (e, t, n) {
@@ -52303,7 +52675,7 @@
   },
   RGYn: function (e) {
     e.exports = JSON.parse(
-      '{"menus":{"en-US":{"/getting-started":[{"path":"/getting-started","title":"react code-segment","meta":{}}],"*":[{"path":"/","title":"Welcome to the website","meta":{}}],"/antd":[{"title":"LoadingButton","path":"/antd/loading-button"},{"title":"OmitText","path":"/antd/omit-text"},{"title":"LoadingModal","path":"/antd/loading-modal"}],"/guide":[{"title":"Accordion","path":"/guide/Accordion/Accordion"},{"title":"Alert","path":"/guide/Alert/Alert"},{"title":"AutoLink","path":"/guide/auto-link/auto-link"},{"title":"Callto","path":"/guide/Callto/Callto"},{"title":"Carousel","path":"/guide/Carousel/Carousel"},{"title":"Collapse","path":"/guide/Collapse/Collapse"},{"title":"ControlledInput","path":"/guide/controlled-input/controlled-input"},{"title":"CountDown","path":"/guide/count-down/count-down"},{"title":"SimpleDataList","path":"/guide/simple-data-list/simple-data-list"},{"title":"SimpleDataTable","path":"/guide/simple-data-table/simple-data-table"},{"title":"FileDrop","path":"/guide/file-drop/file-drop"},{"title":"LazyLoadingImage","path":"/guide/lazy-loading-image/lazy-loading-image"},{"title":"LimitedTextarea","path":"/guide/limited-textarea/limited-textarea"},{"title":"LimitedWordTextarea","path":"/guide/limited-word-textarea/limited-word-textarea"},{"title":"Loader","path":"/guide/Loader/Loader"},{"title":"Mailto","path":"/guide/Mailto/Mailto"},{"title":"SimpleMappedDataTable","path":"/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"Modal","path":"/guide/Modal/Modal"},{"title":"Checkbox","path":"/guide/Checkbox/Checkbox"},{"title":"PasswordRevealer","path":"/guide/password-revealer/password-revealer"},{"title":"Button","path":"/guide/button/button"},{"title":"Select","path":"/guide/select/select"}],"/hooks":[{"title":"useAsync","path":"/hooks/use-async/use-async"},{"title":"useBodyScrollLock","path":"/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"useClickInside","path":"/hooks/use-click-inside/use-click-inside"},{"title":"useClickOutside","path":"/hooks/use-click-outside/use-click-outside"},{"title":"useComponentDidMount","path":"/hooks/use-component-did-mount/use-component-did-mount"},{"title":"useComponentDidUpdate","path":"/hooks/use-component-did-update/use-component-did-update"},{"title":"useComponentWillUnmount","path":"/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"useCopyToClipboard","path":"/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"useDebounce","path":"/hooks/use-debounce/use-debounce"},{"title":"useDefault","path":"/hooks/use-default/use-default"},{"title":"useDelayedState","path":"/hooks/use-delayed-state/use-delayed-state"},{"title":"useEffectOnce","path":"/hooks/use-effect-once/use-effect-once"},{"title":"useError","path":"/hooks/use-error/use-error"},{"title":"useEventListener","path":"/hooks/use-event-listener/use-event-listener"},{"title":"useFetch","path":"/hooks/use-fetch/use-fetch"},{"title":"useForm","path":"/hooks/use-form/use-form"},{"title":"useGetSet","path":"/hooks/use-get-set/use-get-set"},{"title":"useHash","path":"/hooks/use-hash/use-hash"},{"title":"useHover","path":"/hooks/use-hover/use-hover"},{"title":"useIntersectionObserver","path":"/hooks/use-intersection-observer/use-intersection-observer"},{"title":"useInterval","path":"/hooks/use-interval/use-interval"},{"title":"useIsomorphicEffect","path":"/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"useKeyPress","path":"/hooks/use-key-press/use-key-press"},{"title":"useLocalStorage","path":"/hooks/use-local-storage/use-local-storage"},{"title":"useMap","path":"/hooks/use-map/use-map"},{"title":"useMediaQuery","path":"/hooks/use-media-query/use-media-query"},{"title":"useMergeState","path":"/hooks/use-merge-state/use-merge-state"},{"title":"useMutationObserver","path":"/hooks/use-mutation-observer/use-mutation-observer"},{"title":"useNavigatorOnLine","path":"/hooks/use-navigator-on-line/use-navigator-on-line"},{"title":"useOnGlobalEvent","path":"/hooks/use-on-global-event/use-on-global-event"},{"title":"useOnWindowResize","path":"/hooks/use-on-window-resize/use-on-window-resize"},{"title":"useOnWindowScroll","path":"/hooks/use-on-window-scroll/use-on-window-scroll"},{"title":"usePersistedState","path":"/hooks/use-persisted-state/use-persisted-state"},{"title":"usePortal","path":"/hooks/use-portal/use-portal"},{"title":"usePrevious","path":"/hooks/use-previous/use-previous"},{"title":"useRequestAnimationFrame","path":"/hooks/use-request-animation-frame/use-request-animation-frame"},{"title":"useSSR","path":"/hooks/use-ssr/use-ssr"},{"title":"useScript","path":"/hooks/use-script/use-script"},{"title":"useSearchParam","path":"/hooks/use-search-param/use-search-param"},{"title":"useSessionStorage","path":"/hooks/use-session-storage/use-session-storage"},{"title":"useSet","path":"/hooks/use-set/use-set"},{"title":"useTimeout","path":"/hooks/use-timeout/use-timeout"}],"/model":[{"title":"React model","path":"/model/model"}]},"zh-CN":{"/zh-CN/getting-started":[{"path":"/zh-CN/getting-started","title":"react \u4ee3\u7801\u6bb5","meta":{}}],"*":[{"path":"/zh-CN","title":"\u6b22\u8fce\u6765\u5230\u672c\u7f51\u7ad9","meta":{}}],"/zh-CN/antd":[{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u6309\u94ae","path":"/zh-CN/antd/loading-button"},{"title":"\u7701\u7565\u6587\u672c\u7ec4\u4ef6","path":"/zh-CN/antd/omit-text"},{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u5f39\u6846","path":"/zh-CN/antd/loading-modal"}],"/zh-CN/guide":[{"title":"\u624b\u98ce\u7434","path":"/zh-CN/guide/Accordion/Accordion"},{"title":"\u63d0\u793a","path":"/zh-CN/guide/Alert/Alert"},{"title":"\u81ea\u52a8\u6587\u672c\u94fe\u63a5","path":"/zh-CN/guide/auto-link/auto-link"},{"title":"\u62e8\u7535\u81f3","path":"/zh-CN/guide/Callto/Callto"},{"title":"\u8f6e\u64ad\u56fe","path":"/zh-CN/guide/Carousel/Carousel"},{"title":"\u53ef\u6298\u53e0\u7684\u5185\u5bb9","path":"/zh-CN/guide/Collapse/Collapse"},{"title":"\u53d7\u63a7\u7684\u8f93\u5165\u6846","path":"/zh-CN/guide/controlled-input/controlled-input"},{"title":"\u5012\u8ba1\u65f6\u7ec4\u4ef6","path":"/zh-CN/guide/count-down/count-down"},{"title":"\u7b80\u6613\u6570\u636e\u5217\u8868\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-list/simple-data-list"},{"title":"\u7b80\u6613\u6570\u636e\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-table/simple-data-table"},{"title":"\u62d6\u62fd\u6587\u4ef6\u7ec4\u4ef6","path":"/zh-CN/guide/file-drop/file-drop"},{"title":"\u61d2\u52a0\u8f7d\u56fe\u7247","path":"/zh-CN/guide/lazy-loading-image/lazy-loading-image"},{"title":"\u9650\u5236\u5b57\u7b26\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-textarea/limited-textarea"},{"title":"\u9650\u5236\u5b57\u6570\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-word-textarea/limited-word-textarea"},{"title":"\u52a0\u8f7d\u7ec4\u4ef6","path":"/zh-CN/guide/Loader/Loader"},{"title":"\u90ae\u4ef6\u94fe\u63a5\u7ec4\u4ef6","path":"/zh-CN/guide/Mailto/Mailto"},{"title":"\u7b80\u6613\u5bf9\u8c61\u6570\u7ec4\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"\u5f39\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Modal/Modal"},{"title":"\u590d\u9009\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Checkbox/Checkbox"},{"title":"\u5bc6\u7801\u663e\u793a\u5668","path":"/zh-CN/guide/password-revealer/password-revealer"},{"title":"\u6309\u94ae","path":"/zh-CN/guide/button/button"},{"title":"\u9009\u62e9\u5668","path":"/zh-CN/guide/select/select"}],"/zh-CN/hooks":[{"title":"\u5f02\u6b65","path":"/zh-CN/hooks/use-async/use-async"},{"title":"\u9501\u5b9abody\u5143\u7d20\u7684\u6eda\u52a8","path":"/zh-CN/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5185","path":"/zh-CN/hooks/use-click-inside/use-click-inside"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5916","path":"/zh-CN/hooks/use-click-outside/use-click-outside"},{"title":"\u7ec4\u4ef6\u7684\u6302\u8f7d","path":"/zh-CN/hooks/use-component-did-mount/use-component-did-mount"},{"title":"\u7ec4\u4ef6\u7684\u72b6\u6001\u66f4\u65b0","path":"/zh-CN/hooks/use-component-did-update/use-component-did-update"},{"title":"\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d","path":"/zh-CN/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"\u590d\u5236\u5230\u526a\u8d34\u677f","path":"/zh-CN/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"\u9632\u6296","path":"/zh-CN/hooks/use-debounce/use-debounce"},{"title":"\u9ed8\u8ba4\u503c","path":"/zh-CN/hooks/use-default/use-default"},{"title":"\u5ef6\u8fdf\u72b6\u6001","path":"/zh-CN/hooks/use-delayed-state/use-delayed-state"},{"title":"\u53ea\u6267\u884c\u4e00\u6b21\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-effect-once/use-effect-once"},{"title":"\u9519\u8bef\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-error/use-error"},{"title":"\u4e8b\u4ef6\u76d1\u542c\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-event-listener/use-event-listener"},{"title":"\u8bf7\u6c42\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-fetch/use-fetch"},{"title":"\u8868\u5355\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-form/use-form"},{"title":"\u72b6\u6001\u8bbe\u7f6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-get-set/use-get-set"},{"title":"\u4fee\u6539hash\u503c\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hash/use-hash"},{"title":"\u60ac\u6d6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hover/use-hover"},{"title":"\u5143\u7d20\u5904\u4e8e\u53ef\u89c6\u533a\u57df\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-intersection-observer/use-intersection-observer"},{"title":"\u5b9a\u65f6\u5668\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-interval/use-interval"},{"title":"\u526f\u4f5c\u7528\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"\u6309\u952e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-key-press/use-key-press"},{"title":"\u5b58\u50a8\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-local-storage/use-local-storage"},{"title":"\u6620\u5c04\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-map/use-map"},{"title":"\u68c0\u67e5\u5a92\u4f53\u67e5\u8be2\u73af\u5883\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-media-query/use-media-query"},{"title":"\u5408\u5e76\u72b6\u6001\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-merge-state/use-merge-state"},{"title":"\u76d1\u542c\u5143\u7d20\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-mutation-observer/use-mutation-observer"},{"title":"\u5728\u7ebf\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-navigator-on-line/use-navigator-on-line"},{"title":"\u5168\u5c40\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-global-event/use-on-global-event"},{"title":"\u8c03\u6574\u7a97\u53e3\u5927\u5c0f\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-window-resize/use-on-window-resize"},{"title":"\u7a97\u53e3\u6eda\u52a8\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-window-scroll/use-on-window-scroll"},{"title":"\u6c38\u4e45\u5b58\u50a8\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-persisted-state/use-persisted-state"},{"title":"\u4f20\u9001\u95e8\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-portal/use-portal"},{"title":"\u5b58\u50a8\u65e7\u503c\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-previous/use-previous"},{"title":"\u52a8\u753b\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-request-animation-frame/use-request-animation-frame"},{"title":"\u5224\u65ad\u73af\u5883\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-ssr/use-ssr"},{"title":"\u52a8\u6001\u52a0\u8f7d\u811a\u672c\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-script/use-script"},{"title":"\u83b7\u53d6\u6d4f\u89c8\u5668\u8def\u5f84\u53c2\u6570\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-search-param/use-search-param"},{"title":"\u4f1a\u8bdd\u5b58\u50a8\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-session-storage/use-session-storage"},{"title":"set\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-set/use-set"},{"title":"\u5ef6\u8fdf\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-timeout/use-timeout"}],"/zh-CN/model":[{"title":"react\u72b6\u6001\u7ba1\u7406\u5de5\u5177","path":"/zh-CN/model/model"}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"\u4e2d\u6587"}],"navs":{"en-US":[{"title":"getting-started","path":"/getting-started"},{"title":"guide","path":"/guide"},{"title":"hooks","path":"/hooks"},{"title":"model","path":"/model"},{"title":"antd","path":"/antd"},{"title":"github","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"about me","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"jue jin","path":"https://juejin.im/user/4054654613988718"},{"title":"segmentfault","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"gitee","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"blog","path":"https://www.cnblogs.com/eveningwater/"},{"title":"website","path":"https://www.eveningwater.com/"},{"title":"My project","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"17sucai","path":"https://www.17sucai.com/user/800544"},{"title":"ewColorPicker","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}],"zh-CN":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/zh-CN/getting-started"},{"title":"\u6307\u5357","path":"/zh-CN/guide"},{"title":"\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks"},{"title":"\u72b6\u6001\u7ba1\u7406","path":"/zh-CN/model"},{"title":"\u8682\u8681\u8bbe\u8ba1","path":"/zh-CN/antd"},{"title":"\u6e90\u7801\u5730\u5740","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"\u5173\u4e8e\u6211","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"\u6398\u91d1","path":"https://juejin.im/user/4054654613988718"},{"title":"\u601d\u5426","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"\u7801\u4e91","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"\u535a\u5ba2","path":"https://www.cnblogs.com/eveningwater/"},{"title":"\u4e2a\u4eba\u7f51\u7ad9","path":"https://www.eveningwater.com/"},{"title":"\u4e2a\u4eba\u9879\u76ee","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"\u95e8\u7d20\u6750","path":"https://www.17sucai.com/user/800544"},{"title":"\u989c\u8272\u9009\u62e9\u5668","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}]},"title":"react-code-segment","logo":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K","mode":"site","repository":{"url":"","branch":"master"},"theme":{}}',
+      '{"menus":{"en-US":{"/getting-started":[{"path":"/getting-started","title":"react code-segment","meta":{}}],"*":[{"path":"/","title":"Welcome to the website","meta":{}}],"/antd":[{"title":"LoadingButton","path":"/antd/loading-button"},{"title":"OmitText","path":"/antd/omit-text"},{"title":"LoadingModal","path":"/antd/loading-modal"}],"/guide":[{"title":"Accordion","path":"/guide/Accordion/Accordion"},{"title":"Alert","path":"/guide/Alert/Alert"},{"title":"AutoLink","path":"/guide/auto-link/auto-link"},{"title":"Callto","path":"/guide/Callto/Callto"},{"title":"Carousel","path":"/guide/Carousel/Carousel"},{"title":"Collapse","path":"/guide/Collapse/Collapse"},{"title":"ControlledInput","path":"/guide/controlled-input/controlled-input"},{"title":"CountDown","path":"/guide/count-down/count-down"},{"title":"SimpleDataList","path":"/guide/simple-data-list/simple-data-list"},{"title":"SimpleDataTable","path":"/guide/simple-data-table/simple-data-table"},{"title":"FileDrop","path":"/guide/file-drop/file-drop"},{"title":"LazyLoadingImage","path":"/guide/lazy-loading-image/lazy-loading-image"},{"title":"LimitedTextarea","path":"/guide/limited-textarea/limited-textarea"},{"title":"LimitedWordTextarea","path":"/guide/limited-word-textarea/limited-word-textarea"},{"title":"Loader","path":"/guide/Loader/Loader"},{"title":"Mailto","path":"/guide/Mailto/Mailto"},{"title":"SimpleMappedDataTable","path":"/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"Modal","path":"/guide/Modal/Modal"},{"title":"Checkbox","path":"/guide/Checkbox/Checkbox"},{"title":"PasswordRevealer","path":"/guide/password-revealer/password-revealer"},{"title":"Button","path":"/guide/button/button"},{"title":"Select","path":"/guide/select/select"}],"/hooks":[{"title":"useAsync","path":"/hooks/use-async/use-async"},{"title":"useBodyScrollLock","path":"/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"useClickInside","path":"/hooks/use-click-inside/use-click-inside"},{"title":"useClickOutside","path":"/hooks/use-click-outside/use-click-outside"},{"title":"useComponentDidMount","path":"/hooks/use-component-did-mount/use-component-did-mount"},{"title":"useComponentDidUpdate","path":"/hooks/use-component-did-update/use-component-did-update"},{"title":"useComponentWillUnmount","path":"/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"useCopyToClipboard","path":"/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"useDebounce","path":"/hooks/use-debounce/use-debounce"},{"title":"useDefault","path":"/hooks/use-default/use-default"},{"title":"useDelayedState","path":"/hooks/use-delayed-state/use-delayed-state"},{"title":"useEffectOnce","path":"/hooks/use-effect-once/use-effect-once"},{"title":"useError","path":"/hooks/use-error/use-error"},{"title":"useEventListener","path":"/hooks/use-event-listener/use-event-listener"},{"title":"useFetch","path":"/hooks/use-fetch/use-fetch"},{"title":"useForm","path":"/hooks/use-form/use-form"},{"title":"useGetSet","path":"/hooks/use-get-set/use-get-set"},{"title":"useHash","path":"/hooks/use-hash/use-hash"},{"title":"useHover","path":"/hooks/use-hover/use-hover"},{"title":"useIntersectionObserver","path":"/hooks/use-intersection-observer/use-intersection-observer"},{"title":"useInterval","path":"/hooks/use-interval/use-interval"},{"title":"useIsomorphicEffect","path":"/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"useKeyPress","path":"/hooks/use-key-press/use-key-press"},{"title":"useLocalStorage","path":"/hooks/use-local-storage/use-local-storage"},{"title":"useMap","path":"/hooks/use-map/use-map"},{"title":"useMediaQuery","path":"/hooks/use-media-query/use-media-query"},{"title":"useMergeState","path":"/hooks/use-merge-state/use-merge-state"},{"title":"useMutationObserver","path":"/hooks/use-mutation-observer/use-mutation-observer"},{"title":"useNavigatorOnLine","path":"/hooks/use-navigator-on-line/use-navigator-on-line"},{"title":"useOnGlobalEvent","path":"/hooks/use-on-global-event/use-on-global-event"},{"title":"useOnWindowResize","path":"/hooks/use-on-window-resize/use-on-window-resize"},{"title":"useOnWindowScroll","path":"/hooks/use-on-window-scroll/use-on-window-scroll"},{"title":"usePersistedState","path":"/hooks/use-persisted-state/use-persisted-state"},{"title":"usePortal","path":"/hooks/use-portal/use-portal"},{"title":"usePrevious","path":"/hooks/use-previous/use-previous"},{"title":"useRequestAnimationFrame","path":"/hooks/use-request-animation-frame/use-request-animation-frame"},{"title":"useSSR","path":"/hooks/use-ssr/use-ssr"},{"title":"useScript","path":"/hooks/use-script/use-script"},{"title":"useSearchParam","path":"/hooks/use-search-param/use-search-param"},{"title":"useSessionStorage","path":"/hooks/use-session-storage/use-session-storage"},{"title":"useSet","path":"/hooks/use-set/use-set"},{"title":"useTimeout","path":"/hooks/use-timeout/use-timeout"},{"title":"useTitle","path":"/hooks/use-title/use-title"}],"/model":[{"title":"React model","path":"/model/model"}]},"zh-CN":{"/zh-CN/getting-started":[{"path":"/zh-CN/getting-started","title":"react \u4ee3\u7801\u6bb5","meta":{}}],"*":[{"path":"/zh-CN","title":"\u6b22\u8fce\u6765\u5230\u672c\u7f51\u7ad9","meta":{}}],"/zh-CN/antd":[{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u6309\u94ae","path":"/zh-CN/antd/loading-button"},{"title":"\u7701\u7565\u6587\u672c\u7ec4\u4ef6","path":"/zh-CN/antd/omit-text"},{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u5f39\u6846","path":"/zh-CN/antd/loading-modal"}],"/zh-CN/guide":[{"title":"\u624b\u98ce\u7434","path":"/zh-CN/guide/Accordion/Accordion"},{"title":"\u63d0\u793a","path":"/zh-CN/guide/Alert/Alert"},{"title":"\u81ea\u52a8\u6587\u672c\u94fe\u63a5","path":"/zh-CN/guide/auto-link/auto-link"},{"title":"\u62e8\u7535\u81f3","path":"/zh-CN/guide/Callto/Callto"},{"title":"\u8f6e\u64ad\u56fe","path":"/zh-CN/guide/Carousel/Carousel"},{"title":"\u53ef\u6298\u53e0\u7684\u5185\u5bb9","path":"/zh-CN/guide/Collapse/Collapse"},{"title":"\u53d7\u63a7\u7684\u8f93\u5165\u6846","path":"/zh-CN/guide/controlled-input/controlled-input"},{"title":"\u5012\u8ba1\u65f6\u7ec4\u4ef6","path":"/zh-CN/guide/count-down/count-down"},{"title":"\u7b80\u6613\u6570\u636e\u5217\u8868\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-list/simple-data-list"},{"title":"\u7b80\u6613\u6570\u636e\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-table/simple-data-table"},{"title":"\u62d6\u62fd\u6587\u4ef6\u7ec4\u4ef6","path":"/zh-CN/guide/file-drop/file-drop"},{"title":"\u61d2\u52a0\u8f7d\u56fe\u7247","path":"/zh-CN/guide/lazy-loading-image/lazy-loading-image"},{"title":"\u9650\u5236\u5b57\u7b26\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-textarea/limited-textarea"},{"title":"\u9650\u5236\u5b57\u6570\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-word-textarea/limited-word-textarea"},{"title":"\u52a0\u8f7d\u7ec4\u4ef6","path":"/zh-CN/guide/Loader/Loader"},{"title":"\u90ae\u4ef6\u94fe\u63a5\u7ec4\u4ef6","path":"/zh-CN/guide/Mailto/Mailto"},{"title":"\u7b80\u6613\u5bf9\u8c61\u6570\u7ec4\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"\u5f39\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Modal/Modal"},{"title":"\u590d\u9009\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Checkbox/Checkbox"},{"title":"\u5bc6\u7801\u663e\u793a\u5668","path":"/zh-CN/guide/password-revealer/password-revealer"},{"title":"\u6309\u94ae","path":"/zh-CN/guide/button/button"},{"title":"\u9009\u62e9\u5668","path":"/zh-CN/guide/select/select"}],"/zh-CN/hooks":[{"title":"\u5f02\u6b65","path":"/zh-CN/hooks/use-async/use-async"},{"title":"\u9501\u5b9abody\u5143\u7d20\u7684\u6eda\u52a8","path":"/zh-CN/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5185","path":"/zh-CN/hooks/use-click-inside/use-click-inside"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5916","path":"/zh-CN/hooks/use-click-outside/use-click-outside"},{"title":"\u7ec4\u4ef6\u7684\u6302\u8f7d","path":"/zh-CN/hooks/use-component-did-mount/use-component-did-mount"},{"title":"\u7ec4\u4ef6\u7684\u72b6\u6001\u66f4\u65b0","path":"/zh-CN/hooks/use-component-did-update/use-component-did-update"},{"title":"\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d","path":"/zh-CN/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"\u590d\u5236\u5230\u526a\u8d34\u677f","path":"/zh-CN/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"\u9632\u6296","path":"/zh-CN/hooks/use-debounce/use-debounce"},{"title":"\u9ed8\u8ba4\u503c","path":"/zh-CN/hooks/use-default/use-default"},{"title":"\u5ef6\u8fdf\u72b6\u6001","path":"/zh-CN/hooks/use-delayed-state/use-delayed-state"},{"title":"\u53ea\u6267\u884c\u4e00\u6b21\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-effect-once/use-effect-once"},{"title":"\u9519\u8bef\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-error/use-error"},{"title":"\u4e8b\u4ef6\u76d1\u542c\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-event-listener/use-event-listener"},{"title":"\u8bf7\u6c42\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-fetch/use-fetch"},{"title":"\u8868\u5355\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-form/use-form"},{"title":"\u72b6\u6001\u8bbe\u7f6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-get-set/use-get-set"},{"title":"\u4fee\u6539hash\u503c\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hash/use-hash"},{"title":"\u60ac\u6d6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hover/use-hover"},{"title":"\u5143\u7d20\u5904\u4e8e\u53ef\u89c6\u533a\u57df\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-intersection-observer/use-intersection-observer"},{"title":"\u5b9a\u65f6\u5668\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-interval/use-interval"},{"title":"\u526f\u4f5c\u7528\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"\u6309\u952e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-key-press/use-key-press"},{"title":"\u5b58\u50a8\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-local-storage/use-local-storage"},{"title":"\u6620\u5c04\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-map/use-map"},{"title":"\u68c0\u67e5\u5a92\u4f53\u67e5\u8be2\u73af\u5883\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-media-query/use-media-query"},{"title":"\u5408\u5e76\u72b6\u6001\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-merge-state/use-merge-state"},{"title":"\u76d1\u542c\u5143\u7d20\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-mutation-observer/use-mutation-observer"},{"title":"\u5728\u7ebf\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-navigator-on-line/use-navigator-on-line"},{"title":"\u5168\u5c40\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-global-event/use-on-global-event"},{"title":"\u8c03\u6574\u7a97\u53e3\u5927\u5c0f\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-window-resize/use-on-window-resize"},{"title":"\u7a97\u53e3\u6eda\u52a8\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-window-scroll/use-on-window-scroll"},{"title":"\u6c38\u4e45\u5b58\u50a8\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-persisted-state/use-persisted-state"},{"title":"\u4f20\u9001\u95e8\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-portal/use-portal"},{"title":"\u5b58\u50a8\u65e7\u503c\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-previous/use-previous"},{"title":"\u52a8\u753b\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-request-animation-frame/use-request-animation-frame"},{"title":"\u5224\u65ad\u73af\u5883\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-ssr/use-ssr"},{"title":"\u52a8\u6001\u52a0\u8f7d\u811a\u672c\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-script/use-script"},{"title":"\u83b7\u53d6\u6d4f\u89c8\u5668\u8def\u5f84\u53c2\u6570\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-search-param/use-search-param"},{"title":"\u4f1a\u8bdd\u5b58\u50a8\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-session-storage/use-session-storage"},{"title":"set\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-set/use-set"},{"title":"\u5ef6\u8fdf\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-timeout/use-timeout"},{"title":"\u4fee\u6539\u6807\u9898","path":"/zh-CN/hooks/use-title/use-title"}],"/zh-CN/model":[{"title":"react\u72b6\u6001\u7ba1\u7406\u5de5\u5177","path":"/zh-CN/model/model"}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"\u4e2d\u6587"}],"navs":{"en-US":[{"title":"getting-started","path":"/getting-started"},{"title":"guide","path":"/guide"},{"title":"hooks","path":"/hooks"},{"title":"model","path":"/model"},{"title":"antd","path":"/antd"},{"title":"github","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"about me","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"jue jin","path":"https://juejin.im/user/4054654613988718"},{"title":"segmentfault","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"gitee","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"blog","path":"https://www.cnblogs.com/eveningwater/"},{"title":"website","path":"https://www.eveningwater.com/"},{"title":"My project","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"17sucai","path":"https://www.17sucai.com/user/800544"},{"title":"ewColorPicker","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}],"zh-CN":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/zh-CN/getting-started"},{"title":"\u6307\u5357","path":"/zh-CN/guide"},{"title":"\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks"},{"title":"\u72b6\u6001\u7ba1\u7406","path":"/zh-CN/model"},{"title":"\u8682\u8681\u8bbe\u8ba1","path":"/zh-CN/antd"},{"title":"\u6e90\u7801\u5730\u5740","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"\u5173\u4e8e\u6211","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"\u6398\u91d1","path":"https://juejin.im/user/4054654613988718"},{"title":"\u601d\u5426","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"\u7801\u4e91","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"\u535a\u5ba2","path":"https://www.cnblogs.com/eveningwater/"},{"title":"\u4e2a\u4eba\u7f51\u7ad9","path":"https://www.eveningwater.com/"},{"title":"\u4e2a\u4eba\u9879\u76ee","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"\u95e8\u7d20\u6750","path":"https://www.17sucai.com/user/800544"},{"title":"\u989c\u8272\u9009\u62e9\u5668","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}]},"title":"react-code-segment","logo":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K","mode":"site","repository":{"url":"","branch":"master"},"theme":{}}',
     );
   },
   RH9F: function (e, t, n) {
@@ -52528,6 +52900,41 @@
         },
       },
     );
+  },
+  SLWW: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('tJVT'),
+      r = n('q1tI'),
+      o = n.n(r),
+      l = n('U5vM'),
+      i = n('z5OR'),
+      s = n('VVsn'),
+      c = () => (
+        Object(s['a'])('\u8b66\u544a'),
+        o.a.createElement(l['a'], {
+          message:
+            '\u8b66\u544a!\u6807\u9898\u5df2\u7ecf\u88ab\u4fee\u6539\u3002',
+          type: 'info',
+        })
+      ),
+      u = () => {
+        var e = o.a.useState(!1),
+          t = Object(a['a'])(e, 2),
+          n = t[0],
+          r = t[1];
+        return o.a.createElement(
+          o.a.Fragment,
+          null,
+          o.a.createElement(
+            i['a'],
+            { onClick: () => r(!n) },
+            '\u5207\u6362\u8b66\u544a',
+          ),
+          n && o.a.createElement(c, null),
+        );
+      };
+    t['default'] = u;
   },
   SQsl: function (e, t, n) {
     'use strict';
@@ -55998,6 +56405,24 @@
         },
       },
     );
+  },
+  VVsn: function (e, t, n) {
+    'use strict';
+    var a = n('q1tI'),
+      r = (e) => {
+        var t = 'undefined' !== typeof document,
+          n = Object(a['useRef'])(t ? document.title : '');
+        Object(a['useEffect'])(() => {
+          if (t)
+            return (
+              document.title !== e && (document.title = e),
+              () => {
+                document.title = n.current;
+              }
+            );
+        }, []);
+      };
+    t['a'] = r;
   },
   VWci: function (e, t, n) {
     var a = (function (e) {
@@ -65112,6 +65537,191 @@
       },
     );
   },
+  cPLD: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('cGfz'),
+      l = n('GKDz'),
+      i = n('1i5+'),
+      s = n('SQsl'),
+      c = r.a.memo((e) => {
+        var t = e.demos,
+          n = t['usetitle-demo.zh-cn'].component,
+          a = t['js-demo.zh-cn-36'].component;
+        return r.a.createElement(
+          r.a.Fragment,
+          null,
+          r.a.createElement(
+            r.a.Fragment,
+            null,
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement(
+                s['a'],
+                null,
+                r.a.createElement(
+                  'thead',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement('th', null, '\u6807\u9898'),
+                    r.a.createElement('th', null, '\u6807\u7b7e'),
+                    r.a.createElement(
+                      'th',
+                      null,
+                      '\u9996\u6b21\u6dfb\u52a0\u65f6\u95f4',
+                    ),
+                    r.a.createElement('th', null, '\u66f4\u65b0\u65f6\u95f4'),
+                  ),
+                ),
+                r.a.createElement(
+                  'tbody',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement(
+                      'td',
+                      null,
+                      '\u4fee\u6539\u6807\u9898\u94a9\u5b50\u51fd\u6570',
+                    ),
+                    r.a.createElement(
+                      'td',
+                      null,
+                      '\u94a9\u5b50\u51fd\u6570,\u526f\u4f5c\u7528',
+                    ),
+                    r.a.createElement('td', null, '2022/11/01'),
+                    r.a.createElement('td', null, '2022/11/01'),
+                  ),
+                ),
+              ),
+              r.a.createElement(
+                'p',
+                null,
+                '\u8bbe\u7f6e\u9875\u9762\u7684\u6807\u9898',
+              ),
+              r.a.createElement(
+                'ul',
+                null,
+                r.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 typeof \u6765\u786e\u5b9a Document \u662f\u5426\u5df2\u5b9a\u4e49\u3002',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 useRef() \u6302\u94a9\u6765\u5b58\u50a8\u6587\u6863\u7684\u539f\u59cb\u6807\u9898\uff08\u5982\u679c\u5df2\u5b9a\u4e49\uff09\u3002',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 useEffect() \u94a9\u5b50\u5728\u7ec4\u4ef6\u6302\u8f7d\u65f6\u5c06 Document.title \u8bbe\u7f6e\u4e3a\u4f20\u9012\u7684\u503c\uff0c\u5e76\u5728\u5378\u8f7d\u65f6\u6e05\u7406\u3002',
+                ),
+              ),
+              r.a.createElement(
+                'h4',
+                { id: 'usetitlets' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#usetitlets', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useTitle.ts',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import { useRef,useEffect } from 'react';\n\nconst useTitle = (title: string) => {\n    const isDocumentDefined = typeof document !== 'undefined';\n    const originalTitle = useRef<string>(isDocumentDefined ? document.title : '');\n\n    useEffect(() => {\n        if(!isDocumentDefined){\n            return;\n        }\n\n        if(document.title !== title){\n            document.title = title;\n        }\n\n        return () => {\n             document.title = originalTitle.current;\n        }\n    },[])\n}\n\nexport default useTitle;",
+                lang: 'ts',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: '\u793a\u4f8b' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#\u793a\u4f8b', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                '\u793a\u4f8b',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport { Button, Alert } from 'antd';\nimport useTitle from './useTitle';\n\nconst CustomAlert = () => {\n  useTitle('\u8b66\u544a');\n  return <Alert message=\"\u8b66\u544a!\u6807\u9898\u5df2\u7ecf\u88ab\u4fee\u6539\u3002\" type=\"info\"></Alert>;\n};\n\nconst Demo = () => {\n  const [alertOpen, setAlertOpen] = React.useState(false);\n\n  return (\n    <>\n      <Button onClick={() => setAlertOpen(!alertOpen)}>\u5207\u6362\u8b66\u544a</Button>\n      {alertOpen && <CustomAlert />}\n    </>\n  );\n};\n\nexport default Demo;",
+                lang: 'tsx',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'usetitlejs' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#usetitlejs', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useTitle.js',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import { useRef,useEffect } from 'react';\n\nconst useTitle = title => {\n    const isDocumentDefined = typeof document !== 'undefined';\n    const originalTitle = useRef<string>(isDocumentDefined ? document.title : '');\n\n    useEffect(() => {\n        if(!isDocumentDefined){\n            return;\n        }\n\n        if(document.title !== title){\n            document.title = title;\n        }\n\n        return () => {\n             document.title = originalTitle.current;\n        }\n    },[])\n}\n\nexport default useTitle;",
+                lang: 'js',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'js-\u793a\u4f8b' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#js-\u793a\u4f8b',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'js \u793a\u4f8b',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport { Button, Alert } from 'antd';\nimport useTitle from './useTitle';\n\nconst CustomAlert = () => {\n  useTitle('\u8b66\u544a');\n  return <Alert message=\"\u8b66\u544a!\u6807\u9898\u5df2\u7ecf\u88ab\u4fee\u6539\u3002\" type=\"info\"></Alert>;\n};\n\nconst Demo = () => {\n  const [alertOpen, setAlertOpen] = React.useState(false);\n\n  return (\n    <>\n      <Button onClick={() => setAlertOpen(!alertOpen)}>\u5207\u6362\u8b66\u544a</Button>\n      {alertOpen && <CustomAlert />}\n    </>\n  );\n};\n\nexport default Demo;",
+                lang: 'jsx',
+              }),
+              r.a.createElement('p', null, '\u793a\u4f8b:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              t['usetitle-demo.zh-cn'].previewerProps,
+              r.a.createElement(n, null),
+            ),
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement('p', null, 'js \u793a\u4f8b:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              t['js-demo.zh-cn-36'].previewerProps,
+              r.a.createElement(a, null),
+            ),
+          ),
+        );
+      });
+    t['default'] = (e) => {
+      var t = r.a.useContext(o['context']),
+        n = t.demos;
+      return (
+        r.a.useEffect(() => {
+          var t;
+          null !== e &&
+            void 0 !== e &&
+            null !== (t = e.location) &&
+            void 0 !== t &&
+            t.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        r.a.createElement(c, { demos: n })
+      );
+    };
+  },
   cU5i: function (e, t, n) {
     'use strict';
     n.r(t);
@@ -73446,6 +74056,41 @@
     var a = n('NNqR'),
       r = a(Object, 'create');
     e.exports = r;
+  },
+  kmD5: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('tJVT'),
+      r = n('q1tI'),
+      o = n.n(r),
+      l = n('U5vM'),
+      i = n('z5OR'),
+      s = n('O1Fu'),
+      c = () => (
+        Object(s['a'])('\u8b66\u544a'),
+        o.a.createElement(l['a'], {
+          message:
+            '\u8b66\u544a!\u6807\u9898\u5df2\u7ecf\u88ab\u4fee\u6539\u3002',
+          type: 'info',
+        })
+      ),
+      u = () => {
+        var e = o.a.useState(!1),
+          t = Object(a['a'])(e, 2),
+          n = t[0],
+          r = t[1];
+        return o.a.createElement(
+          o.a.Fragment,
+          null,
+          o.a.createElement(
+            i['a'],
+            { onClick: () => r(!n) },
+            '\u5207\u6362\u8b66\u544a',
+          ),
+          n && o.a.createElement(c, null),
+        );
+      };
+    t['default'] = u;
   },
   kmMV: function (e, t, n) {
     'use strict';
@@ -83634,7 +84279,7 @@
                 'useTimeout.ts',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useRef,useEffect } from 'react';\n\nexport type AnyFunc = (...args:any []) => any;\n\nconst useTimeout = (callback:AnyFunc ,delay: number) => {\n    const savedCallback = useRef<AnyFunc>();\n    useEffect(() => {\n        savedCallback.current = callback;\n    },[callback]);\n\n    useEffect(() => {\n        const tick = () => savedCallback.current?.();\n        if(typeof delay === 'number'){\n            let id = setTimeout(tick,delay);\n            return () => {\n                clearTimeout(id);\n            }\n        }\n    },[delay])\n}\n\nexport default useTimeout;",
+                code: "import { useRef, useEffect } from 'react';\n\nexport type AnyFunc = (...args: any[]) => any;\n\nconst useTimeout = (callback: AnyFunc, delay: number) => {\n  const savedCallback = useRef<AnyFunc>();\n  useEffect(() => {\n    savedCallback.current = callback;\n  }, [callback]);\n\n  useEffect(() => {\n    const tick = () => savedCallback.current?.();\n    if (typeof delay === 'number') {\n      let id = setTimeout(tick, delay);\n      return () => {\n        clearTimeout(id);\n      };\n    }\n  }, [delay]);\n};\n\nexport default useTimeout;",
                 lang: 'ts',
               }),
               r.a.createElement(
@@ -83662,7 +84307,7 @@
                 'useTimeout.js',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useRef,useEffect } from 'react';\n\nconst useTimeout = (callback ,delay) => {\n    const savedCallback = useRef();\n    useEffect(() => {\n        savedCallback.current = callback;\n    },[callback]);\n\n    useEffect(() => {\n        const tick = () => savedCallback.current?.();\n        if(typeof delay === 'number'){\n            let id = setTimeout(tick,delay);\n            return () => {\n                clearTimeout(id);\n            }\n        }\n    },[delay])\n}\n\nexport default useTimeout;",
+                code: "import { useRef, useEffect } from 'react';\n\nconst useTimeout = (callback, delay) => {\n  const savedCallback = useRef();\n  useEffect(() => {\n    savedCallback.current = callback;\n  }, [callback]);\n\n  useEffect(() => {\n    const tick = () => savedCallback.current?.();\n    if (typeof delay === 'number') {\n      let id = setTimeout(tick, delay);\n      return () => {\n        clearTimeout(id);\n      };\n    }\n  }, [delay]);\n};\n\nexport default useTimeout;",
                 lang: 'js',
               }),
               r.a.createElement(
@@ -90956,7 +91601,7 @@
                 'useTimeout.ts',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useRef,useEffect } from 'react';\n\nexport type AnyFunc = (...args:any []) => any;\n\nconst useTimeout = (callback:AnyFunc ,delay: number) => {\n    const savedCallback = useRef<AnyFunc>();\n    useEffect(() => {\n        savedCallback.current = callback;\n    },[callback]);\n\n    useEffect(() => {\n        const tick = () => savedCallback.current?.();\n        if(typeof delay === 'number'){\n            let id = setTimeout(tick,delay);\n            return () => {\n                clearTimeout(id);\n            }\n        }\n    },[delay])\n}\n\nexport default useTimeout;",
+                code: "import { useRef, useEffect } from 'react';\n\nexport type AnyFunc = (...args: any[]) => any;\n\nconst useTimeout = (callback: AnyFunc, delay: number) => {\n  const savedCallback = useRef<AnyFunc>();\n  useEffect(() => {\n    savedCallback.current = callback;\n  }, [callback]);\n\n  useEffect(() => {\n    const tick = () => savedCallback.current?.();\n    if (typeof delay === 'number') {\n      let id = setTimeout(tick, delay);\n      return () => {\n        clearTimeout(id);\n      };\n    }\n  }, [delay]);\n};\n\nexport default useTimeout;",
                 lang: 'ts',
               }),
               r.a.createElement(
@@ -90984,7 +91629,7 @@
                 'useTimeout.js',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useRef,useEffect } from 'react';\n\nconst useTimeout = (callback ,delay) => {\n    const savedCallback = useRef();\n    useEffect(() => {\n        savedCallback.current = callback;\n    },[callback]);\n\n    useEffect(() => {\n        const tick = () => savedCallback.current?.();\n        if(typeof delay === 'number'){\n            let id = setTimeout(tick,delay);\n            return () => {\n                clearTimeout(id);\n            }\n        }\n    },[delay])\n}\n\nexport default useTimeout;",
+                code: "import { useRef, useEffect } from 'react';\n\nconst useTimeout = (callback, delay) => {\n  const savedCallback = useRef();\n  useEffect(() => {\n    savedCallback.current = callback;\n  }, [callback]);\n\n  useEffect(() => {\n    const tick = () => savedCallback.current?.();\n    if (typeof delay === 'number') {\n      let id = setTimeout(tick, delay);\n      return () => {\n        clearTimeout(id);\n      };\n    }\n  }, [delay]);\n};\n\nexport default useTimeout;",
                 lang: 'js',
               }),
               r.a.createElement(
