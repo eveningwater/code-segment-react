@@ -167,4 +167,8 @@ export default [
     title: '延迟钩子函数',
     path: '/zh-CN/hooks/use-timeout/use-timeout',
   },
+  {
+    title: '修改标题',
+    path: '/hooks/use-title/use-title',
+  },
 ];

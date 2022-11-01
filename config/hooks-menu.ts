@@ -167,4 +167,8 @@ export default [
     title: 'useTimeout',
     path: '/hooks/use-timeout/use-timeout',
   },
+  {
+    title: 'useTitle',
+    path: '/hooks/use-title/use-title',
+  },
 ];
