@@ -171,4 +171,8 @@ export default [
     title: 'useTitle',
     path: '/hooks/use-title/use-title',
   },
+  {
+    title: 'useToggler',
+    path: '/hooks/use-toggler/use-toggler',
+  },
 ];

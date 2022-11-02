@@ -168,7 +168,11 @@ export default [
     path: '/zh-CN/hooks/use-timeout/use-timeout',
   },
   {
-    title: '修改标题',
+    title: '修改标题钩子函数',
     path: '/hooks/use-title/use-title',
+  },
+  {
+    title: '切换布尔值钩子函数',
+    path: '/hooks/use-toggler/use-toggler',
   },
 ];

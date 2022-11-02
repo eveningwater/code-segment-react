@@ -2,8 +2,7 @@ import { useRef, useEffect } from 'react';
 
 const useTitle = (title) => {
   const isDocumentDefined = typeof document !== 'undefined';
-  const originalTitle =
-    useRef < string > (isDocumentDefined ? document.title : '');
+  const originalTitle = useRef(isDocumentDefined ? document.title : '');
 
   useEffect(() => {
     if (!isDocumentDefined) {
