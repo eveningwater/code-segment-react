@@ -175,4 +175,8 @@ export default [
     title: 'useToggler',
     path: '/hooks/use-toggler/use-toggler',
   },
+  {
+    title: 'useUnload',
+    path: '/hooks/use-unload/use-unload',
+  },
 ];

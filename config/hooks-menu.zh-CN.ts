@@ -169,10 +169,14 @@ export default [
   },
   {
     title: '修改标题钩子函数',
-    path: '/hooks/use-title/use-title',
+    path: '/zh-CN/hooks/use-title/use-title',
   },
   {
     title: '切换布尔值钩子函数',
-    path: '/hooks/use-toggler/use-toggler',
+    path: '/zh-CN/hooks/use-toggler/use-toggler',
+  },
+  {
+    title: '加载前钩子函数',
+    path: '/zh-CN/hooks/use-unload/use-unload',
   },
 ];
