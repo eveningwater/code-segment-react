@@ -179,4 +179,8 @@ export default [
     title: 'useUnload',
     path: '/hooks/use-unload/use-unload',
   },
+  {
+    title: 'useUpdate',
+    path: '/hooks/use-update/use-update',
+  },
 ];

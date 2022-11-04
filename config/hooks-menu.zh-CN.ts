@@ -179,4 +179,8 @@ export default [
     title: '加载前钩子函数',
     path: '/zh-CN/hooks/use-unload/use-unload',
   },
+  {
+    title: '强制重新渲染钩子函数',
+    path: '/zh-CN/hooks/use-update/use-update',
+  },
 ];
