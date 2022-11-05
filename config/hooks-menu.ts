@@ -183,4 +183,8 @@ export default [
     title: 'useUpdate',
     path: '/hooks/use-update/use-update',
   },
+  {
+    title: 'useWindowSize',
+    path: '/hooks/use-window-size/use-window-size',
+  },
 ];

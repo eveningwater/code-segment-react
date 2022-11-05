@@ -183,4 +183,8 @@ export default [
     title: '强制重新渲染钩子函数',
     path: '/zh-CN/hooks/use-update/use-update',
   },
+  {
+    title: '窗口大小改变钩子函数',
+    path: '/zh-CN/hooks/use-window-size/use-window-size',
+  },
 ];

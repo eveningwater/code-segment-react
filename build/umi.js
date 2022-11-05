@@ -725,7 +725,7 @@
         var n = null != arguments[t] ? arguments[t] : {};
         t % 2
           ? D(Object(n), !0).forEach(function (t) {
-              z(e, t, n[t]);
+              M(e, t, n[t]);
             })
           : Object.getOwnPropertyDescriptors
           ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n))
@@ -739,9 +739,9 @@
       }
       return e;
     }
-    function M(e) {
+    function z(e) {
       return (
-        (M =
+        (z =
           'function' === typeof Symbol && 'symbol' === typeof Symbol.iterator
             ? function (e) {
                 return typeof e;
@@ -754,10 +754,10 @@
                   ? 'symbol'
                   : typeof e;
               }),
-        M(e)
+        z(e)
       );
     }
-    function z(e, t, n) {
+    function M(e, t, n) {
       return (
         t in e
           ? Object.defineProperty(e, t, {
@@ -851,7 +851,7 @@
     }
     function Z(e, t, n) {
       var a = n;
-      if ('object' !== M(t))
+      if ('object' !== z(t))
         return 'undefined' !== typeof a
           ? ('number' === typeof a && (a = ''.concat(a, 'px')),
             void (e.style[t] = a))
@@ -1186,13 +1186,13 @@
         if (((r = Le.css(t, 'position')), 'static' !== r)) return t;
       return null;
     }
-    var Me = Le.getParent;
-    function ze(e) {
+    var ze = Le.getParent;
+    function Me(e) {
       if (Le.isWindow(e) || 9 === e.nodeType) return !1;
       var t = Le.getDocument(e),
         n = t.body,
         a = null;
-      for (a = Me(e); a && a !== n && a !== t; a = Me(a)) {
+      for (a = ze(e); a && a !== n && a !== t; a = ze(a)) {
         var r = Le.css(a, 'position');
         if ('fixed' === r) return !0;
       }
@@ -1241,7 +1241,7 @@
         ('hidden' === g.overflowX && (h = o.innerWidth),
         'hidden' === g.overflowY && (v = o.innerHeight),
         e.style && (e.style.position = c),
-        t || ze(e))
+        t || Me(e))
       )
         (n.left = Math.max(n.left, d)),
           (n.top = Math.max(n.top, m)),
@@ -1773,10 +1773,10 @@
           L = N[1],
           D = yt(d),
           A = Object(S['a'])(D, 2),
-          M = A[0],
-          z = A[1];
+          z = A[0],
+          M = A[1];
         function B() {
-          d && z(v());
+          d && M(v());
         }
         var F = Et(n, B),
           _ = Object(S['a'])(F, 2),
@@ -1847,7 +1847,7 @@
             };
           });
         var X = Object(a['a'])(
-            Object(a['a'])({}, M),
+            Object(a['a'])({}, z),
             {},
             {
               zIndex: c,
@@ -2860,18 +2860,18 @@
         }
         if (h(e)) {
           var A = ''.concat(n, '-group'),
-            M = ''.concat(A, '-addon'),
-            z = l()(''.concat(n, '-wrapper'), A, b),
+            z = ''.concat(A, '-addon'),
+            M = l()(''.concat(n, '-wrapper'), A, b),
             B = l()(''.concat(n, '-group-wrapper'), d, g);
           return s.a.createElement(
             'span',
             { className: B, style: m, hidden: O },
             s.a.createElement(
               'span',
-              { className: z },
-              c && s.a.createElement('span', { className: M }, c),
+              { className: M },
+              c && s.a.createElement('span', { className: z }, c),
               Object(i['cloneElement'])(T, { style: null, hidden: null }),
-              u && s.a.createElement('span', { className: M }, u),
+              u && s.a.createElement('span', { className: z }, u),
             ),
           );
         }
@@ -2918,8 +2918,8 @@
           L = e.showCount,
           D = e.type,
           A = void 0 === D ? 'text' : D,
-          M = e.inputClassName,
-          z = Object(S['a'])(e, I),
+          z = e.inputClassName,
+          M = Object(S['a'])(e, I),
           B = Object(j['a'])(e.defaultValue, { value: e.value }),
           F = Object(C['a'])(B, 2),
           _ = F[0],
@@ -3006,7 +3006,7 @@
                   className: l()(
                     f,
                     Object(r['a'])({}, ''.concat(f, '-disabled'), y),
-                    M,
+                    z,
                     !h(e) && !v(e) && T,
                   ),
                   ref: W,
@@ -3050,7 +3050,7 @@
         return s.a.createElement(
           x,
           Object(k['a'])(
-            Object(k['a'])({}, z),
+            Object(k['a'])({}, M),
             {},
             {
               prefixCls: f,
@@ -3073,7 +3073,7 @@
       D = n('plZ8'),
       A = n('Lgf6');
     Object(A['a'])('warning', 'error', '');
-    function M(e, t, n) {
+    function z(e, t, n) {
       var a;
       return l()(
         ((a = {}),
@@ -3089,7 +3089,7 @@
         a),
       );
     }
-    var z = function (e, t) {
+    var M = function (e, t) {
       return t || e;
     };
     function B(e) {
@@ -3202,7 +3202,7 @@
           W = G.status,
           K = G.hasFeedback,
           $ = G.feedbackIcon,
-          J = z(W, g),
+          J = M(W, g),
           Y = B(e) || !!K,
           Q = Object(i['useRef'])(Y);
         Object(i['useEffect'])(
@@ -3282,7 +3282,7 @@
                   Object(r['a'])(n, ''.concat(A, '-rtl'), 'rtl' === R),
                   Object(r['a'])(n, ''.concat(A, '-borderless'), !v),
                   n),
-                  !Y && M(A, J),
+                  !Y && z(A, J),
                 ),
                 affixWrapperClassName: l()(
                   ((o = {}),
@@ -3307,7 +3307,7 @@
                     !v,
                   ),
                   o),
-                  M(''.concat(A, '-affix-wrapper'), J, K),
+                  z(''.concat(A, '-affix-wrapper'), J, K),
                 ),
                 wrapperClassName: l()(
                   Object(r['a'])({}, ''.concat(A, '-group-rtl'), 'rtl' === R),
@@ -3330,7 +3330,7 @@
                     'rtl' === R,
                   ),
                   d),
-                  M(''.concat(A, '-group-wrapper'), J, K),
+                  z(''.concat(A, '-group-wrapper'), J, K),
                 ),
               },
             ),
@@ -3600,13 +3600,13 @@
                 e,
               );
           },
-          M = function (e) {
+          z = function (e) {
             I.current || A(e);
           },
-          z = S('input-search', s),
+          M = S('input-search', s),
           B = S('input', u),
           F = 'boolean' === typeof h ? i['createElement'](ie, null) : null,
-          _ = ''.concat(z, '-button'),
+          _ = ''.concat(M, '-button'),
           V = h || {},
           U = V.type && !0 === V.type.__ANT_BUTTON;
         (o =
@@ -3652,11 +3652,11 @@
               )),
           v && (o = [o, Object(ce['a'])(v, { key: 'addonAfter' })]);
         var H = l()(
-            z,
+            M,
             ((n = {}),
-            Object(r['a'])(n, ''.concat(z, '-rtl'), 'rtl' === O),
-            Object(r['a'])(n, ''.concat(z, '-').concat(R), !!R),
-            Object(r['a'])(n, ''.concat(z, '-with-button'), !!h),
+            Object(r['a'])(n, ''.concat(M, '-rtl'), 'rtl' === O),
+            Object(r['a'])(n, ''.concat(M, '-').concat(R), !!R),
+            Object(r['a'])(n, ''.concat(M, '-with-button'), !!h),
             n),
             d,
           ),
@@ -3668,7 +3668,7 @@
           };
         return i['createElement'](
           q,
-          Object(a['a'])({ ref: Object(P['a'])(T, t), onPressEnter: M }, k, {
+          Object(a['a'])({ ref: Object(P['a'])(T, t), onPressEnter: z }, k, {
             size: R,
             onCompositionStart: G,
             onCompositionEnd: W,
@@ -3746,7 +3746,7 @@
                 var b = l()(
                   ''.concat(e, '-affix-wrapper'),
                   ''.concat(e, '-affix-wrapper-textarea-with-clear-btn'),
-                  M(''.concat(e, '-affix-wrapper'), z(v, h), g),
+                  z(''.concat(e, '-affix-wrapper'), M(v, h), g),
                   ((a = {}),
                   Object(r['a'])(
                     a,
@@ -3860,7 +3860,7 @@
           q = F.hasFeedback,
           G = F.isFormItemInput,
           W = F.feedbackIcon,
-          K = z(H, S),
+          K = M(H, S),
           $ = i['useRef'](null),
           J = i['useRef'](null),
           Y = i['useState'](!1),
@@ -3975,7 +3975,7 @@
                   'large' === P || 'large' === b,
                 ),
                 n),
-                M(fe, K),
+                z(fe, K),
               ),
               style: f ? void 0 : g,
               prefixCls: fe,
@@ -4033,7 +4033,7 @@
                     G,
                   ),
                   be),
-                  M(''.concat(fe, '-textarea'), K, q),
+                  z(''.concat(fe, '-textarea'), K, q),
                   v,
                 ),
                 style: g,
@@ -4815,8 +4815,8 @@
       L = 3,
       D = !1,
       A = !1,
-      M = !1;
-    function z(e) {
+      z = !1;
+    function M(e) {
       for (var t = O(T); null !== t; ) {
         if (null === t.callback) j(T);
         else {
@@ -4827,7 +4827,7 @@
       }
     }
     function B(e) {
-      if (((M = !1), z(e), !A))
+      if (((z = !1), M(e), !A))
         if (null !== O(R)) (A = !0), a(F);
         else {
           var t = O(T);
@@ -4835,11 +4835,11 @@
         }
     }
     function F(e, n) {
-      (A = !1), M && ((M = !1), o()), (D = !0);
+      (A = !1), z && ((z = !1), o()), (D = !0);
       var a = L;
       try {
         for (
-          z(n), P = O(R);
+          M(n), P = O(R);
           null !== P && (!(P.expirationTime > n) || (e && !l()));
 
         ) {
@@ -4849,7 +4849,7 @@
             var s = i(P.expirationTime <= n);
             (n = t.unstable_now()),
               'function' === typeof s ? (P.callback = s) : P === O(R) && j(R),
-              z(n);
+              M(n);
           } else j(R);
           P = O(R);
         }
@@ -4955,14 +4955,14 @@
           s > i
             ? ((e.sortIndex = s),
               S(T, e),
-              null === O(R) && e === O(T) && (M ? o() : (M = !0), r(B, s - i)))
+              null === O(R) && e === O(T) && (z ? o() : (z = !0), r(B, s - i)))
             : ((e.sortIndex = l), S(R, e), A || D || ((A = !0), a(F))),
           e
         );
       }),
       (t.unstable_shouldYield = function () {
         var e = t.unstable_now();
-        z(e);
+        M(e);
         var n = O(R);
         return (
           (n !== P &&
@@ -10617,7 +10617,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/hooks/useUpdate/useUpdate.md',
-                updatedTime: 1667564670290,
+                updatedTime: 1667564973124,
                 slugs: [
                   { depth: 4, value: 'useUpdate.ts', heading: 'useupdatets' },
                   { depth: 4, value: 'Demo', heading: 'demo' },
@@ -10637,7 +10637,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/hooks/useUpdate/useUpdate.zh-CN.md',
-                updatedTime: 1667564699922,
+                updatedTime: 1667564973162,
                 slugs: [
                   { depth: 4, value: 'useUpdate.ts', heading: 'useupdatets' },
                   { depth: 4, value: '\u793a\u4f8b', heading: '\u793a\u4f8b' },
@@ -10655,6 +10655,73 @@
                 group: { path: '/zh-CN/hooks/use-update', title: 'UseUpdate' },
               },
               title: 'useUpdate.ts - react-code-segment',
+            },
+            {
+              path: '/hooks/use-window-size/use-window-size',
+              component: n('tJoz').default,
+              exact: !0,
+              meta: {
+                filePath: 'docs/hooks/useWindowSize/useWindowSize.md',
+                updatedTime: 1667654207414,
+                slugs: [
+                  {
+                    depth: 4,
+                    value: 'useWindowSize.ts',
+                    heading: 'usewindowsizets',
+                  },
+                  { depth: 4, value: 'Demo', heading: 'demo' },
+                  {
+                    depth: 4,
+                    value: 'useWindowSize.js',
+                    heading: 'usewindowsizejs',
+                  },
+                  { depth: 4, value: 'js Demo', heading: 'js-demo' },
+                ],
+                title: 'useWindowSize.ts',
+                hasPreviewer: !0,
+                nav: { path: '/hooks', title: 'Hooks' },
+                group: {
+                  path: '/hooks/use-window-size',
+                  title: 'UseWindowSize',
+                },
+              },
+              title: 'useWindowSize.ts - react-code-segment',
+            },
+            {
+              path: '/zh-CN/hooks/use-window-size/use-window-size',
+              component: n('iB96').default,
+              exact: !0,
+              meta: {
+                filePath: 'docs/hooks/useWindowSize/useWindowSize.zh-CN.md',
+                updatedTime: 1667654216672,
+                slugs: [
+                  {
+                    depth: 4,
+                    value: 'useWindowSize.ts',
+                    heading: 'usewindowsizets',
+                  },
+                  { depth: 4, value: '\u793a\u4f8b', heading: '\u793a\u4f8b' },
+                  {
+                    depth: 4,
+                    value: 'useWindowSize.js',
+                    heading: 'usewindowsizejs',
+                  },
+                  {
+                    depth: 4,
+                    value: 'js \u793a\u4f8b',
+                    heading: 'js-\u793a\u4f8b',
+                  },
+                ],
+                title: 'useWindowSize.ts',
+                hasPreviewer: !0,
+                locale: 'zh-CN',
+                nav: { path: '/zh-CN/hooks', title: 'Hooks' },
+                group: {
+                  path: '/zh-CN/hooks/use-window-size',
+                  title: 'UseWindowSize',
+                },
+              },
+              title: 'useWindowSize.ts - react-code-segment',
             },
             {
               path: '/model/model',
@@ -11588,6 +11655,18 @@
               meta: {},
               exact: !0,
               redirect: '/zh-CN/hooks/use-update/use-update',
+            },
+            {
+              path: '/hooks/use-window-size',
+              meta: {},
+              exact: !0,
+              redirect: '/hooks/use-window-size/use-window-size',
+            },
+            {
+              path: '/zh-CN/hooks/use-window-size',
+              meta: {},
+              exact: !0,
+              redirect: '/zh-CN/hooks/use-window-size/use-window-size',
             },
             { path: '/model', meta: {}, exact: !0, redirect: '/model/model' },
             {
@@ -13261,7 +13340,7 @@
                 'useUpdate.ts',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useReducer } from 'react';\nconst useUpdate = () => {\n    const [,update] = useReducer(() => Object.create(null),void 0);\n    return update;\n}\n\nexport default useUpdate;",
+                code: "import { useReducer } from 'react';\nconst useUpdate = () => {\n  const [, update] = useReducer(() => Object.create(null), void 0);\n  return update;\n};\n\nexport default useUpdate;",
                 lang: 'ts',
               }),
               r.a.createElement(
@@ -13289,7 +13368,7 @@
                 'useUpdate.js',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useReducer } from 'react';\nconst useUpdate = () => {\n    const [,update] = useReducer(() => Object.create(null),void 0);\n    return update;\n}\n\nexport default useUpdate;",
+                code: "import { useReducer } from 'react';\nconst useUpdate = () => {\n  const [, update] = useReducer(() => Object.create(null), void 0);\n  return update;\n};\n\nexport default useUpdate;",
                 lang: 'js',
               }),
               r.a.createElement(
@@ -13568,11 +13647,11 @@
                     d && D > d.reach && (d.reach = D);
                     var A = w.prev;
                     P && ((A = s(t, A, P)), (k += P.length)), c(t, A, O);
-                    var M = new r(m, v ? a.tokenize(N, v) : N, E, N);
-                    if (((w = s(t, A, M)), L && s(t, w, L), O > 1)) {
-                      var z = { cause: m + ',' + f, reach: D };
-                      l(e, t, n, w.prev, k, z),
-                        d && z.reach > d.reach && (d.reach = z.reach);
+                    var z = new r(m, v ? a.tokenize(N, v) : N, E, N);
+                    if (((w = s(t, A, z)), L && s(t, w, L), O > 1)) {
+                      var M = { cause: m + ',' + f, reach: D };
+                      l(e, t, n, w.prev, k, M),
+                        d && M.reach > d.reach && (d.reach = M.reach);
                     }
                   }
                 }
@@ -16613,7 +16692,7 @@
                 'useUpdate.ts',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useReducer } from 'react';\nconst useUpdate = () => {\n    const [,update] = useReducer(() => Object.create(null),void 0);\n    return update;\n}\n\nexport default useUpdate;",
+                code: "import { useReducer } from 'react';\nconst useUpdate = () => {\n  const [, update] = useReducer(() => Object.create(null), void 0);\n  return update;\n};\n\nexport default useUpdate;",
                 lang: 'ts',
               }),
               r.a.createElement(
@@ -16641,7 +16720,7 @@
                 'useUpdate.js',
               ),
               r.a.createElement(i['a'], {
-                code: "import { useReducer } from 'react';\nconst useUpdate = () => {\n    const [,update] = useReducer(() => Object.create(null),void 0);\n    return update;\n}\n\nexport default useUpdate;",
+                code: "import { useReducer } from 'react';\nconst useUpdate = () => {\n  const [, update] = useReducer(() => Object.create(null), void 0);\n  return update;\n};\n\nexport default useUpdate;",
                 lang: 'js',
               }),
               r.a.createElement(
@@ -19612,11 +19691,11 @@
         else {
           var t = 'POP';
           g.confirmTransitionTo(e, t, c, function (n) {
-            n ? y({ action: t, location: e }) : M(e);
+            n ? y({ action: t, location: e }) : z(e);
           });
         }
       }
-      function M(e) {
+      function z(e) {
         var t = Y.location,
           n = B.indexOf(t.key);
         -1 === n && (n = 0);
@@ -19625,8 +19704,8 @@
         var r = n - a;
         r && ((D = !0), U(r));
       }
-      var z = p(P()),
-        B = [z.key];
+      var M = p(P()),
+        B = [M.key];
       function F(e) {
         return m + x(e);
       }
@@ -19711,7 +19790,7 @@
       var Y = {
         length: t.length,
         action: 'POP',
-        location: z,
+        location: M,
         createHref: F,
         push: _,
         replace: V,
@@ -19736,11 +19815,11 @@
         noslash: { encodePath: v, decodePath: h },
         slash: { encodePath: h, decodePath: h },
       };
-    function M(e) {
+    function z(e) {
       var t = e.indexOf('#');
       return -1 === t ? e : e.slice(0, t);
     }
-    function z() {
+    function M() {
       var e = window.location.href,
         t = e.indexOf('#');
       return -1 === t ? '' : e.substring(t + 1);
@@ -19749,7 +19828,7 @@
       window.location.hash = e;
     }
     function F(e) {
-      window.location.replace(M(window.location.href) + '#' + e);
+      window.location.replace(z(window.location.href) + '#' + e);
     }
     function _(e) {
       void 0 === e && (e = {}), C || f(!1);
@@ -19764,7 +19843,7 @@
         u = c.encodePath,
         d = c.decodePath;
       function m() {
-        var e = d(z());
+        var e = d(M());
         return s && (e = b(e, s)), w(e);
       }
       var p = k();
@@ -19783,7 +19862,7 @@
         );
       }
       function j() {
-        var e = z(),
+        var e = M(),
           t = u(e);
         if (e !== t) F(t);
         else {
@@ -19812,7 +19891,7 @@
         var r = n - a;
         r && ((g = !0), q(r));
       }
-      var N = z(),
+      var N = M(),
         P = u(N);
       N !== P && F(P);
       var L = m(),
@@ -19821,7 +19900,7 @@
         var t = document.querySelector('base'),
           n = '';
         return (
-          t && t.getAttribute('href') && (n = M(window.location.href)),
+          t && t.getAttribute('href') && (n = z(window.location.href)),
           n + '#' + u(s + x(e))
         );
       }
@@ -19832,7 +19911,7 @@
           if (e) {
             var t = x(a),
               r = u(s + t),
-              o = z() !== r;
+              o = M() !== r;
             if (o) {
               (y = t), B(r);
               var l = _.lastIndexOf(x(Z.location)),
@@ -19849,7 +19928,7 @@
           if (e) {
             var t = x(a),
               r = u(s + t),
-              o = z() !== r;
+              o = M() !== r;
             o && ((y = t), F(r));
             var l = _.indexOf(x(Z.location));
             -1 !== l && (_[l] = t), v({ action: n, location: a });
@@ -22343,8 +22422,8 @@
       L = n('LQDL'),
       D = P('species'),
       A = 'Promise',
-      M = T.get,
-      z = T.set,
+      z = T.get,
+      M = T.set,
       B = T.getterFor(A),
       F = d,
       _ = c.TypeError,
@@ -22502,7 +22581,7 @@
     te &&
       ((F = function (e) {
         b(this, F, A), g(e), a.call(this);
-        var t = M(this);
+        var t = z(this);
         try {
           e(ce(de, this, t), ce(ue, this, t));
         } catch (n) {
@@ -22510,7 +22589,7 @@
         }
       }),
       (a = function (e) {
-        z(this, {
+        M(this, {
           type: A,
           done: !1,
           notified: !1,
@@ -22541,7 +22620,7 @@
       })),
       (r = function () {
         var e = new a(),
-          t = M(e);
+          t = z(e);
         (this.promise = e),
           (this.resolve = ce(de, e, t)),
           (this.reject = ce(ue, e, t));
@@ -22738,8 +22817,8 @@
       L = n('wm/v'),
       D = n('Irhw'),
       A = n('kpsG'),
-      M = n('XuLq'),
-      z = n('2uEd'),
+      z = n('XuLq'),
+      M = n('2uEd'),
       B = n('r+OU'),
       F = function (e, t) {
         var n = {};
@@ -22762,7 +22841,7 @@
             I = null;
           }, 100);
       };
-    Object(z['a'])() &&
+    Object(M['a'])() &&
       document.documentElement.addEventListener('click', _, !0);
     var V = function (e) {
       var t,
@@ -22825,7 +22904,7 @@
         k = r('modal', c),
         C = r(),
         j = u['createElement'](
-          M['a'],
+          z['a'],
           { componentName: 'Modal', defaultLocale: Object(B['b'])() },
           s,
         ),
@@ -22902,8 +22981,8 @@
           L = e.okType || 'primary',
           D = ''.concat(b, '-confirm'),
           A = !('okCancel' in e) || e.okCancel,
-          M = e.width || 416,
-          z = e.style || {},
+          z = e.width || 416,
+          M = e.style || {},
           B = void 0 === e.mask || e.mask,
           F = void 0 !== e.maskClosable && e.maskClosable,
           _ = null !== e.autoFocusButton && (e.autoFocusButton || 'ok'),
@@ -22953,9 +23032,9 @@
               mask: B,
               maskClosable: F,
               maskStyle: m,
-              style: z,
+              style: M,
               bodyStyle: S,
-              width: M,
+              width: z,
               zIndex: o,
               afterClose: l,
               keyboard: s,
@@ -23218,7 +23297,7 @@
             };
           }),
           u['createElement'](
-            M['a'],
+            z['a'],
             { componentName: 'Modal', defaultLocale: re['a'].Modal },
             function (e) {
               return u['createElement'](
@@ -24749,6 +24828,28 @@
         return i(this, n);
       };
     }
+  },
+  '86++': function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('YRow'),
+      l = () => {
+        var e = Object(o['a'])(),
+          t = e.width,
+          n = e.height;
+        return r.a.createElement(
+          'p',
+          null,
+          '\u7a97\u53e3\u5927\u5c0f: (',
+          t,
+          ' x ',
+          n,
+          ')',
+        );
+      };
+    t['default'] = l;
   },
   '8Blt': function (e, t, n) {
     'use strict';
@@ -28899,17 +29000,17 @@
       L = 'active',
       D = 'end',
       A = n('TEpf'),
-      M = n('Uwon'),
-      z = function () {
+      z = n('Uwon'),
+      M = function () {
         var e = i['useRef'](null);
         function t() {
-          M['a'].cancel(e.current);
+          z['a'].cancel(e.current);
         }
         function n(a) {
           var r =
             arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 2;
           t();
-          var o = Object(M['a'])(function () {
+          var o = Object(z['a'])(function () {
             r <= 1
               ? a({
                   isCanceled: function () {
@@ -28942,7 +29043,7 @@
           a = Object(o['a'])(n, 2),
           r = a[0],
           l = a[1],
-          s = z(),
+          s = M(),
           c = Object(o['a'])(s, 2),
           u = c[0],
           d = c[1];
@@ -29024,9 +29125,9 @@
         S = l.onAppearEnd,
         T = l.onEnterEnd,
         D = l.onLeaveEnd,
-        M = l.onVisibleChanged,
-        z = Object(A['a'])(),
-        B = Object(o['a'])(z, 2),
+        z = l.onVisibleChanged,
+        M = Object(A['a'])(),
+        B = Object(o['a'])(M, 2),
         _ = B[0],
         W = B[1],
         K = Object(A['a'])(O),
@@ -29153,7 +29254,7 @@
           _ && (he.current = !0),
             void 0 !== _ &&
               J === O &&
-              ((he.current || _) && (null === M || void 0 === M || M(_)),
+              ((he.current || _) && (null === z || void 0 === z || z(_)),
               (he.current = !0));
         },
         [_, J],
@@ -29230,10 +29331,10 @@
             },
             [t],
           ),
-          M = Object(r['a'])(Object(r['a'])({}, b), {}, { visible: u });
+          z = Object(r['a'])(Object(r['a'])({}, b), {}, { visible: u });
         if (h)
           if (j !== O && n(e)) {
-            var z, B;
+            var M, B;
             I === N
               ? (B = 'prepare')
               : H(I)
@@ -29241,15 +29342,15 @@
               : I === P && (B = 'start'),
               (D = h(
                 Object(r['a'])(
-                  Object(r['a'])({}, M),
+                  Object(r['a'])({}, z),
                   {},
                   {
                     className: d()(
                       S(v, j),
-                      ((z = {}),
-                      Object(a['a'])(z, S(v, ''.concat(j, '-').concat(B)), B),
-                      Object(a['a'])(z, v, 'string' === typeof v),
-                      z),
+                      ((M = {}),
+                      Object(a['a'])(M, S(v, ''.concat(j, '-').concat(B)), B),
+                      Object(a['a'])(M, v, 'string' === typeof v),
+                      M),
                     ),
                     style: R,
                   },
@@ -29258,16 +29359,16 @@
               ));
           } else
             D = T
-              ? h(Object(r['a'])({}, M), A)
+              ? h(Object(r['a'])({}, z), A)
               : !p && L.current
               ? h(
-                  Object(r['a'])(Object(r['a'])({}, M), {}, { className: g }),
+                  Object(r['a'])(Object(r['a'])({}, z), {}, { className: g }),
                   A,
                 )
               : f
               ? h(
                   Object(r['a'])(
-                    Object(r['a'])({}, M),
+                    Object(r['a'])({}, z),
                     {},
                     { style: { display: 'none' } },
                   ),
@@ -31364,11 +31465,11 @@
     function A(e) {
       return y(e);
     }
-    function M(e, t) {
+    function z(e, t) {
       var n = j(e, t);
       return n;
     }
-    function z(e, t, n) {
+    function M(e, t, n) {
       var a = arguments.length > 3 && void 0 !== arguments[3] && arguments[3],
         r = T(e, t, n, a);
       return r;
@@ -31377,8 +31478,8 @@
       var n = {};
       return (
         t.forEach(function (t) {
-          var a = M(e, t);
-          n = z(n, t, a);
+          var a = z(e, t);
+          n = M(n, t, a);
         }),
         n
       );
@@ -32041,7 +32142,7 @@
           (r.getValue = function (e) {
             var t = r.props.fieldContext.getFieldsValue,
               n = r.getNamePath();
-            return M(e || t(!0), n);
+            return z(e || t(!0), n);
           }),
           (r.getControlled = function () {
             var e =
@@ -32490,7 +32591,7 @@
                 void 0 === a ||
                 a.map(function (t) {
                   var n = t.key;
-                  r = z(r, n, M(e, n));
+                  r = M(r, n, z(e, n));
                 }),
                 (n.prevWithoutPreserves = null),
                 n.updateStore(r);
@@ -32504,7 +32605,7 @@
               (n.prevWithoutPreserves = e);
           }),
           (this.getInitialValue = function (e) {
-            var t = M(n.initialValues, e);
+            var t = z(n.initialValues, e);
             return e.length ? D(t) : t;
           }),
           (this.setCallbacks = function (e) {
@@ -32605,7 +32706,7 @@
           (this.getFieldValue = function (e) {
             n.warningUnhooked();
             var t = A(e);
-            return M(n.store, t);
+            return z(n.store, t);
           }),
           (this.getFieldsError = function (e) {
             n.warningUnhooked();
@@ -32739,7 +32840,7 @@
                         var c = n.getFieldValue(o);
                         (e.skipExist && void 0 !== c) ||
                           n.updateStore(
-                            z(n.store, o, Object(s['a'])(i)[0].value),
+                            M(n.store, o, Object(s['a'])(i)[0].value),
                           );
                       }
                     }
@@ -32779,7 +32880,7 @@
             var a = e.map(A);
             a.forEach(function (e) {
               var t = n.getInitialValue(e);
-              n.updateStore(z(n.store, e, t));
+              n.updateStore(M(n.store, e, t));
             }),
               n.resetWithFieldInitialValue({ namePathList: a }),
               n.notifyObservers(t, a, { type: 'reset' }),
@@ -32794,7 +32895,7 @@
                 l = (e.errors, Object(o['a'])(e, Ee)),
                 i = A(r);
               a.push(i),
-                'value' in l && n.updateStore(z(n.store, i, l.value)),
+                'value' in l && n.updateStore(M(n.store, i, l.value)),
                 n.notifyObservers(t, [i], { type: 'setField', data: e });
             }),
               n.notifyWatch(a);
@@ -32819,8 +32920,8 @@
             var t = e.props.initialValue;
             if (void 0 !== t) {
               var a = e.getNamePath(),
-                r = M(n.store, a);
-              void 0 === r && n.updateStore(z(n.store, a, t));
+                r = z(n.store, a);
+              void 0 === r && n.updateStore(M(n.store, a, t));
             }
           }),
           (this.isMergedPreserve = function (e) {
@@ -32858,7 +32959,7 @@
                   })
                 ) {
                   var i = n.store;
-                  n.updateStore(z(i, t, l, !0)),
+                  n.updateStore(M(i, t, l, !0)),
                     n.notifyObservers(i, [t], { type: 'remove' }),
                     n.triggerDependenciesUpdate(i, t);
                 }
@@ -32908,7 +33009,7 @@
           (this.updateValue = function (e, t) {
             var a = A(e),
               r = n.store;
-            n.updateStore(z(n.store, a, t)),
+            n.updateStore(M(n.store, a, t)),
               n.notifyObservers(r, [a], {
                 type: 'valueUpdate',
                 source: 'internal',
@@ -33254,18 +33355,18 @@
           }),
           L(u);
         var A,
-          M = a['useRef'](null);
-        T(l, !M.current),
-          M.current || (M.current = !0),
+          z = a['useRef'](null);
+        T(l, !z.current),
+          z.current || (z.current = !0),
           a['useEffect'](function () {
             return D;
           }, []);
-        var z = 'function' === typeof d;
-        if (z) {
+        var M = 'function' === typeof d;
+        if (M) {
           var B = j.getFieldsValue(!0);
           A = d(B, j);
         } else A = d;
-        R(!z);
+        R(!M);
         var F = a['useRef']();
         a['useEffect'](
           function () {
@@ -33341,11 +33442,11 @@
               n = t(v),
               a = n.registerWatch,
               r = a(function (e) {
-                var t = M(e, p.current),
+                var t = z(e, p.current),
                   n = Re(t);
                 s.current !== n && ((s.current = n), l(t));
               }),
-              o = M(e(), p.current);
+              o = z(e(), p.current);
             return l(o), r;
           }
         }, []),
@@ -35464,8 +35565,8 @@
       L = P,
       D = n('0rob'),
       A = x['a'].ESC,
-      M = x['a'].TAB;
-    function z(e) {
+      z = x['a'].TAB;
+    function M(e) {
       var t = e.visible,
         n = e.setTriggerVisible,
         r = e.triggerRef,
@@ -35516,7 +35617,7 @@
             case A:
               s();
               break;
-            case M:
+            case z:
               var t = !1;
               i.current || (t = c()), t ? e.preventDefault() : s();
               break;
@@ -35581,14 +35682,14 @@
         P = N[0],
         D = N[1],
         A = 'visible' in e ? C : P,
-        M = a['useRef'](null);
+        z = a['useRef'](null);
       a['useImperativeHandle'](t, function () {
-        return M.current;
+        return z.current;
       }),
-        z({
+        M({
           visible: A,
           setTriggerVisible: D,
-          triggerRef: M,
+          triggerRef: z,
           onVisibleChange: e.onVisibleChange,
           autoFocus: j,
         });
@@ -35644,7 +35745,7 @@
             {},
             {
               prefixCls: s,
-              ref: M,
+              ref: z,
               popupClassName: m()(
                 w,
                 Object(l['a'])({}, ''.concat(s, '-show-arrow'), r),
@@ -35725,8 +35826,8 @@
         L = ''.concat(r, '-more-popup'),
         D = ''.concat(n, '-dropdown'),
         A = null !== N ? ''.concat(L, '-').concat(N) : null,
-        M = null === s || void 0 === s ? void 0 : s.dropdownAriaLabel;
-      function z(e, t) {
+        z = null === s || void 0 === s ? void 0 : s.dropdownAriaLabel;
+      function M(e, t) {
         e.preventDefault(),
           e.stopPropagation(),
           v.onEdit('remove', { key: t, event: e });
@@ -35745,7 +35846,7 @@
           role: 'listbox',
           'aria-activedescendant': A,
           selectedKeys: [N],
-          'aria-label': void 0 !== M ? M : 'expanded dropdown',
+          'aria-label': void 0 !== z ? z : 'expanded dropdown',
         },
         o.map(function (e) {
           var t = v && !1 !== e.closable && !e.disabled;
@@ -35768,7 +35869,7 @@
                   tabIndex: 0,
                   className: ''.concat(D, '-menu-item-remove'),
                   onClick: function (t) {
-                    t.stopPropagation(), z(t, e.key);
+                    t.stopPropagation(), M(t, e.key);
                   },
                 },
                 e.closeIcon || v.removeIcon || '\xd7',
@@ -36052,8 +36153,8 @@
         L = e.onTabScroll,
         D = Object(a['useRef'])(),
         A = Object(a['useRef'])(),
-        M = Object(a['useRef'])(),
         z = Object(a['useRef'])(),
+        M = Object(a['useRef'])(),
         B = Z(),
         F = Object(i['a'])(B, 2),
         _ = F[0],
@@ -36103,7 +36204,7 @@
         Le = ''.concat(s, '-nav-operations-hidden'),
         De = 0,
         Ae = 0;
-      function Me(e) {
+      function ze(e) {
         return e < De ? De : e > Ae ? Ae : e;
       }
       U
@@ -36111,7 +36212,7 @@
           ? ((De = 0), (Ae = Math.max(0, le - fe)))
           : ((De = Math.min(0, fe - le)), (Ae = 0))
         : ((De = Math.min(0, be - ue)), (Ae = 0));
-      var ze = Object(a['useRef'])(),
+      var Me = Object(a['useRef'])(),
         Be = Object(a['useState'])(),
         Fe = Object(i['a'])(Be, 2),
         _e = Fe[0],
@@ -36120,7 +36221,7 @@
         Ve(Date.now());
       }
       function He() {
-        window.clearTimeout(ze.current);
+        window.clearTimeout(Me.current);
       }
       function qe() {
         var e =
@@ -36136,20 +36237,20 @@
             ? (n = -t.left)
             : t.left + t.width > -$ + fe && (n = -(t.left + t.width - fe)),
             ae(0),
-            J(Me(n));
+            J(ze(n));
         } else {
           var a = ne;
           t.top < -ne
             ? (a = -t.top)
             : t.top + t.height > -ne + be && (a = -(t.top + t.height - be)),
             J(0),
-            ae(Me(a));
+            ae(ze(a));
         }
       }
       Q(D, function (e, t) {
         function n(e, t) {
           e(function (e) {
-            var n = Me(e + t);
+            var n = ze(e + t);
             return n;
           });
         }
@@ -36167,7 +36268,7 @@
             return (
               He(),
               _e &&
-                (ze.current = window.setTimeout(function () {
+                (Me.current = window.setTimeout(function () {
                   Ve(0);
                 }, 100)),
               He
@@ -36234,11 +36335,11 @@
                 ? void 0
                 : t.offsetHeight) || 0,
             s =
-              (null === (n = z.current) || void 0 === n
+              (null === (n = M.current) || void 0 === n
                 ? void 0
                 : n.offsetWidth) || 0,
             u =
-              (null === (a = z.current) || void 0 === a
+              (null === (a = M.current) || void 0 === a
                 ? void 0
                 : a.offsetHeight) || 0;
           he(l), Ee(i), ke(s), je(u);
@@ -36379,7 +36480,7 @@
                   },
                   Ye,
                   a['createElement'](H, {
-                    ref: z,
+                    ref: M,
                     prefixCls: s,
                     locale: I,
                     editable: O,
@@ -36409,7 +36510,7 @@
             Object(o['a'])({}, e, {
               removeAriaLabel:
                 null === I || void 0 === I ? void 0 : I.removeAriaLabel,
-              ref: M,
+              ref: z,
               prefixCls: s,
               tabs: et,
               className: !mt && Le,
@@ -36585,8 +36686,8 @@
         L = e.destroyInactiveTabPane,
         D = e.renderTabBar,
         A = e.onChange,
-        M = e.onTabClick,
-        z = e.onTabScroll,
+        z = e.onTabClick,
+        M = e.onTabScroll,
         B = e.getPopupContainer,
         F = e.popupClassName,
         _ = Object(c['a'])(e, oe),
@@ -36651,7 +36752,7 @@
         ue = se[1],
         de = O;
       function me(e, t) {
-        null === M || void 0 === M || M(e, t);
+        null === z || void 0 === z || z(e, t);
         var n = e !== Y;
         Q(e), n && (null === A || void 0 === A || A(e));
       }
@@ -36678,7 +36779,7 @@
             moreTransitionName: P,
             tabBarGutter: j,
             onTabClick: me,
-            onTabScroll: z,
+            onTabScroll: M,
             extra: R,
             style: I,
             panes: b,
@@ -36849,10 +36950,10 @@
         L = ge(P, 2),
         D = L[0],
         A = L[1],
-        M = Object(a['useState'])(Math.random()),
-        z = ge(M, 2),
-        B = z[0],
-        F = z[1],
+        z = Object(a['useState'])(Math.random()),
+        M = ge(z, 2),
+        B = M[0],
+        F = M[1],
         _ = c.sources[O][T] || c.sources[O].content,
         V = Object(fe['useTSPlaygroundUrl'])(s, _),
         U = Object(a['useRef'])(),
@@ -40466,8 +40567,8 @@
       L = /^(0x|0X)/,
       D = /^[0-7]+$/,
       A = /^\d+$/,
-      M = /^[\dA-Fa-f]+$/,
-      z = /[\u0000\u0009\u000A\u000D #%/:?@[\\]]/,
+      z = /^[\dA-Fa-f]+$/,
+      M = /[\u0000\u0009\u000A\u000D #%/:?@[\\]]/,
       B = /[\u0000\u0009\u000A\u000D #/:?@[\\]]/,
       F = /^[\u0000-\u001F ]+|[\u0000-\u001F ]+$/g,
       _ = /[\u0009\u000A\u000D]/g,
@@ -40478,7 +40579,7 @@
           if (((n = H(t.slice(1, -1))), !n)) return I;
           e.host = n;
         } else if (Z(e)) {
-          if (((t = h(t)), z.test(t))) return I;
+          if (((t = h(t)), M.test(t))) return I;
           if (((n = U(t)), null === n)) return I;
           e.host = n;
         } else {
@@ -40511,7 +40612,7 @@
           )
             l = 0;
           else {
-            if (!(10 == o ? A : 8 == o ? D : M).test(r)) return e;
+            if (!(10 == o ? A : 8 == o ? D : z).test(r)) return e;
             l = parseInt(r, o);
           }
           n.push(l);
@@ -40546,7 +40647,7 @@
           if (8 == c) return;
           if (':' != m()) {
             t = n = 0;
-            while (n < 4 && M.test(m()))
+            while (n < 4 && z.test(m()))
               (t = 16 * t + parseInt(m(), 16)), d++, n++;
             if ('.' == m()) {
               if (0 == n) return;
@@ -41065,8 +41166,8 @@
             (a.username = Le.call(a)),
             (a.password = De.call(a)),
             (a.host = Ae.call(a)),
-            (a.hostname = Me.call(a)),
-            (a.port = ze.call(a)),
+            (a.hostname = ze.call(a)),
+            (a.port = Me.call(a)),
             (a.pathname = Be.call(a)),
             (a.search = Fe.call(a)),
             (a.searchParams = _e.call(a)),
@@ -41126,11 +41227,11 @@
           n = e.port;
         return null === t ? '' : null === n ? G(t) : G(t) + ':' + n;
       },
-      Me = function () {
+      ze = function () {
         var e = k(this).host;
         return null === e ? '' : G(e);
       },
-      ze = function () {
+      Me = function () {
         var e = k(this).port;
         return null === e ? '' : String(e);
       },
@@ -41188,11 +41289,11 @@
             var t = k(this);
             t.cannotBeABaseURL || je(t, String(e), ve);
           }),
-          hostname: Ue(Me, function (e) {
+          hostname: Ue(ze, function (e) {
             var t = k(this);
             t.cannotBeABaseURL || je(t, String(e), ge);
           }),
-          port: Ue(ze, function (e) {
+          port: Ue(Me, function (e) {
             var t = k(this);
             ee(t) ||
               ((e = String(e)), '' == e ? (t.port = null) : je(t, e, be));
@@ -43465,10 +43566,10 @@
         e
       );
     })();
-    function M(e) {
+    function z(e) {
       return D(T, e);
     }
-    function z(e) {
+    function M(e) {
       if ('function' !== typeof e.render)
         throw new Error(
           'LoadableMap requires a `render(loaded, props)` function',
@@ -43486,7 +43587,7 @@
       });
     }
     function F(e) {
-      var t = M,
+      var t = z,
         n = {
           loading: function (e) {
             e.error, e.isLoading;
@@ -43503,13 +43604,13 @@
     function _(e, t) {
       if (!e) throw new Error(t);
     }
-    (M.Map = z),
-      (M.preloadAll = function () {
+    (z.Map = M),
+      (z.preloadAll = function () {
         return new Promise(function (e, t) {
           B(j).then(e, t);
         });
       }),
-      (M.preloadReady = function () {
+      (z.preloadReady = function () {
         var e =
           arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : [];
         return new Promise(function (t) {
@@ -43520,7 +43621,7 @@
         });
       }),
       'undefined' !== typeof window &&
-        (window.__NEXT_PRELOADREADY = M.preloadReady);
+        (window.__NEXT_PRELOADREADY = z.preloadReady);
     var V,
       U = function () {
         return (
@@ -45545,6 +45646,20 @@
       o = a(r, 'Promise');
     e.exports = o;
   },
+  Nvls: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('dD+7'),
+      l = () => {
+        var e = Object(o['a'])(),
+          t = e.width,
+          n = e.height;
+        return r.a.createElement('p', null, 'Window size: (', t, ' x ', n, ')');
+      };
+    t['default'] = l;
+  },
   Nvqr: function (e, t, n) {
     'use strict';
     n.r(t);
@@ -46408,9 +46523,9 @@
         "import React from 'react';\nimport AutoLink from './AutoLink';\n\nconst Demo = () => {\n  return <AutoLink text=\"\u70b9\u51fbhttps://www.eveningwater.com\u6211\u554a\" />;\n};\n\nexport default Demo;",
       A =
         'import React from \'react\';\nimport Button from \'./Button\';\nimport { Space } from \'antd\';\nimport styled from \'@emotion/styled\';\n\nconst MarginTop = styled.div`\n  margin-top: 10px;\n`;\nconst Demo = () => {\n  return (\n    <>\n      <Space wrap>\n        <Button>default button</Button>\n        <Button type="link">link button</Button>\n        <Button type="link" href="https://www.eveningwater.com" target="_blank">\n          Hyperlink\n        </Button>\n        <Button ripple>ripple button</Button>\n        <Button type="primary">primary button</Button>\n        <Button type="dashed">dashed button</Button>\n        <Button type="text">text button</Button>\n        <Button danger>danger button</Button>\n        <Button danger disabled>\n          disabled button\n        </Button>\n      </Space>\n      <MarginTop>\n        <Button block>block button</Button>\n      </MarginTop>\n    </>\n  );\n};\n\nexport default Demo;',
-      M =
-        "import React, { useState, useEffect } from 'react';\nimport type { SyntheticEvent, ReactNode } from 'react';\nimport './button.less';\nimport classnames from '../../utils/classnames';\nimport Loader from '../Loader/Loader';\nexport interface ButtonProps extends Record<string, any> {\n  ripple: boolean;\n  block: boolean;\n  danger: boolean;\n  disabled: boolean;\n  type: 'primary' | 'dashed' | 'link' | 'text' | 'default';\n  size: 'large' | 'default' | 'small';\n  loading: boolean;\n  target: string;\n  href: string;\n  shape: 'default' | 'circle' | 'round';\n  nativeType: 'submit' | 'reset' | 'button';\n  children: ReactNode;\n  icon: ReactNode;\n  onClick(e: SyntheticEvent): void;\n}\n\nconst Button = (props: Partial<ButtonProps>) => {\n  const {\n    type,\n    block,\n    ripple,\n    nativeType = 'button',\n    disabled,\n    children,\n    href,\n    shape,\n    target,\n    danger,\n    loading,\n    icon,\n    size,\n    onClick,\n    ...rest\n  } = props;\n\n  const [coords, setCoords] = useState({ x: -1, y: -1 });\n  const [isRippling, setIsRippling] = useState(false);\n\n  useEffect(() => {\n    if (coords.x !== -1 && coords.y !== -1) {\n      setIsRippling(true);\n      setTimeout(() => setIsRippling(false), 300);\n    } else {\n      setIsRippling(false);\n    }\n  }, [coords]);\n\n  useEffect(() => {\n    if (!isRippling) {\n      setCoords({ x: -1, y: -1 });\n    }\n  }, [isRippling]);\n\n  const classNames = {\n    'ew-btn': true,\n    [`ew-btn-${type}`]: !href,\n    'ew-btn-ripple': ripple,\n    'ew-btn-link': type === 'link',\n    'ew-btn-block': block,\n    'ew-btn-disabled': disabled,\n    [`ew-btn-${shape}`]: !href,\n    'ew-btn-danger': danger,\n    [`ew-btn-${size}`]: size,\n  };\n  const classContentNames = {\n    'ew-btn-content': true,\n    'ew-btn-ripple-content': ripple,\n  };\n\n  const onClickHandler = (e: SyntheticEvent) => {\n    if (ripple) {\n      const event = e.nativeEvent as MouseEvent;\n      const rect = (e.target as HTMLButtonElement).getBoundingClientRect();\n      setCoords({ x: event.clientX - rect.left, y: event.clientY - rect.top });\n    }\n    if (onClick) {\n      onClick(e);\n    }\n  };\n\n  return (\n    <>\n      {href ? (\n        <a\n          href={href}\n          className={classnames(classNames)}\n          target={target}\n          onClick={onClickHandler}\n          {...rest}\n        >\n          <span className={classnames(classContentNames)}>\n            {icon}\n            {loading ? <Loader size={24} /> : children}\n          </span>\n        </a>\n      ) : (\n        <button\n          type={nativeType}\n          disabled={disabled}\n          className={classnames(classNames)}\n          onClick={onClickHandler}\n          {...rest}\n        >\n          {isRippling && ripple ? (\n            <span\n              className=\"ripple\"\n              style={{ left: coords.x, top: coords.y }}\n            ></span>\n          ) : null}\n          <span className={classnames(classContentNames)}>\n            {icon}\n            {loading ? <Loader size={24} /> : children}\n          </span>\n        </button>\n      )}\n    </>\n  );\n};\n\nexport default Button;",
       z =
+        "import React, { useState, useEffect } from 'react';\nimport type { SyntheticEvent, ReactNode } from 'react';\nimport './button.less';\nimport classnames from '../../utils/classnames';\nimport Loader from '../Loader/Loader';\nexport interface ButtonProps extends Record<string, any> {\n  ripple: boolean;\n  block: boolean;\n  danger: boolean;\n  disabled: boolean;\n  type: 'primary' | 'dashed' | 'link' | 'text' | 'default';\n  size: 'large' | 'default' | 'small';\n  loading: boolean;\n  target: string;\n  href: string;\n  shape: 'default' | 'circle' | 'round';\n  nativeType: 'submit' | 'reset' | 'button';\n  children: ReactNode;\n  icon: ReactNode;\n  onClick(e: SyntheticEvent): void;\n}\n\nconst Button = (props: Partial<ButtonProps>) => {\n  const {\n    type,\n    block,\n    ripple,\n    nativeType = 'button',\n    disabled,\n    children,\n    href,\n    shape,\n    target,\n    danger,\n    loading,\n    icon,\n    size,\n    onClick,\n    ...rest\n  } = props;\n\n  const [coords, setCoords] = useState({ x: -1, y: -1 });\n  const [isRippling, setIsRippling] = useState(false);\n\n  useEffect(() => {\n    if (coords.x !== -1 && coords.y !== -1) {\n      setIsRippling(true);\n      setTimeout(() => setIsRippling(false), 300);\n    } else {\n      setIsRippling(false);\n    }\n  }, [coords]);\n\n  useEffect(() => {\n    if (!isRippling) {\n      setCoords({ x: -1, y: -1 });\n    }\n  }, [isRippling]);\n\n  const classNames = {\n    'ew-btn': true,\n    [`ew-btn-${type}`]: !href,\n    'ew-btn-ripple': ripple,\n    'ew-btn-link': type === 'link',\n    'ew-btn-block': block,\n    'ew-btn-disabled': disabled,\n    [`ew-btn-${shape}`]: !href,\n    'ew-btn-danger': danger,\n    [`ew-btn-${size}`]: size,\n  };\n  const classContentNames = {\n    'ew-btn-content': true,\n    'ew-btn-ripple-content': ripple,\n  };\n\n  const onClickHandler = (e: SyntheticEvent) => {\n    if (ripple) {\n      const event = e.nativeEvent as MouseEvent;\n      const rect = (e.target as HTMLButtonElement).getBoundingClientRect();\n      setCoords({ x: event.clientX - rect.left, y: event.clientY - rect.top });\n    }\n    if (onClick) {\n      onClick(e);\n    }\n  };\n\n  return (\n    <>\n      {href ? (\n        <a\n          href={href}\n          className={classnames(classNames)}\n          target={target}\n          onClick={onClickHandler}\n          {...rest}\n        >\n          <span className={classnames(classContentNames)}>\n            {icon}\n            {loading ? <Loader size={24} /> : children}\n          </span>\n        </a>\n      ) : (\n        <button\n          type={nativeType}\n          disabled={disabled}\n          className={classnames(classNames)}\n          onClick={onClickHandler}\n          {...rest}\n        >\n          {isRippling && ripple ? (\n            <span\n              className=\"ripple\"\n              style={{ left: coords.x, top: coords.y }}\n            ></span>\n          ) : null}\n          <span className={classnames(classContentNames)}>\n            {icon}\n            {loading ? <Loader size={24} /> : children}\n          </span>\n        </button>\n      )}\n    </>\n  );\n};\n\nexport default Button;",
+      M =
         "@prefix: ew-;\n\n.@{prefix}btn {\n  line-height: 1.5715;\n  position: relative;\n  display: inline-block;\n  font-weight: 400;\n  white-space: nowrap;\n  text-align: center;\n  background-image: none;\n  border: 1px solid transparent;\n  cursor: pointer;\n  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n  user-select: none;\n  height: 32px;\n  padding: 4px 15px;\n  font-size: 14px;\n  border-radius: 2px;\n  color: rgba(0, 0, 0, 0.85);\n  border-color: #d9d9d9;\n  background: #fff;\n  outline: none;\n  &.@{prefix}btn-large {\n    height: 40px;\n    padding: 6.4px 15px;\n    font-size: 16px;\n    border-radius: 2px;\n  }\n  &.@{prefix}btn-small {\n    height: 24px;\n    padding: 0 7px;\n    font-size: 14px;\n    border-radius: 2px;\n  }\n  &.@{prefix}btn-danger {\n    color: #ff4d4f;\n    border-color: #ff4d4f;\n    background: #fff;\n\n    &:hover,\n    &:active {\n      color: #ff7875;\n      border-color: #ff7875;\n    }\n  }\n\n  &[disabled],\n  &[disabled]:hover,\n  &[disabled]:active {\n    color: rgba(0, 0, 0, 0.25);\n    border-color: #d9d9d9;\n    background: #f5f5f5;\n    text-shadow: none;\n    box-shadow: none;\n    cursor: not-allowed;\n  }\n\n  &.@{prefix}btn-block {\n    width: percentage(1);\n  }\n\n  &:hover,\n  &:active {\n    color: #40a9ff;\n    border-color: #40a9ff;\n  }\n\n  &-link {\n    text-decoration: none;\n    border-color: transparent;\n    background: 0 0;\n    box-shadow: none;\n    color: #1890ff;\n\n    &:hover,\n    &:active {\n      border-color: transparent;\n      background: 0 0;\n      color: #40a9ff;\n    }\n\n    &.@{prefix}btn-danger {\n      color: #ff4d4f;\n      border-color: transparent;\n      background: transparent;\n\n      &:hover {\n        color: #ff7875;\n        border-color: transparent;\n        background: transparent;\n      }\n    }\n  }\n\n  &-primary {\n    color: #fff;\n    border-color: #1890ff;\n    background: #1890ff;\n    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);\n    box-shadow: 0 2px rgba(0, 0, 0, 0.05);\n\n    &.@{prefix}btn-danger {\n      color: #fff;\n      border-color: #ff4d4f;\n      background: #ff4d4f;\n      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);\n      box-shadow: 0 2px rgba(0, 0, 0, 0.04);\n\n      &:hover {\n        color: #fff;\n        border-color: #ff7875;\n        background: #ff7875;\n      }\n    }\n\n    &[disabled],\n    &[disabled]:hover,\n    &[disabled]:active {\n      color: rgba(0, 0, 0, 0.25);\n      border-color: #d9d9d9;\n      background: #f5f5f5;\n      text-shadow: none;\n      box-shadow: none;\n    }\n\n    &:hover {\n      border-color: #40a9ff;\n      background: #40a9ff;\n      color: #fff;\n    }\n\n    &:active {\n      border-color: #096dd9;\n      background: #096dd9;\n      color: #fff;\n    }\n  }\n\n  &-dashed {\n    color: rgba(0, 0, 0, 0.85);\n    border-color: #d9d9d9;\n    background: #fff;\n    border-style: dashed;\n\n    &:hover {\n      border-color: #40a9ff;\n      color: #40a9ff;\n      background: #fff;\n    }\n\n    &:active {\n      border-color: #096dd9;\n      color: #096dd9;\n      background: #fff;\n    }\n  }\n\n  &-text {\n    color: rgba(0, 0, 0, 0.85);\n    border-color: transparent;\n    background: 0 0;\n    box-shadow: none;\n\n    &.@{prefix}btn-danger {\n      color: #ff4d4f;\n      border-color: transparent;\n      background: transparent;\n\n      &:hover {\n        color: #ff7875;\n        border-color: transparent;\n        background: rgba(0, 0, 0, 0.018);\n      }\n    }\n\n    &:hover {\n      border-color: transparent;\n      color: rgba(0, 0, 0, 0.85);\n      background: rgba(0, 0, 0, 0.018);\n    }\n\n    &:active {\n      border-color: transparent;\n      color: rgba(0, 0, 0, 0.85);\n      background: rgba(0, 0, 0, 0.028);\n    }\n\n    &[disabled],\n    &[disabled]:hover,\n    &[disabled]:active {\n      color: rgba(0, 0, 0, 0.25);\n      border-color: transparent;\n      background: 0 0;\n      text-shadow: none;\n      box-shadow: none;\n    }\n  }\n\n  &-ripple {\n    overflow: hidden;\n\n    .ripple {\n      width: 10px;\n      height: 10px;\n      position: absolute;\n      background: #dfdfdf;\n      display: block;\n      content: '';\n      border-radius: 50%;\n      opacity: 1;\n      animation: 0.8s ease 1 forwards ripple-effect;\n    }\n\n    &-content {\n      position: relative;\n      z-index: 2;\n    }\n  }\n\n  @keyframes ripple-effect {\n    0% {\n      transform: scale(1);\n      opacity: 1;\n    }\n\n    50% {\n      transform: scale(6);\n      opacity: 0.375;\n    }\n\n    100% {\n      transform: scale(12);\n      opacity: 0;\n    }\n  }\n}",
       B =
         "export type Value = boolean | string | number | undefined | null | Symbol;\nexport type Mapping = Record<string, unknown>;\nexport interface ArgumentArray extends Array<Argument> {}\nexport type Argument = Mapping | Mapping | ArgumentArray;\nconst hasOwn = Object.prototype.hasOwnProperty;\nexport default function classnames(...args: ArgumentArray): string {\n  const classes: any[] = [];\n  for (let i = 0, len = args.length; i < len; i++) {\n    const arg = args[i];\n    if (!arg) {\n      continue;\n    }\n    if (typeof arg === 'string' || typeof arg === 'number') {\n      classes.push(arg);\n    } else if (Array.isArray(arg)) {\n      if (arg.length) {\n        const __class = classnames.apply(null, arg) as string;\n        if (__class) {\n          classes.push(__class);\n        }\n      }\n    } else if (typeof arg === 'object') {\n      if (arg.toString === Object.prototype.toString) {\n        for (let key in arg) {\n          if (hasOwn.call(arg, key) && arg[key]) {\n            classes.push(key);\n          }\n        }\n      } else {\n        classes.push(String(arg));\n      }\n    }\n  }\n  return classes.join(' ');\n}",
@@ -46516,9 +46631,9 @@
         "import React from 'react';\nimport FileDrop from './FileDrop';\n\nconst Demo = () => {\n  return <FileDrop onDrop={console.log} emptyText=\"\u62d6\u62fd\u6587\u4ef6\u5230\u8fd9\u91cc!\" />;\n};\nexport default Demo;",
       Ae =
         "import React from 'react';\nimport FileDrop from './FileDrop';\n\nconst Demo = () => {\n  return <FileDrop onDrop={console.log} emptyText=\"\u62d6\u62fd\u6587\u4ef6\u5230\u8fd9\u91cc!\" />;\n};\nexport default Demo;",
-      Me =
-        "import React from 'react';\nimport LazyLoadingImage from './LazyLoadImage';\nimport styled from '@emotion/styled';\n\nconst LazyStyleLoadingImage = styled(LazyLoadingImage)`\n  max-width: 100%;\n  min-width: 200px;\n`;\nconst Demo = () => {\n  return (\n    <LazyStyleLoadingImage src=\"https://www.eveningwater.com/static/page/CSS/css-code-50-image/comic-girl-02.jpg\" />\n  );\n};\nexport default Demo;",
       ze =
+        "import React from 'react';\nimport LazyLoadingImage from './LazyLoadImage';\nimport styled from '@emotion/styled';\n\nconst LazyStyleLoadingImage = styled(LazyLoadingImage)`\n  max-width: 100%;\n  min-width: 200px;\n`;\nconst Demo = () => {\n  return (\n    <LazyStyleLoadingImage src=\"https://www.eveningwater.com/static/page/CSS/css-code-50-image/comic-girl-02.jpg\" />\n  );\n};\nexport default Demo;",
+      Me =
         "import React, { useRef, useState, useCallback, useEffect } from 'react';\nexport interface LazyLoadingImageProps {\n  className: string;\n  alt: string;\n  src: string;\n  loadInitially: boolean;\n  observerOptions: Record<string, null | string | unknown>;\n}\nconst LazyLoadingImage = (props: Partial<LazyLoadingImageProps>) => {\n  const {\n    alt,\n    src,\n    className,\n    loadInitially = false,\n    observerOptions = { root: null, rootMargin: '200px 0px' },\n    ...rest\n  } = props;\n  const observerRef = useRef<IntersectionObserver | null>(null);\n  const imgRef = useRef<HTMLImageElement | null>(null);\n  const [isLoaded, setIsLoaded] = useState(false);\n  const observerCallback = useCallback(\n    (entries) => {\n      if (entries[0].isIntersecting) {\n        observerRef.current?.disconnect();\n        setIsLoaded(true);\n      }\n    },\n    [observerRef],\n  );\n  useEffect(() => {\n    if (loadInitially) {\n      return;\n    }\n    if ('loading' in HTMLImageElement.prototype) {\n      setIsLoaded(true);\n      return;\n    }\n    observerRef.current = new IntersectionObserver(\n      observerCallback,\n      observerOptions,\n    );\n    observerRef.current.observe(imgRef.current as HTMLImageElement);\n    return () => {\n      observerRef.current?.disconnect();\n    };\n  }, []);\n\n  return (\n    <img\n      src={isLoaded ? src : ''}\n      alt={alt}\n      ref={imgRef}\n      className={className}\n      loading={loadInitially ? undefined : 'lazy'}\n      {...rest}\n    />\n  );\n};\nexport default LazyLoadingImage;",
       Be =
         "import React from 'react';\nimport LazyLoadingImage from './LazyLoadImage';\nimport styled from '@emotion/styled';\n\nconst LazyStyleLoadingImage = styled(LazyLoadingImage)`\n  max-width: 100%;\n  min-width: 200px;\n`;\nconst Demo = () => {\n  return (\n    <LazyStyleLoadingImage src=\"https://www.eveningwater.com/static/page/CSS/css-code-50-image/comic-girl-02.jpg\" />\n  );\n};\nexport default Demo;",
@@ -46624,9 +46739,9 @@
         'import React from \'react\';\nimport Select from \'./Select\';\nimport { Space } from \'antd\';\nconst { Option } = Select;\nconst Demo = () => {\n  const onChangeHandler = (v) => {\n    console.log(v);\n  };\n  return (\n    <Space>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n      <Select\n        placeholder="\u8bf7\u9009\u62e9"\n        defaultValue="Grapefruit"\n        onChange={onChangeHandler}\n        disabled\n      >\n        <Option label="\u897f\u67da" value="Grapefruit"></Option>\n        <Option label="\u9178\u6a59" value="lime"></Option>\n        <Option label="\u6930\u5b50" value="coconut" disabled></Option>\n        <Option label="\u8292\u679c" value="mango"></Option>\n      </Select>\n    </Space>\n  );\n};\nexport default Demo;',
       At =
         "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['name1', 'name2', 'name3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
-      Mt =
-        "import { css } from '@emotion/css';\nimport React from 'react';\n\ninterface DataListProps {\n  data: string[];\n  isOrdered: boolean;\n  isBordered: boolean;\n}\nconst SimpleStyleDataList = css`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-size: 14px;\n  line-height: 1.5715;\n  list-style: none;\n  position: relative;\n  &.bordered {\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n  }\n`;\nconst SimpleDataListItem = css`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 24px;\n  color: rgba(0, 0, 0, 0.85);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  &:last-of-type {\n    border-bottom: 0;\n  }\n`;\nconst SimpleDataList = (props: Partial<DataListProps>) => {\n  const { data, isOrdered = false, isBordered = true } = props;\n  const List = data?.map((val, index) => (\n    <li className={SimpleDataListItem} key={`${val}-${index}`}>\n      {val}\n    </li>\n  ));\n  const containerClassName = `${SimpleStyleDataList}${\n    isBordered ? ' bordered' : ''\n  }`;\n  return isOrdered ? (\n    <ol className={containerClassName}>{List}</ol>\n  ) : (\n    <ul className={containerClassName}>{List}</ul>\n  );\n};\n\nexport default SimpleDataList;",
       zt =
+        "import { css } from '@emotion/css';\nimport React from 'react';\n\ninterface DataListProps {\n  data: string[];\n  isOrdered: boolean;\n  isBordered: boolean;\n}\nconst SimpleStyleDataList = css`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-size: 14px;\n  line-height: 1.5715;\n  list-style: none;\n  position: relative;\n  &.bordered {\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n  }\n`;\nconst SimpleDataListItem = css`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 24px;\n  color: rgba(0, 0, 0, 0.85);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  &:last-of-type {\n    border-bottom: 0;\n  }\n`;\nconst SimpleDataList = (props: Partial<DataListProps>) => {\n  const { data, isOrdered = false, isBordered = true } = props;\n  const List = data?.map((val, index) => (\n    <li className={SimpleDataListItem} key={`${val}-${index}`}>\n      {val}\n    </li>\n  ));\n  const containerClassName = `${SimpleStyleDataList}${\n    isBordered ? ' bordered' : ''\n  }`;\n  return isOrdered ? (\n    <ol className={containerClassName}>{List}</ol>\n  ) : (\n    <ul className={containerClassName}>{List}</ul>\n  );\n};\n\nexport default SimpleDataList;",
+      Mt =
         "import React from 'react';\nimport SimpleDataList from './SimpleDataList';\nconst Demo = () => {\n  const names = ['name1', 'name2', 'name3'];\n  return <SimpleDataList data={names}></SimpleDataList>;\n};\nexport default Demo;",
       Bt =
         "import { css } from '@emotion/css';\nimport React from 'react';\nconst SimpleStyleDataList = css`\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-size: 14px;\n  line-height: 1.5715;\n  list-style: none;\n  position: relative;\n  &.bordered {\n    border: 1px solid #d9d9d9;\n    border-radius: 2px;\n  }\n`;\nconst SimpleDataListItem = css`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 24px;\n  color: rgba(0, 0, 0, 0.85);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  &:last-of-type {\n    border-bottom: 0;\n  }\n`;\nconst SimpleDataList = (props) => {\n  const { data, isOrdered = false, isBordered = true } = props;\n  const List = data?.map((val, index) => (\n    <li className={SimpleDataListItem} key={`${val}-${index}`}>\n      {val}\n    </li>\n  ));\n  const containerClassName = `${SimpleStyleDataList}${\n    isBordered ? ' bordered' : ''\n  }`;\n  return isOrdered ? (\n    <ol className={containerClassName}>{List}</ol>\n  ) : (\n    <ul className={containerClassName}>{List}</ul>\n  );\n};\n\nexport default SimpleDataList;",
@@ -46730,9 +46845,9 @@
         "import React, { SyntheticEvent } from 'react';\nimport useCopyToClipboard from './useCopyToClipboard';\nimport { Space } from 'antd';\nimport Button from '../../guide/Button/Button';\n\nexport interface TextCopyProps {\n  text: string;\n}\n\nconst TextCopy = (props: Partial<TextCopyProps>) => {\n  const { text = 'Lorem ipsum' } = props;\n  const [copied, copy] = useCopyToClipboard(text);\n  return (\n    <Space>\n      <Button\n        type=\"primary\"\n        ripple\n        onClick={copy as (e: SyntheticEvent) => void}\n      >\n        \u70b9\u51fb\u8fd9\u91cc\u590d\u5236!\n      </Button>\n      <span>{copied && '\u5df2\u590d\u5236!'}</span>\n    </Space>\n  );\n};\n\nconst Demo = () => <TextCopy text=\"\u590d\u5236\u7684\u6587\u672c!\" />;\n\nexport default Demo;",
       An =
         "import React, { useState } from 'react';\nimport Button from '../../guide/Button/Button';\nimport useDebounce from './useDebounce';\n\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const lastValue = useDebounce(value, 500);\n  return (\n    <div>\n      <p>\n        Current: {value} - Debounced: {lastValue}\n      </p>\n      <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n        Increment\n      </Button>\n    </div>\n  );\n};\n\nexport default Demo;",
-      Mn =
-        "import { useState, useEffect } from 'react';\n\nconst useDebounce = <T>(value: T, delay: number) => {\n  const [debounceValue, setDebounceValue] = useState(value);\n  useEffect(() => {\n    const handler = setTimeout(() => {\n      setDebounceValue(value);\n    }, delay);\n    return () => {\n      clearTimeout(handler);\n    };\n  }, [value]);\n\n  return debounceValue;\n};\n\nexport default useDebounce;",
       zn =
+        "import { useState, useEffect } from 'react';\n\nconst useDebounce = <T>(value: T, delay: number) => {\n  const [debounceValue, setDebounceValue] = useState(value);\n  useEffect(() => {\n    const handler = setTimeout(() => {\n      setDebounceValue(value);\n    }, delay);\n    return () => {\n      clearTimeout(handler);\n    };\n  }, [value]);\n\n  return debounceValue;\n};\n\nexport default useDebounce;",
+      Mn =
         "import React, { useState } from 'react';\nimport Button from '../../../guide/Button/jsx/Button';\nimport useDebounce from './useDebounce';\n\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const lastValue = useDebounce(value, 500);\n  return (\n    <div>\n      <p>\n        Current: {value} - Debounced: {lastValue}\n      </p>\n      <Button type=\"primary\" onClick={() => setValue(value + 1)}>\n        Increment\n      </Button>\n    </div>\n  );\n};\n\nexport default Demo;",
       Bn =
         "import { useState, useEffect } from 'react';\n\nconst useDebounce = (value, delay) => {\n  const [debounceValue, setDebounceValue] = useState(value);\n  useEffect(() => {\n    const handler = setTimeout(() => {\n      setDebounceValue(value);\n    }, delay);\n    return () => {\n      clearTimeout(handler);\n    };\n  }, [value]);\n\n  return debounceValue;\n};\n\nexport default useDebounce;",
@@ -46838,9 +46953,9 @@
         "import React from 'react';\nimport useGetSet from './useGetSet';\nimport { Button } from 'antd';\n\nconst Demo = () => {\n  const [count, setCount] = useGetSet(0);\n\n  const onClickHandler = () => {\n    setTimeout(() => {\n      setCount(count() + 1);\n    }, 1_000);\n  };\n\n  return <Button onClick={onClickHandler}>\u8ba1\u6570: {count()}</Button>;\n};\n\nexport default Demo;",
       Aa =
         "import React, { useEffect } from 'react';\nimport { Input } from 'antd';\nimport useHash from './useHash';\nconst Demo = () => {\n  const [hash, setHash] = useHash();\n  useEffect(() => {\n    setHash('#list');\n  }, []);\n  return (\n    <>\n      <p>window.location.href: {window.location.href}</p>\n      <p>Edit hash:</p>\n      <Input value={hash} onChange={(e) => setHash(e.target.value)}></Input>\n    </>\n  );\n};\n\nexport default Demo;",
-      Ma =
-        "import { useState, useCallback, useEffect } from 'react';\nconst useHash = (): [string, (v: string) => void] => {\n  const [hash, setHash] = useState(() => window.location.hash);\n  const onHashChangeHandler = useCallback(() => {\n    setHash(window.location.hash);\n  }, []);\n  useEffect(() => {\n    window.addEventListener('hashchange', onHashChangeHandler);\n    return () => {\n      window.removeEventListener('hashchange', onHashChangeHandler);\n    };\n  }, []);\n\n  const updateHash = useCallback(\n    (newHash: string) => {\n      if (newHash !== hash) {\n        window.location.hash = newHash;\n      }\n    },\n    [hash],\n  );\n\n  return [hash, updateHash];\n};\n\nexport default useHash;",
       za =
+        "import { useState, useCallback, useEffect } from 'react';\nconst useHash = (): [string, (v: string) => void] => {\n  const [hash, setHash] = useState(() => window.location.hash);\n  const onHashChangeHandler = useCallback(() => {\n    setHash(window.location.hash);\n  }, []);\n  useEffect(() => {\n    window.addEventListener('hashchange', onHashChangeHandler);\n    return () => {\n      window.removeEventListener('hashchange', onHashChangeHandler);\n    };\n  }, []);\n\n  const updateHash = useCallback(\n    (newHash: string) => {\n      if (newHash !== hash) {\n        window.location.hash = newHash;\n      }\n    },\n    [hash],\n  );\n\n  return [hash, updateHash];\n};\n\nexport default useHash;",
+      Ma =
         "import React, { useEffect } from 'react';\nimport { Input } from 'antd';\nimport useHash from './useHash';\nconst Demo = () => {\n  const [hash, setHash] = useHash();\n  useEffect(() => {\n    setHash('#list');\n  }, []);\n  return (\n    <>\n      <p>window.location.href: {window.location.href}</p>\n      <p>Edit hash:</p>\n      <Input value={hash} onChange={(e) => setHash(e.target.value)}></Input>\n    </>\n  );\n};\n\nexport default Demo;",
       Ba =
         "import { useState, useCallback, useEffect } from 'react';\nconst useHash = () => {\n  const [hash, setHash] = useState(() => window.location.hash);\n  const onHashChangeHandler = useCallback(() => {\n    setHash(window.location.hash);\n  }, []);\n  useEffect(() => {\n    window.addEventListener('hashchange', onHashChangeHandler);\n    return () => {\n      window.removeEventListener('hashchange', onHashChangeHandler);\n    };\n  }, []);\n\n  const updateHash = useCallback(\n    (newHash) => {\n      if (newHash !== hash) {\n        window.location.hash = newHash;\n      }\n    },\n    [hash],\n  );\n\n  return [hash, updateHash];\n};\n\nexport default useHash;",
@@ -46946,9 +47061,9 @@
         "import React from 'react';\nimport useMediaQuery from './useMediaQuery';\n\nconst Demo = () => {\n  const text = useMediaQuery(\n    '(max-width: 400px)',\n    '\u5bbd\u5ea6\u5c0f\u4e8e 400 \u50cf\u7d20',\n    '\u5bbd\u5ea6\u5927\u4e8e 400 \u50cf\u7d20',\n  );\n  return <span>{text}</span>;\n};\n\nexport default Demo;",
       Ar =
         "import React from 'react';\nimport { Button, Input, Space } from 'antd';\nimport useMergeState from './useMergeState';\n\nconst Demo = () => {\n  const [data, setData] = useMergeState({ name: 'eveningwater', age: 26 });\n  return (\n    <Space wrap>\n      {data.name}\n      <Input\n        value={data.name}\n        onChange={(e) => setData({ name: e.target.value })}\n      />\n      <Button onClick={() => setData(({ age }) => ({ age: age - 1 }))}>\n        -\n      </Button>\n      {data.age}\n      <Button onClick={() => setData(({ age }) => ({ age: age + 1 }))}>\n        +\n      </Button>\n    </Space>\n  );\n};\n\nexport default Demo;",
-      Mr =
-        "import { useState } from 'react';\n\nconst useMergeState = <T>(\n  initialState: Record<string, T> = {},\n): [\n  Record<string, T>,\n  (v: Record<string, T> | ((...args: any) => any)) => void,\n] => {\n  const [value, setValue] = useState(initialState);\n\n  const mergeState = (\n    newState: Record<string, T> | ((...args: any) => any),\n  ) => {\n    if (typeof newState === 'function') {\n      newState = newState(value);\n    }\n    setValue({\n      ...value,\n      ...newState,\n    });\n  };\n\n  return [value, mergeState];\n};\n\nexport default useMergeState;",
       zr =
+        "import { useState } from 'react';\n\nconst useMergeState = <T>(\n  initialState: Record<string, T> = {},\n): [\n  Record<string, T>,\n  (v: Record<string, T> | ((...args: any) => any)) => void,\n] => {\n  const [value, setValue] = useState(initialState);\n\n  const mergeState = (\n    newState: Record<string, T> | ((...args: any) => any),\n  ) => {\n    if (typeof newState === 'function') {\n      newState = newState(value);\n    }\n    setValue({\n      ...value,\n      ...newState,\n    });\n  };\n\n  return [value, mergeState];\n};\n\nexport default useMergeState;",
+      Mr =
         "import React from 'react';\nimport { Button, Input, Space } from 'antd';\nimport useMergeState from './useMergeState';\n\nconst Demo = () => {\n  const [data, setData] = useMergeState({ name: 'eveningwater', age: 26 });\n  return (\n    <Space wrap>\n      {data.name}\n      <Input\n        value={data.name}\n        onChange={(e) => setData({ name: e.target.value })}\n      />\n      <Button onClick={() => setData(({ age }) => ({ age: age - 1 }))}>\n        -\n      </Button>\n      {data.age}\n      <Button onClick={() => setData(({ age }) => ({ age: age + 1 }))}>\n        +\n      </Button>\n    </Space>\n  );\n};\n\nexport default Demo;",
       Br =
         "import { useState } from 'react';\n\nconst useMergeState = (initialState = {}) => {\n  const [value, setValue] = useState(initialState);\n\n  const mergeState = (newState) => {\n    if (typeof newState === 'function') {\n      newState = newState(value);\n    }\n    setValue({\n      ...value,\n      ...newState,\n    });\n  };\n\n  return [value, mergeState];\n};\n\nexport default useMergeState;",
@@ -47052,9 +47167,9 @@
         "import React, { useState } from 'react';\nimport usePrevious from './usePrevious';\nimport { Button } from 'antd';\n\nconst Demo = () => {\n  const [value, setValue] = useState(0);\n  const lastValue = usePrevious(value);\n\n  return (\n    <div>\n      <p>\n        <>\n          \u5f53\u524d\u503c: {value} - \u4e4b\u524d\u503c: {lastValue}\n        </>\n      </p>\n      <Button onClick={() => setValue(value + 1)}>\u589e\u52a0</Button>\n    </div>\n  );\n};\n\nexport default Demo;",
       Ao =
         "import React, { useState } from 'react';\nimport useRequestAnimationFrame from './useRequestAnimationFrame';\n\nconst Demo = () => {\n  const [count, setCount] = useState(0);\n\n  useRequestAnimationFrame((deltaTime) => {\n    setCount((prevCount) => (prevCount + deltaTime * 0.01) % 100);\n  });\n\n  return <p>{Math.round(count)}</p>;\n};\n\nexport default Demo;",
-      Mo =
-        "import { useRef, useEffect } from 'react';\n\nexport type requestAnimationReturnValue = ReturnType<\n  typeof requestAnimationFrame\n>;\nconst useRequestAnimationFrame = (callback: (...args: any) => any) => {\n  const requestRef = useRef<requestAnimationReturnValue>();\n  const previousRef = useRef<requestAnimationReturnValue>();\n\n  const animate = (time: number) => {\n    if (previousRef.current) {\n      callback(time - previousRef.current);\n    }\n    previousRef.current = time;\n    requestRef.current = requestAnimationFrame(animate);\n  };\n\n  useEffect(() => {\n    requestRef.current = requestAnimationFrame(animate);\n    return () => {\n      cancelAnimationFrame(requestRef.current!);\n    };\n  }, []);\n};\n\nexport default useRequestAnimationFrame;",
       zo =
+        "import { useRef, useEffect } from 'react';\n\nexport type requestAnimationReturnValue = ReturnType<\n  typeof requestAnimationFrame\n>;\nconst useRequestAnimationFrame = (callback: (...args: any) => any) => {\n  const requestRef = useRef<requestAnimationReturnValue>();\n  const previousRef = useRef<requestAnimationReturnValue>();\n\n  const animate = (time: number) => {\n    if (previousRef.current) {\n      callback(time - previousRef.current);\n    }\n    previousRef.current = time;\n    requestRef.current = requestAnimationFrame(animate);\n  };\n\n  useEffect(() => {\n    requestRef.current = requestAnimationFrame(animate);\n    return () => {\n      cancelAnimationFrame(requestRef.current!);\n    };\n  }, []);\n};\n\nexport default useRequestAnimationFrame;",
+      Mo =
         "import React, { useState } from 'react';\nimport useRequestAnimationFrame from './useRequestAnimationFrame';\n\nconst Demo = () => {\n  const [count, setCount] = useState(0);\n\n  useRequestAnimationFrame((deltaTime) => {\n    setCount((prevCount) => (prevCount + deltaTime * 0.01) % 100);\n  });\n\n  return <p>{Math.round(count)}</p>;\n};\n\nexport default Demo;",
       Bo =
         "import { useRef, useEffect } from 'react';\n\nconst useRequestAnimationFrame = (callback) => {\n  const requestRef = useRef();\n  const previousRef = useRef();\n\n  const animate = (time) => {\n    if (previousRef.current) {\n      callback(time - previousRef.current);\n    }\n    previousRef.current = time;\n    requestRef.current = requestAnimationFrame(animate);\n  };\n\n  useEffect(() => {\n    requestRef.current = requestAnimationFrame(animate);\n    return () => {\n      cancelAnimationFrame(requestRef.current);\n    };\n  }, []);\n};\n\nexport default useRequestAnimationFrame;",
@@ -47160,9 +47275,9 @@
         "import React from 'react';\nimport { Button } from 'antd';\nimport useToggler from './useToggler';\n\nconst Demo = () => {\n  const [val, toggleVal] = useToggler(false);\n  return <Button onClick={toggleVal}>{val ? '\u5f00' : '\u5173'}</Button>;\n};\nexport default Demo;",
       Al =
         "import React from 'react';\nimport useUnload from './useUnload';\n\nconst Demo = () => {\n  useUnload((e) => {\n    e.preventDefault();\n    const exit = confirm('Are you sure you want to leave?');\n    if (exit) window.close();\n  });\n  return <div>Try closing the window.</div>;\n};\nexport default Demo;",
-      Ml =
-        "import { useRef, useEffect } from 'react';\n\nconst useUnload = (handler: (...args: any[]) => any) => {\n  const cb = useRef(handler);\n\n  useEffect(() => {\n    const onUnload = cb.current;\n    window.addEventListener('beforeunload', onUnload);\n    return () => {\n      window.removeEventListener('beforeunload', onUnload);\n    };\n  }, [cb]);\n};\n\nexport default useUnload;",
       zl =
+        "import { useRef, useEffect } from 'react';\n\nconst useUnload = (handler: (...args: any[]) => any) => {\n  const cb = useRef(handler);\n\n  useEffect(() => {\n    const onUnload = cb.current;\n    window.addEventListener('beforeunload', onUnload);\n    return () => {\n      window.removeEventListener('beforeunload', onUnload);\n    };\n  }, [cb]);\n};\n\nexport default useUnload;",
+      Ml =
         "import React from 'react';\nimport useUnload from './useUnload';\n\nconst Demo = () => {\n  useUnload((e) => {\n    e.preventDefault();\n    const exit = confirm('Are you sure you want to leave?');\n    if (exit) window.close();\n  });\n  return <div>Try closing the window.</div>;\n};\nexport default Demo;",
       Bl =
         "import { useRef, useEffect } from 'react';\n\nconst useUnload = (handler) => {\n  const cb = useRef(handler);\n\n  useEffect(() => {\n    const onUnload = cb.current;\n    window.addEventListener('beforeunload', onUnload);\n    return () => {\n      window.removeEventListener('beforeunload', onUnload);\n    };\n  }, [cb]);\n};\n\nexport default useUnload;",
@@ -47171,24 +47286,36 @@
       _l =
         "import React from 'react';\nimport useUnload from './useUnload';\n\nconst Demo = () => {\n  useUnload((e) => {\n    e.preventDefault();\n    const exit = confirm('\u786e\u5b9a\u8981\u79bb\u5f00\u5417?');\n    if (exit) window.close();\n  });\n  return <div>\u5c1d\u8bd5\u5173\u95ed\u7a97\u53e3\u3002</div>;\n};\nexport default Demo;",
       Vl =
-        "import React from 'react';\r\nimport useUpdate from './useUpdate';\r\nimport { Button } from 'antd';\r\n\r\nconst Demo = () => {\r\n  const update = useUpdate();\r\n\r\n  return (\r\n    <>\r\n      <div>Time: {Date.now()}</div>\r\n      <Button onClick={update}>Update</Button>\r\n    </>\r\n  );\r\n};\r\n\r\nexport default Demo;",
+        "import React from 'react';\nimport useUpdate from './useUpdate';\nimport { Button } from 'antd';\n\nconst Demo = () => {\n  const update = useUpdate();\n\n  return (\n    <>\n      <div>Time: {Date.now()}</div>\n      <Button onClick={update}>Update</Button>\n    </>\n  );\n};\n\nexport default Demo;",
       Ul =
-        "import { useReducer } from 'react';\r\nconst useUpdate = () => {\r\n    const [,update] = useReducer(() => Object.create(null),void 0);\r\n    return update;\r\n}\r\n\r\nexport default useUpdate;",
+        "import { useReducer } from 'react';\nconst useUpdate = () => {\n  const [, update] = useReducer(() => Object.create(null), void 0);\n  return update;\n};\n\nexport default useUpdate;",
       Hl =
-        "import React from 'react';\r\nimport useUpdate from './useUpdate';\r\nimport { Button } from 'antd';\r\n\r\nconst Demo = () => {\r\n  const update = useUpdate();\r\n\r\n  return (\r\n    <>\r\n      <div>Time: {Date.now()}</div>\r\n      <Button onClick={update}>Update</Button>\r\n    </>\r\n  );\r\n};\r\n\r\nexport default Demo;",
+        "import React from 'react';\nimport useUpdate from './useUpdate';\nimport { Button } from 'antd';\n\nconst Demo = () => {\n  const update = useUpdate();\n\n  return (\n    <>\n      <div>Time: {Date.now()}</div>\n      <Button onClick={update}>Update</Button>\n    </>\n  );\n};\n\nexport default Demo;",
       ql =
-        "import { useReducer } from 'react';\r\nconst useUpdate = () => {\r\n    const [,update] = useReducer(() => Object.create(null),void 0);\r\n    return update;\r\n}\r\n\r\nexport default useUpdate;",
+        "import { useReducer } from 'react';\nconst useUpdate = () => {\n  const [, update] = useReducer(() => Object.create(null), void 0);\n  return update;\n};\n\nexport default useUpdate;",
       Gl =
-        "import React from 'react';\r\nimport useUpdate from './useUpdate';\r\nimport { Button } from 'antd';\r\n\r\nconst Demo = () => {\r\n  const update = useUpdate();\r\n\r\n  return (\r\n    <>\r\n      <div>\u5f53\u524d\u65f6\u95f4: {Date.now()}</div>\r\n      <Button onClick={update}>\u66f4\u65b0</Button>\r\n    </>\r\n  );\r\n};\r\n\r\nexport default Demo;",
+        "import React from 'react';\nimport useUpdate from './useUpdate';\nimport { Button } from 'antd';\n\nconst Demo = () => {\n  const update = useUpdate();\n\n  return (\n    <>\n      <div>\u5f53\u524d\u65f6\u95f4: {Date.now()}</div>\n      <Button onClick={update}>\u66f4\u65b0</Button>\n    </>\n  );\n};\n\nexport default Demo;",
       Wl =
-        "import React from 'react';\r\nimport useUpdate from './useUpdate';\r\nimport { Button } from 'antd';\r\n\r\nconst Demo = () => {\r\n  const update = useUpdate();\r\n\r\n  return (\r\n    <>\r\n      <div>\u5f53\u524d\u65f6\u95f4: {Date.now()}</div>\r\n      <Button onClick={update}>\u66f4\u65b0</Button>\r\n    </>\r\n  );\r\n};\r\n\r\nexport default Demo;",
+        "import React from 'react';\nimport useUpdate from './useUpdate';\nimport { Button } from 'antd';\n\nconst Demo = () => {\n  const update = useUpdate();\n\n  return (\n    <>\n      <div>\u5f53\u524d\u65f6\u95f4: {Date.now()}</div>\n      <Button onClick={update}>\u66f4\u65b0</Button>\n    </>\n  );\n};\n\nexport default Demo;",
       Kl =
-        "import React, { useState } from 'react';\nimport { createModel } from './createModel';\nimport { Space, Button } from 'antd';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <Space wrap>\n      <Button onClick={counter.decrement}>-</Button>\n      <span>{counter.count}</span>\n      <Button onClick={counter.increment}>+</Button>\n    </Space>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
+        "import React from 'react';\r\nimport useWindowSize from './useWindowSize';\r\n\r\nconst Demo = () => {\r\n  const { width, height } = useWindowSize();\r\n\r\n  return (\r\n    <p>\r\n      Window size: ({width} x {height})\r\n    </p>\r\n  );\r\n};\r\n\r\nexport default Demo;",
       $l =
-        "// \u5bfc\u5165\u7c7b\u578b\nimport type { ReactNode, ComponentType } from 'react';\nimport React from 'react';\nimport { createContext, useContext } from 'react';\nconst EMPTY: unique symbol = Symbol();\nexport interface ModelProviderProps<State = void> {\n  initialState?: State;\n  children: ReactNode;\n}\nexport interface Model<Value, State = void> {\n  Provider: ComponentType<ModelProviderProps<State>>;\n  useModel: () => Value;\n}\nexport const createModel = <Value, State = void>(\n  useHook: (initialState?: State) => Value,\n): Model<Value, State> => {\n  //\u521b\u5efa\u4e00\u4e2acontext\n  const context = createContext<Value | typeof EMPTY>(EMPTY);\n  // \u5b9a\u4e49Provider\u51fd\u6570\n  const Provider = (props: ModelProviderProps<State>) => {\n    const { Provider: ModelProvider } = context;\n    const { initialState, children } = props;\n    const value = useHook(initialState);\n    return <ModelProvider value={value}>{children}</ModelProvider>;\n  };\n  // \u5b9a\u4e49useModel\u51fd\u6570\n  const useModel = (): Value => {\n    const value = useContext(context);\n    // \u8fd9\u91cc\u786e\u5b9a\u4e00\u4e0b\u7528\u6237\u662f\u5426\u6b63\u786e\u4f7f\u7528Provider\n    if (value === EMPTY) {\n      //\u629b\u51fa\u5f02\u5e38\uff0c\u4f7f\u7528\u8005\u5e76\u6ca1\u6709\u7528Provider\u5305\u88f9\u7ec4\u4ef6\n      throw new Error('Component must be wrapped with <Container.Provider>');\n    }\n    // \u8fd4\u56decontext\n    return value;\n  };\n  return { Provider, useModel };\n};\nexport const useModel = <Value, State = void>(\n  model: Model<Value, State>,\n): Value => {\n  return model.useModel();\n};",
+        "import { useState,useEffect } from 'react';\r\nconst useWindowSize = (): { width: number,height: number } => {\r\n    const [windowSize,setWindowSize] = useState({\r\n        width: 0,\r\n        height: 0\r\n    });\r\n\r\n    useEffect(() => {\r\n        const onHandleResize = () => {\r\n            setWindowSize({\r\n                width: window.innerWidth,\r\n                height: window.innerHeight\r\n            })\r\n        }\r\n        onHandleResize();\r\n        window.addEventListener('resize',onHandleResize);\r\n        return () => {\r\n             window.removeEventListener('resize',onHandleResize);\r\n        }\r\n    },[]);\r\n\r\n    return windowSize;\r\n}\r\n\r\nexport default useWindowSize;",
       Jl =
+        "import React from 'react';\r\nimport useWindowSize from './useWindowSize';\r\n\r\nconst Demo = () => {\r\n  const { width, height } = useWindowSize();\r\n\r\n  return (\r\n    <p>\r\n      Window size: ({width} x {height})\r\n    </p>\r\n  );\r\n};\r\n\r\nexport default Demo;",
+      Yl =
+        "import { useState,useEffect } from 'react';\r\nconst useWindowSize = () => {\r\n    const [windowSize,setWindowSize] = useState({\r\n        width: 0,\r\n        height: 0\r\n    });\r\n\r\n    useEffect(() => {\r\n        const onHandleResize = () => {\r\n            setWindowSize({\r\n                width: window.innerWidth,\r\n                height: window.innerHeight\r\n            })\r\n        }\r\n        onHandleResize();\r\n        window.addEventListener('resize',onHandleResize);\r\n        return () => {\r\n             window.removeEventListener('resize',onHandleResize);\r\n        }\r\n    },[]);\r\n\r\n    return windowSize;\r\n}\r\n\r\nexport default useWindowSize;",
+      Ql =
+        "import React from 'react';\r\nimport useWindowSize from './useWindowSize';\r\n\r\nconst Demo = () => {\r\n  const { width, height } = useWindowSize();\r\n\r\n  return (\r\n    <p>\r\n      \u7a97\u53e3\u5927\u5c0f: ({width} x {height})\r\n    </p>\r\n  );\r\n};\r\n\r\nexport default Demo;",
+      Zl =
+        "import React from 'react';\r\nimport useWindowSize from './useWindowSize';\r\n\r\nconst Demo = () => {\r\n  const { width, height } = useWindowSize();\r\n\r\n  return (\r\n    <p>\r\n      \u7a97\u53e3\u5927\u5c0f: ({width} x {height})\r\n    </p>\r\n  );\r\n};\r\n\r\nexport default Demo;",
+      Xl =
         "import React, { useState } from 'react';\nimport { createModel } from './createModel';\nimport { Space, Button } from 'antd';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <Space wrap>\n      <Button onClick={counter.decrement}>-</Button>\n      <span>{counter.count}</span>\n      <Button onClick={counter.increment}>+</Button>\n    </Space>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
-      Yl = {
+      ei =
+        "// \u5bfc\u5165\u7c7b\u578b\nimport type { ReactNode, ComponentType } from 'react';\nimport React from 'react';\nimport { createContext, useContext } from 'react';\nconst EMPTY: unique symbol = Symbol();\nexport interface ModelProviderProps<State = void> {\n  initialState?: State;\n  children: ReactNode;\n}\nexport interface Model<Value, State = void> {\n  Provider: ComponentType<ModelProviderProps<State>>;\n  useModel: () => Value;\n}\nexport const createModel = <Value, State = void>(\n  useHook: (initialState?: State) => Value,\n): Model<Value, State> => {\n  //\u521b\u5efa\u4e00\u4e2acontext\n  const context = createContext<Value | typeof EMPTY>(EMPTY);\n  // \u5b9a\u4e49Provider\u51fd\u6570\n  const Provider = (props: ModelProviderProps<State>) => {\n    const { Provider: ModelProvider } = context;\n    const { initialState, children } = props;\n    const value = useHook(initialState);\n    return <ModelProvider value={value}>{children}</ModelProvider>;\n  };\n  // \u5b9a\u4e49useModel\u51fd\u6570\n  const useModel = (): Value => {\n    const value = useContext(context);\n    // \u8fd9\u91cc\u786e\u5b9a\u4e00\u4e0b\u7528\u6237\u662f\u5426\u6b63\u786e\u4f7f\u7528Provider\n    if (value === EMPTY) {\n      //\u629b\u51fa\u5f02\u5e38\uff0c\u4f7f\u7528\u8005\u5e76\u6ca1\u6709\u7528Provider\u5305\u88f9\u7ec4\u4ef6\n      throw new Error('Component must be wrapped with <Container.Provider>');\n    }\n    // \u8fd4\u56decontext\n    return value;\n  };\n  return { Provider, useModel };\n};\nexport const useModel = <Value, State = void>(\n  model: Model<Value, State>,\n): Value => {\n  return model.useModel();\n};",
+      ti =
+        "import React, { useState } from 'react';\nimport { createModel } from './createModel';\nimport { Space, Button } from 'antd';\n\nfunction useCounter(initialState = 0) {\n  let [count, setCount] = useState(initialState);\n  let decrement = () => setCount(count - 1);\n  let increment = () => setCount(count + 1);\n  return { count, decrement, increment };\n}\n\nlet Counter = createModel(useCounter);\n\nfunction CounterDisplay() {\n  let counter = Counter.useModel();\n  return (\n    <Space wrap>\n      <Button onClick={counter.decrement}>-</Button>\n      <span>{counter.count}</span>\n      <Button onClick={counter.increment}>+</Button>\n    </Space>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Counter.Provider>\n      <CounterDisplay />\n      <Counter.Provider initialState={2}>\n        <div>\n          <div>\n            <CounterDisplay />\n          </div>\n        </div>\n      </Counter.Provider>\n    </Counter.Provider>\n  );\n}\n\nexport default Demo;",
+      ni = {
         'loadingbutton-demo': {
           component: n('4ZnB').default,
           previewerProps: {
@@ -47490,8 +47617,8 @@
           previewerProps: {
             sources: {
               _: { tsx: A },
-              'Button.tsx': { import: './Button', content: M },
-              'button.less': { import: './button.less', content: z },
+              'Button.tsx': { import: './Button', content: z },
+              'button.less': { import: './button.less', content: M },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: B,
@@ -47515,7 +47642,7 @@
             sources: {
               _: { jsx: _ },
               'Button.jsx': { import: './Button', content: V },
-              'button.less': { import: './button.less', content: z },
+              'button.less': { import: './button.less', content: M },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: B,
@@ -47538,8 +47665,8 @@
           previewerProps: {
             sources: {
               _: { tsx: U },
-              'Button.tsx': { import: './Button', content: M },
-              'button.less': { import: './button.less', content: z },
+              'Button.tsx': { import: './Button', content: z },
+              'button.less': { import: './button.less', content: M },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: B,
@@ -47563,7 +47690,7 @@
             sources: {
               _: { jsx: H },
               'Button.jsx': { import: './Button', content: V },
-              'button.less': { import: './button.less', content: z },
+              'button.less': { import: './button.less', content: M },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: B,
@@ -48041,8 +48168,8 @@
           component: n('8+C5').default,
           previewerProps: {
             sources: {
-              _: { tsx: Me },
-              'LazyLoadImage.tsx': { import: './LazyLoadImage', content: ze },
+              _: { tsx: ze },
+              'LazyLoadImage.tsx': { import: './LazyLoadImage', content: Me },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -48074,7 +48201,7 @@
           previewerProps: {
             sources: {
               _: { tsx: _e },
-              'LazyLoadImage.tsx': { import: './LazyLoadImage', content: ze },
+              'LazyLoadImage.tsx': { import: './LazyLoadImage', content: Me },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -48630,7 +48757,7 @@
           previewerProps: {
             sources: {
               _: { tsx: At },
-              'SimpleDataList.tsx': { import: './SimpleDataList', content: Mt },
+              'SimpleDataList.tsx': { import: './SimpleDataList', content: zt },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -48644,7 +48771,7 @@
           component: n('5z5X').default,
           previewerProps: {
             sources: {
-              _: { jsx: zt },
+              _: { jsx: Mt },
               'SimpleDataList.jsx': { import: './SimpleDataList', content: Bt },
             },
             dependencies: {
@@ -48660,7 +48787,7 @@
           previewerProps: {
             sources: {
               _: { tsx: Ft },
-              'SimpleDataList.tsx': { import: './SimpleDataList', content: Mt },
+              'SimpleDataList.tsx': { import: './SimpleDataList', content: zt },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -48850,8 +48977,8 @@
           previewerProps: {
             sources: {
               _: { tsx: rn },
-              'guide/Button/Button.tsx': { import: './Button', content: M },
-              'button.less': { import: './button.less', content: z },
+              'guide/Button/Button.tsx': { import: './Button', content: z },
+              'button.less': { import: './button.less', content: M },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: B,
@@ -48879,8 +49006,8 @@
           previewerProps: {
             sources: {
               _: { jsx: ln },
-              'guide/Button/Button.tsx': { import: './Button', content: M },
-              'button.less': { import: './button.less', content: z },
+              'guide/Button/Button.tsx': { import: './Button', content: z },
+              'button.less': { import: './button.less', content: M },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: B,
@@ -48908,8 +49035,8 @@
           previewerProps: {
             sources: {
               _: { tsx: cn },
-              'guide/Button/Button.tsx': { import: './Button', content: M },
-              'button.less': { import: './button.less', content: z },
+              'guide/Button/Button.tsx': { import: './Button', content: z },
+              'button.less': { import: './button.less', content: M },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: B,
@@ -48937,8 +49064,8 @@
           previewerProps: {
             sources: {
               _: { jsx: un },
-              'guide/Button/Button.tsx': { import: './Button', content: M },
-              'button.less': { import: './button.less', content: z },
+              'guide/Button/Button.tsx': { import: './Button', content: z },
+              'button.less': { import: './button.less', content: M },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: B,
@@ -48968,8 +49095,8 @@
               _: { tsx: dn },
               'guide/Modal/Modal.tsx': { import: './Modal', content: mt },
               'Modal.less': { import: './Modal.less', content: pt },
-              'guide/Button/Button.tsx': { import: './Button', content: M },
-              'button.less': { import: './button.less', content: z },
+              'guide/Button/Button.tsx': { import: './Button', content: z },
+              'button.less': { import: './button.less', content: M },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: B,
@@ -48998,7 +49125,7 @@
               'guide/Modal/jsx/Modal.jsx': { import: './Modal', content: ht },
               'Modal.less': { import: './Modal.less', content: pt },
               'guide/Button/jsx/Button.jsx': { import: './Button', content: V },
-              'button.less': { import: './button.less', content: z },
+              'button.less': { import: './button.less', content: M },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: B,
@@ -49026,8 +49153,8 @@
               _: { tsx: hn },
               'guide/Modal/Modal.tsx': { import: './Modal', content: mt },
               'Modal.less': { import: './Modal.less', content: pt },
-              'guide/Button/Button.tsx': { import: './Button', content: M },
-              'button.less': { import: './button.less', content: z },
+              'guide/Button/Button.tsx': { import: './Button', content: z },
+              'button.less': { import: './button.less', content: M },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: B,
@@ -49056,7 +49183,7 @@
               'guide/Modal/jsx/Modal.jsx': { import: './Modal', content: ht },
               'Modal.less': { import: './Modal.less', content: pt },
               'guide/Button/jsx/Button.jsx': { import: './Button', content: V },
-              'button.less': { import: './button.less', content: z },
+              'button.less': { import: './button.less', content: M },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: B,
@@ -49186,8 +49313,8 @@
           previewerProps: {
             sources: {
               _: { tsx: On },
-              'guide/Button/Button.tsx': { import: './Button', content: M },
-              'button.less': { import: './button.less', content: z },
+              'guide/Button/Button.tsx': { import: './Button', content: z },
+              'button.less': { import: './button.less', content: M },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: B,
@@ -49214,8 +49341,8 @@
           previewerProps: {
             sources: {
               _: { tsx: In },
-              'guide/Button/Button.tsx': { import: './Button', content: M },
-              'button.less': { import: './button.less', content: z },
+              'guide/Button/Button.tsx': { import: './Button', content: z },
+              'button.less': { import: './button.less', content: M },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: B,
@@ -49274,8 +49401,8 @@
                 import: './useCopyToClipboard',
                 content: Ln,
               },
-              'guide/Button/Button.tsx': { import: './Button', content: M },
-              'button.less': { import: './button.less', content: z },
+              'guide/Button/Button.tsx': { import: './Button', content: z },
+              'button.less': { import: './button.less', content: M },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: B,
@@ -49302,8 +49429,8 @@
                 import: './useCopyToClipboard',
                 content: Ln,
               },
-              'guide/Button/Button.tsx': { import: './Button', content: M },
-              'button.less': { import: './button.less', content: z },
+              'guide/Button/Button.tsx': { import: './Button', content: z },
+              'button.less': { import: './button.less', content: M },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: B,
@@ -49326,14 +49453,14 @@
           previewerProps: {
             sources: {
               _: { tsx: An },
-              'guide/Button/Button.tsx': { import: './Button', content: M },
-              'button.less': { import: './button.less', content: z },
+              'guide/Button/Button.tsx': { import: './Button', content: z },
+              'button.less': { import: './button.less', content: M },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: B,
               },
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
-              'useDebounce.ts': { import: './useDebounce', content: Mn },
+              'useDebounce.ts': { import: './useDebounce', content: zn },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -49348,9 +49475,9 @@
           component: n('A/40').default,
           previewerProps: {
             sources: {
-              _: { jsx: zn },
+              _: { jsx: Mn },
               'guide/Button/jsx/Button.jsx': { import: './Button', content: V },
-              'button.less': { import: './button.less', content: z },
+              'button.less': { import: './button.less', content: M },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: B,
@@ -49372,14 +49499,14 @@
           previewerProps: {
             sources: {
               _: { tsx: Fn },
-              'guide/Button/Button.tsx': { import: './Button', content: M },
-              'button.less': { import: './button.less', content: z },
+              'guide/Button/Button.tsx': { import: './Button', content: z },
+              'button.less': { import: './button.less', content: M },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: B,
               },
               'Loader/Loader.tsx': { import: '../Loader/Loader', content: F },
-              'useDebounce.ts': { import: './useDebounce', content: Mn },
+              'useDebounce.ts': { import: './useDebounce', content: zn },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -49396,7 +49523,7 @@
             sources: {
               _: { jsx: _n },
               'guide/Button/jsx/Button.jsx': { import: './Button', content: V },
-              'button.less': { import: './button.less', content: z },
+              'button.less': { import: './button.less', content: M },
               'utils/classnames.ts': {
                 import: '../../utils/classnames',
                 content: B,
@@ -49940,7 +50067,7 @@
           previewerProps: {
             sources: {
               _: { tsx: Aa },
-              'useHash.ts': { import: './useHash', content: Ma },
+              'useHash.ts': { import: './useHash', content: za },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -49954,7 +50081,7 @@
           component: n('fbcr').default,
           previewerProps: {
             sources: {
-              _: { jsx: za },
+              _: { jsx: Ma },
               'useHash.js': { import: './useHash', content: Ba },
             },
             dependencies: {
@@ -49970,7 +50097,7 @@
           previewerProps: {
             sources: {
               _: { tsx: Fa },
-              'useHash.ts': { import: './useHash', content: Ma },
+              'useHash.ts': { import: './useHash', content: za },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -50420,7 +50547,7 @@
           previewerProps: {
             sources: {
               _: { tsx: Ar },
-              'useMergeState.ts': { import: './useMergeState', content: Mr },
+              'useMergeState.ts': { import: './useMergeState', content: zr },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -50434,7 +50561,7 @@
           component: n('+e32').default,
           previewerProps: {
             sources: {
-              _: { jsx: zr },
+              _: { jsx: Mr },
               'useMergeState.js': { import: './useMergeState', content: Br },
             },
             dependencies: {
@@ -50450,7 +50577,7 @@
           previewerProps: {
             sources: {
               _: { tsx: Fr },
-              'useMergeState.ts': { import: './useMergeState', content: Mr },
+              'useMergeState.ts': { import: './useMergeState', content: zr },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -50952,7 +51079,7 @@
               _: { tsx: Ao },
               'useRequestAnimationFrame.ts': {
                 import: './useRequestAnimationFrame',
-                content: Mo,
+                content: zo,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -50963,7 +51090,7 @@
           component: n('LOvV').default,
           previewerProps: {
             sources: {
-              _: { jsx: zo },
+              _: { jsx: Mo },
               'useRequestAnimationFrame.js': {
                 import: './useRequestAnimationFrame',
                 content: Bo,
@@ -50980,7 +51107,7 @@
               _: { tsx: Fo },
               'useRequestAnimationFrame.ts': {
                 import: './useRequestAnimationFrame',
-                content: Mo,
+                content: zo,
               },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -51450,7 +51577,7 @@
           previewerProps: {
             sources: {
               _: { tsx: Al },
-              'useUnload.ts': { import: './useUnload', content: Ml },
+              'useUnload.ts': { import: './useUnload', content: zl },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'useunload-demo',
@@ -51460,7 +51587,7 @@
           component: n('FsON').default,
           previewerProps: {
             sources: {
-              _: { jsx: zl },
+              _: { jsx: Ml },
               'useUnload.js': { import: './useUnload', content: Bl },
             },
             dependencies: { react: { version: '16.14.0' } },
@@ -51472,7 +51599,7 @@
           previewerProps: {
             sources: {
               _: { tsx: Fl },
-              'useUnload.ts': { import: './useUnload', content: Ml },
+              'useUnload.ts': { import: './useUnload', content: zl },
             },
             dependencies: { react: { version: '16.14.0' } },
             identifier: 'useunload-demo.zh-cn',
@@ -51549,12 +51676,56 @@
             identifier: 'js-demo.zh-cn-39',
           },
         },
+        'usewindowsize-demo': {
+          component: n('fpZq').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: Kl },
+              'useWindowSize.ts': { import: './useWindowSize', content: $l },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'usewindowsize-demo',
+          },
+        },
+        'js-demo-39': {
+          component: n('Nvls').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: Jl },
+              'useWindowSize.js': { import: './useWindowSize', content: Yl },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'js-demo-39',
+          },
+        },
+        'usewindowsize-demo.zh-cn': {
+          component: n('86++').default,
+          previewerProps: {
+            sources: {
+              _: { tsx: Ql },
+              'useWindowSize.ts': { import: './useWindowSize', content: $l },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'usewindowsize-demo.zh-cn',
+          },
+        },
+        'js-demo.zh-cn-40': {
+          component: n('iJst').default,
+          previewerProps: {
+            sources: {
+              _: { jsx: Zl },
+              'useWindowSize.js': { import: './useWindowSize', content: Yl },
+            },
+            dependencies: { react: { version: '16.14.0' } },
+            identifier: 'js-demo.zh-cn-40',
+          },
+        },
         'model-demo': {
           component: n('3P29').default,
           previewerProps: {
             sources: {
-              _: { tsx: Kl },
-              'createModel.tsx': { import: './createModel', content: $l },
+              _: { tsx: Xl },
+              'createModel.tsx': { import: './createModel', content: ei },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -51568,8 +51739,8 @@
           component: n('lq0m').default,
           previewerProps: {
             sources: {
-              _: { tsx: Jl },
-              'createModel.tsx': { import: './createModel', content: $l },
+              _: { tsx: ti },
+              'createModel.tsx': { import: './createModel', content: ei },
             },
             dependencies: {
               react: { version: '16.14.0' },
@@ -51580,13 +51751,13 @@
           },
         },
       },
-      Ql = n('Zs1V'),
-      Zl = n('BI2/'),
-      Xl = n.n(Zl);
+      ai = n('Zs1V'),
+      ri = n('BI2/'),
+      oi = n.n(ri);
     t['default'] = (e) =>
       o.a.createElement(
-        Xl.a,
-        Object(a['a'])({}, e, { config: l, demos: Yl, apis: Ql }),
+        oi.a,
+        Object(a['a'])({}, e, { config: l, demos: ni, apis: ai }),
       );
   },
   Odut: function (e, t, n) {
@@ -52222,9 +52393,9 @@
           L = Object(l['useState'])(!1),
           D = Object(a['a'])(L, 2),
           A = D[0],
-          M = D[1],
-          z = Object(l['useState'])(!1),
-          B = Object(a['a'])(z, 2),
+          z = D[1],
+          M = Object(l['useState'])(!1),
+          B = Object(a['a'])(M, 2),
           F = B[0],
           _ = B[1],
           V = Array.isArray(E)
@@ -52247,7 +52418,7 @@
           'string' === typeof d && I(d);
         }, [d]);
         var U = (e) => {
-            P(e), I(e.value), n || (M(!1), _(!1)), f && f(e);
+            P(e), I(e.value), n || (z(!1), _(!1)), f && f(e);
           },
           H = () => {
             n || (P({ label: '', value: '' }), I(''));
@@ -52259,7 +52430,7 @@
           };
         return (
           Object(c['a'])(k, () => {
-            n || M(!1);
+            n || z(!1);
           }),
           i.a.createElement(
             'div',
@@ -52278,7 +52449,7 @@
                 className: Object(s['a'])(G),
                 placeholder: v,
                 onClick: () => {
-                  n || M(!A);
+                  n || z(!A);
                 },
               },
               i.a.createElement(
@@ -52294,7 +52465,7 @@
                 ? i.a.createElement(m, { onClick: H, ref: C })
                 : i.a.createElement(p, {
                     onClick: () => {
-                      n || M(!A);
+                      n || z(!A);
                     },
                   }),
             ),
@@ -52939,7 +53110,7 @@
   Pvdr: function (e, t, n) {
     'use strict';
     n.d(t, 'a', function () {
-      return M;
+      return z;
     });
     var a = n('2Uyp'),
       r = n('wodR'),
@@ -53123,10 +53294,10 @@
     Object(v['a'])('default', 'primary', 'ghost', 'dashed', 'link', 'text'),
       Object(v['a'])('default', 'circle', 'round'),
       Object(v['a'])('submit', 'button', 'reset');
-    function M(e) {
+    function z(e) {
       return 'danger' === e ? { danger: !0 } : { type: e };
     }
-    var z = function (e, t) {
+    var M = function (e, t) {
         var n,
           l = e.loading,
           i = void 0 !== l && l,
@@ -53145,8 +53316,8 @@
           N = void 0 !== R && R,
           L = e.block,
           D = void 0 !== L && L,
-          M = e.htmlType,
-          z = void 0 === M ? 'button' : M,
+          z = e.htmlType,
+          M = void 0 === z ? 'button' : z,
           B = I(e, [
             'loading',
             'prefixCls',
@@ -53272,7 +53443,7 @@
         var ve = u['createElement'](
           'button',
           Object(a['a'])({}, B, {
-            type: z,
+            type: M,
             className: pe,
             onClick: oe,
             disabled: V,
@@ -53283,7 +53454,7 @@
         );
         return P(v) ? ve : u['createElement'](g['a'], { disabled: !!G }, ve);
       },
-      B = u['forwardRef'](z);
+      B = u['forwardRef'](M);
     (B.Group = x), (B.__ANT_BUTTON = !0);
     t['b'] = B;
   },
@@ -54000,7 +54171,7 @@
   },
   RGYn: function (e) {
     e.exports = JSON.parse(
-      '{"menus":{"en-US":{"/getting-started":[{"path":"/getting-started","title":"react code-segment","meta":{}}],"*":[{"path":"/","title":"Welcome to the website","meta":{}}],"/antd":[{"title":"LoadingButton","path":"/antd/loading-button"},{"title":"OmitText","path":"/antd/omit-text"},{"title":"LoadingModal","path":"/antd/loading-modal"}],"/guide":[{"title":"Accordion","path":"/guide/Accordion/Accordion"},{"title":"Alert","path":"/guide/Alert/Alert"},{"title":"AutoLink","path":"/guide/auto-link/auto-link"},{"title":"Callto","path":"/guide/Callto/Callto"},{"title":"Carousel","path":"/guide/Carousel/Carousel"},{"title":"Collapse","path":"/guide/Collapse/Collapse"},{"title":"ControlledInput","path":"/guide/controlled-input/controlled-input"},{"title":"CountDown","path":"/guide/count-down/count-down"},{"title":"SimpleDataList","path":"/guide/simple-data-list/simple-data-list"},{"title":"SimpleDataTable","path":"/guide/simple-data-table/simple-data-table"},{"title":"FileDrop","path":"/guide/file-drop/file-drop"},{"title":"LazyLoadingImage","path":"/guide/lazy-loading-image/lazy-loading-image"},{"title":"LimitedTextarea","path":"/guide/limited-textarea/limited-textarea"},{"title":"LimitedWordTextarea","path":"/guide/limited-word-textarea/limited-word-textarea"},{"title":"Loader","path":"/guide/Loader/Loader"},{"title":"Mailto","path":"/guide/Mailto/Mailto"},{"title":"SimpleMappedDataTable","path":"/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"Modal","path":"/guide/Modal/Modal"},{"title":"Checkbox","path":"/guide/Checkbox/Checkbox"},{"title":"PasswordRevealer","path":"/guide/password-revealer/password-revealer"},{"title":"Button","path":"/guide/button/button"},{"title":"Select","path":"/guide/select/select"}],"/hooks":[{"title":"useAsync","path":"/hooks/use-async/use-async"},{"title":"useBodyScrollLock","path":"/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"useClickInside","path":"/hooks/use-click-inside/use-click-inside"},{"title":"useClickOutside","path":"/hooks/use-click-outside/use-click-outside"},{"title":"useComponentDidMount","path":"/hooks/use-component-did-mount/use-component-did-mount"},{"title":"useComponentDidUpdate","path":"/hooks/use-component-did-update/use-component-did-update"},{"title":"useComponentWillUnmount","path":"/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"useCopyToClipboard","path":"/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"useDebounce","path":"/hooks/use-debounce/use-debounce"},{"title":"useDefault","path":"/hooks/use-default/use-default"},{"title":"useDelayedState","path":"/hooks/use-delayed-state/use-delayed-state"},{"title":"useEffectOnce","path":"/hooks/use-effect-once/use-effect-once"},{"title":"useError","path":"/hooks/use-error/use-error"},{"title":"useEventListener","path":"/hooks/use-event-listener/use-event-listener"},{"title":"useFetch","path":"/hooks/use-fetch/use-fetch"},{"title":"useForm","path":"/hooks/use-form/use-form"},{"title":"useGetSet","path":"/hooks/use-get-set/use-get-set"},{"title":"useHash","path":"/hooks/use-hash/use-hash"},{"title":"useHover","path":"/hooks/use-hover/use-hover"},{"title":"useIntersectionObserver","path":"/hooks/use-intersection-observer/use-intersection-observer"},{"title":"useInterval","path":"/hooks/use-interval/use-interval"},{"title":"useIsomorphicEffect","path":"/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"useKeyPress","path":"/hooks/use-key-press/use-key-press"},{"title":"useLocalStorage","path":"/hooks/use-local-storage/use-local-storage"},{"title":"useMap","path":"/hooks/use-map/use-map"},{"title":"useMediaQuery","path":"/hooks/use-media-query/use-media-query"},{"title":"useMergeState","path":"/hooks/use-merge-state/use-merge-state"},{"title":"useMutationObserver","path":"/hooks/use-mutation-observer/use-mutation-observer"},{"title":"useNavigatorOnLine","path":"/hooks/use-navigator-on-line/use-navigator-on-line"},{"title":"useOnGlobalEvent","path":"/hooks/use-on-global-event/use-on-global-event"},{"title":"useOnWindowResize","path":"/hooks/use-on-window-resize/use-on-window-resize"},{"title":"useOnWindowScroll","path":"/hooks/use-on-window-scroll/use-on-window-scroll"},{"title":"usePersistedState","path":"/hooks/use-persisted-state/use-persisted-state"},{"title":"usePortal","path":"/hooks/use-portal/use-portal"},{"title":"usePrevious","path":"/hooks/use-previous/use-previous"},{"title":"useRequestAnimationFrame","path":"/hooks/use-request-animation-frame/use-request-animation-frame"},{"title":"useSSR","path":"/hooks/use-ssr/use-ssr"},{"title":"useScript","path":"/hooks/use-script/use-script"},{"title":"useSearchParam","path":"/hooks/use-search-param/use-search-param"},{"title":"useSessionStorage","path":"/hooks/use-session-storage/use-session-storage"},{"title":"useSet","path":"/hooks/use-set/use-set"},{"title":"useTimeout","path":"/hooks/use-timeout/use-timeout"},{"title":"useTitle","path":"/hooks/use-title/use-title"},{"title":"useToggler","path":"/hooks/use-toggler/use-toggler"},{"title":"useUnload","path":"/hooks/use-unload/use-unload"},{"title":"useUpdate","path":"/hooks/use-update/use-update"}],"/model":[{"title":"React model","path":"/model/model"}]},"zh-CN":{"/zh-CN/getting-started":[{"path":"/zh-CN/getting-started","title":"react \u4ee3\u7801\u6bb5","meta":{}}],"*":[{"path":"/zh-CN","title":"\u6b22\u8fce\u6765\u5230\u672c\u7f51\u7ad9","meta":{}}],"/zh-CN/antd":[{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u6309\u94ae","path":"/zh-CN/antd/loading-button"},{"title":"\u7701\u7565\u6587\u672c\u7ec4\u4ef6","path":"/zh-CN/antd/omit-text"},{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u5f39\u6846","path":"/zh-CN/antd/loading-modal"}],"/zh-CN/guide":[{"title":"\u624b\u98ce\u7434","path":"/zh-CN/guide/Accordion/Accordion"},{"title":"\u63d0\u793a","path":"/zh-CN/guide/Alert/Alert"},{"title":"\u81ea\u52a8\u6587\u672c\u94fe\u63a5","path":"/zh-CN/guide/auto-link/auto-link"},{"title":"\u62e8\u7535\u81f3","path":"/zh-CN/guide/Callto/Callto"},{"title":"\u8f6e\u64ad\u56fe","path":"/zh-CN/guide/Carousel/Carousel"},{"title":"\u53ef\u6298\u53e0\u7684\u5185\u5bb9","path":"/zh-CN/guide/Collapse/Collapse"},{"title":"\u53d7\u63a7\u7684\u8f93\u5165\u6846","path":"/zh-CN/guide/controlled-input/controlled-input"},{"title":"\u5012\u8ba1\u65f6\u7ec4\u4ef6","path":"/zh-CN/guide/count-down/count-down"},{"title":"\u7b80\u6613\u6570\u636e\u5217\u8868\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-list/simple-data-list"},{"title":"\u7b80\u6613\u6570\u636e\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-table/simple-data-table"},{"title":"\u62d6\u62fd\u6587\u4ef6\u7ec4\u4ef6","path":"/zh-CN/guide/file-drop/file-drop"},{"title":"\u61d2\u52a0\u8f7d\u56fe\u7247","path":"/zh-CN/guide/lazy-loading-image/lazy-loading-image"},{"title":"\u9650\u5236\u5b57\u7b26\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-textarea/limited-textarea"},{"title":"\u9650\u5236\u5b57\u6570\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-word-textarea/limited-word-textarea"},{"title":"\u52a0\u8f7d\u7ec4\u4ef6","path":"/zh-CN/guide/Loader/Loader"},{"title":"\u90ae\u4ef6\u94fe\u63a5\u7ec4\u4ef6","path":"/zh-CN/guide/Mailto/Mailto"},{"title":"\u7b80\u6613\u5bf9\u8c61\u6570\u7ec4\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"\u5f39\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Modal/Modal"},{"title":"\u590d\u9009\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Checkbox/Checkbox"},{"title":"\u5bc6\u7801\u663e\u793a\u5668","path":"/zh-CN/guide/password-revealer/password-revealer"},{"title":"\u6309\u94ae","path":"/zh-CN/guide/button/button"},{"title":"\u9009\u62e9\u5668","path":"/zh-CN/guide/select/select"}],"/zh-CN/hooks":[{"title":"\u5f02\u6b65","path":"/zh-CN/hooks/use-async/use-async"},{"title":"\u9501\u5b9abody\u5143\u7d20\u7684\u6eda\u52a8","path":"/zh-CN/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5185","path":"/zh-CN/hooks/use-click-inside/use-click-inside"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5916","path":"/zh-CN/hooks/use-click-outside/use-click-outside"},{"title":"\u7ec4\u4ef6\u7684\u6302\u8f7d","path":"/zh-CN/hooks/use-component-did-mount/use-component-did-mount"},{"title":"\u7ec4\u4ef6\u7684\u72b6\u6001\u66f4\u65b0","path":"/zh-CN/hooks/use-component-did-update/use-component-did-update"},{"title":"\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d","path":"/zh-CN/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"\u590d\u5236\u5230\u526a\u8d34\u677f","path":"/zh-CN/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"\u9632\u6296","path":"/zh-CN/hooks/use-debounce/use-debounce"},{"title":"\u9ed8\u8ba4\u503c","path":"/zh-CN/hooks/use-default/use-default"},{"title":"\u5ef6\u8fdf\u72b6\u6001","path":"/zh-CN/hooks/use-delayed-state/use-delayed-state"},{"title":"\u53ea\u6267\u884c\u4e00\u6b21\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-effect-once/use-effect-once"},{"title":"\u9519\u8bef\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-error/use-error"},{"title":"\u4e8b\u4ef6\u76d1\u542c\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-event-listener/use-event-listener"},{"title":"\u8bf7\u6c42\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-fetch/use-fetch"},{"title":"\u8868\u5355\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-form/use-form"},{"title":"\u72b6\u6001\u8bbe\u7f6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-get-set/use-get-set"},{"title":"\u4fee\u6539hash\u503c\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hash/use-hash"},{"title":"\u60ac\u6d6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hover/use-hover"},{"title":"\u5143\u7d20\u5904\u4e8e\u53ef\u89c6\u533a\u57df\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-intersection-observer/use-intersection-observer"},{"title":"\u5b9a\u65f6\u5668\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-interval/use-interval"},{"title":"\u526f\u4f5c\u7528\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"\u6309\u952e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-key-press/use-key-press"},{"title":"\u5b58\u50a8\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-local-storage/use-local-storage"},{"title":"\u6620\u5c04\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-map/use-map"},{"title":"\u68c0\u67e5\u5a92\u4f53\u67e5\u8be2\u73af\u5883\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-media-query/use-media-query"},{"title":"\u5408\u5e76\u72b6\u6001\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-merge-state/use-merge-state"},{"title":"\u76d1\u542c\u5143\u7d20\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-mutation-observer/use-mutation-observer"},{"title":"\u5728\u7ebf\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-navigator-on-line/use-navigator-on-line"},{"title":"\u5168\u5c40\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-global-event/use-on-global-event"},{"title":"\u8c03\u6574\u7a97\u53e3\u5927\u5c0f\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-window-resize/use-on-window-resize"},{"title":"\u7a97\u53e3\u6eda\u52a8\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-window-scroll/use-on-window-scroll"},{"title":"\u6c38\u4e45\u5b58\u50a8\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-persisted-state/use-persisted-state"},{"title":"\u4f20\u9001\u95e8\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-portal/use-portal"},{"title":"\u5b58\u50a8\u65e7\u503c\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-previous/use-previous"},{"title":"\u52a8\u753b\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-request-animation-frame/use-request-animation-frame"},{"title":"\u5224\u65ad\u73af\u5883\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-ssr/use-ssr"},{"title":"\u52a8\u6001\u52a0\u8f7d\u811a\u672c\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-script/use-script"},{"title":"\u83b7\u53d6\u6d4f\u89c8\u5668\u8def\u5f84\u53c2\u6570\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-search-param/use-search-param"},{"title":"\u4f1a\u8bdd\u5b58\u50a8\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-session-storage/use-session-storage"},{"title":"set\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-set/use-set"},{"title":"\u5ef6\u8fdf\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-timeout/use-timeout"},{"title":"\u4fee\u6539\u6807\u9898\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-title/use-title"},{"title":"\u5207\u6362\u5e03\u5c14\u503c\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-toggler/use-toggler"},{"title":"\u52a0\u8f7d\u524d\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-unload/use-unload"},{"title":"\u5f3a\u5236\u91cd\u65b0\u6e32\u67d3\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-update/use-update"}],"/zh-CN/model":[{"title":"react\u72b6\u6001\u7ba1\u7406\u5de5\u5177","path":"/zh-CN/model/model"}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"\u4e2d\u6587"}],"navs":{"en-US":[{"title":"getting-started","path":"/getting-started"},{"title":"guide","path":"/guide"},{"title":"hooks","path":"/hooks"},{"title":"model","path":"/model"},{"title":"antd","path":"/antd"},{"title":"github","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"about me","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"jue jin","path":"https://juejin.im/user/4054654613988718"},{"title":"segmentfault","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"gitee","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"blog","path":"https://www.cnblogs.com/eveningwater/"},{"title":"website","path":"https://www.eveningwater.com/"},{"title":"My project","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"17sucai","path":"https://www.17sucai.com/user/800544"},{"title":"ewColorPicker","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}],"zh-CN":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/zh-CN/getting-started"},{"title":"\u6307\u5357","path":"/zh-CN/guide"},{"title":"\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks"},{"title":"\u72b6\u6001\u7ba1\u7406","path":"/zh-CN/model"},{"title":"\u8682\u8681\u8bbe\u8ba1","path":"/zh-CN/antd"},{"title":"\u6e90\u7801\u5730\u5740","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"\u5173\u4e8e\u6211","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"\u6398\u91d1","path":"https://juejin.im/user/4054654613988718"},{"title":"\u601d\u5426","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"\u7801\u4e91","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"\u535a\u5ba2","path":"https://www.cnblogs.com/eveningwater/"},{"title":"\u4e2a\u4eba\u7f51\u7ad9","path":"https://www.eveningwater.com/"},{"title":"\u4e2a\u4eba\u9879\u76ee","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"\u95e8\u7d20\u6750","path":"https://www.17sucai.com/user/800544"},{"title":"\u989c\u8272\u9009\u62e9\u5668","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}]},"title":"react-code-segment","logo":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K","mode":"site","repository":{"url":"","branch":"master"},"theme":{}}',
+      '{"menus":{"en-US":{"/getting-started":[{"path":"/getting-started","title":"react code-segment","meta":{}}],"*":[{"path":"/","title":"Welcome to the website","meta":{}}],"/antd":[{"title":"LoadingButton","path":"/antd/loading-button"},{"title":"OmitText","path":"/antd/omit-text"},{"title":"LoadingModal","path":"/antd/loading-modal"}],"/guide":[{"title":"Accordion","path":"/guide/Accordion/Accordion"},{"title":"Alert","path":"/guide/Alert/Alert"},{"title":"AutoLink","path":"/guide/auto-link/auto-link"},{"title":"Callto","path":"/guide/Callto/Callto"},{"title":"Carousel","path":"/guide/Carousel/Carousel"},{"title":"Collapse","path":"/guide/Collapse/Collapse"},{"title":"ControlledInput","path":"/guide/controlled-input/controlled-input"},{"title":"CountDown","path":"/guide/count-down/count-down"},{"title":"SimpleDataList","path":"/guide/simple-data-list/simple-data-list"},{"title":"SimpleDataTable","path":"/guide/simple-data-table/simple-data-table"},{"title":"FileDrop","path":"/guide/file-drop/file-drop"},{"title":"LazyLoadingImage","path":"/guide/lazy-loading-image/lazy-loading-image"},{"title":"LimitedTextarea","path":"/guide/limited-textarea/limited-textarea"},{"title":"LimitedWordTextarea","path":"/guide/limited-word-textarea/limited-word-textarea"},{"title":"Loader","path":"/guide/Loader/Loader"},{"title":"Mailto","path":"/guide/Mailto/Mailto"},{"title":"SimpleMappedDataTable","path":"/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"Modal","path":"/guide/Modal/Modal"},{"title":"Checkbox","path":"/guide/Checkbox/Checkbox"},{"title":"PasswordRevealer","path":"/guide/password-revealer/password-revealer"},{"title":"Button","path":"/guide/button/button"},{"title":"Select","path":"/guide/select/select"}],"/hooks":[{"title":"useAsync","path":"/hooks/use-async/use-async"},{"title":"useBodyScrollLock","path":"/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"useClickInside","path":"/hooks/use-click-inside/use-click-inside"},{"title":"useClickOutside","path":"/hooks/use-click-outside/use-click-outside"},{"title":"useComponentDidMount","path":"/hooks/use-component-did-mount/use-component-did-mount"},{"title":"useComponentDidUpdate","path":"/hooks/use-component-did-update/use-component-did-update"},{"title":"useComponentWillUnmount","path":"/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"useCopyToClipboard","path":"/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"useDebounce","path":"/hooks/use-debounce/use-debounce"},{"title":"useDefault","path":"/hooks/use-default/use-default"},{"title":"useDelayedState","path":"/hooks/use-delayed-state/use-delayed-state"},{"title":"useEffectOnce","path":"/hooks/use-effect-once/use-effect-once"},{"title":"useError","path":"/hooks/use-error/use-error"},{"title":"useEventListener","path":"/hooks/use-event-listener/use-event-listener"},{"title":"useFetch","path":"/hooks/use-fetch/use-fetch"},{"title":"useForm","path":"/hooks/use-form/use-form"},{"title":"useGetSet","path":"/hooks/use-get-set/use-get-set"},{"title":"useHash","path":"/hooks/use-hash/use-hash"},{"title":"useHover","path":"/hooks/use-hover/use-hover"},{"title":"useIntersectionObserver","path":"/hooks/use-intersection-observer/use-intersection-observer"},{"title":"useInterval","path":"/hooks/use-interval/use-interval"},{"title":"useIsomorphicEffect","path":"/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"useKeyPress","path":"/hooks/use-key-press/use-key-press"},{"title":"useLocalStorage","path":"/hooks/use-local-storage/use-local-storage"},{"title":"useMap","path":"/hooks/use-map/use-map"},{"title":"useMediaQuery","path":"/hooks/use-media-query/use-media-query"},{"title":"useMergeState","path":"/hooks/use-merge-state/use-merge-state"},{"title":"useMutationObserver","path":"/hooks/use-mutation-observer/use-mutation-observer"},{"title":"useNavigatorOnLine","path":"/hooks/use-navigator-on-line/use-navigator-on-line"},{"title":"useOnGlobalEvent","path":"/hooks/use-on-global-event/use-on-global-event"},{"title":"useOnWindowResize","path":"/hooks/use-on-window-resize/use-on-window-resize"},{"title":"useOnWindowScroll","path":"/hooks/use-on-window-scroll/use-on-window-scroll"},{"title":"usePersistedState","path":"/hooks/use-persisted-state/use-persisted-state"},{"title":"usePortal","path":"/hooks/use-portal/use-portal"},{"title":"usePrevious","path":"/hooks/use-previous/use-previous"},{"title":"useRequestAnimationFrame","path":"/hooks/use-request-animation-frame/use-request-animation-frame"},{"title":"useSSR","path":"/hooks/use-ssr/use-ssr"},{"title":"useScript","path":"/hooks/use-script/use-script"},{"title":"useSearchParam","path":"/hooks/use-search-param/use-search-param"},{"title":"useSessionStorage","path":"/hooks/use-session-storage/use-session-storage"},{"title":"useSet","path":"/hooks/use-set/use-set"},{"title":"useTimeout","path":"/hooks/use-timeout/use-timeout"},{"title":"useTitle","path":"/hooks/use-title/use-title"},{"title":"useToggler","path":"/hooks/use-toggler/use-toggler"},{"title":"useUnload","path":"/hooks/use-unload/use-unload"},{"title":"useUpdate","path":"/hooks/use-update/use-update"},{"title":"useWindowSize","path":"/hooks/use-window-size/use-window-size"}],"/model":[{"title":"React model","path":"/model/model"}]},"zh-CN":{"/zh-CN/getting-started":[{"path":"/zh-CN/getting-started","title":"react \u4ee3\u7801\u6bb5","meta":{}}],"*":[{"path":"/zh-CN","title":"\u6b22\u8fce\u6765\u5230\u672c\u7f51\u7ad9","meta":{}}],"/zh-CN/antd":[{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u6309\u94ae","path":"/zh-CN/antd/loading-button"},{"title":"\u7701\u7565\u6587\u672c\u7ec4\u4ef6","path":"/zh-CN/antd/omit-text"},{"title":"\u52a0\u8f7d\u4e2d\u6548\u679c\u7684\u5f39\u6846","path":"/zh-CN/antd/loading-modal"}],"/zh-CN/guide":[{"title":"\u624b\u98ce\u7434","path":"/zh-CN/guide/Accordion/Accordion"},{"title":"\u63d0\u793a","path":"/zh-CN/guide/Alert/Alert"},{"title":"\u81ea\u52a8\u6587\u672c\u94fe\u63a5","path":"/zh-CN/guide/auto-link/auto-link"},{"title":"\u62e8\u7535\u81f3","path":"/zh-CN/guide/Callto/Callto"},{"title":"\u8f6e\u64ad\u56fe","path":"/zh-CN/guide/Carousel/Carousel"},{"title":"\u53ef\u6298\u53e0\u7684\u5185\u5bb9","path":"/zh-CN/guide/Collapse/Collapse"},{"title":"\u53d7\u63a7\u7684\u8f93\u5165\u6846","path":"/zh-CN/guide/controlled-input/controlled-input"},{"title":"\u5012\u8ba1\u65f6\u7ec4\u4ef6","path":"/zh-CN/guide/count-down/count-down"},{"title":"\u7b80\u6613\u6570\u636e\u5217\u8868\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-list/simple-data-list"},{"title":"\u7b80\u6613\u6570\u636e\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-data-table/simple-data-table"},{"title":"\u62d6\u62fd\u6587\u4ef6\u7ec4\u4ef6","path":"/zh-CN/guide/file-drop/file-drop"},{"title":"\u61d2\u52a0\u8f7d\u56fe\u7247","path":"/zh-CN/guide/lazy-loading-image/lazy-loading-image"},{"title":"\u9650\u5236\u5b57\u7b26\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-textarea/limited-textarea"},{"title":"\u9650\u5236\u5b57\u6570\u7684\u6587\u672c\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/limited-word-textarea/limited-word-textarea"},{"title":"\u52a0\u8f7d\u7ec4\u4ef6","path":"/zh-CN/guide/Loader/Loader"},{"title":"\u90ae\u4ef6\u94fe\u63a5\u7ec4\u4ef6","path":"/zh-CN/guide/Mailto/Mailto"},{"title":"\u7b80\u6613\u5bf9\u8c61\u6570\u7ec4\u8868\u683c\u7ec4\u4ef6","path":"/zh-CN/guide/simple-mapped-data-table/simple-mapped-data-table"},{"title":"\u5f39\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Modal/Modal"},{"title":"\u590d\u9009\u6846\u7ec4\u4ef6","path":"/zh-CN/guide/Checkbox/Checkbox"},{"title":"\u5bc6\u7801\u663e\u793a\u5668","path":"/zh-CN/guide/password-revealer/password-revealer"},{"title":"\u6309\u94ae","path":"/zh-CN/guide/button/button"},{"title":"\u9009\u62e9\u5668","path":"/zh-CN/guide/select/select"}],"/zh-CN/hooks":[{"title":"\u5f02\u6b65","path":"/zh-CN/hooks/use-async/use-async"},{"title":"\u9501\u5b9abody\u5143\u7d20\u7684\u6eda\u52a8","path":"/zh-CN/hooks/use-body-scroll-lock/use-body-scroll-lock"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5185","path":"/zh-CN/hooks/use-click-inside/use-click-inside"},{"title":"\u70b9\u51fb\u533a\u57df\u4e4b\u5916","path":"/zh-CN/hooks/use-click-outside/use-click-outside"},{"title":"\u7ec4\u4ef6\u7684\u6302\u8f7d","path":"/zh-CN/hooks/use-component-did-mount/use-component-did-mount"},{"title":"\u7ec4\u4ef6\u7684\u72b6\u6001\u66f4\u65b0","path":"/zh-CN/hooks/use-component-did-update/use-component-did-update"},{"title":"\u7ec4\u4ef6\u5373\u5c06\u5378\u8f7d","path":"/zh-CN/hooks/use-component-will-unmount/use-component-will-unmount"},{"title":"\u590d\u5236\u5230\u526a\u8d34\u677f","path":"/zh-CN/hooks/use-copy-to-clipboard/use-copy-to-clipboard"},{"title":"\u9632\u6296","path":"/zh-CN/hooks/use-debounce/use-debounce"},{"title":"\u9ed8\u8ba4\u503c","path":"/zh-CN/hooks/use-default/use-default"},{"title":"\u5ef6\u8fdf\u72b6\u6001","path":"/zh-CN/hooks/use-delayed-state/use-delayed-state"},{"title":"\u53ea\u6267\u884c\u4e00\u6b21\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-effect-once/use-effect-once"},{"title":"\u9519\u8bef\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-error/use-error"},{"title":"\u4e8b\u4ef6\u76d1\u542c\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-event-listener/use-event-listener"},{"title":"\u8bf7\u6c42\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-fetch/use-fetch"},{"title":"\u8868\u5355\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-form/use-form"},{"title":"\u72b6\u6001\u8bbe\u7f6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-get-set/use-get-set"},{"title":"\u4fee\u6539hash\u503c\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hash/use-hash"},{"title":"\u60ac\u6d6e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-hover/use-hover"},{"title":"\u5143\u7d20\u5904\u4e8e\u53ef\u89c6\u533a\u57df\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-intersection-observer/use-intersection-observer"},{"title":"\u5b9a\u65f6\u5668\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-interval/use-interval"},{"title":"\u526f\u4f5c\u7528\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-isomorphic-effect/use-isomorphic-effect"},{"title":"\u6309\u952e\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-key-press/use-key-press"},{"title":"\u5b58\u50a8\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-local-storage/use-local-storage"},{"title":"\u6620\u5c04\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-map/use-map"},{"title":"\u68c0\u67e5\u5a92\u4f53\u67e5\u8be2\u73af\u5883\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-media-query/use-media-query"},{"title":"\u5408\u5e76\u72b6\u6001\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-merge-state/use-merge-state"},{"title":"\u76d1\u542c\u5143\u7d20\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-mutation-observer/use-mutation-observer"},{"title":"\u5728\u7ebf\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-navigator-on-line/use-navigator-on-line"},{"title":"\u5168\u5c40\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-global-event/use-on-global-event"},{"title":"\u8c03\u6574\u7a97\u53e3\u5927\u5c0f\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-window-resize/use-on-window-resize"},{"title":"\u7a97\u53e3\u6eda\u52a8\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-on-window-scroll/use-on-window-scroll"},{"title":"\u6c38\u4e45\u5b58\u50a8\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-persisted-state/use-persisted-state"},{"title":"\u4f20\u9001\u95e8\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-portal/use-portal"},{"title":"\u5b58\u50a8\u65e7\u503c\u72b6\u6001\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-previous/use-previous"},{"title":"\u52a8\u753b\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-request-animation-frame/use-request-animation-frame"},{"title":"\u5224\u65ad\u73af\u5883\u7684\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-ssr/use-ssr"},{"title":"\u52a8\u6001\u52a0\u8f7d\u811a\u672c\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-script/use-script"},{"title":"\u83b7\u53d6\u6d4f\u89c8\u5668\u8def\u5f84\u53c2\u6570\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-search-param/use-search-param"},{"title":"\u4f1a\u8bdd\u5b58\u50a8\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-session-storage/use-session-storage"},{"title":"set\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-set/use-set"},{"title":"\u5ef6\u8fdf\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-timeout/use-timeout"},{"title":"\u4fee\u6539\u6807\u9898\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-title/use-title"},{"title":"\u5207\u6362\u5e03\u5c14\u503c\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-toggler/use-toggler"},{"title":"\u52a0\u8f7d\u524d\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-unload/use-unload"},{"title":"\u5f3a\u5236\u91cd\u65b0\u6e32\u67d3\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-update/use-update"},{"title":"\u7a97\u53e3\u5927\u5c0f\u6539\u53d8\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks/use-window-size/use-window-size"}],"/zh-CN/model":[{"title":"react\u72b6\u6001\u7ba1\u7406\u5de5\u5177","path":"/zh-CN/model/model"}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"\u4e2d\u6587"}],"navs":{"en-US":[{"title":"getting-started","path":"/getting-started"},{"title":"guide","path":"/guide"},{"title":"hooks","path":"/hooks"},{"title":"model","path":"/model"},{"title":"antd","path":"/antd"},{"title":"github","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"about me","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"jue jin","path":"https://juejin.im/user/4054654613988718"},{"title":"segmentfault","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"gitee","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"blog","path":"https://www.cnblogs.com/eveningwater/"},{"title":"website","path":"https://www.eveningwater.com/"},{"title":"My project","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"17sucai","path":"https://www.17sucai.com/user/800544"},{"title":"ewColorPicker","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}],"zh-CN":[{"title":"\u5feb\u901f\u4e0a\u624b","path":"/zh-CN/getting-started"},{"title":"\u6307\u5357","path":"/zh-CN/guide"},{"title":"\u94a9\u5b50\u51fd\u6570","path":"/zh-CN/hooks"},{"title":"\u72b6\u6001\u7ba1\u7406","path":"/zh-CN/model"},{"title":"\u8682\u8681\u8bbe\u8ba1","path":"/zh-CN/antd"},{"title":"\u6e90\u7801\u5730\u5740","path":"https://github.com/eveningwater/code-segment-react.git"},{"title":"\u5173\u4e8e\u6211","path":"https://www.eveningwater.com/my-web-projects/","children":[{"title":"\u6398\u91d1","path":"https://juejin.im/user/4054654613988718"},{"title":"\u601d\u5426","path":"https://segmentfault.com/u/xishui_5ac9a340a5484"},{"title":"\u7801\u4e91","path":"https://gitee.com/eveningwater"},{"title":"Github","path":"https://github.com/eveningwater"},{"title":"\u535a\u5ba2","path":"https://www.cnblogs.com/eveningwater/"},{"title":"\u4e2a\u4eba\u7f51\u7ad9","path":"https://www.eveningwater.com/"},{"title":"\u4e2a\u4eba\u9879\u76ee","path":"https://www.eveningwater.com/my-web-projects/home/"},{"title":"\u95e8\u7d20\u6750","path":"https://www.17sucai.com/user/800544"},{"title":"\u989c\u8272\u9009\u62e9\u5668","path":"https://eveningwater.gitee.io/ew-color-picker/"}]}]},"title":"react-code-segment","logo":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K","mode":"site","repository":{"url":"","branch":"master"},"theme":{}}',
     );
   },
   RH9F: function (e, t, n) {
@@ -55963,10 +56134,10 @@
     function A(e) {
       return '/' === e.charAt(0) ? e : '/' + e;
     }
-    function M(e, t) {
+    function z(e, t) {
       return e ? Object(c['a'])({}, t, { pathname: A(e) + t.pathname }) : t;
     }
-    function z(e, t) {
+    function M(e, t) {
       if (!e) return t;
       var n = A(e);
       return 0 !== t.pathname.indexOf(n)
@@ -56013,7 +56184,7 @@
             o = n.context,
             i = void 0 === o ? {} : o;
           (i.action = t),
-            (i.location = M(r, Object(l['c'])(e))),
+            (i.location = z(r, Object(l['c'])(e))),
             (i.url = B(i.location));
         }),
         (n.render = function () {
@@ -56030,7 +56201,7 @@
                 return A(n + B(e));
               },
               action: 'POP',
-              location: z(n, Object(l['c'])(s)),
+              location: M(n, Object(l['c'])(s)),
               push: this.handlePush,
               replace: this.handleReplace,
               go: F('go'),
@@ -56321,10 +56492,10 @@
           L = Object(r['a'])(P, 2),
           D = L[0],
           A = L[1],
-          M = b['useRef'](),
-          z = b['useContext'](E['b']),
-          B = z.getPrefixCls,
-          F = z.direction,
+          z = b['useRef'](),
+          M = b['useContext'](E['b']),
+          B = M.getPrefixCls,
+          F = M.direction,
           _ = B('alert', l),
           V = function (e) {
             var t;
@@ -56368,7 +56539,7 @@
               'div',
               Object(a['a'])(
                 {
-                  ref: M,
+                  ref: z,
                   'data-show': !D,
                   className: v()(W, t),
                   style: Object(a['a'])(Object(a['a'])({}, m), r),
@@ -61999,6 +62170,33 @@
       })(s['Component']);
     t['a'] = R;
   },
+  YRow: function (e, t, n) {
+    'use strict';
+    var a = n('tJVT'),
+      r = n('q1tI'),
+      o = () => {
+        var e = Object(r['useState'])({ width: 0, height: 0 }),
+          t = Object(a['a'])(e, 2),
+          n = t[0],
+          o = t[1];
+        return (
+          Object(r['useEffect'])(() => {
+            var e = () => {
+              o({ width: window.innerWidth, height: window.innerHeight });
+            };
+            return (
+              e(),
+              window.addEventListener('resize', e),
+              () => {
+                window.removeEventListener('resize', e);
+              }
+            );
+          }, []),
+          n
+        );
+      };
+    t['a'] = o;
+  },
   YS25: function (e, t, n) {
     'use strict';
     n.d(t, 'a', function () {
@@ -62305,11 +62503,11 @@
         else {
           var t = 'POP';
           E.confirmTransitionTo(e, t, c, function (n) {
-            n ? w({ action: t, location: e }) : M(e);
+            n ? w({ action: t, location: e }) : z(e);
           });
         }
       }
-      function M(e) {
+      function z(e) {
         var t = Y.location,
           n = B.indexOf(t.key);
         -1 === n && (n = 0);
@@ -62318,8 +62516,8 @@
         var r = n - a;
         r && ((D = !0), U(r));
       }
-      var z = h(P()),
-        B = [z.key];
+      var M = h(P()),
+        B = [M.key];
       function F(e) {
         return m + y(e);
       }
@@ -62404,7 +62602,7 @@
       var Y = {
         length: t.length,
         action: 'POP',
-        location: z,
+        location: M,
         createHref: F,
         push: _,
         replace: V,
@@ -62429,11 +62627,11 @@
         noslash: { encodePath: h, decodePath: f },
         slash: { encodePath: f, decodePath: f },
       };
-    function M(e) {
+    function z(e) {
       var t = e.indexOf('#');
       return -1 === t ? e : e.slice(0, t);
     }
-    function z() {
+    function M() {
       var e = window.location.href,
         t = e.indexOf('#');
       return -1 === t ? '' : e.substring(t + 1);
@@ -62442,7 +62640,7 @@
       window.location.hash = e;
     }
     function F(e) {
-      window.location.replace(M(window.location.href) + '#' + e);
+      window.location.replace(z(window.location.href) + '#' + e);
     }
     function _(e) {
       void 0 === e && (e = {}), C || Object(p['a'])(!1);
@@ -62457,7 +62655,7 @@
         u = c.encodePath,
         d = c.decodePath;
       function m() {
-        var e = d(z());
+        var e = d(M());
         return s && (e = g(e, s)), x(e);
       }
       var h = k();
@@ -62476,7 +62674,7 @@
         );
       }
       function j() {
-        var e = z(),
+        var e = M(),
           t = u(e);
         if (e !== t) F(t);
         else {
@@ -62505,7 +62703,7 @@
         var r = n - a;
         r && ((E = !0), q(r));
       }
-      var N = z(),
+      var N = M(),
         P = u(N);
       N !== P && F(P);
       var L = m(),
@@ -62514,7 +62712,7 @@
         var t = document.querySelector('base'),
           n = '';
         return (
-          t && t.getAttribute('href') && (n = M(window.location.href)),
+          t && t.getAttribute('href') && (n = z(window.location.href)),
           n + '#' + u(s + y(e))
         );
       }
@@ -62525,7 +62723,7 @@
           if (e) {
             var t = y(a),
               r = u(s + t),
-              o = z() !== r;
+              o = M() !== r;
             if (o) {
               (w = t), B(r);
               var l = _.lastIndexOf(y(Z.location)),
@@ -62542,7 +62740,7 @@
           if (e) {
             var t = y(a),
               r = u(s + t),
-              o = z() !== r;
+              o = M() !== r;
             o && ((w = t), F(r));
             var l = _.indexOf(y(Z.location));
             -1 !== l && (_[l] = t), v({ action: n, location: a });
@@ -62816,10 +63014,10 @@
       L = a.RangeError,
       D = p.pack,
       A = p.unpack,
-      M = function (e) {
+      z = function (e) {
         return [255 & e];
       },
-      z = function (e) {
+      M = function (e) {
         return [255 & e, (e >> 8) & 255];
       },
       B = function (e) {
@@ -62959,16 +63157,16 @@
             );
           },
           setInt8: function (e, t) {
-            q(this, 1, e, M, t);
+            q(this, 1, e, z, t);
           },
           setUint8: function (e, t) {
-            q(this, 1, e, M, t);
+            q(this, 1, e, z, t);
           },
           setInt16: function (e, t) {
-            q(this, 2, e, z, t, arguments.length > 2 ? arguments[2] : void 0);
+            q(this, 2, e, M, t, arguments.length > 2 ? arguments[2] : void 0);
           },
           setUint16: function (e, t) {
-            q(this, 2, e, z, t, arguments.length > 2 ? arguments[2] : void 0);
+            q(this, 2, e, M, t, arguments.length > 2 ? arguments[2] : void 0);
           },
           setInt32: function (e, t) {
             q(this, 4, e, B, t, arguments.length > 2 ? arguments[2] : void 0);
@@ -63936,8 +64134,8 @@
         L = e.component,
         D = void 0 === L ? 'div' : L,
         A = e.itemComponent,
-        M = e.onVisibleChange,
-        z = Object(l['a'])(e, O),
+        z = e.onVisibleChange,
+        M = Object(l['a'])(e, O),
         B = E(),
         F = 'full' === x,
         _ = B(null),
@@ -64027,7 +64225,7 @@
       function Te(e, t, n) {
         (pe !== e || (void 0 !== t && t !== ce)) &&
           (fe(e),
-          n || (Ee(e < p.length - 1), null === M || void 0 === M || M(e)),
+          n || (Ee(e < p.length - 1), null === z || void 0 === z || z(e)),
           void 0 !== t && ue(t));
       }
       function Ne(e, t) {
@@ -64078,9 +64276,9 @@
         },
         [q, K, te, oe, Ie, Oe],
       );
-      var Me = be && !!je.length,
-        ze = {};
-      null !== ce && ke && (ze = { position: 'absolute', left: ce, top: 0 });
+      var ze = be && !!je.length,
+        Me = {};
+      null !== ce && ke && (Me = { position: 'absolute', left: ce, top: 0 });
       var Be,
         Fe = { prefixCls: ye, responsive: ke, component: A, invalidate: Ce },
         _e = h
@@ -64121,10 +64319,10 @@
               );
             },
         Ve = {
-          order: Me ? he : Number.MAX_SAFE_INTEGER,
+          order: ze ? he : Number.MAX_SAFE_INTEGER,
           className: ''.concat(ye, '-rest'),
           registerSize: Le,
-          display: Me,
+          display: ze,
         };
       if (N)
         N &&
@@ -64143,7 +64341,7 @@
       }
       var He = i['createElement'](
         D,
-        Object(a['a'])({ className: c()(!Ce && s, k), style: w, ref: t }, z),
+        Object(a['a'])({ className: c()(!Ce && s, k), style: w, ref: t }, M),
         Oe.map(_e),
         Se ? Be : null,
         P &&
@@ -64156,7 +64354,7 @@
               className: ''.concat(ye, '-suffix'),
               registerSize: De,
               display: !0,
-              style: ze,
+              style: Me,
             }),
             P,
           ),
@@ -68269,6 +68467,33 @@
   'dBg+': function (e, t) {
     t.f = Object.getOwnPropertySymbols;
   },
+  'dD+7': function (e, t, n) {
+    'use strict';
+    var a = n('tJVT'),
+      r = n('q1tI'),
+      o = () => {
+        var e = Object(r['useState'])({ width: 0, height: 0 }),
+          t = Object(a['a'])(e, 2),
+          n = t[0],
+          o = t[1];
+        return (
+          Object(r['useEffect'])(() => {
+            var e = () => {
+              o({ width: window.innerWidth, height: window.innerHeight });
+            };
+            return (
+              e(),
+              window.addEventListener('resize', e),
+              () => {
+                window.removeEventListener('resize', e);
+              }
+            );
+          }, []),
+          n
+        );
+      };
+    t['a'] = o;
+  },
   'dG/n': function (e, t, n) {
     var a = n('Qo9l'),
       r = n('UTVS'),
@@ -68428,8 +68653,8 @@
           L = e.getTooltipContainer,
           D = e.overlayInnerStyle,
           A = e.arrowContent,
-          M = e.overlay,
-          z = e.id,
+          z = e.overlay,
+          M = e.id,
           B = e.showArrow,
           F = Object(h['a'])(e, [
             'overlayClassName',
@@ -68469,10 +68694,10 @@
                 arrowContent: A,
                 key: 'content',
                 prefixCls: g,
-                id: z,
+                id: M,
                 overlayInnerStyle: D,
               },
-              M,
+              z,
             );
           },
           H = !1,
@@ -68597,7 +68822,7 @@
         }
         return n;
       },
-      M = function (e, t) {
+      z = function (e, t) {
         var n = {},
           a = Object(u['a'])({}, e);
         return (
@@ -68607,7 +68832,7 @@
           { picked: n, omitted: a }
         );
       },
-      z = new RegExp('^('.concat(j.join('|'), ')(-inverse)?$'));
+      M = new RegExp('^('.concat(j.join('|'), ')(-inverse)?$'));
     function B(e, t) {
       var n = e.type;
       if (
@@ -68615,7 +68840,7 @@
         (!0 === n.__ANT_SWITCH && (e.props.disabled || e.props.loading)) ||
         (!0 === n.__ANT_RADIO && e.props.disabled)
       ) {
-        var a = M(e.props.style, [
+        var a = z(e.props.style, [
             'position',
             'left',
             'right',
@@ -68713,13 +68938,13 @@
         T = e.overlayClassName,
         N = e.color,
         P = e.overlayInnerStyle,
-        M = e.children,
+        z = e.children,
         F = o('tooltip', O),
         _ = o(),
         V = f;
       !('visible' in e) && v() && (V = !1);
       var U,
-        H = B(Object(D['b'])(M) ? M : l['createElement']('span', null, M), F),
+        H = B(Object(D['b'])(z) ? z : l['createElement']('span', null, z), F),
         q = H.props,
         G = m()(
           q.className,
@@ -68729,13 +68954,13 @@
           T,
           ((n = {}),
           Object(s['a'])(n, ''.concat(F, '-rtl'), 'rtl' === i),
-          Object(s['a'])(n, ''.concat(F, '-').concat(N), N && z.test(N)),
+          Object(s['a'])(n, ''.concat(F, '-').concat(N), N && M.test(N)),
           n),
         ),
         K = P;
       return (
         N &&
-          !z.test(N) &&
+          !M.test(N) &&
           ((K = Object(u['a'])(Object(u['a'])({}, P), { background: N })),
           (U = { '--antd-arrow-background-color': N })),
         l['createElement'](
@@ -68901,8 +69126,8 @@
       L = Math.round,
       D = r.RangeError,
       A = s.ArrayBuffer,
-      M = s.DataView,
-      z = i.NATIVE_ARRAY_BUFFER_VIEWS,
+      z = s.DataView,
+      M = i.NATIVE_ARRAY_BUFFER_VIEWS,
       B = i.TYPED_ARRAY_TAG,
       F = i.TypedArray,
       _ = i.TypedArrayPrototype,
@@ -68951,7 +69176,7 @@
           : ((e[t] = n.value), e);
       };
     o
-      ? (z ||
+      ? (M ||
           ((O.f = J),
           (S.f = Y),
           W(_, 'buffer'),
@@ -68959,7 +69184,7 @@
           W(_, 'byteLength'),
           W(_, 'length')),
         a(
-          { target: 'Object', stat: !0, forced: !z },
+          { target: 'Object', stat: !0, forced: !M },
           { getOwnPropertyDescriptor: J, defineProperty: Y },
         ),
         (e.exports = function (e, t, n) {
@@ -68991,7 +69216,7 @@
                 enumerable: !0,
               });
             };
-          z
+          M
             ? l &&
               ((v = t(function (e, t, n, a) {
                 return (
@@ -69042,7 +69267,7 @@
                   byteOffset: d,
                   byteLength: l,
                   length: s,
-                  view: new M(r),
+                  view: new z(r),
                 });
                 while (u < s) P(e, u++);
               })),
@@ -69051,7 +69276,7 @@
             g.constructor !== v && d(g, 'constructor', v),
             B && d(g, B, i),
             (S[i] = v),
-            a({ global: !0, forced: v != h, sham: !z }, S),
+            a({ global: !0, forced: v != h, sham: !M }, S),
             H in v || d(v, H, o),
             H in g || d(g, H, o),
             C(i);
@@ -70693,10 +70918,10 @@
         t,
       );
     }
-    function M() {
+    function z() {
       return P;
     }
-    function z() {
+    function M() {
       return (P = N > 0 ? w(L, --N) : 0), R--, 10 === P && ((R = 1), I--), P;
     }
     function B() {
@@ -70899,7 +71124,7 @@
           default:
             if (v < 1)
               if (123 == E) --v;
-              else if (125 == E && 0 == v++ && 125 == z()) continue;
+              else if (125 == E && 0 == v++ && 125 == M()) continue;
             switch (((I += h(E)), E * v)) {
               case 38:
                 b = u > 0 ? 1 : ((I += '\f'), -1);
@@ -70930,7 +71155,7 @@
       return D(e, t, n, 0 === r ? u : i, s, c, d);
     }
     function ee(e, t, n) {
-      return D(e, t, n, c, h(M()), k(e, 2, -2), 0);
+      return D(e, t, n, c, h(z()), k(e, 2, -2), 0);
     }
     function te(e, t, n, a) {
       return D(e, t, n, d, k(e, 0, a), k(e, a + 1, -1), a);
@@ -71689,6 +71914,20 @@
         });
       };
     t['default'] = i;
+  },
+  fpZq: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('YRow'),
+      l = () => {
+        var e = Object(o['a'])(),
+          t = e.width,
+          n = e.height;
+        return r.a.createElement('p', null, 'Window size: (', t, ' x ', n, ')');
+      };
+    t['default'] = l;
   },
   ftMj: function (e, t, n) {
     var a = n('I+eb'),
@@ -73339,6 +73578,199 @@
     }
     a(), (e.exports = n('yl30'));
   },
+  iB96: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('cGfz'),
+      l = n('GKDz'),
+      i = n('1i5+'),
+      s = n('SQsl'),
+      c = r.a.memo((e) => {
+        var t = e.demos,
+          n = t['usewindowsize-demo.zh-cn'].component,
+          a = t['js-demo.zh-cn-40'].component;
+        return r.a.createElement(
+          r.a.Fragment,
+          null,
+          r.a.createElement(
+            r.a.Fragment,
+            null,
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement(
+                s['a'],
+                null,
+                r.a.createElement(
+                  'thead',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement('th', null, '\u6807\u9898'),
+                    r.a.createElement('th', null, '\u6807\u7b7e'),
+                    r.a.createElement(
+                      'th',
+                      null,
+                      '\u9996\u6b21\u6dfb\u52a0\u65f6\u95f4',
+                    ),
+                    r.a.createElement('th', null, '\u66f4\u65b0\u65f6\u95f4'),
+                  ),
+                ),
+                r.a.createElement(
+                  'tbody',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement(
+                      'td',
+                      null,
+                      '\u7a97\u53e3\u53d8\u52a8\u4e8b\u4ef6\u94a9\u5b50\u51fd\u6570',
+                    ),
+                    r.a.createElement(
+                      'td',
+                      null,
+                      '\u94a9\u5b50\u51fd\u6570\uff0c\u72b6\u6001\uff0c\u526f\u4f5c\u7528',
+                    ),
+                    r.a.createElement('td', null, '2022/11/05'),
+                    r.a.createElement('td', null, '2022/11/05'),
+                  ),
+                ),
+              ),
+              r.a.createElement(
+                'p',
+                null,
+                '\u8ddf\u8e2a\u6d4f\u89c8\u5668\u7a97\u53e3\u7684\u5c3a\u5bf8\u3002',
+              ),
+              r.a.createElement(
+                'ul',
+                null,
+                r.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 useState() \u6302\u94a9\u6765\u521d\u59cb\u5316\u5c06\u4fdd\u5b58\u7a97\u53e3\u5c3a\u5bf8\u7684\u72b6\u6001\u53d8\u91cf\u3002 \u5c06\u4e24\u4e2a\u503c\u90fd\u8bbe\u7f6e\u4e3a undefined \u8fdb\u884c\u521d\u59cb\u5316\u4ee5\u907f\u514d\u670d\u52a1\u5668\u548c\u5ba2\u6237\u7aef\u6e32\u67d3\u4e4b\u95f4\u7684\u4e0d\u5339\u914d\u3002',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  '\u521b\u5efa\u4e00\u4e2a\u4f7f\u7528 Window.innerWidth \u548c Window.innerHeight \u66f4\u65b0\u72b6\u6001\u53d8\u91cf\u7684\u51fd\u6570\u3002',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  '\u4f7f\u7528 useEffect() \u6302\u94a9\u4e3a\u6302\u8f7d\u65f6\u7684\u201c\u8c03\u6574\u5927\u5c0f\u201d\u4e8b\u4ef6\u8bbe\u7f6e\u9002\u5f53\u7684\u4fa6\u542c\u5668\uff0c\u5e76\u5728\u5378\u8f7d\u65f6\u6e05\u7406\u5b83\u3002',
+                ),
+              ),
+              r.a.createElement(
+                'h4',
+                { id: 'usewindowsizets' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#usewindowsizets',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useWindowSize.ts',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import { useState,useEffect } from 'react';\nconst useWindowSize = (): { width: number,height: number } => {\n    const [windowSize,setWindowSize] = useState({\n        width: 0,\n        height: 0\n    });\n\n    useEffect(() => {\n        const onHandleResize = () => {\n            setWindowSize({\n                width: window.innerWidth,\n                height: window.innerHeight\n            })\n        }\n        onHandleResize();\n        window.addEventListener('resize',onHandleResize);\n        return () => {\n             window.removeEventListener('resize',onHandleResize);\n        }\n    },[]);\n\n    return windowSize;\n}\n\nexport default useWindowSize;",
+                lang: 'ts',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: '\u793a\u4f8b' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#\u793a\u4f8b', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                '\u793a\u4f8b',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport useWindowSize from './useWindowSize';\n\nconst Demo = () => {\n  const { width, height } = useWindowSize();\n\n  return (\n    <p>\n      \u7a97\u53e3\u5927\u5c0f: ({width} x {height})\n    </p>\n  );\n};\n\nexport default Demo;",
+                lang: 'tsx',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'usewindowsizejs' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#usewindowsizejs',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useWindowSize.js',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import { useState,useEffect } from 'react';\nconst useWindowSize = () => {\n    const [windowSize,setWindowSize] = useState({\n        width: 0,\n        height: 0\n    });\n\n    useEffect(() => {\n        const onHandleResize = () => {\n            setWindowSize({\n                width: window.innerWidth,\n                height: window.innerHeight\n            })\n        }\n        onHandleResize();\n        window.addEventListener('resize',onHandleResize);\n        return () => {\n             window.removeEventListener('resize',onHandleResize);\n        }\n    },[]);\n\n    return windowSize;\n}\n\nexport default useWindowSize;",
+                lang: 'js',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'js-\u793a\u4f8b' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#js-\u793a\u4f8b',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'js \u793a\u4f8b',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport useWindowSize from './useWindowSize';\n\nconst Demo = () => {\n  const { width, height } = useWindowSize();\n\n  return (\n    <p>\n      \u7a97\u53e3\u5927\u5c0f: ({width} x {height})\n    </p>\n  );\n};\n\nexport default Demo;",
+                lang: 'jsx',
+              }),
+              r.a.createElement('p', null, '\u793a\u4f8b:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              t['usewindowsize-demo.zh-cn'].previewerProps,
+              r.a.createElement(n, null),
+            ),
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement('p', null, 'js \u793a\u4f8b:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              t['js-demo.zh-cn-40'].previewerProps,
+              r.a.createElement(a, null),
+            ),
+          ),
+        );
+      });
+    t['default'] = (e) => {
+      var t = r.a.useContext(o['context']),
+        n = t.demos;
+      return (
+        r.a.useEffect(() => {
+          var t;
+          null !== e &&
+            void 0 !== e &&
+            null !== (t = e.location) &&
+            void 0 !== t &&
+            t.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        r.a.createElement(c, { demos: n })
+      );
+    };
+  },
   iBx2: function (e, t, n) {
     'use strict';
     n.r(t);
@@ -73440,6 +73872,28 @@
         },
       }),
       r('lastIndex'));
+  },
+  iJst: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('dD+7'),
+      l = () => {
+        var e = Object(o['a'])(),
+          t = e.width,
+          n = e.height;
+        return r.a.createElement(
+          'p',
+          null,
+          '\u7a97\u53e3\u5927\u5c0f: (',
+          t,
+          ' x ',
+          n,
+          ')',
+        );
+      };
+    t['default'] = l;
   },
   iPaY: function (e, t, n) {
     'use strict';
@@ -73733,7 +74187,7 @@
               D([R, N, L]), y(!1), C(!1);
             }, []),
           });
-        var M = (e) => e.toString().padStart(2, '0');
+        var z = (e) => e.toString().padStart(2, '0');
         return s.a.createElement(
           p,
           null,
@@ -73741,7 +74195,7 @@
             ? c
             : E
             ? f
-            : ''.concat(M(R)).concat(v).concat(M(N)).concat(v).concat(M(L)),
+            : ''.concat(z(R)).concat(v).concat(z(N)).concat(v).concat(z(L)),
         );
       });
     t['a'] = f;
@@ -76450,7 +76904,7 @@
               D([R, N, L]), y(!1), C(!1);
             }, []),
           });
-        var M = (e) => e.toString().padStart(2, '0');
+        var z = (e) => e.toString().padStart(2, '0');
         return s.a.createElement(
           p,
           null,
@@ -76458,7 +76912,7 @@
             ? c
             : E
             ? f
-            : ''.concat(M(R)).concat(v).concat(M(N)).concat(v).concat(M(L)),
+            : ''.concat(z(R)).concat(v).concat(z(N)).concat(v).concat(z(L)),
         );
       });
     t['a'] = f;
@@ -76589,9 +77043,9 @@
     function A() {
       return c['useContext'](D);
     }
-    var M = c['createContext'](L);
-    function z(e) {
-      var t = c['useContext'](M);
+    var z = c['createContext'](L);
+    function M(e) {
+      var t = c['useContext'](z);
       return c['useMemo'](
         function () {
           return void 0 !== e ? [].concat(Object(l['a'])(t), [e]) : t;
@@ -76689,14 +77143,14 @@
           L = C.overflowDisabled,
           D = C.itemIcon,
           A = C.selectedKeys,
-          M = C.onActive,
+          z = C.onActive,
           B = c['useContext'](H),
           F = B._internalRenderMenuItem,
           _ = ''.concat(O, '-item'),
           U = c['useRef'](),
           q = c['useRef'](),
           $ = R || m,
-          J = z(u);
+          J = M(u);
         var Y = function (e) {
             return {
               key: u,
@@ -76726,7 +77180,7 @@
             }
           },
           oe = function (e) {
-            M(u), null === y || void 0 === y || y(e);
+            z(u), null === y || void 0 === y || y(e);
           },
           le = {};
         'option' === e.role && (le['aria-selected'] = te);
@@ -76776,7 +77230,7 @@
     function J(e) {
       var t = e.eventKey,
         n = A(),
-        a = z(t);
+        a = M(t);
       return (
         c['useEffect'](
           function () {
@@ -77111,7 +77565,7 @@
           L = Object(s['a'])(e, be),
           D = V(m),
           A = c['useContext'](S),
-          M = A.prefixCls,
+          z = A.prefixCls,
           F = A.mode,
           _ = A.openKeys,
           U = A.disabled,
@@ -77127,8 +77581,8 @@
           X = Z._internalRenderSubMenuItem,
           ee = c['useContext'](B),
           te = ee.isSubPathKey,
-          ne = z(),
-          re = ''.concat(M, '-submenu'),
+          ne = M(),
+          re = ''.concat(z, '-submenu'),
           oe = U || p,
           le = c['useRef'](),
           se = c['useRef']();
@@ -77209,22 +77663,22 @@
               c['createElement']('i', { className: ''.concat(re, '-arrow') }),
             ),
           ),
-          Me = c['useRef'](F);
+          ze = c['useRef'](F);
         if (
-          ('inline' !== F && (Me.current = ne.length > 1 ? 'vertical' : F), !q)
+          ('inline' !== F && (ze.current = ne.length > 1 ? 'vertical' : F), !q)
         ) {
-          var ze = Me.current;
+          var Me = ze.current;
           Ae = c['createElement'](
             he,
             {
-              mode: ze,
+              mode: Me,
               prefixCls: re,
               visible: !f && me && 'inline' !== F,
               popupClassName: E,
               popupOffset: y,
               popup: c['createElement'](
                 j,
-                { mode: 'horizontal' === ze ? 'vertical' : ze },
+                { mode: 'horizontal' === Me ? 'vertical' : Me },
                 c['createElement'](ie, { id: De, ref: se }, h),
               ),
               disabled: oe,
@@ -77279,7 +77733,7 @@
       var t,
         n = e.eventKey,
         a = e.children,
-        r = z(n),
+        r = M(n),
         o = ee(a, r),
         l = A();
       return (
@@ -77296,7 +77750,7 @@
           [r],
         ),
         (t = l ? o : c['createElement'](ye, e, o)),
-        c['createElement'](M.Provider, { value: r }, t)
+        c['createElement'](z.Provider, { value: r }, t)
       );
     }
     var we = n('0rob'),
@@ -77383,7 +77837,7 @@
         return t.has(e);
       });
     }
-    function Me(e, t, n) {
+    function ze(e, t, n) {
       var a =
         arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : 1;
       if (!e) return null;
@@ -77398,7 +77852,7 @@
         r[l]
       );
     }
-    function ze(e, t, n, a, r, o, l, i, s, u) {
+    function Me(e, t, n, a, r, o, l, i, s, u) {
       var d = c['useRef'](),
         m = c['useRef']();
       m.current = t;
@@ -77461,7 +77915,7 @@
                   ? O[0]
                   : f === Te
                   ? O[O.length - 1]
-                  : Me(C, h, y, w.offset)),
+                  : ze(C, h, y, w.offset)),
                 k(S);
             } else if (w.inlineTrigger) s(x);
             else if (w.offset > 0)
@@ -77471,7 +77925,7 @@
                   b();
                   var e = y.getAttribute('aria-controls'),
                     t = document.getElementById(e),
-                    n = Me(t, h);
+                    n = ze(t, h);
                   k(n);
                 }, 5));
             else if (w.offset < 0) {
@@ -77657,8 +78111,8 @@
           P = e.disabledOverflow,
           L = e.subMenuOpenDelay,
           A = void 0 === L ? 0.1 : L,
-          M = e.subMenuCloseDelay,
-          z = void 0 === M ? 0.1 : M,
+          z = e.subMenuCloseDelay,
+          M = void 0 === z ? 0.1 : z,
           V = e.forceSubMenuRender,
           U = e.defaultOpenKeys,
           q = e.openKeys,
@@ -77716,8 +78170,8 @@
           Le = Object(i['a'])(Pe, 2),
           De = Le[0],
           Ae = Le[1],
-          Me = c['useState'](0),
-          Be = Object(i['a'])(Me, 2),
+          ze = c['useState'](0),
+          Be = Object(i['a'])(ze, 2),
           Fe = Be[0],
           Ve = Be[1],
           Ue = Fe >= Ce.length - 1 || 'horizontal' !== De || P,
@@ -77893,7 +78347,7 @@
             var n = null !== t && void 0 !== t ? t : !Je.includes(e);
             Ot(e, n);
           },
-          Rt = ze(De, vt, Ne, Te, Re, ut, ct, gt, It, Ee);
+          Rt = Me(De, vt, Ne, Te, Re, ut, ct, gt, It, Ee);
         c['useEffect'](function () {
           Ie(!0);
         }, []);
@@ -77996,7 +78450,7 @@
                 selectedKeys: wt,
                 inlineIndent: oe,
                 subMenuOpenDelay: A,
-                subMenuCloseDelay: z,
+                subMenuCloseDelay: M,
                 forceSubMenuRender: V,
                 builtinPlacements: ue,
                 triggerSubMenuAction: ce,
@@ -78049,7 +78503,7 @@
     function et(e) {
       var t = e.children,
         n = Object(s['a'])(e, Ze),
-        a = z(n.eventKey),
+        a = M(n.eventKey),
         r = ee(t, a),
         o = A();
       return o ? r : c['createElement'](Xe, Object(w['a'])(n, ['warnKey']), r);
@@ -78925,9 +79379,9 @@
           L = Object(l['useState'])(!1),
           D = Object(a['a'])(L, 2),
           A = D[0],
-          M = D[1],
-          z = Object(l['useState'])(!1),
-          B = Object(a['a'])(z, 2),
+          z = D[1],
+          M = Object(l['useState'])(!1),
+          B = Object(a['a'])(M, 2),
           F = B[0],
           _ = B[1],
           V = Array.isArray(E)
@@ -78950,7 +79404,7 @@
           'string' === typeof d && I(d);
         }, [d]);
         var U = (e) => {
-            P(e), I(e.value), n || (M(!1), _(!1)), f && f(e);
+            P(e), I(e.value), n || (z(!1), _(!1)), f && f(e);
           },
           H = () => {
             n || (P({ label: '', value: '' }), I(''));
@@ -78962,7 +79416,7 @@
           };
         return (
           Object(c['a'])(k, () => {
-            n || M(!1);
+            n || z(!1);
           }),
           i.a.createElement(
             'div',
@@ -78981,7 +79435,7 @@
                 className: Object(s['a'])(G),
                 placeholder: v,
                 onClick: () => {
-                  n || M(!A);
+                  n || z(!A);
                 },
               },
               i.a.createElement(
@@ -78997,7 +79451,7 @@
                 ? i.a.createElement(m, { onClick: H, ref: C })
                 : i.a.createElement(p, {
                     onClick: () => {
-                      n || M(!A);
+                      n || z(!A);
                     },
                   }),
             ),
@@ -79362,7 +79816,7 @@
         }
       },
       A = /[!'()~]|%20/g,
-      M = {
+      z = {
         '!': '%21',
         "'": '%27',
         '(': '%28',
@@ -79370,11 +79824,11 @@
         '~': '%7E',
         '%20': '+',
       },
-      z = function (e) {
-        return M[e];
+      M = function (e) {
+        return z[e];
       },
       B = function (e) {
-        return encodeURIComponent(e).replace(A, z);
+        return encodeURIComponent(e).replace(A, M);
       },
       F = function (e, t) {
         if (t) {
@@ -82070,15 +82524,15 @@
       L = n('tiKp'),
       D = n('5Tg+'),
       A = n('dG/n'),
-      M = n('1E5z'),
-      z = n('afO8'),
+      z = n('1E5z'),
+      M = n('afO8'),
       B = n('tycR').forEach,
       F = T('hidden'),
       _ = 'Symbol',
       V = 'prototype',
       U = L('toPrimitive'),
-      H = z.set,
-      q = z.getterFor(_),
+      H = M.set,
+      q = M.getterFor(_),
       G = Object[V],
       W = r.Symbol,
       K = o('JSON', 'stringify'),
@@ -82317,7 +82771,7 @@
         },
       );
     }
-    W[V][U] || j(W[V], U, W[V].valueOf), M(W, _), (N[F] = !0);
+    W[V][U] || j(W[V], U, W[V].valueOf), z(W, _), (N[F] = !0);
   },
   pTqN: function (e, t, n) {
     'use strict';
@@ -84234,7 +84688,7 @@
             -1 === e[D].indexOf(t) &&
               a.push(f(r.messages[D], e.fullField, e[D].join(', ')));
         },
-        M = function (e, t, n, a, r) {
+        z = function (e, t, n, a, r) {
           if (e.pattern)
             if (e.pattern instanceof RegExp)
               (e.pattern.lastIndex = 0),
@@ -84250,25 +84704,25 @@
                 );
             }
         },
-        z = {
+        M = {
           required: j,
           whitespace: I,
           type: P,
           range: L,
           enum: A,
-          pattern: M,
+          pattern: z,
         },
         B = function (e, t, n, a, r) {
           var o = [],
             l = e.required || (!e.required && a.hasOwnProperty(e.field));
           if (l) {
             if (v(t, 'string') && !e.required) return n();
-            z.required(e, t, a, o, r, 'string'),
+            M.required(e, t, a, o, r, 'string'),
               v(t, 'string') ||
-                (z.type(e, t, a, o, r),
-                z.range(e, t, a, o, r),
-                z.pattern(e, t, a, o, r),
-                !0 === e.whitespace && z.whitespace(e, t, a, o, r));
+                (M.type(e, t, a, o, r),
+                M.range(e, t, a, o, r),
+                M.pattern(e, t, a, o, r),
+                !0 === e.whitespace && M.whitespace(e, t, a, o, r));
           }
           n(o);
         },
@@ -84277,7 +84731,7 @@
             l = e.required || (!e.required && a.hasOwnProperty(e.field));
           if (l) {
             if (v(t) && !e.required) return n();
-            z.required(e, t, a, o, r), void 0 !== t && z.type(e, t, a, o, r);
+            M.required(e, t, a, o, r), void 0 !== t && M.type(e, t, a, o, r);
           }
           n(o);
         },
@@ -84286,8 +84740,8 @@
             l = e.required || (!e.required && a.hasOwnProperty(e.field));
           if (l) {
             if (('' === t && (t = void 0), v(t) && !e.required)) return n();
-            z.required(e, t, a, o, r),
-              void 0 !== t && (z.type(e, t, a, o, r), z.range(e, t, a, o, r));
+            M.required(e, t, a, o, r),
+              void 0 !== t && (M.type(e, t, a, o, r), M.range(e, t, a, o, r));
           }
           n(o);
         },
@@ -84296,7 +84750,7 @@
             l = e.required || (!e.required && a.hasOwnProperty(e.field));
           if (l) {
             if (v(t) && !e.required) return n();
-            z.required(e, t, a, o, r), void 0 !== t && z.type(e, t, a, o, r);
+            M.required(e, t, a, o, r), void 0 !== t && M.type(e, t, a, o, r);
           }
           n(o);
         },
@@ -84305,7 +84759,7 @@
             l = e.required || (!e.required && a.hasOwnProperty(e.field));
           if (l) {
             if (v(t) && !e.required) return n();
-            z.required(e, t, a, o, r), v(t) || z.type(e, t, a, o, r);
+            M.required(e, t, a, o, r), v(t) || M.type(e, t, a, o, r);
           }
           n(o);
         },
@@ -84314,8 +84768,8 @@
             l = e.required || (!e.required && a.hasOwnProperty(e.field));
           if (l) {
             if (v(t) && !e.required) return n();
-            z.required(e, t, a, o, r),
-              void 0 !== t && (z.type(e, t, a, o, r), z.range(e, t, a, o, r));
+            M.required(e, t, a, o, r),
+              void 0 !== t && (M.type(e, t, a, o, r), M.range(e, t, a, o, r));
           }
           n(o);
         },
@@ -84324,8 +84778,8 @@
             l = e.required || (!e.required && a.hasOwnProperty(e.field));
           if (l) {
             if (v(t) && !e.required) return n();
-            z.required(e, t, a, o, r),
-              void 0 !== t && (z.type(e, t, a, o, r), z.range(e, t, a, o, r));
+            M.required(e, t, a, o, r),
+              void 0 !== t && (M.type(e, t, a, o, r), M.range(e, t, a, o, r));
           }
           n(o);
         },
@@ -84334,10 +84788,10 @@
             l = e.required || (!e.required && a.hasOwnProperty(e.field));
           if (l) {
             if ((void 0 === t || null === t) && !e.required) return n();
-            z.required(e, t, a, o, r, 'array'),
+            M.required(e, t, a, o, r, 'array'),
               void 0 !== t &&
                 null !== t &&
-                (z.type(e, t, a, o, r), z.range(e, t, a, o, r));
+                (M.type(e, t, a, o, r), M.range(e, t, a, o, r));
           }
           n(o);
         },
@@ -84346,7 +84800,7 @@
             l = e.required || (!e.required && a.hasOwnProperty(e.field));
           if (l) {
             if (v(t) && !e.required) return n();
-            z.required(e, t, a, o, r), void 0 !== t && z.type(e, t, a, o, r);
+            M.required(e, t, a, o, r), void 0 !== t && M.type(e, t, a, o, r);
           }
           n(o);
         },
@@ -84356,7 +84810,7 @@
             l = e.required || (!e.required && a.hasOwnProperty(e.field));
           if (l) {
             if (v(t) && !e.required) return n();
-            z.required(e, t, a, o, r), void 0 !== t && z[K](e, t, a, o, r);
+            M.required(e, t, a, o, r), void 0 !== t && M[K](e, t, a, o, r);
           }
           n(o);
         },
@@ -84365,8 +84819,8 @@
             l = e.required || (!e.required && a.hasOwnProperty(e.field));
           if (l) {
             if (v(t, 'string') && !e.required) return n();
-            z.required(e, t, a, o, r),
-              v(t, 'string') || z.pattern(e, t, a, o, r);
+            M.required(e, t, a, o, r),
+              v(t, 'string') || M.pattern(e, t, a, o, r);
           }
           n(o);
         },
@@ -84376,17 +84830,17 @@
           if (l) {
             if (v(t, 'date') && !e.required) return n();
             var i;
-            if ((z.required(e, t, a, o, r), !v(t, 'date')))
+            if ((M.required(e, t, a, o, r), !v(t, 'date')))
               (i = t instanceof Date ? t : new Date(t)),
-                z.type(e, i, a, o, r),
-                i && z.range(e, i.getTime(), a, o, r);
+                M.type(e, i, a, o, r),
+                i && M.range(e, i.getTime(), a, o, r);
           }
           n(o);
         },
         Q = function (e, t, n, a, r) {
           var o = [],
             l = Array.isArray(t) ? 'array' : typeof t;
-          z.required(e, t, a, o, r, l), n(o);
+          M.required(e, t, a, o, r, l), n(o);
         },
         Z = function (e, t, n, a, r) {
           var o = e.type,
@@ -84394,7 +84848,7 @@
             i = e.required || (!e.required && a.hasOwnProperty(e.field));
           if (i) {
             if (v(t, o) && !e.required) return n();
-            z.required(e, t, a, l, r, o), v(t, o) || z.type(e, t, a, l, r);
+            M.required(e, t, a, l, r, o), v(t, o) || M.type(e, t, a, l, r);
           }
           n(l);
         },
@@ -84403,7 +84857,7 @@
             l = e.required || (!e.required && a.hasOwnProperty(e.field));
           if (l) {
             if (v(t) && !e.required) return n();
-            z.required(e, t, a, o, r);
+            M.required(e, t, a, o, r);
           }
           n(o);
         },
@@ -87402,6 +87856,183 @@
       return s;
     });
   },
+  tJoz: function (e, t, n) {
+    'use strict';
+    n.r(t);
+    var a = n('q1tI'),
+      r = n.n(a),
+      o = n('cGfz'),
+      l = n('GKDz'),
+      i = n('1i5+'),
+      s = n('SQsl'),
+      c = r.a.memo((e) => {
+        var t = e.demos,
+          n = t['usewindowsize-demo'].component,
+          a = t['js-demo-39'].component;
+        return r.a.createElement(
+          r.a.Fragment,
+          null,
+          r.a.createElement(
+            r.a.Fragment,
+            null,
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement(
+                s['a'],
+                null,
+                r.a.createElement(
+                  'thead',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement('th', null, 'title'),
+                    r.a.createElement('th', null, 'tags'),
+                    r.a.createElement('th', null, 'firstSeen'),
+                    r.a.createElement('th', null, 'lastUpdated'),
+                  ),
+                ),
+                r.a.createElement(
+                  'tbody',
+                  null,
+                  r.a.createElement(
+                    'tr',
+                    null,
+                    r.a.createElement('td', null, 'React useWindowSize hook'),
+                    r.a.createElement('td', null, 'hooks,state,effect'),
+                    r.a.createElement('td', null, '2022/11/05'),
+                    r.a.createElement('td', null, '2022/11/05'),
+                  ),
+                ),
+              ),
+              r.a.createElement(
+                'p',
+                null,
+                'Tracks the dimensions of the browser window.',
+              ),
+              r.a.createElement(
+                'ul',
+                null,
+                r.a.createElement(
+                  'li',
+                  null,
+                  "Use the useState() hook to initialize a state variable that will hold the window's dimensions. Initialize with both values set to undefined to avoid mismatch between server and client renders.",
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  'Create a function that uses Window.innerWidth and Window.innerHeight to update the state variable.',
+                ),
+                r.a.createElement(
+                  'li',
+                  null,
+                  "Use the useEffect() hook to set an appropriate listener for the 'resize' event on mount and clean it up when unmounting.",
+                ),
+              ),
+              r.a.createElement(
+                'h4',
+                { id: 'usewindowsizets' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#usewindowsizets',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useWindowSize.ts',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import { useState,useEffect } from 'react';\nconst useWindowSize = (): { width: number,height: number } => {\n    const [windowSize,setWindowSize] = useState({\n        width: 0,\n        height: 0\n    });\n\n    useEffect(() => {\n        const onHandleResize = () => {\n            setWindowSize({\n                width: window.innerWidth,\n                height: window.innerHeight\n            })\n        }\n        onHandleResize();\n        window.addEventListener('resize',onHandleResize);\n        return () => {\n             window.removeEventListener('resize',onHandleResize);\n        }\n    },[]);\n\n    return windowSize;\n}\n\nexport default useWindowSize;",
+                lang: 'ts',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'demo' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#demo', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'Demo',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport useWindowSize from './useWindowSize';\n\nconst Demo = () => {\n  const { width, height } = useWindowSize();\n\n  return (\n    <p>\n      Window size: ({width} x {height})\n    </p>\n  );\n};\n\nexport default Demo;",
+                lang: 'tsx',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'usewindowsizejs' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  {
+                    to: '#usewindowsizejs',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'useWindowSize.js',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import { useState,useEffect } from 'react';\nconst useWindowSize = () => {\n    const [windowSize,setWindowSize] = useState({\n        width: 0,\n        height: 0\n    });\n\n    useEffect(() => {\n        const onHandleResize = () => {\n            setWindowSize({\n                width: window.innerWidth,\n                height: window.innerHeight\n            })\n        }\n        onHandleResize();\n        window.addEventListener('resize',onHandleResize);\n        return () => {\n             window.removeEventListener('resize',onHandleResize);\n        }\n    },[]);\n\n    return windowSize;\n}\n\nexport default useWindowSize;",
+                lang: 'js',
+              }),
+              r.a.createElement(
+                'h4',
+                { id: 'js-demo' },
+                r.a.createElement(
+                  o['AnchorLink'],
+                  { to: '#js-demo', 'aria-hidden': 'true', tabIndex: -1 },
+                  r.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                'js Demo',
+              ),
+              r.a.createElement(i['a'], {
+                code: "import React from 'react';\nimport useWindowSize from './useWindowSize';\n\nconst Demo = () => {\n  const { width, height } = useWindowSize();\n\n  return (\n    <p>\n      Window size: ({width} x {height})\n    </p>\n  );\n};\n\nexport default Demo;",
+                lang: 'jsx',
+              }),
+              r.a.createElement('p', null, 'Demo:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              t['usewindowsize-demo'].previewerProps,
+              r.a.createElement(n, null),
+            ),
+            r.a.createElement(
+              'div',
+              { className: 'markdown' },
+              r.a.createElement('p', null, 'js Demo:'),
+            ),
+            r.a.createElement(
+              l['default'],
+              t['js-demo-39'].previewerProps,
+              r.a.createElement(a, null),
+            ),
+          ),
+        );
+      });
+    t['default'] = (e) => {
+      var t = r.a.useContext(o['context']),
+        n = t.demos;
+      return (
+        r.a.useEffect(() => {
+          var t;
+          null !== e &&
+            void 0 !== e &&
+            null !== (t = e.location) &&
+            void 0 !== t &&
+            t.hash &&
+            o['AnchorLink'].scrollToAnchor(
+              decodeURIComponent(e.location.hash.slice(1)),
+            );
+        }, []),
+        r.a.createElement(c, { demos: n })
+      );
+    };
+  },
   tMhe: function (e, t, n) {
     'use strict';
     n.r(t);
@@ -88788,7 +89419,7 @@
       L = n('C+Hi'),
       D = n('i8i4'),
       A = n.n(D),
-      M = (function (e) {
+      z = (function (e) {
         Object(u['a'])(n, e);
         var t = Object(d['a'])(n);
         function n() {
@@ -88914,8 +89545,8 @@
           n
         );
       })(i['Component']);
-    M.defaultProps = { onClose: function () {}, duration: 1.5 };
-    var z = n('xIGA'),
+    z.defaultProps = { onClose: function () {}, duration: 1.5 };
+    var M = n('xIGA'),
       B = n('aUwe');
     function F(e) {
       var t = i['useRef']({}),
@@ -88928,14 +89559,14 @@
         e.add(n, function (e, n) {
           var o = n.key;
           if (e && (!t.current[o] || r)) {
-            var s = i['createElement'](M, Object(a['a'])({}, n, { holder: e }));
+            var s = i['createElement'](z, Object(a['a'])({}, n, { holder: e }));
             (t.current[o] = s),
               l(function (e) {
                 var t = e.findIndex(function (e) {
                   return e.key === n.key;
                 });
-                if (-1 === t) return [].concat(Object(z['a'])(e), [s]);
-                var a = Object(z['a'])(e);
+                if (-1 === t) return [].concat(Object(M['a'])(e), [s]);
+                var a = Object(M['a'])(e);
                 return (a[t] = s), a;
               });
           }
@@ -89095,7 +89726,7 @@
                             },
                           })
                         : i['createElement'](
-                            M,
+                            z,
                             Object(a['a'])({}, u, {
                               className: R()(
                                 o,
@@ -89570,7 +90201,7 @@
       error: ge['a'],
       warning: Ee['a'],
     };
-    function Me(e, t, n) {
+    function ze(e, t, n) {
       var a = e.duration,
         r = e.icon,
         o = e.type,
@@ -89648,16 +90279,16 @@
         className: R()(f, Object(w['a'])({}, ''.concat(t, '-').concat(o), !!o)),
       };
     }
-    function ze(e) {
+    function Me(e) {
       De(e, function (t) {
         var n = t.prefixCls,
           a = t.iconPrefixCls,
           r = t.instance;
-        r.notice(Me(e, n, a));
+        r.notice(ze(e, n, a));
       });
     }
     var Be = {
-      open: ze,
+      open: Me,
       close: function (e) {
         Object.keys(Se).forEach(function (t) {
           return Promise.resolve(Se[t]).then(function (t) {
@@ -89681,7 +90312,7 @@
       };
     }),
       (Be.warn = Be.warning),
-      (Be.useNotification = xe(De, Me));
+      (Be.useNotification = xe(De, ze));
     var Fe = Be,
       _e = n('nMam'),
       Ve = n('d9SW'),
@@ -91521,11 +92152,11 @@
                 i = !0;
             }
         }
-      if (i) return n(a, e, '' === t ? '.' + z(e, 0) : t), 1;
+      if (i) return n(a, e, '' === t ? '.' + M(e, 0) : t), 1;
       if (((i = 0), (t = '' === t ? '.' : t + ':'), Array.isArray(e)))
         for (var s = 0; s < e.length; s++) {
           r = e[s];
-          var c = t + z(r, s);
+          var c = t + M(r, s);
           i += A(r, c, n, a);
         }
       else if (
@@ -91536,7 +92167,7 @@
         'function' === typeof c)
       )
         for (e = c.call(e), s = 0; !(r = e.next()).done; )
-          (r = r.value), (c = t + z(r, s++)), (i += A(r, c, n, a));
+          (r = r.value), (c = t + M(r, s++)), (i += A(r, c, n, a));
       else if ('object' === r)
         throw (
           ((n = '' + e),
@@ -91552,10 +92183,10 @@
         );
       return i;
     }
-    function M(e, t, n) {
+    function z(e, t, n) {
       return null == e ? 0 : A(e, '', t, n);
     }
-    function z(e, t) {
+    function M(e, t) {
       return 'object' === typeof e && null !== e && null != e.key
         ? T(e.key)
         : t.toString(36);
@@ -91587,7 +92218,7 @@
       var o = '';
       null != n && (o = ('' + n).replace(N, '$&/') + '/'),
         (t = L(t, o, a, r)),
-        M(e, F, t),
+        z(e, F, t),
         D(t);
     }
     var V = { current: null };
@@ -91611,10 +92242,10 @@
       },
       forEach: function (e, t, n) {
         if (null == e) return e;
-        (t = L(null, null, t, n)), M(e, B, t), D(t);
+        (t = L(null, null, t, n)), z(e, B, t), D(t);
       },
       count: function (e) {
-        return M(
+        return z(
           e,
           function () {
             return null;
@@ -92611,10 +93242,10 @@
       },
       A = D;
     n('0MGZ');
-    function M(e, t) {
-      return V(e) || _(e, t) || B(e, t) || z();
+    function z(e, t) {
+      return V(e) || _(e, t) || B(e, t) || M();
     }
-    function z() {
+    function M() {
       throw new TypeError(
         'Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
       );
@@ -92734,11 +93365,11 @@
           g = m.branch,
           E = m.platform,
           y = Object(a['useState'])(!0),
-          x = M(y, 2),
+          x = z(y, 2),
           w = x[0],
           k = x[1],
           C = Object(a['useState'])(!1),
-          S = M(C, 2),
+          S = z(C, 2),
           O = S[0],
           I = S[1],
           R = 'site' === d,
@@ -92754,10 +93385,10 @@
             ('content' === p.toc || void 0 === p.toc) &&
             !p.gapless,
           D = /^zh|cn$/i.test(f),
-          z = new Date(p.updatedTime),
+          M = new Date(p.updatedTime),
           B = ''
-            .concat(z.toLocaleDateString([], { hour12: !1 }), ' ')
-            .concat(z.toLocaleTimeString([], { hour12: !1 })),
+            .concat(M.toLocaleDateString([], { hour12: !1 }), ' ')
+            .concat(M.toLocaleTimeString([], { hour12: !1 })),
           F =
             { github: 'GitHub', gitlab: 'GitLab' }[
               (null === (n = (h || '').match(/(github|gitlab)/)) || void 0 === n
@@ -94018,8 +94649,8 @@
         L = void 0 === P || P,
         D = e.maskTransitionName,
         A = e.maskAnimation,
-        M = e.maskClosable,
-        z = void 0 === M || M,
+        z = e.maskClosable,
+        M = void 0 === z || z,
         B = e.maskStyle,
         F = e.maskProps,
         _ = e.rootClassName,
@@ -94067,7 +94698,7 @@
         c && e.keyCode === d['a'].TAB && H.current.changeActive(!e.shiftKey);
       }
       return (
-        z &&
+        M &&
           (te = function (e) {
             Q.current ? (Q.current = !1) : U.current === e.target && Y(e);
           }),
@@ -95445,22 +96076,22 @@
         L = Object(o['a'])(P, 2),
         D = L[0],
         A = L[1],
-        M = Object(s['a'])(w, { keepEmpty: !0 }),
-        z = void 0 === y && 'horizontal' === C ? 'center' : y,
+        z = Object(s['a'])(w, { keepEmpty: !0 }),
+        M = void 0 === y && 'horizontal' === C ? 'center' : y,
         B = l('space', S),
         F = i()(
           B,
           ''.concat(B, '-').concat(C),
           ((t = {}),
           Object(r['a'])(t, ''.concat(B, '-rtl'), 'rtl' === v),
-          Object(r['a'])(t, ''.concat(B, '-align-').concat(z), z),
+          Object(r['a'])(t, ''.concat(B, '-align-').concat(M), M),
           t),
           x,
         ),
         _ = ''.concat(B, '-item'),
         V = 'rtl' === v ? 'marginLeft' : 'marginRight',
         U = 0,
-        H = M.map(function (e, t) {
+        H = z.map(function (e, t) {
           null !== e && void 0 !== e && (U = t);
           var n = (e && e.key) || ''.concat(_, '-').concat(t);
           return c['createElement'](
@@ -95488,7 +96119,7 @@
           },
           [D, A, U, N],
         );
-      if (0 === M.length) return null;
+      if (0 === z.length) return null;
       var G = {};
       return (
         R && ((G.flexWrap = 'wrap'), N || (G.marginBottom = -A)),
@@ -97049,15 +97680,15 @@
     function A(e, t) {
       return e(t);
     }
-    function M(e, t, n, a, r) {
+    function z(e, t, n, a, r) {
       return e(t, n, a, r);
     }
-    function z() {}
+    function M() {}
     var B = A,
       F = !1,
       _ = !1;
     function V() {
-      (null === T && null === N) || (z(), D());
+      (null === T && null === N) || (M(), D());
     }
     function U(e, t, n) {
       if (_) return e(t, n);
@@ -97499,7 +98130,7 @@
         e
       );
     }
-    function Me(e, t, n, a) {
+    function ze(e, t, n, a) {
       if (((e = e.options), t)) {
         t = {};
         for (var r = 0; r < n.length; r++) t['$' + n[r]] = !0;
@@ -97518,7 +98149,7 @@
         null !== t && (t.selected = !0);
       }
     }
-    function ze(e, t) {
+    function Me(e, t) {
       if (null != t.dangerouslySetInnerHTML) throw Error(l(91));
       return r({}, t, {
         value: void 0,
@@ -97923,7 +98554,7 @@
           xt(e, t, n);
         });
     }
-    function Mt(e, t, n, a, r) {
+    function zt(e, t, n, a, r) {
       return {
         blockedOn: e,
         topLevelType: t,
@@ -97932,7 +98563,7 @@
         container: a,
       };
     }
-    function zt(e, t) {
+    function Mt(e, t) {
       switch (e) {
         case 'focus':
         case 'blur':
@@ -97957,7 +98588,7 @@
     }
     function Bt(e, t, n, a, r, o) {
       return null === e || e.nativeEvent !== o
-        ? ((e = Mt(t, n, a, r, o)),
+        ? ((e = zt(t, n, a, r, o)),
           null !== t && ((t = Un(t)), null !== t && kt(t)),
           e)
         : ((e.eventSystemFlags |= a), e);
@@ -98185,12 +98816,12 @@
       n ? e.addEventListener(t, a, !0) : e.addEventListener(t, a, !1);
     }
     function rn(e, t, n, a) {
-      F || z();
+      F || M();
       var r = ln,
         o = F;
       F = !0;
       try {
-        M(r, e, t, n, a);
+        z(r, e, t, n, a);
       } finally {
         (F = o) || V();
       }
@@ -98201,13 +98832,13 @@
     function ln(e, t, n, a) {
       if (tn)
         if (0 < Ot.length && -1 < Lt.indexOf(e))
-          (e = Mt(null, e, t, n, a)), Ot.push(e);
+          (e = zt(null, e, t, n, a)), Ot.push(e);
         else {
           var r = sn(e, t, n, a);
-          if (null === r) zt(e, a);
-          else if (-1 < Lt.indexOf(e)) (e = Mt(r, e, t, n, a)), Ot.push(e);
+          if (null === r) Mt(e, a);
+          else if (-1 < Lt.indexOf(e)) (e = zt(r, e, t, n, a)), Ot.push(e);
           else if (!Ft(r, e, t, n, a)) {
-            zt(e, a), (e = Et(e, a, null, t));
+            Mt(e, a), (e = Et(e, a, null, t));
             try {
               U(yt, e);
             } finally {
@@ -98483,7 +99114,7 @@
       }
       return e;
     }
-    function Mn(e) {
+    function zn(e) {
       e = e.previousSibling;
       for (var t = 0; e; ) {
         if (8 === e.nodeType) {
@@ -98497,10 +99128,10 @@
       }
       return null;
     }
-    var zn = Math.random().toString(36).slice(2),
-      Bn = '__reactInternalInstance$' + zn,
-      Fn = '__reactEventHandlers$' + zn,
-      _n = '__reactContainere$' + zn;
+    var Mn = Math.random().toString(36).slice(2),
+      Bn = '__reactInternalInstance$' + Mn,
+      Fn = '__reactEventHandlers$' + Mn,
+      _n = '__reactContainere$' + Mn;
     function Vn(e) {
       var t = e[Bn];
       if (t) return t;
@@ -98510,9 +99141,9 @@
             ((n = t.alternate),
             null !== t.child || (null !== n && null !== n.child))
           )
-            for (e = Mn(e); null !== e; ) {
+            for (e = zn(e); null !== e; ) {
               if ((n = e[Bn])) return n;
-              e = Mn(e);
+              e = zn(e);
             }
           return t;
         }
@@ -98943,12 +99574,12 @@
           }
         }
     }
-    function Ma(e, t, n) {
+    function za(e, t, n) {
       'focus' === e
         ? (Da(), (Ia = t), (Ra = n), Ia.attachEvent('onpropertychange', Aa))
         : 'blur' === e && Da();
     }
-    function za(e) {
+    function Ma(e) {
       if ('selectionchange' === e || 'keyup' === e || 'keydown' === e)
         return Na(Ra);
     }
@@ -98972,8 +99603,8 @@
           else if (Sa(r))
             if (La) l = Fa;
             else {
-              l = za;
-              var i = Ma;
+              l = Ma;
+              var i = za;
             }
           else
             (o = r.nodeName) &&
@@ -99549,7 +100180,7 @@
       if (Rr.current !== Ir) throw Error(l(168));
       jr(Rr, t), jr(Tr, n);
     }
-    function Mr(e, t, n) {
+    function zr(e, t, n) {
       var a = e.stateNode;
       if (((e = t.childContextTypes), 'function' !== typeof a.getChildContext))
         return n;
@@ -99557,7 +100188,7 @@
         if (!(o in e)) throw Error(l(108, xe(t) || 'Unknown', o));
       return r({}, n, {}, a);
     }
-    function zr(e) {
+    function Mr(e) {
       return (
         (e =
           ((e = e.stateNode) && e.__reactInternalMemoizedMergedChildContext) ||
@@ -99572,7 +100203,7 @@
       var a = e.stateNode;
       if (!a) throw Error(l(169));
       n
-        ? ((e = Mr(e, t, Nr)),
+        ? ((e = zr(e, t, Nr)),
           (a.__reactInternalMemoizedMergedChildContext = e),
           Or(Tr),
           Or(Rr),
@@ -99833,7 +100464,7 @@
                     callback: f.callback,
                     next: null,
                   }),
-                Ms(i, f.suspenseConfig);
+                zs(i, f.suspenseConfig);
               e: {
                 var v = e,
                   g = f;
@@ -99877,7 +100508,7 @@
         null === p ? (d = c) : (p.next = m),
           (o.baseState = d),
           (o.baseQueue = p),
-          zs(u),
+          Ms(u),
           (e.expirationTime = u),
           (e.memoizedState = c);
       }
@@ -99955,7 +100586,7 @@
             !nr(r, o)
       );
     }
-    function Mo(e, t, n) {
+    function zo(e, t, n) {
       var a = !1,
         r = Ir,
         o = t.contextType;
@@ -99978,7 +100609,7 @@
         t
       );
     }
-    function zo(e, t, n, a) {
+    function Mo(e, t, n, a) {
       (e = t.state),
         'function' === typeof t.componentWillReceiveProps &&
           t.componentWillReceiveProps(n, a),
@@ -100457,7 +101088,7 @@
         (t.memoizedState = null),
         (t.updateQueue = null),
         (t.expirationTime = 0),
-        (al.current = null === e || null === e.memoizedState ? Al : Ml),
+        (al.current = null === e || null === e.memoizedState ? Al : zl),
         (e = n(a, r)),
         t.expirationTime === ol)
       ) {
@@ -100467,7 +101098,7 @@
           (o += 1),
             (sl = il = null),
             (t.updateQueue = null),
-            (al.current = zl),
+            (al.current = Ml),
             (e = n(a, r));
         } while (t.expirationTime === ol);
       }
@@ -100547,7 +101178,7 @@
               next: null,
             };
             null === s ? ((i = s = d), (o = a)) : (s = s.next = d),
-              u > ll.expirationTime && ((ll.expirationTime = u), zs(u));
+              u > ll.expirationTime && ((ll.expirationTime = u), Ms(u));
           } else
             null !== s &&
               (s = s.next =
@@ -100559,7 +101190,7 @@
                   eagerState: c.eagerState,
                   next: null,
                 }),
-              Ms(u, c.suspenseConfig),
+              zs(u, c.suspenseConfig),
               (a = c.eagerReducer === e ? c.eagerState : e(a, c.action));
           c = c.next;
         } while (null !== c && c !== r);
@@ -100830,7 +101461,7 @@
           return (t = t[1]), [Rl(Pl.bind(null, t, e), [t, e]), n];
         },
       },
-      Ml = {
+      zl = {
         readContext: wo,
         useCallback: Tl,
         useContext: wo,
@@ -100871,7 +101502,7 @@
           return (t = t[1]), [Tl(Pl.bind(null, t, e), [t, e]), n];
         },
       },
-      zl = {
+      Ml = {
         readContext: wo,
         useCallback: Tl,
         useContext: wo,
@@ -101087,12 +101718,12 @@
     function ti(e, t, n, a, r) {
       if (Lr(n)) {
         var o = !0;
-        zr(t);
+        Mr(t);
       } else o = !1;
       if ((xo(t, r), null === t.stateNode))
         null !== e &&
           ((e.alternate = null), (t.alternate = null), (t.effectTag |= 2)),
-          Mo(t, n, a),
+          zo(t, n, a),
           Bo(t, n, a, r),
           (a = !0);
       else if (null === e) {
@@ -101111,7 +101742,7 @@
         d ||
           ('function' !== typeof l.UNSAFE_componentWillReceiveProps &&
             'function' !== typeof l.componentWillReceiveProps) ||
-          ((i !== a || s !== c) && zo(t, l, a, c)),
+          ((i !== a || s !== c) && Mo(t, l, a, c)),
           (ko = !1);
         var m = t.memoizedState;
         (l.state = m),
@@ -101156,7 +101787,7 @@
             'function' === typeof l.getSnapshotBeforeUpdate) ||
             ('function' !== typeof l.UNSAFE_componentWillReceiveProps &&
               'function' !== typeof l.componentWillReceiveProps) ||
-            ((i !== a || s !== c) && zo(t, l, a, c)),
+            ((i !== a || s !== c) && Mo(t, l, a, c)),
           (ko = !1),
           (s = t.memoizedState),
           (l.state = s),
@@ -101418,7 +102049,7 @@
     function pi(e, t, n) {
       null !== e && (t.dependencies = e.dependencies);
       var a = t.expirationTime;
-      if ((0 !== a && zs(a), t.childExpirationTime < n)) return null;
+      if ((0 !== a && Ms(a), t.childExpirationTime < n)) return null;
       if (null !== e && t.child !== e.child) throw Error(l(153));
       if (null !== t.child) {
         for (
@@ -101615,7 +102246,7 @@
                     gn(n, 'onChange');
                   break;
                 case 'textarea':
-                  Be(e, a), (c = ze(e, a)), nn('invalid', e), gn(n, 'onChange');
+                  Be(e, a), (c = Me(e, a)), nn('invalid', e), gn(n, 'onChange');
                   break;
                 default:
                   c = a;
@@ -101654,9 +102285,9 @@
                   (e.multiple = !!a.multiple),
                     (n = a.value),
                     null != n
-                      ? Me(e, !!a.multiple, n, !1)
+                      ? ze(e, !!a.multiple, n, !1)
                       : null != a.defaultValue &&
-                        Me(e, !!a.multiple, a.defaultValue, !0);
+                        ze(e, !!a.multiple, a.defaultValue, !0);
                   break;
                 default:
                   'function' === typeof c.onClick && (e.onclick = bn);
@@ -101888,7 +102519,7 @@
                 (e = []);
               break;
             case 'textarea':
-              (l = ze(c, l)), (a = ze(c, a)), (e = []);
+              (l = Me(c, l)), (a = Me(c, a)), (e = []);
               break;
             default:
               'function' !== typeof l.onClick &&
@@ -102360,11 +102991,11 @@
                     (n._wrapperState.wasMultiple = !!a.multiple),
                     (e = a.value),
                     null != e
-                      ? Me(n, !!a.multiple, e, !1)
+                      ? ze(n, !!a.multiple, e, !1)
                       : t !== !!a.multiple &&
                         (null != a.defaultValue
-                          ? Me(n, !!a.multiple, a.defaultValue, !0)
-                          : Me(n, !!a.multiple, a.multiple ? [] : '', !1));
+                          ? ze(n, !!a.multiple, a.defaultValue, !0)
+                          : ze(n, !!a.multiple, a.multiple ? [] : '', !1));
               }
             }
           }
@@ -102448,7 +103079,7 @@
       }
     }
     var Ai = 'function' === typeof WeakMap ? WeakMap : Map;
-    function Mi(e, t, n) {
+    function zi(e, t, n) {
       (n = Oo(n, null)), (n.tag = 3), (n.payload = { element: null });
       var a = t.value;
       return (
@@ -102458,7 +103089,7 @@
         n
       );
     }
-    function zi(e, t, n) {
+    function Mi(e, t, n) {
       (n = Oo(n, null)), (n.tag = 3);
       var a = e.type.getDerivedStateFromError;
       if ('function' === typeof a) {
@@ -102592,7 +103223,7 @@
           a = a.return;
         }
       return (
-        null !== r && (Xi === r && (zs(t), ns === Yi && mc(r, ts)), pc(r, t)), r
+        null !== r && (Xi === r && (Ms(t), ns === Yi && mc(r, ts)), pc(r, t)), r
       );
     }
     function Os(e) {
@@ -102976,7 +103607,7 @@
               switch (d.tag) {
                 case 3:
                   (s = i), (d.effectTag |= 4096), (d.expirationTime = t);
-                  var y = Mi(d, s, t);
+                  var y = zi(d, s, t);
                   Io(d, y);
                   break e;
                 case 1:
@@ -102991,7 +103622,7 @@
                         (null === fs || !fs.has(w))))
                   ) {
                     (d.effectTag |= 4096), (d.expirationTime = t);
-                    var k = zi(d, s, t);
+                    var k = Mi(d, s, t);
                     Io(d, k);
                     break e;
                   }
@@ -103011,11 +103642,11 @@
       var e = _i.current;
       return (_i.current = Dl), null === e ? Dl : e;
     }
-    function Ms(e, t) {
+    function zs(e, t) {
       e < rs && 2 < e && (rs = e),
         null !== t && e < os && 2 < e && ((os = e), (ls = t));
     }
-    function zs(e) {
+    function Ms(e) {
       e > is && (is = e);
     }
     function Bs() {
@@ -103368,7 +103999,7 @@
     }
     function $s(e, t, n) {
       (t = gi(n, t)),
-        (t = Mi(e, t, 1073741823)),
+        (t = zi(e, t, 1073741823)),
         jo(e, t),
         (e = Ss(e, 1073741823)),
         null !== e && js(e);
@@ -103389,7 +104020,7 @@
                 (null === fs || !fs.has(a)))
             ) {
               (e = gi(t, e)),
-                (e = zi(n, e, 1073741823)),
+                (e = Mi(n, e, 1073741823)),
                 jo(n, e),
                 (n = Ss(n, 1073741823)),
                 null !== n && js(n);
@@ -103434,7 +104065,7 @@
                   return (t.expirationTime = t.childExpirationTime = 1), null;
                 break;
               case 1:
-                Lr(t.type) && zr(t);
+                Lr(t.type) && Mr(t);
                 break;
               case 4:
                 Yo(t, t.stateNode.containerInfo);
@@ -103500,7 +104131,7 @@
               Lr(a))
             ) {
               var o = !0;
-              zr(t);
+              Mr(t);
             } else o = !1;
             (t.memoizedState =
               null !== r.state && void 0 !== r.state ? r.state : null),
@@ -103722,9 +104353,9 @@
             null !== e &&
               ((e.alternate = null), (t.alternate = null), (t.effectTag |= 2)),
             (t.tag = 1),
-            Lr(a) ? ((e = !0), zr(t)) : (e = !1),
+            Lr(a) ? ((e = !0), Mr(t)) : (e = !1),
             xo(t, n),
-            Mo(t, a, r),
+            zo(t, a, r),
             Bo(t, a, r, n),
             ni(null, t, a, !0, e, n)
           );
@@ -103996,7 +104627,7 @@
         if (1 === n.tag) {
           var c = n.type;
           if (Lr(c)) {
-            n = Mr(n, c, s);
+            n = zr(n, c, s);
             break e;
           }
         }
@@ -104164,11 +104795,11 @@
             Fe(e, n);
             break;
           case 'select':
-            (t = n.value), null != t && Me(e, !!n.multiple, t, !1);
+            (t = n.value), null != t && ze(e, !!n.multiple, t, !1);
         }
       }),
       (A = Ns),
-      (M = function (e, t, n, a, r) {
+      (z = function (e, t, n, a, r) {
         var o = Zi;
         Zi |= 4;
         try {
@@ -104177,7 +104808,7 @@
           (Zi = o), Zi === Ui && co();
         }
       }),
-      (z = function () {
+      (M = function () {
         (Zi & (1 | qi | Gi)) === Ui && (Ts(), Ws());
       }),
       (B = function (e, t) {
@@ -105216,12 +105847,12 @@
         args: { history: e.history, routes: e.routes, plugin: e.plugin },
       });
     }
-    function M(e) {
-      return z.apply(this, arguments);
+    function z(e) {
+      return M.apply(this, arguments);
     }
-    function z() {
+    function M() {
       return (
-        (z = p(
+        (M = p(
           a.mark(function e(t) {
             var n,
               r,
@@ -105269,7 +105900,7 @@
                         e.next = 17;
                         break;
                       }
-                      return (e.next = 16), M(u.routes, n);
+                      return (e.next = 16), z(u.routes, n);
                     case 16:
                       u.routes = e.sent;
                     case 17:
@@ -105295,7 +105926,7 @@
             );
           }),
         )),
-        z.apply(this, arguments)
+        M.apply(this, arguments)
       );
     }
     function B(e) {
@@ -105308,7 +105939,7 @@
         a = e.callback || function () {};
       window.g_useSSR
         ? e.dynamicImport
-          ? M(e.routes).then(function () {
+          ? z(e.routes).then(function () {
               l.hydrate(t, n, a);
             })
           : l.hydrate(t, n, a)
