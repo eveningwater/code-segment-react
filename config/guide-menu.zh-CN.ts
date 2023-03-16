@@ -91,4 +91,8 @@ export default [
   //   title: '滑块条',
   //   path: '/zh-CN/guide/slider/slider',
   // },
+  {
+    title: '星级评分',
+    path: '/zh-CN/guide/star-rating/star-rating',
+  },
 ];

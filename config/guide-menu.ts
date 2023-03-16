@@ -91,4 +91,8 @@ export default [
   //   title: 'Slider',
   //   path: '/guide/slider/slider',
   // },
+  {
+    title: 'StarRating',
+    path: '/guide/star-rating/star-rating',
+  },
 ];
