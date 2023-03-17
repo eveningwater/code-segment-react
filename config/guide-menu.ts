@@ -107,4 +107,8 @@ export default [
     title: 'Textarea',
     path: '/guide/textarea/textarea',
   },
+  {
+    title: 'Switch',
+    path: '/guide/switch/switch',
+  },
 ];

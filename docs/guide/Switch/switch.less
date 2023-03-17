@@ -1,0 +1,80 @@
+@prefix: ew-;
+@switchColor: #535355;
+@switchBgColor: #c3c3c4;
+@switchActiveBgColor: #2396ef;
+@switchAfterBgcolor: #f2f1f3;
+@switchAfterDisabledBgcolor: #909092;
+.@{prefix}switch{
+    position: relative;
+    cursor: pointer;
+    min-width: 80px;
+    padding: 5px;
+    color: @switchColor;
+    display: inline-block;
+    font-size: 14px;
+    &-inner {
+        display: inline-block;
+        vertical-align: middle;
+        width: 44px;
+        height: 22px;
+        background-color: @switchBgColor;
+        border-radius: 25px;
+        cursor: pointer;
+        margin-right: 8px;
+        position: relative;
+        &::after {
+            content:"";
+            width: 18px;
+            height: 18px;
+            background-color: @switchAfterBgcolor;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            cursor: pointer;
+            border-radius: 50%;
+            animation-timing-function: linear;
+            animation-duration: .4s;
+            animation-fill-mode: forwards;
+            animation-name: slideOff;
+        }
+    }
+    &.active {
+        .@{prefix}switch-inner {
+            background-color: @switchActiveBgColor;
+            &::after {
+                animation-name: slideOn;
+            }
+        }
+    }
+    &.disabled {
+        .@{prefix}switch-inner {
+            cursor: not-allowed;
+            &::after {
+                background-color: @switchAfterDisabledBgcolor;
+            }
+        }
+        cursor: not-allowed;
+    }
+    @keyframes slideOn {
+        0% {
+            transform: translateX(0) scale(1);
+        }
+        50% {
+            transform: translateX(12px) scale(1.2);
+        }
+        100% {
+            transform: translateX(22px) scale(1);
+        }
+    }
+    @keyframes slideOff {
+        0% {
+            transform: translateX(22px) scale(1);
+        }
+        50% {
+            transform: translateX(12px) scale(1.2);
+        }
+        100% {
+            transform: translateX(0) scale(1);
+        }
+    }
+}

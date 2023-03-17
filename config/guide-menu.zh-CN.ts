@@ -107,4 +107,8 @@ export default [
     title: '多行文本输入框',
     path: '/zh-CN/guide/textarea/textarea',
   },
+  {
+    title: '开关切换',
+    path: '/zh-CN/guide/switch/switch',
+  },
 ];
