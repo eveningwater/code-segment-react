@@ -103,4 +103,8 @@ export default [
     title: '标签输入',
     path: '/zh-CN/guide/tag-input/tag-input',
   },
+  {
+    title: '多行文本输入框',
+    path: '/zh-CN/guide/textarea/textarea',
+  },
 ];

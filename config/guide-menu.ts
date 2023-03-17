@@ -103,4 +103,8 @@ export default [
     title: 'TagInput',
     path: '/guide/tag-input/tag-input',
   },
+  {
+    title: 'Textarea',
+    path: '/guide/textarea/textarea',
+  },
 ];
