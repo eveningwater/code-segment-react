@@ -95,4 +95,12 @@ export default [
     title: 'StarRating',
     path: '/guide/star-rating/star-rating',
   },
+  {
+    title: 'Tabs',
+    path: '/guide/tabs/tabs',
+  },
+  {
+    title: 'TagInput',
+    path: '/guide/tag-input/tag-input',
+  },
 ];

@@ -95,4 +95,12 @@ export default [
     title: '星级评分',
     path: '/zh-CN/guide/star-rating/star-rating',
   },
+  {
+    title: '选项卡',
+    path: '/zh-CN/guide/tabs/tabs',
+  },
+  {
+    title: '标签输入',
+    path: '/zh-CN/guide/tag-input/tag-input',
+  },
 ];

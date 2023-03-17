@@ -1,0 +1,43 @@
+@prefix: ew-tabs;
+@tabsColor: rgba(0, 0, 0, 0.85);
+@tabsBorderColor: rgba(0, 0, 0, 0.25);
+@tabsActiveColor: #2396ef;
+.@{prefix} {
+  display: flex;
+  flex-direction: column;
+  color: @tabsColor;
+  &-header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid @tabsBorderColor;
+    &-item {
+      display: inline-flex;
+      font-size: 14px;
+      align-items: center;
+      margin-right: 16px;
+      padding: 6px 0;
+      justify-content: center;
+      transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+      cursor: pointer;
+      position: relative;
+      &.active {
+        color: @tabsActiveColor;
+        &::before {
+          content: '';
+          position: absolute;
+          width: percentage(1);
+          height: 3px;
+          background-color: @tabsActiveColor;
+          bottom: -2px;
+          left: 0;
+        }
+      }
+    }
+  }
+  &-content {
+    flex: auto;
+    padding: 15px 0;
+    width: percentage(1);
+  }
+}

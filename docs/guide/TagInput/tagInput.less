@@ -1,0 +1,58 @@
+@prefix: ew-tags-input;
+@tagInputborderColor: #d6d8da;
+@white: #fff;
+@tagBgColor: #2e7df3;
+@closeBtnColor: #2396ef;
+@closeBtnBgColor: @white;
+.@{prefix}{
+    padding: 0 8px;
+    flex-wrap: wrap;
+    min-height: 48px;
+    display: flex;
+    border-radius: 6px;
+    border: 1px solid @tagInputborderColor;
+    &-inner {
+        border: none;
+        flex: 1;
+        outline: none;
+        height: 46px;
+        font-size: 14px;
+        padding: 4px 0 0;
+    }
+    &-list {
+        margin: 8px 0 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        &-item {
+            width: auto;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: @white;
+            font-size: 14px;
+            background-color: @tagBgColor;
+            border-radius: 6px;
+            list-style: none;
+            padding: 0 8px;
+            margin: 0 8px 8px 0;
+            &-text {
+                margin-top: 3px;
+            }
+            &-close-btn {
+                width: 16px;
+                height: 16px;
+                display: block;
+                line-height: 16px;
+                text-align: center;
+                margin-left: 8px;
+                font-size: 14px;
+                background-color: @closeBtnBgColor;
+                color: @closeBtnColor;
+                border-radius: percentage(.5);
+                cursor: pointer;
+            }
+        }
+    }
+}
