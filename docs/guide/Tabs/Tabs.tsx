@@ -29,9 +29,14 @@ const Tabs = (props: Partial<TabsProps>) => {
     setBindIndex(+newIndex);
   };
   const items = children?.filter((item) => item.type?.name === 'TabItem');
+  console.log(
+    6666,
+    items,
+    items?.[Math.max(0, Math.min(items.length - 1, bindIndex - 1))].props,
+  );
   const content =
     items?.[Math.max(0, Math.min(items.length - 1, bindIndex - 1))].props
-      .children;
+      ?.children;
   return (
     <div className="ew-tabs">
       <div className="ew-tabs-header">
