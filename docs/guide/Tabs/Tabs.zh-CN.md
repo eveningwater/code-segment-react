@@ -92,10 +92,12 @@ const Tabs = (props: Partial<TabsProps>) => {
     onTabClick?.(newIndex, e);
     setBindIndex(+newIndex);
   };
-  const items = children?.filter((item) => item.type?.name === 'TabItem');
+  const items = children?.filter(
+    (item) => item.type?.displayName === 'TabItem',
+  );
   const content =
     items?.[Math.max(0, Math.min(items.length - 1, bindIndex - 1))].props
-      .children;
+      ?.children;
   return (
     <div className="ew-tabs">
       <div className="ew-tabs-header">
@@ -138,10 +140,12 @@ const Tabs = (props) => {
     onTabClick?.(newIndex, e);
     setBindIndex(+newIndex);
   };
-  const items = children?.filter((item) => item.type?.name === 'TabItem');
+  const items = children?.filter(
+    (item) => item.type?.displayName === 'TabItem',
+  );
   const content =
     items?.[Math.max(0, Math.min(items.length - 1, bindIndex - 1))].props
-      .children;
+      ?.children;
   return (
     <div className="ew-tabs">
       <div className="ew-tabs-header">
