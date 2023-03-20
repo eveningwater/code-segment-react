@@ -1,0 +1,27 @@
+@prefix: ew-tooltip;
+@black: rgba(0,0,0,1);
+@white: #fff;
+.@{prefix}{
+    position: relative;
+    &-box {
+        position: absolute;
+        color: @white;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: fadein(@black,70%);
+        top: calc(100% + 5px);
+        transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        transform: scale(0);
+        &.visible {
+            transform: scale(1);
+        }
+    }
+    &-arrow {
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent fadein(@black,70%) transparent;
+    }
+}

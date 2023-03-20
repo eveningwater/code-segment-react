@@ -1,0 +1,24 @@
+.ew-tooltip {
+  position: relative;
+}
+.ew-tooltip-box {
+  position: absolute;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #000000;
+  top: calc(100% + 5px);
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: scale(0);
+}
+.ew-tooltip-box.visible {
+  transform: scale(1);
+}
+.ew-tooltip-arrow {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #000000 transparent;
+}

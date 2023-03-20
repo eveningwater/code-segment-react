@@ -111,4 +111,12 @@ export default [
     title: 'Switch',
     path: '/guide/switch/switch',
   },
+  {
+    title: 'AnimationTabs',
+    path: '/guide/animation-tabs/animation-tabs',
+  },
+  {
+    title: 'Tooltip',
+    path: '/guide/tooltip/tooltip',
+  },
 ];

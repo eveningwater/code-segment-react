@@ -111,4 +111,12 @@ export default [
     title: '开关切换',
     path: '/zh-CN/guide/switch/switch',
   },
+  {
+    title: '带动画的选项卡',
+    path: '/zh-CN/guide/animation-tabs/animation-tabs',
+  },
+  {
+    title: '工具提示',
+    path: '/zh-CN/guide/tooltip/tooltip',
+  },
 ];
