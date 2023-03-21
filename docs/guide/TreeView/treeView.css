@@ -1,0 +1,35 @@
+.ew-tree-element {
+  margin: 0 0 0 4px;
+  position: relative;
+}
+.ew-tree-element.is-child {
+  margin-left: 16px;
+}
+.ew-tree-element-toggler {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 0;
+  height: 0;
+  cursor: pointer;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 5px solid rgba(114, 114, 114, 0.8);
+}
+.ew-tree-element-toggler.closed {
+  transform: rotate(90deg);
+}
+.ew-tree-element.collapsed {
+  display: none;
+}
+p.ew-tree-element {
+  margin-left: 16px;
+}
+div.ew-tree-element::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: 1px;
+  height: calc(100% - 48px);
+  border-left: 1px solid rgba(114, 114, 114, 0.8);
+}

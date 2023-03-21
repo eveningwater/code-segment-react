@@ -1,0 +1,39 @@
+@prefix: ew-tree-element;
+@greyBorderColor: rgba(114, 114, 114,.8);
+.@{prefix}{
+    margin: 0 0 0 4px;
+    position: relative;
+    &.is-child {
+        margin-left: 16px;
+    }
+    &-toggler {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 0;
+        height: 0;
+        cursor: pointer;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-left: 5px solid @greyBorderColor;
+        &.closed {
+            transform: rotate(90deg);
+        }
+    }
+    &.collapsed {
+        display: none;
+    }
+}
+p.@{prefix}{
+    margin-left: 16px;
+}
+div.@{prefix}{
+    &::before {
+        content:"";
+        position: absolute;
+        top: 24px;
+        left: 1px;
+        height: calc(100% - 48px);
+        border-left: 1px solid @greyBorderColor;
+    }
+}

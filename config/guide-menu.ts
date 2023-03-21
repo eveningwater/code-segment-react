@@ -119,4 +119,8 @@ export default [
     title: 'Tooltip',
     path: '/guide/tooltip/tooltip',
   },
+  {
+    title: 'TreeView',
+    path: '/guide/tree-view/tree-view',
+  },
 ];

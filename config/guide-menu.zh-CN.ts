@@ -119,4 +119,8 @@ export default [
     title: '工具提示',
     path: '/zh-CN/guide/tooltip/tooltip',
   },
+  {
+    title: '树形视图',
+    path: '/zh-CN/guide/tree-view/tree-view',
+  },
 ];

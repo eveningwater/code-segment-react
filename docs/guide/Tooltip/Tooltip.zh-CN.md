@@ -118,8 +118,8 @@ export default Tooltip;
 
 示例:
 
-<code src="./Demo.tsx"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.jsx"></code>
+<code src="./jsx/Demo.zh-CN.jsx"></code>

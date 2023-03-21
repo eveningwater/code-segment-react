@@ -22,9 +22,9 @@ export type ImperRef = Record<string, ImperFunc>;
 export type ImperItem = {
   ref: Ref<ImperRef>;
 };
-let timer: number;
+let timer: ReturnType<typeof setTimeout>;
 // see this:https://www.aaron-powell.com/posts/2019-09-23-recursive-settimeout-with-react-hooks/
-export const useTimeout = (callback, delay = 1000) => {
+export const useTimeout = (callback: (...args: any []) => any, delay = 1000) => {
   const ref = useRef() as MutableRefObject<() => void>;
   useEffect(() => {
     ref.current = callback;
