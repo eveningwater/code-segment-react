@@ -147,7 +147,7 @@
 
 ```tsx | pure
 import React, { useEffect, useMemo, useState, SyntheticEvent } from 'react';
-import { getElementStyle } from './utils/utils';
+import { getElementStyle } from '../../utils/getElementStyle';
 import LazyLoadingImage from '../LazyLoadingImage/LazyLoadImage';
 import './animationTabs.less';
 export interface TabItem {
@@ -353,7 +353,7 @@ export default AnimationTabs;
 
 ```jsx | pure
 import React, { useEffect, useMemo, useState } from 'react';
-import { getElementStyle } from '../utils/utils';
+import { getElementStyle } from '../../../utils/getElementStyle';
 import LazyLoadingImage from '../../LazyLoadingImage/jsx/LazyLoadImage';
 import '../animationTabs.less';
 const AnimationTabs = (props) => {

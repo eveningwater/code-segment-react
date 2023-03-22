@@ -1,13 +1,7 @@
-import React, {
-  useState,
-  SyntheticEvent,
-  useRef,
-  useEffect,
-  useCallback,
-} from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import styled from '@emotion/styled';
-import { scale } from '../../utils/scale';
-import { getElementStyle } from '../../utils/getElementStyle';
+import { scale } from '../../../utils/scale';
+import { getElementStyle } from '../../../utils/getElementStyle';
 
 const StyleSlider = styled.div`
   position: relative;
@@ -79,44 +73,32 @@ const StyleSliderLabel = styled.label`
   color: #fff;
   background: linear-gradient(135deg, #abdcff 10%, #0396ff 100%);
 `;
-export interface SliderProps extends Record<string, any> {
-  min: number;
-  max: number;
-  defaultValue: string;
-  onChange: (v: string) => void;
-}
 
-const Slider = (props: Partial<SliderProps>) => {
+const Slider = (props) => {
   const { min = 0, max = 100, defaultValue = 50, onChange, ...rest } = props;
-  const labelRef = useRef<HTMLLabelElement | null>(null);
-  const inputRef = useRef<HTMLInputElement | null>(null);
-  const [left, setLeft] = useState<number>(+defaultValue);
+  const labelRef = useRef(null);
+  const inputRef = useRef(null);
+  const [left, setLeft] = useState(+defaultValue);
   const [value, setValue] = useState(defaultValue);
-  const computedLeft = useCallback(
-    (
-      input: HTMLInputElement | null,
-      label: HTMLLabelElement | null,
-    ): number => {
-      if (!input || !label) {
-        return 0;
-      }
-      const numValue = +input.value;
-      const rangeWidth = getElementStyle(input, 'width'),
-        labelWidth = getElementStyle(label, 'width');
-      const numWidth = +rangeWidth.slice(0, -2),
-        numLabelWidth = +labelWidth.slice(0, -2);
-      const min = +input.min,
-        max = +input.max;
-      const left =
-        numValue * (numWidth / max) -
-        numLabelWidth / 2 +
-        scale(numValue, min, max, 10, -10);
-      return left;
-    },
-    [],
-  );
-  const onInputHandler = (e: SyntheticEvent) => {
-    const target = e.target as HTMLInputElement;
+  const computedLeft = useCallback((input, label) => {
+    if (!input || !label) {
+      return 0;
+    }
+    const numValue = +input.value;
+    const rangeWidth = getElementStyle(input, 'width'),
+      labelWidth = getElementStyle(label, 'width');
+    const numWidth = +rangeWidth.slice(0, -2),
+      numLabelWidth = +labelWidth.slice(0, -2);
+    const min = +input.min,
+      max = +input.max;
+    const left =
+      numValue * (numWidth / max) -
+      numLabelWidth / 2 +
+      scale(numValue, min, max, 10, -10);
+    return left;
+  }, []);
+  const onInputHandler = (e) => {
+    const target = e.target;
     const label = labelRef.current;
     setLeft(computedLeft(target, label));
     setValue(target.value);

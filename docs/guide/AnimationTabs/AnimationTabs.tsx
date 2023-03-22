@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState, SyntheticEvent } from 'react';
-import { getElementStyle } from './utils/utils';
+import { getElementStyle } from '../../utils/getElementStyle';
 import LazyLoadingImage from '../LazyLoadingImage/LazyLoadImage';
 import './animationTabs.less';
 export interface TabItem {

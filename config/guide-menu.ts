@@ -87,10 +87,10 @@ export default [
     title: 'Select',
     path: '/guide/select/select',
   },
-  // {
-  //   title: 'Slider',
-  //   path: '/guide/slider/slider',
-  // },
+  {
+    title: 'Slider',
+    path: '/guide/slider/slider',
+  },
   {
     title: 'StarRating',
     path: '/guide/star-rating/star-rating',

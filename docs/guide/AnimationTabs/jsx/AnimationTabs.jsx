@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { getElementStyle } from '../utils/utils';
+import { getElementStyle } from '../../../utils/getElementStyle';
 import LazyLoadingImage from '../../LazyLoadingImage/jsx/LazyLoadImage';
 import '../animationTabs.less';
 const AnimationTabs = (props) => {
@@ -107,11 +107,17 @@ const AnimationTabs = (props) => {
   return (
     <div className="ew-animation-tabs-container">
       <div
-        className={['ew-animation-tabs-wrapper', 'ew-animation-tabs-wrapper-' + selectId].join(' ')}
+        className={[
+          'ew-animation-tabs-wrapper',
+          'ew-animation-tabs-wrapper-' + selectId,
+        ].join(' ')}
         onTouchMove={handleMouseMove}
       >
         <div
-          className={['ew-animation-tabs-content', `ew-animation-tabs-${type}-content`].join(' ')}
+          className={[
+            'ew-animation-tabs-content',
+            `ew-animation-tabs-${type}-content`,
+          ].join(' ')}
         >
           {tabs.map((tab) => (
             <div
@@ -135,9 +141,17 @@ const AnimationTabs = (props) => {
           ))}
           <div
             className={[
-              `${type === 'line' ? 'ew-animation-tabs-line' : 'ew-animation-tabs-circle'}`,
+              `${
+                type === 'line'
+                  ? 'ew-animation-tabs-line'
+                  : 'ew-animation-tabs-circle'
+              }`,
               'ew-animation-tabs-effect',
-              `${isImage ? 'ew-animation-tabs-image-effect' : 'ew-animation-tabs-text-effect'}`,
+              `${
+                isImage
+                  ? 'ew-animation-tabs-image-effect'
+                  : 'ew-animation-tabs-text-effect'
+              }`,
               animation,
             ].join(' ')}
           ></div>

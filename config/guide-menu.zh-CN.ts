@@ -87,10 +87,10 @@ export default [
     title: '选择器',
     path: '/zh-CN/guide/select/select',
   },
-  // {
-  //   title: '滑块条',
-  //   path: '/zh-CN/guide/slider/slider',
-  // },
+  {
+    title: '滑块条',
+    path: '/zh-CN/guide/slider/slider',
+  },
   {
     title: '星级评分',
     path: '/zh-CN/guide/star-rating/star-rating',
