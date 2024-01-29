@@ -11,7 +11,7 @@
 - 使用 useEffect() 钩子通过 setTimeout()结合递归 每秒调用一次 tick 方法，并在组件卸载时使用 clearTimeout() 进行清理。
 - 使用 String.prototype.padStart() 将时间数组的每个部分填充为两个字符，以创建计时器的可视化表示。
 
-- helper.ts
+#### helper.ts
 
 ```ts | pure
 import type { MutableRefObject, DependencyList, Ref } from 'react';
@@ -55,7 +55,7 @@ export const useTimeout = (callback, delay = 1000) => {
 };
 ```
 
-- CountDown.tsx
+#### CountDown.tsx
 
 ```tsx | pure
 import React, { forwardRef, useState, useCallback } from 'react';
@@ -154,7 +154,7 @@ const CountDown = forwardRef(
 export default CountDown;
 ```
 
-- helper.js
+#### helper.js
 
 ```js
 import { useImperativeHandle, useEffect, useRef } from 'react';
@@ -186,7 +186,7 @@ export const useTimeout = (callback, delay = 1000) => {
 };
 ```
 
-- CountDown.jsx
+#### CountDown.jsx
 
 ```jsx | pure
 import React, { forwardRef, useState, useCallback } from 'react';
