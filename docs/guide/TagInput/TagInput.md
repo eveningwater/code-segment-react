@@ -178,8 +178,8 @@ export default TagInput;
 
 Demo:
 
-<code src="./Demo.tsx"></code>
+<code src="./Demo.tsx" id="tagInputTsxDemo"></code>
 
 jsx Demo:
 
-<code src="./jsx/Demo.jsx"></code>
+<code src="./jsx/Demo.jsx" id="tagInputJsxDemo"></code>

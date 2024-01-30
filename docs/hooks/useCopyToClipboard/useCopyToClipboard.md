@@ -10,7 +10,7 @@ Copies the given text to the clipboard.
 - Use the useEffect() hook to reset the copied state variable if the text changes.
 - Return the copied state variable and the copy callback.
 
-hooks:
+#### useCopyToClipboard.ts
 
 ```ts
 import { useState, useCallback, useEffect } from 'react';
@@ -23,16 +23,15 @@ const useCopyToClipboard = (text: string) => {
     el.style.position = 'absolute';
     el.style.left = '-9999px';
     document.body.appendChild(el);
+    const getSelection = document.getSelection;
     const selected =
-      document.getSelection()!.rangeCount > 0
-        ? document.getSelection()?.getRangeAt(0)
-        : false;
+      getSelection()!.rangeCount > 0 ? getSelection()?.getRangeAt(0) : false;
     el.select();
     const success = document.execCommand('copy');
     document.body.removeChild(el);
     if (selected) {
-      document.getSelection()?.removeAllRanges();
-      document.getSelection()?.addRange(selected);
+      getSelection()?.removeAllRanges();
+      getSelection()?.addRange(selected);
     }
     return success;
   };
@@ -53,7 +52,7 @@ const useCopyToClipboard = (text: string) => {
 export default useCopyToClipboard;
 ```
 
-Demo:
+#### ts demo
 
 ```tsx | pure
 import React, { SyntheticEvent } from 'react';
@@ -87,6 +86,78 @@ const Demo = () => <TextCopy text="The copy text!" />;
 export default Demo;
 ```
 
+#### useCopyToClipboard.js
+
+```js
+import { useState, useCallback, useEffect } from 'react';
+
+const useCopyToClipboard = (text) => {
+  const copyToClipboard = (str) => {
+    const el = document.createElement('textarea');
+    el.value = str;
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    const getSelection = document.getSelection;
+    const selected =
+      getSelection()?.rangeCount > 0 ? getSelection()?.getRangeAt(0) : false;
+    el.select();
+    const success = document.execCommand('copy');
+    document.body.removeChild(el);
+    if (selected) {
+      getSelection()?.removeAllRanges();
+      getSelection()?.addRange(selected);
+    }
+    return success;
+  };
+
+  const [copied, setCopied] = useState(false);
+
+  const copy = useCallback(() => {
+    if (!copied) {
+      setCopied(copyToClipboard(text));
+    }
+  }, [text]);
+
+  useEffect(() => () => setCopied(false), [text]);
+
+  return [copied, copy];
+};
+
+export default useCopyToClipboard;
+```
+
+#### js demo
+
+```jsx | pure
+import React from 'react';
+import useCopyToClipboard from './useCopyToClipboard';
+import { Space } from 'antd';
+import Button from '../../../guide/Button/jsx/Button';
+
+const TextCopy = (props) => {
+  const { text = 'Lorem ipsum' } = props;
+  const [copied, copy] = useCopyToClipboard(text);
+  return (
+    <Space>
+      <Button type="primary" ripple onClick={copy}>
+        Click to Copy!
+      </Button>
+      <span>{copied && 'Copied!'}</span>
+    </Space>
+  );
+};
+
+const Demo = () => <TextCopy text="The copy text!" />;
+
+export default Demo;
+```
+
 Demo:
 
-<code src="./Demo.tsx"></code>
+<code src="./Demo.tsx" id="copyToClipboardTsDemo"></code>
+
+js Demo:
+
+<code src="./js/Demo.jsx" id="copyToClipboardJsDemo"></code>

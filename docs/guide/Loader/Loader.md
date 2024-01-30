@@ -120,8 +120,8 @@ export default Loader;
 
 Demo:
 
-<code src="./Demo.tsx"></code>
+<code src="./Demo.tsx" id="loaderTsxDemo"></code>
 
 jsx Demo:
 
-<code src="./jsx/Demo.jsx"></code>
+<code src="./jsx/Demo.jsx" id="loaderJsxDemo"></code>

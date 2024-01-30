@@ -1,3 +1,8 @@
+---
+title: 事件监听钩子函数
+nav: 钩子函数
+---
+
 | 标题             | 标签                  | 首次添加时间 | 更新时间  |
 | ---------------- | --------------------- | ------------ | --------- |
 | 事件监听钩子函数 | 钩子函数，事件,副作用 | 2022/9/24    | 2022/9/24 |
@@ -122,8 +127,8 @@ export default Demo;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx"></code>
+<code src="./Demo.zh-CN.tsx" id="eventListenerTsDemoZH"></code>
 
 js 示例:
 
-<code src="./js/Demo.zh-CN.jsx"></code>
+<code src="./js/Demo.zh-CN.jsx" id="eventListenerJsDemoZH"></code>

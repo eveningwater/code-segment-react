@@ -10,7 +10,7 @@ Executes a callback immediately after a component is updated.
 - Providing a dependency array for the second argument, condition, will only execute the hook if any of the dependencies change.
 - Behaves like the componentDidUpdate() lifecycle method of class components.
 
-hooks:
+#### useComponentDidUpdate.ts
 
 ```ts
 import { useEffect, DependencyList, useRef } from 'react';
@@ -31,7 +31,7 @@ const useComponentDidUpdate = (
 export default useComponentDidUpdate;
 ```
 
-Demo:
+#### ts demo
 
 ```tsx | pure
 import React, { useState } from 'react';
@@ -63,6 +63,62 @@ const Demo = () => {
 export default Demo;
 ```
 
+#### useComponentDidUpdate.js
+
+```js
+import { useEffect, useRef } from 'react';
+const useComponentDidUpdate = (handler, deps) => {
+  const mounted = useRef(false);
+  useEffect(() => {
+    if (mounted.current) {
+      handler?.();
+    } else {
+      mounted.current = true;
+    }
+  }, deps);
+};
+
+export default useComponentDidUpdate;
+```
+
+#### js demo
+
+```jsx | pure
+import React, { useState } from 'react';
+import Button from '../../../guide/Button/jsx/Button';
+import useComponentDidUpdate from './useComponentDidUpdate';
+import { Space } from 'antd';
+const Demo = () => {
+  const [value, setValue] = useState(0);
+  const [otherValue, setOtherValue] = useState(1);
+
+  useComponentDidUpdate(() => {
+    console.log('Current value is:' + value + '.');
+  }, [value]);
+  return (
+    <>
+      <p>
+        Value:{value},otherValue: {otherValue}
+      </p>
+      <Space>
+        <Button type="primary" onClick={() => setValue(value + 1)}>
+          Increment value
+        </Button>
+        <Button type="primary" onClick={() => setOtherValue(otherValue + 1)}>
+          Increment other value
+        </Button>
+      </Space>
+    </>
+  );
+};
+
+export default Demo;
+```
+
 Demo:
 
-<code src="./Demo.tsx"></code>
+<code src="./Demo.tsx" id="componentDidUpdateTsDemo"></code>
+
+js Demo:
+
+<code src="./js/Demo.jsx" id="componentDidUpdateJsDemo"></code>

@@ -268,8 +268,8 @@ export default CountDown;
 
 demo:
 
-<code src="./Demo.tsx"></code>
+<code src="./Demo.tsx" id="countDownTsxDemo"></code>
 
 jsx demo:
 
-<code src="./jsx/Demo.jsx"></code>
+<code src="./jsx/Demo.jsx" id="countDownJsxDemo"></code>

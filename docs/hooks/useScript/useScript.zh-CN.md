@@ -1,3 +1,8 @@
+---
+title: 动态脚本钩子函数
+nav: 钩子函数
+---
+
 | 标题             | 标签                       | 首次添加时间 | 更新时间   |
 | ---------------- | -------------------------- | ------------ | ---------- |
 | 动态脚本钩子函数 | 钩子函数,副作用，状态,事件 | 2022/10/27   | 2022/10/27 |
@@ -180,8 +185,8 @@ export default Demo;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx"></code>
+<code src="./Demo.zh-CN.tsx" id="scriptTsDemoZH"></code>
 
 js 示例:
 
-<code src="./js/Demo.zh-CN.jsx"></code>
+<code src="./js/Demo.zh-CN.jsx" id="scriptJsDemoZH"></code>

@@ -1,3 +1,8 @@
+---
+title: 数据列表组件
+nav: 指南
+---
+
 | 标题         | 标签 | 首次添加时间 | 上次更新时间 |
 | ------------ | ---- | ------------ | ------------ |
 | 数据列表组件 | 组件 | 2022/7/17    | 2022/7/17    |
@@ -114,8 +119,8 @@ export default SimpleDataList;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx"></code>
+<code src="./Demo.zh-CN.tsx" id="simpleDataListTsxDemoZH"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx"></code>
+<code src="./jsx/Demo.zh-CN.jsx" id="simpleDataListJsxDemoZH"></code>

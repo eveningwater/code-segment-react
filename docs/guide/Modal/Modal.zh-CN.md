@@ -1,3 +1,8 @@
+---
+title: 弹框组件
+nav: 指南
+---
+
 | 标题     | 标签        | 首次添加时间 | 更新时间  |
 | -------- | ----------- | ------------ | --------- |
 | 弹框组件 | 组件,副作用 | 2022/7/26    | 2022/7/26 |
@@ -715,8 +720,8 @@ export default Modal;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx"></code>
+<code src="./Demo.zh-CN.tsx" id="modalTsxDemoZH"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx"></code>
+<code src="./jsx/Demo.zh-CN.jsx" id="modalJsxDemoZH"></code>

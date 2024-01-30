@@ -1,3 +1,8 @@
+---
+title: 工具提示组件
+nav: 指南
+---
+
 | 标题         | 标签             | 首次添加时间 | 上次更新时间 |
 | ------------ | ---------------- | ------------ | ------------ |
 | 工具提示组件 | 组件,子组件,状态 | 2023/3/20    | 2023/3/20    |
@@ -118,8 +123,8 @@ export default Tooltip;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx"></code>
+<code src="./Demo.zh-CN.tsx" id="tooltipTsxDemoZH"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx"></code>
+<code src="./jsx/Demo.zh-CN.jsx" id="tooltipJsxDemoZH"></code>

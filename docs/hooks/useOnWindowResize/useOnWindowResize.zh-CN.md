@@ -1,3 +1,8 @@
+---
+title: 窗口大小改变事件监听钩子函数
+nav: 钩子函数
+---
+
 | 标题                     | 标签                  | 首次添加时间 | 更新时间   |
 | ------------------------ | --------------------- | ------------ | ---------- |
 | 窗口大小改变事件钩子函数 | 钩子函数,副作用，事件 | 2022/10/16   | 2022/10/16 |
@@ -89,8 +94,8 @@ export default Demo;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx"></code>
+<code src="./Demo.zh-CN.tsx" id="windowResizeTsDemoZH"></code>
 
 js 示例:
 
-<code src="./js/Demo.zh-CN.jsx"></code>
+<code src="./js/Demo.zh-CN.jsx" id="windowResizeJsDemoZH"></code>

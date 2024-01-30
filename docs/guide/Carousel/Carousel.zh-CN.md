@@ -1,3 +1,8 @@
+---
+title: 轮播组件
+nav: 指南
+---
+
 | 标题   | 标签                    | 首次添加时间 | 更新时间  |
 | ------ | ----------------------- | ------------ | --------- |
 | 轮播图 | 组件,子节点,状态,副作用 | 2022/7/13    | 2022/7/13 |
@@ -130,8 +135,8 @@ export default Carousel;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx"></code>
+<code src="./Demo.zh-CN.tsx" id="carouselTsxDemoZH"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx"></code>
+<code src="./jsx/Demo.zh-CN.jsx" id="carouselJsxDemoZH"></code>

@@ -8,6 +8,8 @@ Handles the event of clicking outside of the wrapped component.
 - Use the useEffect() hook to append and clean up the click event.
 - Use the useRef() hook to create a ref for your click component and pass it to the useClickOutside hook.
 
+#### useClickOutside.ts
+
 ```ts
 import { useEffect } from 'react';
 import type { MutableRefObject } from 'react';
@@ -27,7 +29,7 @@ const useClickOutside = (ref: MutableRefObject<any>, callback: Function) => {
 export default useClickOutside;
 ```
 
-Demo:
+#### ts demo
 
 ```tsx | pure
 import React, { useRef } from 'react';
@@ -67,8 +69,68 @@ const Demo = () => {
 export default Demo;
 ```
 
+#### useClickOutside.js
+
+```js
+import { useEffect } from 'react';
+
+const useClickOutside = (ref, callback) => {
+  const handleClick = (e) => {
+    if (ref.current && !ref.current.contains(e.target)) {
+      callback();
+    }
+  };
+  useEffect(() => {
+    document.addEventListener('click', handleClick);
+    return () => document.removeEventListener('click', handleClick);
+  });
+};
+
+export default useClickOutside;
+```
+
+#### js demo
+
+```jsx | pure
+import React, { useRef } from 'react';
+import styled from '@emotion/styled';
+import useClickOutside from './useClickOutside';
+
+const ClickStyleBox = styled.div`
+  border: 2px dashed #2396ef;
+  height: 200px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+const ClickBox = (props) => {
+  const { onClickOutside } = props;
+  const clickRef = useRef(null);
+  useClickOutside(clickRef, () => {
+    if (onClickOutside) {
+      onClickOutside();
+    }
+  });
+  return (
+    <ClickStyleBox ref={clickRef}>
+      <p>Click out of this element</p>
+    </ClickStyleBox>
+  );
+};
+const Demo = () => {
+  return <ClickBox onClickOutside={() => alert('click outside')}></ClickBox>;
+};
+
+export default Demo;
+```
+
 Demo:
 
-<code src="./Demo.tsx"></code>
+<code src="./Demo.tsx" id="clickOutsideTsDemo"></code>
+
+js Demo:
+
+<code src="./js/Demo.jsx" id="clickOutsideJsDemo"></code>
 
 more Demo see [Select component](../../guide/Select/Select).

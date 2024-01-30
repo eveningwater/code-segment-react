@@ -115,8 +115,8 @@ export default Demo;
 
 Demo:
 
-<code src="./Demo.tsx"></code>
+<code src="./Demo.tsx" id="setTsDemo"></code>
 
 js Demo:
 
-<code src="./js/Demo.jsx"></code>
+<code src="./js/Demo.jsx" id="setJsDemo"></code>

@@ -1,3 +1,8 @@
+---
+title: 修改布尔值的钩子函数
+nav: 钩子函数
+---
+
 | 标题               | 标签                    | 首次添加时间 | 更新时间   |
 | ------------------ | ----------------------- | ------------ | ---------- |
 | 修改布尔值钩子函数 | 钩子函数,状态，回调函数 | 2022/11/02   | 2022/11/02 |
@@ -66,8 +71,8 @@ export default Demo;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx"></code>
+<code src="./Demo.zh-CN.tsx" id="togglerTsDemoZH"></code>
 
 js 示例:
 
-<code src="./js/Demo.zh-CN.jsx"></code>
+<code src="./js/Demo.zh-CN.jsx" id="togglerJsDemoZH"></code>

@@ -1,3 +1,8 @@
+---
+title: 可折叠手风琴组件
+nav: 指南
+---
+
 | 标题             | 标签             | 首次添加时间 | 更新时间  |
 | ---------------- | ---------------- | ------------ | --------- |
 | 可折叠手风琴组件 | 组件,子节点,状态 | 2022/7/9     | 2022/7/10 |
@@ -242,8 +247,8 @@ export default Accordion;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx"></code>
+<code src="./Demo.zh-CN.tsx" id="accordionTsxDemoZH"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx"></code>
+<code src="./jsx/Demo.zh-CN.jsx" id="accordionJsxDemoZH"></code>

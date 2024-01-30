@@ -118,8 +118,8 @@ export default Tooltip;
 
 Demo:
 
-<code src="./Demo.tsx"></code>
+<code src="./Demo.tsx" id="tooltipTsxDemo"></code>
 
 jsx Demo:
 
-<code src="./jsx/Demo.jsx"></code>
+<code src="./jsx/Demo.jsx" id="tooltipJsxDemo"></code>

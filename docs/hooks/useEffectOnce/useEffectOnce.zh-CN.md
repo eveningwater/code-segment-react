@@ -1,3 +1,8 @@
+---
+title: 只执行一次的钩子函数
+nav: 钩子函数
+---
+
 | 标题               | 标签             | 首次添加时间 | 更新时间  |
 | ------------------ | ---------------- | ------------ | --------- |
 | 只执行一次钩子函数 | 钩子函数，副作用 | 2022/9/16    | 2022/9/16 |
@@ -82,8 +87,8 @@ export default Demo;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx"></code>
+<code src="./Demo.zh-CN.tsx" id="effectOnceTsDemoZH"></code>
 
 js 示例:
 
-<code src="./js/Demo.zh-CN.jsx"></code>
+<code src="./js/Demo.zh-CN.jsx" id="effectOnceJsDemoZH"></code>

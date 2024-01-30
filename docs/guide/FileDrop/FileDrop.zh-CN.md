@@ -1,3 +1,8 @@
+---
+title: 拖拽文件组件
+nav: 指南
+---
+
 | 标题         | 标签                          | 首次添加时间 | 更新时间  |
 | ------------ | ----------------------------- | ------------ | --------- |
 | 拖拽文件组件 | 组件,输入框,状态,副作用，事件 | 2022/7/19    | 2022/7/19 |
@@ -192,8 +197,8 @@ export default FileDrop;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx"></code>
+<code src="./Demo.zh-CN.tsx" id="fileDropTsxDemoZH"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx"></code>
+<code src="./jsx/Demo.zh-CN.jsx" id="fileDropTsxDemoZH"></code>

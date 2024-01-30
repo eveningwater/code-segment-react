@@ -242,8 +242,8 @@ export default Accordion;
 
 demo:
 
-<code src="./Demo.tsx"></code>
+<code src="./Demo.tsx" id="accordionTsxDemo"></code>
 
 jsx demo:
 
-<code src="./jsx/Demo.jsx"></code>
+<code src="./jsx/Demo.jsx" id="accordionJsxDemo"></code>

@@ -1,3 +1,8 @@
+---
+title: 滑块组件
+nav: 指南
+---
+
 | 标题     | 标签        | 首次添加时间 | 上次更新时间 |
 | -------- | ----------- | ------------ | ------------ |
 | 滑块组件 | 组件,输入框 | 2023/3/21    | 2023/3/22    |
@@ -304,8 +309,8 @@ export default Slider;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx"></code>
+<code src="./Demo.zh-CN.tsx" id="sliderTsxDemoZH"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx"></code>
+<code src="./jsx/Demo.zh-CN.jsx" id="sliderJsxDemoZH"></code>

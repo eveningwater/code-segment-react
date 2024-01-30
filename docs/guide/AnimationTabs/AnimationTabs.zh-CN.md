@@ -1,3 +1,8 @@
+---
+title: 带动画的选项卡组件
+nav: 指南
+---
+
 | 标题               | 标签             | 首次添加时间 | 上次更新时间 |
 | ------------------ | ---------------- | ------------ | ------------ |
 | 带动画的选项卡组件 | 组件,状态,副作用 | 2023/3/20    | 2023/3/20    |
@@ -520,8 +525,8 @@ export default AnimationTabs;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx"></code>
+<code src="./Demo.zh-CN.tsx" id="animationTabsTsxDemoZh"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx"></code>
+<code src="./jsx/Demo.zh-CN.jsx" id="animationTabsTsxDemoZh"></code>

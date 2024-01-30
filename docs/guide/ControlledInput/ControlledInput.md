@@ -133,8 +133,8 @@ export default ControlledInput;
 
 demo:
 
-<code src="./Demo.tsx"></code>
+<code src="./Demo.tsx" id="controlledInputTsxDemo"></code>
 
 jsx demo:
 
-<code src="./jsx/Demo.jsx"></code>
+<code src="./jsx/Demo.jsx" id="controlledInputJsxDemo"></code>

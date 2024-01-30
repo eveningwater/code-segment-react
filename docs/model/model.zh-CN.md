@@ -1,3 +1,8 @@
+---
+title: 状态管理
+nav: 状态管理
+---
+
 ### 手写一个 mini 版本的 React 状态管理工具
 
 目前在 React 中，有很多各式各样的状态管理工具，如：
@@ -323,7 +328,7 @@ export const useModel = <Value, State = void>(
 
 在线示例:
 
-<code src="./Demo.zh-CN.tsx"></code>
+<code src="./Demo.zh-CN.tsx" id="modelDemoZH"></code>
 
 当然这个想法也并不是我本人想的，文末已注明来源，本文对源码做了一遍分析。
 

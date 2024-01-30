@@ -1,3 +1,8 @@
+---
+title: 自动文本链接组件
+nav: 指南
+---
+
 | 标题         | 标签                     | 首次添加时间 | 更新时间  |
 | ------------ | ------------------------ | ------------ | --------- |
 | 自动文本链接 | 组件,碎片节点,正则表达式 | 2022/7/11    | 2022/7/11 |
@@ -134,8 +139,8 @@ export default AutoLink;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx"></code>
+<code src="./Demo.zh-CN.tsx" id="autolinkTsxDemoZH"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx"></code>
+<code src="./jsx/Demo.zh-CN.jsx" id="autolinkTsxDemoZH"></code>

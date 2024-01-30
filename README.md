@@ -1,23 +1,20 @@
 # code-segment-react
 
-## Getting Started
+A static site base on [dumi](https://d.umijs.org).
 
-Install dependencies,
-
-```bash
-$ npm i
-```
-
-Start the dev server,
+## Development
 
 ```bash
-$ npm start
+# install dependencies
+$ pnpm install
+
+# start dev server
+$ pnpm start
+
+# build docs
+$ pnpm run build
 ```
 
-Build site app,
+## LICENSE
 
-```bash
-$ npm run build
-```
-
-[code-segment](https://github.com/eveningwater/code-segment.git)
+MIT

@@ -1,3 +1,8 @@
+---
+title: 复选框组件
+nav: 指南
+---
+
 | 标题       | 标签                    | 首次添加时间 | 更新时间  |
 | ---------- | ----------------------- | ------------ | --------- |
 | 复选框组件 | 组件,输入框,状态,副作用 | 2022/7/27    | 2022/7/27 |
@@ -178,8 +183,8 @@ export default Checkbox;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx"></code>
+<code src="./Demo.zh-CN.tsx" id="checkboxTsxDemoZH"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx"></code>
+<code src="./jsx/Demo.zh-CN.jsx" id="checkboxJsxDemoZH"></code>

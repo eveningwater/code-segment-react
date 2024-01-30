@@ -1,3 +1,8 @@
+---
+title: 加载中组件
+nav: 指南
+---
+
 | 标题       | 标签 | 首次添加时间 | 更新时间  |
 | ---------- | ---- | ------------ | --------- |
 | 加载中组件 | 组件 | 2022/7/23    | 2022/7/23 |
@@ -120,8 +125,8 @@ export default Loader;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx"></code>
+<code src="./Demo.zh-CN.tsx" id="loaderTsxDemoZH"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx"></code>
+<code src="./jsx/Demo.zh-CN.jsx" id="loaderJsxDemoZH"></code>
