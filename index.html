@@ -1,49 +1,30 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/code-segment-react/common.css"
-    />
-    <style>
-      img {
-        margin: auto;
-        display: block;
-      }
-    </style>
-    <link rel="stylesheet" href="/code-segment-react/umi.css" />
-    <script>
-      window.routerBase = "/code-segment-react/";
-    </script>
-    <script>
-      //! umi version: 3.5.38
-    </script>
-    <script>
-      !(function () {
-        var e =
-            navigator.cookieEnabled && void 0 !== window.localStorage
-              ? localStorage.getItem("dumi:prefers-color")
-              : "auto",
-          o = window.matchMedia("(prefers-color-scheme: dark)").matches,
-          t = ["light", "dark", "auto"];
-        document.documentElement.setAttribute(
-          "data-prefers-color",
-          e === t[2] ? (o ? t[1] : t[0]) : t.indexOf(e) > -1 ? e : t[0]
-        );
-      })();
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
+<!DOCTYPE html><html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" type="text/css" href="/code-segment-react/common.css">
+<style>
+    img {margin: auto; display:block;}
 
-    <script src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.14.7/vconsole.min.js"></script>
-    <script src="/code-segment-react/debug.js"></script>
-    <script src="/code-segment-react/umi.js"></script>
-  </body>
-</html>
+    .pipe-el+.pipe-el:before {
+      content: "";
+      font-size: 0;
+      padding: 12px 3px 1px;
+      margin-left: 6px;
+      border-left: 1px solid #618fbd;
+    }
+
+    body {
+      margin: 0;
+    }
+  </style>
+<link rel="stylesheet" href="/code-segment-react/umi.7ab43a5e.css">
+</head>
+<body>
+<div id="root"></div>
+<script src="/code-segment-react/umi.ad929f63.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.14.7/vconsole.min.js"></script>
+<script src="/code-segment-react/debug.js"></script>
+<script src="/code-segment-react/renderFooter.js"></script>
+
+</body></html>
