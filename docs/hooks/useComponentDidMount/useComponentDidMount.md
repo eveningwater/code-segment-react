@@ -79,4 +79,4 @@ Demo:
 
 js Demo:
 
-<code src="./js/Demo.Jsx" id="componentDidMountJsDemo"></code>
+<code src="./js/Demo.jsx" id="componentDidMountJsDemo"></code>

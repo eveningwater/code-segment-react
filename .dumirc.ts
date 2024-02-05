@@ -58,5 +58,11 @@ export default defineConfig({
           ? '/code-segment-react/renderFooter.js'
           : '/renderFooter.js',
     },
+    {
+      src:
+        process.env.NODE_ENV === 'production'
+          ? '/code-segment-react/renderDocTitle.js'
+          : '/renderDocTitle.js',
+    },
   ],
 });
