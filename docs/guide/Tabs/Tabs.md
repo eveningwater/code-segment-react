@@ -172,8 +172,8 @@ export default Tabs;
 
 Demo:
 
-<code src="./Demo.tsx" id="tabsTsxDemo"></code>
+<code src="./Demo.tsx"></code>
 
 jsx Demo:
 
-<code src="./jsx/Demo.jsx" id="tabsJsxDemo"></code>
+<code src="./jsx/Demo.jsx"></code>

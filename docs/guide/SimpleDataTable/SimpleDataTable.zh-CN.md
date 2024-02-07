@@ -1,8 +1,3 @@
----
-title: 简易数据表格组件
-nav: 指南
----
-
 | 标题             | 标签 | 首次添加时间 | 上次更新时间 |
 | ---------------- | ---- | ------------ | ------------ |
 | 简易数据表格组件 | 组件 | 2022/7/18    | 2022/7/18    |
@@ -132,8 +127,8 @@ export default SimpleDataTable;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="simpleDataTableTsxDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx" id="simpleDataTableJsxDemoZH"></code>
+<code src="./jsx/Demo.zh-CN.jsx"></code>

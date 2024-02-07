@@ -156,8 +156,8 @@ export default Demo;
 
 Demo:
 
-<code src="./Demo.tsx" id="copyToClipboardTsDemo"></code>
+<code src="./Demo.tsx"></code>
 
 js Demo:
 
-<code src="./js/Demo.jsx" id="copyToClipboardJsDemo"></code>
+<code src="./js/Demo.jsx"></code>

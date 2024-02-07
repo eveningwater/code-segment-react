@@ -17,16 +17,3 @@ img[alt="logo"] {
   height: 4px;
   background-color: #0294f5;
 }
-
-.dumi-default-navbar-dropdown {
-  max-height: 450px;
-  overflow-y: auto;
-}
-
-html[lang="en"] div.dumi-default-features {
-  margin: 48px auto;
-}
-
-html[lang="zh"] div.dumi-default-features {
-  margin: 0 auto;
-}

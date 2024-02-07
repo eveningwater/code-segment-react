@@ -143,8 +143,8 @@ export default SimpleMappedDataTable;
 
 Demo:
 
-<code src="./Demo.tsx" id="simpleMappedDataTableTsxDemo"></code>
+<code src="./Demo.tsx"></code>
 
 jsx Demo:
 
-<code src="./jsx/Demo.jsx" id="simpleMappedDataTableJsxDemo"></code>
+<code src="./jsx/Demo.jsx"></code>

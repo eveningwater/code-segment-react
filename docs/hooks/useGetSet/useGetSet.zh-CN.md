@@ -1,8 +1,3 @@
----
-title: 状态设置钩子函数
-nav: 钩子函数
----
-
 | 标题             | 标签           | 首次添加时间 | 更新时间  |
 | ---------------- | -------------- | ------------ | --------- |
 | 状态设置钩子函数 | 钩子函数，状态 | 2022/9/27    | 2022/9/27 |
@@ -109,8 +104,8 @@ export default Demo;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="getSetTsDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 js 示例:
 
-<code src="./js/Demo.zh-CN.jsx" id="getSetJsDemoZH"></code>
+<code src="./js/Demo.zh-CN.jsx"></code>

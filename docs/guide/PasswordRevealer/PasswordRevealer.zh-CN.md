@@ -1,8 +1,3 @@
----
-title: 密码显示器组件
-nav: 指南
----
-
 | 标题           | 标签              | 首次添加时间 | 更新时间  |
 | -------------- | ----------------- | ------------ | --------- |
 | 密码显示器组件 | 组件,状态，输入框 | 2022/7/28    | 2022/7/28 |
@@ -221,8 +216,8 @@ export default PasswordRevealer;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="passwordRevealerTsxDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx" id="passwordRevealerJsxDemoZH"></code>
+<code src="./jsx/Demo.zh-CN.jsx"></code>

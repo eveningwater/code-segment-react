@@ -1,8 +1,3 @@
----
-title: 获取浏览器路径参数的钩子函数
-nav: 钩子函数
----
-
 | 标题                       | 标签                  | 首次添加时间 | 更新时间   |
 | -------------------------- | --------------------- | ------------ | ---------- |
 | 获取浏览器路径参数钩子函数 | 钩子函数,副作用，状态 | 2022/10/28   | 2022/10/28 |
@@ -133,8 +128,8 @@ export default Demo;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="searchParamTsDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 js 示例:
 
-<code src="./js/Demo.zh-CN.jsx" id="searchParamJsDemoZH"></code>
+<code src="./js/Demo.zh-CN.jsx"></code>

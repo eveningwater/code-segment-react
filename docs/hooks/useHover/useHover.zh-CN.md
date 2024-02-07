@@ -1,8 +1,3 @@
----
-title: 悬浮钩子函数
-nav: 钩子函数
----
-
 | 标题         | 标签                    | 首次添加时间 | 更新时间   |
 | ------------ | ----------------------- | ------------ | ---------- |
 | 悬浮钩子函数 | 钩子函数，状态,回调函数 | 2022/10/03   | 2022/10/03 |
@@ -114,8 +109,8 @@ export default Demo;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="hoverTsDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 js 示例:
 
-<code src="./js/Demo.zh-CN.jsx" id="hoverJsDemoZH"></code>
+<code src="./js/Demo.zh-CN.jsx"></code>

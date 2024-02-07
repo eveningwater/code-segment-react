@@ -51,7 +51,7 @@ const about = {
       path: 'https://gitee.com/eveningwater',
     },
     {
-      title: '代码仓库',
+      title: 'Github',
       path: 'https://github.com/eveningwater',
     },
     {
@@ -76,37 +76,4 @@ const about = {
     },
   ],
 };
-
-const renderFooter = () => {
-  if (typeof document === 'undefined') {
-    return;
-  }
-  const html = document.querySelector('html');
-  const render = () => {
-    const footerContainer = document.querySelector('.dumi-default-footer');
-    if (footerContainer) {
-      const lang = html.getAttribute('lang') || html.lang;
-      const getFooterList = () =>
-        about[lang]
-          .map(
-            (item) =>
-              `<a href="${item.path}" target="_blank" rel="noopener noreferrer" class="pipe-el">${item.title}</a>`,
-          )
-          .join('');
-      footerContainer.innerHTML = `<span class="pipe-el">Copyright ©2023</span>
-        ${getFooterList()}`;
-    }
-  };
-  const observer = new MutationObserver(() => {
-    render();
-  });
-  observer.observe(html, {
-    attributes: true,
-  });
-  setTimeout(() => {
-    render();
-  }, 100);
-};
-window.onload = () => {
-  renderFooter();
-};
+export default about

@@ -107,8 +107,8 @@ export default Demo;
 
 Demo:
 
-<code src="./Demo.tsx" id="debounceTsDemo"></code>
+<code src="./Demo.tsx"></code>
 
 js Demo:
 
-<code src="./js/Demo.jsx" id="debounceJsDemo"></code>
+<code src="./js/Demo.jsx"></code>

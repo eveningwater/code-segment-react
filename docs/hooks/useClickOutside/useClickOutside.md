@@ -127,10 +127,10 @@ export default Demo;
 
 Demo:
 
-<code src="./Demo.tsx" id="clickOutsideTsDemo"></code>
+<code src="./Demo.tsx"></code>
 
 js Demo:
 
-<code src="./js/Demo.jsx" id="clickOutsideJsDemo"></code>
+<code src="./js/Demo.jsx"></code>
 
 more Demo see [Select component](../../guide/Select/Select).

@@ -1,8 +1,3 @@
----
-title: 拨电话组件
-nav: 指南
----
-
 | 标题   | 标签 | 首次添加时间 | 更新时间  |
 | ------ | ---- | ------------ | --------- |
 | 拨电至 | 组件 | 2022/7/12    | 2022/7/12 |
@@ -74,8 +69,8 @@ export default CallTo;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="callToTsxDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx" id="callToJsxDemoZH"></code>
+<code src="./jsx/Demo.zh-CN.jsx"></code>

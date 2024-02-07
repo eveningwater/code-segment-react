@@ -1,8 +1,3 @@
----
-title: 限制字符的多行文本框组件
-nav: 指南
----
-
 | 标题                 | 标签                      | 首次添加时间 | 更新时间  |
 | -------------------- | ------------------------- | ------------ | --------- |
 | 限制字符的文本框组件 | 组件,状态，回调函数，事件 | 2022/7/21    | 2022/7/21 |
@@ -181,8 +176,8 @@ export default LimitedTextarea;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="limitedTextareaTsxDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx" id="limitedTextareaTsxDemoZH"></code>
+<code src="./jsx/Demo.zh-CN.jsx"></code>

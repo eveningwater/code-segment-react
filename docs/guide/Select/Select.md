@@ -677,8 +677,8 @@ export default Select;
 
 Demo:
 
-<code src="./Demo.tsx" id="selectTsxDemo"></code>
+<code src="./Demo.tsx"></code>
 
 jsx Demo:
 
-<code src="./jsx/Demo.jsx" id="selectJsxDemo"></code>
+<code src="./jsx/Demo.jsx"></code>

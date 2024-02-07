@@ -220,8 +220,8 @@ export default TreeView;
 
 Demo:
 
-<code src="./Demo.tsx" id="treeViewTsxDemo"></code>
+<code src="./Demo.tsx"></code>
 
 jsx Demo:
 
-<code src="./jsx/Demo.jsx" id="treeViewJsxDemo"></code>
+<code src="./jsx/Demo.jsx"></code>

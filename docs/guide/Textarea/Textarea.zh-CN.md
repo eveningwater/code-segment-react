@@ -1,8 +1,3 @@
----
-title: 非受控多行文本框组件
-nav: 指南
----
-
 | 标题             | 标签         | 首次添加时间 | 上次更新时间 |
 | ---------------- | ------------ | ------------ | ------------ |
 | 非受控多行文本框 | 组件，输入框 | 2023/3/17    | 2023/3/17    |
@@ -125,8 +120,8 @@ export default Textarea;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="textareaTsxDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx" id="textareaJsxDemoZH"></code>
+<code src="./jsx/Demo.zh-CN.jsx"></code>

@@ -1,8 +1,3 @@
----
-title: 星级评分组件
-nav: 指南
----
-
 | 标题         | 标签                     | 首次添加时间 | 上次更新时间 |
 | ------------ | ------------------------ | ------------ | ------------ |
 | 星级评分组件 | 组件，子组件，输入，状态 | 2023/3/16    | 2023/3/16    |
@@ -138,8 +133,8 @@ export default StarRating;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="starRatingTsxDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx" id="starRatingJsxDemoZH"></code>
+<code src="./jsx/Demo.zh-CN.jsx"></code>

@@ -193,8 +193,8 @@ export default FileDrop;
 
 Demo:
 
-<code src="./Demo.tsx" id="fileDropTsxDemo"></code>
+<code src="./Demo.tsx"></code>
 
 jsx Demo:
 
-<code src="./jsx/Demo.jsx" id="fileDropJsxDemo"></code>
+<code src="./jsx/Demo.jsx"></code>

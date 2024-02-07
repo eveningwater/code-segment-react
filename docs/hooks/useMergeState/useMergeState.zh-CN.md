@@ -1,8 +1,3 @@
----
-title: 合并状态钩子函数
-nav: 钩子函数
----
-
 | 标题             | 标签          | 首次添加时间 | 更新时间   |
 | ---------------- | ------------- | ------------ | ---------- |
 | 合并状态钩子函数 | 钩子函数,状态 | 2022/10/11   | 2022/10/11 |
@@ -130,8 +125,8 @@ export default Demo;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="mergeStateTsDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 js 示例:
 
-<code src="./js/Demo.zh-CN.jsx" id="mergeStateJsDemoZH"></code>
+<code src="./js/Demo.zh-CN.jsx"></code>

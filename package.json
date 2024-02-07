@@ -1,43 +1,37 @@
 {
-  "name": "code-segment-react",
-  "version": "0.0.1",
-  "description": "一个react代码段集合",
+  "private": true,
+  "name": "code-segment",
   "scripts": {
-    "start": "npm run dev",
-    "dev": "dumi dev",
+    "start": "dumi dev",
     "build": "dumi build",
-    "prepare": "husky install && dumi setup",
     "deploy": "npm run build & gh-pages -d build",
-    "release": "gh-pages -d build"
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\""
   },
-  "authors": [
-    "eveningwater"
-  ],
-  "license": "MIT",
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "typings": "dist/index.d.ts",
+  "gitHooks": {
+    "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{md,json}": [
-      "prettier --write --no-error-on-unmatched-pattern"
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
     ]
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.1.2",
-    "@commitlint/config-conventional": "^17.1.0",
-    "@types/node": "^20.11.10",
-    "dumi": "^2.2.13",
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1"
-  },
-  "dependencies": {
     "@emotion/css": "^11.9.0",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "antd": "^4.21.5",
+    "dumi": "^1.0.13",
+    "lint-staged": "^10.0.7",
+    "prettier": "^2.2.1",
+    "yorkie": "^2.0.0"
+  },
+  "dependencies": {
     "gh-pages": "^6.1.1"
   }
 }

@@ -520,8 +520,8 @@ export default AnimationTabs;
 
 Demo:
 
-<code src="./Demo.tsx" id="animationTabsTsxDemo"></code>
+<code src="./Demo.tsx"></code>
 
 jsx Demo:
 
-<code src="./jsx/Demo.jsx" id="animationTabsJsxDemo"></code>
+<code src="./jsx/Demo.jsx"></code>

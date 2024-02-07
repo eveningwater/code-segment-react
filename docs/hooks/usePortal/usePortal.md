@@ -147,8 +147,8 @@ export default Demo;
 
 Demo:
 
-<code src="./Demo.tsx" id="portalTsDemo"></code>
+<code src="./Demo.tsx"></code>
 
 js Demo:
 
-<code src="./js/Demo.jsx" id="portalJsDemo"></code>
+<!-- <code src="./js/Demo.jsx"></code> -->

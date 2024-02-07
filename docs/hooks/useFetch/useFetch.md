@@ -130,8 +130,8 @@ export default Demo;
 
 Demo:
 
-<code src="./Demo.tsx" id="fetchTsDemo"></code>
+<code src="./Demo.tsx"></code>
 
 js Demo:
 
-<code src="./js/Demo.jsx" id="fetchJsDemo"></code>
+<code src="./js/Demo.jsx"></code>

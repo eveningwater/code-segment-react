@@ -216,8 +216,8 @@ export default PasswordRevealer;
 
 Demo:
 
-<code src="./Demo.tsx"id="passwordRevealerTsxDemo"></code>
+<code src="./Demo.tsx"></code>
 
 jsx Demo:
 
-<code src="./jsx/Demo.jsx"id="passwordRevealerJsxDemo"></code>
+<code src="./jsx/Demo.jsx"></code>

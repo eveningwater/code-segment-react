@@ -715,8 +715,8 @@ export default Modal;
 
 Demo:
 
-<code src="./Demo.tsx" id="modalTsxDemo"></code>
+<code src="./Demo.tsx"></code>
 
 jsx Demo:
 
-<code src="./jsx/Demo.jsx" id="modalJsxDemo"></code>
+<code src="./jsx/Demo.jsx"></code>

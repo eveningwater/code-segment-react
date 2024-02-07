@@ -1,8 +1,3 @@
----
-title: 树形视图组件
-nav: 指南
----
-
 | 标题         | 标签                  | 首次添加时间 | 上次更新时间 |
 | ------------ | --------------------- | ------------ | ------------ |
 | 树形视图组件 | 组件,对象，状态，递归 | 2023/3/21    | 2023/3/21    |
@@ -225,8 +220,8 @@ export default TreeView;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="treeViewTsxDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx" id="treeViewJsxDemoZH"></code>
+<code src="./jsx/Demo.zh-CN.jsx"></code>

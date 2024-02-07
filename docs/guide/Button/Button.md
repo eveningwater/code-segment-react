@@ -497,8 +497,8 @@ export default Button;
 
 Demo:
 
-<code src="./Demo.tsx" id="buttonTsxDemo"></code>
+<code src="./Demo.tsx"></code>
 
 jsx Demo:
 
-<code src="./jsx/Demo.jsx" id="buttonJsxDemo"></code>
+<code src="./jsx/Demo.jsx"></code>

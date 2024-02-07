@@ -201,8 +201,8 @@ export default Switch;
 
 Demo:
 
-<code src="./Demo.tsx" id="switchTsxDemo"></code>
+<code src="./Demo.tsx"></code>
 
 jsx Demo:
 
-<code src="./jsx/Demo.jsx" id="switchJsxDemo"></code>
+<code src="./jsx/Demo.jsx"></code>

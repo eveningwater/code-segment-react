@@ -1,8 +1,3 @@
----
-title: 组件状态更新的钩子函数
-nav: 钩子函数
----
-
 | 标题                   | 标签            | 首次添加时间 | 更新时间 |
 | ---------------------- | --------------- | ------------ | -------- |
 | 组件状态更新的钩子函数 | 钩子函数,副作用 | 2022/8/6     | 2022/8/6 |
@@ -121,8 +116,8 @@ export default Demo;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="componentDidUpdateTsDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 js 示例:
 
-<code src="./js/Demo.zh-CN.jsx" id="componentDidUpdateJsDemoZH"></code>
+<code src="./js/Demo.zh-CN.jsx"></code>

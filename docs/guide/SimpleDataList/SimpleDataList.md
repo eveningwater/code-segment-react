@@ -114,8 +114,8 @@ export default SimpleDataList;
 
 Demo:
 
-<code src="./Demo.tsx" id="simpleDataListTsxDemo"></code>
+<code src="./Demo.tsx"></code>
 
 jsx Demo:
 
-<code src="./jsx/Demo.jsx" id="simpleDataListJsxDemo"></code>
+<code src="./jsx/Demo.jsx"></code>

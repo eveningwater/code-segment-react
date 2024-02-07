@@ -1,8 +1,3 @@
----
-title: 错误钩子函数
-nav: 钩子函数
----
-
 | 标题         | 标签                  | 首次添加时间 | 更新时间  |
 | ------------ | --------------------- | ------------ | --------- |
 | 错误钩子函数 | 钩子函数，状态,副作用 | 2022/9/18    | 2022/9/18 |
@@ -95,8 +90,8 @@ export default Demo;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="errorTsDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 js 示例:
 
-<code src="./js/Demo.zh-CN.jsx" id="errorJsDemoZH"></code>
+<code src="./js/Demo.zh-CN.jsx"></code>

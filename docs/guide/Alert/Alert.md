@@ -219,8 +219,8 @@ export default Alert;
 
 Demo:
 
-<code src="./Demo.tsx" id="alertTsxDemo"></code>
+<code src="./Demo.tsx"></code>
 
 jsx demo:
 
-<code src="./jsx/Demo.jsx" id="alertJsxDemo"></code>
+<code src="./jsx/Demo.jsx"></code>

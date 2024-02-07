@@ -316,7 +316,7 @@ So far, our entire state management tool is complete, and it is very simple to u
 
 Demo:
 
-<code src="./Demo.tsx" id="modelDemo"></code>
+<code src="./Demo.tsx"></code>
 
 Of course, this idea is not my own. The source has been indicated at the end of the article. This article has made an analysis of the source code.
 

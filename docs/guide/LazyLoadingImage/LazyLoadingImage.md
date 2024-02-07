@@ -133,8 +133,8 @@ export default LazyLoadingImage;
 
 Demo:
 
-<code src="./Demo.tsx" id="lazyLoadingImageTsxDemo"></code>
+<code src="./Demo.tsx"></code>
 
 jsx Demo:
 
-<code src="./jsx/Demo.jsx" id="lazyLoadingImageJsxDemo"></code>
+<code src="./jsx/Demo.jsx"></code>

@@ -1,8 +1,3 @@
----
-title: 标签输入框组件
-nav: 指南
----
-
 | 标题           | 标签              | 首次添加时间 | 上次更新时间 |
 | -------------- | ----------------- | ------------ | ------------ |
 | 标签输入框组件 | 组件，输入框,状态 | 2023/3/17    | 2023/3/17    |
@@ -184,8 +179,8 @@ export default TagInput;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="tagInputTsxDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx" id="tagInputJsxDemoZH"></code>
+<code src="./jsx/Demo.zh-CN.jsx"></code>

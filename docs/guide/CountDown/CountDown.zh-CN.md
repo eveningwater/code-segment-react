@@ -1,8 +1,3 @@
----
-title: 倒计时组件
-nav: 指南
----
-
 | 标题       | 标签      | 首次添加时间 | 更新时间  |
 | ---------- | --------- | ------------ | --------- |
 | 倒计时组件 | 组件,状态 | 2022/7/16    | 2022/7/16 |
@@ -273,8 +268,8 @@ export default CountDown;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="countDownTsxDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx" id="countDownJsxDemoZH"></code>
+<code src="./jsx/Demo.zh-CN.jsx"></code>

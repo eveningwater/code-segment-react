@@ -1,8 +1,3 @@
----
-title: 折叠内容组件
-nav: 指南
----
-
 | 标题         | 标签             | 首次添加时间 | 更新时间  |
 | ------------ | ---------------- | ------------ | --------- |
 | 折叠内容组件 | 组件,子节点,状态 | 2022/7/14    | 2022/7/14 |
@@ -181,8 +176,8 @@ export default Collapse;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="collapseTsxDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx" id="collapseJsxDemoZH"></code>
+<code src="./jsx/Demo.zh-CN.jsx"></code>

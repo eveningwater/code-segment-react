@@ -1,8 +1,3 @@
----
-title: 延迟定时器钩子函数
-nav: 钩子函数
----
-
 | 标题         | 标签            | 首次添加时间 | 更新时间   |
 | ------------ | --------------- | ------------ | ---------- |
 | 延迟钩子函数 | 钩子函数,副作用 | 2022/10/31   | 2022/10/31 |
@@ -104,8 +99,8 @@ export default Demo;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="timeoutTsDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 js 示例:
 
-<code src="./js/Demo.zh-CN.jsx" id="timeoutTsDemoZH"></code>
+<code src="./js/Demo.zh-CN.jsx"></code>

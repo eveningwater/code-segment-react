@@ -130,8 +130,8 @@ export default Carousel;
 
 demo:
 
-<code src="./Demo.tsx" id="carouselTsxDemo"></code>
+<code src="./Demo.tsx"></code>
 
 jsx demo:
 
-<code src="./jsx/Demo.jsx" id="carouselJsxDemo"></code>
+<code src="./jsx/Demo.jsx"></code>

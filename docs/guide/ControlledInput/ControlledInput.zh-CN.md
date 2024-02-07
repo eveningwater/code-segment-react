@@ -1,8 +1,3 @@
----
-title: 受控的输入框组件
-nav: 指南
----
-
 | 标题             | 标签        | 首次添加时间 | 更新时间  |
 | ---------------- | ----------- | ------------ | --------- |
 | 受控的输入框组件 | 组件,输入框 | 2022/7/15    | 2022/7/16 |
@@ -138,8 +133,8 @@ export default ControlledInput;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="controlledInputTsxDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx" id="controlledInputJsxDemoZH"></code>
+<code src="./jsx/Demo.zh-CN.jsx"></code>

@@ -1,8 +1,3 @@
----
-title: 会话存储钩子函数
-nav: 钩子函数
----
-
 | 标题             | 标签          | 首次添加时间 | 更新时间   |
 | ---------------- | ------------- | ------------ | ---------- |
 | 会话存储钩子函数 | 钩子函数,状态 | 2022/10/29   | 2022/10/29 |
@@ -114,8 +109,8 @@ export default Demo;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="sessionTsDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 js 示例:
 
-<code src="./js/Demo.zh-CN.jsx" id="sessionJsDemoZH"></code>
+<code src="./js/Demo.zh-CN.jsx"></code>

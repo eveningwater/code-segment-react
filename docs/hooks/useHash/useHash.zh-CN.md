@@ -1,8 +1,3 @@
----
-title: 修改hash值的钩子函数
-nav: 钩子函数
----
-
 | 标题                   | 标签                  | 首次添加时间 | 更新时间  |
 | ---------------------- | --------------------- | ------------ | --------- |
 | 修改 hash 值的钩子函数 | 钩子函数，状态,副作用 | 2022/9/28    | 2022/9/28 |
@@ -124,8 +119,8 @@ export default Demo;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="hashTsDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 js 示例:
 
-<code src="./js/Demo.zh-CN.jsx" id="hashJsDemoZH"></code>
+<code src="./js/Demo.zh-CN.jsx"></code>

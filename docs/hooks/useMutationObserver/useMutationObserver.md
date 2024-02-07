@@ -167,8 +167,8 @@ export default Demo;
 
 Demo:
 
-<code src="./Demo.tsx" id="mutationObserverTsDemo"></code>
+<code src="./Demo.tsx"></code>
 
 js Demo:
 
-<code src="./js/Demo.jsx" id="mutationObserverJsDemo"></code>
+<code src="./js/Demo.jsx"></code>

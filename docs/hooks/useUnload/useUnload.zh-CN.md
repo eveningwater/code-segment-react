@@ -1,8 +1,3 @@
----
-title: 未加载事件钩子函数
-nav: 钩子函数
----
-
 | 标题               | 标签                  | 首次添加时间 | 更新时间   |
 | ------------------ | --------------------- | ------------ | ---------- |
 | 未加载事件钩子函数 | 钩子函数,副作用，事件 | 2022/11/03   | 2022/11/03 |
@@ -89,8 +84,8 @@ export default Demo;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="unloadTsDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 js 示例:
 
-<code src="./js/Demo.zh-CN.jsx" id="unloadTsDemoZH"></code>
+<code src="./js/Demo.zh-CN.jsx"></code>

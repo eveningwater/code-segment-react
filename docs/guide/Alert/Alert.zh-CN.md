@@ -1,8 +1,3 @@
----
-title: 可关闭的提示组件
-nav: 指南
----
-
 | 标题             | 标签               | 首次添加时间 | 更新时间  |
 | ---------------- | ------------------ | ------------ | --------- |
 | 可关闭的提示组件 | 组件，状态，副作用 | 2022/7/10    | 2022/7/10 |
@@ -224,8 +219,8 @@ export default Alert;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="alertTsxDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx" id="alertJsxDemoZH"></code>
+<code src="./jsx/Demo.zh-CN.jsx"></code>

@@ -69,8 +69,8 @@ export default CallTo;
 
 demo:
 
-<code src="./Demo.tsx" id="callToTsxDemo"></code>
+<code src="./Demo.tsx"></code>
 
 jsx demo:
 
-<code src="./jsx/Demo.jsx" id="callToJsxDemo"></code>
+<code src="./jsx/Demo.jsx"></code>

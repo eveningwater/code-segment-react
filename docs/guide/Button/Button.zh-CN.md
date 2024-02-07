@@ -1,8 +1,3 @@
----
-title: 按钮组件
-nav: 指南
----
-
 | 标题     | 标签              | 首次添加时间 | 更新时间  |
 | -------- | ----------------- | ------------ | --------- |
 | 按钮组件 | 组件,状态，副作用 | 2022/7/29    | 2022/7/30 |
@@ -502,8 +497,8 @@ export default Button;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="buttonTsxDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx" id="buttonJsxDemoZH"></code>
+<code src="./jsx/Demo.zh-CN.jsx"></code>

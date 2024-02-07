@@ -1,8 +1,3 @@
----
-title: 窗口滚动事件监听钩子函数
-nav: 钩子函数
----
-
 | 标题                 | 标签                  | 首次添加时间 | 更新时间   |
 | -------------------- | --------------------- | ------------ | ---------- |
 | 窗口滚动事件钩子函数 | 钩子函数,副作用，事件 | 2022/10/17   | 2022/10/17 |
@@ -90,8 +85,8 @@ export default Demo;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="windowScrollTsDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 js 示例:
 
-<code src="./js/Demo.zh-CN.jsx" id="windowScrollJsDemoZH"></code>
+<code src="./js/Demo.zh-CN.jsx"></code>

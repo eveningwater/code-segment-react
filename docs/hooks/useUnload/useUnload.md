@@ -84,8 +84,8 @@ export default Demo;
 
 Demo:
 
-<code src="./Demo.tsx" id="unloadTsDemo"></code>
+<code src="./Demo.tsx"></code>
 
 js Demo:
 
-<code src="./js/Demo.jsx" id="unloadJsDemo"></code>
+<code src="./js/Demo.jsx"></code>

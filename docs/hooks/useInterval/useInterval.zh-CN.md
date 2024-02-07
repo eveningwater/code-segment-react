@@ -1,8 +1,3 @@
----
-title: 定时器钩子函数
-nav: 钩子函数
----
-
 | 标题           | 标签            | 首次添加时间 | 更新时间   |
 | -------------- | --------------- | ------------ | ---------- |
 | 定时器钩子函数 | 钩子函数,副作用 | 2022/10/05   | 2022/10/05 |
@@ -101,8 +96,8 @@ export default Demo;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="intervalTsDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 js 示例:
 
-<code src="./js/Demo.zh-CN.jsx" id="intervalJsDemoZH"></code>
+<code src="./js/Demo.zh-CN.jsx"></code>

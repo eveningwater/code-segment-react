@@ -1,8 +1,3 @@
----
-title: 邮件链接组件
-nav: 指南
----
-
 | 标题         | 标签 | 首次添加时间 | 更新时间  |
 | ------------ | ---- | ------------ | --------- |
 | 邮件链接组件 | 组件 | 2022/7/24    | 2022/7/24 |
@@ -93,8 +88,8 @@ export default Mailto;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="mailtoTsxDemoZH"></code>
+<code src="./Demo.zh-CN.tsx"></code>
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx" id="mailtoJsxDemoZH"></code>
+<code src="./jsx/Demo.zh-CN.jsx"></code>

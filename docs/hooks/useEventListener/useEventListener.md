@@ -122,8 +122,8 @@ export default Demo;
 
 Demo:
 
-<code src="./Demo.tsx" id="eventListenerTsDemo"></code>
+<code src="./Demo.tsx"></code>
 
 js Demo:
 
-<code src="./js/Demo.jsx" id="eventListenerJsDemo"></code>
+<code src="./js/Demo.jsx"></code>

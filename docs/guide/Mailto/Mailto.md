@@ -88,8 +88,8 @@ export default Mailto;
 
 Demo:
 
-<code src="./Demo.tsx" id="mailtoTsxDemo"></code>
+<code src="./Demo.tsx"></code>
 
 jsx Demo:
 
-<code src="./jsx/Demo.jsx" id="mailtoJsxDemo"></code>
+<code src="./jsx/Demo.jsx"></code>
