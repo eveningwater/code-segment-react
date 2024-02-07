@@ -22,5 +22,5 @@ footer: Open-source MIT Licensed | Copyright © 2020<br />Powered by [dumi](http
 
 ## 欢迎来到本网站
 
-[代码段](https://eveningwater.github.io/code-segment/#/)
-[react 代码段 v1 版本](https://eveningwater.github.io/code-segment-react/old/)
+- [代码段](https://eveningwater.github.io/code-segment/#/)
+- [react 代码段 v1 版本](https://eveningwater.github.io/code-segment-react/old/)
