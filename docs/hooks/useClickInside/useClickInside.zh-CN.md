@@ -135,7 +135,7 @@ export default Demo;
 
 示例:
 
-<code src="./Demo.zh-CN.tsx" id="clickOutsideJsDemoZH"></code>
+<code src="./Demo.zh-CN.tsx" id="clickOutsideTsDemoZH"></code>
 
 js 示例:
 

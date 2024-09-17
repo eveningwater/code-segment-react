@@ -108,4 +108,4 @@ export default Demo;
 
 js 示例:
 
-<code src="./js/Demo.zh-CN.jsx" id="timeoutTsDemoZH"></code>
+<code src="./js/Demo.zh-CN.jsx" id="timeoutJsDemoZH"></code>

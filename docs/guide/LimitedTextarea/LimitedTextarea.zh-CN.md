@@ -185,4 +185,4 @@ export default LimitedTextarea;
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx" id="limitedTextareaTsxDemoZH"></code>
+<code src="./jsx/Demo.zh-CN.jsx" id="limitedTextareaJsxDemoZH"></code>

@@ -93,4 +93,4 @@ export default Demo;
 
 js 示例:
 
-<code src="./js/Demo.zh-CN.jsx" id="unloadTsDemoZH"></code>
+<code src="./js/Demo.zh-CN.jsx" id="unloadJsDemoZH"></code>

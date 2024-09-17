@@ -143,4 +143,4 @@ export default AutoLink;
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx" id="autolinkTsxDemoZH"></code>
+<code src="./jsx/Demo.zh-CN.jsx" id="autolinkJsxDemoZH"></code>

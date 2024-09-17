@@ -529,4 +529,4 @@ export default AnimationTabs;
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx" id="animationTabsTsxDemoZh"></code>
+<code src="./jsx/Demo.zh-CN.jsx" id="animationTabsJsxDemoZh"></code>

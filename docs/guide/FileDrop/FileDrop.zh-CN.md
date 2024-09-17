@@ -201,4 +201,4 @@ export default FileDrop;
 
 jsx 示例:
 
-<code src="./jsx/Demo.zh-CN.jsx" id="fileDropTsxDemoZH"></code>
+<code src="./jsx/Demo.zh-CN.jsx" id="fileDropJsxDemoZH"></code>

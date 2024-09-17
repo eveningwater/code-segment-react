@@ -138,4 +138,4 @@ Demo:
 
 jsx Demo:
 
-<code src="./jsx/Demo.jsx" id="autolinkTsxDemo"></code>
+<code src="./jsx/Demo.jsx" id="autolinkJsxDemo"></code>
