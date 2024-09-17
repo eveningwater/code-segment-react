@@ -1,3 +1,7 @@
+const title = {
+  en: 'code-segment-react',
+  zh: 'React代码段',
+};
 const about = {
   en: [
     {
@@ -76,13 +80,14 @@ const about = {
     },
   ],
 };
-
-const renderFooter = () => {
+const renderDocTitle = () => {
   if (typeof document === 'undefined') {
     return;
   }
   const html = document.querySelector('html');
   const render = () => {
+    const lang = html.getAttribute('lang') || html.lang || 'en';
+    document.title = title[lang];
     const footerContainer = document.querySelector('.dumi-default-footer');
     if (footerContainer) {
       const lang = html.getAttribute('lang') || html.lang;
@@ -108,5 +113,5 @@ const renderFooter = () => {
   }, 100);
 };
 window.onload = () => {
-  renderFooter();
+  renderDocTitle();
 };

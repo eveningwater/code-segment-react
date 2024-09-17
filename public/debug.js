@@ -1,7 +1,8 @@
 const option = {
   theme: 'light',
 };
-
-const con = new window.VConsole(option);
-
-console.log('console:', con);
+const agent = window.navigator.userAgent;
+if (/mobile/i.test(agent)) {
+  const con = new window.VConsole(option);
+  console.log('console:', con);
+}
