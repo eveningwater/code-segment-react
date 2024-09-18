@@ -90,7 +90,6 @@ const renderDocTitle = () => {
     document.title = title[lang];
     const footerContainer = document.querySelector('.dumi-default-footer');
     if (footerContainer) {
-      const lang = html.getAttribute('lang') || html.lang;
       const getFooterList = () =>
         about[lang]
           .map(
@@ -102,8 +101,12 @@ const renderDocTitle = () => {
         ${getFooterList()}`;
     }
   };
-  const observer = new MutationObserver(() => {
-    render();
+  const observer = new MutationObserver((mutations) => {
+    for (const mutation of mutations) {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'lang') {
+        render();
+      }
+    }
   });
   observer.observe(html, {
     attributes: true,
